@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel">
+  <defs>
+    <linearGradient id="zg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8FAEE0"/>
+      <stop offset="0.5" stop-color="#B0A3DE"/>
+      <stop offset="1" stop-color="#E6AC99"/>
+    </linearGradient>
+    <linearGradient id="zg-soft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B9CDEB" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#F3CDBF" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+  <!-- Corona exterior facetada con umbral abierto (esencia que permanece, abierta al flujo) -->
+  <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Tabla interior de zafiro y aristas de refracción -->
+  <path d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#zg-soft)" stroke-width="1.25" stroke-linejoin="round"/>
+  <path d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#zg-soft)" stroke-width="1.15" stroke-linecap="round"/>
+  <!-- Z fluida (innovación que fluye) + estela sutil de brisa -->
+  <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#2B2540" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 21 77 H 31" fill="none" stroke="url(#zg)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Destello de faceta -->
+  <path d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#zg)"/>
+</svg>

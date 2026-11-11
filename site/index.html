@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zaphyrel — Esencia que permanece e innovación que fluye</title>
+<meta name="description" content="Estudio de sistemas, webs y aplicaciones a medida. Pruébalo funcionando: restaurantes, gimnasios, inventarios, hoteles, clínicas, bibliotecas, catálogos y cuentas.">
+<meta name="theme-color" content="#FAF7F2">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2B2540; --ink-soft:#5C5475; --pearl:#FAF7F2; --paper:#FFFFFF; --card:#FFFFFF;
+  --line:rgba(43,37,64,.12); --line-strong:rgba(43,37,64,.22);
+  --sapphire:#9FBCE5; --lavender:#B9AEE4; --peach:#EEBFB0; --sage:#A9CEB8;
+  --accent:#9FBCE5; --accent-ink:#1E1930; --accent-soft:rgba(159,188,229,.22);
+  --grad:linear-gradient(135deg,#9FBCE5 0%,#B9AEE4 52%,#EEBFB0 100%);
+  --txtgrad:linear-gradient(100deg,#4E6CAE 0%,#6F5BAE 55%,#B8705C 100%);
+  --glass:rgba(255,255,255,.72); --shadow:rgba(43,37,64,.24);
+  --ok-bg:#CBE8D5; --ok-ink:#1D422C; --warn-bg:#F6CFC2; --warn-ink:#5D281C;
+  --display:"Fraunces","Cormorant Garamond",Georgia,serif;
+  --ui:"Manrope","Inter","Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --radius:22px;
+}
+[data-theme=night]{
+  --ink:#F4F0FC; --ink-soft:#BDB6D6; --pearl:#13101D; --paper:#1B1729; --card:#221D34;
+  --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.28);
+  --accent-soft:rgba(185,205,235,.18);
+  --glass:rgba(30,26,46,.76); --shadow:rgba(0,0,0,.65);
+  --txtgrad:linear-gradient(100deg,#B9CDEB 0%,#CEC6F0 55%,#F3CDBF 100%);
+  --ok-bg:#254A37; --ok-ink:#CFF3DC; --warn-bg:#552E28; --warn-ink:#FBD4CA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--pearl);color:var(--ink);font-family:var(--ui);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .7s var(--ease),color .7s var(--ease)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+::selection{background:var(--lavender);color:#1E1930}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+/* Barra superior, cursor y velo de entrada */
+.progress{position:fixed;top:0;left:0;height:2.5px;width:100%;z-index:60;transform-origin:left;transform:scaleX(0);background:var(--grad)}
+.cur-dot,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:70;border-radius:50%;opacity:0;transition:opacity .4s}
+.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--ink)}
+.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid var(--ink-soft);transition:opacity .4s,width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),background .4s}
+.cur-ring.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(185,174,228,.12)}
+@media(hover:none){.cur-dot,.cur-ring{display:none}}
+.has-cursor .cur-dot,.has-cursor .cur-ring{opacity:1}
+
+.veil{position:fixed;inset:0;z-index:80;background:var(--pearl);display:grid;place-items:center;animation:veil .7s var(--ease) .95s forwards}
+.veil svg{width:92px;height:92px;overflow:visible}
+.veil path.d{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .85s var(--ease) .05s forwards}
+@keyframes veil{to{opacity:0;visibility:hidden}}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* Atmósfera pastel viva */
+.aura{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aura i{position:absolute;border-radius:50%;filter:blur(95px);opacity:.48;animation:drift 22s var(--ease) infinite alternate;transition:background 1.2s var(--ease)}
+.aura i:nth-child(1){width:46vmax;height:46vmax;background:var(--accent);top:-14vmax;left:-10vmax}
+.aura i:nth-child(2){width:38vmax;height:38vmax;background:var(--lavender);top:18vh;right:-12vmax;animation-delay:-7s}
+.aura i:nth-child(3){width:34vmax;height:34vmax;background:var(--peach);bottom:-14vmax;left:22vw;animation-delay:-13s;opacity:.38}
+[data-theme=night] .aura i{opacity:.20}
+@keyframes drift{to{transform:translate3d(6vmax,-4vmax,0) scale(1.12)}}
+
+/* Navegación */
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(16px,5vw,60px);backdrop-filter:blur(14px);background:linear-gradient(to bottom,color-mix(in srgb,var(--pearl) 90%,transparent),transparent)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);letter-spacing:.30em;font-size:15px}
+.brand svg{width:32px;height:32px}
+.links{display:flex;gap:clamp(12px,2.2vw,30px);font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
+.links a{position:relative;padding:4px 0;transition:color .4s var(--ease)}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--ink);transition:width .45s var(--ease)}
+.links a:hover{color:var(--ink)}.links a:hover::after{width:100%}
+.tools{display:flex;gap:8px;align-items:center}
+.pill{border:1px solid var(--line-strong);background:var(--glass);color:var(--ink);border-radius:99px;padding:7px 14px;font:500 12px var(--ui);letter-spacing:.06em;transition:all .4s var(--ease);backdrop-filter:blur(8px);white-space:nowrap}
+.pill:hover,.pill[aria-pressed=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
+.kbd{font-family:var(--mono);font-size:11px;opacity:.75;margin-left:6px}
+
+/* Hero con emblema facetado 3D */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:88px 20px 52px;overflow:hidden}
+#flow{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:920px}
+.stage{position:relative;perspective:900px;width:max-content;margin:0 auto 18px}
+.halo{position:absolute;inset:-24px;border-radius:50%;border:1px dashed var(--line-strong);opacity:.55;animation:spin 38s linear infinite;pointer-events:none}
+.halo::after{content:"";position:absolute;top:-3.5px;left:50%;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mark{width:clamp(112px,14.5vw,160px);height:auto;display:block;overflow:visible;cursor:pointer;transition:transform .25s ease-out;transform-style:preserve-3d;filter:drop-shadow(0 18px 28px rgba(111,91,174,.22))}
+.mark .facet{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.3s var(--ease) .95s forwards}
+.mark .flow{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s var(--ease) 1.4s forwards}
+.mark .glint{animation:twinkle 4.2s ease-in-out infinite;transform-origin:91px 27px}
+@keyframes twinkle{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.22) rotate(12deg);opacity:1}}
+.mark.pulse{animation:burst .75s var(--ease)}
+@keyframes burst{50%{transform:scale(1.09);filter:drop-shadow(0 0 28px var(--accent))}}
+h1{font-family:var(--display);font-weight:300;font-size:clamp(30px,7.6vw,90px);letter-spacing:.22em;line-height:1.05;padding-left:.22em}
+h1 span{display:inline-block;opacity:0;transform:translateY(30px) rotateX(-40deg);animation:letter .9s var(--ease) forwards;animation-delay:calc(1.1s + var(--i)*.055s)}
+@keyframes letter{to{opacity:1;transform:none}}
+.tag{margin-top:18px;font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(18px,2.5vw,27px);color:var(--ink-soft)}
+.tag b{font-weight:400;background:var(--txtgrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{max-width:620px;margin:18px auto 0;color:var(--ink-soft);font-size:clamp(15px,1.5vw,17px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.cta{display:inline-flex;gap:10px;align-items:center;padding:15px 30px;border-radius:99px;background:var(--ink);color:var(--pearl);font-size:13px;letter-spacing:.12em;border:1px solid var(--ink);transition:box-shadow .5s var(--ease),background .4s}
+.cta:hover{box-shadow:0 18px 40px -14px var(--shadow)}
+.cta.ghost{background:var(--glass);color:var(--ink);border-color:var(--line-strong)}
+.cta.ghost:hover{background:var(--paper)}
+.status{display:inline-flex;gap:10px;align-items:center;margin-top:26px;padding:7px 16px;border:1px solid var(--line);border-radius:99px;background:var(--glass);font:400 12px var(--mono);color:var(--ink-soft);backdrop-filter:blur(8px)}
+.status i{width:7px;height:7px;border-radius:50%;background:#5DBB87;box-shadow:0 0 0 0 rgba(93,187,135,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(93,187,135,0)}100%{box-shadow:0 0 0 0 rgba(93,187,135,0)}}
+
+/* Secciones comunes */
+section{padding:clamp(74px,10vw,132px) clamp(18px,6vw,76px);position:relative}
+.wrap{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.34em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:18px}
+h2{font-family:var(--display);font-weight:300;font-size:clamp(29px,4.5vw,54px);line-height:1.15;max-width:860px}
+h2 em{font-style:italic;color:var(--ink-soft)}
+.sub{max-width:650px;margin-top:18px;color:var(--ink-soft)}
+.rv{opacity:0;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+
+/* Esencia + Anatomía interactiva del símbolo */
+.essence-grid{display:grid;grid-template-columns:1.05fr 1.35fr;gap:34px;align-items:center;margin-top:52px}
+.blueprint{background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:34px 28px;text-align:center;backdrop-filter:blur(12px)}
+.blueprint svg{width:min(220px,55vw);height:auto;display:block;margin:0 auto 20px;overflow:visible}
+.bp-part{transition:opacity .45s var(--ease),filter .45s var(--ease)}
+.blueprint[data-focus="esencia"] .bp-part:not(.p-esencia),
+.blueprint[data-focus="innovacion"] .bp-part:not(.p-inno),
+.blueprint[data-focus="flujo"] .bp-part:not(.p-flujo){opacity:.22}
+.blueprint[data-focus="esencia"] .p-esencia,
+.blueprint[data-focus="innovacion"] .p-inno,
+.blueprint[data-focus="flujo"] .p-flujo{filter:drop-shadow(0 0 10px var(--accent))}
+.bp-cap{font-family:var(--display);font-style:italic;font-size:17px;min-height:2.8em;color:var(--ink)}
+.bp-hint{font-size:12px;color:var(--ink-soft);margin-top:8px;letter-spacing:.08em}
+
+.pillars{display:grid;gap:16px;perspective:1100px}
+.pillar{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;backdrop-filter:blur(10px);transition:transform .25s ease-out,box-shadow .5s var(--ease),border-color .4s;cursor:pointer;overflow:hidden}
+.pillar::after{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),rgba(185,174,228,.35),transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.pillar:hover,.pillar.active{box-shadow:0 24px 50px -28px var(--shadow);border-color:var(--line-strong)}
+.pillar:hover::after,.pillar.active::after{opacity:1}
+.pillar-h{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.pillar .n{font-family:var(--display);font-size:13px;letter-spacing:.28em;color:var(--ink-soft)}
+.pillar h3{font-family:var(--display);font-weight:400;font-size:25px}
+.pillar p{color:var(--ink-soft);font-size:14.5px}
+.pillar .bar{height:3px;width:48px;border-radius:3px;margin-top:14px;background:var(--grad);transition:width .5s var(--ease)}
+.pillar:hover .bar,.pillar.active .bar{width:92px}
+
+/* Laboratorio de 8 sistemas + Adaptabilidad Móvil */
+.lab{position:relative;margin-top:48px;border:1px solid var(--line);border-radius:28px;background:var(--glass);backdrop-filter:blur(14px);overflow:hidden;box-shadow:0 36px 80px -48px var(--shadow)}
+.lab-top{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;max-width:100%}
+.tab{border:1px solid transparent;background:none;border-radius:99px;padding:7px 14px;font:500 13px var(--ui);color:var(--ink-soft);transition:all .35s var(--ease);white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--accent-soft)}
+.tab[aria-selected=true]{background:var(--ink);color:var(--pearl)}
+.brandbox{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12px;color:var(--ink-soft)}
+.brandbox input{width:190px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:99px;padding:7px 14px;font:400 12.5px var(--ui)}
+.sw{display:flex;gap:6px}
+.sw button{width:20px;height:20px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line-strong);transition:transform .35s var(--ease)}
+.sw button:hover{transform:scale(1.22)}.sw button[aria-pressed=true]{box-shadow:0 0 0 2px var(--ink)}
+.vp-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:99px;padding:2px;background:var(--paper)}
+.vp-toggle button{border:0;background:none;border-radius:99px;padding:4px 10px;font-size:11.5px;color:var(--ink-soft);transition:all .35s var(--ease)}
+.vp-toggle button[aria-pressed=true]{background:var(--ink);color:var(--pearl)}
+
+.panel-wrap{padding:24px;transition:padding .5s var(--ease)}
+.panel-wrap.mobile{display:flex;justify-content:center;padding:28px 16px;background:radial-gradient(circle at 50% 0%,var(--accent-soft),transparent 70%)}
+.device{width:100%;transition:max-width .6s var(--ease),border-radius .6s var(--ease),box-shadow .6s var(--ease),padding .6s var(--ease)}
+.panel-wrap.mobile .device{max-width:390px;border:6px solid var(--ink);border-radius:36px;padding:12px 10px 16px;background:var(--pearl);box-shadow:0 34px 70px -25px var(--shadow);position:relative}
+.panel-wrap.mobile .device::before{content:"";display:block;width:82px;height:5px;border-radius:5px;background:var(--line-strong);margin:2px auto 12px}
+.panel-wrap.mobile .cols{grid-template-columns:1fr!important}
+.panel-wrap.mobile .menu{grid-template-columns:1fr}
+.panel-wrap.mobile .kpis{grid-template-columns:1fr 1fr}
+.panel-wrap.mobile .rooms{grid-template-columns:repeat(3,1fr)}
+
+.panel-demo{display:none;min-height:420px;animation:fade .55s var(--ease)}
+.panel-demo.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+.app{border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
+.app-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
+.app-h b{font-family:var(--display);font-weight:400;font-size:16px;color:var(--ink);letter-spacing:.03em}
+.app-h .pw{letter-spacing:.14em;font-size:10px;text-align:right}
+.app-b{padding:18px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col h4{font:600 11px var(--ui);letter-spacing:.22em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:12px}
+.btn{border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:12px;padding:10px 14px;font:500 13px var(--ui);transition:all .35s var(--ease)}
+.btn:hover{background:var(--accent);color:var(--accent-ink);border-color:transparent;transform:translateY(-1px)}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn.pri:hover{filter:brightness(.95)}
+.btn.sm{padding:6px 11px;font-size:12px;border-radius:9px}
+.btn[disabled]{opacity:.42;pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{border:1px solid var(--line-strong);background:transparent;border-radius:99px;padding:5px 12px;font-size:12px;color:var(--ink-soft);transition:all .3s var(--ease)}
+.chip.on,.chip[aria-pressed=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.menu .btn{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.menu .btn small{font-family:var(--mono);opacity:.8}
+.list{list-style:none;display:grid;gap:6px;margin-top:10px;font-size:13.5px;min-height:48px}
+.list li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--accent-soft);animation:pop .45s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(6px)}}
+.total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-strong);font-weight:600}
+.split-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:10px;font-size:12.5px;color:var(--ink-soft)}
+.ticket{border:1px solid var(--line-strong);border-radius:14px;padding:13px;margin-bottom:10px;animation:pop .5s var(--ease);background:var(--paper)}
+.ticket .th{display:flex;justify-content:space-between;align-items:center;font:500 12px var(--mono);margin-bottom:5px}
+.ticket .it{font-size:13px;color:var(--ink-soft)}
+.st{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:500;letter-spacing:.04em;background:var(--lavender);color:#1E1930;transition:background .4s}
+.st.cook{background:var(--warn-bg);color:var(--warn-ink)}.st.done{background:var(--ok-bg);color:var(--ok-ink)}
+.empty{color:var(--ink-soft);font-size:13px;font-style:italic;padding:10px 0}
+.toast{position:absolute;right:22px;bottom:22px;background:var(--ink);color:var(--pearl);padding:11px 18px;border-radius:14px;font-size:13px;transform:translateY(28px);opacity:0;transition:all .5s var(--ease);pointer-events:none;z-index:10;box-shadow:0 16px 34px -10px var(--shadow)}
+.toast.show{transform:none;opacity:1}
+
+.big-n{font-family:var(--display);font-weight:300;font-size:50px;line-height:1.05}
+.badge{display:inline-flex;gap:6px;align-items:center;padding:5px 12px;border-radius:99px;font-size:12px;font-weight:500;background:var(--lavender);color:#1E1930}
+.badge.ok{background:var(--ok-bg);color:var(--ok-ink)}.badge.warn{background:var(--warn-bg);color:var(--warn-ink)}
+.member{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px;border:1px solid var(--line-strong);border-radius:14px;margin-top:12px;animation:pop .5s var(--ease);background:var(--paper)}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--display);font-size:18px;color:#1E1930;flex:none}
+.meter{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;width:0;background:var(--accent);border-radius:8px;transition:width .8s var(--ease),background .4s}
+.meter i.low{background:#DE8B78}
+.row{display:grid;grid-template-columns:1fr auto 64px;gap:12px;align-items:center;padding:10px 0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row .b{font-family:var(--mono);font-size:12px;color:var(--ink-soft);text-align:right}
+.steps-live{list-style:none;display:grid;gap:0;margin-top:4px}
+.steps-live li{display:flex;gap:14px;align-items:center;padding:11px 0;position:relative;color:var(--ink-soft);font-size:14px;transition:color .5s}
+.steps-live li::before{content:"";width:13px;height:13px;border-radius:50%;border:1.5px solid var(--ink-soft);flex:none;transition:all .5s var(--ease)}
+.steps-live li:not(:last-child)::after{content:"";position:absolute;left:6px;top:29px;height:calc(100% - 16px);width:1px;background:var(--line)}
+.steps-live li.on{color:var(--ink)}
+.steps-live li.on::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.room{border:1px solid var(--line-strong);border-radius:12px;padding:10px 8px;text-align:center;font-size:12px;background:var(--paper);transition:all .35s var(--ease)}
+.room b{display:block;font-family:var(--mono);font-size:13px}
+.room.occ{background:var(--accent-soft);border-color:var(--accent)}
+.room.cln{background:var(--warn-bg);color:var(--warn-ink);border-color:transparent}
+.room.fre{background:var(--ok-bg);color:var(--ok-ink);border-color:transparent}
+.chart{display:flex;align-items:flex-end;gap:6px;height:120px;padding-top:10px}
+.chart i{flex:1;background:var(--accent);border-radius:6px 6px 2px 2px;min-height:6px;transition:height .7s var(--ease)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.kpi{border:1px solid var(--line-strong);border-radius:12px;padding:10px 12px;font-size:12px;color:var(--ink-soft);background:var(--paper)}
+.kpi b{display:block;font-family:var(--display);font-weight:400;font-size:21px;color:var(--ink)}
+.field-in{width:100%;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:12px;padding:9px 13px;font:400 13px var(--ui)}
+.note{margin-top:14px;font-size:12px;color:var(--ink-soft)}
+
+/* Configurador "Tu Proyecto a Medida" */
+.arch{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:46px}
+.arch-q{background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:28px;backdrop-filter:blur(12px)}
+.arch-q h3{font-family:var(--display);font-weight:400;font-size:21px;margin-bottom:12px}
+.arch-q .blk+.blk{margin-top:24px}
+.arch-res{background:var(--card);border:1px solid var(--line-strong);border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;box-shadow:0 30px 70px -42px var(--shadow);position:relative;overflow:hidden}
+.arch-res::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--grad)}
+.arch-res h3{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.2}
+.mods{display:flex;flex-wrap:wrap;gap:8px}
+.mod{padding:6px 12px;border-radius:99px;font-size:12px;background:var(--accent-soft);border:1px solid var(--line);font-weight:500}
+.flows{list-style:none;display:grid;gap:8px;font-size:14px;color:var(--ink-soft)}
+.flows li{padding-left:20px;position:relative}.flows li::before{content:"✦";position:absolute;left:0;color:var(--ink);font-size:11px}
+
+/* Antes y después (contraste corregido para día y noche) */
+.ba{position:relative;margin-top:48px;height:clamp(330px,42vw,420px);border-radius:28px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 40px 80px -50px var(--shadow);user-select:none}
+.ba .old,.ba .neo{position:absolute;inset:0;padding:64px clamp(22px,4vw,44px) clamp(22px,4vw,44px)}
+.ba .old{background:#F3EEDF;color:#3E374B;background-image:repeating-linear-gradient(transparent 0 31px,rgba(110,130,190,.28) 31px 32px);font-family:"Fraunces",serif;font-style:italic;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba .old h3{font-size:clamp(20px,3vw,30px);font-weight:400;margin-bottom:10px}
+.ba .old p{font-size:clamp(14px,1.75vw,18.5px);line-height:32px;transform:rotate(-.5deg)}
+.ba .old s{opacity:.55}
+.ba .old .tm{position:absolute;left:clamp(22px,4vw,44px);bottom:22px;font:500 clamp(28px,4.5vw,52px) var(--display);font-style:normal;color:#935C4C}
+.ba .neo{background:var(--card);clip-path:inset(0 0 0 var(--pos,50%));display:grid;align-content:start;gap:14px}
+.ba .neo h3{font-family:var(--display);font-weight:400;font-size:clamp(20px,3vw,30px);color:var(--ink)}
+.ba .neo .kpi{background:var(--accent-soft);border-color:var(--line-strong)}
+.ba .neo .chart{padding-right:92px}
+.ba .neo .chart i{background:var(--grad);opacity:1}
+.ba .neo .tm{position:absolute;right:clamp(22px,4vw,44px);bottom:22px;font:500 clamp(28px,4.5vw,52px) var(--display);color:var(--ink)}
+.ba .grip{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--ink);z-index:3;transform:translateX(-1px)}
+.ba .grip::after{content:"⇆";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:var(--ink);color:var(--pearl);display:grid;place-items:center;font-size:17px;box-shadow:0 10px 28px -6px var(--shadow)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.ba .lbl{position:absolute;top:18px;font:600 11px var(--ui);letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;border-radius:99px;background:var(--glass);backdrop-filter:blur(8px);border:1px solid var(--line);z-index:2}
+.ba .l1{left:18px}.ba .l2{right:18px}
+
+/* Capacidades */
+.cares{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:46px}
+.care{padding:26px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--glass);transition:transform .6s var(--ease),border-color .4s}
+.care:hover{transform:translateY(-6px);border-color:var(--line-strong)}
+.care svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.care h3{font-family:var(--display);font-weight:400;font-size:20px;margin-bottom:6px}
+.care p{font-size:14px;color:var(--ink-soft)}
+
+/* Método y Preguntas */
+.timeline{position:relative;margin-top:54px;padding-left:44px}
+.timeline::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.timeline .fill{position:absolute;left:11px;top:6px;width:1px;height:0;background:var(--ink)}
+.tl{position:relative;padding:0 0 48px}
+.tl::before{content:"";position:absolute;left:-39px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--pearl);border:1.5px solid var(--ink-soft);transition:all .5s var(--ease)}
+.tl.in::before{background:var(--accent);border-color:var(--ink);box-shadow:0 0 0 7px var(--accent-soft)}
+.tl .k{font-family:var(--display);font-style:italic;font-size:15px;color:var(--ink-soft)}
+.tl h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,34px);margin:6px 0 8px}
+.tl p{color:var(--ink-soft);max-width:560px}
+
+.faqs{margin-top:48px;display:grid;gap:12px}
+.faq{border:1px solid var(--line);border-radius:18px;background:var(--glass);overflow:hidden}
+.faq button{width:100%;text-align:left;background:none;border:0;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-size:20px}
+.faq button span{font-family:var(--mono);font-size:18px;transition:transform .4s var(--ease)}
+.faq[aria-expanded=true] button span{transform:rotate(45deg)}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .5s var(--ease),padding .5s var(--ease);padding:0 24px;color:var(--ink-soft);font-size:15px}
+.faq[aria-expanded=true] .ans{max-height:220px;padding:0 24px 20px}
+
+/* Cierre */
+.close{text-align:center}
+.panel{max-width:1020px;margin:0 auto;border-radius:34px;background:var(--grad);padding:clamp(54px,8vw,96px) 28px;position:relative;overflow:hidden;color:#1E1930}
+.panel::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--px,20%) var(--py,0%),rgba(255,255,255,.65),transparent 55%);transition:background .3s}
+.panel>*{position:relative;z-index:1}
+.panel .eyebrow,.panel .sub,.panel h2 em{color:#3F3858}
+.panel h2{margin:0 auto}.panel .sub{margin-left:auto;margin-right:auto}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:34px}
+.mail{display:inline-block;font-family:var(--display);font-size:clamp(20px,2.8vw,32px);border-bottom:1px solid #1E1930;padding-bottom:3px;transition:letter-spacing .45s var(--ease)}
+.mail:hover{letter-spacing:.04em}
+.copy-btn{border:1px solid rgba(30,25,48,.35);background:rgba(255,255,255,.55);color:#1E1930;border-radius:99px;padding:8px 16px;font-size:12.5px;font-weight:500;transition:all .35s var(--ease)}
+.copy-btn:hover{background:#1E1930;color:#FAF7F2}
+footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:12px;letter-spacing:.14em;color:var(--ink-soft);border-top:1px solid var(--line)}
+
+/* Paleta de comandos */
+.cmd{position:fixed;inset:0;z-index:90;background:rgba(19,16,29,.52);backdrop-filter:blur(8px);display:none;place-items:start center;padding-top:14vh}
+.cmd.on{display:grid;animation:fade .35s var(--ease)}
+.cmd-box{width:min(560px,92vw);background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.55)}
+.cmd input{width:100%;border:0;border-bottom:1px solid var(--line);background:none;padding:18px 22px;font:400 16px var(--ui);color:var(--ink);outline:0}
+.cmd ul{list-style:none;max-height:330px;overflow:auto;padding:8px}
+.cmd li{padding:11px 16px;border-radius:12px;cursor:pointer;display:flex;justify-content:space-between;font-size:14px}
+.cmd li.sel{background:var(--accent-soft)}
+.cmd li span{font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+
+@media(max-width:960px){.essence-grid,.arch{grid-template-columns:1fr}.links{display:none}}
+@media(max-width:780px){
+  .cols{grid-template-columns:1fr}.tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}.brandbox input{width:170px}
+  .kpis{grid-template-columns:1fr 1fr}.rooms{grid-template-columns:repeat(3,1fr)}
+  .ba{height:380px}.ba .old .tm,.ba .neo .tm{font-size:32px}
+}
+@media(max-width:560px){
+  .vp-toggle,.kbd{display:none}
+  nav{padding:14px 12px;gap:8px}
+  .brand{font-size:12px;letter-spacing:.14em;gap:7px}.brand svg{width:24px;height:24px}
+  .tools{gap:5px}.pill{padding:6px 10px;font-size:11.5px}
+  h1{font-size:clamp(28px,8.5vw,38px);letter-spacing:.14em;padding-left:.14em}
+  .cta{padding:13px 22px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mark .facet,.mark .flow{stroke-dashoffset:0}h1 span{opacity:1;transform:none}.rv{opacity:1;transform:none}.veil{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cur-dot" id="dot"></div><div class="cur-ring" id="ring"></div>
+
+<div class="veil" aria-hidden="true">
+  <svg viewBox="0 0 120 120"><defs><linearGradient id="zv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FAEE0"/><stop offset=".5" stop-color="#B0A3DE"/><stop offset="1" stop-color="#E6AC99"/></linearGradient></defs>
+  <path class="d" pathLength="1" d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zv)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="d" pathLength="1" d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#6F5BAE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="zg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FAEE0"/><stop offset=".5" stop-color="#B0A3DE"/><stop offset="1" stop-color="#E6AC99"/></linearGradient>
+    <linearGradient id="zgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B9CDEB" stop-opacity=".55"/><stop offset="1" stop-color="#F3CDBF" stop-opacity=".55"/></linearGradient>
+  </defs>
+</svg>
+
+<nav>
+  <a class="brand" href="#inicio" aria-label="Zaphyrel">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 91 20 L 92.8 25.2 L 98 27 L 92.8 28.8 L 91 34 L 89.2 28.8 L 84 27 L 89.2 25.2 Z" fill="url(#zg)"/>
+    </svg>
+    ZAPHYREL
+  </a>
+  <div class="links">
+    <a href="#esencia">Esencia</a>
+    <a href="#lab">Sistemas en vivo</a>
+    <a href="#arquitecto">Tu proyecto</a>
+    <a href="#antes">Antes y después</a>
+    <a href="#metodo">Método</a>
+  </div>
+  <div class="tools">
+    <button class="pill" id="cmdBtn" aria-label="Abrir paleta de comandos">Buscar<span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" aria-pressed="false" aria-label="Cambiar a modo noche">☾</button>
+    <button class="pill" id="sound" aria-pressed="false" aria-label="Activar sonido de marca">♪ Sonido</button>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <canvas id="flow" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div class="stage">
+      <div class="halo" aria-hidden="true"></div>
+      <svg class="mark" id="mark" viewBox="0 0 120 120" role="img" aria-label="Emblema Zaphyrel (toca para destello)">
+        <path class="facet" pathLength="1" d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="facet" pathLength="1" d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#zgs)" stroke-width="1.25" stroke-linejoin="round"/>
+        <path class="facet" pathLength="1" d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#zgs)" stroke-width="1.15" stroke-linecap="round"/>
+        <path class="flow" pathLength="1" d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="flow" pathLength="1" d="M 21 77 H 31" fill="none" stroke="url(#zg)" stroke-width="2" stroke-linecap="round"/>
+        <path class="glint" d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#zg)"/>
+      </svg>
+    </div>
+    <h1 id="title" aria-label="ZAPHYREL"></h1>
+    <p class="tag"><b>Esencia que permanece</b> e innovación que fluye</p>
+    <p class="lead">Sistemas, plataformas y aplicaciones pensadas a la medida de cada oficio. Sin palabras vacías: prueba aquí mismo cómo trabaja lo que construimos.</p>
+    <div class="cta-row">
+      <a class="cta mag" href="#lab">PROBAR 8 SISTEMAS <span>→</span></a>
+      <a class="cta ghost mag" href="#arquitecto">DISEÑA EL TUYO</a>
+    </div>
+    <div class="status" aria-live="off"><i></i><span id="statusTxt">8 sistemas listos · respuesta en 11 ms</span></div>
+  </div>
+</header>
+
+<section id="esencia">
+  <div class="wrap">
+    <p class="eyebrow rv">Anatomía de la marca</p>
+    <h2 class="rv">Zéfiro, la brisa que fluye. Zafiro, la gema que perdura. <em>Todo parte del mismo trazo.</em></h2>
+    <p class="sub rv">Cada línea del emblema explica cómo diseñamos software: una estructura firme que protege lo valioso de tu negocio y un trazo fluido que renueva tu día a día. Toca cada pilar para verlo.</p>
+
+    <div class="essence-grid">
+      <div class="blueprint rv" id="bp" data-focus="">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <g class="bp-part p-esencia">
+            <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#zgs)" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#zgs)" stroke-width="1.3" stroke-linecap="round"/>
+          </g>
+          <g class="bp-part p-flujo">
+            <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 21 77 H 31" fill="none" stroke="url(#zg)" stroke-width="2.2" stroke-linecap="round"/>
+          </g>
+          <g class="bp-part p-inno">
+            <path d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#zg)"/>
+            <circle cx="91" cy="27" r="13" fill="none" stroke="var(--accent)" stroke-dasharray="3 3" stroke-width="1"/>
+          </g>
+        </svg>
+        <p class="bp-cap" id="bpCap">Toca un pilar para inspeccionar el símbolo</p>
+        <p class="bp-hint">GEOMETRÍA · SONIDO · INTERFAZ</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar tilt rv" data-bp="esencia" data-cap="Corona facetada abierta: lo sólido de tu oficio permanece y deja entrar el cambio.">
+          <div class="pillar-h"><span class="n">I</span><h3>Esencia</h3></div>
+          <p>Respetamos cómo ya funciona tu negocio. La arquitectura del sistema se adapta a tu forma real de trabajar, no al revés.</p>
+          <div class="bar"></div>
+        </article>
+        <article class="pillar tilt rv" style="--d:.1s" data-bp="inno" data-cap="Destello de refracción: soluciones que resuelven en silencio y sorprenden a quien las usa.">
+          <div class="pillar-h"><span class="n">II</span><h3>Innovación</h3></div>
+          <p>Llevamos automatización útil a los puntos exactos donde hoy se pierde tiempo, dinero o tranquilidad.</p>
+          <div class="bar"></div>
+        </article>
+        <article class="pillar tilt rv" style="--d:.2s" data-bp="flujo" data-cap="Z fluida con estela de brisa: información conectada de punta a punta sin tropiezos.">
+          <div class="pillar-h"><span class="n">III</span><h3>Flujo</h3></div>
+          <p>Cada área conversa con la siguiente al instante: recepción, caja, cocina, almacén o gerencia en la misma sintonía.</p>
+          <div class="bar"></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="wrap">
+    <p class="eyebrow rv">Laboratorio en vivo</p>
+    <h2 class="rv">Ocho sistemas funcionando ahora. <em>Pruébalos en escritorio o celular.</em></h2>
+    <p class="sub rv">Cada pestaña atiende el problema que más importa mejorar en ese rubro. Escribe el nombre de tu negocio, elige un color o cambia a <b>Vista móvil</b> para comprobar la adaptabilidad.</p>
+
+    <div class="lab rv" id="labBox">
+      <div class="lab-top">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-t="table">Restaurante</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="fit">Gimnasio</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="stock">Inventario</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="stay">Hotel</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="care">Clínica y citas</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="lib">Instituto / Biblioteca</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="shop">Catálogo web</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="ledger">Cuentas</button>
+        </div>
+        <div class="brandbox">
+          <input id="bizName" type="text" maxlength="22" placeholder="Nombre de tu negocio" aria-label="Nombre de tu negocio">
+          <div class="sw" id="sw" aria-label="Color de tu marca"></div>
+          <div class="vp-toggle" role="group" aria-label="Vista previa adaptable">
+            <button id="vpDesk" aria-pressed="true">Escritorio</button>
+            <button id="vpMob" aria-pressed="false">Móvil</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-wrap" id="pWrap">
+        <div class="device">
+          <!-- 1. Restaurante -->
+          <div class="panel-demo on" id="p-table">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL TABLE</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Pedido · Selecciona mesa</h4>
+                  <div class="chips" id="mesaChips">
+                    <button class="chip on" data-m="Mesa 2">Mesa 2</button>
+                    <button class="chip" data-m="Mesa 4">Mesa 4</button>
+                    <button class="chip" data-m="Para llevar">Para llevar</button>
+                  </div>
+                  <div class="menu" id="menu"></div>
+                  <ul class="list" id="order"><li class="empty" style="background:none">Toca un plato para añadirlo</li></ul>
+                  <div class="total"><span>Cuenta automática</span><span id="tot">S/ 0.00</span></div>
+                  <div class="split-row">
+                    <span>Dividir entre <b id="splitN">2</b> personas: <b id="splitV">S/ 0.00</b></span>
+                    <button class="btn sm" id="splitBtn">Cambiar personas</button>
+                  </div>
+                  <button class="btn pri" id="send" style="margin-top:12px;width:100%" disabled>Enviar a cocina sin olvidar nada</button>
+                </div>
+                <div class="col">
+                  <h4>Cocina y caja · tiempo real</h4>
+                  <div id="kitchen"><p class="empty">Sin pedidos. Al enviar uno, cocina lo ve al instante y caja queda lista.</p></div>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 2. Gimnasio -->
+          <div class="panel-demo" id="p-fit">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL FIT</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Ingreso rápido con QR</h4>
+                  <button class="btn pri" id="scan" style="width:100%">Escanear QR de un socio</button>
+                  <div id="member"><p class="empty">Esperando un código QR…</p></div>
+                  <div id="renewBox" style="margin-top:10px;display:none"><button class="btn sm pri" id="renewBtn">Renovar membresía en 1 clic</button></div>
+                </div>
+                <div class="col">
+                  <h4>Aforo en vivo</h4>
+                  <div class="big-n"><span id="aforo">0</span><span style="font-size:21px;color:var(--ink-soft)"> / 60</span></div>
+                  <div class="meter"><i id="aforoBar"></i></div>
+                  <h4 style="margin-top:18px">Últimos ingresos</h4>
+                  <ul class="list" id="log"><li class="empty" style="background:none">Sin movimientos</li></ul>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 3. Inventario -->
+          <div class="panel-demo" id="p-stock">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL STOCK</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Existencias y alertas</h4>
+                  <div id="stockRows"></div>
+                </div>
+                <div class="col">
+                  <h4>Reposición automática</h4>
+                  <ul class="list" id="po"><li class="empty" style="background:none">Todo sobre el mínimo. Cuando algo baje, se arma la orden aquí.</li></ul>
+                  <button class="btn pri" id="recv" style="margin-top:12px;width:100%" disabled>Recibir pedido y actualizar Kardex</button>
+                  <p class="note" id="kardexTxt">Último movimiento: en espera.</p>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 4. Hotel -->
+          <div class="panel-demo" id="p-stay">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL STAY</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Check-in digital sin filas</h4>
+                  <ul class="steps-live" id="stayS">
+                    <li>Reserva verificada</li><li>Habitación asignada</li><li>Llave digital enviada al celular</li><li>Recepción y limpieza sincronizadas</li>
+                  </ul>
+                  <button class="btn pri" id="checkin" style="margin-top:12px;width:100%">Simular llegada de huésped</button>
+                </div>
+                <div class="col">
+                  <h4>Mapa vivo (toca para cambiar estado)</h4>
+                  <div class="rooms" id="rooms"></div>
+                  <div class="kpis" style="grid-template-columns:1fr 1fr">
+                    <div class="kpi">Ocupadas<b id="occ">3</b></div><div class="kpi">Disponibles<b id="avl">4</b></div>
+                  </div>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 5. Clínica y citas -->
+          <div class="panel-demo" id="p-care">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL CARE</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Nueva cita sin cruces de horario</h4>
+                  <div style="display:grid;gap:8px">
+                    <input class="field-in" id="carePat" placeholder="Nombre del paciente (ej. Lucía Vega)" maxlength="28">
+                    <div class="chips" id="slotChips" style="margin-bottom:4px">
+                      <button class="chip on" data-h="10:00">10:00</button>
+                      <button class="chip" data-h="10:30">10:30</button>
+                      <button class="chip" data-h="11:00">11:00</button>
+                      <button class="chip" data-h="11:30">11:30</button>
+                    </div>
+                    <button class="btn pri" id="bookBtn">Agendar y enviar recordatorio</button>
+                  </div>
+                </div>
+                <div class="col">
+                  <h4>Sala de espera · toca para avanzar</h4>
+                  <div id="careList"></div>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 6. Instituto / Biblioteca -->
+          <div class="panel-demo" id="p-lib">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL LIB</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Catálogo y préstamo en 1 clic</h4>
+                  <input class="field-in" id="libQ" placeholder="Buscar libro o tema (ej. Redes, Obras, SQL)" style="margin-bottom:10px">
+                  <div id="libRes"></div>
+                </div>
+                <div class="col">
+                  <h4>Préstamos activos y devoluciones</h4>
+                  <ul class="list" id="libLoans"></ul>
+                  <p class="note">Detecta entregas vencidas al instante y calcula fecha de retorno.</p>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 7. Catálogo Web / Pedidos -->
+          <div class="panel-demo" id="p-shop">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL SHOP</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Vitrina sincronizada con stock</h4>
+                  <div class="menu" id="shopGrid"></div>
+                </div>
+                <div class="col">
+                  <h4>Tu pedido listo para confirmar</h4>
+                  <ul class="list" id="shopCart"><li class="empty" style="background:none">Agrega un producto para generar el resumen</li></ul>
+                  <div class="total"><span>Total</span><span id="shopTot">S/ 0.00</span></div>
+                  <button class="btn pri" id="shopSend" style="margin-top:12px;width:100%" disabled>Confirmar pedido automático</button>
+                  <p class="note" id="shopMsg"></p>
+                </div>
+              </div></div></div>
+          </div>
+
+          <!-- 8. Cuentas -->
+          <div class="panel-demo" id="p-ledger">
+            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL LEDGER</span></div>
+              <div class="app-b"><div class="cols">
+                <div class="col">
+                  <h4>Flujo del día · registra y observa</h4>
+                  <div class="big-n" id="sales">S/ 0</div>
+                  <div style="display:flex;gap:8px;margin-top:10px">
+                    <button class="btn sm pri" id="addSale">+ Venta S/ 120</button>
+                    <button class="btn sm" id="addExp">- Gasto S/ 45</button>
+                  </div>
+                  <div class="chart" id="chart"></div>
+                </div>
+                <div class="col">
+                  <h4>Informe mensual instantáneo</h4>
+                  <button class="btn pri" id="report" style="width:100%">Generar informe de ingresos, costos e IGV</button>
+                  <div id="rep"><p class="empty">Presiona para armar el balance del mes sin hojas manuales.</p></div>
+                </div>
+              </div></div></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+    <p class="note rv">Cifras y nombres ilustrativos para que pruebes el funcionamiento real de cada módulo.</p>
+  </div>
+</section>
+
+<section id="arquitecto">
+  <div class="wrap">
+    <p class="eyebrow rv">Tu proyecto a medida</p>
+    <h2 class="rv">¿Tu negocio es distinto? <em>Arma aquí tu propia arquitectura.</em></h2>
+    <p class="sub rv">Esos ocho sistemas son solo puntos de partida. Elige o escribe tu rubro y lo que hoy te quita tiempo: diseñamos la propuesta base en vivo.</p>
+
+    <div class="arch rv">
+      <div class="arch-q">
+        <div class="blk">
+          <h3>1. ¿Qué hace tu negocio o proyecto?</h3>
+          <div class="chips" id="archInd">
+            <button class="chip on" data-ind="Restaurante o cafetería">Restaurante / Café</button>
+            <button class="chip" data-ind="Gimnasio o centro deportivo">Gimnasio</button>
+            <button class="chip" data-ind="Tienda o distribuidora">Tienda / Almacén</button>
+            <button class="chip" data-ind="Clínica o consultorio">Clínica / Consultorio</button>
+            <button class="chip" data-ind="Hotel o alojamiento">Hotel / Hospedaje</button>
+            <button class="chip" data-ind="Instituto o biblioteca">Instituto / Biblioteca</button>
+            <button class="chip" data-ind="Plataforma digital o streaming">Plataforma / Streaming</button>
+            <button class="chip" data-ind="Empresa de servicios u obra">Servicios / Ingeniería</button>
+          </div>
+          <input class="field-in" id="archCustom" placeholder="O escribe otro proyecto tuyo (ej. Veterinaria, Ferretería, Academia…)" maxlength="45">
+        </div>
+        <div class="blk">
+          <h3>2. ¿Qué quieres mejorar primero?</h3>
+          <div class="chips" id="archPain">
+            <button class="chip on" data-p="cuentas">Cuentas e informes automáticos</button>
+            <button class="chip on" data-p="pedidos">Pedidos o citas sin errores</button>
+            <button class="chip" data-p="stock">Stock y alertas de compras</button>
+            <button class="chip" data-p="web">Web o app propia para clientes</button>
+            <button class="chip" data-p="equipo">Agilidad para colaboradores</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-res" id="archOut">
+        <div>
+          <p class="eyebrow" style="margin-bottom:8px">Propuesta base generada</p>
+          <h3 id="archTitle">Sistema para Restaurante o cafetería</h3>
+          <p class="sub" style="margin-top:8px;font-size:14.5px" id="archDesc">Conexión directa entre atención, cocina/área interna, inventarios y cierre de caja.</p>
+          <p class="eyebrow" style="margin:18px 0 8px">Módulos que se conectan</p>
+          <div class="mods" id="archMods"></div>
+          <p class="eyebrow" style="margin:18px 0 8px">Qué pasa a ser automático</p>
+          <ul class="flows" id="archFlows"></ul>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+          <span style="font-size:12.5px;color:var(--ink-soft)" id="archSave">Ahorro operativo estimado: ~8 a 12 h/semana</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn sm" id="archCopy">Copiar resumen</button>
+            <a class="btn sm pri" id="archMail" href="#contacto">Cotizar esta arquitectura</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="antes">
+  <div class="wrap">
+    <p class="eyebrow rv">Antes y después</p>
+    <h2 class="rv">Del cuaderno al sistema, <em>en un solo gesto.</em></h2>
+    <p class="sub rv">Desliza para comparar cómo termina el día un negocio anotando a mano frente a un sistema construido a su medida.</p>
+    <div class="ba rv" id="ba" style="--pos:50%">
+      <div class="old"><h3>Cierre de caja, a mano</h3>
+        <p>Lunes — 14 mesas, <s>43</s> 45 platos…<br>Sumar boletas, <s>revisar</s> volver a sumar…<br>¿Faltan S/ 20? Buscar en el cuaderno…<br>Copiar los totales a otra hoja…</p>
+        <div class="tm">45 min</div></div>
+      <div class="neo"><h3>Cierre de caja, con sistema</h3>
+        <div class="kpis"><div class="kpi">Ventas<b>S/ 1,860</b></div><div class="kpi">Movimientos<b>45</b></div><div class="kpi">Diferencia<b>S/ 0</b></div></div>
+        <div class="chart" style="height:92px"><i style="height:40%"></i><i style="height:64%"></i><i style="height:50%"></i><i style="height:82%"></i><i style="height:100%"></i><i style="height:72%"></i><i style="height:58%"></i></div>
+        <div class="tm">3 s</div></div>
+      <span class="lbl l1">Antes</span><span class="lbl l2">Con Zaphyrel</span>
+      <div class="grip"></div>
+      <input type="range" min="6" max="94" value="50" id="baR" aria-label="Comparar antes y después">
+    </div>
+    <p class="note rv">Escenario ilustrativo.</p>
+
+    <div class="cares">
+      <div class="care rv"><svg viewBox="0 0 40 40"><path d="M20 5l13 5v9c0 8-6 14-13 16C13 33 7 27 7 19v-9z"/><path d="M14 20l4 4 8-9"/></svg><h3>Accesos por rol</h3><p>Cada persona ve y hace exactamente lo que corresponde a su puesto.</p></div>
+      <div class="care rv" style="--d:.06s"><svg viewBox="0 0 40 40"><path d="M8 28a8 8 0 0 1 2-15 10 10 0 0 1 19 2 7 7 0 0 1 1 13z"/><path d="M20 20v9M16 25l4 4 4-4"/></svg><h3>Respaldo continuo</h3><p>Tu información protegida y recuperable, sin depender de un solo equipo.</p></div>
+      <div class="care rv" style="--d:.12s"><svg viewBox="0 0 40 40"><path d="M22 5L9 22h9l-2 13 13-17h-9z"/></svg><h3>Velocidad real</h3><p>Pantallas ligeras que responden al instante, incluso en computadoras modestas o datos móviles.</p></div>
+      <div class="care rv" style="--d:.18s"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="20" height="16" rx="2"/><rect x="24" y="16" width="10" height="16" rx="2"/><path d="M12 29h8"/></svg><h3>Adaptable a todo</h3><p>Funciona fluido en celular, tablet o escritorio sin perder comodidad.</p></div>
+      <div class="care rv" style="--d:.24s"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M13 22c2 4 12 4 14 0M15 15h.01M25 15h.01"/></svg><h3>Sin manuales eternos</h3><p>Diseñado para que cualquier colaborador lo entienda desde el primer día.</p></div>
+      <div class="care rv" style="--d:.30s"><svg viewBox="0 0 40 40"><path d="M7 33h26M11 33V17l9-8 9 8v16"/><path d="M17 33v-8h6v8"/></svg><h3>Tu propia marca</h3><p>Tu nombre, tus colores y tu voz. La ingeniería es nuestra, la identidad es tuya.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <div class="wrap">
+    <p class="eyebrow rv">Método y dudas</p>
+    <h2 class="rv">Un camino sereno, <em>de la idea al día a día.</em></h2>
+    <div class="timeline" id="tlWrap"><div class="fill" id="tlFill"></div>
+      <div class="tl"><span class="k">primero</span><h3>Escuchamos</h3><p>Conocemos tu oficio, a tu equipo y dónde hoy se frena el trabajo diario.</p></div>
+      <div class="tl"><span class="k">luego</span><h3>Construimos a la vista</h3><p>Entregas avances que puedes probar desde la primera semana, con tu marca y tus datos reales.</p></div>
+      <div class="tl"><span class="k">después</span><h3>Ponemos en marcha</h3><p>Acompañamos a tu equipo en el arranque para que la transición sea cómoda y sin tropiezos.</p></div>
+      <div class="tl" style="padding-bottom:0"><span class="k">siempre</span><h3>Evolucionamos contigo</h3><p>Cuando tu negocio crece o abre un local nuevo, el sistema crece al mismo ritmo.</p></div>
+    </div>
+
+    <div class="faqs rv" id="faqs">
+      <div class="faq" aria-expanded="false"><button>¿Puedo empezar con un módulo pequeño e ir sumando después?<span>+</span></button><div class="ans">Sí. Todo está pensado de forma modular: puedes iniciar por ejemplo con caja y pedidos o control de citas, y luego conectar inventario, sucursales o tienda web sin rehacer nada.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Funciona en celulares y computadoras que ya tenemos?<span>+</span></button><div class="ans">Sí. No necesitas equipos caros: las interfaces son ligeras, funcionan en el navegador desde cualquier celular, tablet o PC y se adaptan al tamaño de pantalla.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Mi sistema lleva mi propio logo y colores o los de Zaphyrel?<span>+</span></button><div class="ans">Siempre lleva tu marca, tu nombre y tus colores, tal como pudiste probar arriba en el Laboratorio.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Qué pasa si necesito algo que no está en los ocho ejemplos?<span>+</span></button><div class="ans">Los ejemplos son solo referencia. Diseñamos sistemas específicos para el flujo exacto de tu empresa, sea taller, veterinaria, constructora, agencia o comercio especializado.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="contacto">
+  <div class="panel rv" id="panel">
+    <p class="eyebrow">Conversemos</p>
+    <h2>Cuéntanos qué hace tu negocio. <em>Nosotros nos ocupamos de que fluya.</em></h2>
+    <p class="sub">Una primera charla, sin compromiso, para entender tu oficio y mostrarte un prototipo real.</p>
+    <div class="contact-actions">
+      <a class="mail" id="mailLink" href="mailto:hola@zaphyrel.com">hola@zaphyrel.com</a>
+      <button class="copy-btn" id="copyMail">Copiar correo</button>
+    </div>
+  </div>
+</section>
+
+<footer><span>© ZAPHYREL</span><span>ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</span></footer>
+
+<div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a un sistema, sección o acción…" autocomplete="off"><ul id="cmdList"></ul></div>
+</div>
+
+<audio id="sig" src="assets/zaphyrel-signature.wav" preload="auto"></audio>
+<audio id="chime" src="assets/zaphyrel-chime.wav" preload="auto"></audio>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* Sonido */
+let soundOn=false;
+const sig=$('#sig'),chime=$('#chime');
+function ping(v=.2){if(!soundOn)return;chime.currentTime=0;chime.volume=v;chime.play().catch(()=>{})}
+$('#sound').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.setAttribute('aria-pressed',soundOn);e.currentTarget.textContent=soundOn?'♪ Sonido activo':'♪ Sonido';if(soundOn){sig.currentTime=0;sig.volume=.55;sig.play().catch(()=>{})}});
+
+/* Modo noche */
+$('#night').addEventListener('click',e=>{const n=document.documentElement.dataset.theme!=='night';document.documentElement.dataset.theme=n?'night':'day';e.currentTarget.setAttribute('aria-pressed',n);e.currentTarget.textContent=n?'☀':'☾';ping()});
+
+/* Título y destello al tocar emblema */
+$('#title').innerHTML=[...'ZAPHYREL'].map((c,i)=>`<span style="--i:${i}" aria-hidden="true">${c}</span>`).join('');
+const mark=$('#mark');
+mark.addEventListener('click',()=>{mark.classList.remove('pulse');void mark.offsetWidth;mark.classList.add('pulse');if(soundOn){sig.currentTime=0;sig.volume=.45;sig.play().catch(()=>{})}});
+
+/* Anatomía del símbolo en #esencia */
+const bp=$('#bp'),bpCap=$('#bpCap');
+$$('.pillar[data-bp]').forEach(p=>{
+  const on=()=>{$$('.pillar').forEach(x=>x.classList.toggle('active',x===p));bp.dataset.focus=p.dataset.bp;bpCap.textContent=p.dataset.cap};
+  p.addEventListener('mouseenter',on);
+  p.addEventListener('click',()=>{on();ping(.12)});
+});
+
+/* Scroll reveal, progreso y línea temporal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv,.tl').forEach(el=>io.observe(el));
+const prog=$('#progress'),tlW=$('#tlWrap'),tlF=$('#tlFill');
+function onScroll(){
+  const h=document.documentElement;prog.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight||1)})`;
+  const r=tlW.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.6-r.top)/r.height));tlF.style.height=(p*(r.height-12))+'px';
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* Cursor, imán, inclinación 3D */
+const dot=$('#dot'),ring=$('#ring');let mx=0,my=0,rx=0,ry=0;
+addEventListener('pointermove',e=>{
+  if(e.pointerType==='touch')return;document.body.classList.add('has-cursor');mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;
+  ring.classList.toggle('big',!!e.target.closest('a,button,input,.tab,.care,.pillar,.room'));
+  if(!reduce){$$('.mag').forEach(b=>{const r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
+    const near=Math.hypot(dx,dy)<110;b.style.transform=near?`translate(${dx*.24}px,${dy*.32}px)`:'';b.style.transition=near?'transform .15s':'transform .6s cubic-bezier(.22,1,.36,1)'})}
+  const pn=$('#panel'),pr=pn.getBoundingClientRect();pn.style.setProperty('--px',((e.clientX-pr.left)/pr.width*100)+'%');pn.style.setProperty('--py',((e.clientY-pr.top)/pr.height*100)+'%');
+  if(!reduce){const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);mark.style.transform=`rotateY(${x*26}deg) rotateX(${-y*20}deg)`}
+});
+(function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
+$$('.tilt').forEach(c=>{
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');if(!reduce)c.style.transform=`rotateY(${(x-.5)*7}deg) rotateX(${(.5-y)*7}deg)`});
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+
+/* Partículas de brisa en Hero */
+(function(){
+  const cv=$('#flow'),c=cv.getContext('2d');if(reduce)return;
+  let W,H,P=[],pm={x:-999,y:-999},t=0;
+  const cols=['159,188,229','185,174,228','238,191,176','169,206,184'];
+  function size(){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);cv.width=r.width*d;cv.height=r.height*d;c.setTransform(d,0,0,d,0,0);W=r.width;H=r.height;
+    P=Array.from({length:Math.round(Math.min(130,W/9))},()=>({x:Math.random()*W,y:Math.random()*H,h:[],c:cols[Math.random()*4|0],s:.5+Math.random()}))}
+  size();addEventListener('resize',size);
+  $('.hero').addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();pm.x=e.clientX-r.left;pm.y=e.clientY-r.top});
+  let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+  function frame(){requestAnimationFrame(frame);if(!vis||document.hidden)return;t+=.004;c.clearRect(0,0,W,H);
+    for(const p of P){
+      const a=Math.sin(p.x*.004+t*3)*1.4+Math.cos(p.y*.005-t*2)*1.4;
+      let vx=Math.cos(a)*p.s*.9+.35,vy=Math.sin(a)*p.s*.9;
+      const dx=p.x-pm.x,dy=p.y-pm.y,d=Math.hypot(dx,dy);if(d<140){const f=(140-d)/140*2.4;vx+=dx/d*f;vy+=dy/d*f}
+      p.x+=vx;p.y+=vy;p.h.push([p.x,p.y]);if(p.h.length>14)p.h.shift();
+      if(p.x>W+20||p.y<-20||p.y>H+20||p.x<-20){p.x=-10;p.y=Math.random()*H;p.h=[]}
+      c.beginPath();p.h.forEach((q,i)=>i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]));c.strokeStyle=`rgba(${p.c},.82)`;c.lineWidth=1.5;c.stroke();
+    }}
+  frame();
+})();
+
+setInterval(()=>{$('#statusTxt').textContent=`8 sistemas listos · respuesta en ${8+Math.floor(Math.random()*8)} ms`},2400);
+
+/* ---------- Laboratorio ---------- */
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.k);toast.k=setTimeout(()=>t.classList.remove('show'),2600);ping(.22)};
+function switchTab(id){$$('.tab').forEach(x=>x.setAttribute('aria-selected',x.dataset.t===id));$$('.panel-demo').forEach(p=>p.classList.toggle('on',p.id==='p-'+id))}
+$$('.tab').forEach(b=>b.addEventListener('click',()=>{switchTab(b.dataset.t);ping(.12)}));
+
+/* Marca blanca + Vista móvil/escritorio */
+$('#bizName').addEventListener('input',e=>$$('.biz').forEach(el=>el.textContent=e.target.value.trim()||'Tu negocio'));
+[['#9FBCE5','159,188,229','Zafiro'],['#A9CEB8','169,206,184','Salvia'],['#EEBFB0','238,191,176','Durazno'],['#B9AEE4','185,174,228','Lavanda'],['#E6C473','230,196,115','Ámbar']].forEach(([hex,rgb,n],i)=>{
+  const b=document.createElement('button');b.style.background=hex;b.title=n;b.setAttribute('aria-label','Color '+n);b.setAttribute('aria-pressed',i===0);
+  b.onclick=()=>{document.documentElement.style.setProperty('--accent',hex);document.documentElement.style.setProperty('--accent-soft',`rgba(${rgb},.24)`);
+    $$('#sw button').forEach(x=>x.setAttribute('aria-pressed',x===b));ping(.12)};$('#sw').append(b)});
+$('#vpDesk').onclick=()=>{ $('#pWrap').classList.remove('mobile');$('#vpDesk').setAttribute('aria-pressed',true);$('#vpMob').setAttribute('aria-pressed',false);ping(.1)};
+$('#vpMob').onclick=()=>{ $('#pWrap').classList.add('mobile');$('#vpDesk').setAttribute('aria-pressed',false);$('#vpMob').setAttribute('aria-pressed',true);ping(.1)};
+
+/* 1. Restaurante */
+const dishes=[['Ceviche',38],['Lomo saltado',42],['Causa limeña',24],['Chicha morada',10]];let order=[],mesa='Mesa 2',split=2,tk=0;
+$('#mesaChips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;mesa=b.dataset.m;$$('#mesaChips .chip').forEach(c=>c.classList.toggle('on',c===b));ping(.08)});
+$('#menu').innerHTML=dishes.map((d,i)=>`<button class="btn" data-i="${i}">${d[0]}<small>S/ ${d[1]}</small></button>`).join('');
+function drawOrder(){
+  const tot=order.reduce((a,i)=>a+dishes[i][1],0);
+  $('#order').innerHTML=order.length?order.map(i=>`<li>${dishes[i][0]}<span>S/ ${dishes[i][1]}.00</span></li>`).join(''):'<li class="empty" style="background:none">Toca un plato para añadirlo</li>';
+  $('#tot').textContent='S/ '+tot.toFixed(2);$('#splitV').textContent='S/ '+(tot/split).toFixed(2);$('#send').disabled=!order.length;
+}
+$('#menu').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;order.push(+b.dataset.i);drawOrder();ping(.1)});
+$('#splitBtn').addEventListener('click',()=>{split=split===4?2:split+1;$('#splitN').textContent=split;drawOrder();ping(.08)});
+$('#send').addEventListener('click',()=>{
+  const k=$('#kitchen');if(k.querySelector('.empty'))k.innerHTML='';
+  const id=++tk,m=mesa,items=order.map(i=>dishes[i][0]).join(' · '),tot=order.reduce((a,i)=>a+dishes[i][1],0);order=[];drawOrder();
+  const el=document.createElement('div');el.className='ticket';
+  el.innerHTML=`<div class="th"><span>#${String(id).padStart(3,'0')} · ${m.toUpperCase()}</span><span class="st">Recibido</span></div><div class="it">${items} · <b>S/ ${tot.toFixed(2)}</b></div>`;
+  k.prepend(el);toast(`${m} enviada a cocina`);
+  const st=$('.st',el);
+  setTimeout(()=>{st.textContent='Preparando';st.className='st cook'},2000);
+  setTimeout(()=>{st.textContent='Listo · Boleta lista';st.className='st done';toast(`${m} lista · cuenta S/ ${tot.toFixed(2)}`)},5600);
+});
+
+/* 2. Gimnasio */
+const members=[{n:'Ana R.',p:'Plan anual · vigente',ok:true},{n:'Luis M.',p:'Plan mensual · vigente',ok:true},{n:'Carla P.',p:'Plan mensual · vencido hace 2 días',ok:false},{n:'Diego T.',p:'Pase diario · vigente',ok:true}];
+let mi=0,aforo=0,lastExp=null;
+function showMem(m){
+  const now=new Date().toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'});
+  $('#member').innerHTML=`<div class="member"><div class="avatar">${m.n[0]}</div><div><b>${m.n}</b><div style="font-size:13px;color:var(--ink-soft)">${m.p}</div></div><span class="badge ${m.ok?'ok':'warn'}" style="margin-left:auto">${m.ok?'Acceso permitido':'Membresía vencida'}</span></div>`;
+  const lg=$('#log');if(lg.querySelector('.empty'))lg.innerHTML='';
+  lg.insertAdjacentHTML('afterbegin',`<li>${m.n}<span>${m.ok?'✓ '+now:'⚠ '+now}</span></li>`);
+  $('#renewBox').style.display=m.ok?'none':'block';
+  if(m.ok){aforo++;$('#aforo').textContent=aforo;$('#aforoBar').style.width=(aforo/60*100)+'%'}
+}
+$('#scan').addEventListener('click',()=>{const m=members[mi++%members.length];lastExp=m.ok?null:m;showMem(m);toast(m.ok?`Bienvenida: ${m.n}`:`${m.n}: membresía vencida`)});
+$('#renewBtn').addEventListener('click',()=>{if(!lastExp)return;lastExp.ok=true;lastExp.p='Renovado hoy · vigente 30 días';showMem(lastExp);toast(`${lastExp.n} renovada al instante`);lastExp=null});
+
+/* 3. Inventario */
+const items=[['Café en grano',12,6,'kg'],['Leche',8,5,'L'],['Azúcar',20,8,'kg']];let po=[];
+function drawStock(){$('#stockRows').innerHTML=items.map((it,i)=>`<div class="row"><div>${it[0]}<div class="meter"><i class="${it[1]<=it[2]?'low':''}" style="width:${Math.min(100,it[1]/20*100)}%"></i></div></div><button class="btn sm" data-i="${i}">Vender 1</button><span class="b">${it[1]} ${it[3]}</span></div>`).join('')}
+drawStock();
+$('#stockRows').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const it=items[+b.dataset.i];if(it[1]<=0)return;it[1]--;ping(.08);
+  $('#kardexTxt').textContent=`Salida: -1 ${it[3]} de ${it[0]} (${new Date().toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'})})`;
+  if(it[1]<=it[2]&&!po.includes(it[0])){po.push(it[0]);toast(`${it[0]} bajo mínimo: orden sugerida`)}
+  drawStock();$('#po').innerHTML=po.length?po.map(n=>{const x=items.find(z=>z[0]===n);return`<li>${n}<span>pedir ${20-x[1]} ${x[3]}</span></li>`}).join(''):'<li class="empty" style="background:none">Todo sobre el mínimo.</li>';$('#recv').disabled=!po.length});
+$('#recv').addEventListener('click',()=>{items.forEach(it=>{if(po.includes(it[0]))it[1]=20});po=[];drawStock();$('#po').innerHTML='<li class="empty" style="background:none">Todo sobre el mínimo. Cuando algo baje, se arma la orden aquí.</li>';$('#recv').disabled=true;$('#kardexTxt').textContent='Reposición recibida y Kardex actualizado.';toast('Existencias actualizadas')});
+
+/* 4. Hotel */
+const roomData=[{id:'201',s:'occ',t:'Ocupada'},{id:'202',s:'fre',t:'Libre'},{id:'203',s:'cln',t:'Limpieza'},{id:'204',s:'fre',t:'Libre'},{id:'301',s:'occ',t:'Ocupada'},{id:'302',s:'occ',t:'Ocupada'},{id:'303',s:'fre',t:'Libre'},{id:'304',s:'fre',t:'Libre'}];
+function drawRooms(){
+  $('#rooms').innerHTML=roomData.map((r,i)=>`<button class="room ${r.s}" data-i="${i}"><b>${r.id}</b>${r.t}</button>`).join('');
+  $('#occ').textContent=roomData.filter(r=>r.s==='occ').length;$('#avl').textContent=roomData.filter(r=>r.s==='fre').length;
+}
+drawRooms();
+$('#rooms').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const r=roomData[+b.dataset.i],ord=[['fre','Libre'],['occ','Ocupada'],['cln','Limpieza']],nxt=ord[(ord.findIndex(x=>x[0]===r.s)+1)%3];r.s=nxt[0];r.t=nxt[1];drawRooms();toast(`Habitación ${r.id} → ${r.t}`)});
+let stayBusy=false;
+$('#checkin').addEventListener('click',()=>{if(stayBusy)return;stayBusy=true;const li=$$('#stayS li');li.forEach(l=>l.classList.remove('on'));
+  li.forEach((l,i)=>setTimeout(()=>{l.classList.add('on');ping(.1);if(i===3){const free=roomData.find(r=>r.s==='fre');if(free){free.s='occ';free.t='Ocupada';drawRooms();toast(`Llave enviada · Habitación ${free.id} ocupada`)}else toast('Check-in completado');stayBusy=false}},i*750))});
+
+/* 5. Clínica y citas */
+let careSlot='10:00';
+const appts=[{p:'Mateo Quispe',h:'09:30',s:'En consulta'},{p:'Sofía Paredes',h:'09:45',s:'En espera'}];
+const stFlow=['En espera','En consulta','Atendido · receta lista'];
+function drawCare(){
+  $('#careList').innerHTML=appts.map((a,i)=>`<div class="ticket" style="cursor:pointer" data-i="${i}"><div class="th"><span>${a.h} · ${a.p}</span><span class="st ${a.s==='En consulta'?'cook':a.s.startsWith('Atendido')?'done':''}">${a.s}</span></div><div class="it">Toca para avanzar estado</div></div>`).join('');
+}
+drawCare();
+$('#slotChips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;careSlot=b.dataset.h;$$('#slotChips .chip').forEach(c=>c.classList.toggle('on',c===b));ping(.08)});
+$('#bookBtn').addEventListener('click',()=>{
+  const p=$('#carePat').value.trim()||'Lucía Vega';
+  if(appts.some(a=>a.h===careSlot)){toast(`El horario ${careSlot} ya está ocupado; elige otro`);return}
+  appts.push({p,h:careSlot,s:'En espera'});$('#carePat').value='';drawCare();toast(`Cita confirmada para ${p} a las ${careSlot}`);
+});
+$('#careList').addEventListener('click',e=>{const t=e.target.closest('[data-i]');if(!t)return;const a=appts[+t.dataset.i];a.s=stFlow[(stFlow.indexOf(a.s)+1)%stFlow.length];drawCare();toast(`${a.p} → ${a.s}`)});
+
+/* 6. Instituto / Biblioteca */
+const books=[{t:'Redes y Cisco CCNA',a:'A. Tanenbaum',av:true},{t:'Ingeniería Sanitaria Aplicada',a:'M. Rojas',av:true},{t:'Arquitectura de Software Limpia',a:'R. Martin',av:false},{t:'Gestión de Bases de Datos SQL',a:'C. Date',av:true}];
+const loans=[{t:'Arquitectura de Software Limpia',u:'Alumno #2041 · vence mañana',late:false},{t:'Instalaciones Hidráulicas',u:'Alumno #1984 · atraso 2 días',late:true}];
+function drawLib(){
+  const q=$('#libQ').value.toLowerCase();
+  const list=books.filter(b=>b.t.toLowerCase().includes(q)||b.a.toLowerCase().includes(q));
+  $('#libRes').innerHTML=list.map((b,i)=>`<div class="row"><div><b>${b.t}</b><div style="font-size:12px;color:var(--ink-soft)">${b.a}</div></div><button class="btn sm ${b.av?'pri':''}" data-i="${books.indexOf(b)}" ${b.av?'':'disabled'}>${b.av?'Prestar':'Prestado'}</button><span class="b">${b.av?'Libre':'En uso'}</span></div>`).join('')||'<p class="empty">Sin coincidencias</p>';
+  $('#libLoans').innerHTML=loans.map((l,i)=>`<li><div><b>${l.t}</b><div style="font-size:12px;color:var(--ink-soft)">${l.u}</div></div><button class="btn sm" data-r="${i}">Devolver</button></li>`).join('')||'<li class="empty" style="background:none">Sin préstamos pendientes</li>';
+}
+drawLib();
+$('#libQ').addEventListener('input',drawLib);
+$('#libRes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const bk=books[+b.dataset.i];bk.av=false;loans.unshift({t:bk.t,u:'Alumno #2108 · devolver en 7 días',late:false});drawLib();toast(`Préstamo registrado: ${bk.t}`)});
+$('#libLoans').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const rm=loans.splice(+b.dataset.r,1)[0];const bk=books.find(x=>x.t===rm.t);if(bk)bk.av=true;drawLib();toast(`Devolución recibida: ${rm.t}`)});
+
+/* 7. Catálogo Web */
+const prods=[{n:'Pack Esencial',p:45,s:6},{n:'Plan Mensual',p:89,s:4},{n:'Kit Profesional',p:140,s:3},{n:'Sesión 1:1',p:60,s:8}];let cart=[];
+function drawShop(){
+  $('#shopGrid').innerHTML=prods.map((p,i)=>`<button class="btn" data-i="${i}" ${p.s?'':'disabled'}>${p.n}<small>S/ ${p.p} (${p.s})</small></button>`).join('');
+  const tot=cart.reduce((a,p)=>a+p.p,0);
+  $('#shopCart').innerHTML=cart.length?cart.map(p=>`<li>${p.n}<span>S/ ${p.p}.00</span></li>`).join(''):'<li class="empty" style="background:none">Agrega un producto para generar el resumen</li>';
+  $('#shopTot').textContent='S/ '+tot.toFixed(2);$('#shopSend').disabled=!cart.length;
+}
+drawShop();
+$('#shopGrid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const p=prods[+b.dataset.i];if(!p.s)return;p.s--;cart.push(p);drawShop();ping(.1)});
+$('#shopSend').addEventListener('click',()=>{const biz=$('#bizName').value.trim()||'Tu negocio',tot=cart.reduce((a,p)=>a+p.p,0),res=cart.map(p=>p.n).join(', ');cart=[];drawShop();$('#shopMsg').textContent=`Resumen listo para ${biz}: ${res} · Total S/ ${tot}.00`;toast('Pedido confirmado y stock descontado')});
+
+/* 8. Cuentas */
+const bars=[];let sales=420,costs=180;
+for(let i=0;i<16;i++){const b=document.createElement('i');b.style.height=(25+Math.random()*50)+'%';$('#chart').append(b);bars.push(b)}
+$('#sales').textContent='S/ '+sales.toLocaleString('es-PE');
+let bi=0;
+function pushBar(pct){bars[bi%16].style.height=Math.min(100,Math.max(10,Math.round(pct)))+'%';bi++}
+setInterval(()=>{if(!$('#p-ledger').classList.contains('on')||document.hidden)return;const v=35+Math.random()*75;sales+=Math.round(v);pushBar(v);$('#sales').textContent='S/ '+sales.toLocaleString('es-PE')},1300);
+$('#addSale').addEventListener('click',()=>{sales+=120;pushBar(88);$('#sales').textContent='S/ '+sales.toLocaleString('es-PE');toast('Venta de S/ 120 registrada')});
+$('#addExp').addEventListener('click',()=>{costs+=45;pushBar(35);toast('Gasto de S/ 45 anotado en costos')});
+$('#report').addEventListener('click',()=>{const t0=performance.now(),inc=sales*30,cost=costs*30,net=inc-cost,igv=Math.round(inc*.18);
+  $('#rep').innerHTML=`<div class="kpis" style="grid-template-columns:1fr 1fr 1fr"><div class="kpi">Ingresos<b>S/ ${inc.toLocaleString('es-PE')}</b></div><div class="kpi">Utilidad<b>S/ ${net.toLocaleString('es-PE')}</b></div><div class="kpi">IGV est.<b>S/ ${igv.toLocaleString('es-PE')}</b></div></div><p class="note">Armado en ${Math.max(1,Math.round(performance.now()-t0))} ms con tus movimientos en vivo.</p>`;toast('Informe mensual generado')});
+
+/* ---------- Arquitecto de Proyecto a Medida ---------- */
+let archInd='Restaurante o cafetería';const pains=new Set(['cuentas','pedidos']);
+const painMap={
+  cuentas:{m:'Caja y Reportes Automáticos',f:'Cierre de caja en segundos con utilidades e impuestos calculados solos.'},
+  pedidos:{m:'Flujo Sin Errores',f:'Pedidos, citas o reservas conectadas al instante entre quien recibe y quien ejecuta.'},
+  stock:{m:'Kardex y Alertas',f:'Descuento automático por cada salida y aviso previo antes de quedarte sin stock.'},
+  web:{m:'Portal / Catálogo Propio',f:'Tus clientes ven disponibilidad, reservan o piden directo sin comisiones de terceros.'},
+  equipo:{m:'Roles y Turnos Claros',f:'Cada colaborador tiene una vista limpia solo con lo que necesita para su turno.'}
+};
+function updateArch(){
+  const custom=$('#archCustom').value.trim();
+  const ind=custom||archInd;
+  $('#archTitle').textContent=`Sistema a medida para ${ind}`;
+  const ps=pains.size?[...pains]:['cuentas'];
+  $('#archMods').innerHTML=[`Núcleo ${ind}`,...ps.map(k=>painMap[k].m),'Panel Móvil + PC'].map(m=>`<span class="mod">${m}</span>`).join('');
+  $('#archFlows').innerHTML=ps.map(k=>`<li>${painMap[k].f}</li>`).join('');
+  const h1=4+ps.length*2,h2=h1+5;
+  $('#archSave').textContent=`Tiempo operativo recuperado (estimado): ~${h1} a ${h2} h/semana`;
+  const body=encodeURIComponent(`Hola Zaphyrel, quiero cotizar un sistema para: ${ind}.\nPrioridades: ${ps.map(k=>painMap[k].m).join(', ')}.`);
+  $('#archMail').href=`mailto:hola@zaphyrel.com?subject=${encodeURIComponent('Propuesta: '+ind)}&body=${body}`;
+}
+$('#archInd').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;archInd=b.dataset.ind;$('#archCustom').value='';$$('#archInd .chip').forEach(c=>c.classList.toggle('on',c===b));updateArch();ping(.1)});
+$('#archCustom').addEventListener('input',updateArch);
+$('#archPain').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=b.dataset.p;if(pains.has(k)&&pains.size>1)pains.delete(k);else pains.add(k);b.classList.toggle('on',pains.has(k));updateArch();ping(.1)});
+$('#archCopy').addEventListener('click',()=>{const txt=`${$('#archTitle').textContent} — Módulos: ${$$('#archMods .mod').map(x=>x.textContent).join(', ')}`;navigator.clipboard?.writeText(txt).catch(()=>{});toast('Resumen copiado al portapapeles')});
+updateArch();
+
+/* Antes y después + FAQ + Copiar correo */
+$('#baR').addEventListener('input',e=>$('#ba').style.setProperty('--pos',e.target.value+'%'));
+$$('#faqs .faq button').forEach(b=>b.addEventListener('click',()=>{const f=b.parentElement,open=f.getAttribute('aria-expanded')==='true';f.setAttribute('aria-expanded',!open);ping(.08)}));
+$('#copyMail').addEventListener('click',()=>{navigator.clipboard?.writeText('hola@zaphyrel.com').catch(()=>{});toast('Correo copiado: hola@zaphyrel.com')});
+
+/* Paleta de comandos */
+const cmd=$('#cmd'),cin=$('#cmdIn'),cl=$('#cmdList');
+const acts=[
+  ['Ir a Esencia y Logo','#esencia'],['Probar: Restaurante',()=>{switchTab('table');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar: Gimnasio',()=>{switchTab('fit');$('#lab').scrollIntoView({behavior:'smooth'})}],['Probar: Inventario',()=>{switchTab('stock');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar: Hotel',()=>{switchTab('stay');$('#lab').scrollIntoView({behavior:'smooth'})}],['Probar: Clínica y citas',()=>{switchTab('care');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar: Instituto / Biblioteca',()=>{switchTab('lib');$('#lab').scrollIntoView({behavior:'smooth'})}],['Probar: Catálogo web',()=>{switchTab('shop');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar: Cuentas',()=>{switchTab('ledger');$('#lab').scrollIntoView({behavior:'smooth'})}],['Diseña tu proyecto a medida','#arquitecto'],
+  ['Comparar Antes y después','#antes'],['Alternar vista Móvil / Escritorio',()=>($('#pWrap').classList.contains('mobile')?$('#vpDesk'):$('#vpMob')).click()],
+  ['Alternar modo noche',()=>$('#night').click()],['Activar o silenciar sonido',()=>$('#sound').click()]
+];
+let sel=0,shown=acts;
+function drawCmd(){cl.innerHTML=shown.map((a,i)=>`<li class="${i===sel?'sel':''}" data-i="${i}">${a[0]}<span>${typeof a[1]==='string'?'ir':'acción'}</span></li>`).join('')}
+function openCmd(){cmd.classList.add('on');cin.value='';shown=acts;sel=0;drawCmd();setTimeout(()=>cin.focus(),30);ping(.1)}
+function closeCmd(){cmd.classList.remove('on')}
+function run(a){closeCmd();typeof a[1]==='string'?document.querySelector(a[1]).scrollIntoView({behavior:'smooth'}):a[1]()}
+$('#cmdBtn').addEventListener('click',openCmd);
+cin.addEventListener('input',()=>{const q=cin.value.toLowerCase();shown=acts.filter(a=>a[0].toLowerCase().includes(q));sel=0;drawCmd()});
+cl.addEventListener('mousemove',e=>{const li=e.target.closest('li');if(!li)return;const i=+li.dataset.i;if(i!==sel){sel=i;$$('#cmdList li').forEach((x,k)=>x.classList.toggle('sel',k===sel))}});
+cl.addEventListener('click',e=>{const li=e.target.closest('li');if(li)run(shown[+li.dataset.i])});
+cmd.addEventListener('click',e=>{if(e.target===cmd)closeCmd()});
+addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();cmd.classList.contains('on')?closeCmd():openCmd();return}
+  if(!cmd.classList.contains('on'))return;
+  if(e.key==='Escape')closeCmd();
+  if(e.key==='ArrowDown'){sel=Math.min(shown.length-1,sel+1);drawCmd();e.preventDefault()}
+  if(e.key==='ArrowUp'){sel=Math.max(0,sel-1);drawCmd();e.preventDefault()}
+  if(e.key==='Enter'&&shown[sel])run(shown[sel]);
+});
+</script>
+</body>
+</html>

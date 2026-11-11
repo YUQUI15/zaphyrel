@@ -1,0 +1,50 @@
+/* Zaphyrel design tokens: una sola fuente de verdad para web, apps y material fisico */
+:root {
+  /* Esencia (permanece) */
+  --zy-ink:          #2B2540; /* ciruela noche: texto y logo */
+  --zy-ink-soft:     #5C5475;
+  --zy-pearl:        #FAF7F2; /* marfil perla: fondo */
+  --zy-paper:        #FFFFFF;
+  --zy-line:         rgba(43, 37, 64, 0.12);
+
+  /* Flujo (brisa pastel) */
+  --zy-sapphire:     #9FBCE5; /* zafiro niebla */
+  --zy-lavender:     #B9AEE4;
+  --zy-peach:        #EEBFB0;
+  --zy-sage:         #A9CEB8;
+  --zy-accent:       var(--zy-sapphire);
+  --zy-accent-ink:   #1E1930;
+  --zy-accent-soft:  rgba(159, 188, 229, 0.22);
+  --zy-gradient:     linear-gradient(135deg, #9FBCE5 0%, #B9AEE4 52%, #EEBFB0 100%);
+
+  /* Tipografia */
+  --zy-font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --zy-font-ui:      "Manrope", "Inter", "Segoe UI", sans-serif;
+  --zy-font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* Forma y rejilla */
+  --zy-radius:       22px;
+  --zy-stroke:       1.5px;
+  --zy-space:        8px;
+
+  /* Movimiento */
+  --zy-ease:         cubic-bezier(0.22, 1, 0.36, 1);
+  --zy-dur-fast:     200ms;
+  --zy-dur:          400ms;
+  --zy-dur-slow:     700ms;
+}
+
+/* Modo noche */
+[data-theme="night"] {
+  --zy-ink:          #F4F0FC;
+  --zy-ink-soft:     #BDB6D6;
+  --zy-pearl:        #13101D;
+  --zy-paper:        #1B1729;
+  --zy-line:         rgba(255, 255, 255, 0.15);
+  --zy-accent-soft:  rgba(185, 205, 235, 0.18);
+}
+
+/* Marca blanca: cada cliente reemplaza su acento manteniendo la estructura */
+[data-zy-theme="client"] {
+  --zy-accent: var(--zy-sapphire);
+}

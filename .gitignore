@@ -1,0 +1,21 @@
+# Sistema operativo y archivos temporales
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.bak
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Variables de entorno y credenciales locales
+.env
+.env.*
+!.env.example
+
+# Editores / IDEs
+.vscode/
+.idea/
