@@ -1,92 +1,86 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel">
   <defs>
     <!-- Paleta Oficial Coolors: #81BDF8 · #A9DCFF · #D5BEFF · #FFD5FF · #FF9AFF -->
-    <linearGradient id="z7-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94">
+    <linearGradient id="z8-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94">
       <stop offset="0" stop-color="#81BDF8"/>
       <stop offset="0.28" stop-color="#A9DCFF"/>
       <stop offset="0.54" stop-color="#D5BEFF"/>
       <stop offset="0.78" stop-color="#FFD5FF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="z7-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
+    <linearGradient id="z8-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.28" stop-color="#E3F2FF"/>
-      <stop offset="0.62" stop-color="#EDE4FF"/>
-      <stop offset="1" stop-color="#FFE6FF"/>
+      <stop offset="0.30" stop-color="#E4F2FF"/>
+      <stop offset="0.65" stop-color="#EDE4FF"/>
+      <stop offset="1" stop-color="#FFE7FF"/>
     </linearGradient>
-    <linearGradient id="z7-f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
-    <linearGradient id="z7-f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
-    <linearGradient id="z7-f3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
-    <linearGradient id="z7-obs" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
-      <stop offset="0" stop-color="#1E2434"/>
-      <stop offset="0.48" stop-color="#0B0D14"/>
+    <linearGradient id="z8-f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
+    <linearGradient id="z8-f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
+    <linearGradient id="z8-f3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+    <linearGradient id="z8-obs" x1="0.12" y1="0.04" x2="0.88" y2="0.96">
+      <stop offset="0" stop-color="#252C40"/>
+      <stop offset="0.45" stop-color="#0D1018"/>
       <stop offset="1" stop-color="#040508"/>
     </linearGradient>
-    <linearGradient id="z7-bevel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.42"/>
-      <stop offset="0.5" stop-color="#A9DCFF" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#D5BEFF" stop-opacity="0.14"/>
-    </linearGradient>
-    <linearGradient id="z7-zrim" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="z8-zrim" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#A9DCFF"/>
-      <stop offset="0.52" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#FFFFFF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="z7-wind" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="z8-wind" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#81BDF8"/>
       <stop offset="0.6" stop-color="#A9DCFF"/>
       <stop offset="1" stop-color="#D5BEFF"/>
     </linearGradient>
-    <clipPath id="z7-clip-tbl">
+    <clipPath id="z8-clip-tbl">
       <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5"/>
     </clipPath>
-    <filter id="z7-zdrop" x="-22%" y="-22%" width="144%" height="148%">
-      <feDropShadow dx="0" dy="3.4" stdDeviation="2.6" flood-color="#05070C" flood-opacity="0.38"/>
+    <filter id="z8-zdrop" x="-22%" y="-22%" width="144%" height="148%">
+      <feDropShadow dx="0" dy="2.8" stdDeviation="2.2" flood-color="#05070C" flood-opacity="0.34"/>
     </filter>
   </defs>
 
-  <!-- Facetas exteriores octogonales a 45° de precisión -->
-  <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="url(#z7-f1)"/>
+  <!-- Facetas exteriores octogonales a 45° -->
+  <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="url(#z8-f1)"/>
   <polygon points="57,13 63,13 62.5,26.5 57.5,26.5" fill="#FFFFFF"/>
-  <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="url(#z7-f2)"/>
+  <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="url(#z8-f2)"/>
   <polygon points="107,57 107,63 93.5,62.5 93.5,57.5" fill="#FFD5FF"/>
-  <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="url(#z7-f3)"/>
+  <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="url(#z8-f3)"/>
   <polygon points="63,107 57,107 57.5,93.5 62.5,93.5" fill="#D5BEFF"/>
-  <polygon points="57,107 41,91 49.5,82.5 57.5,93.5" fill="url(#z7-f1)"/>
+  <polygon points="57,107 41,91 49.5,82.5 57.5,93.5" fill="url(#z8-f1)"/>
 
-  <!-- Tabla cristalina interior con planos de pabellón -->
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z7-table)"/>
-  <g clip-path="url(#z7-clip-tbl)">
+  <!-- Tabla cristalina interior con anillo de alta relojería -->
+  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z8-table)"/>
+  <g clip-path="url(#z8-clip-tbl)">
     <polygon points="24,56 60,20 82,42 24,84" fill="#FFFFFF" opacity=".62"/>
-    <polygon points="60,60 95,58 95,78 58,96" fill="#FF9AFF" opacity=".18"/>
-    <polygon points="25,61 59,25 60,60 28,74" fill="#81BDF8" opacity=".18"/>
-    <!-- Anillo octogonal interior de alta precisión -->
-    <polygon points="58,33.5 62,33.5 86.5,58 86.5,62 62,86.5 58,86.5 33.5,62 33.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.95" stroke-opacity=".88"/>
-    <path d="M 26.5 57.5 L 33.5 58 M 62.5 26.5 L 62 33.5 M 93.5 62.5 L 86.5 62 M 57.5 93.5 L 58 86.5" stroke="#FFFFFF" stroke-width="0.85" stroke-opacity=".8"/>
+    <polygon points="60,60 95,58 95,78 58,96" fill="#FF9AFF" opacity=".17"/>
+    <polygon points="25,61 59,25 60,60 28,74" fill="#81BDF8" opacity=".17"/>
+    <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.95" stroke-opacity=".9"/>
+    <path d="M 26.5 57.5 L 32.5 58 M 62.5 26.5 L 62 32.5 M 93.5 62.5 L 87.5 62 M 57.5 93.5 L 58 87.5" stroke="#FFFFFF" stroke-width="0.8" stroke-opacity=".78"/>
   </g>
 
   <!-- Aristas de corona y facetas -->
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="none" stroke="url(#z7-crown)" stroke-width="1.35" stroke-linejoin="round"/>
-  <path d="M 57 13 L 57.5 26.5 M 63 13 L 62.5 26.5 M 107 57 L 93.5 57.5 M 107 63 L 93.5 62.5 M 63 107 L 62.5 93.5 M 57 107 L 57.5 93.5 M 19 51 L 26.5 57.5 M 41 91 L 49.5 82.5" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity=".9" stroke-linecap="round"/>
+  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="none" stroke="url(#z8-crown)" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M 57 13 L 57.5 26.5 M 63 13 L 62.5 26.5 M 107 57 L 93.5 57.5 M 107 63 L 93.5 62.5 M 63 107 L 62.5 93.5 M 57 107 L 57.5 93.5 M 19 51 L 26.5 57.5 M 41 91 L 49.5 82.5" fill="none" stroke="#FFFFFF" stroke-width="1.15" stroke-opacity=".9" stroke-linecap="round"/>
 
   <!-- Marco Octogonal Abierto Dual -->
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#0B0D14" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z7-crown)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#0B0D14" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z8-crown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Tres Estelas Zéfiro biseladas -->
   <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z" fill="#81BDF8"/>
-  <path d="M 7 61 H 30.2 L 25.6 65.4 H 7 Z" fill="url(#z7-wind)"/>
-  <path d="M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="url(#z7-f2)"/>
+  <path d="M 7 61 H 30.2 L 25.6 65.4 H 7 Z" fill="url(#z8-wind)"/>
+  <path d="M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="url(#z8-f2)"/>
 
-  <!-- Monograma Z Cincelado en Tres Planos (Extrusión 3D + Bisel Metálico + Arista Prismática) -->
-  <g filter="url(#z7-zdrop)">
-    <!-- Base extruida sólida (profundidad real) -->
-    <path d="M 42.85 37 H 83.35 L 85.05 41.2 L 51.65 73.8 H 83.05 L 78.05 83 H 36.65 L 34.95 78.8 L 68.35 46.2 H 37.85 Z" fill="#05070C" transform="translate(1.8,2.4)" opacity=".36"/>
-    <!-- Cuerpo obsidiana CNC de la Z -->
-    <path d="M 42.85 37 H 83.35 L 85.05 41.2 L 51.65 73.8 H 83.05 L 78.05 83 H 36.65 L 34.95 78.8 L 68.35 46.2 H 37.85 Z" fill="url(#z7-obs)" stroke="#FFFFFF" stroke-width="1.35" stroke-linejoin="miter"/>
-    <!-- Plano de luz cincelado en la cara superior/diagonal -->
-    <path d="M 42.85 37 H 83.35 L 76.2 41.6 H 40.3 Z M 83.35 37 L 85.05 41.2 L 51.65 73.8 L 43.3 78.4 L 68.35 46.2 L 76.2 41.6 Z M 36.65 83 L 43.3 78.4 H 80.5 L 78.05 83 Z" fill="url(#z7-bevel)"/>
-    <!-- Filo de luz prismática único sobre la cresta diagonal -->
-    <path d="M 42.5 41.5 H 76.2 L 43.5 73.8" fill="none" stroke="url(#z7-zrim)" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>
+  <!-- Monograma Z Couture de Alta Relojería: Espolones finos, cintura estilizada y nervadura luminosa -->
+  <g filter="url(#z8-zdrop)">
+    <!-- Sombra proyectada sutil -->
+    <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="#040508" transform="translate(1.5,2.2)" opacity=".30"/>
+    <!-- Cuerpo refinado en obsidiana satinada con fino filo platino -->
+    <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="url(#z8-obs)" stroke="#FFFFFF" stroke-width="1.15" stroke-linejoin="miter"/>
+    <!-- Faceta izquierda de luz fría (bisección estilizada del asta diagonal) -->
+    <path d="M 37 39.5 L 41.5 35.5 H 83.5 L 79.8 37.8 H 40.5 L 37 41 Z M 74.5 40.2 L 79.8 37.8 L 40.2 82.2 L 35 82 Z M 36.5 84.5 L 40.2 82.2 H 80.5 L 78.5 84.5 Z" fill="#FFFFFF" opacity=".28"/>
+    <!-- Hilo prismático de precisión recorriendo la nervadura interior -->
+    <path d="M 40.5 37.8 H 79.8 L 40.2 82.2 H 79.5" fill="none" stroke="url(#z8-zrim)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
   </g>
 </svg>

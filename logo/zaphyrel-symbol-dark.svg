@@ -1,34 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel Dark Mode">
   <defs>
-    <linearGradient id="z7d-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94">
+    <linearGradient id="z8d-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94">
       <stop offset="0" stop-color="#81BDF8"/>
       <stop offset="0.28" stop-color="#A9DCFF"/>
       <stop offset="0.54" stop-color="#D5BEFF"/>
       <stop offset="0.78" stop-color="#FFD5FF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="z7d-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
+    <linearGradient id="z8d-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
       <stop offset="0" stop-color="#FFFFFF"/>
       <stop offset="0.3" stop-color="#DCEEFF"/>
       <stop offset="0.65" stop-color="#EBE0FF"/>
       <stop offset="1" stop-color="#FFE6FF"/>
     </linearGradient>
-    <linearGradient id="z7d-obs" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
-      <stop offset="0" stop-color="#22283A"/>
-      <stop offset="0.5" stop-color="#0B0D14"/>
+    <linearGradient id="z8d-obs" x1="0.12" y1="0.04" x2="0.88" y2="0.96">
+      <stop offset="0" stop-color="#252C40"/>
+      <stop offset="0.48" stop-color="#0C0E16"/>
       <stop offset="1" stop-color="#040508"/>
     </linearGradient>
-    <linearGradient id="z7d-bevel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.40"/>
-      <stop offset="0.55" stop-color="#A9DCFF" stop-opacity="0.26"/>
-      <stop offset="1" stop-color="#FF9AFF" stop-opacity="0.14"/>
-    </linearGradient>
-    <linearGradient id="z7d-zrim" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="z8d-zrim" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#A9DCFF"/>
       <stop offset="0.5" stop-color="#FFFFFF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <clipPath id="z7d-clip">
+    <clipPath id="z8d-clip">
       <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5"/>
     </clipPath>
   </defs>
@@ -40,24 +35,24 @@
   <polygon points="63,107 57,107 57.5,93.5 62.5,93.5" fill="#D5BEFF"/>
   <polygon points="57,107 41,91 49.5,82.5 57.5,93.5" fill="#81BDF8"/>
 
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z7d-table)"/>
-  <g clip-path="url(#z7d-clip)">
+  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z8d-table)"/>
+  <g clip-path="url(#z8d-clip)">
     <polygon points="24,56 60,20 82,42 24,84" fill="#FFFFFF" opacity=".6"/>
-    <polygon points="58,33.5 62,33.5 86.5,58 86.5,62 62,86.5 58,86.5 33.5,62 33.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.95"/>
-    <path d="M 26.5 57.5 L 33.5 58 M 62.5 26.5 L 62 33.5 M 93.5 62.5 L 86.5 62 M 57.5 93.5 L 58 86.5" stroke="#FFFFFF" stroke-width="0.85" stroke-opacity=".82"/>
+    <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.95"/>
+    <path d="M 26.5 57.5 L 32.5 58 M 62.5 26.5 L 62 32.5 M 93.5 62.5 L 87.5 62 M 57.5 93.5 L 58 87.5" stroke="#FFFFFF" stroke-width="0.8" stroke-opacity=".82"/>
   </g>
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="none" stroke="#FFFFFF" stroke-width="1.35" stroke-linejoin="round"/>
-  <path d="M 57 13 L 57.5 26.5 M 63 13 L 62.5 26.5 M 107 57 L 93.5 57.5 M 107 63 L 93.5 62.5 M 63 107 L 62.5 93.5 M 57 107 L 57.5 93.5 M 19 51 L 26.5 57.5 M 41 91 L 49.5 82.5" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/>
+  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M 57 13 L 57.5 26.5 M 63 13 L 62.5 26.5 M 107 57 L 93.5 57.5 M 107 63 L 93.5 62.5 M 63 107 L 62.5 93.5 M 57 107 L 57.5 93.5 M 19 51 L 26.5 57.5 M 41 91 L 49.5 82.5" fill="none" stroke="#FFFFFF" stroke-width="1.15" stroke-linecap="round"/>
 
   <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z7d-crown)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z8d-crown)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
 
   <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z" fill="#A9DCFF"/>
   <path d="M 7 61 H 30.2 L 25.6 65.4 H 7 Z" fill="#81BDF8"/>
   <path d="M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#D5BEFF"/>
 
-  <path d="M 42.85 37 H 83.35 L 85.05 41.2 L 51.65 73.8 H 83.05 L 78.05 83 H 36.65 L 34.95 78.8 L 68.35 46.2 H 37.85 Z" fill="#040508" opacity=".38" transform="translate(1.8,2.4)"/>
-  <path d="M 42.85 37 H 83.35 L 85.05 41.2 L 51.65 73.8 H 83.05 L 78.05 83 H 36.65 L 34.95 78.8 L 68.35 46.2 H 37.85 Z" fill="url(#z7d-obs)" stroke="#FFFFFF" stroke-width="1.35" stroke-linejoin="miter"/>
-  <path d="M 42.85 37 H 83.35 L 76.2 41.6 H 40.3 Z M 83.35 37 L 85.05 41.2 L 51.65 73.8 L 43.3 78.4 L 68.35 46.2 L 76.2 41.6 Z M 36.65 83 L 43.3 78.4 H 80.5 L 78.05 83 Z" fill="url(#z7d-bevel)"/>
-  <path d="M 42.5 41.5 H 76.2 L 43.5 73.8" fill="none" stroke="url(#z7d-zrim)" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="#040508" opacity=".32" transform="translate(1.5,2.2)"/>
+  <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="url(#z8d-obs)" stroke="#FFFFFF" stroke-width="1.2" stroke-linejoin="miter"/>
+  <path d="M 37 39.5 L 41.5 35.5 H 83.5 L 79.8 37.8 H 40.5 L 37 41 Z M 74.5 40.2 L 79.8 37.8 L 40.2 82.2 L 35 82 Z" fill="#FFFFFF" opacity=".26"/>
+  <path d="M 40.5 37.8 H 79.8 L 40.2 82.2 H 79.5" fill="none" stroke="url(#z8d-zrim)" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

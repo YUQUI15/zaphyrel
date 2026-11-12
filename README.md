@@ -2,28 +2,26 @@
 
 > **Esencia que permanece e innovación que fluye**
 
-Atelier de arquitectura digital, entornos interactivos 3D / 360° y sistemas operativos a medida.
+Maison de ingeniería espacial, visualización interactiva 3D / 360° y sistemas operativos a medida.
 
-## Paleta Oficial y Sistema Visual v7
+## Identidad y Arquitectura v8
 
-- **Base Arquitectónica**: Negro Obsidiana (`#07080D`), Blanco Cristal (`#FFFFFF`), Perla (`#F2F4F9`) y Grises Neutros (`#E6E9F2`, `#8890A2`, `#485062`) con grano táctil anodizado y biseles de relieve reales.
+- **Base Arquitectónica**: Negro Obsidiana (`#06070B`), Blanco Puro (`#FFFFFF`), Perla (`#F3F4F9`) y Grises Neutros (`#E6E9F2`, `#485062`) con micro-textura anodizada y relieve especular.
 - **Espectro Pastel Coolors**: `#FF9AFF` · `#FFD5FF` · `#D5BEFF` · `#A9DCFF` · `#81BDF8`.
-- **Emblema Octogonal Escultórico (`v7`)**: silueta abierta a 45°, doble anillo octogonal interior, estelas Zéfiro biseladas y nuevo **monograma `Z` cincelado en tres planos** con sombra sólida y arista prismática.
-- **Tipografía Editorial Futurista**: `Syne` (Display escultórico) + `Cormorant Garamond` (Énfasis editorial en cursiva) + `Plus Jakarta Sans` (Interfaz) + `JetBrains Mono` (Telemetría).
+- **Monograma `Z` Couture (`v8`)**: silueta octogonal abierta a 45° con anillo interior relojero, estelas Zéfiro y una **`Z` fina de alta relojería** con espolones diamantados y nervadura prismática.
+- **Tipografía de Alta Costura**: `Cinzel` (sello de marca) + `Bodoni Moda` & `Cormorant Garamond` (editorial) + `Outfit` (interfaz) + `JetBrains Mono` (telemetría).
 
-## Qué incluye este repositorio
+## Estructura del Proyecto
 
-- **`site/`** — Plataforma espacial v7 lista para Vercel o GitHub Pages (`site/index.html`):
-  - **Cámara Espacial 3D / 360° / HiDPI 4K / RV**: motor 3D extruido en tiempo real (arrastrable en 360°, con *Despiece Axial*, selector de materiales *Cristal Coolors / Obsidiana Noir / Titanio Satinado* y *Modo Horizonte Esférico RV* expandible a pantalla completa).
-  - **Estructura Espacial No Genérica**: HUD minimalista superior + **Dock Espacial Flotante inferior**, superficies con micro-grano SVG (`feTurbulence`) y reflejo especular 3D interactivo.
-  - **Ingeniería Dimensional (`#esencia`)**: disección axial de los 4 estratos del emblema v7 y telemetría de sincronía atómica.
-  - **Zaphyrel Studio OS (`#lab`)**: 8 núcleos funcionales en vivo (*Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Catálogo web y Cuentas*) con vista **Escritorio / Móvil (`390px`)**.
-  - **Topología Isométrica 3D (`#arquitecto`)**, **Comparador Estructural (`#antes`)**, modo **Día / Noche**, paleta de comandos (`Ctrl + K`) e identidad sonora WebAudio.
-- **`logo/`** — Emblema v7 en SVG (`color`, `sobre oscuro`, `monocromático` y `lockup` en `Syne`).
-- **`mockups/`** — Tarjetas de presentación, banner social y membrete actualizados a v7.
-- **`tokens/`** — Variables CSS listas para modo Día y Noche (`zaphyrel.tokens.css`).
-- **`scripts/`** — Generador Python de identidad sonora (`make_sound.py`).
-- **`docs/`** — Manual de identidad de marca v7 (`BRAND_BOOK.md`).
+- **`site/index.html`** — Experiencia v8 no convencional lista para Vercel:
+  - **Cámara Espacial `Z-360°` / 4K HiDPI / RV**: motor 3D extruido con la geometría exacta del monograma `Z` v8, arrastre 360°, despiece axial, cambio de material (*Cristal Coolors / Obsidiana Noir / Titanio Satinado*) y *Horizonte Esférico RV* expandible.
+  - **Cámara de los Cuatro Velos (`#esencia`)**: atrio flotante donde los cuatro estratos constructivos levitan con placas de coordenadas y pulso de sincronía atómica.
+  - **Atrio Operativo Studio OS (`#lab`)**: consola de cabina con riel vertical y 8 mundos funcionales vivos (*Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Boutique web y Tesorería*) adaptables a Escritorio y Móvil `390px`.
+  - **Cartografía & Metamorfosis (`#arquitecto` + `#antes`)**: mosaico asimétrico con mapa isométrico 3D de 3 estratos y comparador prismático.
+  - **Liturgia de Creación (`#metodo`)**: terrazas escalonadas y portal de diálogo privado.
+- **`logo/`** — Emblemas v8 en SVG (`color`, `sobre oscuro`, `monocromático` y `lockup` en `Cinzel`).
+- **`mockups/`** — Tarjeta, portada social y membrete actualizados a v8.
+- **`tokens/`**, **`scripts/`**, **`docs/`** — Tokens CSS, audio WebAudio/WAV y manual v8.
 
 ## Vista local
 
@@ -31,8 +29,4 @@ Atelier de arquitectura digital, entornos interactivos 3D / 360° y sistemas ope
 python -m http.server 8766
 ```
 
-Luego abre `http://localhost:8766/site/`.
-
----
-
-*Nota: los escenarios demostrativos y la dirección `hola@zaphyrel.com` son ilustrativos para vista previa.*
+Abre `http://localhost:8766/site/`.
