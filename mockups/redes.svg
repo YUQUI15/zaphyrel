@@ -1,35 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FAEE0"/><stop offset=".5" stop-color="#B0A3DE"/><stop offset="1" stop-color="#E6AC99"/></linearGradient>
-    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B9CDEB" stop-opacity=".55"/><stop offset="1" stop-color="#F3CDBF" stop-opacity=".55"/></linearGradient>
-    <radialGradient id="r1" cx=".2" cy=".2" r=".9"><stop offset="0" stop-color="#B9CDEB" stop-opacity=".9"/><stop offset="1" stop-color="#FAF7F2" stop-opacity="0"/></radialGradient>
-    <radialGradient id="r2" cx=".85" cy=".9" r=".8"><stop offset="0" stop-color="#F3CDBF" stop-opacity=".9"/><stop offset="1" stop-color="#FAF7F2" stop-opacity="0"/></radialGradient>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap');</style>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5E8CE3"/><stop offset=".52" stop-color="#927CE0"/><stop offset="1" stop-color="#E58D78"/></linearGradient>
+    <linearGradient id="zf1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7EA8F0" stop-opacity=".32"/><stop offset="1" stop-color="#A593E8" stop-opacity=".14"/></linearGradient>
+    <linearGradient id="zf2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A593E8" stop-opacity=".26"/><stop offset="1" stop-color="#EE9F8B" stop-opacity=".32"/></linearGradient>
+    <radialGradient id="r1" cx=".2" cy=".2" r=".9"><stop offset="0" stop-color="#9FBCE5" stop-opacity=".9"/><stop offset="1" stop-color="#F7F3EC" stop-opacity="0"/></radialGradient>
+    <radialGradient id="r2" cx=".85" cy=".9" r=".8"><stop offset="0" stop-color="#EEBFB0" stop-opacity=".9"/><stop offset="1" stop-color="#F7F3EC" stop-opacity="0"/></radialGradient>
   </defs>
-  <rect width="1200" height="520" fill="#FAF7F2"/>
+  <rect width="1200" height="520" fill="#F7F3EC"/>
   <rect width="1200" height="520" fill="url(#r1)"/><rect width="1200" height="520" fill="url(#r2)"/>
   <g transform="translate(600,192)">
-    <g transform="translate(-39,-82) scale(.65)">
-      <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#g)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#gl)" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#gl)" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#2B2540" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 21 77 H 31" fill="none" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#g)"/>
+    <g transform="translate(-41,-84) scale(.68)">
+      <polygon points="60,9 26,43 37,49 60,26" fill="url(#zf1)"/>
+      <polygon points="60,9 111,60 94,60 60,26" fill="url(#zf2)"/>
+      <polygon points="111,60 60,111 60,94 94,60" fill="url(#zf2)" opacity=".88"/>
+      <path d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#g)" stroke-width="1.5" stroke-opacity=".55" stroke-linejoin="round"/>
+      <path d="M 60 9 V 25 M 111 60 H 95 M 60 111 V 95 M 10 68 C 19 68, 25 72, 33 72 M 16 78 C 23 78, 27 80, 32 80" fill="none" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="#2B2540"/>
     </g>
-    <text y="42" text-anchor="middle" font-family="Fraunces,'Cormorant Garamond',Georgia,serif" font-weight="300" font-size="56" letter-spacing="16" fill="#2B2540">ZAPHYREL</text>
-    <text y="88" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="22" fill="#6B6485">Esencia que permanece e innovación que fluye</text>
+    <text y="42" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="60" letter-spacing="16" fill="#2B2540">ZAPHYREL</text>
+    <text y="88" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="25" fill="#5C5475">Esencia que permanece e innovación que fluye</text>
   </g>
   <g transform="translate(110,330)">
-    <circle cx="80" cy="80" r="80" fill="#FAF7F2" stroke="#2B2540" stroke-opacity=".08"/>
-    <g transform="translate(32,32) scale(.8)">
-      <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#gl)" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#gl)" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#2B2540" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 21 77 H 31" fill="none" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#g)"/>
+    <circle cx="80" cy="80" r="80" fill="#F7F3EC" stroke="#2B2540" stroke-opacity=".1"/>
+    <g transform="translate(30,30) scale(.83)">
+      <polygon points="60,9 26,43 37,49 60,26" fill="url(#zf1)"/>
+      <polygon points="60,9 111,60 94,60 60,26" fill="url(#zf2)"/>
+      <polygon points="111,60 60,111 60,94 94,60" fill="url(#zf2)" opacity=".88"/>
+      <path d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#g)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#g)" stroke-width="1.5" stroke-opacity=".55" stroke-linejoin="round"/>
+      <path d="M 60 9 V 25 M 111 60 H 95 M 60 111 V 95 M 10 68 C 19 68, 25 72, 33 72 M 16 78 C 23 78, 27 80, 32 80" fill="none" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="#2B2540"/>
     </g>
   </g>
-  <text x="290" y="395" font-family="Fraunces,Georgia,serif" font-size="26" fill="#2B2540">Zaphyrel</text>
-  <text x="290" y="425" font-family="Manrope,'Segoe UI',sans-serif" font-size="14" letter-spacing="1.5" fill="#6B6485">Estudio de sistemas, webs y apps a medida</text>
+  <text x="290" y="395" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="30" fill="#2B2540">Zaphyrel</text>
+  <text x="290" y="425" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="14" letter-spacing="1.4" fill="#5C5475">Estudio de sistemas, webs y apps a medida</text>
 </svg>

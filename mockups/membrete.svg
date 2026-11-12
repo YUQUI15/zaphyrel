@@ -1,39 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 1123" width="794" height="1123">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FAEE0"/><stop offset=".5" stop-color="#B0A3DE"/><stop offset="1" stop-color="#E6AC99"/></linearGradient>
-    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B9CDEB" stop-opacity=".45"/><stop offset="1" stop-color="#F3CDBF" stop-opacity=".45"/></linearGradient>
-    <radialGradient id="seal" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#4A4166"/><stop offset="1" stop-color="#1D192B"/></radialGradient>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap');</style>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5E8CE3"/><stop offset=".52" stop-color="#927CE0"/><stop offset="1" stop-color="#E58D78"/></linearGradient>
+    <linearGradient id="zf1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7EA8F0" stop-opacity=".3"/><stop offset="1" stop-color="#A593E8" stop-opacity=".14"/></linearGradient>
+    <radialGradient id="seal" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#4A4166"/><stop offset="1" stop-color="#171324"/></radialGradient>
   </defs>
-  <rect width="794" height="1123" fill="#FAF7F2"/>
+  <rect width="794" height="1123" fill="#F7F3EC"/>
   <rect y="0" width="794" height="7" fill="url(#g)"/>
   <g transform="translate(64,62)">
     <g transform="scale(.44)">
-      <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#gl)" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#2B2540" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 91 20 L 92.8 25.2 L 98 27 L 92.8 28.8 L 91 34 L 89.2 28.8 L 84 27 L 89.2 25.2 Z" fill="url(#g)"/>
+      <polygon points="60,9 111,60 94,60 60,26" fill="url(#zf1)"/>
+      <path d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#g)" stroke-width="2" stroke-opacity=".5" stroke-linejoin="round"/>
+      <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="#2B2540"/>
     </g>
-    <text x="66" y="32" font-family="Fraunces,Georgia,serif" font-size="19" letter-spacing="7" fill="#2B2540">ZAPHYREL</text>
+    <text x="66" y="32" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="21" letter-spacing="7" fill="#2B2540">ZAPHYREL</text>
   </g>
-  <g font-family="Manrope,'Segoe UI',sans-serif" font-size="11" letter-spacing="1.2" fill="#6B6485" text-anchor="end">
+  <g font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="11" letter-spacing="1.2" fill="#5C5475" text-anchor="end">
     <text x="730" y="84">hola@zaphyrel.com</text>
     <text x="730" y="102">zaphyrel.com</text>
   </g>
-  <g font-family="Fraunces,Georgia,serif" fill="#2B2540">
-    <text x="64" y="240" font-size="13" fill="#6B6485" font-family="Manrope,sans-serif" letter-spacing="2">PROPUESTA · 2026</text>
-    <text x="64" y="290" font-size="34" font-weight="300">Un sistema a la medida</text>
-    <text x="64" y="330" font-size="34" font-weight="300" font-style="italic" fill="#6B6485">de tu forma de trabajar</text>
+  <g font-family="'Cormorant Garamond', Georgia, serif" fill="#2B2540">
+    <text x="64" y="240" font-size="13" fill="#5C5475" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="2">PROPUESTA · 2026</text>
+    <text x="64" y="290" font-size="38" font-weight="600">Un sistema a la medida</text>
+    <text x="64" y="334" font-size="38" font-weight="500" font-style="italic" fill="#5C5475">de tu forma de trabajar</text>
   </g>
   <g fill="#E4DEE9"><rect x="64" y="400" width="520" height="8" rx="4"/><rect x="64" y="428" width="660" height="8" rx="4"/><rect x="64" y="456" width="610" height="8" rx="4"/><rect x="64" y="484" width="640" height="8" rx="4"/><rect x="64" y="540" width="400" height="8" rx="4"/><rect x="64" y="568" width="660" height="8" rx="4"/><rect x="64" y="596" width="580" height="8" rx="4"/></g>
   <line x1="64" y1="1030" x2="730" y2="1030" stroke="#2B2540" stroke-opacity=".12"/>
-  <text x="64" y="1056" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="12" fill="#6B6485">Esencia que permanece e innovación que fluye</text>
+  <text x="64" y="1056" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="14" fill="#5C5475">Esencia que permanece e innovación que fluye</text>
   <g transform="translate(640,930)">
     <circle cx="45" cy="45" r="42" fill="url(#seal)"/>
-    <circle cx="45" cy="45" r="36" fill="none" stroke="#C9C1E8" stroke-opacity=".45" stroke-width="1"/>
+    <circle cx="45" cy="45" r="36" fill="none" stroke="#B8A9FF" stroke-opacity=".5" stroke-width="1"/>
     <g transform="translate(21,21) scale(.4)">
-      <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#FAF7F2" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 91 20 L 93 25 L 98 27 L 93 29 L 91 34 L 89 29 L 84 27 L 89 25 Z" fill="url(#g)"/>
+      <path d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#g)" stroke-width="2" stroke-opacity=".55" stroke-linejoin="round"/>
+      <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="#F6F3FF"/>
     </g>
   </g>
 </svg>

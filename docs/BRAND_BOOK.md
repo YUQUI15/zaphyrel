@@ -1,4 +1,4 @@
-# ZAPHYREL — Libro de Marca
+# ZAPHYREL — Libro de Marca (v3)
 
 **Esencia que permanece e innovación que fluye**
 
@@ -7,11 +7,11 @@
 ## 1. Significado del nombre
 **Zaphyrel** = *Zéfiro* (brisa que fluye) + *Zafiro* (gema de valor que perdura) + *-el* (sufijo de luz).
 
-| Pilar | Fuerza | Elemento en el emblema |
+| Pilar | Fuerza | Elemento en el emblema (sin estrellas) |
 |---|---|---|
-| **Esencia** | Permanece | Corona facetada de zafiro abierta y tabla interior |
-| **Innovación** | Renueva sin ruido | Destello de refracción en el vértice superior derecho |
-| **Flujo** | Conecta y agiliza | Z fluida con estela de brisa |
+| **Esencia** | Permanece | Corona facetada de zafiro en tres planos translúcidos y tabla geométrica interior |
+| **Innovación** | Renueva sin ruido | Biseles de refracción cromática superior-derecha que reflejan luz dentro del cristal |
+| **Flujo** | Conecta y agiliza | Z escultórica central que cruza el portal abierto con dos estelas curvas de brisa al lado izquierdo |
 
 ---
 
@@ -23,46 +23,48 @@
 ---
 
 ## 3. Logo y variantes (`logo/`)
-- `zaphyrel-symbol.svg`: símbolo principal facetado a color.
+- `zaphyrel-symbol.svg`: símbolo principal facetado multicolor (zafiro, lavanda y durazno) con Z escultórica ciruela.
 - `zaphyrel-symbol-mono.svg`: versión en una sola tinta ciruela.
-- `zaphyrel-symbol-dark.svg`: versión luminosa sobre fondo ciruela oscuro.
-- `zaphyrel-lockup.svg`: emblema + wordmark `ZAPHYREL` + eslogan.
+- `zaphyrel-symbol-dark.svg`: versión luminosa sobre fondo ciruela oscuro (`#171324`).
+- `zaphyrel-lockup.svg`: emblema + wordmark `ZAPHYREL` (`Cormorant Garamond`) + eslogan (`Plus Jakarta Sans`).
 - `site/assets/favicon.svg`: versión simplificada optimizada para tamaños de 16–32 px.
 
 ---
 
-## 4. Paleta de color (`tokens/zaphyrel.tokens.css`)
-### Modo día (base marfil)
-- **Ciruela noche (texto y logo):** `#2B2540` · Texto secundario `#5C5475`
-- **Marfil perla (fondo):** `#FAF7F2` · Superficie `#FFFFFF`
-- **Zafiro niebla:** `#9FBCE5`
-- **Lavanda:** `#B9AEE4`
-- **Durazno rosado:** `#EEBFB0`
-- **Verde salvia:** `#A9CEB8`
+## 4. Paleta de color adaptable (`tokens/zaphyrel.tokens.css`)
+### Modo día (base marfil cálido + tintes prismáticos visibles)
+- **Ciruela zafiro (texto y logo):** `#261F3D` · Texto secundario `#584F75`
+- **Marfil perla (fondo):** `#F7F3EC` · Superficie `#FFFDF9`
+- **Zafiro:** `#5E8CE3`
+- **Lavanda:** `#927CE0`
+- **Durazno rosado:** `#E58D78`
+- **Verde salvia:** `#7BC4A6`
+- **Ámbar suave:** `#E2B45A`
 
-### Modo noche
-- **Fondo:** `#13101D` · Superficie `#1B1729` · Tarjeta `#221D34`
-- **Texto principal:** `#F4F0FC` · Secundario `#BDB6D6`
+### Modo noche (luminous rim + contraste alto)
+- **Fondo:** `#110E1B` · Superficie `#1A1629` · Tarjeta `#1F1A30`
+- **Texto principal:** `#F6F3FF` · Secundario `#C7BFE0`
+- **Acentos luminosos:** Zafiro `#8AB4FF` · Lavanda `#B8A9FF` · Durazno `#F7B7A6` · Salvia `#93DBBC`
 
 ---
 
-## 5. Tipografía
-- **Display / Títulos:** `Fraunces` (alternativa `Cormorant Garamond`)
-- **UI y texto:** `Manrope` (alternativa `Inter`)
-- **Datos técnicos y atajos:** `JetBrains Mono`
+## 5. Tipografía v3
+- **Display / Títulos y palabra ZAPHYREL:** `Cormorant Garamond` (500, 600, itálica 500)
+- **UI, listas y texto:** `Plus Jakarta Sans` (400, 500, 600, 700)
+- **Datos técnicos, precios y atajos:** `JetBrains Mono`
 
 ---
 
 ## 6. Arquitectura de sistemas y soluciones
 Bajo la marca madre **Zaphyrel**, cada solución hereda estructura, tokens, movimiento y sonido, adaptando color y nombre al cliente (marca blanca):
-- **Zaphyrel Table** — Restaurantes (pedidos por mesa, cocina en vivo, división de cuenta y boleta)
-- **Zaphyrel Fit** — Gimnasios (QR, aforo en tiempo real y renovación de membresías en 1 clic)
-- **Zaphyrel Stock** — Inventarios (existencias, alertas de mínimo, orden de compra y Kardex)
-- **Zaphyrel Stay** — Hoteles (check-in con llave digital y mapa vivo de habitaciones)
-- **Zaphyrel Care** — Clínicas y consultorios (agenda sin cruces, sala de espera y receta)
-- **Zaphyrel Lib** — Institutos y bibliotecas (catálogo, préstamos con código y control de devoluciones)
-- **Zaphyrel Shop** — Catálogo web sincronizado con stock y resumen automático
-- **Zaphyrel Ledger** — Flujo de caja, ventas/gastos e informe mensual instantáneo
+- **Zaphyrel Table** — Restaurantes (pedidos por mesa, cocina con cronómetro en vivo, división de cuenta y boleta digital)
+- **Zaphyrel Fit** — Gimnasios (QR, buscador, alta rápida, aforo en vivo y renovación en 1 clic)
+- **Zaphyrel Stock** — Inventarios (existencias +1/+5/-1, nuevo producto, alertas, orden de compra y Kardex histórico)
+- **Zaphyrel Stay** — Hoteles (check-in con llave digital, mapa interactivo de 4 estados e ingreso diario)
+- **Zaphyrel Care** — Clínicas y consultorios (especialidades, agenda sin cruces, sala de espera y receta digital)
+- **Zaphyrel Lib** — Institutos y bibliotecas (catálogo, préstamo con código de alumno y devoluciones)
+- **Zaphyrel Shop** — Catálogo web sincronizado con stock, cupón de descuento y pedido listo para WhatsApp
+- **Zaphyrel Ledger** — Flujo de caja con registros personalizados, comparativa ingresos vs costos, margen e IGV instantáneo
 
 ---
 

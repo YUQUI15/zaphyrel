@@ -4,166 +4,194 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zaphyrel — Esencia que permanece e innovación que fluye</title>
-<meta name="description" content="Estudio de sistemas, webs y aplicaciones a medida. Pruébalo funcionando: restaurantes, gimnasios, inventarios, hoteles, clínicas, bibliotecas, catálogos y cuentas.">
-<meta name="theme-color" content="#FAF7F2">
+<meta name="description" content="Estudio de sistemas, webs y aplicaciones a medida. Pruébalo funcionando en vivo: restaurantes, gimnasios, inventarios, hoteles, clínicas, bibliotecas, catálogos web y cuentas.">
+<meta name="theme-color" id="metaTheme" content="#F7F3EC">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+(()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;if(location.hash)document.documentElement.classList.add('skip-veil');}catch(e){}})();
+</script>
 <style>
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spinBorder{to{--ang:360deg}}
+
 :root{
-  --ink:#2B2540; --ink-soft:#5C5475; --pearl:#FAF7F2; --paper:#FFFFFF; --card:#FFFFFF;
-  --line:rgba(43,37,64,.12); --line-strong:rgba(43,37,64,.22);
-  --sapphire:#9FBCE5; --lavender:#B9AEE4; --peach:#EEBFB0; --sage:#A9CEB8;
-  --accent:#9FBCE5; --accent-ink:#1E1930; --accent-soft:rgba(159,188,229,.22);
-  --grad:linear-gradient(135deg,#9FBCE5 0%,#B9AEE4 52%,#EEBFB0 100%);
-  --txtgrad:linear-gradient(100deg,#4E6CAE 0%,#6F5BAE 55%,#B8705C 100%);
-  --glass:rgba(255,255,255,.72); --shadow:rgba(43,37,64,.24);
-  --ok-bg:#CBE8D5; --ok-ink:#1D422C; --warn-bg:#F6CFC2; --warn-ink:#5D281C;
-  --display:"Fraunces","Cormorant Garamond",Georgia,serif;
-  --ui:"Manrope","Inter","Segoe UI",sans-serif;
+  --ink:#261F3D; --ink-soft:#584F75; --pearl:#F7F3EC; --paper:#FFFDF9;
+  --card:rgba(255,253,250,.88); --card-tint:rgba(94,140,227,.08);
+  --line:rgba(38,31,61,.13); --line-strong:rgba(38,31,61,.24);
+  --sapphire:#5E8CE3; --lavender:#927CE0; --peach:#E58D78; --sage:#7BC4A6; --amber:#E2B45A;
+  --accent:#5E8CE3; --accent-2:#927CE0; --accent-3:#E58D78;
+  --accent-ink:#FFFFFF; --accent-soft:rgba(94,140,227,.18); --accent-glow:rgba(94,140,227,.30);
+  --grad:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 52%,var(--accent-3) 100%);
+  --txtgrad:linear-gradient(105deg,#3563C2 0%,#7459C9 52%,#C9664E 100%);
+  --glass:rgba(255,253,250,.76); --shadow:rgba(38,31,61,.22);
+  --ok-bg:#D2F0DF; --ok-ink:#16452B; --ok-dot:#3DA86C;
+  --warn-bg:#FBE0D7; --warn-ink:#6B2818; --warn-dot:#DC6E54;
+  --info-bg:#DFEAFC; --info-ink:#1D4282; --info-dot:#4E7FE0;
+  --display:"Cormorant Garamond","Palatino Linotype",Georgia,serif;
+  --ui:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
   --ease:cubic-bezier(.22,1,.36,1);
-  --radius:22px;
+  --radius:24px;
 }
 [data-theme=night]{
-  --ink:#F4F0FC; --ink-soft:#BDB6D6; --pearl:#13101D; --paper:#1B1729; --card:#221D34;
-  --line:rgba(255,255,255,.15); --line-strong:rgba(255,255,255,.28);
-  --accent-soft:rgba(185,205,235,.18);
-  --glass:rgba(30,26,46,.76); --shadow:rgba(0,0,0,.65);
-  --txtgrad:linear-gradient(100deg,#B9CDEB 0%,#CEC6F0 55%,#F3CDBF 100%);
-  --ok-bg:#254A37; --ok-ink:#CFF3DC; --warn-bg:#552E28; --warn-ink:#FBD4CA;
+  --ink:#F6F3FF; --ink-soft:#C7BFE0; --pearl:#110E1B; --paper:#1A1629;
+  --card:rgba(31,26,48,.88); --card-tint:rgba(138,180,255,.11);
+  --line:rgba(184,169,255,.18); --line-strong:rgba(184,169,255,.34);
+  --sapphire:#8AB4FF; --lavender:#B8A9FF; --peach:#F7B7A6; --sage:#93DBBC; --amber:#F2CC7E;
+  --accent:#8AB4FF; --accent-2:#B8A9FF; --accent-3:#F7B7A6;
+  --accent-ink:#141022; --accent-soft:rgba(138,180,255,.22); --accent-glow:rgba(138,180,255,.32);
+  --glass:rgba(26,22,41,.78); --shadow:rgba(0,0,0,.68);
+  --txtgrad:linear-gradient(105deg,#99BFFF 0%,#C8BAFF 52%,#FFC3B3 100%);
+  --ok-bg:#1E4934; --ok-ink:#CFF6DE; --ok-dot:#66D99A;
+  --warn-bg:#552B25; --warn-ink:#FFD7CD; --warn-dot:#F58B73;
+  --info-bg:#21365C; --info-ink:#CFE1FF; --info-dot:#8AB4FF;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{background:var(--pearl);color:var(--ink);font-family:var(--ui);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .7s var(--ease),color .7s var(--ease)}
+body{background:var(--pearl);color:var(--ink);font-family:var(--ui);font-weight:400;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .65s var(--ease),color .65s var(--ease)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
-::selection{background:var(--lavender);color:#1E1930}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
 
-/* Barra superior, cursor y velo de entrada */
-.progress{position:fixed;top:0;left:0;height:2.5px;width:100%;z-index:60;transform-origin:left;transform:scaleX(0);background:var(--grad)}
-.cur-dot,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:70;border-radius:50%;opacity:0;transition:opacity .4s}
-.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--ink)}
-.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid var(--ink-soft);transition:opacity .4s,width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),background .4s}
-.cur-ring.big{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(185,174,228,.12)}
+/* Barra progreso, cursor y velo de entrada */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;transform-origin:left;transform:scaleX(0);background:var(--grad);box-shadow:0 0 12px var(--accent-glow)}
+.cur-dot,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:70;border-radius:50%;opacity:0;transition:opacity .35s}
+.cur-dot{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;background:var(--accent)}
+.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid var(--accent);opacity:0;transition:opacity .35s,width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .35s}
+.cur-ring.big{width:58px;height:58px;margin:-29px 0 0 -29px;background:var(--accent-soft)}
 @media(hover:none){.cur-dot,.cur-ring{display:none}}
-.has-cursor .cur-dot,.has-cursor .cur-ring{opacity:1}
+.has-cursor .cur-dot{opacity:.95}.has-cursor .cur-ring{opacity:.55}
 
-.veil{position:fixed;inset:0;z-index:80;background:var(--pearl);display:grid;place-items:center;animation:veil .7s var(--ease) .95s forwards}
-.veil svg{width:92px;height:92px;overflow:visible}
-.veil path.d{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .85s var(--ease) .05s forwards}
+.veil{position:fixed;inset:0;z-index:80;background:var(--pearl);display:grid;place-items:center;animation:veil .55s var(--ease) .65s forwards;pointer-events:none}
+.skip-veil .veil{display:none}
+.veil svg{width:104px;height:104px;overflow:visible;filter:drop-shadow(0 12px 30px var(--accent-glow))}
+.veil path.d{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .8s var(--ease) .04s forwards}
 @keyframes veil{to{opacity:0;visibility:hidden}}
 @keyframes draw{to{stroke-dashoffset:0}}
 
-/* Atmósfera pastel viva */
-.aura{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.aura i{position:absolute;border-radius:50%;filter:blur(95px);opacity:.48;animation:drift 22s var(--ease) infinite alternate;transition:background 1.2s var(--ease)}
-.aura i:nth-child(1){width:46vmax;height:46vmax;background:var(--accent);top:-14vmax;left:-10vmax}
-.aura i:nth-child(2){width:38vmax;height:38vmax;background:var(--lavender);top:18vh;right:-12vmax;animation-delay:-7s}
-.aura i:nth-child(3){width:34vmax;height:34vmax;background:var(--peach);bottom:-14vmax;left:22vw;animation-delay:-13s;opacity:.38}
-[data-theme=night] .aura i{opacity:.20}
-@keyframes drift{to{transform:translate3d(6vmax,-4vmax,0) scale(1.12)}}
+/* Atmósfera pastel viva y rejilla prismática */
+.aura{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:radial-gradient(circle at 50% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 62%)}
+.aura i{position:absolute;border-radius:50%;filter:blur(88px);opacity:.56;animation:drift 20s var(--ease) infinite alternate;transition:background 1s var(--ease),opacity .7s}
+.aura i:nth-child(1){width:48vmax;height:48vmax;background:var(--accent);top:-14vmax;left:-12vmax}
+.aura i:nth-child(2){width:40vmax;height:40vmax;background:var(--accent-2);top:16vh;right:-12vmax;animation-delay:-7s}
+.aura i:nth-child(3){width:38vmax;height:38vmax;background:var(--accent-3);bottom:-14vmax;left:18vw;animation-delay:-13s;opacity:.46}
+[data-theme=night] .aura i{opacity:.34;filter:blur(98px)}
+.prism-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(color-mix(in srgb,var(--accent) 26%,transparent) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 35%,transparent 90%);opacity:.42}
+[data-theme=night] .prism-grid{opacity:.28}
+@keyframes drift{to{transform:translate3d(5vmax,-4vmax,0) scale(1.12)}}
 
 /* Navegación */
-nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(16px,5vw,60px);backdrop-filter:blur(14px);background:linear-gradient(to bottom,color-mix(in srgb,var(--pearl) 90%,transparent),transparent)}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);letter-spacing:.30em;font-size:15px}
-.brand svg{width:32px;height:32px}
-.links{display:flex;gap:clamp(12px,2.2vw,30px);font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
-.links a{position:relative;padding:4px 0;transition:color .4s var(--ease)}
-.links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--ink);transition:width .45s var(--ease)}
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px clamp(14px,4.5vw,56px);backdrop-filter:blur(16px);background:linear-gradient(to bottom,color-mix(in srgb,var(--pearl) 88%,transparent),color-mix(in srgb,var(--pearl) 40%,transparent));border-bottom:1px solid color-mix(in srgb,var(--line) 65%,transparent)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:600;letter-spacing:.26em;font-size:17px}
+.brand svg{width:34px;height:34px;filter:drop-shadow(0 4px 10px var(--accent-glow))}
+.links{display:flex;gap:clamp(12px,2vw,28px);font-size:13px;font-weight:500;letter-spacing:.03em;color:var(--ink-soft)}
+.links a{position:relative;padding:5px 0;transition:color .35s var(--ease)}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;border-radius:2px;background:var(--grad);transition:width .4s var(--ease)}
 .links a:hover{color:var(--ink)}.links a:hover::after{width:100%}
 .tools{display:flex;gap:8px;align-items:center}
-.pill{border:1px solid var(--line-strong);background:var(--glass);color:var(--ink);border-radius:99px;padding:7px 14px;font:500 12px var(--ui);letter-spacing:.06em;transition:all .4s var(--ease);backdrop-filter:blur(8px);white-space:nowrap}
-.pill:hover,.pill[aria-pressed=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
-.kbd{font-family:var(--mono);font-size:11px;opacity:.75;margin-left:6px}
+.pill{border:1px solid var(--line-strong);background:var(--glass);color:var(--ink);border-radius:99px;padding:7px 14px;font:600 12px var(--ui);letter-spacing:.04em;transition:all .35s var(--ease);backdrop-filter:blur(10px);white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.pill:hover{border-color:var(--accent);box-shadow:0 6px 18px -6px var(--accent-glow);transform:translateY(-1px)}
+.pill[aria-pressed=true]{background:var(--grad);color:var(--accent-ink);border-color:transparent;box-shadow:0 8px 20px -6px var(--accent-glow)}
+.kbd{font-family:var(--mono);font-size:10.5px;padding:1px 6px;border-radius:6px;background:var(--accent-soft);color:var(--ink);opacity:.85}
 
-/* Hero con emblema facetado 3D */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:88px 20px 52px;overflow:hidden}
+/* Hero con emblema facetado sin estrellas */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:96px 20px 56px;overflow:hidden}
 #flow{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.hero-inner{position:relative;z-index:1;width:100%;max-width:920px}
-.stage{position:relative;perspective:900px;width:max-content;margin:0 auto 18px}
-.halo{position:absolute;inset:-24px;border-radius:50%;border:1px dashed var(--line-strong);opacity:.55;animation:spin 38s linear infinite;pointer-events:none}
-.halo::after{content:"";position:absolute;top:-3.5px;left:50%;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:940px}
+.stage{position:relative;perspective:1000px;width:max-content;margin:0 auto 20px}
+.halo{position:absolute;inset:-26px;border-radius:50%;border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);animation:spin 34s linear infinite;pointer-events:none}
+.halo-2{position:absolute;inset:-44px;border-radius:50%;border:1px solid color-mix(in srgb,var(--accent-2) 25%,transparent);animation:spin 54s linear infinite reverse;pointer-events:none}
+.halo::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.halo-2::after{content:"";position:absolute;bottom:-3.5px;left:50%;width:7px;height:7px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 12px var(--accent-3)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.mark{width:clamp(112px,14.5vw,160px);height:auto;display:block;overflow:visible;cursor:pointer;transition:transform .25s ease-out;transform-style:preserve-3d;filter:drop-shadow(0 18px 28px rgba(111,91,174,.22))}
-.mark .facet{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.3s var(--ease) .95s forwards}
-.mark .flow{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s var(--ease) 1.4s forwards}
-.mark .glint{animation:twinkle 4.2s ease-in-out infinite;transform-origin:91px 27px}
-@keyframes twinkle{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.22) rotate(12deg);opacity:1}}
+.mark{width:clamp(124px,15.5vw,172px);height:auto;display:block;overflow:visible;cursor:pointer;transition:transform .25s ease-out,filter .4s;transform-style:preserve-3d;filter:drop-shadow(0 20px 34px var(--accent-glow))}
+.mark .facet{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.2s var(--ease) .85s forwards}
+.mark .flow{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1s var(--ease) 1.25s forwards}
+.mark .facet-fill{opacity:0;animation:facetIn .9s var(--ease) 1.05s forwards}
+@keyframes facetIn{to{opacity:1}}
 .mark.pulse{animation:burst .75s var(--ease)}
-@keyframes burst{50%{transform:scale(1.09);filter:drop-shadow(0 0 28px var(--accent))}}
-h1{font-family:var(--display);font-weight:300;font-size:clamp(30px,7.6vw,90px);letter-spacing:.22em;line-height:1.05;padding-left:.22em}
-h1 span{display:inline-block;opacity:0;transform:translateY(30px) rotateX(-40deg);animation:letter .9s var(--ease) forwards;animation-delay:calc(1.1s + var(--i)*.055s)}
+@keyframes burst{50%{transform:scale(1.1);filter:drop-shadow(0 0 36px var(--accent))}}
+
+h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,8.2vw,96px);letter-spacing:.20em;line-height:1.02;padding-left:.20em}
+h1 span{display:inline-block;opacity:0;transform:translateY(32px) rotateX(-40deg);animation:letter .85s var(--ease) forwards;animation-delay:calc(.95s + var(--i)*.05s)}
 @keyframes letter{to{opacity:1;transform:none}}
-.tag{margin-top:18px;font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(18px,2.5vw,27px);color:var(--ink-soft)}
-.tag b{font-weight:400;background:var(--txtgrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.lead{max-width:620px;margin:18px auto 0;color:var(--ink-soft);font-size:clamp(15px,1.5vw,17px)}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
-.cta{display:inline-flex;gap:10px;align-items:center;padding:15px 30px;border-radius:99px;background:var(--ink);color:var(--pearl);font-size:13px;letter-spacing:.12em;border:1px solid var(--ink);transition:box-shadow .5s var(--ease),background .4s}
-.cta:hover{box-shadow:0 18px 40px -14px var(--shadow)}
-.cta.ghost{background:var(--glass);color:var(--ink);border-color:var(--line-strong)}
-.cta.ghost:hover{background:var(--paper)}
-.status{display:inline-flex;gap:10px;align-items:center;margin-top:26px;padding:7px 16px;border:1px solid var(--line);border-radius:99px;background:var(--glass);font:400 12px var(--mono);color:var(--ink-soft);backdrop-filter:blur(8px)}
-.status i{width:7px;height:7px;border-radius:50%;background:#5DBB87;box-shadow:0 0 0 0 rgba(93,187,135,.6);animation:ping 2s infinite}
+.tag{margin-top:16px;font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(20px,2.8vw,31px);color:var(--ink-soft)}
+.tag b{font-weight:600;font-style:normal;background:var(--txtgrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{max-width:640px;margin:16px auto 0;color:var(--ink-soft);font-size:clamp(15px,1.45vw,17px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.cta{display:inline-flex;gap:10px;align-items:center;padding:15px 30px;border-radius:99px;background:var(--grad);color:var(--accent-ink);font:600 13px var(--ui);letter-spacing:.1em;border:1px solid transparent;box-shadow:0 16px 36px -12px var(--accent-glow);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 22px 44px -10px var(--accent-glow)}
+.cta.ghost{background:var(--glass);color:var(--ink);border-color:var(--line-strong);box-shadow:none;backdrop-filter:blur(10px)}
+.cta.ghost:hover{background:var(--card);border-color:var(--accent)}
+
+.hero-dock{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin-top:26px}
+.status{display:inline-flex;gap:10px;align-items:center;padding:7px 15px;border:1px solid var(--line-strong);border-radius:99px;background:var(--glass);font:500 12px var(--mono);color:var(--ink-soft);backdrop-filter:blur(10px)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok-dot);box-shadow:0 0 0 0 rgba(93,187,135,.65);animation:ping 2s infinite}
 @keyframes ping{70%{box-shadow:0 0 0 9px rgba(93,187,135,0)}100%{box-shadow:0 0 0 0 rgba(93,187,135,0)}}
+.mood-bar{display:inline-flex;gap:7px;align-items:center;padding:5px 12px;border:1px solid var(--line-strong);border-radius:99px;background:var(--glass);backdrop-filter:blur(10px);font-size:11.5px;color:var(--ink-soft)}
+
+.sw{display:flex;gap:6px;align-items:center}
+.sw button{width:19px;height:19px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line-strong);transition:transform .3s var(--ease),box-shadow .3s}
+.sw button:hover{transform:scale(1.22)}.sw button[aria-pressed=true]{transform:scale(1.15);box-shadow:0 0 0 2.5px var(--ink)}
 
 /* Secciones comunes */
-section{padding:clamp(74px,10vw,132px) clamp(18px,6vw,76px);position:relative}
+section{padding:clamp(72px,9.5vw,124px) clamp(18px,5.5vw,72px);position:relative}
 .wrap{max-width:1200px;margin:0 auto}
-.eyebrow{font-size:12px;letter-spacing:.34em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:18px}
-h2{font-family:var(--display);font-weight:300;font-size:clamp(29px,4.5vw,54px);line-height:1.15;max-width:860px}
-h2 em{font-style:italic;color:var(--ink-soft)}
-.sub{max-width:650px;margin-top:18px;color:var(--ink-soft)}
-.rv{opacity:0;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 11.5px var(--ui);letter-spacing:.28em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:18px;height:2px;border-radius:2px;background:var(--grad)}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(31px,4.6vw,56px);line-height:1.1;max-width:860px}
+h2 em{font-style:italic;background:var(--txtgrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{max-width:660px;margin-top:16px;color:var(--ink-soft);font-size:15.5px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.rv.in,.skip-veil .rv,.skip-veil .tl{opacity:1;transform:none}
 
-/* Esencia + Anatomía interactiva del símbolo */
-.essence-grid{display:grid;grid-template-columns:1.05fr 1.35fr;gap:34px;align-items:center;margin-top:52px}
-.blueprint{background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:34px 28px;text-align:center;backdrop-filter:blur(12px)}
+/* Esencia + Anatomía prismática del símbolo */
+.essence-grid{display:grid;grid-template-columns:1.05fr 1.35fr;gap:34px;align-items:center;margin-top:46px}
+.prism-frame{position:relative;border-radius:28px;padding:1.5px;background:conic-gradient(from var(--ang),var(--accent),var(--accent-2),var(--accent-3),var(--accent));animation:spinBorder 11s linear infinite;box-shadow:0 28px 64px -32px var(--accent-glow)}
+.blueprint{background:linear-gradient(155deg,var(--card),color-mix(in srgb,var(--accent) 10%,var(--card)));border-radius:26.5px;padding:34px 28px;text-align:center;backdrop-filter:blur(16px)}
 .blueprint svg{width:min(220px,55vw);height:auto;display:block;margin:0 auto 20px;overflow:visible}
 .bp-part{transition:opacity .45s var(--ease),filter .45s var(--ease)}
 .blueprint[data-focus="esencia"] .bp-part:not(.p-esencia),
-.blueprint[data-focus="innovacion"] .bp-part:not(.p-inno),
-.blueprint[data-focus="flujo"] .bp-part:not(.p-flujo){opacity:.22}
+.blueprint[data-focus="inno"] .bp-part:not(.p-inno),
+.blueprint[data-focus="flujo"] .bp-part:not(.p-flujo){opacity:.2}
 .blueprint[data-focus="esencia"] .p-esencia,
-.blueprint[data-focus="innovacion"] .p-inno,
-.blueprint[data-focus="flujo"] .p-flujo{filter:drop-shadow(0 0 10px var(--accent))}
-.bp-cap{font-family:var(--display);font-style:italic;font-size:17px;min-height:2.8em;color:var(--ink)}
-.bp-hint{font-size:12px;color:var(--ink-soft);margin-top:8px;letter-spacing:.08em}
+.blueprint[data-focus="inno"] .p-inno,
+.blueprint[data-focus="flujo"] .p-flujo{filter:drop-shadow(0 0 12px var(--accent))}
+.bp-cap{font-family:var(--display);font-style:italic;font-weight:500;font-size:19px;min-height:2.8em;color:var(--ink)}
+.bp-hint{font:600 11px var(--mono);color:var(--accent);margin-top:8px;letter-spacing:.16em}
 
 .pillars{display:grid;gap:16px;perspective:1100px}
-.pillar{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;backdrop-filter:blur(10px);transition:transform .25s ease-out,box-shadow .5s var(--ease),border-color .4s;cursor:pointer;overflow:hidden}
-.pillar::after{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),rgba(185,174,228,.35),transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
-.pillar:hover,.pillar.active{box-shadow:0 24px 50px -28px var(--shadow);border-color:var(--line-strong)}
+.pillar{position:relative;background:linear-gradient(145deg,var(--card),color-mix(in srgb,var(--pcol,var(--accent)) 10%,var(--card)));border:1px solid var(--line-strong);border-radius:var(--radius);padding:24px 26px;backdrop-filter:blur(12px);transition:transform .25s ease-out,box-shadow .45s var(--ease),border-color .4s;cursor:pointer;overflow:hidden}
+.pillar::before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--pcol,var(--accent));opacity:.85;transition:width .35s var(--ease)}
+.pillar::after{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--pcol,var(--accent)) 28%,transparent),transparent 60%);opacity:0;transition:opacity .45s;pointer-events:none}
+.pillar:hover,.pillar.active{box-shadow:0 24px 50px -24px var(--accent-glow);border-color:var(--pcol,var(--accent))}
 .pillar:hover::after,.pillar.active::after{opacity:1}
-.pillar-h{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
-.pillar .n{font-family:var(--display);font-size:13px;letter-spacing:.28em;color:var(--ink-soft)}
-.pillar h3{font-family:var(--display);font-weight:400;font-size:25px}
+.pillar-h{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.pillar .n{font:600 11.5px var(--mono);padding:3px 9px;border-radius:99px;background:color-mix(in srgb,var(--pcol,var(--accent)) 20%,transparent);color:var(--ink)}
+.pillar h3{font-family:var(--display);font-weight:600;font-size:27px}
 .pillar p{color:var(--ink-soft);font-size:14.5px}
-.pillar .bar{height:3px;width:48px;border-radius:3px;margin-top:14px;background:var(--grad);transition:width .5s var(--ease)}
-.pillar:hover .bar,.pillar.active .bar{width:92px}
 
-/* Laboratorio de 8 sistemas + Adaptabilidad Móvil */
-.lab{position:relative;margin-top:48px;border:1px solid var(--line);border-radius:28px;background:var(--glass);backdrop-filter:blur(14px);overflow:hidden;box-shadow:0 36px 80px -48px var(--shadow)}
-.lab-top{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
+/* Laboratorio de 8 sistemas + Vista Móvil */
+.lab-shell{margin-top:44px;border-radius:30px;padding:1.5px;background:conic-gradient(from var(--ang),var(--accent),var(--accent-2),var(--accent-3),var(--sage),var(--accent));animation:spinBorder 16s linear infinite;box-shadow:0 36px 86px -40px var(--accent-glow)}
+.lab{position:relative;border-radius:28.5px;background:linear-gradient(160deg,var(--card),color-mix(in srgb,var(--accent) 7%,var(--card)));backdrop-filter:blur(18px);overflow:hidden}
+.lab-top{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--accent) 6%,var(--glass))}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;max-width:100%}
-.tab{border:1px solid transparent;background:none;border-radius:99px;padding:7px 14px;font:500 13px var(--ui);color:var(--ink-soft);transition:all .35s var(--ease);white-space:nowrap}
-.tab:hover{color:var(--ink);background:var(--accent-soft)}
-.tab[aria-selected=true]{background:var(--ink);color:var(--pearl)}
+.tab{border:1px solid transparent;background:none;border-radius:99px;padding:7px 14px;font:600 12.5px var(--ui);color:var(--ink-soft);transition:all .35s var(--ease);white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--accent-soft);border-color:var(--line)}
+.tab[aria-selected=true]{background:var(--grad);color:var(--accent-ink);box-shadow:0 6px 18px -6px var(--accent-glow)}
 .brandbox{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12px;color:var(--ink-soft)}
-.brandbox input{width:190px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:99px;padding:7px 14px;font:400 12.5px var(--ui)}
-.sw{display:flex;gap:6px}
-.sw button{width:20px;height:20px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line-strong);transition:transform .35s var(--ease)}
-.sw button:hover{transform:scale(1.22)}.sw button[aria-pressed=true]{box-shadow:0 0 0 2px var(--ink)}
-.vp-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:99px;padding:2px;background:var(--paper)}
-.vp-toggle button{border:0;background:none;border-radius:99px;padding:4px 10px;font-size:11.5px;color:var(--ink-soft);transition:all .35s var(--ease)}
-.vp-toggle button[aria-pressed=true]{background:var(--ink);color:var(--pearl)}
+.brandbox input{width:185px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:99px;padding:7px 14px;font:500 12.5px var(--ui)}
+.vp-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:99px;padding:3px;background:var(--paper)}
+.vp-toggle button{border:0;background:none;border-radius:99px;padding:4px 11px;font:600 11.5px var(--ui);color:var(--ink-soft);transition:all .3s var(--ease)}
+.vp-toggle button[aria-pressed=true]{background:var(--grad);color:var(--accent-ink)}
 
-.panel-wrap{padding:24px;transition:padding .5s var(--ease)}
-.panel-wrap.mobile{display:flex;justify-content:center;padding:28px 16px;background:radial-gradient(circle at 50% 0%,var(--accent-soft),transparent 70%)}
-.device{width:100%;transition:max-width .6s var(--ease),border-radius .6s var(--ease),box-shadow .6s var(--ease),padding .6s var(--ease)}
+.panel-wrap{padding:24px;transition:padding .45s var(--ease)}
+.panel-wrap.mobile{display:flex;justify-content:center;padding:28px 16px;background:radial-gradient(circle at 50% 0%,var(--accent-soft),transparent 72%)}
+.device{width:100%;transition:max-width .55s var(--ease),border-radius .55s var(--ease),box-shadow .55s var(--ease),padding .55s var(--ease)}
 .panel-wrap.mobile .device{max-width:390px;border:6px solid var(--ink);border-radius:36px;padding:12px 10px 16px;background:var(--pearl);box-shadow:0 34px 70px -25px var(--shadow);position:relative}
 .panel-wrap.mobile .device::before{content:"";display:block;width:82px;height:5px;border-radius:5px;background:var(--line-strong);margin:2px auto 12px}
 .panel-wrap.mobile .cols{grid-template-columns:1fr!important}
@@ -171,200 +199,256 @@ h2 em{font-style:italic;color:var(--ink-soft)}
 .panel-wrap.mobile .kpis{grid-template-columns:1fr 1fr}
 .panel-wrap.mobile .rooms{grid-template-columns:repeat(3,1fr)}
 
-.panel-demo{display:none;min-height:420px;animation:fade .55s var(--ease)}
+.panel-demo{display:none;min-height:430px;animation:fade .45s var(--ease)}
 .panel-demo.on{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}}
-.app{border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
-.app-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
-.app-h b{font-family:var(--display);font-weight:400;font-size:16px;color:var(--ink);letter-spacing:.03em}
-.app-h .pw{letter-spacing:.14em;font-size:10px;text-align:right}
-.app-b{padding:18px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.col h4{font:600 11px var(--ui);letter-spacing:.22em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:12px}
-.btn{border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:12px;padding:10px 14px;font:500 13px var(--ui);transition:all .35s var(--ease)}
-.btn:hover{background:var(--accent);color:var(--accent-ink);border-color:transparent;transform:translateY(-1px)}
-.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:transparent}
-.btn.pri:hover{filter:brightness(.95)}
-.btn.sm{padding:6px 11px;font-size:12px;border-radius:9px}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.app{border:1px solid var(--line-strong);border-radius:20px;background:var(--paper);overflow:hidden;box-shadow:0 18px 44px -28px var(--shadow)}
+.app-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,var(--accent-soft),transparent 65%);font-size:12px;color:var(--ink-soft)}
+.app-h .biz-wrap{display:flex;align-items:center;gap:9px}
+.app-h .dot{width:9px;height:9px;border-radius:50%;background:var(--grad);box-shadow:0 0 10px var(--accent)}
+.app-h b{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);letter-spacing:.03em}
+.app-h .pw{font:600 10px var(--mono);letter-spacing:.14em;padding:4px 9px;border-radius:99px;background:var(--accent-soft);color:var(--ink)}
+.app-b{padding:20px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.col h4{font:700 11px var(--ui);letter-spacing:.18em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+
+/* Botones, chips y listas mejoradas */
+.btn{border:1px solid var(--line-strong);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 14px;font:600 12.5px var(--ui);transition:all .3s var(--ease);display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn:hover{background:var(--accent-soft);border-color:var(--accent);transform:translateY(-1px)}
+.btn.pri{background:var(--grad);color:var(--accent-ink);border-color:transparent;box-shadow:0 10px 22px -10px var(--accent-glow)}
+.btn.pri:hover{filter:brightness(1.06);transform:translateY(-1.5px)}
+.btn.sm{padding:6px 11px;font-size:11.5px;border-radius:9px}
+.btn.xs{padding:3px 8px;font-size:11px;border-radius:7px}
 .btn[disabled]{opacity:.42;pointer-events:none}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.chip{border:1px solid var(--line-strong);background:transparent;border-radius:99px;padding:5px 12px;font-size:12px;color:var(--ink-soft);transition:all .3s var(--ease)}
-.chip.on,.chip[aria-pressed=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
+.chip{border:1px solid var(--line-strong);background:var(--card);border-radius:99px;padding:5px 12px;font:600 12px var(--ui);color:var(--ink-soft);transition:all .3s var(--ease)}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on,.chip[aria-pressed=true]{background:var(--grad);color:var(--accent-ink);border-color:transparent}
+.chip.busy{opacity:.55;text-decoration:line-through}
+
 .menu{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.menu .btn{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.menu .btn small{font-family:var(--mono);opacity:.8}
-.list{list-style:none;display:grid;gap:6px;margin-top:10px;font-size:13.5px;min-height:48px}
-.list li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--accent-soft);animation:pop .45s var(--ease)}
-@keyframes pop{from{opacity:0;transform:scale(.94) translateY(6px)}}
-.total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-strong);font-weight:600}
-.split-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:10px;font-size:12.5px;color:var(--ink-soft)}
-.ticket{border:1px solid var(--line-strong);border-radius:14px;padding:13px;margin-bottom:10px;animation:pop .5s var(--ease);background:var(--paper)}
-.ticket .th{display:flex;justify-content:space-between;align-items:center;font:500 12px var(--mono);margin-bottom:5px}
-.ticket .it{font-size:13px;color:var(--ink-soft)}
-.st{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:500;letter-spacing:.04em;background:var(--lavender);color:#1E1930;transition:background .4s}
+.menu .btn{text-align:left;justify-content:space-between;padding:10px 12px;background:linear-gradient(145deg,var(--paper),var(--card-tint))}
+.menu .btn .item-meta{display:flex;flex-direction:column;gap:2px}
+.menu .btn .item-sub{font-size:10.5px;font-weight:500;color:var(--ink-soft)}
+.menu .btn small{font-family:var(--mono);font-weight:600;color:var(--ink);padding:2px 7px;border-radius:7px;background:var(--accent-soft)}
+
+/* Listas v3 con indicadores de estado, acento lateral y controles */
+.list{list-style:none;display:grid;gap:7px;margin-top:10px;font-size:13px;min-height:46px}
+.list li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;background:linear-gradient(135deg,var(--card-tint),var(--paper));border:1px solid var(--line);border-left:3px solid var(--accent);animation:popRow .38s var(--ease);transition:transform .25s var(--ease),border-color .25s}
+.list li:hover{transform:translateX(2px);border-color:var(--accent)}
+.list li.empty{background:none;border:1px dashed var(--line);border-left:1px dashed var(--line);color:var(--ink-soft);font-style:italic;justify-content:center}
+@keyframes popRow{from{opacity:0;transform:scale(.95) translateY(6px)}}
+.li-main{display:flex;align-items:center;gap:9px;min-width:0}
+.li-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.li-dot.ok{background:var(--ok-dot)}.li-dot.warn{background:var(--warn-dot)}.li-dot.info{background:var(--info-dot)}
+.li-acts{display:flex;align-items:center;gap:6px;flex:none}
+.qpill{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line-strong);border-radius:8px;padding:2px 4px;background:var(--paper);font:600 11.5px var(--mono)}
+.qpill button{border:0;background:none;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;color:var(--ink)}
+.qpill button:hover{background:var(--accent-soft)}
+
+.total{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-strong);font-weight:700}
+.split-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-top:8px;font-size:12.5px;color:var(--ink-soft)}
+.ticket{border:1px solid var(--line-strong);border-left:4px solid var(--accent);border-radius:14px;padding:12px 14px;margin-bottom:10px;animation:popRow .4s var(--ease);background:linear-gradient(145deg,var(--paper),var(--card-tint));transition:transform .25s var(--ease)}
+.ticket:hover{transform:translateY(-2px)}
+.ticket .th{display:flex;justify-content:space-between;align-items:center;gap:8px;font:600 12px var(--mono);margin-bottom:5px}
+.ticket .it{font-size:13px;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.st{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:99px;font:600 11px var(--ui);background:var(--info-bg);color:var(--info-ink);transition:background .35s}
 .st.cook{background:var(--warn-bg);color:var(--warn-ink)}.st.done{background:var(--ok-bg);color:var(--ok-ink)}
-.empty{color:var(--ink-soft);font-size:13px;font-style:italic;padding:10px 0}
-.toast{position:absolute;right:22px;bottom:22px;background:var(--ink);color:var(--pearl);padding:11px 18px;border-radius:14px;font-size:13px;transform:translateY(28px);opacity:0;transition:all .5s var(--ease);pointer-events:none;z-index:10;box-shadow:0 16px 34px -10px var(--shadow)}
+.boleta{margin-top:10px;padding:12px 14px;border-radius:14px;border:1px dashed var(--accent);background:var(--accent-soft);font:400 12px var(--mono);animation:popRow .35s var(--ease)}
+.toast{position:absolute;right:20px;bottom:20px;background:var(--ink);color:var(--pearl);padding:11px 18px;border-radius:14px;font:600 12.5px var(--ui);transform:translateY(28px);opacity:0;transition:all .45s var(--ease);pointer-events:none;z-index:10;box-shadow:0 16px 34px -10px var(--shadow);border-left:4px solid var(--accent)}
 .toast.show{transform:none;opacity:1}
 
-.big-n{font-family:var(--display);font-weight:300;font-size:50px;line-height:1.05}
-.badge{display:inline-flex;gap:6px;align-items:center;padding:5px 12px;border-radius:99px;font-size:12px;font-weight:500;background:var(--lavender);color:#1E1930}
+.big-n{font-family:var(--display);font-weight:600;font-size:48px;line-height:1}
+.badge{display:inline-flex;gap:6px;align-items:center;padding:4px 11px;border-radius:99px;font:600 11.5px var(--ui);background:var(--info-bg);color:var(--info-ink)}
 .badge.ok{background:var(--ok-bg);color:var(--ok-ink)}.badge.warn{background:var(--warn-bg);color:var(--warn-ink)}
-.member{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px;border:1px solid var(--line-strong);border-radius:14px;margin-top:12px;animation:pop .5s var(--ease);background:var(--paper)}
-.avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--display);font-size:18px;color:#1E1930;flex:none}
-.meter{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin-top:6px}
-.meter i{display:block;height:100%;width:0;background:var(--accent);border-radius:8px;transition:width .8s var(--ease),background .4s}
-.meter i.low{background:#DE8B78}
-.row{display:grid;grid-template-columns:1fr auto 64px;gap:12px;align-items:center;padding:10px 0;font-size:13.5px;border-bottom:1px solid var(--line)}
-.row:last-child{border:0}
-.row .b{font-family:var(--mono);font-size:12px;color:var(--ink-soft);text-align:right}
+.member{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px;border:1px solid var(--line-strong);border-radius:14px;margin-top:12px;animation:popRow .4s var(--ease);background:linear-gradient(145deg,var(--paper),var(--card-tint))}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:20px;color:var(--accent-ink);flex:none}
+.meter{height:9px;border-radius:9px;background:var(--line);overflow:hidden;margin-top:7px}
+.meter i{display:block;height:100%;width:0;background:var(--grad);border-radius:9px;transition:width .7s var(--ease),background .4s}
+.meter i.low{background:linear-gradient(90deg,#E58D78,#D95B43)}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 8px;border-radius:12px;font-size:13px;border-bottom:1px solid var(--line);transition:background .25s}
+.row:hover{background:var(--card-tint)}
+.row:last-child{border-bottom:0}
+.row .b{font:600 12px var(--mono);color:var(--ink);text-align:right;min-width:56px}
+.mini-form{display:grid;grid-template-columns:1fr auto auto;gap:6px;margin-top:10px}
 .steps-live{list-style:none;display:grid;gap:0;margin-top:4px}
-.steps-live li{display:flex;gap:14px;align-items:center;padding:11px 0;position:relative;color:var(--ink-soft);font-size:14px;transition:color .5s}
-.steps-live li::before{content:"";width:13px;height:13px;border-radius:50%;border:1.5px solid var(--ink-soft);flex:none;transition:all .5s var(--ease)}
-.steps-live li:not(:last-child)::after{content:"";position:absolute;left:6px;top:29px;height:calc(100% - 16px);width:1px;background:var(--line)}
-.steps-live li.on{color:var(--ink)}
+.steps-live li{display:flex;gap:14px;align-items:center;padding:10px 0;position:relative;color:var(--ink-soft);font-size:13.5px;transition:color .4s}
+.steps-live li::before{content:"";width:13px;height:13px;border-radius:50%;border:2px solid var(--ink-soft);flex:none;transition:all .4s var(--ease)}
+.steps-live li:not(:last-child)::after{content:"";position:absolute;left:5.5px;top:27px;height:calc(100% - 14px);width:1.5px;background:var(--line)}
+.steps-live li.on{color:var(--ink);font-weight:600}
 .steps-live li.on::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
-.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
-.room{border:1px solid var(--line-strong);border-radius:12px;padding:10px 8px;text-align:center;font-size:12px;background:var(--paper);transition:all .35s var(--ease)}
+.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.room{border:1px solid var(--line-strong);border-radius:12px;padding:9px 6px;text-align:center;font-size:11.5px;background:var(--paper);transition:all .3s var(--ease)}
+.room:hover{transform:translateY(-2px)}
 .room b{display:block;font-family:var(--mono);font-size:13px}
-.room.occ{background:var(--accent-soft);border-color:var(--accent)}
+.room small{display:block;font-size:10px;opacity:.78;margin-top:2px}
+.room.occ{background:var(--info-bg);color:var(--info-ink);border-color:var(--info-dot)}
 .room.cln{background:var(--warn-bg);color:var(--warn-ink);border-color:transparent}
 .room.fre{background:var(--ok-bg);color:var(--ok-ink);border-color:transparent}
-.chart{display:flex;align-items:flex-end;gap:6px;height:120px;padding-top:10px}
-.chart i{flex:1;background:var(--accent);border-radius:6px 6px 2px 2px;min-height:6px;transition:height .7s var(--ease)}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.kpi{border:1px solid var(--line-strong);border-radius:12px;padding:10px 12px;font-size:12px;color:var(--ink-soft);background:var(--paper)}
-.kpi b{display:block;font-family:var(--display);font-weight:400;font-size:21px;color:var(--ink)}
-.field-in{width:100%;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:12px;padding:9px 13px;font:400 13px var(--ui)}
-.note{margin-top:14px;font-size:12px;color:var(--ink-soft)}
+.room.mnt{background:var(--line);color:var(--ink-soft);border-style:dashed}
+.chart{display:flex;align-items:flex-end;gap:5px;height:122px;padding-top:12px}
+.chart i{flex:1;background:var(--grad);border-radius:6px 6px 2px 2px;min-height:8px;transition:height .6s var(--ease)}
+.chart i.exp{background:linear-gradient(180deg,var(--peach),color-mix(in srgb,var(--peach) 55%,transparent));opacity:.85}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}
+.kpi{border:1px solid var(--line-strong);border-top:2.5px solid var(--accent);border-radius:12px;padding:9px 11px;font-size:11.5px;color:var(--ink-soft);background:var(--paper)}
+.kpi b{display:block;font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink)}
+.field-in{width:100%;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:11px;padding:8px 12px;font:500 12.5px var(--ui)}
+.field-in:focus{border-color:var(--accent);outline:none}
+.note{margin-top:12px;font-size:12px;color:var(--ink-soft)}
+.kardex-box{margin-top:10px;max-height:110px;overflow:auto;border:1px solid var(--line);border-radius:11px;padding:8px 10px;font:400 11.5px var(--mono);color:var(--ink-soft);background:var(--card-tint)}
 
 /* Configurador "Tu Proyecto a Medida" */
-.arch{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:46px}
-.arch-q{background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:28px;backdrop-filter:blur(12px)}
-.arch-q h3{font-family:var(--display);font-weight:400;font-size:21px;margin-bottom:12px}
+.arch{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:44px}
+.arch-q{background:linear-gradient(155deg,var(--card),var(--card-tint));border:1px solid var(--line-strong);border-radius:26px;padding:28px;backdrop-filter:blur(14px)}
+.arch-q h3{font-family:var(--display);font-weight:600;font-size:23px;margin-bottom:12px}
 .arch-q .blk+.blk{margin-top:24px}
-.arch-res{background:var(--card);border:1px solid var(--line-strong);border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;box-shadow:0 30px 70px -42px var(--shadow);position:relative;overflow:hidden}
-.arch-res::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--grad)}
-.arch-res h3{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.2}
-.mods{display:flex;flex-wrap:wrap;gap:8px}
-.mod{padding:6px 12px;border-radius:99px;font-size:12px;background:var(--accent-soft);border:1px solid var(--line);font-weight:500}
-.flows{list-style:none;display:grid;gap:8px;font-size:14px;color:var(--ink-soft)}
-.flows li{padding-left:20px;position:relative}.flows li::before{content:"✦";position:absolute;left:0;color:var(--ink);font-size:11px}
+.arch-res-wrap{border-radius:28px;padding:1.5px;background:conic-gradient(from var(--ang),var(--accent),var(--accent-2),var(--accent-3),var(--accent));animation:spinBorder 14s linear infinite;box-shadow:0 30px 70px -40px var(--accent-glow)}
+.arch-res{height:100%;background:var(--paper);border-radius:26.5px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.arch-res h3{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.15}
+.mods{display:flex;flex-wrap:wrap;gap:7px}
+.mod{padding:6px 12px;border-radius:99px;font:600 11.5px var(--ui);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.flows{list-style:none;display:grid;gap:9px;font-size:14px;color:var(--ink-soft)}
+.flows li{padding:9px 12px 9px 30px;border-radius:12px;background:var(--card-tint);border:1px solid var(--line);position:relative}
+.flows li::before{content:"◆";position:absolute;left:11px;top:9px;color:var(--accent);font-size:11px}
 
-/* Antes y después (contraste corregido para día y noche) */
-.ba{position:relative;margin-top:48px;height:clamp(330px,42vw,420px);border-radius:28px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 40px 80px -50px var(--shadow);user-select:none}
+/* Antes y después (fijado y con contraste nítido en Día y Noche) */
+.ba{position:relative;margin-top:46px;height:clamp(340px,42vw,425px);border-radius:28px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 40px 80px -46px var(--accent-glow);user-select:none}
 .ba .old,.ba .neo{position:absolute;inset:0;padding:64px clamp(22px,4vw,44px) clamp(22px,4vw,44px)}
-.ba .old{background:#F3EEDF;color:#3E374B;background-image:repeating-linear-gradient(transparent 0 31px,rgba(110,130,190,.28) 31px 32px);font-family:"Fraunces",serif;font-style:italic;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
-.ba .old h3{font-size:clamp(20px,3vw,30px);font-weight:400;margin-bottom:10px}
-.ba .old p{font-size:clamp(14px,1.75vw,18.5px);line-height:32px;transform:rotate(-.5deg)}
+.ba .old{background:#F1E9D4;color:#393148;background-image:repeating-linear-gradient(transparent 0 31px,rgba(94,140,227,.30) 31px 32px);font-family:var(--display);font-style:italic;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba .old h3{font-size:clamp(22px,3.1vw,32px);font-weight:600;margin-bottom:10px}
+.ba .old p{font-size:clamp(15px,1.8vw,20px);line-height:32px;transform:rotate(-.4deg)}
 .ba .old s{opacity:.55}
-.ba .old .tm{position:absolute;left:clamp(22px,4vw,44px);bottom:22px;font:500 clamp(28px,4.5vw,52px) var(--display);font-style:normal;color:#935C4C}
-.ba .neo{background:var(--card);clip-path:inset(0 0 0 var(--pos,50%));display:grid;align-content:start;gap:14px}
-.ba .neo h3{font-family:var(--display);font-weight:400;font-size:clamp(20px,3vw,30px);color:var(--ink)}
+.ba .old .tm{position:absolute;left:clamp(22px,4vw,44px);bottom:20px;font:600 clamp(28px,4.5vw,52px) var(--display);font-style:normal;color:#935342}
+.ba .neo{background:linear-gradient(150deg,var(--paper),var(--card-tint));clip-path:inset(0 0 0 var(--pos,50%));display:grid;align-content:start;gap:14px}
+.ba .neo h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,3.1vw,32px);color:var(--ink)}
 .ba .neo .kpi{background:var(--accent-soft);border-color:var(--line-strong)}
 .ba .neo .chart{padding-right:92px}
-.ba .neo .chart i{background:var(--grad);opacity:1}
-.ba .neo .tm{position:absolute;right:clamp(22px,4vw,44px);bottom:22px;font:500 clamp(28px,4.5vw,52px) var(--display);color:var(--ink)}
-.ba .grip{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--ink);z-index:3;transform:translateX(-1px)}
-.ba .grip::after{content:"⇆";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:var(--ink);color:var(--pearl);display:grid;place-items:center;font-size:17px;box-shadow:0 10px 28px -6px var(--shadow)}
+.ba .neo .tm{position:absolute;right:clamp(22px,4vw,44px);bottom:20px;font:600 clamp(28px,4.5vw,52px) var(--display);background:var(--txtgrad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ba .grip{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2.5px;background:var(--accent);z-index:3;transform:translateX(-1.25px)}
+.ba .grip::after{content:"⇆";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:var(--grad);color:var(--accent-ink);display:grid;place-items:center;font-size:17px;font-weight:700;box-shadow:0 10px 28px -6px var(--shadow)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
-.ba .lbl{position:absolute;top:18px;font:600 11px var(--ui);letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;border-radius:99px;background:var(--glass);backdrop-filter:blur(8px);border:1px solid var(--line);z-index:2}
-.ba .l1{left:18px}.ba .l2{right:18px}
+.ba .lbl{position:absolute;top:18px;font:700 11px var(--ui);letter-spacing:.2em;text-transform:uppercase;padding:6px 13px;border-radius:99px;background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--line-strong);z-index:2}
+.ba .l1{left:18px;color:#393148;background:rgba(255,253,249,.86)}.ba .l2{right:18px;color:var(--ink)}
 
-/* Capacidades */
-.cares{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:46px}
-.care{padding:26px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--glass);transition:transform .6s var(--ease),border-color .4s}
-.care:hover{transform:translateY(-6px);border-color:var(--line-strong)}
-.care svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
-.care h3{font-family:var(--display);font-weight:400;font-size:20px;margin-bottom:6px}
+/* Capacidades con tarjetas coloreadas */
+.cares{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:46px}
+.care{position:relative;padding:26px 24px;border:1px solid var(--line-strong);border-radius:var(--radius);background:linear-gradient(155deg,var(--card),color-mix(in srgb,var(--c-acc,var(--accent)) 9%,var(--card)));transition:transform .5s var(--ease),border-color .35s,box-shadow .45s;overflow:hidden}
+.care::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c-acc,var(--accent));opacity:.8}
+.care:hover{transform:translateY(-6px);border-color:var(--c-acc,var(--accent));box-shadow:0 22px 44px -26px var(--accent-glow)}
+.care .ico{width:46px;height:46px;border-radius:14px;background:color-mix(in srgb,var(--c-acc,var(--accent)) 20%,transparent);display:grid;place-items:center;margin-bottom:16px}
+.care svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.care h3{font-family:var(--display);font-weight:600;font-size:22px;margin-bottom:6px}
 .care p{font-size:14px;color:var(--ink-soft)}
 
 /* Método y Preguntas */
-.timeline{position:relative;margin-top:54px;padding-left:44px}
-.timeline::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:1px;background:var(--line)}
-.timeline .fill{position:absolute;left:11px;top:6px;width:1px;height:0;background:var(--ink)}
-.tl{position:relative;padding:0 0 48px}
-.tl::before{content:"";position:absolute;left:-39px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--pearl);border:1.5px solid var(--ink-soft);transition:all .5s var(--ease)}
-.tl.in::before{background:var(--accent);border-color:var(--ink);box-shadow:0 0 0 7px var(--accent-soft)}
-.tl .k{font-family:var(--display);font-style:italic;font-size:15px;color:var(--ink-soft)}
-.tl h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,34px);margin:6px 0 8px}
-.tl p{color:var(--ink-soft);max-width:560px}
+.timeline{position:relative;margin-top:50px;padding-left:46px}
+.timeline::before{content:"";position:absolute;left:12px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline .fill{position:absolute;left:12px;top:6px;width:2px;height:0;background:var(--grad)}
+.tl{position:relative;padding:0 0 42px}
+.tl::before{content:"";position:absolute;left:-41px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--pearl);border:2px solid var(--ink-soft);transition:all .45s var(--ease)}
+.tl.in::before{background:var(--accent);border-color:var(--paper);box-shadow:0 0 0 7px var(--accent-soft)}
+.tl .k{font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.tl h3{font-family:var(--display);font-weight:600;font-size:clamp(25px,3.1vw,36px);margin:5px 0 8px}
+.tl p{color:var(--ink-soft);max-width:580px}
 
-.faqs{margin-top:48px;display:grid;gap:12px}
-.faq{border:1px solid var(--line);border-radius:18px;background:var(--glass);overflow:hidden}
-.faq button{width:100%;text-align:left;background:none;border:0;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-size:20px}
-.faq button span{font-family:var(--mono);font-size:18px;transition:transform .4s var(--ease)}
-.faq[aria-expanded=true] button span{transform:rotate(45deg)}
-.faq .ans{max-height:0;overflow:hidden;transition:max-height .5s var(--ease),padding .5s var(--ease);padding:0 24px;color:var(--ink-soft);font-size:15px}
+.faqs{margin-top:46px;display:grid;gap:12px}
+.faq{border:1px solid var(--line-strong);border-radius:18px;background:linear-gradient(145deg,var(--card),var(--card-tint));overflow:hidden;transition:border-color .3s}
+.faq[aria-expanded=true]{border-color:var(--accent)}
+.faq button{width:100%;text-align:left;background:none;border:0;padding:19px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:22px}
+.faq button span{font-family:var(--mono);font-size:18px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;flex:none;transition:transform .35s var(--ease),background .35s}
+.faq[aria-expanded=true] button span{transform:rotate(45deg);background:var(--accent);color:var(--accent-ink)}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .45s var(--ease),padding .45s var(--ease);padding:0 24px;color:var(--ink-soft);font-size:15px}
 .faq[aria-expanded=true] .ans{max-height:220px;padding:0 24px 20px}
 
 /* Cierre */
 .close{text-align:center}
-.panel{max-width:1020px;margin:0 auto;border-radius:34px;background:var(--grad);padding:clamp(54px,8vw,96px) 28px;position:relative;overflow:hidden;color:#1E1930}
-.panel::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--px,20%) var(--py,0%),rgba(255,255,255,.65),transparent 55%);transition:background .3s}
+.panel{max-width:1040px;margin:0 auto;border-radius:34px;background:linear-gradient(135deg,#9CBCE8 0%,#BEB2EE 52%,#F2BEB0 100%);padding:clamp(54px,8vw,96px) 28px;position:relative;overflow:hidden;color:#1D1732;box-shadow:0 36px 80px -36px var(--accent-glow)}
+.panel::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--px,20%) var(--py,0%),rgba(255,255,255,.72),transparent 56%);transition:background .3s}
 .panel>*{position:relative;z-index:1}
-.panel .eyebrow,.panel .sub,.panel h2 em{color:#3F3858}
-.panel h2{margin:0 auto}.panel .sub{margin-left:auto;margin-right:auto}
+.panel .eyebrow,.panel .sub{color:#352D52}.panel .eyebrow::before{background:#352D52}
+.panel h2{margin:0 auto;color:#1D1732}.panel h2 em{-webkit-text-fill-color:#44357A}
+.panel .sub{margin-left:auto;margin-right:auto}
 .contact-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:34px}
-.mail{display:inline-block;font-family:var(--display);font-size:clamp(20px,2.8vw,32px);border-bottom:1px solid #1E1930;padding-bottom:3px;transition:letter-spacing .45s var(--ease)}
+.mail{display:inline-block;font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,34px);border-bottom:1.5px solid #1D1732;padding-bottom:3px;transition:letter-spacing .4s var(--ease)}
 .mail:hover{letter-spacing:.04em}
-.copy-btn{border:1px solid rgba(30,25,48,.35);background:rgba(255,255,255,.55);color:#1E1930;border-radius:99px;padding:8px 16px;font-size:12.5px;font-weight:500;transition:all .35s var(--ease)}
-.copy-btn:hover{background:#1E1930;color:#FAF7F2}
-footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:12px;letter-spacing:.14em;color:var(--ink-soft);border-top:1px solid var(--line)}
+.copy-btn{border:1px solid rgba(29,23,50,.35);background:rgba(255,255,255,.65);color:#1D1732;border-radius:99px;padding:9px 18px;font:600 12.5px var(--ui);transition:all .3s var(--ease)}
+.copy-btn:hover{background:#1D1732;color:#F7F3EC}
+footer{padding:38px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font:500 12px var(--ui);letter-spacing:.14em;color:var(--ink-soft);border-top:1px solid var(--line)}
 
 /* Paleta de comandos */
-.cmd{position:fixed;inset:0;z-index:90;background:rgba(19,16,29,.52);backdrop-filter:blur(8px);display:none;place-items:start center;padding-top:14vh}
-.cmd.on{display:grid;animation:fade .35s var(--ease)}
-.cmd-box{width:min(560px,92vw);background:var(--paper);border:1px solid var(--line-strong);border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.55)}
-.cmd input{width:100%;border:0;border-bottom:1px solid var(--line);background:none;padding:18px 22px;font:400 16px var(--ui);color:var(--ink);outline:0}
+.cmd{position:fixed;inset:0;z-index:90;background:rgba(17,14,27,.56);backdrop-filter:blur(10px);display:none;place-items:start center;padding-top:14vh}
+.cmd.on{display:grid;animation:fade .3s var(--ease)}
+.cmd-box{width:min(560px,92vw);background:var(--paper);border:1px solid var(--line-strong);border-radius:22px;overflow:hidden;box-shadow:0 40px 90px -28px rgba(0,0,0,.6)}
+.cmd input{width:100%;border:0;border-bottom:1px solid var(--line);background:none;padding:18px 22px;font:500 15.5px var(--ui);color:var(--ink);outline:0}
 .cmd ul{list-style:none;max-height:330px;overflow:auto;padding:8px}
-.cmd li{padding:11px 16px;border-radius:12px;cursor:pointer;display:flex;justify-content:space-between;font-size:14px}
-.cmd li.sel{background:var(--accent-soft)}
+.cmd li{padding:11px 16px;border-radius:12px;cursor:pointer;display:flex;justify-content:space-between;font-size:14px;transition:background .2s}
+.cmd li.sel{background:var(--accent-soft);font-weight:600}
 .cmd li span{font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
 
 @media(max-width:960px){.essence-grid,.arch{grid-template-columns:1fr}.links{display:none}}
 @media(max-width:780px){
   .cols{grid-template-columns:1fr}.tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
-  .tabs::-webkit-scrollbar{display:none}.brandbox input{width:170px}
+  .tabs::-webkit-scrollbar{display:none}.brandbox input{width:168px}
   .kpis{grid-template-columns:1fr 1fr}.rooms{grid-template-columns:repeat(3,1fr)}
-  .ba{height:380px}.ba .old .tm,.ba .neo .tm{font-size:32px}
+  .ba{height:385px}.ba .old .tm,.ba .neo .tm{font-size:34px}
 }
 @media(max-width:560px){
   .vp-toggle,.kbd{display:none}
-  nav{padding:14px 12px;gap:8px}
-  .brand{font-size:12px;letter-spacing:.14em;gap:7px}.brand svg{width:24px;height:24px}
+  nav{padding:12px 12px;gap:8px}
+  .brand{font-size:13px;letter-spacing:.14em;gap:7px}.brand svg{width:24px;height:24px}
   .tools{gap:5px}.pill{padding:6px 10px;font-size:11.5px}
-  h1{font-size:clamp(28px,8.5vw,38px);letter-spacing:.14em;padding-left:.14em}
+  h1{font-size:clamp(30px,9vw,40px);letter-spacing:.14em;padding-left:.14em}
   .cta{padding:13px 22px;font-size:12px}
+  .mini-form{grid-template-columns:1fr}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mark .facet,.mark .flow{stroke-dashoffset:0}h1 span{opacity:1;transform:none}.rv{opacity:1;transform:none}.veil{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.mark .facet,.mark .flow{stroke-dashoffset:0}.mark .facet-fill{opacity:1}h1 span{opacity:1;transform:none}.rv{opacity:1;transform:none}.veil{display:none}}
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
 <div class="cur-dot" id="dot"></div><div class="cur-ring" id="ring"></div>
 
+<!-- Velo de entrada con el símbolo facetado sin estrellas -->
 <div class="veil" aria-hidden="true">
-  <svg viewBox="0 0 120 120"><defs><linearGradient id="zv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FAEE0"/><stop offset=".5" stop-color="#B0A3DE"/><stop offset="1" stop-color="#E6AC99"/></linearGradient></defs>
-  <path class="d" pathLength="1" d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zv)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path class="d" pathLength="1" d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="#6F5BAE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg viewBox="0 0 120 120">
+    <defs><linearGradient id="zv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5E8CE3"/><stop offset=".52" stop-color="#927CE0"/><stop offset="1" stop-color="#E58D78"/></linearGradient></defs>
+    <path class="d" pathLength="1" d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#zv)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="d" pathLength="1" d="M 38 41 H 81 L 41 79 H 82" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
 </div>
 
 <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="prism-grid" aria-hidden="true"></div>
 
+<!-- Gradientes compartidos del emblema (actualizados por el selector de paleta) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="zg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FAEE0"/><stop offset=".5" stop-color="#B0A3DE"/><stop offset="1" stop-color="#E6AC99"/></linearGradient>
-    <linearGradient id="zgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B9CDEB" stop-opacity=".55"/><stop offset="1" stop-color="#F3CDBF" stop-opacity=".55"/></linearGradient>
+    <linearGradient id="zg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="var(--accent)"/>
+      <stop offset="0.52" stop-color="var(--accent-2)"/>
+      <stop offset="1" stop-color="var(--accent-3)"/>
+    </linearGradient>
+    <linearGradient id="zf1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".36"/>
+      <stop offset="1" stop-color="var(--accent-2)" stop-opacity=".16"/>
+    </linearGradient>
+    <linearGradient id="zf2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="var(--accent-2)" stop-opacity=".30"/>
+      <stop offset="1" stop-color="var(--accent-3)" stop-opacity=".36"/>
+    </linearGradient>
   </defs>
 </svg>
 
 <nav>
   <a class="brand" href="#inicio" aria-label="Zaphyrel">
     <svg viewBox="0 0 120 120" aria-hidden="true">
-      <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 91 20 L 92.8 25.2 L 98 27 L 92.8 28.8 L 91 34 L 89.2 28.8 L 84 27 L 89.2 25.2 Z" fill="url(#zg)"/>
+      <polygon points="60,9 26,43 37,49 60,26" fill="url(#zf1)"/>
+      <polygon points="60,9 111,60 94,60 60,26" fill="url(#zf2)"/>
+      <polygon points="111,60 60,111 60,94 94,60" fill="url(#zf2)" opacity=".88"/>
+      <path d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#zg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#zg)" stroke-width="1.8" stroke-opacity=".55" stroke-linejoin="round"/>
+      <path d="M 10 68 C 19 68, 25 72, 33 72 M 16 78 C 23 78, 27 80, 32 80" fill="none" stroke="url(#zg)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="currentColor"/>
     </svg>
     ZAPHYREL
   </a>
@@ -376,8 +460,8 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
     <a href="#metodo">Método</a>
   </div>
   <div class="tools">
-    <button class="pill" id="cmdBtn" aria-label="Abrir paleta de comandos">Buscar<span class="kbd">Ctrl K</span></button>
-    <button class="pill" id="night" aria-pressed="false" aria-label="Cambiar a modo noche">☾</button>
+    <button class="pill" id="cmdBtn" aria-label="Abrir paleta de comandos">Buscar <span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" aria-pressed="false" aria-label="Cambiar entre modo claro y oscuro">☾ Noche</button>
     <button class="pill" id="sound" aria-pressed="false" aria-label="Activar sonido de marca">♪ Sonido</button>
   </div>
 </nav>
@@ -387,13 +471,18 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
   <div class="hero-inner">
     <div class="stage">
       <div class="halo" aria-hidden="true"></div>
-      <svg class="mark" id="mark" viewBox="0 0 120 120" role="img" aria-label="Emblema Zaphyrel (toca para destello)">
-        <path class="facet" pathLength="1" d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="facet" pathLength="1" d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#zgs)" stroke-width="1.25" stroke-linejoin="round"/>
-        <path class="facet" pathLength="1" d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#zgs)" stroke-width="1.15" stroke-linecap="round"/>
-        <path class="flow" pathLength="1" d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="flow" pathLength="1" d="M 21 77 H 31" fill="none" stroke="url(#zg)" stroke-width="2" stroke-linecap="round"/>
-        <path class="glint" d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#zg)"/>
+      <div class="halo-2" aria-hidden="true"></div>
+      <svg class="mark" id="mark" viewBox="0 0 120 120" role="img" aria-label="Emblema facetado Zaphyrel (toca para destello)">
+        <g class="facet-fill">
+          <polygon points="60,9 26,43 37,49 60,26" fill="url(#zf1)"/>
+          <polygon points="60,9 111,60 94,60 60,26" fill="url(#zf2)"/>
+          <polygon points="111,60 60,111 60,94 94,60" fill="url(#zf2)" opacity=".88"/>
+        </g>
+        <path class="facet" pathLength="1" d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#zg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon class="facet" pathLength="1" points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#zg)" stroke-width="1.35" stroke-opacity=".62" stroke-linejoin="round"/>
+        <path class="facet" pathLength="1" d="M 60 9 V 25 M 111 60 H 95 M 60 111 V 95 M 44 25 L 60 17 L 76 25 M 95 44 L 103 60 L 95 76" fill="none" stroke="url(#zg)" stroke-width="1.2" stroke-opacity=".55" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="flow" pathLength="1" d="M 10 68 C 19 68, 25 72, 33 72 M 16 78 C 23 78, 27 80, 32 80" fill="none" stroke="url(#zg)" stroke-width="2.1" stroke-linecap="round"/>
+        <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="currentColor"/>
       </svg>
     </div>
     <h1 id="title" aria-label="ZAPHYREL"></h1>
@@ -403,52 +492,58 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
       <a class="cta mag" href="#lab">PROBAR 8 SISTEMAS <span>→</span></a>
       <a class="cta ghost mag" href="#arquitecto">DISEÑA EL TUYO</a>
     </div>
-    <div class="status" aria-live="off"><i></i><span id="statusTxt">8 sistemas listos · respuesta en 11 ms</span></div>
+    <div class="hero-dock">
+      <div class="status" aria-live="off"><i></i><span id="statusTxt">8 sistemas listos · respuesta en 10 ms</span></div>
+      <div class="mood-bar" aria-label="Paleta global">
+        <span>Atmósfera</span>
+        <div class="sw sw-sync" id="heroSw"></div>
+      </div>
+    </div>
   </div>
 </header>
 
 <section id="esencia">
   <div class="wrap">
     <p class="eyebrow rv">Anatomía de la marca</p>
-    <h2 class="rv">Zéfiro, la brisa que fluye. Zafiro, la gema que perdura. <em>Todo parte del mismo trazo.</em></h2>
-    <p class="sub rv">Cada línea del emblema explica cómo diseñamos software: una estructura firme que protege lo valioso de tu negocio y un trazo fluido que renueva tu día a día. Toca cada pilar para verlo.</p>
+    <h2 class="rv">Zéfiro, la brisa que fluye. Zafiro, la gema que perdura. <em>Todo nace del mismo cristal.</em></h2>
+    <p class="sub rv">Cada faceta y cada curva del emblema explica cómo diseñamos software: estructura luminosa que protege lo valioso de tu negocio y un trazo fluido que conecta tu operación. Toca cada pilar para inspeccionarlo.</p>
 
     <div class="essence-grid">
-      <div class="blueprint rv" id="bp" data-focus="">
-        <svg viewBox="0 0 120 120" aria-hidden="true">
-          <g class="bp-part p-esencia">
-            <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#zg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 27 60 L 60 27 L 93 60 L 60 93 Z" fill="none" stroke="url(#zgs)" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M 60 10 V 27 M 110 60 H 93 M 60 110 V 93" fill="none" stroke="url(#zgs)" stroke-width="1.3" stroke-linecap="round"/>
-          </g>
-          <g class="bp-part p-flujo">
-            <path d="M 38 43 H 80 C 68 53 52 67 40 77 H 83" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 21 77 H 31" fill="none" stroke="url(#zg)" stroke-width="2.2" stroke-linecap="round"/>
-          </g>
-          <g class="bp-part p-inno">
-            <path d="M 91 20 L 92.6 25.4 L 98 27 L 92.6 28.6 L 91 34 L 89.4 28.6 L 84 27 L 89.4 25.4 Z" fill="url(#zg)"/>
-            <circle cx="91" cy="27" r="13" fill="none" stroke="var(--accent)" stroke-dasharray="3 3" stroke-width="1"/>
-          </g>
-        </svg>
-        <p class="bp-cap" id="bpCap">Toca un pilar para inspeccionar el símbolo</p>
-        <p class="bp-hint">GEOMETRÍA · SONIDO · INTERFAZ</p>
+      <div class="prism-frame rv">
+        <div class="blueprint" id="bp" data-focus="">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <g class="bp-part p-esencia">
+              <polygon points="60,9 26,43 37,49 60,26" fill="url(#zf1)"/>
+              <path d="M 15 54 L 60 9 L 111 60 L 60 111 L 41 92" fill="none" stroke="url(#zg)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <polygon points="60,25 95,60 60,95 25,60" fill="none" stroke="url(#zg)" stroke-width="1.5" stroke-opacity=".62" stroke-linejoin="round"/>
+            </g>
+            <g class="bp-part p-inno">
+              <polygon points="60,9 111,60 94,60 60,26" fill="url(#zf2)"/>
+              <polygon points="111,60 60,111 60,94 94,60" fill="url(#zf2)" opacity=".92"/>
+              <path d="M 60 9 V 25 M 111 60 H 95 M 60 111 V 95 M 44 25 L 60 17 L 76 25 M 95 44 L 103 60 L 95 76" fill="none" stroke="url(#zg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g class="bp-part p-flujo">
+              <path d="M 10 68 C 19 68, 25 72, 33 72 M 16 78 C 23 78, 27 80, 32 80" fill="none" stroke="url(#zg)" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M 38 41 H 81 L 78.5 46 H 41 Z M 41.5 74 H 82 L 79.5 79 H 39 Z M 73.5 41 H 81 C 71 54, 58 66, 46.5 79 H 39 C 49 66, 61.5 54, 73.5 41 Z" fill="currentColor"/>
+            </g>
+          </svg>
+          <p class="bp-cap" id="bpCap">Toca un pilar para iluminar su anatomía en el símbolo</p>
+          <p class="bp-hint">FACETA · REFRACCIÓN · FLUJO</p>
+        </div>
       </div>
 
       <div class="pillars">
-        <article class="pillar tilt rv" data-bp="esencia" data-cap="Corona facetada abierta: lo sólido de tu oficio permanece y deja entrar el cambio.">
-          <div class="pillar-h"><span class="n">I</span><h3>Esencia</h3></div>
-          <p>Respetamos cómo ya funciona tu negocio. La arquitectura del sistema se adapta a tu forma real de trabajar, no al revés.</p>
-          <div class="bar"></div>
+        <article class="pillar tilt rv active" style="--pcol:var(--sapphire)" data-bp="esencia" data-cap="Corona y tabla interior de zafiro: el portal abierto deja entrar el cambio sin perder firmeza.">
+          <div class="pillar-h"><span class="n">01 · PILAR</span><h3>Esencia</h3></div>
+          <p>Respetamos cómo ya funciona tu negocio. La arquitectura del sistema se amolda a tu oficio y a tu gente, no al revés.</p>
         </article>
-        <article class="pillar tilt rv" style="--d:.1s" data-bp="inno" data-cap="Destello de refracción: soluciones que resuelven en silencio y sorprenden a quien las usa.">
-          <div class="pillar-h"><span class="n">II</span><h3>Innovación</h3></div>
-          <p>Llevamos automatización útil a los puntos exactos donde hoy se pierde tiempo, dinero o tranquilidad.</p>
-          <div class="bar"></div>
+        <article class="pillar tilt rv" style="--d:.08s;--pcol:var(--lavender)" data-bp="inno" data-cap="Biseles prismáticos y caras translúcidas: luz cromática que resuelve cuellos de botella en silencio.">
+          <div class="pillar-h"><span class="n">02 · PILAR</span><h3>Innovación</h3></div>
+          <p>Llevamos automatización práctica y diseño claro a los puntos exactos donde hoy se pierde tiempo, dinero o calma.</p>
         </article>
-        <article class="pillar tilt rv" style="--d:.2s" data-bp="flujo" data-cap="Z fluida con estela de brisa: información conectada de punta a punta sin tropiezos.">
-          <div class="pillar-h"><span class="n">III</span><h3>Flujo</h3></div>
-          <p>Cada área conversa con la siguiente al instante: recepción, caja, cocina, almacén o gerencia en la misma sintonía.</p>
-          <div class="bar"></div>
+        <article class="pillar tilt rv" style="--d:.16s;--pcol:var(--peach)" data-bp="flujo" data-cap="Z escultórica con estelas curvas de zéfiro: cada área conversa al instante con la siguiente.">
+          <div class="pillar-h"><span class="n">03 · PILAR</span><h3>Flujo</h3></div>
+          <p>Recepción, caja, cocina, inventario o gerencia trabajan en la misma sintonía desde computadora o celular.</p>
         </article>
       </div>
     </div>
@@ -457,204 +552,251 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
 
 <section id="lab">
   <div class="wrap">
-    <p class="eyebrow rv">Laboratorio en vivo</p>
-    <h2 class="rv">Ocho sistemas funcionando ahora. <em>Pruébalos en escritorio o celular.</em></h2>
-    <p class="sub rv">Cada pestaña atiende el problema que más importa mejorar en ese rubro. Escribe el nombre de tu negocio, elige un color o cambia a <b>Vista móvil</b> para comprobar la adaptabilidad.</p>
+    <p class="eyebrow rv">Laboratorio interactivo</p>
+    <h2 class="rv">Ocho sistemas funcionando ahora. <em>Tu marca, tu color, cualquier pantalla.</em></h2>
+    <p class="sub rv">Cada pestaña resuelve lo que más importa en su rubro. Escribe el nombre de tu negocio, prueba otra atmósfera de color o cambia a <b>Vista móvil</b> para ver la adaptabilidad al instante.</p>
 
-    <div class="lab rv" id="labBox">
-      <div class="lab-top">
-        <div class="tabs" role="tablist">
-          <button class="tab" role="tab" aria-selected="true" data-t="table">Restaurante</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="fit">Gimnasio</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="stock">Inventario</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="stay">Hotel</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="care">Clínica y citas</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="lib">Instituto / Biblioteca</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="shop">Catálogo web</button>
-          <button class="tab" role="tab" aria-selected="false" data-t="ledger">Cuentas</button>
-        </div>
-        <div class="brandbox">
-          <input id="bizName" type="text" maxlength="22" placeholder="Nombre de tu negocio" aria-label="Nombre de tu negocio">
-          <div class="sw" id="sw" aria-label="Color de tu marca"></div>
-          <div class="vp-toggle" role="group" aria-label="Vista previa adaptable">
-            <button id="vpDesk" aria-pressed="true">Escritorio</button>
-            <button id="vpMob" aria-pressed="false">Móvil</button>
+    <div class="lab-shell rv">
+      <div class="lab" id="labBox">
+        <div class="lab-top">
+          <div class="tabs" role="tablist">
+            <button class="tab" role="tab" aria-selected="true" data-t="table">Restaurante</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="fit">Gimnasio</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="stock">Inventario</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="stay">Hotel</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="care">Clínica y citas</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="lib">Instituto / Biblioteca</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="shop">Catálogo web</button>
+            <button class="tab" role="tab" aria-selected="false" data-t="ledger">Cuentas</button>
+          </div>
+          <div class="brandbox">
+            <input id="bizName" type="text" maxlength="22" placeholder="Nombre de tu negocio" aria-label="Nombre de tu negocio">
+            <div class="sw sw-sync" id="sw" aria-label="Color de tu marca"></div>
+            <div class="vp-toggle" role="group" aria-label="Vista previa adaptable">
+              <button id="vpDesk" aria-pressed="true">Escritorio</button>
+              <button id="vpMob" aria-pressed="false">Móvil</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="panel-wrap" id="pWrap">
-        <div class="device">
-          <!-- 1. Restaurante -->
-          <div class="panel-demo on" id="p-table">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL TABLE</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Pedido · Selecciona mesa</h4>
-                  <div class="chips" id="mesaChips">
-                    <button class="chip on" data-m="Mesa 2">Mesa 2</button>
-                    <button class="chip" data-m="Mesa 4">Mesa 4</button>
-                    <button class="chip" data-m="Para llevar">Para llevar</button>
-                  </div>
-                  <div class="menu" id="menu"></div>
-                  <ul class="list" id="order"><li class="empty" style="background:none">Toca un plato para añadirlo</li></ul>
-                  <div class="total"><span>Cuenta automática</span><span id="tot">S/ 0.00</span></div>
-                  <div class="split-row">
-                    <span>Dividir entre <b id="splitN">2</b> personas: <b id="splitV">S/ 0.00</b></span>
-                    <button class="btn sm" id="splitBtn">Cambiar personas</button>
-                  </div>
-                  <button class="btn pri" id="send" style="margin-top:12px;width:100%" disabled>Enviar a cocina sin olvidar nada</button>
-                </div>
-                <div class="col">
-                  <h4>Cocina y caja · tiempo real</h4>
-                  <div id="kitchen"><p class="empty">Sin pedidos. Al enviar uno, cocina lo ve al instante y caja queda lista.</p></div>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 2. Gimnasio -->
-          <div class="panel-demo" id="p-fit">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL FIT</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Ingreso rápido con QR</h4>
-                  <button class="btn pri" id="scan" style="width:100%">Escanear QR de un socio</button>
-                  <div id="member"><p class="empty">Esperando un código QR…</p></div>
-                  <div id="renewBox" style="margin-top:10px;display:none"><button class="btn sm pri" id="renewBtn">Renovar membresía en 1 clic</button></div>
-                </div>
-                <div class="col">
-                  <h4>Aforo en vivo</h4>
-                  <div class="big-n"><span id="aforo">0</span><span style="font-size:21px;color:var(--ink-soft)"> / 60</span></div>
-                  <div class="meter"><i id="aforoBar"></i></div>
-                  <h4 style="margin-top:18px">Últimos ingresos</h4>
-                  <ul class="list" id="log"><li class="empty" style="background:none">Sin movimientos</li></ul>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 3. Inventario -->
-          <div class="panel-demo" id="p-stock">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL STOCK</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Existencias y alertas</h4>
-                  <div id="stockRows"></div>
-                </div>
-                <div class="col">
-                  <h4>Reposición automática</h4>
-                  <ul class="list" id="po"><li class="empty" style="background:none">Todo sobre el mínimo. Cuando algo baje, se arma la orden aquí.</li></ul>
-                  <button class="btn pri" id="recv" style="margin-top:12px;width:100%" disabled>Recibir pedido y actualizar Kardex</button>
-                  <p class="note" id="kardexTxt">Último movimiento: en espera.</p>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 4. Hotel -->
-          <div class="panel-demo" id="p-stay">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL STAY</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Check-in digital sin filas</h4>
-                  <ul class="steps-live" id="stayS">
-                    <li>Reserva verificada</li><li>Habitación asignada</li><li>Llave digital enviada al celular</li><li>Recepción y limpieza sincronizadas</li>
-                  </ul>
-                  <button class="btn pri" id="checkin" style="margin-top:12px;width:100%">Simular llegada de huésped</button>
-                </div>
-                <div class="col">
-                  <h4>Mapa vivo (toca para cambiar estado)</h4>
-                  <div class="rooms" id="rooms"></div>
-                  <div class="kpis" style="grid-template-columns:1fr 1fr">
-                    <div class="kpi">Ocupadas<b id="occ">3</b></div><div class="kpi">Disponibles<b id="avl">4</b></div>
-                  </div>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 5. Clínica y citas -->
-          <div class="panel-demo" id="p-care">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL CARE</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Nueva cita sin cruces de horario</h4>
-                  <div style="display:grid;gap:8px">
-                    <input class="field-in" id="carePat" placeholder="Nombre del paciente (ej. Lucía Vega)" maxlength="28">
-                    <div class="chips" id="slotChips" style="margin-bottom:4px">
-                      <button class="chip on" data-h="10:00">10:00</button>
-                      <button class="chip" data-h="10:30">10:30</button>
-                      <button class="chip" data-h="11:00">11:00</button>
-                      <button class="chip" data-h="11:30">11:30</button>
+        <div class="panel-wrap" id="pWrap">
+          <div class="device">
+            <!-- 1. Restaurante -->
+            <div class="panel-demo on" id="p-table">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL TABLE</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Pedido por mesa</span><span class="badge" id="mesaTag">Mesa 2</span></h4>
+                    <div class="chips" id="mesaChips">
+                      <button class="chip on" data-m="Mesa 2">Mesa 2</button>
+                      <button class="chip" data-m="Mesa 4">Mesa 4</button>
+                      <button class="chip" data-m="Barra">Barra</button>
+                      <button class="chip" data-m="Para llevar">Para llevar</button>
                     </div>
-                    <button class="btn pri" id="bookBtn">Agendar y enviar recordatorio</button>
+                    <div class="menu" id="menu"></div>
+                    <ul class="list" id="order"><li class="empty">Toca un plato para añadirlo</li></ul>
+                    <div class="total"><span>Cuenta automática</span><span id="tot">S/ 0.00</span></div>
+                    <div class="split-row">
+                      <span>Dividir entre <b id="splitN">2</b> personas: <b id="splitV">S/ 0.00</b></span>
+                      <div class="qpill"><button id="splitDec" aria-label="Menos personas">−</button><button id="splitInc" aria-label="Más personas">+</button></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px">
+                      <button class="btn pri" id="send" disabled>Enviar a cocina</button>
+                      <button class="btn" id="boletaBtn" disabled>Boleta</button>
+                    </div>
+                    <div id="boletaOut"></div>
                   </div>
-                </div>
-                <div class="col">
-                  <h4>Sala de espera · toca para avanzar</h4>
-                  <div id="careList"></div>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 6. Instituto / Biblioteca -->
-          <div class="panel-demo" id="p-lib">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL LIB</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Catálogo y préstamo en 1 clic</h4>
-                  <input class="field-in" id="libQ" placeholder="Buscar libro o tema (ej. Redes, Obras, SQL)" style="margin-bottom:10px">
-                  <div id="libRes"></div>
-                </div>
-                <div class="col">
-                  <h4>Préstamos activos y devoluciones</h4>
-                  <ul class="list" id="libLoans"></ul>
-                  <p class="note">Detecta entregas vencidas al instante y calcula fecha de retorno.</p>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 7. Catálogo Web / Pedidos -->
-          <div class="panel-demo" id="p-shop">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL SHOP</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Vitrina sincronizada con stock</h4>
-                  <div class="menu" id="shopGrid"></div>
-                </div>
-                <div class="col">
-                  <h4>Tu pedido listo para confirmar</h4>
-                  <ul class="list" id="shopCart"><li class="empty" style="background:none">Agrega un producto para generar el resumen</li></ul>
-                  <div class="total"><span>Total</span><span id="shopTot">S/ 0.00</span></div>
-                  <button class="btn pri" id="shopSend" style="margin-top:12px;width:100%" disabled>Confirmar pedido automático</button>
-                  <p class="note" id="shopMsg"></p>
-                </div>
-              </div></div></div>
-          </div>
-
-          <!-- 8. Cuentas -->
-          <div class="panel-demo" id="p-ledger">
-            <div class="app"><div class="app-h"><b class="biz">Tu negocio</b><span class="pw">ZAPHYREL LEDGER</span></div>
-              <div class="app-b"><div class="cols">
-                <div class="col">
-                  <h4>Flujo del día · registra y observa</h4>
-                  <div class="big-n" id="sales">S/ 0</div>
-                  <div style="display:flex;gap:8px;margin-top:10px">
-                    <button class="btn sm pri" id="addSale">+ Venta S/ 120</button>
-                    <button class="btn sm" id="addExp">- Gasto S/ 45</button>
+                  <div class="col">
+                    <h4><span>Cocina y cronómetro</span><span class="badge ok" id="tkCount">0 activos</span></h4>
+                    <div id="kitchen"><p class="empty">Sin pedidos. Al enviar uno, cocina lo recibe al instante con cronómetro en vivo.</p></div>
                   </div>
-                  <div class="chart" id="chart"></div>
-                </div>
-                <div class="col">
-                  <h4>Informe mensual instantáneo</h4>
-                  <button class="btn pri" id="report" style="width:100%">Generar informe de ingresos, costos e IGV</button>
-                  <div id="rep"><p class="empty">Presiona para armar el balance del mes sin hojas manuales.</p></div>
-                </div>
-              </div></div></div>
-          </div>
+                </div></div></div>
+            </div>
 
+            <!-- 2. Gimnasio -->
+            <div class="panel-demo" id="p-fit">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL FIT</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4>Ingreso QR y socios</h4>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:10px">
+                      <button class="btn pri" id="scan">Escanear QR siguiente</button>
+                      <button class="btn" id="fitAddToggle">+ Alta</button>
+                    </div>
+                    <form class="mini-form" id="fitForm" style="display:none;margin-bottom:10px">
+                      <input class="field-in" id="fitNew" placeholder="Nombre del nuevo socio" maxlength="22">
+                      <select class="field-in" id="fitPlan" style="width:auto"><option>Mensual</option><option>Anual</option><option>Pase diario</option></select>
+                      <button class="btn sm pri" type="submit">Crear</button>
+                    </form>
+                    <input class="field-in" id="fitQ" placeholder="Buscar socio por nombre…" style="margin-bottom:8px">
+                    <div id="member"><p class="empty">Esperando escaneo o búsqueda…</p></div>
+                    <div id="renewBox" style="margin-top:10px;display:none"><button class="btn sm pri" id="renewBtn">Renovar membresía al instante</button></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Aforo en tiempo real</span><span class="badge ok" id="aforoTag">Óptimo</span></h4>
+                    <div class="big-n"><span id="aforo">0</span><span style="font-size:21px;color:var(--ink-soft)"> / 60 · <span id="aforoPct">0%</span></span></div>
+                    <div class="meter"><i id="aforoBar"></i></div>
+                    <h4 style="margin-top:16px">Últimos ingresos</h4>
+                    <ul class="list" id="log"><li class="empty">Sin ingresos registrados aún</li></ul>
+                  </div>
+                </div></div></div>
+            </div>
+
+            <!-- 3. Inventario -->
+            <div class="panel-demo" id="p-stock">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL STOCK</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Existencias y ajuste</span><span class="badge" id="stockVal">Valor: S/ 0</span></h4>
+                    <div id="stockRows"></div>
+                    <form class="mini-form" id="stockForm">
+                      <input class="field-in" id="stName" placeholder="Nuevo insumo (ej. Cacao)" maxlength="22">
+                      <input class="field-in" id="stQty" type="number" min="1" max="50" value="12" style="width:74px" aria-label="Cantidad">
+                      <button class="btn sm pri" type="submit">+ Añadir</button>
+                    </form>
+                  </div>
+                  <div class="col">
+                    <h4>Reposición y Kardex</h4>
+                    <ul class="list" id="po"><li class="empty">Todo sobre el mínimo. Cuando algo baje, aquí se arma la orden.</li></ul>
+                    <button class="btn pri" id="recv" style="margin-top:12px;width:100%" disabled>Recibir pedido y actualizar Kardex</button>
+                    <div class="kardex-box" id="kardexLog">Kardex listo · esperando movimientos…</div>
+                  </div>
+                </div></div></div>
+            </div>
+
+            <!-- 4. Hotel -->
+            <div class="panel-demo" id="p-stay">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL STAY</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4>Check-in con llave digital</h4>
+                    <ul class="steps-live" id="stayS">
+                      <li>Reserva verificada en segundos</li><li>Habitación libre asignada</li><li>Llave digital enviada al celular</li><li>Recepción y limpieza sincronizadas</li>
+                    </ul>
+                    <button class="btn pri" id="checkin" style="margin-top:12px;width:100%">Simular llegada de huésped</button>
+                  </div>
+                  <div class="col">
+                    <h4>Mapa vivo (toca para rotar 4 estados)</h4>
+                    <div class="rooms" id="rooms"></div>
+                    <div class="kpis">
+                      <div class="kpi">Ocupadas<b id="occ">3</b></div>
+                      <div class="kpi">Disponibles<b id="avl">4</b></div>
+                      <div class="kpi">Ingreso/día<b id="stayRev">S/ 660</b></div>
+                    </div>
+                  </div>
+                </div></div></div>
+            </div>
+
+            <!-- 5. Clínica y citas -->
+            <div class="panel-demo" id="p-care">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL CARE</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4>Agenda sin cruces</h4>
+                    <div style="display:grid;gap:8px">
+                      <input class="field-in" id="carePat" placeholder="Nombre del paciente (ej. Lucía Vega)" maxlength="28">
+                      <div class="chips" id="specChips" style="margin-bottom:2px">
+                        <button class="chip on" data-s="Medicina">Medicina</button>
+                        <button class="chip" data-s="Odontología">Odontología</button>
+                        <button class="chip" data-s="Pediatría">Pediatría</button>
+                      </div>
+                      <div class="chips" id="slotChips" style="margin-bottom:2px">
+                        <button class="chip on" data-h="10:00">10:00</button>
+                        <button class="chip" data-h="10:30">10:30</button>
+                        <button class="chip" data-h="11:00">11:00</button>
+                        <button class="chip" data-h="11:30">11:30</button>
+                      </div>
+                      <button class="btn pri" id="bookBtn">Agendar y enviar recordatorio</button>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <h4>Sala de espera · toca para avanzar</h4>
+                    <div id="careList"></div>
+                    <div id="rxOut"></div>
+                  </div>
+                </div></div></div>
+            </div>
+
+            <!-- 6. Instituto / Biblioteca -->
+            <div class="panel-demo" id="p-lib">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL LIB</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4>Catálogo y préstamo rápido</h4>
+                    <div style="display:grid;grid-template-columns:1fr 130px;gap:8px;margin-bottom:10px">
+                      <input class="field-in" id="libQ" placeholder="Buscar libro o tema…">
+                      <input class="field-in" id="libStu" placeholder="Alumno / cód." maxlength="18">
+                    </div>
+                    <div id="libRes"></div>
+                  </div>
+                  <div class="col">
+                    <h4>Préstamos y vencimientos</h4>
+                    <ul class="list" id="libLoans"></ul>
+                    <p class="note">Alerta visual inmediata en entregas atrasadas y retorno en 1 clic.</p>
+                  </div>
+                </div></div></div>
+            </div>
+
+            <!-- 7. Catálogo Web / Pedidos -->
+            <div class="panel-demo" id="p-shop">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL SHOP</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4>Vitrina sincronizada con stock</h4>
+                    <div class="menu" id="shopGrid"></div>
+                  </div>
+                  <div class="col">
+                    <h4>Pedido y resumen WhatsApp</h4>
+                    <ul class="list" id="shopCart"><li class="empty">Agrega un producto para armar tu pedido</li></ul>
+                    <div style="display:flex;gap:8px;margin-top:10px">
+                      <input class="field-in" id="shopPromo" placeholder="Cupón (prueba: ZAPHY10)" maxlength="14">
+                      <button class="btn sm" id="applyPromo">Aplicar</button>
+                    </div>
+                    <div class="total"><span>Total <small id="promoTag" style="font-weight:500;color:var(--ok-ink)"></small></span><span id="shopTot">S/ 0.00</span></div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px">
+                      <button class="btn pri" id="shopSend" disabled>Confirmar pedido</button>
+                      <button class="btn" id="shopWa" disabled>Copiar WhatsApp</button>
+                    </div>
+                    <p class="note" id="shopMsg"></p>
+                  </div>
+                </div></div></div>
+            </div>
+
+            <!-- 8. Cuentas -->
+            <div class="panel-demo" id="p-ledger">
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot"></i><b class="biz">Tu negocio</b></div><span class="pw">ZAPHYREL LEDGER</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Flujo en vivo</span><span class="badge ok" id="marginBadge">Margen: 0%</span></h4>
+                    <div class="big-n" id="sales">S/ 0</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+                      <button class="btn sm pri" id="addSale">+ Venta S/ 120</button>
+                      <button class="btn sm" id="addExp">− Gasto S/ 45</button>
+                    </div>
+                    <form class="mini-form" id="ledForm">
+                      <input class="field-in" id="ledConcept" placeholder="Concepto (ej. Delivery)" maxlength="20">
+                      <input class="field-in" id="ledAmt" type="number" min="1" max="9999" value="85" style="width:82px" aria-label="Monto">
+                      <button class="btn sm pri" type="submit">+ Registrar</button>
+                    </form>
+                    <div class="chart" id="chart"></div>
+                  </div>
+                  <div class="col">
+                    <h4>Balance mensual instantáneo</h4>
+                    <div style="display:flex;gap:8px">
+                      <button class="btn pri" id="report" style="flex:1">Generar balance</button>
+                      <button class="btn" id="copyRep" disabled>Copiar</button>
+                    </div>
+                    <div id="rep"><p class="empty">Presiona para calcular ingresos, costos, utilidad neta e IGV al instante.</p></div>
+                  </div>
+                </div></div></div>
+            </div>
+
+          </div>
         </div>
+        <div class="toast" id="toast" role="status"></div>
       </div>
-      <div class="toast" id="toast" role="status"></div>
     </div>
-    <p class="note rv">Cifras y nombres ilustrativos para que pruebes el funcionamiento real de cada módulo.</p>
+    <p class="note rv">Cifras y ejemplos interactivos para comprobar cómo responde el sistema en escritorio y celular.</p>
   </div>
 </section>
 
@@ -662,12 +804,12 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
   <div class="wrap">
     <p class="eyebrow rv">Tu proyecto a medida</p>
     <h2 class="rv">¿Tu negocio es distinto? <em>Arma aquí tu propia arquitectura.</em></h2>
-    <p class="sub rv">Esos ocho sistemas son solo puntos de partida. Elige o escribe tu rubro y lo que hoy te quita tiempo: diseñamos la propuesta base en vivo.</p>
+    <p class="sub rv">Esos ocho módulos son solo puntos de partida. Elige o escribe tu rubro y lo que hoy te frena: diseñamos la propuesta base en tiempo real.</p>
 
     <div class="arch rv">
       <div class="arch-q">
         <div class="blk">
-          <h3>1. ¿Qué hace tu negocio o proyecto?</h3>
+          <h3>1. ¿A qué se dedica tu negocio?</h3>
           <div class="chips" id="archInd">
             <button class="chip on" data-ind="Restaurante o cafetería">Restaurante / Café</button>
             <button class="chip" data-ind="Gimnasio o centro deportivo">Gimnasio</button>
@@ -678,10 +820,10 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
             <button class="chip" data-ind="Plataforma digital o streaming">Plataforma / Streaming</button>
             <button class="chip" data-ind="Empresa de servicios u obra">Servicios / Ingeniería</button>
           </div>
-          <input class="field-in" id="archCustom" placeholder="O escribe otro proyecto tuyo (ej. Veterinaria, Ferretería, Academia…)" maxlength="45">
+          <input class="field-in" id="archCustom" placeholder="O escribe otro rubro (ej. Veterinaria, Ferretería, Academia…)" maxlength="45">
         </div>
         <div class="blk">
-          <h3>2. ¿Qué quieres mejorar primero?</h3>
+          <h3>2. ¿Qué quieres resolver primero?</h3>
           <div class="chips" id="archPain">
             <button class="chip on" data-p="cuentas">Cuentas e informes automáticos</button>
             <button class="chip on" data-p="pedidos">Pedidos o citas sin errores</button>
@@ -692,21 +834,23 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
         </div>
       </div>
 
-      <div class="arch-res" id="archOut">
-        <div>
-          <p class="eyebrow" style="margin-bottom:8px">Propuesta base generada</p>
-          <h3 id="archTitle">Sistema para Restaurante o cafetería</h3>
-          <p class="sub" style="margin-top:8px;font-size:14.5px" id="archDesc">Conexión directa entre atención, cocina/área interna, inventarios y cierre de caja.</p>
-          <p class="eyebrow" style="margin:18px 0 8px">Módulos que se conectan</p>
-          <div class="mods" id="archMods"></div>
-          <p class="eyebrow" style="margin:18px 0 8px">Qué pasa a ser automático</p>
-          <ul class="flows" id="archFlows"></ul>
-        </div>
-        <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
-          <span style="font-size:12.5px;color:var(--ink-soft)" id="archSave">Ahorro operativo estimado: ~8 a 12 h/semana</span>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn sm" id="archCopy">Copiar resumen</button>
-            <a class="btn sm pri" id="archMail" href="#contacto">Cotizar esta arquitectura</a>
+      <div class="arch-res-wrap">
+        <div class="arch-res" id="archOut">
+          <div>
+            <p class="eyebrow" style="margin-bottom:8px">Propuesta base generada</p>
+            <h3 id="archTitle">Sistema a medida para Restaurante o cafetería</h3>
+            <p class="sub" style="margin-top:8px;font-size:14.5px">Arquitectura conectada para que cada área trabaje con el mismo pulso.</p>
+            <p class="eyebrow" style="margin:18px 0 8px">Módulos que se integran</p>
+            <div class="mods" id="archMods"></div>
+            <p class="eyebrow" style="margin:18px 0 8px">Qué pasa a ser automático</p>
+            <ul class="flows" id="archFlows"></ul>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+            <span style="font:600 12.5px var(--mono);color:var(--accent)" id="archSave">Ahorro estimado: ~8 a 12 h/semana</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn sm" id="archCopy">Copiar resumen</button>
+              <a class="btn sm pri" id="archMail" href="#contacto">Cotizar arquitectura</a>
+            </div>
           </div>
         </div>
       </div>
@@ -718,7 +862,7 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
   <div class="wrap">
     <p class="eyebrow rv">Antes y después</p>
     <h2 class="rv">Del cuaderno al sistema, <em>en un solo gesto.</em></h2>
-    <p class="sub rv">Desliza para comparar cómo termina el día un negocio anotando a mano frente a un sistema construido a su medida.</p>
+    <p class="sub rv">Desliza para comparar cómo cierra el día un negocio anotando a mano frente a una plataforma hecha a su medida.</p>
     <div class="ba rv" id="ba" style="--pos:50%">
       <div class="old"><h3>Cierre de caja, a mano</h3>
         <p>Lunes — 14 mesas, <s>43</s> 45 platos…<br>Sumar boletas, <s>revisar</s> volver a sumar…<br>¿Faltan S/ 20? Buscar en el cuaderno…<br>Copiar los totales a otra hoja…</p>
@@ -734,12 +878,12 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
     <p class="note rv">Escenario ilustrativo.</p>
 
     <div class="cares">
-      <div class="care rv"><svg viewBox="0 0 40 40"><path d="M20 5l13 5v9c0 8-6 14-13 16C13 33 7 27 7 19v-9z"/><path d="M14 20l4 4 8-9"/></svg><h3>Accesos por rol</h3><p>Cada persona ve y hace exactamente lo que corresponde a su puesto.</p></div>
-      <div class="care rv" style="--d:.06s"><svg viewBox="0 0 40 40"><path d="M8 28a8 8 0 0 1 2-15 10 10 0 0 1 19 2 7 7 0 0 1 1 13z"/><path d="M20 20v9M16 25l4 4 4-4"/></svg><h3>Respaldo continuo</h3><p>Tu información protegida y recuperable, sin depender de un solo equipo.</p></div>
-      <div class="care rv" style="--d:.12s"><svg viewBox="0 0 40 40"><path d="M22 5L9 22h9l-2 13 13-17h-9z"/></svg><h3>Velocidad real</h3><p>Pantallas ligeras que responden al instante, incluso en computadoras modestas o datos móviles.</p></div>
-      <div class="care rv" style="--d:.18s"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="20" height="16" rx="2"/><rect x="24" y="16" width="10" height="16" rx="2"/><path d="M12 29h8"/></svg><h3>Adaptable a todo</h3><p>Funciona fluido en celular, tablet o escritorio sin perder comodidad.</p></div>
-      <div class="care rv" style="--d:.24s"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M13 22c2 4 12 4 14 0M15 15h.01M25 15h.01"/></svg><h3>Sin manuales eternos</h3><p>Diseñado para que cualquier colaborador lo entienda desde el primer día.</p></div>
-      <div class="care rv" style="--d:.30s"><svg viewBox="0 0 40 40"><path d="M7 33h26M11 33V17l9-8 9 8v16"/><path d="M17 33v-8h6v8"/></svg><h3>Tu propia marca</h3><p>Tu nombre, tus colores y tu voz. La ingeniería es nuestra, la identidad es tuya.</p></div>
+      <div class="care rv" style="--c-acc:var(--sapphire)"><div class="ico"><svg viewBox="0 0 40 40"><path d="M20 5l13 5v9c0 8-6 14-13 16C13 33 7 27 7 19v-9z"/><path d="M14 20l4 4 8-9"/></svg></div><h3>Accesos por rol</h3><p>Cada persona ve y ejecuta exactamente lo que corresponde a su puesto.</p></div>
+      <div class="care rv" style="--d:.05s;--c-acc:var(--lavender)"><div class="ico"><svg viewBox="0 0 40 40"><path d="M8 28a8 8 0 0 1 2-15 10 10 0 0 1 19 2 7 7 0 0 1 1 13z"/><path d="M20 20v9M16 25l4 4 4-4"/></svg></div><h3>Respaldo continuo</h3><p>Tu información protegida y recuperable, sin depender de un solo equipo.</p></div>
+      <div class="care rv" style="--d:.10s;--c-acc:var(--peach)"><div class="ico"><svg viewBox="0 0 40 40"><path d="M22 5L9 22h9l-2 13 13-17h-9z"/></svg></div><h3>Velocidad real</h3><p>Pantallas ligeras que responden al instante, incluso con datos móviles modestos.</p></div>
+      <div class="care rv" style="--d:.15s;--c-acc:var(--sage)"><div class="ico"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="20" height="16" rx="2"/><rect x="24" y="16" width="10" height="16" rx="2"/><path d="M12 29h8"/></svg></div><h3>Adaptable a todo</h3><p>Funciona fluido en celular, tablet o escritorio sin perder comodidad ni contraste.</p></div>
+      <div class="care rv" style="--d:.20s;--c-acc:var(--amber)"><div class="ico"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M13 22c2 4 12 4 14 0M15 15h.01M25 15h.01"/></svg></div><h3>Sin manuales eternos</h3><p>Diseñado para que cualquier colaborador lo entienda desde el primer día.</p></div>
+      <div class="care rv" style="--d:.25s;--c-acc:var(--sapphire)"><div class="ico"><svg viewBox="0 0 40 40"><path d="M7 33h26M11 33V17l9-8 9 8v16"/><path d="M17 33v-8h6v8"/></svg></div><h3>Tu propia marca</h3><p>Tu nombre, tu paleta y tu voz. La ingeniería es nuestra, la identidad es tuya.</p></div>
     </div>
   </div>
 </section>
@@ -749,16 +893,16 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
     <p class="eyebrow rv">Método y dudas</p>
     <h2 class="rv">Un camino sereno, <em>de la idea al día a día.</em></h2>
     <div class="timeline" id="tlWrap"><div class="fill" id="tlFill"></div>
-      <div class="tl"><span class="k">primero</span><h3>Escuchamos</h3><p>Conocemos tu oficio, a tu equipo y dónde hoy se frena el trabajo diario.</p></div>
-      <div class="tl"><span class="k">luego</span><h3>Construimos a la vista</h3><p>Entregas avances que puedes probar desde la primera semana, con tu marca y tus datos reales.</p></div>
-      <div class="tl"><span class="k">después</span><h3>Ponemos en marcha</h3><p>Acompañamos a tu equipo en el arranque para que la transición sea cómoda y sin tropiezos.</p></div>
-      <div class="tl" style="padding-bottom:0"><span class="k">siempre</span><h3>Evolucionamos contigo</h3><p>Cuando tu negocio crece o abre un local nuevo, el sistema crece al mismo ritmo.</p></div>
+      <div class="tl"><span class="k">01 · Primero</span><h3>Escuchamos</h3><p>Conocemos tu oficio, a tu equipo y dónde hoy se frena el trabajo diario.</p></div>
+      <div class="tl"><span class="k">02 · Luego</span><h3>Construimos a la vista</h3><p>Entregas avances que puedes probar desde la primera semana, con tu marca y datos reales.</p></div>
+      <div class="tl"><span class="k">03 · Después</span><h3>Ponemos en marcha</h3><p>Acompañamos a tu equipo en el arranque para que la transición sea cómoda y segura.</p></div>
+      <div class="tl" style="padding-bottom:0"><span class="k">04 · Siempre</span><h3>Evolucionamos contigo</h3><p>Cuando tu negocio crece o abre un local nuevo, el sistema crece al mismo ritmo.</p></div>
     </div>
 
     <div class="faqs rv" id="faqs">
-      <div class="faq" aria-expanded="false"><button>¿Puedo empezar con un módulo pequeño e ir sumando después?<span>+</span></button><div class="ans">Sí. Todo está pensado de forma modular: puedes iniciar por ejemplo con caja y pedidos o control de citas, y luego conectar inventario, sucursales o tienda web sin rehacer nada.</div></div>
-      <div class="faq" aria-expanded="false"><button>¿Funciona en celulares y computadoras que ya tenemos?<span>+</span></button><div class="ans">Sí. No necesitas equipos caros: las interfaces son ligeras, funcionan en el navegador desde cualquier celular, tablet o PC y se adaptan al tamaño de pantalla.</div></div>
-      <div class="faq" aria-expanded="false"><button>¿Mi sistema lleva mi propio logo y colores o los de Zaphyrel?<span>+</span></button><div class="ans">Siempre lleva tu marca, tu nombre y tus colores, tal como pudiste probar arriba en el Laboratorio.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Puedo empezar con un módulo pequeño e ir sumando después?<span>+</span></button><div class="ans">Sí. Todo está pensado de forma modular: puedes iniciar con caja y pedidos o agenda de citas, y luego conectar inventario, sucursales o catálogo web sin rehacer nada.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Funciona en celulares y computadoras que ya tenemos?<span>+</span></button><div class="ans">Sí. No necesitas equipos costosos: las interfaces son ligeras, funcionan desde cualquier celular, tablet o PC y se adaptan al tamaño de pantalla y modo claro u oscuro.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Mi sistema lleva mi propio logo y colores o los de Zaphyrel?<span>+</span></button><div class="ans">Siempre lleva tu marca, tu nombre y tu paleta, tal como pudiste comprobar arriba en el Laboratorio.</div></div>
       <div class="faq" aria-expanded="false"><button>¿Qué pasa si necesito algo que no está en los ocho ejemplos?<span>+</span></button><div class="ans">Los ejemplos son solo referencia. Diseñamos sistemas específicos para el flujo exacto de tu empresa, sea taller, veterinaria, constructora, agencia o comercio especializado.</div></div>
     </div>
   </div>
@@ -779,7 +923,7 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
 <footer><span>© ZAPHYREL</span><span>ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</span></footer>
 
 <div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
-  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a un sistema, sección o acción…" autocomplete="off"><ul id="cmdList"></ul></div>
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a un sistema, sección, paleta o acción…" autocomplete="off"><ul id="cmdList"></ul></div>
 </div>
 
 <audio id="sig" src="assets/zaphyrel-signature.wav" preload="auto"></audio>
@@ -788,17 +932,59 @@ footer{padding:40px clamp(18px,6vw,76px);display:flex;flex-wrap:wrap;gap:16px;ju
 <script>
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 /* Sonido */
 let soundOn=false;
 const sig=$('#sig'),chime=$('#chime');
 function ping(v=.2){if(!soundOn)return;chime.currentTime=0;chime.volume=v;chime.play().catch(()=>{})}
-$('#sound').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.setAttribute('aria-pressed',soundOn);e.currentTarget.textContent=soundOn?'♪ Sonido activo':'♪ Sonido';if(soundOn){sig.currentTime=0;sig.volume=.55;sig.play().catch(()=>{})}});
+$('#sound').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.setAttribute('aria-pressed',soundOn);e.currentTarget.textContent=soundOn?'♪ Activo':'♪ Sonido';if(soundOn){sig.currentTime=0;sig.volume=.55;sig.play().catch(()=>{})}});
 
-/* Modo noche */
-$('#night').addEventListener('click',e=>{const n=document.documentElement.dataset.theme!=='night';document.documentElement.dataset.theme=n?'night':'day';e.currentTarget.setAttribute('aria-pressed',n);e.currentTarget.textContent=n?'☀':'☾';ping()});
+/* Modo claro / oscuro con detección inicial + sincronización meta */
+function syncThemeBtn(){
+  const n=document.documentElement.dataset.theme==='night';
+  const b=$('#night');b.setAttribute('aria-pressed',n);b.textContent=n?'☀ Día':'☾ Noche';
+  $('#metaTheme').content=n?'#110E1B':'#F7F3EC';
+  applyPalette(activePal,false);
+}
+$('#night').addEventListener('click',()=>{
+  const n=document.documentElement.dataset.theme!=='night';
+  document.documentElement.dataset.theme=n?'night':'day';
+  try{localStorage.setItem('zy-theme',n?'night':'day')}catch(e){}
+  syncThemeBtn();ping();
+});
 
-/* Título y destello al tocar emblema */
+/* Paletas de color sincronizadas (Hero + Laboratorio + Canvas) */
+const palettes=[
+  {id:'zafiro',name:'Zafiro',day:'#5E8CE3',day2:'#927CE0',day3:'#E58D78',inkDay:'#FFFFFF',night:'#8AB4FF',night2:'#B8A9FF',night3:'#F7B7A6',inkNight:'#141022',rgb:'94,140,227',cols:['94,140,227','146,124,224','229,141,120']},
+  {id:'lavanda',name:'Lavanda',day:'#8B72DE',day2:'#5E8CE3',day3:'#E58D78',inkDay:'#FFFFFF',night:'#B8A9FF',night2:'#8AB4FF',night3:'#F7B7A6',inkNight:'#141022',rgb:'139,114,222',cols:['139,114,222','94,140,227','229,141,120']},
+  {id:'durazno',name:'Durazno',day:'#E07C66',day2:'#927CE0',day3:'#E2B45A',inkDay:'#FFFFFF',night:'#F7B7A6',night2:'#B8A9FF',night3:'#F2CC7E',inkNight:'#141022',rgb:'224,124,102',cols:['224,124,102','146,124,224','226,180,90']},
+  {id:'salvia',name:'Salvia',day:'#4FA886',day2:'#5E8CE3',day3:'#927CE0',inkDay:'#FFFFFF',night:'#8CDAB8',night2:'#8AB4FF',night3:'#B8A9FF',inkNight:'#141022',rgb:'79,168,134',cols:['79,168,134','94,140,227','146,124,224']},
+  {id:'ambar',name:'Ámbar',day:'#D69F3E',day2:'#E07C66',day3:'#927CE0',inkDay:'#1E182B',night:'#F2CC7E',night2:'#F7B7A6',night3:'#B8A9FF',inkNight:'#141022',rgb:'214,159,62',cols:['214,159,62','224,124,102','146,124,224']}
+];
+let activePal=0, particleCols=palettes[0].cols;
+function applyPalette(idx,chimeOn=true){
+  activePal=idx;const p=palettes[idx],n=document.documentElement.dataset.theme==='night',rs=document.documentElement.style;
+  rs.setProperty('--accent',n?p.night:p.day);
+  rs.setProperty('--accent-2',n?p.night2:p.day2);
+  rs.setProperty('--accent-3',n?p.night3:p.day3);
+  rs.setProperty('--accent-ink',n?p.inkNight:p.inkDay);
+  rs.setProperty('--accent-soft',`rgba(${p.rgb},${n?'.24':'.18'})`);
+  rs.setProperty('--accent-glow',`rgba(${p.rgb},${n?'.34':'.30'})`);
+  rs.setProperty('--card-tint',`rgba(${p.rgb},${n?'.12':'.08'})`);
+  particleCols=p.cols;
+  $$('.sw-sync').forEach(box=>$$('button',box).forEach((b,k)=>b.setAttribute('aria-pressed',k===idx)));
+  if(chimeOn)ping(.12);
+}
+$$('.sw-sync').forEach(box=>{
+  palettes.forEach((p,i)=>{
+    const b=document.createElement('button');b.style.background=p.day;b.title=p.name;b.setAttribute('aria-label','Paleta '+p.name);b.setAttribute('aria-pressed',i===0);
+    b.onclick=()=>applyPalette(i,true);box.append(b);
+  });
+});
+syncThemeBtn();
+
+/* Título y destello en emblema */
 $('#title').innerHTML=[...'ZAPHYREL'].map((c,i)=>`<span style="--i:${i}" aria-hidden="true">${c}</span>`).join('');
 const mark=$('#mark');
 mark.addEventListener('click',()=>{mark.classList.remove('pulse');void mark.offsetWidth;mark.classList.add('pulse');if(soundOn){sig.currentTime=0;sig.volume=.45;sig.play().catch(()=>{})}});
@@ -812,200 +998,244 @@ $$('.pillar[data-bp]').forEach(p=>{
 });
 
 /* Scroll reveal, progreso y línea temporal */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+function revealVisible(){$$('.rv,.tl').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight*1.08)el.classList.add('in')})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06});
 $$('.rv,.tl').forEach(el=>io.observe(el));
+addEventListener('load',()=>{revealVisible();setTimeout(revealVisible,180)});
+addEventListener('hashchange',()=>setTimeout(revealVisible,80));
 const prog=$('#progress'),tlW=$('#tlWrap'),tlF=$('#tlFill');
 function onScroll(){
   const h=document.documentElement;prog.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight||1)})`;
   const r=tlW.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.6-r.top)/r.height));tlF.style.height=(p*(r.height-12))+'px';
+  revealVisible();
 }
-addEventListener('scroll',onScroll,{passive:true});onScroll();
+addEventListener('scroll',onScroll,{passive:true});onScroll();revealVisible();
 
 /* Cursor, imán, inclinación 3D */
 const dot=$('#dot'),ring=$('#ring');let mx=0,my=0,rx=0,ry=0;
 addEventListener('pointermove',e=>{
   if(e.pointerType==='touch')return;document.body.classList.add('has-cursor');mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;
-  ring.classList.toggle('big',!!e.target.closest('a,button,input,.tab,.care,.pillar,.room'));
+  ring.classList.toggle('big',!!e.target.closest('a,button,input,select,.tab,.care,.pillar,.room'));
   if(!reduce){$$('.mag').forEach(b=>{const r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
-    const near=Math.hypot(dx,dy)<110;b.style.transform=near?`translate(${dx*.24}px,${dy*.32}px)`:'';b.style.transition=near?'transform .15s':'transform .6s cubic-bezier(.22,1,.36,1)'})}
+    const near=Math.hypot(dx,dy)<110;b.style.transform=near?`translate(${dx*.22}px,${dy*.28}px)`:'';b.style.transition=near?'transform .15s':'transform .55s cubic-bezier(.22,1,.36,1)'})}
   const pn=$('#panel'),pr=pn.getBoundingClientRect();pn.style.setProperty('--px',((e.clientX-pr.left)/pr.width*100)+'%');pn.style.setProperty('--py',((e.clientY-pr.top)/pr.height*100)+'%');
-  if(!reduce){const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);mark.style.transform=`rotateY(${x*26}deg) rotateX(${-y*20}deg)`}
+  if(!reduce){const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);mark.style.transform=`rotateY(${x*24}deg) rotateX(${-y*18}deg)`}
 });
 (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
 $$('.tilt').forEach(c=>{
   c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
-    c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');if(!reduce)c.style.transform=`rotateY(${(x-.5)*7}deg) rotateX(${(.5-y)*7}deg)`});
+    c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');if(!reduce)c.style.transform=`rotateY(${(x-.5)*6}deg) rotateX(${(.5-y)*6}deg)`});
   c.addEventListener('pointerleave',()=>c.style.transform='');
 });
 
-/* Partículas de brisa en Hero */
+/* Partículas de brisa + reflejos de zafiro en Hero */
 (function(){
   const cv=$('#flow'),c=cv.getContext('2d');if(reduce)return;
   let W,H,P=[],pm={x:-999,y:-999},t=0;
-  const cols=['159,188,229','185,174,228','238,191,176','169,206,184'];
   function size(){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);cv.width=r.width*d;cv.height=r.height*d;c.setTransform(d,0,0,d,0,0);W=r.width;H=r.height;
-    P=Array.from({length:Math.round(Math.min(130,W/9))},()=>({x:Math.random()*W,y:Math.random()*H,h:[],c:cols[Math.random()*4|0],s:.5+Math.random()}))}
+    P=Array.from({length:Math.round(Math.min(120,W/9))},()=>({x:Math.random()*W,y:Math.random()*H,h:[],ci:Math.random()*3|0,s:.55+Math.random()}))}
   size();addEventListener('resize',size);
   $('.hero').addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();pm.x=e.clientX-r.left;pm.y=e.clientY-r.top});
   let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
   function frame(){requestAnimationFrame(frame);if(!vis||document.hidden)return;t+=.004;c.clearRect(0,0,W,H);
+    const n=document.documentElement.dataset.theme==='night';
     for(const p of P){
-      const a=Math.sin(p.x*.004+t*3)*1.4+Math.cos(p.y*.005-t*2)*1.4;
-      let vx=Math.cos(a)*p.s*.9+.35,vy=Math.sin(a)*p.s*.9;
-      const dx=p.x-pm.x,dy=p.y-pm.y,d=Math.hypot(dx,dy);if(d<140){const f=(140-d)/140*2.4;vx+=dx/d*f;vy+=dy/d*f}
-      p.x+=vx;p.y+=vy;p.h.push([p.x,p.y]);if(p.h.length>14)p.h.shift();
+      const a=Math.sin(p.x*.004+t*3)*1.35+Math.cos(p.y*.005-t*2)*1.35;
+      let vx=Math.cos(a)*p.s*.95+.38,vy=Math.sin(a)*p.s*.9;
+      const dx=p.x-pm.x,dy=p.y-pm.y,d=Math.hypot(dx,dy);if(d<140&&d>1){const f=(140-d)/140*2.3;vx+=dx/d*f;vy+=dy/d*f}
+      p.x+=vx;p.y+=vy;p.h.push([p.x,p.y]);if(p.h.length>15)p.h.shift();
       if(p.x>W+20||p.y<-20||p.y>H+20||p.x<-20){p.x=-10;p.y=Math.random()*H;p.h=[]}
-      c.beginPath();p.h.forEach((q,i)=>i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]));c.strokeStyle=`rgba(${p.c},.82)`;c.lineWidth=1.5;c.stroke();
+      const rgb=particleCols[p.ci%particleCols.length];
+      c.beginPath();p.h.forEach((q,i)=>i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]));c.strokeStyle=`rgba(${rgb},${n?.78:.85})`;c.lineWidth=1.7;c.stroke();
     }}
   frame();
 })();
 
-setInterval(()=>{$('#statusTxt').textContent=`8 sistemas listos · respuesta en ${8+Math.floor(Math.random()*8)} ms`},2400);
+setInterval(()=>{$('#statusTxt').textContent=`8 sistemas listos · respuesta en ${8+Math.floor(Math.random()*7)} ms`},2400);
 
 /* ---------- Laboratorio ---------- */
-const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.k);toast.k=setTimeout(()=>t.classList.remove('show'),2600);ping(.22)};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.k);toast.k=setTimeout(()=>t.classList.remove('show'),2600);ping(.2)};
 function switchTab(id){$$('.tab').forEach(x=>x.setAttribute('aria-selected',x.dataset.t===id));$$('.panel-demo').forEach(p=>p.classList.toggle('on',p.id==='p-'+id))}
 $$('.tab').forEach(b=>b.addEventListener('click',()=>{switchTab(b.dataset.t);ping(.12)}));
 
-/* Marca blanca + Vista móvil/escritorio */
-$('#bizName').addEventListener('input',e=>$$('.biz').forEach(el=>el.textContent=e.target.value.trim()||'Tu negocio'));
-[['#9FBCE5','159,188,229','Zafiro'],['#A9CEB8','169,206,184','Salvia'],['#EEBFB0','238,191,176','Durazno'],['#B9AEE4','185,174,228','Lavanda'],['#E6C473','230,196,115','Ámbar']].forEach(([hex,rgb,n],i)=>{
-  const b=document.createElement('button');b.style.background=hex;b.title=n;b.setAttribute('aria-label','Color '+n);b.setAttribute('aria-pressed',i===0);
-  b.onclick=()=>{document.documentElement.style.setProperty('--accent',hex);document.documentElement.style.setProperty('--accent-soft',`rgba(${rgb},.24)`);
-    $$('#sw button').forEach(x=>x.setAttribute('aria-pressed',x===b));ping(.12)};$('#sw').append(b)});
+$('#bizName').addEventListener('input',e=>{const v=e.target.value.trim()||'Tu negocio';$$('.biz').forEach(el=>el.textContent=v)});
 $('#vpDesk').onclick=()=>{ $('#pWrap').classList.remove('mobile');$('#vpDesk').setAttribute('aria-pressed',true);$('#vpMob').setAttribute('aria-pressed',false);ping(.1)};
 $('#vpMob').onclick=()=>{ $('#pWrap').classList.add('mobile');$('#vpDesk').setAttribute('aria-pressed',false);$('#vpMob').setAttribute('aria-pressed',true);ping(.1)};
 
-/* 1. Restaurante */
-const dishes=[['Ceviche',38],['Lomo saltado',42],['Causa limeña',24],['Chicha morada',10]];let order=[],mesa='Mesa 2',split=2,tk=0;
-$('#mesaChips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;mesa=b.dataset.m;$$('#mesaChips .chip').forEach(c=>c.classList.toggle('on',c===b));ping(.08)});
-$('#menu').innerHTML=dishes.map((d,i)=>`<button class="btn" data-i="${i}">${d[0]}<small>S/ ${d[1]}</small></button>`).join('');
+/* 1. Restaurante (con cantidades, cronómetro y boleta digital) */
+const dishes=[{n:'Ceviche clásico',c:'Entrada',p:38},{n:'Lomo saltado',c:'Fondo',p:42},{n:'Causa limeña',c:'Entrada',p:24},{n:'Chicha morada',c:'Bebida',p:10}];
+let order=[],mesa='Mesa 2',split=2,tk=0,lastTicket=null;
+$('#mesaChips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;mesa=b.dataset.m;$('#mesaTag').textContent=mesa;$$('#mesaChips .chip').forEach(c=>c.classList.toggle('on',c===b));ping(.08)});
+$('#menu').innerHTML=dishes.map((d,i)=>`<button class="btn" data-i="${i}"><span class="item-meta"><span>${d.n}</span><span class="item-sub">${d.c}</span></span><small>S/ ${d.p}</small></button>`).join('');
 function drawOrder(){
-  const tot=order.reduce((a,i)=>a+dishes[i][1],0);
-  $('#order').innerHTML=order.length?order.map(i=>`<li>${dishes[i][0]}<span>S/ ${dishes[i][1]}.00</span></li>`).join(''):'<li class="empty" style="background:none">Toca un plato para añadirlo</li>';
+  const tot=order.reduce((a,x)=>a+dishes[x.i].p*x.q,0);
+  $('#order').innerHTML=order.length?order.map((x,k)=>`<li><span class="li-main"><i class="li-dot"></i><span>${dishes[x.i].n}</span></span><span class="li-acts"><span class="qpill"><button data-act="dec" data-k="${k}">−</button>${x.q}<button data-act="inc" data-k="${k}">+</button></span><span style="font:600 12px var(--mono)">S/ ${(dishes[x.i].p*x.q).toFixed(2)}</span></span></li>`).join(''):'<li class="empty">Toca un plato para añadirlo</li>';
   $('#tot').textContent='S/ '+tot.toFixed(2);$('#splitV').textContent='S/ '+(tot/split).toFixed(2);$('#send').disabled=!order.length;
 }
-$('#menu').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;order.push(+b.dataset.i);drawOrder();ping(.1)});
-$('#splitBtn').addEventListener('click',()=>{split=split===4?2:split+1;$('#splitN').textContent=split;drawOrder();ping(.08)});
+$('#menu').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const idx=+b.dataset.i,f=order.find(x=>x.i===idx);if(f)f.q++;else order.push({i:idx,q:1});drawOrder();ping(.1)});
+$('#order').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=+b.dataset.k,x=order[k];if(b.dataset.act==='inc')x.q++;else if(--x.q<=0)order.splice(k,1);drawOrder();ping(.08)});
+$('#splitDec').onclick=()=>{split=Math.max(1,split-1);$('#splitN').textContent=split;drawOrder();ping(.08)};
+$('#splitInc').onclick=()=>{split=Math.min(8,split+1);$('#splitN').textContent=split;drawOrder();ping(.08)};
+const activeTickets=[];
+setInterval(()=>{activeTickets.forEach(t=>{if(!t.done){t.sec++;const s=String(Math.floor(t.sec/60)).padStart(2,'0')+':'+String(t.sec%60).padStart(2,'0');if(t.tmEl)t.tmEl.textContent=s}})},1000);
 $('#send').addEventListener('click',()=>{
   const k=$('#kitchen');if(k.querySelector('.empty'))k.innerHTML='';
-  const id=++tk,m=mesa,items=order.map(i=>dishes[i][0]).join(' · '),tot=order.reduce((a,i)=>a+dishes[i][1],0);order=[];drawOrder();
+  const id=++tk,m=mesa,items=order.map(x=>`${x.q}× ${dishes[x.i].n}`).join(' · '),tot=order.reduce((a,x)=>a+dishes[x.i].p*x.q,0);
+  lastTicket={id,m,items,tot};order=[];drawOrder();$('#boletaBtn').disabled=false;
   const el=document.createElement('div');el.className='ticket';
-  el.innerHTML=`<div class="th"><span>#${String(id).padStart(3,'0')} · ${m.toUpperCase()}</span><span class="st">Recibido</span></div><div class="it">${items} · <b>S/ ${tot.toFixed(2)}</b></div>`;
-  k.prepend(el);toast(`${m} enviada a cocina`);
+  el.innerHTML=`<div class="th"><span>#${String(id).padStart(3,'0')} · ${m.toUpperCase()}</span><span style="display:flex;gap:8px;align-items:center"><span class="tm-live">00:00</span><span class="st">Recibido</span></span></div><div class="it"><span>${items}</span><b>S/ ${tot.toFixed(2)}</b></div>`;
+  k.prepend(el);const rec={sec:0,done:false,tmEl:$('.tm-live',el)};activeTickets.push(rec);
+  $('#tkCount').textContent=`${activeTickets.filter(x=>!x.done).length} activos`;toast(`${m} enviada a cocina`);
   const st=$('.st',el);
-  setTimeout(()=>{st.textContent='Preparando';st.className='st cook'},2000);
-  setTimeout(()=>{st.textContent='Listo · Boleta lista';st.className='st done';toast(`${m} lista · cuenta S/ ${tot.toFixed(2)}`)},5600);
+  setTimeout(()=>{st.textContent='Preparando';st.className='st cook'},1800);
+  setTimeout(()=>{st.textContent='Listo';st.className='st done';rec.done=true;$('#tkCount').textContent=`${activeTickets.filter(x=>!x.done).length} activos`;toast(`${m} lista · S/ ${tot.toFixed(2)}`)},5200);
+});
+$('#boletaBtn').addEventListener('click',()=>{
+  if(!lastTicket)return;const biz=esc($('#bizName').value.trim()||'Tu negocio');
+  $('#boletaOut').innerHTML=`<div class="boleta"><b>BOLETA B001-${String(lastTicket.id).padStart(5,'0')} · ${biz}</b><br>${esc(lastTicket.m)}: ${esc(lastTicket.items)}<br>Total: S/ ${lastTicket.tot.toFixed(2)} (incl. IGV) · Pagado</div>`;ping(.12);
 });
 
-/* 2. Gimnasio */
+/* 2. Gimnasio (QR, buscador, alta rápida y estado de aforo) */
 const members=[{n:'Ana R.',p:'Plan anual · vigente',ok:true},{n:'Luis M.',p:'Plan mensual · vigente',ok:true},{n:'Carla P.',p:'Plan mensual · vencido hace 2 días',ok:false},{n:'Diego T.',p:'Pase diario · vigente',ok:true}];
-let mi=0,aforo=0,lastExp=null;
+let mi=0,aforo=18,lastExp=null;
+function syncAforo(){const pct=Math.min(100,Math.round(aforo/60*100));$('#aforo').textContent=aforo;$('#aforoPct').textContent=pct+'%';$('#aforoBar').style.width=pct+'%';$('#aforoTag').textContent=pct>80?'Lleno':pct>50?'Moderado':'Óptimo'}
+syncAforo();
 function showMem(m){
   const now=new Date().toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'});
-  $('#member').innerHTML=`<div class="member"><div class="avatar">${m.n[0]}</div><div><b>${m.n}</b><div style="font-size:13px;color:var(--ink-soft)">${m.p}</div></div><span class="badge ${m.ok?'ok':'warn'}" style="margin-left:auto">${m.ok?'Acceso permitido':'Membresía vencida'}</span></div>`;
+  $('#member').innerHTML=`<div class="member"><div class="avatar">${esc(m.n[0])}</div><div><b>${esc(m.n)}</b><div style="font-size:12.5px;color:var(--ink-soft)">${esc(m.p)}</div></div><span class="badge ${m.ok?'ok':'warn'}" style="margin-left:auto">${m.ok?'Acceso permitido':'Vencido'}</span></div>`;
   const lg=$('#log');if(lg.querySelector('.empty'))lg.innerHTML='';
-  lg.insertAdjacentHTML('afterbegin',`<li>${m.n}<span>${m.ok?'✓ '+now:'⚠ '+now}</span></li>`);
+  lg.insertAdjacentHTML('afterbegin',`<li><span class="li-main"><i class="li-dot ${m.ok?'ok':'warn'}"></i><span>${esc(m.n)}</span></span><span class="badge ${m.ok?'ok':'warn'}">${m.ok?'✓ '+now:'⚠ '+now}</span></li>`);
   $('#renewBox').style.display=m.ok?'none':'block';
-  if(m.ok){aforo++;$('#aforo').textContent=aforo;$('#aforoBar').style.width=(aforo/60*100)+'%'}
+  if(m.ok){aforo=Math.min(60,aforo+1);syncAforo()}
 }
-$('#scan').addEventListener('click',()=>{const m=members[mi++%members.length];lastExp=m.ok?null:m;showMem(m);toast(m.ok?`Bienvenida: ${m.n}`:`${m.n}: membresía vencida`)});
+$('#scan').addEventListener('click',()=>{const m=members[mi++%members.length];lastExp=m.ok?null:m;showMem(m);toast(m.ok?`Ingreso: ${m.n}`:`${m.n}: membresía vencida`)});
 $('#renewBtn').addEventListener('click',()=>{if(!lastExp)return;lastExp.ok=true;lastExp.p='Renovado hoy · vigente 30 días';showMem(lastExp);toast(`${lastExp.n} renovada al instante`);lastExp=null});
+$('#fitAddToggle').addEventListener('click',()=>{const f=$('#fitForm');f.style.display=f.style.display==='none'?'grid':'none'});
+$('#fitForm').addEventListener('submit',e=>{e.preventDefault();const n=$('#fitNew').value.trim();if(!n)return;const m={n,p:`Plan ${$('#fitPlan').value.toLowerCase()} · vigente`,ok:true};members.unshift(m);$('#fitNew').value='';$('#fitForm').style.display='none';showMem(m);toast(`Socio ${n} registrado`)});
+$('#fitQ').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();if(!q)return;const m=members.find(x=>x.n.toLowerCase().includes(q));if(m){lastExp=m.ok?null:m;$('#member').innerHTML=`<div class="member"><div class="avatar">${esc(m.n[0])}</div><div><b>${esc(m.n)}</b><div style="font-size:12.5px;color:var(--ink-soft)">${esc(m.p)}</div></div><span class="badge ${m.ok?'ok':'warn'}" style="margin-left:auto">${m.ok?'Vigente':'Vencido'}</span></div>`;$('#renewBox').style.display=m.ok?'none':'block'}});
 
-/* 3. Inventario */
-const items=[['Café en grano',12,6,'kg'],['Leche',8,5,'L'],['Azúcar',20,8,'kg']];let po=[];
-function drawStock(){$('#stockRows').innerHTML=items.map((it,i)=>`<div class="row"><div>${it[0]}<div class="meter"><i class="${it[1]<=it[2]?'low':''}" style="width:${Math.min(100,it[1]/20*100)}%"></i></div></div><button class="btn sm" data-i="${i}">Vender 1</button><span class="b">${it[1]} ${it[3]}</span></div>`).join('')}
+/* 3. Inventario (+1/-1/+5, alta producto y Kardex histórico) */
+const items=[{n:'Café en grano',q:12,min:6,u:'kg',c:42},{n:'Leche fresca',q:8,min:5,u:'L',c:6},{n:'Azúcar rubia',q:20,min:8,u:'kg',c:4.5}];let po=[],kHist=[];
+function addKardex(msg){const tm=new Date().toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'});kHist.unshift(`[${tm}] ${msg}`);$('#kardexLog').innerHTML=kHist.slice(0,5).map(x=>esc(x)).join('<br>')}
+function drawStock(){
+  let val=0;po=[];
+  $('#stockRows').innerHTML=items.map((it,i)=>{val+=it.q*it.c;if(it.q<=it.min)po.push(it);
+    return`<div class="row"><div><b>${esc(it.n)}</b><div class="meter"><i class="${it.q<=it.min?'low':''}" style="width:${Math.min(100,it.q/24*100)}%"></i></div></div><div class="li-acts"><button class="btn xs" data-i="${i}" data-d="-1">−1</button><button class="btn xs pri" data-i="${i}" data-d="5">+5</button></div><span class="b">${it.q} ${esc(it.u)}</span></div>`}).join('');
+  $('#stockVal').textContent='Valor: S/ '+Math.round(val);
+  $('#po').innerHTML=po.length?po.map(x=>`<li><span class="li-main"><i class="li-dot warn"></i><span>${esc(x.n)}</span></span><span class="badge warn">pedir ${Math.max(10,20-x.q)} ${esc(x.u)}</span></li>`).join(''):'<li class="empty">Todo sobre el mínimo.</li>';
+  $('#recv').disabled=!po.length;
+}
 drawStock();
-$('#stockRows').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const it=items[+b.dataset.i];if(it[1]<=0)return;it[1]--;ping(.08);
-  $('#kardexTxt').textContent=`Salida: -1 ${it[3]} de ${it[0]} (${new Date().toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'})})`;
-  if(it[1]<=it[2]&&!po.includes(it[0])){po.push(it[0]);toast(`${it[0]} bajo mínimo: orden sugerida`)}
-  drawStock();$('#po').innerHTML=po.length?po.map(n=>{const x=items.find(z=>z[0]===n);return`<li>${n}<span>pedir ${20-x[1]} ${x[3]}</span></li>`}).join(''):'<li class="empty" style="background:none">Todo sobre el mínimo.</li>';$('#recv').disabled=!po.length});
-$('#recv').addEventListener('click',()=>{items.forEach(it=>{if(po.includes(it[0]))it[1]=20});po=[];drawStock();$('#po').innerHTML='<li class="empty" style="background:none">Todo sobre el mínimo. Cuando algo baje, se arma la orden aquí.</li>';$('#recv').disabled=true;$('#kardexTxt').textContent='Reposición recibida y Kardex actualizado.';toast('Existencias actualizadas')});
+$('#stockRows').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const it=items[+b.dataset.i],d=+b.dataset.d;it.q=Math.max(0,it.q+d);addKardex(`${d>0?'Ingreso':'Salida'}: ${d>0?'+'+d:d} ${it.u} de ${it.n}`);if(it.q<=it.min)toast(`${it.n} bajo mínimo: orden sugerida`);drawStock();ping(.08)});
+$('#stockForm').addEventListener('submit',e=>{e.preventDefault();const n=$('#stName').value.trim(),q=Math.max(1,+$('#stQty').value||10);if(!n)return;items.push({n,q,min:5,u:'und',c:15});$('#stName').value='';addKardex(`Alta: ${n} (${q} und)`);drawStock();toast(`Producto agregado: ${n}`)});
+$('#recv').addEventListener('click',()=>{po.forEach(it=>{it.q=20;addKardex(`Reposición recibida: ${it.n} → 20 ${it.u}`)});drawStock();toast('Existencias actualizadas en Kardex')});
 
-/* 4. Hotel */
-const roomData=[{id:'201',s:'occ',t:'Ocupada'},{id:'202',s:'fre',t:'Libre'},{id:'203',s:'cln',t:'Limpieza'},{id:'204',s:'fre',t:'Libre'},{id:'301',s:'occ',t:'Ocupada'},{id:'302',s:'occ',t:'Ocupada'},{id:'303',s:'fre',t:'Libre'},{id:'304',s:'fre',t:'Libre'}];
+/* 4. Hotel (4 estados + ingreso diario) */
+const roomData=[{id:'201',s:'occ',t:'Ocupada',r:210},{id:'202',s:'fre',t:'Libre',r:190},{id:'203',s:'cln',t:'Limpieza',r:190},{id:'204',s:'fre',t:'Libre',r:190},{id:'301',s:'occ',t:'Ocupada',r:240},{id:'302',s:'occ',t:'Ocupada',r:240},{id:'303',s:'fre',t:'Libre',r:260},{id:'304',s:'mnt',t:'Mantto',r:260}];
 function drawRooms(){
-  $('#rooms').innerHTML=roomData.map((r,i)=>`<button class="room ${r.s}" data-i="${i}"><b>${r.id}</b>${r.t}</button>`).join('');
-  $('#occ').textContent=roomData.filter(r=>r.s==='occ').length;$('#avl').textContent=roomData.filter(r=>r.s==='fre').length;
+  $('#rooms').innerHTML=roomData.map((r,i)=>`<button class="room ${r.s}" data-i="${i}"><b>${r.id}</b>${r.t}<small>S/ ${r.r}</small></button>`).join('');
+  const occ=roomData.filter(r=>r.s==='occ');
+  $('#occ').textContent=occ.length;$('#avl').textContent=roomData.filter(r=>r.s==='fre').length;
+  $('#stayRev').textContent='S/ '+occ.reduce((a,r)=>a+r.r,0);
 }
 drawRooms();
-$('#rooms').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const r=roomData[+b.dataset.i],ord=[['fre','Libre'],['occ','Ocupada'],['cln','Limpieza']],nxt=ord[(ord.findIndex(x=>x[0]===r.s)+1)%3];r.s=nxt[0];r.t=nxt[1];drawRooms();toast(`Habitación ${r.id} → ${r.t}`)});
+$('#rooms').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const r=roomData[+b.dataset.i],ord=[['fre','Libre'],['occ','Ocupada'],['cln','Limpieza'],['mnt','Mantto']],nxt=ord[(ord.findIndex(x=>x[0]===r.s)+1)%4];r.s=nxt[0];r.t=nxt[1];drawRooms();toast(`Habitación ${r.id} → ${r.t}`)});
 let stayBusy=false;
 $('#checkin').addEventListener('click',()=>{if(stayBusy)return;stayBusy=true;const li=$$('#stayS li');li.forEach(l=>l.classList.remove('on'));
-  li.forEach((l,i)=>setTimeout(()=>{l.classList.add('on');ping(.1);if(i===3){const free=roomData.find(r=>r.s==='fre');if(free){free.s='occ';free.t='Ocupada';drawRooms();toast(`Llave enviada · Habitación ${free.id} ocupada`)}else toast('Check-in completado');stayBusy=false}},i*750))});
+  li.forEach((l,i)=>setTimeout(()=>{l.classList.add('on');ping(.1);if(i===3){const free=roomData.find(r=>r.s==='fre');if(free){free.s='occ';free.t='Ocupada';drawRooms();toast(`Llave enviada · Habitación ${free.id} ocupada`)}else toast('Check-in completado');stayBusy=false}},i*650))});
 
-/* 5. Clínica y citas */
-let careSlot='10:00';
-const appts=[{p:'Mateo Quispe',h:'09:30',s:'En consulta'},{p:'Sofía Paredes',h:'09:45',s:'En espera'}];
+/* 5. Clínica y citas (especialidades + receta digital) */
+let careSlot='10:00',careSpec='Medicina';
+const appts=[{p:'Mateo Quispe',h:'09:30',sp:'Medicina',s:'En consulta'},{p:'Sofía Paredes',h:'09:45',sp:'Odontología',s:'En espera'}];
 const stFlow=['En espera','En consulta','Atendido · receta lista'];
 function drawCare(){
-  $('#careList').innerHTML=appts.map((a,i)=>`<div class="ticket" style="cursor:pointer" data-i="${i}"><div class="th"><span>${a.h} · ${a.p}</span><span class="st ${a.s==='En consulta'?'cook':a.s.startsWith('Atendido')?'done':''}">${a.s}</span></div><div class="it">Toca para avanzar estado</div></div>`).join('');
+  $$('#slotChips button').forEach(b=>b.classList.toggle('busy',appts.some(a=>a.h===b.dataset.h)));
+  $('#careList').innerHTML=appts.map((a,i)=>`<div class="ticket" style="cursor:pointer" data-i="${i}"><div class="th"><span>${a.h} · ${esc(a.p)}</span><span class="st ${a.s==='En consulta'?'cook':a.s.startsWith('Atendido')?'done':''}">${a.s}</span></div><div class="it"><span>${esc(a.sp)}</span><span style="font-size:11.5px">Toca para avanzar →</span></div></div>`).join('');
 }
 drawCare();
+$('#specChips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;careSpec=b.dataset.s;$$('#specChips .chip').forEach(c=>c.classList.toggle('on',c===b));ping(.08)});
 $('#slotChips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;careSlot=b.dataset.h;$$('#slotChips .chip').forEach(c=>c.classList.toggle('on',c===b));ping(.08)});
 $('#bookBtn').addEventListener('click',()=>{
   const p=$('#carePat').value.trim()||'Lucía Vega';
-  if(appts.some(a=>a.h===careSlot)){toast(`El horario ${careSlot} ya está ocupado; elige otro`);return}
-  appts.push({p,h:careSlot,s:'En espera'});$('#carePat').value='';drawCare();toast(`Cita confirmada para ${p} a las ${careSlot}`);
+  if(appts.some(a=>a.h===careSlot)){toast(`El horario ${careSlot} ya está ocupado`);return}
+  appts.push({p,h:careSlot,sp:careSpec,s:'En espera'});$('#carePat').value='';drawCare();toast(`Cita confirmada: ${p} (${careSlot})`);
 });
-$('#careList').addEventListener('click',e=>{const t=e.target.closest('[data-i]');if(!t)return;const a=appts[+t.dataset.i];a.s=stFlow[(stFlow.indexOf(a.s)+1)%stFlow.length];drawCare();toast(`${a.p} → ${a.s}`)});
+$('#careList').addEventListener('click',e=>{
+  const t=e.target.closest('[data-i]');if(!t)return;const a=appts[+t.dataset.i];
+  a.s=stFlow[(stFlow.indexOf(a.s)+1)%stFlow.length];drawCare();toast(`${a.p} → ${a.s}`);
+  $('#rxOut').innerHTML=a.s.startsWith('Atendido')?`<div class="boleta"><b>RECETA DIGITAL · ${esc(a.sp.toUpperCase())}</b><br>Paciente: ${esc(a.p)}<br>Indicaciones listas y enviadas por WhatsApp/correo.</div>`:'';
+});
 
 /* 6. Instituto / Biblioteca */
-const books=[{t:'Redes y Cisco CCNA',a:'A. Tanenbaum',av:true},{t:'Ingeniería Sanitaria Aplicada',a:'M. Rojas',av:true},{t:'Arquitectura de Software Limpia',a:'R. Martin',av:false},{t:'Gestión de Bases de Datos SQL',a:'C. Date',av:true}];
-const loans=[{t:'Arquitectura de Software Limpia',u:'Alumno #2041 · vence mañana',late:false},{t:'Instalaciones Hidráulicas',u:'Alumno #1984 · atraso 2 días',late:true}];
+const books=[{t:'Redes y Cisco CCNA',a:'A. Tanenbaum',av:true},{t:'Ingeniería Sanitaria Aplicada',a:'M. Rojas',av:true},{t:'Arquitectura Limpia',a:'R. Martin',av:false},{t:'Bases de Datos SQL',a:'C. Date',av:true}];
+const loans=[{t:'Arquitectura Limpia',u:'Alumno #2041 · vence mañana',late:false},{t:'Instalaciones Hidráulicas',u:'Alumno #1984 · atraso 2 días',late:true}];
 function drawLib(){
   const q=$('#libQ').value.toLowerCase();
   const list=books.filter(b=>b.t.toLowerCase().includes(q)||b.a.toLowerCase().includes(q));
-  $('#libRes').innerHTML=list.map((b,i)=>`<div class="row"><div><b>${b.t}</b><div style="font-size:12px;color:var(--ink-soft)">${b.a}</div></div><button class="btn sm ${b.av?'pri':''}" data-i="${books.indexOf(b)}" ${b.av?'':'disabled'}>${b.av?'Prestar':'Prestado'}</button><span class="b">${b.av?'Libre':'En uso'}</span></div>`).join('')||'<p class="empty">Sin coincidencias</p>';
-  $('#libLoans').innerHTML=loans.map((l,i)=>`<li><div><b>${l.t}</b><div style="font-size:12px;color:var(--ink-soft)">${l.u}</div></div><button class="btn sm" data-r="${i}">Devolver</button></li>`).join('')||'<li class="empty" style="background:none">Sin préstamos pendientes</li>';
+  $('#libRes').innerHTML=list.map(b=>`<div class="row"><div><b>${esc(b.t)}</b><div style="font-size:11.5px;color:var(--ink-soft)">${esc(b.a)}</div></div><button class="btn sm ${b.av?'pri':''}" data-i="${books.indexOf(b)}" ${b.av?'':'disabled'}>${b.av?'Prestar':'En uso'}</button><span class="b">${b.av?'Libre':'Prestado'}</span></div>`).join('')||'<p class="empty">Sin coincidencias</p>';
+  $('#libLoans').innerHTML=loans.map((l,i)=>`<li><span class="li-main"><i class="li-dot ${l.late?'warn':'ok'}"></i><span><b>${esc(l.t)}</b><div style="font-size:11.5px;color:var(--ink-soft)">${esc(l.u)}</div></span></span><span class="li-acts"><span class="badge ${l.late?'warn':'ok'}">${l.late?'Vencido':'Al día'}</span><button class="btn xs" data-r="${i}">Devolver</button></span></li>`).join('')||'<li class="empty">Sin préstamos pendientes</li>';
 }
 drawLib();
 $('#libQ').addEventListener('input',drawLib);
-$('#libRes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const bk=books[+b.dataset.i];bk.av=false;loans.unshift({t:bk.t,u:'Alumno #2108 · devolver en 7 días',late:false});drawLib();toast(`Préstamo registrado: ${bk.t}`)});
+$('#libRes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const bk=books[+b.dataset.i],stu=$('#libStu').value.trim()||'Alumno #2108';bk.av=false;loans.unshift({t:bk.t,u:`${stu} · devolver en 7 días`,late:false});drawLib();toast(`Préstamo registrado: ${bk.t}`)});
 $('#libLoans').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const rm=loans.splice(+b.dataset.r,1)[0];const bk=books.find(x=>x.t===rm.t);if(bk)bk.av=true;drawLib();toast(`Devolución recibida: ${rm.t}`)});
 
-/* 7. Catálogo Web */
-const prods=[{n:'Pack Esencial',p:45,s:6},{n:'Plan Mensual',p:89,s:4},{n:'Kit Profesional',p:140,s:3},{n:'Sesión 1:1',p:60,s:8}];let cart=[];
+/* 7. Catálogo Web (cantidades, cupón ZAPHY10 y copiar WhatsApp) */
+const prods=[{n:'Pack Esencial',c:'Inicio',p:45,s:6},{n:'Plan Mensual',c:'Suscripción',p:89,s:4},{n:'Kit Profesional',c:'Completo',p:140,s:3},{n:'Sesión 1:1',c:'Asesoría',p:60,s:8}];
+let cart=[],promoOff=0,lastSummary='';
 function drawShop(){
-  $('#shopGrid').innerHTML=prods.map((p,i)=>`<button class="btn" data-i="${i}" ${p.s?'':'disabled'}>${p.n}<small>S/ ${p.p} (${p.s})</small></button>`).join('');
-  const tot=cart.reduce((a,p)=>a+p.p,0);
-  $('#shopCart').innerHTML=cart.length?cart.map(p=>`<li>${p.n}<span>S/ ${p.p}.00</span></li>`).join(''):'<li class="empty" style="background:none">Agrega un producto para generar el resumen</li>';
-  $('#shopTot').textContent='S/ '+tot.toFixed(2);$('#shopSend').disabled=!cart.length;
+  $('#shopGrid').innerHTML=prods.map((p,i)=>`<button class="btn" data-i="${i}" ${p.s?'':'disabled'}><span class="item-meta"><span>${p.n}</span><span class="item-sub">${p.c} · ${p.s} disp.</span></span><small>S/ ${p.p}</small></button>`).join('');
+  const sub=cart.reduce((a,x)=>a+x.p.p*x.q,0),tot=sub*(1-promoOff);
+  $('#shopCart').innerHTML=cart.length?cart.map((x,k)=>`<li><span class="li-main"><i class="li-dot"></i><span>${x.p.n}</span></span><span class="li-acts"><span class="qpill"><button data-act="dec" data-k="${k}">−</button>${x.q}<button data-act="inc" data-k="${k}">+</button></span><span style="font:600 12px var(--mono)">S/ ${(x.p.p*x.q).toFixed(2)}</span></span></li>`).join(''):'<li class="empty">Agrega un producto para armar tu pedido</li>';
+  $('#promoTag').textContent=promoOff?'(−10% aplicado)':'';
+  $('#shopTot').textContent='S/ '+tot.toFixed(2);$('#shopSend').disabled=!cart.length;$('#shopWa').disabled=!cart.length;
 }
 drawShop();
-$('#shopGrid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const p=prods[+b.dataset.i];if(!p.s)return;p.s--;cart.push(p);drawShop();ping(.1)});
-$('#shopSend').addEventListener('click',()=>{const biz=$('#bizName').value.trim()||'Tu negocio',tot=cart.reduce((a,p)=>a+p.p,0),res=cart.map(p=>p.n).join(', ');cart=[];drawShop();$('#shopMsg').textContent=`Resumen listo para ${biz}: ${res} · Total S/ ${tot}.00`;toast('Pedido confirmado y stock descontado')});
+$('#shopGrid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const p=prods[+b.dataset.i];if(!p.s)return;p.s--;const f=cart.find(x=>x.p===p);if(f)f.q++;else cart.push({p,q:1});drawShop();ping(.1)});
+$('#shopCart').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=+b.dataset.k,x=cart[k];if(b.dataset.act==='inc'&&x.p.s>0){x.p.s--;x.q++}else if(b.dataset.act==='dec'){x.p.s++;if(--x.q<=0)cart.splice(k,1)}drawShop();ping(.08)});
+$('#applyPromo').addEventListener('click',()=>{if($('#shopPromo').value.trim().toUpperCase()==='ZAPHY10'){promoOff=.10;toast('Cupón ZAPHY10 aplicado (-10%)')}else{promoOff=0;toast('Prueba el cupón: ZAPHY10')}drawShop()});
+function buildWaSummary(){const biz=$('#bizName').value.trim()||'Tu negocio',tot=cart.reduce((a,x)=>a+x.p.p*x.q,0)*(1-promoOff),det=cart.map(x=>`• ${x.q}× ${x.p.n}`).join('\n');return`Hola ${biz}, quiero confirmar mi pedido:\n${det}\nTotal: S/ ${tot.toFixed(2)}`}
+$('#shopWa').addEventListener('click',()=>{if(!cart.length)return;lastSummary=buildWaSummary();navigator.clipboard?.writeText(lastSummary).catch(()=>{});toast('Resumen copiado para enviar por WhatsApp')});
+$('#shopSend').addEventListener('click',()=>{const biz=$('#bizName').value.trim()||'Tu negocio',tot=cart.reduce((a,x)=>a+x.p.p*x.q,0)*(1-promoOff),res=cart.map(x=>`${x.q}× ${x.p.n}`).join(', ');cart=[];drawShop();$('#shopMsg').textContent=`Pedido confirmado para ${biz}: ${res} · Total S/ ${tot.toFixed(2)}`;toast('Pedido confirmado y stock descontado')});
 
-/* 8. Cuentas */
-const bars=[];let sales=420,costs=180;
-for(let i=0;i<16;i++){const b=document.createElement('i');b.style.height=(25+Math.random()*50)+'%';$('#chart').append(b);bars.push(b)}
-$('#sales').textContent='S/ '+sales.toLocaleString('es-PE');
+/* 8. Cuentas (registros personalizados + comparativa gráfica + balance copiable) */
+const bars=[];let sales=420,costs=180,lastBal='';
+for(let i=0;i<16;i++){const b=document.createElement('i');if(i%4===3)b.className='exp';b.style.height=(25+Math.random()*55)+'%';$('#chart').append(b);bars.push(b)}
+function syncLedgerUI(){
+  $('#sales').textContent='S/ '+sales.toLocaleString('es-PE');
+  const m=sales>0?Math.max(0,Math.round((sales-costs)/sales*100)):0;
+  $('#marginBadge').textContent=`Margen: ${m}%`;
+}
+syncLedgerUI();
 let bi=0;
-function pushBar(pct){bars[bi%16].style.height=Math.min(100,Math.max(10,Math.round(pct)))+'%';bi++}
-setInterval(()=>{if(!$('#p-ledger').classList.contains('on')||document.hidden)return;const v=35+Math.random()*75;sales+=Math.round(v);pushBar(v);$('#sales').textContent='S/ '+sales.toLocaleString('es-PE')},1300);
-$('#addSale').addEventListener('click',()=>{sales+=120;pushBar(88);$('#sales').textContent='S/ '+sales.toLocaleString('es-PE');toast('Venta de S/ 120 registrada')});
-$('#addExp').addEventListener('click',()=>{costs+=45;pushBar(35);toast('Gasto de S/ 45 anotado en costos')});
-$('#report').addEventListener('click',()=>{const t0=performance.now(),inc=sales*30,cost=costs*30,net=inc-cost,igv=Math.round(inc*.18);
-  $('#rep').innerHTML=`<div class="kpis" style="grid-template-columns:1fr 1fr 1fr"><div class="kpi">Ingresos<b>S/ ${inc.toLocaleString('es-PE')}</b></div><div class="kpi">Utilidad<b>S/ ${net.toLocaleString('es-PE')}</b></div><div class="kpi">IGV est.<b>S/ ${igv.toLocaleString('es-PE')}</b></div></div><p class="note">Armado en ${Math.max(1,Math.round(performance.now()-t0))} ms con tus movimientos en vivo.</p>`;toast('Informe mensual generado')});
+function pushBar(pct,isExp=false){const b=bars[bi%16];b.className=isExp?'exp':'';b.style.height=Math.min(100,Math.max(12,Math.round(pct)))+'%';bi++}
+setInterval(()=>{if(!$('#p-ledger').classList.contains('on')||document.hidden)return;const v=35+Math.random()*70;sales+=Math.round(v);pushBar(v,false);syncLedgerUI()},1500);
+$('#addSale').addEventListener('click',()=>{sales+=120;pushBar(88,false);syncLedgerUI();toast('Venta de S/ 120 registrada')});
+$('#addExp').addEventListener('click',()=>{costs+=45;pushBar(38,true);syncLedgerUI();toast('Gasto de S/ 45 anotado')});
+$('#ledForm').addEventListener('submit',e=>{e.preventDefault();const c=$('#ledConcept').value.trim()||'Venta extra',a=Math.max(1,+$('#ledAmt').value||85);sales+=a;pushBar(Math.min(100,a/2),false);$('#ledConcept').value='';syncLedgerUI();toast(`+ S/ ${a} (${c}) registrado`)});
+$('#report').addEventListener('click',()=>{
+  const t0=performance.now(),inc=sales*30,cost=costs*30,net=inc-cost,igv=Math.round(inc*.18);
+  lastBal=`Balance Zaphyrel Ledger — Ingresos: S/ ${inc.toLocaleString('es-PE')} | Costos: S/ ${cost.toLocaleString('es-PE')} | Utilidad: S/ ${net.toLocaleString('es-PE')} | IGV est.: S/ ${igv.toLocaleString('es-PE')}`;
+  $('#rep').innerHTML=`<div class="kpis"><div class="kpi">Ingresos<b>S/ ${inc.toLocaleString('es-PE')}</b></div><div class="kpi">Utilidad<b>S/ ${net.toLocaleString('es-PE')}</b></div><div class="kpi">IGV est.<b>S/ ${igv.toLocaleString('es-PE')}</b></div></div><p class="note">Armado en ${Math.max(1,Math.round(performance.now()-t0))} ms con tus movimientos reales.</p>`;
+  $('#copyRep').disabled=false;toast('Balance mensual generado');
+});
+$('#copyRep').addEventListener('click',()=>{if(!lastBal)return;navigator.clipboard?.writeText(lastBal).catch(()=>{});toast('Balance copiado al portapapeles')});
 
-/* ---------- Arquitecto de Proyecto a Medida ---------- */
+/* ---------- Arquitecto a Medida ---------- */
 let archInd='Restaurante o cafetería';const pains=new Set(['cuentas','pedidos']);
 const painMap={
   cuentas:{m:'Caja y Reportes Automáticos',f:'Cierre de caja en segundos con utilidades e impuestos calculados solos.'},
-  pedidos:{m:'Flujo Sin Errores',f:'Pedidos, citas o reservas conectadas al instante entre quien recibe y quien ejecuta.'},
-  stock:{m:'Kardex y Alertas',f:'Descuento automático por cada salida y aviso previo antes de quedarte sin stock.'},
-  web:{m:'Portal / Catálogo Propio',f:'Tus clientes ven disponibilidad, reservan o piden directo sin comisiones de terceros.'},
-  equipo:{m:'Roles y Turnos Claros',f:'Cada colaborador tiene una vista limpia solo con lo que necesita para su turno.'}
+  pedidos:{m:'Flujo Sin Errores',f:'Pedidos, citas o reservas conectadas al instante entre recepción y operación.'},
+  stock:{m:'Kardex y Alertas',f:'Descuento automático por salida y aviso previo antes de agotar un insumo.'},
+  web:{m:'Portal / Catálogo Propio',f:'Tus clientes ven disponibilidad, reservan o compran directo sin intermediarios.'},
+  equipo:{m:'Roles y Turnos Claros',f:'Cada colaborador accede solo a las pantallas que necesita para su turno.'}
 };
 function updateArch(){
-  const custom=$('#archCustom').value.trim();
-  const ind=custom||archInd;
+  const custom=$('#archCustom').value.trim(),ind=custom||archInd,ps=pains.size?[...pains]:['cuentas'];
   $('#archTitle').textContent=`Sistema a medida para ${ind}`;
-  const ps=pains.size?[...pains]:['cuentas'];
-  $('#archMods').innerHTML=[`Núcleo ${ind}`,...ps.map(k=>painMap[k].m),'Panel Móvil + PC'].map(m=>`<span class="mod">${m}</span>`).join('');
+  $('#archMods').innerHTML=[`Núcleo ${esc(ind)}`,...ps.map(k=>painMap[k].m),'Panel Móvil + PC'].map(m=>`<span class="mod">${m}</span>`).join('');
   $('#archFlows').innerHTML=ps.map(k=>`<li>${painMap[k].f}</li>`).join('');
-  const h1=4+ps.length*2,h2=h1+5;
-  $('#archSave').textContent=`Tiempo operativo recuperado (estimado): ~${h1} a ${h2} h/semana`;
+  const h1=4+ps.length*2,h2=h1+5;$('#archSave').textContent=`Ahorro estimado: ~${h1} a ${h2} h/semana`;
   const body=encodeURIComponent(`Hola Zaphyrel, quiero cotizar un sistema para: ${ind}.\nPrioridades: ${ps.map(k=>painMap[k].m).join(', ')}.`);
   $('#archMail').href=`mailto:hola@zaphyrel.com?subject=${encodeURIComponent('Propuesta: '+ind)}&body=${body}`;
 }
@@ -1029,7 +1259,7 @@ const acts=[
   ['Probar: Instituto / Biblioteca',()=>{switchTab('lib');$('#lab').scrollIntoView({behavior:'smooth'})}],['Probar: Catálogo web',()=>{switchTab('shop');$('#lab').scrollIntoView({behavior:'smooth'})}],
   ['Probar: Cuentas',()=>{switchTab('ledger');$('#lab').scrollIntoView({behavior:'smooth'})}],['Diseña tu proyecto a medida','#arquitecto'],
   ['Comparar Antes y después','#antes'],['Alternar vista Móvil / Escritorio',()=>($('#pWrap').classList.contains('mobile')?$('#vpDesk'):$('#vpMob')).click()],
-  ['Alternar modo noche',()=>$('#night').click()],['Activar o silenciar sonido',()=>$('#sound').click()]
+  ['Alternar modo claro / oscuro',()=>$('#night').click()],['Cambiar atmósfera: Salvia',()=>applyPalette(3,true)],['Activar o silenciar sonido',()=>$('#sound').click()]
 ];
 let sel=0,shown=acts;
 function drawCmd(){cl.innerHTML=shown.map((a,i)=>`<li class="${i===sel?'sel':''}" data-i="${i}">${a[0]}<span>${typeof a[1]==='string'?'ir':'acción'}</span></li>`).join('')}
