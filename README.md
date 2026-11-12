@@ -2,27 +2,28 @@
 
 > **Esencia que permanece e innovación que fluye**
 
-Identidad de marca completa y plataforma web interactiva para un estudio de ingeniería, sistemas operativos y aplicaciones a medida.
+Atelier de arquitectura digital, entornos interactivos 3D / 360° y sistemas operativos a medida.
 
-## Paleta Oficial y Sistema Visual
+## Paleta Oficial y Sistema Visual v7
 
-- **Base Arquitectónica**: Negro Obsidiana (`#07080D`), Blanco Cristal (`#FFFFFF`), Perla (`#F3F4F9`) y Grises Neutros (`#E9ECF4`, `#A3AAB9`, `#4B5263`).
+- **Base Arquitectónica**: Negro Obsidiana (`#07080D`), Blanco Cristal (`#FFFFFF`), Perla (`#F2F4F9`) y Grises Neutros (`#E6E9F2`, `#8890A2`, `#485062`) con grano táctil anodizado y biseles de relieve reales.
 - **Espectro Pastel Coolors**: `#FF9AFF` · `#FFD5FF` · `#D5BEFF` · `#A9DCFF` · `#81BDF8`.
-- **Emblema Octogonal Elevado (`v6`)**: corona abierta a 45°, siete facetas luminosas, tabla interior prismática, estelas Zéfiro y monograma `Z` escultórico.
+- **Emblema Octogonal Escultórico (`v7`)**: silueta abierta a 45°, doble anillo octogonal interior, estelas Zéfiro biseladas y nuevo **monograma `Z` cincelado en tres planos** con sombra sólida y arista prismática.
+- **Tipografía Editorial Futurista**: `Syne` (Display escultórico) + `Cormorant Garamond` (Énfasis editorial en cursiva) + `Plus Jakarta Sans` (Interfaz) + `JetBrains Mono` (Telemetría).
 
 ## Qué incluye este repositorio
 
-- **`site/`** — Experiencia web interactiva lista para Vercel o GitHub Pages (`site/index.html`):
-  - **Hero asimétrico + Telemetría viva**: emblema en gimbal 3D interactivo y monitor conectado con simulación instantánea.
-  - **Anatomía en vivo (`#esencia`)**: inspector 3D con capas separables del logo y simulador de sincronización en milisegundos.
-  - **Zaphyrel Studio OS (`#lab`)**: 8 sistemas funcionales en vivo (*Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Catálogo web y Cuentas*) con personalización instantánea de marca, atmósfera y vista **Escritorio / Móvil**.
-  - **Configurador a medida (`#arquitecto`)**: diagrama de topología SVG en tiempo real y cálculo de módulos según rubro.
-  - **Comparador Antes vs. Después**, modo **Día / Noche**, paleta de comandos (`Ctrl + K`) e identidad sonora activable.
-- **`logo/`** — Emblema en SVG (`color`, `sobre oscuro`, `monocromático` y `lockup` completo).
-- **`mockups/`** — Tarjetas de presentación, portada de redes sociales y hoja membretada.
+- **`site/`** — Plataforma espacial v7 lista para Vercel o GitHub Pages (`site/index.html`):
+  - **Cámara Espacial 3D / 360° / HiDPI 4K / RV**: motor 3D extruido en tiempo real (arrastrable en 360°, con *Despiece Axial*, selector de materiales *Cristal Coolors / Obsidiana Noir / Titanio Satinado* y *Modo Horizonte Esférico RV* expandible a pantalla completa).
+  - **Estructura Espacial No Genérica**: HUD minimalista superior + **Dock Espacial Flotante inferior**, superficies con micro-grano SVG (`feTurbulence`) y reflejo especular 3D interactivo.
+  - **Ingeniería Dimensional (`#esencia`)**: disección axial de los 4 estratos del emblema v7 y telemetría de sincronía atómica.
+  - **Zaphyrel Studio OS (`#lab`)**: 8 núcleos funcionales en vivo (*Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Catálogo web y Cuentas*) con vista **Escritorio / Móvil (`390px`)**.
+  - **Topología Isométrica 3D (`#arquitecto`)**, **Comparador Estructural (`#antes`)**, modo **Día / Noche**, paleta de comandos (`Ctrl + K`) e identidad sonora WebAudio.
+- **`logo/`** — Emblema v7 en SVG (`color`, `sobre oscuro`, `monocromático` y `lockup` en `Syne`).
+- **`mockups/`** — Tarjetas de presentación, banner social y membrete actualizados a v7.
 - **`tokens/`** — Variables CSS listas para modo Día y Noche (`zaphyrel.tokens.css`).
-- **`scripts/`** — Script en Python (biblioteca estándar) para generar los audios WAV de la marca (`make_sound.py`).
-- **`docs/`** — Manual de identidad de marca v6 (`BRAND_BOOK.md`).
+- **`scripts/`** — Generador Python de identidad sonora (`make_sound.py`).
+- **`docs/`** — Manual de identidad de marca v7 (`BRAND_BOOK.md`).
 
 ## Vista local
 
@@ -34,4 +35,4 @@ Luego abre `http://localhost:8766/site/`.
 
 ---
 
-*Nota: las métricas demostrativas y la dirección `hola@zaphyrel.com` son ilustrativas para vista previa.*
+*Nota: los escenarios demostrativos y la dirección `hola@zaphyrel.com` son ilustrativos para vista previa.*

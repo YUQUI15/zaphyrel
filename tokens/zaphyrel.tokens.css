@@ -1,21 +1,21 @@
-/* Zaphyrel Design Tokens v6 — Paleta Pastel Coolors + Arquitectura Negro / Blanco / Gris */
+/* Zaphyrel Design Tokens v7 — Paleta Pastel Coolors + Arquitectura Espacial 3D Negro / Blanco / Gris */
 :root {
   /* Arquitectura Estructural: Blanco Puro, Grises Neutros y Negro Obsidiana */
   --zy-black:        #07080D;
-  --zy-obsidian:     #12151E;
+  --zy-obsidian:     #0E1119;
   --zy-white:        #FFFFFF;
-  --zy-pearl:        #F3F4F9;
+  --zy-pearl:        #F2F4F9;
   --zy-paper:        #FFFFFF;
-  --zy-surface-2:    #E9ECF4;
-  --zy-gray-100:     #EEF0F5;
-  --zy-gray-200:     #DDE1EA;
-  --zy-gray-400:     #8E95A5;
-  --zy-gray-600:     #4B5263;
+  --zy-surface-2:    #E6E9F2;
+  --zy-gray-100:     #EEF0F6;
+  --zy-gray-200:     #D9DEE9;
+  --zy-gray-400:     #8890A2;
+  --zy-gray-600:     #485062;
   --zy-ink:          #090B10;
-  --zy-ink-soft:     #4B5263;
-  --zy-card:         rgba(255, 255, 255, 0.88);
-  --zy-line:         rgba(9, 11, 16, 0.10);
-  --zy-line-strong:  rgba(9, 11, 16, 0.20);
+  --zy-ink-soft:     #485062;
+  --zy-card:         rgba(255, 255, 255, 0.86);
+  --zy-line:         rgba(9, 11, 16, 0.11);
+  --zy-line-strong:  rgba(9, 11, 16, 0.22);
 
   /* Paleta Pastel Oficial Coolors: #FF9AFF · #FFD5FF · #D5BEFF · #A9DCFF · #81BDF8 */
   --zy-pastel-orchid:   #FF9AFF;
@@ -26,11 +26,17 @@
   --zy-prism:           linear-gradient(135deg, #81BDF8 0%, #A9DCFF 26%, #D5BEFF 52%, #FFD5FF 76%, #FF9AFF 100%);
   --zy-prism-h:         linear-gradient(90deg, #81BDF8 0%, #A9DCFF 26%, #D5BEFF 52%, #FFD5FF 76%, #FF9AFF 100%);
 
+  /* Superficies Tactiles, Biseles 3D y Sombras Espaciales */
+  --zy-rim-top:      inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 0 rgba(9, 11, 16, 0.05);
+  --zy-depth-1:      0 12px 30px -14px rgba(9, 11, 16, 0.14), 0 2px 6px rgba(9, 11, 16, 0.05);
+  --zy-depth-2:      0 28px 64px -22px rgba(9, 11, 16, 0.22), 0 4px 12px rgba(9, 11, 16, 0.07);
+  --zy-grain-opacity: 0.045;
+
   /* Superficies Bento Pasteles (contraste alto sobre blanco y gris) */
-  --zy-tile-sky:  linear-gradient(155deg, rgba(129, 189, 248, 0.22), rgba(255, 255, 255, 0.94) 68%);
+  --zy-tile-sky:  linear-gradient(155deg, rgba(129, 189, 248, 0.24), rgba(255, 255, 255, 0.94) 68%);
   --zy-tile-lav:  linear-gradient(155deg, rgba(213, 190, 255, 0.26), rgba(255, 255, 255, 0.94) 68%);
-  --zy-tile-rose: linear-gradient(155deg, rgba(255, 213, 255, 0.32), rgba(255, 255, 255, 0.94) 68%);
-  --zy-tile-orc:  linear-gradient(155deg, rgba(255, 154, 255, 0.20), rgba(169, 220, 255, 0.16) 55%, rgba(255, 255, 255, 0.94));
+  --zy-tile-rose: linear-gradient(155deg, rgba(255, 213, 255, 0.30), rgba(255, 255, 255, 0.94) 68%);
+  --zy-tile-orc:  linear-gradient(155deg, rgba(255, 154, 255, 0.22), rgba(169, 220, 255, 0.16) 55%, rgba(255, 255, 255, 0.94));
 
   /* Acentos activos */
   --zy-accent:       #81BDF8;
@@ -40,10 +46,11 @@
   --zy-accent-ink:   #090B10;
   --zy-accent-soft:  rgba(129, 189, 248, 0.18);
 
-  /* Tipografía de autor */
-  --zy-font-display: "Instrument Serif", Georgia, serif;
-  --zy-font-ui:      "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
-  --zy-font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  /* Tipografía de Atelier Futurista (Syne + Cormorant Garamond + Plus Jakarta Sans + JetBrains Mono) */
+  --zy-font-display:   "Syne", "Space Grotesk", sans-serif;
+  --zy-font-editorial: "Cormorant Garamond", Georgia, serif;
+  --zy-font-ui:        "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --zy-font-mono:      "JetBrains Mono", ui-monospace, monospace;
 
   /* Geometría */
   --zy-radius:       22px;
@@ -54,24 +61,28 @@
 
 /* Modo Noche: Obsidiana + Grafito + Prisma Luminoso */
 [data-theme="night"] {
-  --zy-ink:          #F8F9FD;
-  --zy-ink-soft:     #A3AAB9;
-  --zy-pearl:        #06070B;
-  --zy-paper:        #0E1119;
-  --zy-surface-2:    #161A26;
-  --zy-card:         rgba(15, 18, 28, 0.88);
-  --zy-line:         rgba(255, 255, 255, 0.10);
-  --zy-line-strong:  rgba(255, 255, 255, 0.22);
+  --zy-ink:          #F7F9FE;
+  --zy-ink-soft:     #A6AEBF;
+  --zy-pearl:        #05060A;
+  --zy-paper:        #0D1018;
+  --zy-surface-2:    #151926;
+  --zy-card:         rgba(13, 16, 25, 0.86);
+  --zy-line:         rgba(255, 255, 255, 0.11);
+  --zy-line-strong:  rgba(255, 255, 255, 0.24);
+  --zy-rim-top:      inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.55);
+  --zy-depth-1:      0 18px 40px -16px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --zy-depth-2:      0 34px 80px -20px rgba(0, 0, 0, 0.85), 0 0 36px -12px rgba(129, 189, 248, 0.16);
+  --zy-grain-opacity: 0.055;
 
-  --zy-tile-sky:  linear-gradient(155deg, rgba(129, 189, 248, 0.16), rgba(16, 20, 30, 0.92) 70%);
-  --zy-tile-lav:  linear-gradient(155deg, rgba(213, 190, 255, 0.16), rgba(16, 20, 30, 0.92) 70%);
-  --zy-tile-rose: linear-gradient(155deg, rgba(255, 213, 255, 0.14), rgba(16, 20, 30, 0.92) 70%);
-  --zy-tile-orc:  linear-gradient(155deg, rgba(255, 154, 255, 0.15), rgba(129, 189, 248, 0.12) 55%, rgba(16, 20, 30, 0.92));
+  --zy-tile-sky:  linear-gradient(155deg, rgba(129, 189, 248, 0.18), rgba(14, 18, 28, 0.92) 70%);
+  --zy-tile-lav:  linear-gradient(155deg, rgba(213, 190, 255, 0.18), rgba(14, 18, 28, 0.92) 70%);
+  --zy-tile-rose: linear-gradient(155deg, rgba(255, 213, 255, 0.15), rgba(14, 18, 28, 0.92) 70%);
+  --zy-tile-orc:  linear-gradient(155deg, rgba(255, 154, 255, 0.16), rgba(129, 189, 248, 0.13) 55%, rgba(14, 18, 28, 0.92));
 
   --zy-accent:       #A9DCFF;
   --zy-accent-2:     #D5BEFF;
   --zy-accent-3:     #FF9AFF;
   --zy-accent-pale:  rgba(169, 220, 255, 0.22);
   --zy-accent-ink:   #07080D;
-  --zy-accent-soft:  rgba(169, 220, 255, 0.16);
+  --zy-accent-soft:  rgba(169, 220, 255, 0.18);
 }
