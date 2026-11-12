@@ -1,68 +1,54 @@
-/* Zaphyrel Design Tokens v3 — Paleta luminosa adaptable Dia / Noche + Marca Blanca */
+/* Zaphyrel Design Tokens v4 — Pasteles arquitectonicos finos (regla 85/12/3) */
 :root {
-  /* Esencia (permanece) */
-  --zy-ink:          #261F3D; /* ciruela zafiro oscuro: texto y logo */
-  --zy-ink-soft:     #584F75;
-  --zy-pearl:        #F7F3EC; /* marfil calido luminoso */
-  --zy-paper:        #FFFDF9;
-  --zy-card:         rgba(255, 253, 250, 0.88);
-  --zy-line:         rgba(38, 31, 61, 0.13);
-  --zy-line-strong:  rgba(38, 31, 61, 0.24);
+  /* 85% Base Porcelana & Tinta Zafiro Carbon */
+  --zy-ink:          #1D2230;
+  --zy-ink-soft:     #5F6678;
+  --zy-pearl:        #F4F1EC;
+  --zy-paper:        #FCFBF9;
+  --zy-card:         rgba(252, 251, 249, 0.90);
+  --zy-line:         rgba(29, 34, 48, 0.09);
+  --zy-line-strong:  rgba(29, 34, 48, 0.20);
 
-  /* Flujo (espectro pastel prismatico visible) */
-  --zy-sapphire:     #5E8CE3;
-  --zy-lavender:     #927CE0;
-  --zy-peach:        #E58D78;
-  --zy-sage:         #7BC4A6;
-  --zy-amber:        #E2B45A;
+  /* 12% Pasteles minerales empolvados (una familia armonica por vista) */
+  --zy-sapphire:     #7A97BC; /* zafiro niebla */
+  --zy-sapphire-soft:#B8CAE0;
+  --zy-sage:         #82A596; /* salvia mineral */
+  --zy-mauve:        #968EB2; /* malva lino */
+  --zy-clay:         #B89489; /* arena rosa */
 
   --zy-accent:       var(--zy-sapphire);
-  --zy-accent-2:     var(--zy-lavender);
-  --zy-accent-ink:   #FFFFFF;
-  --zy-accent-soft:  rgba(94, 140, 227, 0.18);
-  --zy-gradient:     linear-gradient(135deg, #5E8CE3 0%, #927CE0 52%, #E58D78 100%);
+  --zy-accent-pale:  #D7E3F1;
+  --zy-accent-ink:   #18202C;
+  --zy-accent-soft:  rgba(122, 151, 188, 0.14);
 
-  /* Tipografia v3 */
-  --zy-font-display: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
-  --zy-font-ui:      "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  /* Tipografia editorial suiza */
+  --zy-font-display: "Newsreader", Georgia, serif;
+  --zy-font-ui:      "DM Sans", system-ui, sans-serif;
   --zy-font-mono:    "JetBrains Mono", ui-monospace, monospace;
 
-  /* Forma y rejilla */
-  --zy-radius:       24px;
-  --zy-stroke:       1.5px;
+  /* Forma y ritmo */
+  --zy-radius:       20px;
+  --zy-stroke:       1px;
   --zy-space:        8px;
-
-  /* Movimiento */
   --zy-ease:         cubic-bezier(0.22, 1, 0.36, 1);
-  --zy-dur-fast:     180ms;
-  --zy-dur:          420ms;
-  --zy-dur-slow:     750ms;
 }
 
-/* Modo noche */
+/* Modo noche: Obsidiana Zafiro */
 [data-theme="night"] {
-  --zy-ink:          #F6F3FF;
-  --zy-ink-soft:     #C7BFE0;
-  --zy-pearl:        #110E1B;
-  --zy-paper:        #1A1629;
-  --zy-card:         rgba(31, 26, 48, 0.88);
-  --zy-line:         rgba(184, 169, 255, 0.18);
-  --zy-line-strong:  rgba(184, 169, 255, 0.34);
+  --zy-ink:          #EEF1F6;
+  --zy-ink-soft:     #9BA5B8;
+  --zy-pearl:        #0D1017;
+  --zy-paper:        #141923;
+  --zy-card:         rgba(22, 27, 38, 0.90);
+  --zy-line:         rgba(218, 226, 242, 0.10);
+  --zy-line-strong:  rgba(218, 226, 242, 0.22);
 
-  --zy-sapphire:     #8AB4FF;
-  --zy-lavender:     #B8A9FF;
-  --zy-peach:        #F7B7A6;
-  --zy-sage:         #93DBBC;
-  --zy-amber:        #F2CC7E;
-
-  --zy-accent:       var(--zy-sapphire);
-  --zy-accent-2:     var(--zy-lavender);
-  --zy-accent-ink:   #141022;
-  --zy-accent-soft:  rgba(138, 180, 255, 0.22);
-  --zy-gradient:     linear-gradient(135deg, #8AB4FF 0%, #B8A9FF 52%, #F7B7A6 100%);
+  --zy-accent:       #9DB6D6;
+  --zy-accent-pale:  rgba(157, 182, 214, 0.20);
+  --zy-accent-ink:   #0D1017;
+  --zy-accent-soft:  rgba(157, 182, 214, 0.15);
 }
 
-/* Marca blanca: cada cliente reemplaza su acento manteniendo estructura y ritmo */
 [data-zy-theme="client"] {
   --zy-accent: var(--zy-sapphire);
 }

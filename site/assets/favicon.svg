@@ -1,7 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5E8CE3"/><stop offset=".52" stop-color="#927CE0"/><stop offset="1" stop-color="#E58D78"/></linearGradient></defs>
-  <rect width="120" height="120" rx="28" fill="#F7F3EC"/>
-  <polygon points="60,10 110,60 92,60 60,28" fill="url(#g)" fill-opacity=".22"/>
-  <path d="M 16 54 L 60 10 L 110 60 L 60 110 L 42 92" fill="none" stroke="url(#g)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 38 40 H 82 L 79 47 H 42 Z M 41 73 H 82 L 79 80 H 38 Z M 72 40 H 82 C 71 54, 58 66, 47 80 H 38 C 49 66, 61 54, 72 40 Z" fill="#2B2540"/>
+  <defs>
+    <linearGradient id="g" x1="0.1" y1="0.1" x2="0.9" y2="0.9">
+      <stop offset="0" stop-color="#6F8EB5"/><stop offset="1" stop-color="#A6BDD8"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="#F4F1EC"/>
+  <polygon points="63,13 107,57 107,63 92,62 92,58 78,28" fill="url(#g)" fill-opacity=".2"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 41 40 H 71.5 L 66 45.5 H 35.5 Z M 54 74.5 H 84.5 L 79 80 H 48.5 Z M 76.5 40 H 84 C 71.5 54, 59.5 66, 45.5 80 H 38 C 51 66, 63 54, 76.5 40 Z" fill="#1D2230"/>
 </svg>
