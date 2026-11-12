@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 156" width="640" height="156" role="img" aria-label="Zaphyrel — Esencia que permanece e innovación que fluye">
   <defs>
-    <linearGradient id="zl8-p" x1="0" y1="0" x2="1" y2="0.8">
+    <linearGradient id="zl9-p" x1="0" y1="0" x2="1" y2="0.8">
       <stop offset="0" stop-color="#81BDF8"/>
       <stop offset="0.28" stop-color="#A9DCFF"/>
       <stop offset="0.54" stop-color="#D5BEFF"/>
       <stop offset="0.78" stop-color="#FFD5FF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="zl8-tbl" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
+    <linearGradient id="zl9-tbl" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
       <stop offset="0" stop-color="#FFFFFF"/>
       <stop offset="0.3" stop-color="#DCEEFF"/>
       <stop offset="0.65" stop-color="#EBE0FF"/>
       <stop offset="1" stop-color="#FFE6FF"/>
     </linearGradient>
-    <linearGradient id="zl8-obs" x1="0.12" y1="0.04" x2="0.88" y2="0.96">
+    <linearGradient id="zl9-obs" x1="0.12" y1="0.04" x2="0.88" y2="0.96">
       <stop offset="0" stop-color="#252C40"/>
-      <stop offset="0.45" stop-color="#0D1018"/>
+      <stop offset="0.48" stop-color="#0C0E16"/>
       <stop offset="1" stop-color="#040508"/>
     </linearGradient>
   </defs>
@@ -25,15 +25,15 @@
     <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="#D5BEFF"/>
     <polygon points="107,57 107,63 93.5,62.5 93.5,57.5" fill="#FFD5FF"/>
     <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="#FF9AFF"/>
-    <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#zl8-tbl)" stroke="url(#zl8-p)" stroke-width="1.25" stroke-linejoin="round"/>
+    <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#zl9-tbl)" stroke="url(#zl9-p)" stroke-width="1.25" stroke-linejoin="round"/>
     <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.9"/>
     <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#0B0D14" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#zl8-p)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#zl9-p)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#81BDF8"/>
-    <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="url(#zl8-obs)" stroke="#FFFFFF" stroke-width="1.15" stroke-linejoin="miter"/>
-    <path d="M 40.5 37.8 H 79.8 L 40.2 82.2 H 79.5" fill="none" stroke="url(#zl8-p)" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="url(#zl9-obs)" stroke="#FFFFFF" stroke-width="0.95" stroke-linejoin="round"/>
+    <path d="M 48 60 H 72" fill="none" stroke="url(#zl9-p)" stroke-width="1.8" stroke-linecap="round"/>
   </g>
-  <text x="164" y="84" font-family="'Cinzel', 'Bodoni Moda', Georgia, serif" font-size="45" font-weight="600" letter-spacing="11" fill="#0B0D12">ZAPHYREL</text>
-  <rect x="164" y="97" width="424" height="2" rx="1" fill="url(#zl8-p)"/>
-  <text x="164" y="122" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="400" letter-spacing="2.8" fill="#4B5263">ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</text>
+  <text x="164" y="84" font-family="'Cormorant Garamond', Georgia, serif" font-size="48" font-weight="300" letter-spacing="14" fill="#0B0D12">ZAPHYREL</text>
+  <rect x="164" y="97" width="430" height="1.8" rx="0.9" fill="url(#zl9-p)"/>
+  <text x="164" y="122" font-family="'Outfit', 'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="400" letter-spacing="2.8" fill="#4B5263">ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</text>
 </svg>

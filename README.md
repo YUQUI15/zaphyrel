@@ -2,31 +2,31 @@
 
 > **Esencia que permanece e innovación que fluye**
 
-Maison de ingeniería espacial, visualización interactiva 3D / 360° y sistemas operativos a medida.
+Estudio de ingeniería de software, visualización interactiva 3D / 360° y sistemas operativos digitales a medida.
 
-## Identidad y Arquitectura v8
+## Identidad y Arquitectura v9
 
-- **Base Arquitectónica**: Negro Obsidiana (`#06070B`), Blanco Puro (`#FFFFFF`), Perla (`#F3F4F9`) y Grises Neutros (`#E6E9F2`, `#485062`) con micro-textura anodizada y relieve especular.
+- **Base Arquitectónica**: Negro Obsidiana (`#06070B`), Blanco Puro (`#FFFFFF`), Perla (`#F3F4F9`) y Grises Minerales (`#E6E9F2`, `#485062`) con grano micro-anodizado, superficies cóncavas y biseles especulares.
 - **Espectro Pastel Coolors**: `#FF9AFF` · `#FFD5FF` · `#D5BEFF` · `#A9DCFF` · `#81BDF8`.
-- **Monograma `Z` Couture (`v8`)**: silueta octogonal abierta a 45° con anillo interior relojero, estelas Zéfiro y una **`Z` fina de alta relojería** con espolones diamantados y nervadura prismática.
-- **Tipografía de Alta Costura**: `Cinzel` (sello de marca) + `Bodoni Moda` & `Cormorant Garamond` (editorial) + `Outfit` (interfaz) + `JetBrains Mono` (telemetría).
+- **Monograma `Z` Didot Fluido (`v9`)**: silueta octogonal abierta a 45° con anillo interior relojero, estelas Zéfiro y una **`Z` caligráfica tipo Didot** de brazos ondulados, cintura orgánica afilada y barra transversal luminosa Coolors (sin trazos rectos rígidos ni estrellas de 4 puntas).
+- **Tipografía Fina y Protagonismo de Marca**: `Cormorant Garamond` (Light 300 / Regular 400 con amplio tracking editorial para `ZAPHYREL`) + `Outfit` (300/400/500 para lectura y controles) + `JetBrains Mono` (coordenadas y telemetría).
 
 ## Estructura del Proyecto
 
-- **`site/index.html`** — Experiencia v8 no convencional lista para Vercel:
-  - **Cámara Espacial `Z-360°` / 4K HiDPI / RV**: motor 3D extruido con la geometría exacta del monograma `Z` v8, arrastre 360°, despiece axial, cambio de material (*Cristal Coolors / Obsidiana Noir / Titanio Satinado*) y *Horizonte Esférico RV* expandible.
-  - **Cámara de los Cuatro Velos (`#esencia`)**: atrio flotante donde los cuatro estratos constructivos levitan con placas de coordenadas y pulso de sincronía atómica.
-  - **Atrio Operativo Studio OS (`#lab`)**: consola de cabina con riel vertical y 8 mundos funcionales vivos (*Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Boutique web y Tesorería*) adaptables a Escritorio y Móvil `390px`.
-  - **Cartografía & Metamorfosis (`#arquitecto` + `#antes`)**: mosaico asimétrico con mapa isométrico 3D de 3 estratos y comparador prismático.
-  - **Liturgia de Creación (`#metodo`)**: terrazas escalonadas y portal de diálogo privado.
-- **`logo/`** — Emblemas v8 en SVG (`color`, `sobre oscuro`, `monocromático` y `lockup` en `Cinzel`).
-- **`mockups/`** — Tarjeta, portada social y membrete actualizados a v8.
-- **`tokens/`**, **`scripts/`**, **`docs/`** — Tokens CSS, audio WebAudio/WAV y manual v8.
+- **`site/index.html`** — Experiencia interactiva v9 lista para Vercel:
+  - **Cámara Espacial `Z-360°` / 4K HiDPI / RV**: motor 3D extruido en Tiempo Real con la geometría curva de 41 puntos del monograma `Z` Didot + barra luminosa, rotación 360°, despiece axial, cambio de material (*Cristal Coolors / Obsidiana Noir / Titanio Satinado*) y *Horizonte Esférico RV*.
+  - **Anatomía del Sello (`#esencia`)**: despiece de 4 planos constructivos en 3D con lectura de coordenadas y sincronía de pulso.
+  - **Studio OS en Vivo (`#lab`)**: cabina operativa con riel vertical y 8 sistemas reales ejecutables (*Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Boutique web y Cuentas/Tesorería*) en vista Escritorio y Móvil `390px`.
+  - **Arquitectura & Comparador (`#arquitecto` + `#antes`)**: diagrama isométrico interactivo de 3 capas, tarjetas con inclinación 3D al cursor y comparador antes/después.
+  - **Proceso (`#metodo`), Contacto (`#contacto`) y Pie de página arquitectónico** en 3 columnas con acceso directo.
+- **`logo/`** — Emblemas v9 en SVG (`color`, `sobre oscuro`, `monocromático` y `lockup` en `Cormorant Garamond 300`).
+- **`mockups/`** — Tarjeta, portada social y membrete actualizados a v9.
+- **`tokens/`**, **`scripts/`**, **`docs/`** — Tokens CSS, audio WebAudio/WAV y manual v9.
 
 ## Vista local
 
 ```bash
-python -m http.server 8766
+python -m http.server 8767 --directory site
 ```
 
-Abre `http://localhost:8766/site/`.
+Abre `http://localhost:8767/`.

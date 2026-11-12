@@ -3,52 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZAPHYREL — Maison de Arquitectura Digital · 3D / 360° &amp; Percepción Fenomenal</title>
-<meta name="description" content="Maison Zaphyrel: alta relojería digital, visores espaciales 3D en 360° con densidad 4K HiDPI y ecosistemas operativos hechos a medida. Esencia que permanece e innovación que fluye.">
-<meta name="theme-color" id="metaTheme" content="#F3F4F9">
+<title>ZAPHYREL — Arquitectura Digital · Entornos 3D / 360° &amp; Sistemas a Medida</title>
+<meta name="description" content="Zaphyrel: ingeniería digital de precisión, visores interactivos 3D en 360° con densidad 4K y ecosistemas operativos a medida. Esencia que permanece e innovación que fluye.">
+<meta name="theme-color" id="metaTheme" content="#F3F5FA">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500;1,6..96,600&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script>
 (()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;if(location.hash)document.documentElement.classList.add('skip-veil');}catch(e){}})();
 </script>
 <style>
 :root{
-  /* Base Arquitectónica: Blanco Puro, Grises Neutros y Negro Obsidiana */
+  /* Base Arquitectónica: Blanco Puro, Grises Minerales y Negro Obsidiana */
   --black:#06070B; --obsidian:#0D1018; --white:#FFFFFF;
-  --ink:#090B10; --ink-soft:#485062; --pearl:#F3F4F9; --paper:#FFFFFF;
-  --surface-2:#E6E9F2; --card:rgba(255,255,255,.88); --tint:rgba(129,189,248,.10);
-  --line:rgba(9,11,16,.11); --line-strong:rgba(9,11,16,.22);
+  --ink:#0A0C12; --ink-soft:#4B5365; --pearl:#F3F5FA; --paper:#FFFFFF;
+  --surface-2:#E7EAF3; --card:rgba(255,255,255,.88); --tint:rgba(129,189,248,.10);
+  --line:rgba(10,12,18,.10); --line-strong:rgba(10,12,18,.21);
 
   /* Paleta Pastel Oficial Coolors: #FF9AFF · #FFD5FF · #D5BEFF · #A9DCFF · #81BDF8 */
   --c-orc:#FF9AFF; --c-rose:#FFD5FF; --c-lav:#D5BEFF; --c-ice:#A9DCFF; --c-sky:#81BDF8;
   --prism:linear-gradient(135deg,#81BDF8 0%,#A9DCFF 26%,#D5BEFF 52%,#FFD5FF 76%,#FF9AFF 100%);
   --prism-h:linear-gradient(90deg,#81BDF8 0%,#A9DCFF 26%,#D5BEFF 52%,#FFD5FF 76%,#FF9AFF 100%);
 
-  /* Profundidad física, biseles 3D y micro-textura */
-  --rim-top:inset 0 1px 0 rgba(255,255,255,.90), inset 0 -1px 0 rgba(9,11,16,.06);
-  --depth-1:0 14px 32px -16px rgba(9,11,16,.14), 0 2px 6px rgba(9,11,16,.05);
-  --depth-2:0 32px 76px -24px rgba(9,11,16,.24), 0 8px 18px rgba(9,11,16,.08);
-  --grain-op:.042;
+  /* Profundidad física, biseles 3D y micro-relieve */
+  --rim-top:inset 0 1px 0 rgba(255,255,255,.92), inset 0 -1px 0 rgba(10,12,18,.06);
+  --recess:inset 0 2px 10px rgba(10,12,18,.07), inset 0 1px 0 rgba(10,12,18,.05);
+  --depth-1:0 14px 34px -16px rgba(10,12,18,.14), 0 3px 8px rgba(10,12,18,.05);
+  --depth-2:0 34px 78px -24px rgba(10,12,18,.22), 0 8px 20px rgba(10,12,18,.07);
+  --grain-op:.038;
 
-  /* Superficies Bento Pasteles */
-  --tile-sky:linear-gradient(155deg,rgba(129,189,248,.20),rgba(255,255,255,.94) 68%);
-  --tile-lav:linear-gradient(155deg,rgba(213,190,255,.22),rgba(255,255,255,.94) 68%);
-  --tile-rose:linear-gradient(155deg,rgba(255,213,255,.26),rgba(255,255,255,.94) 68%);
+  /* Superficies Pastel Satinadas */
+  --tile-sky:linear-gradient(155deg,rgba(129,189,248,.20),rgba(255,255,255,.95) 68%);
+  --tile-lav:linear-gradient(155deg,rgba(213,190,255,.22),rgba(255,255,255,.95) 68%);
+  --tile-rose:linear-gradient(155deg,rgba(255,213,255,.25),rgba(255,255,255,.95) 68%);
 
   --accent:#81BDF8; --accent-2:#D5BEFF; --accent-3:#FF9AFF;
   --accent-pale:#E4F1FF; --accent-soft:rgba(129,189,248,.18); --accent-ring:rgba(213,190,255,.52);
-  --glass:rgba(255,255,255,.82); --shadow:rgba(9,11,16,.16);
+  --glass:rgba(255,255,255,.82); --shadow:rgba(10,12,18,.16);
 
-  /* Semántica integrada */
+  /* Semántica operativa */
   --ok-bg:#DEF6EA; --ok-ink:#11422A; --ok-dot:#339162;
   --warn-bg:#FFE4FB; --warn-ink:#5D184E; --warn-dot:#E06AD2;
   --info-bg:#DFEEFF; --info-ink:#123863; --info-dot:#81BDF8;
 
-  /* Tipografía de Maison v8 */
-  --crest:"Cinzel",Georgia,serif;
-  --display:"Bodoni Moda","Cormorant Garamond",Georgia,serif;
+  /* Tipografía Fina & Escultórica v9 */
+  --crest:"Cormorant Garamond",Georgia,serif;
+  --display:"Cormorant Garamond",Georgia,serif;
   --editorial:"Cormorant Garamond",Georgia,serif;
   --ui:"Outfit","Segoe UI",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -56,16 +57,17 @@
   --radius:22px;
 }
 [data-theme=night]{
-  --ink:#F7F9FE; --ink-soft:#A6AEBF; --pearl:#05060A; --paper:#0D1018;
-  --surface-2:#151926; --card:rgba(13,16,25,.86); --tint:rgba(169,220,255,.09);
+  --ink:#F7F9FE; --ink-soft:#A7B0C2; --pearl:#05060A; --paper:#0D1018;
+  --surface-2:#151927; --card:rgba(13,16,25,.88); --tint:rgba(169,220,255,.09);
   --line:rgba(255,255,255,.11); --line-strong:rgba(255,255,255,.24);
-  --rim-top:inset 0 1px 0 rgba(255,255,255,.16), inset 0 -1px 0 rgba(0,0,0,.60);
-  --depth-1:0 18px 42px -16px rgba(0,0,0,.68), 0 0 0 1px rgba(255,255,255,.04);
-  --depth-2:0 36px 86px -20px rgba(0,0,0,.86), 0 0 44px -14px rgba(129,189,248,.20);
-  --grain-op:.056;
-  --tile-sky:linear-gradient(155deg,rgba(129,189,248,.18),rgba(14,18,28,.92) 70%);
-  --tile-lav:linear-gradient(155deg,rgba(213,190,255,.18),rgba(14,18,28,.92) 70%);
-  --tile-rose:linear-gradient(155deg,rgba(255,213,255,.15),rgba(14,18,28,.92) 70%);
+  --rim-top:inset 0 1px 0 rgba(255,255,255,.16), inset 0 -1px 0 rgba(0,0,0,.62);
+  --recess:inset 0 2px 12px rgba(0,0,0,.48), inset 0 -1px 0 rgba(255,255,255,.06);
+  --depth-1:0 18px 44px -16px rgba(0,0,0,.68), 0 0 0 1px rgba(255,255,255,.04);
+  --depth-2:0 36px 86px -20px rgba(0,0,0,.86), 0 0 46px -14px rgba(129,189,248,.22);
+  --grain-op:.052;
+  --tile-sky:linear-gradient(155deg,rgba(129,189,248,.18),rgba(14,18,28,.93) 70%);
+  --tile-lav:linear-gradient(155deg,rgba(213,190,255,.18),rgba(14,18,28,.93) 70%);
+  --tile-rose:linear-gradient(155deg,rgba(255,213,255,.15),rgba(14,18,28,.93) 70%);
   --accent:#A9DCFF; --accent-2:#D5BEFF; --accent-3:#FF9AFF;
   --accent-pale:rgba(169,220,255,.22); --accent-soft:rgba(169,220,255,.18); --accent-ring:rgba(255,154,255,.38);
   --glass:rgba(10,12,19,.86); --shadow:rgba(0,0,0,.74);
@@ -73,98 +75,108 @@
   --warn-bg:rgba(255,154,255,.20); --warn-ink:#FFD5FF; --warn-dot:#FF9AFF;
   --info-bg:rgba(129,189,248,.22); --info-ink:#D7EDFF; --info-dot:#A9DCFF;
 }
-[data-finish=glass]{--grain-op:.022}
-[data-finish=anodized]{--grain-op:.072}
+[data-finish=glass]{--grain-op:.018}
+[data-finish=anodized]{--grain-op:.068}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{background:var(--pearl);color:var(--ink);font-family:var(--ui);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip;padding-bottom:88px;transition:background .5s var(--ease),color .5s var(--ease)}
+body{background:var(--pearl);color:var(--ink);font-family:var(--ui);font-weight:300;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:clip;padding-bottom:90px;transition:background .5s var(--ease),color .5s var(--ease)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer;user-select:none}
 ::selection{background:var(--c-lav);color:#06070B}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 
-/* Barra prismática superior, cursor y grano táctil SVG */
-.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:65;transform-origin:left;transform:scaleX(0);background:var(--prism-h)}
+/* Barra superior, cursor de precisión y velo de entrada */
+.progress{position:fixed;top:0;left:0;height:2.5px;width:100%;z-index:65;transform-origin:left;transform:scaleX(0);background:var(--prism-h)}
 .cur-dot,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:75;border-radius:50%;opacity:0;transition:opacity .3s}
 .cur-dot{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;background:var(--ink)}
 .cur-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--line-strong);transition:opacity .3s,width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,border-color .35s}
-.cur-ring.big{width:52px;height:52px;margin:-26px 0 0 -26px;background:var(--accent-soft);border-color:var(--accent)}
+.cur-ring.big{width:54px;height:54px;margin:-27px 0 0 -27px;background:var(--accent-soft);border-color:var(--accent)}
 @media(hover:none){.cur-dot,.cur-ring{display:none}}
 .has-cursor .cur-dot{opacity:.9}.has-cursor .cur-ring{opacity:.7}
 
 .veil{position:fixed;inset:0;z-index:85;background:var(--pearl);display:grid;place-items:center;animation:veil .45s var(--ease) .42s forwards;pointer-events:none}
 .skip-veil .veil{display:none}
-.veil svg{width:96px;height:96px;overflow:visible}
+.veil svg{width:98px;height:98px;overflow:visible}
 .veil .vd{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .55s var(--ease) .03s forwards}
 @keyframes veil{to{opacity:0;visibility:hidden}}
 @keyframes draw{to{stroke-dashoffset:0}}
 
-/* Textura micro-granulada + Campo de luz prismática bokeh sin 4-point stars + Perspectiva */
+/* Micro-textura, partículas prismáticas y cuadrícula arquitectónica */
 .tactile-grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--grain-op);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");mix-blend-mode:overlay}
-#prismField{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%;opacity:.75}
+#prismField{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%;opacity:.82}
 .aura{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none}
-.aura i{position:absolute;border-radius:50%;filter:blur(120px);opacity:.58;animation:drift 24s var(--ease) infinite alternate;transition:background .8s var(--ease),opacity .6s}
+.aura i{position:absolute;border-radius:50%;filter:blur(125px);opacity:.54;animation:drift 24s var(--ease) infinite alternate;transition:background .8s var(--ease),opacity .6s}
 .aura i:nth-child(1){width:54vmax;height:54vmax;background:radial-gradient(circle,var(--c-sky),var(--c-ice) 58%,transparent 76%);top:-18vmax;left:-14vmax}
 .aura i:nth-child(2){width:50vmax;height:50vmax;background:radial-gradient(circle,var(--c-orc),var(--c-rose) 50%,transparent 75%);top:12vmax;right:-16vmax;animation-delay:-8s}
 .aura i:nth-child(3){width:48vmax;height:48vmax;background:radial-gradient(circle,var(--c-lav),var(--c-ice) 52%,transparent 76%);bottom:-18vmax;left:18%;animation-delay:-15s}
-[data-theme=night] .aura i{opacity:.22;filter:blur(130px)}
+[data-theme=night] .aura i{opacity:.22;filter:blur(135px)}
 @keyframes drift{to{transform:translate(5vmax,3vmax) scale(1.08)}}
-.horizon-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:76px 76px;opacity:.30;mask-image:radial-gradient(ellipse 92% 72% at 50% 24%,#000 18%,transparent 90%)}
+.horizon-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:78px 78px;opacity:.28;mask-image:radial-gradient(ellipse 92% 72% at 50% 24%,#000 18%,transparent 90%)}
 
-/* Riel Arquitectónico Lateral Izquierdo (solo Escritorio >=1260px) */
+/* Riel Arquitectónico Lateral Izquierdo (solo Escritorio >=1280px) */
 .side-rail{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:35;display:none;flex-direction:column;align-items:center;gap:14px;pointer-events:none}
 @media(min-width:1280px){.side-rail{display:flex}}
 .side-rail .rail-line{width:1px;height:68px;background:linear-gradient(to bottom,transparent,var(--line-strong),transparent)}
-.side-rail .rail-code{writing-mode:vertical-rl;transform:rotate(180deg);font:600 9.5px var(--crest);letter-spacing:.26em;color:var(--ink-soft);text-transform:uppercase}
+.side-rail .rail-code{writing-mode:vertical-rl;transform:rotate(180deg);font:500 10px var(--mono);letter-spacing:.24em;color:var(--ink-soft);text-transform:uppercase}
 .side-rail .rail-dots{display:flex;flex-direction:column;gap:8px;pointer-events:auto}
 .side-rail .rail-dots a{width:7px;height:7px;border-radius:50%;border:1px solid var(--line-strong);transition:all .3s var(--ease)}
-.side-rail .rail-dots a.on{height:20px;border-radius:99px;background:var(--prism);border-color:transparent}
+.side-rail .rail-dots a.on{height:22px;border-radius:99px;background:var(--prism);border-color:transparent}
 
-/* HUD Superior de Maison */
-nav.hud-top{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px clamp(12px,3vw,42px);backdrop-filter:blur(22px) saturate(150%);background:color-mix(in srgb,var(--pearl) 80%,transparent);border-bottom:1px solid var(--line);box-shadow:var(--rim-top);user-select:none}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--crest);font-weight:600;letter-spacing:.20em;font-size:16px;color:var(--ink);flex:none}
-.brand svg{width:33px;height:33px;flex:none}
-.brand .brand-tag{font:500 8px var(--mono);letter-spacing:.18em;color:var(--ink-soft);display:block;margin-top:-2px}
-.hud-mid{display:flex;align-items:center;gap:7px;padding:5px 11px;border-radius:99px;border:1px solid var(--line-strong);background:var(--card);box-shadow:var(--rim-top);font:500 9.5px var(--mono);letter-spacing:.10em;color:var(--ink-soft);white-space:nowrap}
-.hud-mid b{color:var(--ink);font-weight:600}
-.hud-mid i{width:7px;height:7px;border-radius:50%;background:var(--prism);box-shadow:0 0 10px var(--c-orc)}
+/* Barra de Navegación Superior Elegante y Balanceada */
+nav.hud-top{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px clamp(14px,3.2vw,44px);backdrop-filter:blur(24px) saturate(160%);background:color-mix(in srgb,var(--pearl) 82%,transparent);border-bottom:1px solid var(--line);box-shadow:var(--rim-top),0 10px 30px -18px rgba(10,12,18,.15);user-select:none}
+nav.hud-top::after{content:"";position:absolute;bottom:-1px;left:8%;right:8%;height:1px;background:var(--prism-h);opacity:.45;pointer-events:none}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--crest);font-weight:400;letter-spacing:.28em;font-size:19px;color:var(--ink);flex:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .brand-tag{font:400 8px var(--mono);letter-spacing:.22em;color:var(--ink-soft);display:block;margin-top:-3px}
+.hud-mid{display:flex;align-items:center;gap:7px;padding:5px 12px;border-radius:99px;border:1px solid var(--line-strong);background:var(--card);box-shadow:var(--rim-top),var(--recess);font:500 9.5px var(--mono);letter-spacing:.11em;color:var(--ink-soft);white-space:nowrap}
+.hud-mid b{color:var(--ink);font-weight:500}
+.hud-mid i{width:7px;height:7px;border-radius:50%;background:var(--prism);box-shadow:0 0 10px var(--c-orc);animation:ping 2.2s infinite}
 .tools{display:flex;gap:6px;align-items:center;flex:none}
-.pill{border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:99px;padding:5px 11px;font:500 11.5px var(--ui);letter-spacing:.02em;transition:all .28s var(--ease);white-space:nowrap;display:inline-flex;align-items:center;gap:5px;box-shadow:var(--rim-top)}
+.pill{border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);border-radius:99px;padding:5px 12px;font:500 11.5px var(--ui);letter-spacing:.02em;transition:all .28s var(--ease);white-space:nowrap;display:inline-flex;align-items:center;gap:5px;box-shadow:var(--rim-top)}
 .pill:hover{border-color:var(--c-orc);background:var(--accent-soft);transform:translateY(-1px)}
 .pill[aria-pressed=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
-[data-theme=night] .pill[aria-pressed=true],[data-theme=night] .tab[aria-selected=true],[data-theme=night] .os-rail-btn[aria-selected=true],[data-theme=night] .chip.on,[data-theme=night] .chip[aria-pressed=true],[data-theme=night] .vp-toggle button[aria-pressed=true],[data-theme=night] .dock a.on{background:var(--prism);color:#06070B;border-color:transparent;font-weight:600}
+[data-theme=night] .pill[aria-pressed=true],[data-theme=night] .tab[aria-selected=true],[data-theme=night] .chip.on,[data-theme=night] .chip[aria-pressed=true],[data-theme=night] .vp-toggle button[aria-pressed=true],[data-theme=night] .dock a.on{background:var(--prism);color:#06070B;border-color:transparent;font-weight:600}
 .kbd{font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:5px;background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--line)}
 
 /* Dock Espacial Flotante Inferior */
 .dock-wrap{position:fixed;bottom:14px;left:0;right:0;z-index:50;display:flex;justify-content:center;pointer-events:none;padding:0 12px}
-.dock{pointer-events:auto;display:flex;align-items:center;gap:4px;padding:6px;border-radius:99px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--paper) 85%,transparent);backdrop-filter:blur(24px) saturate(165%);box-shadow:var(--depth-2),var(--rim-top)}
+.dock{pointer-events:auto;display:flex;align-items:center;gap:4px;padding:6px;border-radius:99px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(26px) saturate(165%);box-shadow:var(--depth-2),var(--rim-top)}
 .dock a{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:99px;font:500 11.5px var(--ui);color:var(--ink-soft);transition:all .28s var(--ease);white-space:nowrap}
-.dock a span{font:600 9.5px var(--crest);opacity:.66}
+.dock a span{font:500 9.5px var(--mono);opacity:.60}
 .dock a:hover{color:var(--ink);background:var(--accent-soft)}
 .dock a.on{background:var(--ink);color:var(--pearl);box-shadow:0 8px 20px -6px var(--shadow)}
 
-/* HERO ESPACIAL 3D / 360° / RV · MAISON DE ALTA RELOJERÍA */
+/* HERO ESPACIAL · MARCA PROTAGONISTA EN GRANDE, FINA Y ELEGANTE */
 section,header.hero{scroll-margin-top:76px}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:86px clamp(16px,5vw,68px) 98px;overflow:hidden}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:84px clamp(16px,5vw,68px) 98px;overflow:hidden}
 .hero-grid{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,3.8vw,48px);align-items:center}
 .hero-grid>*,.essence-bento>*,.arch>*,.cols>*,.mosaic-split>*,.terrace-grid>*{min-width:0;max-width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border-radius:99px;border:1px solid var(--line-strong);background:var(--glass);backdrop-filter:blur(12px);box-shadow:var(--rim-top),var(--depth-1);font:500 10px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink)}
 .hero-badge i{width:8px;height:8px;border-radius:50%;background:var(--prism);box-shadow:0 0 12px var(--c-orc);animation:ping 2.2s infinite}
 @keyframes ping{70%{box-shadow:0 0 0 8px rgba(255,154,255,0)}100%{box-shadow:0 0 0 0 rgba(255,154,255,0)}}
-h1{margin-top:18px;font-family:var(--display);font-weight:600;font-size:clamp(33px,4.1vw,58px);letter-spacing:-.02em;line-height:1.03;color:var(--ink)}
-h1 .word-prism{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:clamp(39px,4.9vw,68px);letter-spacing:-.01em;background:var(--prism-h);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding-right:4px;filter:drop-shadow(0 8px 20px rgba(129,189,248,.22))}
-[data-theme=day] h1 .word-prism{background:linear-gradient(120deg,#090B10 0%,#3B6EA8 38%,#7D5AC4 68%,#BF4DC0 100%);-webkit-background-clip:text;background-clip:text}
-.tag-line{margin-top:16px;font:500 11.5px var(--crest);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:10px}
-.tag-line::before{content:"";width:28px;height:2px;background:var(--prism-h);border-radius:2px}
-.lead{max-width:520px;margin-top:16px;color:var(--ink-soft);font-size:clamp(15px,1.35vw,16.5px);line-height:1.72;font-weight:300}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.cta{display:inline-flex;gap:10px;align-items:center;padding:13px 26px;border-radius:99px;background:var(--ink);color:var(--pearl);font:500 12.5px var(--ui);letter-spacing:.06em;border:1px solid var(--ink);box-shadow:var(--depth-1),var(--rim-top);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+
+/* Gran Wordmark Hero: Z A P H Y R E L fino y luminoso */
+.hero-wordmark-wrap{margin-top:20px}
+.hero-wordmark{font-family:var(--crest);font-weight:300;font-size:clamp(38px,5vw,64px);letter-spacing:.34em;line-height:1;text-transform:uppercase;background:linear-gradient(110deg,var(--ink) 0%,var(--ink) 38%,#81BDF8 50%,#D5BEFF 58%,var(--ink) 70%,var(--ink) 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandShimmer 9s var(--ease) infinite;margin-right:-.34em;display:inline-block}
+@keyframes brandShimmer{0%,100%{background-position:100% 0}50%{background-position:0% 0}}
+.hero-rule{width:min(280px,72%);height:1.5px;margin-top:10px;background:var(--prism-h);border-radius:2px;position:relative;overflow:hidden}
+.hero-rule::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);transform:translateX(-100%);animation:ruleSweep 4.5s ease-in-out infinite}
+@keyframes ruleSweep{to{transform:translateX(120%)}}
+
+h1{margin-top:18px;font-family:var(--display);font-weight:400;font-size:clamp(29px,3.6vw,48px);letter-spacing:-.015em;line-height:1.08;color:var(--ink)}
+h1 .word-prism{font-family:var(--editorial);font-style:italic;font-weight:400;font-size:1.10em;background:var(--prism-h);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding-right:4px;filter:drop-shadow(0 8px 20px rgba(129,189,248,.22))}
+[data-theme=day] h1 .word-prism{background:linear-gradient(120deg,#0A0C12 0%,#3B6EA8 38%,#7D5AC4 68%,#BF4DC0 100%);-webkit-background-clip:text;background-clip:text}
+.tag-line{margin-top:14px;font:500 11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:10px}
+.tag-line::before{content:"";width:26px;height:2px;background:var(--prism-h);border-radius:2px}
+.lead{max-width:520px;margin-top:15px;color:var(--ink-soft);font-size:clamp(15px,1.32vw,16.2px);line-height:1.72;font-weight:300}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.cta{display:inline-flex;gap:10px;align-items:center;padding:13px 26px;border-radius:99px;background:var(--ink);color:var(--pearl);font:500 12.5px var(--ui);letter-spacing:.05em;border:1px solid var(--ink);box-shadow:var(--depth-1),var(--rim-top);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .cta:hover{transform:translateY(-2px);box-shadow:var(--depth-2)}
 [data-theme=night] .cta:not(.ghost){background:var(--prism);color:#06070B;border-color:transparent;font-weight:600}
 .cta.ghost{background:var(--paper);color:var(--ink);border-color:var(--line-strong)}
 .cta.ghost:hover{border-color:var(--c-orc);background:var(--accent-soft)}
 
-.hero-dock{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
+.hero-dock{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px}
 .mood-bar{display:inline-flex;gap:9px;align-items:center;padding:6px 14px;border:1px solid var(--line-strong);border-radius:99px;background:var(--glass);backdrop-filter:blur(12px);box-shadow:var(--rim-top);font-size:11.5px;font-weight:500;color:var(--ink)}
 .sw{display:flex;gap:7px;align-items:center}
 .sw button{width:19px;height:19px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line-strong);transition:transform .25s var(--ease),box-shadow .25s}
@@ -172,52 +184,52 @@ h1 .word-prism{font-family:var(--editorial);font-style:italic;font-weight:600;fo
 [data-theme=night] .sw button[aria-pressed=true]{box-shadow:0 0 0 2px var(--white)}
 
 /* Cámara Espacial 3D / 360° / 4K-HiDPI / RV */
-.chamber{position:relative;border-radius:28px;border:1px solid var(--line-strong);background:var(--card);backdrop-filter:blur(26px) saturate(160%);box-shadow:var(--depth-2),var(--rim-top);padding:16px;display:grid;gap:12px;overflow:hidden;transform-style:preserve-3d;transition:all .45s var(--ease);user-select:none}
+.chamber{position:relative;border-radius:28px;border:1px solid var(--line-strong);background:var(--card);backdrop-filter:blur(26px) saturate(165%);box-shadow:var(--depth-2),var(--rim-top);padding:16px;display:grid;gap:12px;overflow:hidden;transform-style:preserve-3d;transition:all .45s var(--ease);user-select:none}
 .chamber::before{content:"";position:absolute;top:0;left:0;right:0;height:3.5px;background:var(--prism-h);z-index:3}
 .chamber.rv-full{position:fixed;inset:14px;z-index:80;border-radius:26px;grid-template-rows:auto 1fr auto;padding:20px;box-shadow:0 40px 120px rgba(0,0,0,.65)}
 .ch-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font:500 10px var(--mono);letter-spacing:.12em;color:var(--ink-soft)}
 .ch-bar b{color:var(--ink);font-weight:600}
-.ch-viewport{position:relative;height:clamp(268px,27vw,348px);border-radius:20px;border:1px solid var(--line-strong);background:radial-gradient(ellipse at 50% 42%,color-mix(in srgb,var(--accent-soft) 90%,transparent),var(--obsidian) 92%);overflow:hidden;cursor:grab;touch-action:none;box-shadow:inset 0 0 50px rgba(0,0,0,.35)}
-[data-theme=day] .ch-viewport{background:radial-gradient(ellipse at 50% 42%,#FFFFFF 0%,#ECEFF8 55%,#D7DDEC 100%);box-shadow:inset 0 2px 18px rgba(9,11,16,.08)}
+.ch-viewport{position:relative;height:clamp(268px,27vw,348px);border-radius:20px;border:1px solid var(--line-strong);background:radial-gradient(ellipse at 50% 42%,color-mix(in srgb,var(--accent-soft) 92%,transparent),var(--obsidian) 92%);overflow:hidden;cursor:grab;touch-action:none;box-shadow:inset 0 0 50px rgba(0,0,0,.38),var(--rim-top)}
+[data-theme=day] .ch-viewport{background:radial-gradient(ellipse at 50% 42%,#FFFFFF 0%,#ECEFF8 55%,#D8DFEE 100%);box-shadow:inset 0 3px 20px rgba(10,12,18,.10)}
 .chamber.rv-full .ch-viewport{height:100%}
 .ch-viewport:active{cursor:grabbing}
 #hero3d{width:100%;height:100%;display:block}
 .ch-hud{position:absolute;inset:12px;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between}
 .ch-hud-top,.ch-hud-bot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:nowrap}
-.hud-chip{pointer-events:auto;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:blur(10px);font:500 9.8px var(--mono);letter-spacing:.06em;color:var(--ink);white-space:nowrap}
-.hud-chip.dark{background:rgba(9,11,16,.78);color:#F7F9FE;border-color:rgba(255,255,255,.2)}
+.hud-chip{pointer-events:auto;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;border:1px solid var(--line-strong);background:color-mix(in srgb,var(--paper) 84%,transparent);backdrop-filter:blur(10px);font:500 9.8px var(--mono);letter-spacing:.06em;color:var(--ink);white-space:nowrap;box-shadow:var(--rim-top)}
+.hud-chip.dark{background:rgba(9,11,16,.80);color:#F7F9FE;border-color:rgba(255,255,255,.2)}
 .hud-chip i{width:6px;height:6px;border-radius:50%;background:var(--c-sky)}
-.ch-controls{display:grid;gap:8px;padding:10px 13px;border-radius:18px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 65%,var(--paper));box-shadow:var(--rim-top)}
+.ch-controls{display:grid;gap:8px;padding:10px 13px;border-radius:18px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 68%,var(--paper));box-shadow:var(--recess)}
 .ch-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px}
 .ch-range{display:flex;align-items:center;gap:10px;flex:1;min-width:190px;font:500 10.5px var(--mono);color:var(--ink-soft)}
 .ch-range input[type=range]{flex:1;accent-color:var(--accent);height:4px;cursor:pointer}
 
-/* Banda Filigrana */
+/* Banda Cinética de Capacidades */
 .marquee{border-block:1px solid var(--line);overflow:hidden;padding:13px 0;background:var(--paper);box-shadow:var(--rim-top)}
 .mq-track{display:flex;gap:14px;width:max-content;animation:mq 34s linear infinite;white-space:nowrap}
-.mq-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 15px;border-radius:99px;border:1px solid var(--line-strong);background:var(--pearl);font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--ink)}
+.mq-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 15px;border-radius:99px;border:1px solid var(--line-strong);background:var(--pearl);font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--ink);box-shadow:var(--rim-top)}
 .mq-pill i{width:8px;height:8px;border-radius:50%}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* Estructura General + Tipografía Editorial */
+/* Secciones + Tipografía Fina + Tilt 3D Táctil */
 section{padding:clamp(74px,8.6vw,116px) clamp(16px,5vw,68px);position:relative}
 .wrap{max-width:1200px;margin:0 auto}
-.eyebrow{font:600 10.5px var(--crest);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow{font:500 10.5px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
 .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--prism-h)}
-h2{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.2vw,54px);line-height:1.05;letter-spacing:-.02em;max-width:860px}
-h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1.12em;background:var(--prism-h);-webkit-background-clip:text;background-clip:text;color:transparent}
-[data-theme=day] h2 em{background:linear-gradient(120deg,#090B10 0%,#3B6EA8 38%,#7D5AC4 68%,#BF4DC0 100%);-webkit-background-clip:text;background-clip:text}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.2vw,54px);line-height:1.06;letter-spacing:-.015em;max-width:860px}
+h2 em{font-family:var(--editorial);font-style:italic;font-weight:400;font-size:1.10em;background:var(--prism-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-theme=day] h2 em{background:linear-gradient(120deg,#0A0C12 0%,#3B6EA8 38%,#7D5AC4 68%,#BF4DC0 100%);-webkit-background-clip:text;background-clip:text}
 .sub{color:var(--ink-soft);font-size:clamp(15px,1.4vw,17px);max-width:650px;margin-top:14px;font-weight:300}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
 #lab .rv,#arquitecto .rv,#antes .rv,#metodo .rv{opacity:1;transform:none}
 
-.tilt-card{position:relative;overflow:hidden;transform-style:preserve-3d;transition:transform .32s var(--ease),box-shadow .35s var(--ease),border-color .3s}
-.tilt-card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.26),rgba(129,189,248,.12) 38%,transparent 65%)}
-[data-theme=night] .tilt-card::after{background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),rgba(169,220,255,.10) 40%,transparent 65%)}
+.tilt-card{position:relative;overflow:hidden;transform-style:preserve-3d;transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .28s var(--ease),box-shadow .35s var(--ease),border-color .3s}
+.tilt-card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),rgba(129,189,248,.13) 38%,transparent 65%)}
+[data-theme=night] .tilt-card::after{background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),rgba(169,220,255,.11) 40%,transparent 65%)}
 .tilt-card:hover::after{opacity:1}
 
-/* 02 · LA CÁMARA DE LOS CUATRO VELOS (Asimétrica) */
+/* 02 · ANATOMÍA DIMENSIONAL */
 .essence-bento{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;margin-top:40px;align-items:stretch}
 .blueprint{border:1px solid var(--line-strong);border-radius:var(--radius);padding:24px;background:var(--tile-sky);box-shadow:var(--depth-2),var(--rim-top);display:flex;flex-direction:column;justify-content:space-between;min-height:468px;position:relative;overflow:hidden}
 .prism-bar{position:absolute;top:0;left:0;right:0;height:3.5px;background:var(--prism-h)}
@@ -231,9 +243,9 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .blueprint[data-focus="esencia"] .bp-layer:not(.p-esencia),
 .blueprint[data-focus="inno"] .bp-layer:not(.p-inno),
 .blueprint[data-focus="flujo"] .bp-layer:not(.p-flujo){opacity:.18}
-.bp-layer svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 14px 24px rgba(9,11,16,.14))}
-.bp-cap{min-height:42px;text-align:center;font:400 14px var(--editorial);font-style:italic;color:var(--ink);padding-top:10px;border-top:1px solid var(--line)}
-.bp-hint{text-align:center;font:500 9.5px var(--crest);letter-spacing:.18em;color:var(--ink-soft);margin-top:6px}
+.bp-layer svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 14px 24px rgba(10,12,18,.15))}
+.bp-cap{min-height:42px;text-align:center;font:400 14.5px var(--editorial);font-style:italic;color:var(--ink);padding-top:10px;border-top:1px solid var(--line)}
+.bp-hint{text-align:center;font:500 9.5px var(--mono);letter-spacing:.16em;color:var(--ink-soft);margin-top:6px}
 
 .pillars{display:flex;flex-direction:column;gap:14px}
 .pillar{border:1px solid var(--line-strong);border-radius:20px;padding:22px 24px;background:var(--paper);box-shadow:var(--depth-1),var(--rim-top);transition:all .38s var(--ease);cursor:pointer}
@@ -241,16 +253,16 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .pillar:hover,.pillar.active{border-color:var(--ink);transform:translateX(6px);box-shadow:var(--depth-2),var(--rim-top)}
 [data-theme=night] .pillar:hover,[data-theme=night] .pillar.active{border-color:var(--c-ice)}
 .pillar-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
-.pillar .n{font:600 10.5px var(--crest);letter-spacing:.2em;color:var(--ink-soft)}
-.pillar h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em}
+.pillar .n{font:600 10px var(--mono);letter-spacing:.18em;color:var(--ink-soft)}
+.pillar h3{font-family:var(--display);font-weight:500;font-size:24px;letter-spacing:-.01em}
 .pillar p{color:var(--ink-soft);font-size:14.2px;font-weight:300}
 
 .matter-bar{grid-column:1 / -1;border:1px solid var(--line-strong);border-radius:var(--radius);padding:20px 24px;background:var(--card);box-shadow:var(--depth-1),var(--rim-top);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
 .sync-nodes{display:flex;align-items:center;gap:10px;flex-wrap:wrap;flex:1}
 .snode{flex:1;min-width:155px;padding:12px 15px;border-radius:15px;border:1px solid var(--line-strong);background:var(--paper);box-shadow:var(--rim-top);transition:all .4s var(--ease)}
 .snode.lit{border-color:var(--c-sky);background:var(--accent-soft);transform:translateY(-3px);box-shadow:0 16px 32px -12px var(--accent-ring)}
-.snode small{display:block;font:600 9.5px var(--crest);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-.snode b{display:block;font-size:14px;font-weight:600;margin-top:2px}
+.snode small{display:block;font:600 9.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.snode b{display:block;font-size:14px;font-weight:500;margin-top:2px}
 .snode span{display:block;font:500 11px var(--mono);color:var(--ink-soft);margin-top:2px}
 .slink{width:38px;height:14px;display:grid;place-items:center;flex:none}
 .slink svg{width:38px;height:10px;overflow:visible}
@@ -258,7 +270,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .matter-bar.firing .pulse-line{animation-play-state:running}
 @keyframes flowdash{to{stroke-dashoffset:-28}}
 
-/* 03 · EL ATRIO DE SISTEMAS VIVOS · COCKPIT VERTICAL EN ESCRITORIO */
+/* 03 · SUITE INTERACTIVA ZAPHYREL STUDIO OS */
 .lab{margin-top:42px;border:1px solid var(--line-strong);border-radius:26px;background:var(--paper);box-shadow:var(--depth-2),var(--rim-top);overflow:hidden}
 .lab-os{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;border-bottom:1px solid var(--line);background:var(--obsidian);color:#F7F9FE;font:500 10px var(--mono);letter-spacing:.14em}
 .os-left{display:flex;align-items:center;gap:10px}
@@ -267,18 +279,18 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .lab-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--surface-2)}
 .lab-cockpit{display:grid;grid-template-columns:242px 1fr;min-height:430px}
 .os-rail{border-right:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 55%,var(--paper));padding:14px 12px;display:flex;flex-direction:column;gap:6px}
-.os-rail-hd{font:600 9.5px var(--crest);letter-spacing:.2em;color:var(--ink-soft);padding:2px 10px 8px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.os-rail-hd{font:600 9.5px var(--mono);letter-spacing:.18em;color:var(--ink-soft);padding:2px 10px 8px;border-bottom:1px solid var(--line);margin-bottom:4px}
 .tabs{display:flex;flex-direction:column;gap:5px}
 .tab{display:flex;justify-content:space-between;align-items:center;width:100%;padding:9px 13px;border-radius:12px;border:1px solid transparent;background:transparent;font-size:12.5px;font-weight:500;color:var(--ink-soft);text-align:left;transition:all .24s var(--ease)}
-.tab span{font:500 9.5px var(--crest);opacity:.62;letter-spacing:.08em}
+.tab span{font:500 9.5px var(--mono);opacity:.62;letter-spacing:.08em}
 .tab:hover{color:var(--ink);background:var(--paper);border-color:var(--line)}
 .tab[aria-selected=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink);box-shadow:var(--depth-1)}
 .brandbox{display:flex;gap:10px;align-items:center;flex-wrap:wrap;width:100%;justify-content:space-between}
 .brandbox-l{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.brandbox input{border:1px solid var(--line-strong);background:var(--paper);border-radius:99px;padding:7px 14px;font:500 12.5px var(--ui);color:var(--ink);width:185px}
+.brandbox input{border:1px solid var(--line-strong);background:var(--paper);border-radius:99px;padding:7px 14px;font:400 12.5px var(--ui);color:var(--ink);width:185px;box-shadow:var(--recess)}
 .brandbox input::placeholder{color:var(--ink-soft)}
 .vp-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:99px;background:var(--paper);padding:2px;gap:2px}
-.vp-toggle button{border:none;background:none;border-radius:99px;padding:4px 11px;font:600 11px var(--ui);color:var(--ink-soft)}
+.vp-toggle button{border:none;background:none;border-radius:99px;padding:4px 11px;font:500 11px var(--ui);color:var(--ink-soft)}
 .vp-toggle button[aria-pressed=true]{background:var(--ink);color:var(--pearl)}
 
 .panel-wrap{padding:clamp(14px,2.2vw,22px);background:color-mix(in srgb,var(--surface-2) 38%,var(--pearl));transition:all .4s var(--ease);min-width:0}
@@ -293,7 +305,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .app-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--tint)}
 .app-h .biz-wrap{display:flex;align-items:center;gap:9px;min-width:0}
 .app-h .dot{width:10px;height:10px;border-radius:50%;background:var(--prism);flex:none}
-.app-h .biz{font-family:var(--crest);font-weight:600;letter-spacing:.08em;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.app-h .biz{font-family:var(--crest);font-weight:600;letter-spacing:.08em;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .app-h .pw{font:500 9.5px var(--mono);letter-spacing:.14em;color:var(--ink-soft);flex:none}
 .app-b{padding:clamp(14px,2.2vw,20px)}
 .cols{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
@@ -301,11 +313,11 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .col h4{font:600 10px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
 
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.chip{border:1px solid var(--line-strong);background:var(--pearl);color:var(--ink-soft);border-radius:99px;padding:5px 12px;font-size:12px;font-weight:500;transition:all .2s var(--ease)}
+.chip{border:1px solid var(--line-strong);background:var(--pearl);color:var(--ink-soft);border-radius:99px;padding:5px 12px;font-size:12px;font-weight:500;transition:all .2s var(--ease);box-shadow:var(--rim-top)}
 .chip:hover{color:var(--ink);border-color:var(--ink)}
 .chip.on,.chip[aria-pressed=true]{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
 .chip.busy{opacity:.42;text-decoration:line-through}
-.field-in{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:7px 11px;font:400 12.5px var(--ui);color:var(--ink);width:100%}
+.field-in{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:7px 11px;font:400 12.5px var(--ui);color:var(--ink);width:100%;box-shadow:var(--recess)}
 .field-in::placeholder{color:var(--ink-soft)}
 .mini-form{display:grid;grid-template-columns:1fr auto auto;gap:6px;margin-top:8px}
 .qpill{display:inline-flex;align-items:center;border:1px solid var(--line-strong);border-radius:99px;background:var(--paper);overflow:hidden;font:500 11.5px var(--mono)}
@@ -330,7 +342,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .li-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 .li-dot.ok{background:var(--ok-dot)}.li-dot.warn{background:var(--warn-dot)}
 .li-acts{display:flex;align-items:center;gap:5px;flex:none}
-.total{display:flex;justify-content:space-between;padding:12px 0 0;font-weight:700;font-size:15px}
+.total{display:flex;justify-content:space-between;padding:12px 0 0;font-weight:600;font-size:15px}
 .ticket{border:1px solid var(--line-strong);border-radius:14px;padding:12px 14px;background:var(--pearl);margin-bottom:9px;animation:pop .4s var(--ease)}
 @keyframes pop{from{opacity:0;transform:scale(.96)}}
 .ticket .th{display:flex;justify-content:space-between;align-items:center;gap:8px;font:500 11px var(--mono);color:var(--ink-soft);margin-bottom:5px}
@@ -344,7 +356,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .avatar{width:42px;height:42px;border-radius:50%;background:var(--prism);color:#06070B;display:grid;place-items:center;font-weight:700;font-size:15px;flex:none}
 .badge{padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;background:var(--info-bg);color:var(--info-ink);white-space:nowrap}
 .badge.ok{background:var(--ok-bg);color:var(--ok-ink)}.badge.warn{background:var(--warn-bg);color:var(--warn-ink)}
-.big-n{font-family:var(--display);font-weight:600;font-size:clamp(34px,4vw,44px);line-height:1;letter-spacing:-.02em}
+.big-n{font-family:var(--display);font-weight:500;font-size:clamp(34px,4vw,44px);line-height:1;letter-spacing:-.02em}
 .meter{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden;margin:10px 0 4px}
 .meter i{display:block;height:100%;width:30%;background:var(--prism-h);border-radius:99px;transition:width .5s var(--ease)}
 .meter i.low{background:linear-gradient(90deg,#FF9AFF,#E06AD2)}
@@ -367,7 +379,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .steps-live li.on{color:var(--ink);font-weight:500}.steps-live li.on::before{background:var(--ok-dot);border-color:var(--ok-dot)}
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
 .kpi{border:1px solid var(--line);border-radius:12px;padding:10px 11px;background:var(--pearl);font-size:11px;color:var(--ink-soft)}
-.kpi b{display:block;font-size:16px;color:var(--ink);font-weight:700;margin-top:2px;font-family:var(--mono)}
+.kpi b{display:block;font-size:16px;color:var(--ink);font-weight:600;margin-top:2px;font-family:var(--mono)}
 .chart{display:flex;gap:5px;align-items:flex-end;height:88px;padding:10px 0 0}
 .chart i{flex:1;border-radius:4px 4px 1px 1px;background:var(--prism);min-height:10px;transition:height .55s var(--ease)}
 .chart i.exp{background:linear-gradient(180deg,#FFD5FF,#FF9AFF)}
@@ -375,57 +387,57 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .note{margin-top:12px;font-size:12px;color:var(--ink-soft);text-align:center}
 
-/* 04 · CARTOGRAFÍA & GALERÍA DE METAMORFOSIS (Asimétrica 60/40) */
+/* 04 · PROYECTOR 3D & EVOLUCIÓN DEL FLUJO */
 .arch{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;margin-top:40px;align-items:stretch}
 .arch-q{border:1px solid var(--line-strong);border-radius:var(--radius);padding:26px;background:var(--paper);box-shadow:var(--depth-1),var(--rim-top);display:flex;flex-direction:column;gap:22px}
-.arch-q h3{font:600 10.5px var(--crest);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.arch-q h3{font:600 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
 .arch-res{border:1px solid var(--line-strong);border-radius:var(--radius);padding:26px;background:var(--tile-lav);box-shadow:var(--depth-2),var(--rim-top);display:flex;flex-direction:column;justify-content:space-between;gap:16px;position:relative;overflow:hidden}
 .arch-res::before{content:"";position:absolute;top:0;left:0;right:0;height:3.5px;background:var(--prism-h)}
-.arch-res h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.5vw,29px);line-height:1.12}
-.arch-map{border:1px solid var(--line-strong);border-radius:16px;padding:12px;background:var(--paper);box-shadow:var(--rim-top)}
+.arch-res h3{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.6vw,31px);line-height:1.12}
+.arch-map{border:1px solid var(--line-strong);border-radius:16px;padding:12px;background:var(--paper);box-shadow:var(--recess)}
 .arch-map svg{width:100%;height:auto;display:block}
 .mods{display:flex;flex-wrap:wrap;gap:7px}
 .mod{padding:5px 12px;border-radius:99px;font-size:12px;font-weight:500;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink)}
-.flows{list-style:none;display:grid;gap:7px;font-size:13.5px;color:var(--ink-soft)}
+.flows{list-style:none;display:grid;gap:7px;font-size:13.5px;color:var(--ink-soft);font-weight:300}
 .flows li{display:flex;gap:9px;align-items:baseline}.flows li::before{content:"→";color:var(--ink);font-family:var(--mono);font-weight:600}
 
-.gallery-divider{margin:64px 0 38px;border-top:1px solid var(--line);padding-top:46px}
+.gallery-divider{margin:66px 0 38px;border-top:1px solid var(--line);padding-top:48px}
 .mosaic-split{display:grid;grid-template-columns:1fr;gap:26px;margin-top:26px}
 .ba-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
 .ba{position:relative;border:1px solid var(--line-strong);border-radius:var(--radius);overflow:hidden;min-height:278px;background:var(--paper);box-shadow:var(--depth-2),var(--rim-top);display:flex;user-select:none}
 .ba .old,.ba .neo{padding:clamp(26px,3.8vw,44px);min-height:278px;width:100%;display:flex;flex-direction:column;justify-content:center}
 .ba .old{background:var(--surface-2);color:var(--ink-soft)}
-.ba .old h3{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:clamp(23px,2.5vw,30px);margin-bottom:10px;color:var(--ink)}
+.ba .old h3{font-family:var(--editorial);font-style:italic;font-weight:400;font-size:clamp(24px,2.6vw,32px);margin-bottom:10px;color:var(--ink)}
 .ba .old p{font:400 12.8px var(--mono);line-height:1.85;max-width:440px}
 .ba .old s{opacity:.5}
 .ba .neo{position:absolute;inset:0;background:var(--paper);clip-path:inset(0 0 0 var(--pos,50%))}
-.ba .neo h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,29px);margin-bottom:6px}
+.ba .neo h3{font-family:var(--display);font-weight:500;font-size:clamp(23px,2.5vw,30px);margin-bottom:6px}
 .ba .tm{position:absolute;top:20px;right:24px;font:600 11.5px var(--mono);color:var(--ink-soft)}
 .ba .neo .tm{color:var(--ok-ink)}
 .ba .grip{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--prism-h);pointer-events:none}
 .ba .grip::after{content:"⇄";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);color:var(--ink);display:grid;place-items:center;font-size:14px;box-shadow:0 8px 22px var(--shadow)}
 .ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:3}
-.ba .lbl{position:absolute;bottom:14px;font:600 10px var(--crest);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);pointer-events:none}
+.ba .lbl{position:absolute;bottom:14px;font:500 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);pointer-events:none}
 .ba .l1{left:22px}.ba .l2{right:22px}
 
 .cares{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .care{border:1px solid var(--line-strong);border-radius:18px;padding:22px 20px;background:var(--paper);box-shadow:var(--depth-1),var(--rim-top)}
 .care:nth-child(2){background:var(--tile-sky)}.care:nth-child(4){background:var(--tile-lav)}.care:nth-child(6){background:var(--tile-rose)}
 .care:hover{border-color:var(--ink);box-shadow:var(--depth-2)}
-.care .ico{width:36px;height:36px;border-radius:11px;background:var(--obsidian);color:#FFFFFF;display:grid;place-items:center;margin-bottom:10px;box-shadow:0 8px 18px rgba(7,8,13,.16)}
+.care .ico{width:38px;height:38px;border-radius:11px;background:var(--obsidian);color:#FFFFFF;display:grid;place-items:center;margin-bottom:12px;box-shadow:0 8px 18px rgba(7,8,13,.16)}
 .care .ico svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.care h3{font-family:var(--display);font-weight:600;font-size:16.5px;margin-bottom:4px}
-.care p{font-size:12.8px;color:var(--ink-soft);font-weight:300;line-height:1.5}
+.care h3{font-family:var(--display);font-weight:500;font-size:21px;margin-bottom:4px}
+.care p{font-size:13.2px;color:var(--ink-soft);font-weight:300;line-height:1.55}
 
-/* 05 · TERRAZAS ESCALONADAS DE CREACIÓN + FAQ */
+/* 05 · METODOLOGÍA EN TERRAZAS ESCALONADAS + FAQ */
 .terrace-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px;align-items:start}
 .dep-card{border:1px solid var(--line-strong);border-radius:20px;padding:24px 22px;background:var(--paper);box-shadow:var(--depth-1),var(--rim-top);display:grid;gap:9px;position:relative;overflow:hidden}
 .dep-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3.5px;background:var(--prism-h)}
 .dep-card:nth-child(2){margin-top:26px;background:var(--tile-sky)}
 .dep-card:nth-child(3){margin-top:12px;background:var(--tile-lav)}
 .dep-card:nth-child(4){margin-top:38px;background:var(--tile-rose)}
-.dep-card .k{font:600 10px var(--crest);letter-spacing:.2em;color:var(--ink-soft)}
-.dep-card h3{font-family:var(--display);font-weight:600;font-size:21px}
+.dep-card .k{font:600 10px var(--mono);letter-spacing:.18em;color:var(--ink-soft)}
+.dep-card h3{font-family:var(--display);font-weight:500;font-size:24px}
 .dep-card p{color:var(--ink-soft);font-size:13.8px;font-weight:300}
 
 .faqs{margin-top:50px;border-top:1px solid var(--line)}
@@ -436,12 +448,12 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .faq .ans{max-height:0;overflow:hidden;color:var(--ink-soft);font-size:14.2px;font-weight:300;transition:max-height .45s var(--ease),padding .45s var(--ease)}
 .faq[aria-expanded=true] .ans{max-height:220px;padding-bottom:20px}
 
-/* Portal de Cierre Monolítico */
-.close{padding-top:34px;padding-bottom:clamp(80px,10vw,120px)}
-.panel{border:1px solid var(--line-strong);border-radius:30px;padding:clamp(36px,6vw,74px) clamp(24px,5vw,60px);background:#06070B;color:#F8F9FD;box-shadow:0 40px 96px -28px rgba(7,8,13,.6),var(--rim-top);text-align:center;position:relative;overflow:hidden}
+/* Portal de Cierre + Pie de Página Arquitectónico */
+.close{padding-top:34px;padding-bottom:clamp(54px,7vw,84px)}
+.panel{border:1px solid var(--line-strong);border-radius:30px;padding:clamp(38px,6vw,74px) clamp(24px,5vw,60px);background:#06070B;color:#F8F9FD;box-shadow:0 40px 96px -28px rgba(7,8,13,.62),var(--rim-top);text-align:center;position:relative;overflow:hidden}
 .panel::before{content:"";position:absolute;inset:0;background:radial-gradient(65% 70% at 15% 15%,rgba(129,189,248,.22),transparent 65%),radial-gradient(55% 65% at 88% 82%,rgba(255,154,255,.20),transparent 65%);pointer-events:none}
 .panel::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--prism-h)}
-.panel .crest-mark{font-family:var(--crest);font-weight:600;letter-spacing:.34em;font-size:clamp(22px,2.8vw,32px);color:#FFFFFF;margin:0 auto 16px;display:flex;justify-content:center;align-items:center;gap:12px}
+.panel .crest-mark{font-family:var(--crest);font-weight:300;letter-spacing:.36em;font-size:clamp(28px,3.6vw,44px);color:#FFFFFF;margin:0 auto 16px;display:flex;justify-content:center;align-items:center;gap:14px}
 .panel .eyebrow{color:#A9DCFF;display:flex;justify-content:center;margin-bottom:14px}
 .panel h2{margin:0 auto;color:#FFFFFF}
 .panel h2 em{background:var(--prism-h);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -449,15 +461,26 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:600;font-size:1
 .contact-actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:30px;position:relative;z-index:1}
 .mail{display:inline-flex;align-items:center;gap:12px;padding:15px 30px;border-radius:99px;background:var(--prism-h);color:#06070B;font:600 14px var(--mono);border:none;transition:transform .35s var(--ease),box-shadow .35s}
 .mail:hover{transform:translateY(-2px);box-shadow:0 20px 44px rgba(129,189,248,.32)}
-.copy-btn{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.08);color:#FFFFFF;border-radius:99px;padding:14px 22px;font:500 13px var(--ui);transition:all .25s}
+.copy-btn{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.08);color:#FFFFFF;border-radius:99px;padding:14px 22px;font:400 13px var(--ui);transition:all .25s}
 .copy-btn:hover{border-color:#A9DCFF;background:rgba(169,220,255,.16)}
-footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font:600 10.5px var(--crest);letter-spacing:.2em;color:var(--ink-soft)}
+
+/* Footer Arquitectónico Estructurado */
+.site-footer{border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 40%,var(--paper));padding:42px clamp(16px,5vw,68px) 104px}
+.ft-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;align-items:start}
+.ft-brand{font-family:var(--crest);font-weight:400;font-size:24px;letter-spacing:.30em;color:var(--ink)}
+.ft-slogan{margin-top:8px;font-size:13.5px;color:var(--ink-soft);font-weight:300}
+.ft-palette{display:flex;align-items:center;gap:6px;margin-top:14px}
+.ft-palette i{width:22px;height:6px;border-radius:3px}
+.ft-col h4{font:600 10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.ft-col a{display:block;font-size:13px;color:var(--ink);padding:3px 0;opacity:.82;transition:opacity .2s}
+.ft-col a:hover{opacity:1;text-decoration:underline}
+.ft-bottom{max-width:1200px;margin:28px auto 0;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font:500 10px var(--mono);letter-spacing:.16em;color:var(--ink-soft)}
 
 /* Paleta de comandos Ctrl+K */
 .cmd{position:fixed;inset:0;z-index:90;background:rgba(6,7,11,.56);backdrop-filter:blur(12px);display:none;place-items:start center;padding-top:12vh}
 .cmd.on{display:grid}
 .cmd-box{width:min(540px,92vw);border-radius:20px;border:1px solid var(--line-strong);background:var(--paper);box-shadow:0 36px 90px var(--shadow);overflow:hidden}
-.cmd-box input{width:100%;border:none;border-bottom:1px solid var(--line);background:none;padding:16px 20px;font:500 15px var(--ui);color:var(--ink);outline:none}
+.cmd-box input{width:100%;border:none;border-bottom:1px solid var(--line);background:none;padding:16px 20px;font:400 15px var(--ui);color:var(--ink);outline:none}
 .cmd-box ul{list-style:none;max-height:320px;overflow:auto;padding:8px}
 .cmd-box li{display:flex;justify-content:space-between;padding:10px 14px;border-radius:12px;font-size:13.5px;cursor:pointer;color:var(--ink-soft)}
 .cmd-box li.sel,.cmd-box li:hover{background:var(--accent-soft);color:var(--ink)}
@@ -465,7 +488,7 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 
 @media(max-width:1120px){.hud-mid{display:none}}
 @media(max-width:980px){
-  .hero-grid,.essence-bento,.cols,.arch,.mosaic-split,.terrace-grid{grid-template-columns:1fr}
+  .hero-grid,.essence-bento,.cols,.arch,.mosaic-split,.terrace-grid,.ft-grid{grid-template-columns:1fr}
   .cares{grid-template-columns:repeat(2,1fr)}
   .dep-card:nth-child(n){margin-top:0}
   .lab-cockpit{grid-template-columns:1fr}
@@ -476,20 +499,20 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 }
 @media(max-width:600px){
   nav.hud-top{padding:10px 12px;gap:6px}
-  .brand{font-size:14.5px;letter-spacing:.16em;gap:7px}
+  .brand{font-size:15.5px;letter-spacing:.18em;gap:7px}
   .brand svg{width:28px;height:28px}
   .brand .brand-tag{display:none}
   .tools{gap:5px}
   .pill{padding:5px 9px;font-size:11px}
   .tools .pill-hide,.tools .cta-nav,.rv-lbl-long{display:none}
-  .hero{padding:78px 14px 86px}
+  .hero{padding:76px 14px 86px}
   .hero-badge{max-width:100%;white-space:normal;font-size:9px;letter-spacing:.08em;line-height:1.45;border-radius:14px;padding:6px 11px}
-  h1{font-size:clamp(27px,7.8vw,36px);line-height:1.08}
-  h1 .word-prism{font-size:clamp(33px,9.2vw,44px)}
+  .hero-wordmark{font-size:clamp(30px,9vw,40px);letter-spacing:.26em;margin-right:-.26em}
+  h1{font-size:clamp(24px,7vw,32px);line-height:1.10}
   .ch-range{min-width:0;flex:1 1 100%}
   .ch-bar{font-size:9px;letter-spacing:.06em;white-space:normal}
   .chamber{padding:12px}
-  .menu,.rooms,.cares{grid-template-columns:1fr 1fr}
+  .menu,.rooms{grid-template-columns:1fr 1fr}
   .cares{grid-template-columns:1fr}
   .ch-hud-top,.ch-hud-bot{flex-wrap:wrap;gap:4px}
   .hud-chip{font-size:9px;padding:3px 7px;white-space:normal}
@@ -499,7 +522,7 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
   .ba .neo{clip-path:inset(0 0 0 var(--pos,50%))}
 }
 @media(prefers-reduced-motion:reduce){
-  .mq-track,.aura i{animation:none}
+  .mq-track,.aura i,.hero-wordmark,.hero-rule::after{animation:none}
   #prismField{display:none}
   .rv{opacity:1;transform:none}
 }
@@ -510,12 +533,12 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 <div class="cur-dot" id="dot"></div>
 <div class="cur-ring" id="ring"></div>
 
-<!-- Cortina rápida inicial v8 (Monograma Couture Z) -->
+<!-- Cortina rápida inicial v9 (Monograma Didot Fluid Z) -->
 <div class="veil" aria-hidden="true">
   <svg viewBox="0 0 120 120">
-    <defs><linearGradient id="vg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".5" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient></defs>
-    <path class="vd" pathLength="1" d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#vg8)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <path class="vd" pathLength="1" d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="miter"/>
+    <defs><linearGradient id="vg9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".5" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient></defs>
+    <path class="vd" pathLength="1" d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#vg9)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="vd" pathLength="1" d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
   </svg>
 </div>
 
@@ -527,47 +550,45 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 <!-- Riel Arquitectónico Lateral Izquierdo -->
 <aside class="side-rail" aria-hidden="true">
   <span class="rail-line"></span>
-  <span class="rail-code" id="railChapter">I · NÚCLEO</span>
+  <span class="rail-code" id="railChapter">01 · NÚCLEO</span>
   <div class="rail-dots" id="railDots">
-    <a href="#top" class="on" data-sec="top" title="I · Núcleo 3D"></a>
-    <a href="#esencia" data-sec="esencia" title="II · Cámara de Velos"></a>
-    <a href="#lab" data-sec="lab" title="III · Studio OS"></a>
-    <a href="#arquitecto" data-sec="arquitecto" title="IV · Cartografía"></a>
-    <a href="#metodo" data-sec="metodo" title="V · Liturgia"></a>
+    <a href="#top" class="on" data-sec="top" title="01 · Núcleo 3D"></a>
+    <a href="#esencia" data-sec="esencia" title="02 · Anatomía 3D"></a>
+    <a href="#lab" data-sec="lab" title="03 · Studio OS"></a>
+    <a href="#arquitecto" data-sec="arquitecto" title="04 · Proyector 3D"></a>
+    <a href="#metodo" data-sec="metodo" title="05 · Proceso"></a>
   </div>
   <span class="rail-line"></span>
 </aside>
 
-<!-- HUD Superior Minimalista de Maison -->
+<!-- Navbar Superior Equilibrado -->
 <nav class="hud-top">
   <a class="brand mag" href="#top">
     <svg viewBox="0 0 120 120" aria-hidden="true">
       <defs>
-        <linearGradient id="z8-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".28" stop-color="#A9DCFF"/><stop offset=".54" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
-        <linearGradient id="z8-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".32" stop-color="#E4F2FF"/><stop offset=".66" stop-color="#EDE4FF"/><stop offset="1" stop-color="#FFE7FF"/></linearGradient>
-        <linearGradient id="z8-obs" x1=".12" y1=".04" x2=".88" y2=".96"><stop offset="0" stop-color="#252C40"/><stop offset=".45" stop-color="#0D1018"/><stop offset="1" stop-color="#040508"/></linearGradient>
-        <linearGradient id="z8-f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
-        <linearGradient id="z8-f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
-        <linearGradient id="z8-f3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
-        <linearGradient id="z8-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
-        <linearGradient id="z8-zrim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset=".5" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z9-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".28" stop-color="#A9DCFF"/><stop offset=".54" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z9-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".32" stop-color="#E4F2FF"/><stop offset=".66" stop-color="#EDE4FF"/><stop offset="1" stop-color="#FFE7FF"/></linearGradient>
+        <linearGradient id="z9-obs" x1=".12" y1=".04" x2=".88" y2=".96"><stop offset="0" stop-color="#252C40"/><stop offset=".48" stop-color="#0C0F17"/><stop offset="1" stop-color="#040508"/></linearGradient>
+        <linearGradient id="z9-f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
+        <linearGradient id="z9-f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
+        <linearGradient id="z9-f3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z9-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
       </defs>
-      <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="url(#z8-f1)"/>
-      <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="url(#z8-f2)"/>
-      <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="url(#z8-f3)"/>
-      <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z8-table)" stroke="url(#z8-crown)" stroke-width="1.3"/>
-      <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width=".95"/>
+      <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="url(#z9-f1)"/>
+      <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="url(#z9-f2)"/>
+      <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="url(#z9-f3)"/>
+      <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z9-table)" stroke="url(#z9-crown)" stroke-width="1.25"/>
+      <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width=".9"/>
       <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#0B0D14" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z8-crown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="url(#z8-wind)"/>
-      <!-- Z Couture v8 -->
-      <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="url(#z8-obs)" stroke="#FFFFFF" stroke-width="1.15" stroke-linejoin="miter"/>
-      <path d="M 37 39.5 L 41.5 35.5 H 83.5 L 79.8 37.8 H 40.5 L 37 41 Z M 74.5 40.2 L 79.8 37.8 L 40.2 82.2 L 35 82 Z" fill="#FFFFFF" opacity=".28"/>
-      <path d="M 40.5 37.8 H 79.8 L 40.2 82.2 H 79.5" fill="none" stroke="url(#z8-zrim)" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z9-crown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="url(#z9-wind)"/>
+      <!-- Z Didot Fluid v9 -->
+      <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="url(#z9-obs)" stroke="#FFFFFF" stroke-width=".95" stroke-linejoin="round"/>
+      <path d="M 48 60 H 72" fill="none" stroke="url(#z9-crown)" stroke-width="1.8" stroke-linecap="round"/>
     </svg>
     <div>
       <span>ZAPHYREL</span>
-      <span class="brand-tag">MAISON · ALTA ARQUITECTURA</span>
+      <span class="brand-tag">ARQUITECTURA DIGITAL · 3D / 360°</span>
     </div>
   </a>
   <div class="hud-mid"><i></i><span id="hudRes">MOTOR 3D · 4K HIDPI</span><b>· 60 FPS</b></div>
@@ -576,42 +597,49 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
     <button class="pill" id="rvNavBtn" aria-pressed="false" title="Activar Modo Espacial 360° / RV"><span class="rv-lbl-long">Modo </span>RV 360°</button>
     <button class="pill" id="night" aria-pressed="false" title="Cambiar entre Día y Noche">☾ Noche</button>
     <button class="pill pill-hide" id="sound" aria-pressed="false">♪ Sonido</button>
-    <a class="pill cta-nav" href="#contacto" style="background:var(--ink);color:var(--pearl);border-color:var(--ink)">Dialogar</a>
+    <a class="pill cta-nav" href="#contacto" style="background:var(--ink);color:var(--pearl);border-color:var(--ink)">Conversemos</a>
   </div>
 </nav>
 
 <!-- Dock Espacial Flotante Inferior -->
 <div class="dock-wrap" aria-label="Navegación espacial">
   <div class="dock" id="spatialDock">
-    <a href="#top" class="on" data-sec="top"><span>I</span>Núcleo 3D</a>
-    <a href="#esencia" data-sec="esencia"><span>II</span>Cuatro Velos</a>
-    <a href="#lab" data-sec="lab"><span>III</span>Studio OS</a>
-    <a href="#arquitecto" data-sec="arquitecto"><span>IV</span>Cartografía</a>
-    <a href="#metodo" data-sec="metodo"><span>V</span>Liturgia</a>
+    <a href="#top" class="on" data-sec="top"><span>01</span>Núcleo 3D</a>
+    <a href="#esencia" data-sec="esencia"><span>02</span>Anatomía</a>
+    <a href="#lab" data-sec="lab"><span>03</span>Studio OS</a>
+    <a href="#arquitecto" data-sec="arquitecto"><span>04</span>Proyector 3D</a>
+    <a href="#metodo" data-sec="metodo"><span>05</span>Proceso</a>
   </div>
 </div>
 
-<!-- I · HERO ASIMÉTRICO DE ALTA RELOJERÍA DIGITAL -->
+<!-- 01 · HERO ASIMÉTRICO CON GRAN FIRMA DE MARCA Y CÁMARA 3D / 360° / RV -->
 <header class="hero" id="top">
   <div class="hero-grid">
     <div>
-      <div class="hero-badge"><i></i>MAISON ZAPHYREL · INGENIERÍA ESPACIAL 3D / 360° / RV</div>
-      <h1 id="heroTitle">Ingeniería de <span class="word-prism">percepción</span> fenomenal.</h1>
+      <div class="hero-badge"><i></i>ARQUITECTURA DIGITAL · ENTORNOS 3D / 360° · SOFTWARE PROPIO</div>
+
+      <!-- Gran Nombre de Marca Fino y Elegante -->
+      <div class="hero-wordmark-wrap">
+        <div class="hero-wordmark">ZAPHYREL</div>
+        <div class="hero-rule" aria-hidden="true"></div>
+      </div>
+
+      <h1 id="heroTitle">Diseño que impresiona. <span class="word-prism">Ingeniería en dimensión</span> real.</h1>
       <p class="tag-line">Esencia que permanece e innovación que fluye</p>
-      <p class="lead">Forjamos instrumentos digitales con alma arquitectónica: escultura tridimensional en 360°, nitidez vectorial 4K, texturas nobles y software vivo diseñado para marcas que rehúsan parecerse a nadie más.</p>
+      <p class="lead">Construimos plataformas a medida con profundidad real: experiencias interactivas 3D en 360°, nitidez vectorial 4K, texturas con relieve físico y software hecho para empresas que rehúsan parecerse a nadie más.</p>
 
       <div class="cta-row">
-        <a class="cta mag" href="#lab">Entrar al Atrio Studio OS</a>
+        <a class="cta mag" href="#lab">Explorar los 8 sistemas en vivo</a>
         <button class="cta ghost mag" id="heroRvTrigger">Abrir Cámara RV 360° ↗</button>
       </div>
 
       <div class="hero-dock">
-        <div class="mood-bar" title="Espectro oficial Coolors + Blanco / Negro / Gris">
+        <div class="mood-bar" title="Paleta Coolors + Blanco / Negro / Gris">
           <span>Espectro:</span>
           <div class="sw sw-sync" aria-label="Paleta Coolors"></div>
         </div>
         <div class="mood-bar">
-          <span>Acabado:</span>
+          <span>Textura:</span>
           <button class="chip on" data-fin="crystal" style="margin:0;padding:3px 9px;font-size:11px">Cristal</button>
           <button class="chip" data-fin="anodized" style="margin:0;padding:3px 9px;font-size:11px">Anodizado</button>
           <button class="chip" data-fin="glass" style="margin:0;padding:3px 9px;font-size:11px">Vidrio</button>
@@ -622,7 +650,7 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
     <!-- CÁMARA ESPACIAL INTERACTIVA 3D / 360° / RV -->
     <div class="chamber" id="chamberBox">
       <div class="ch-bar">
-        <span>CÁMARA ESPACIAL <b>Z-360° ENGINE</b> · MONOGRAMA COUTURE EN RV</span>
+        <span>CÁMARA ESPACIAL <b>Z-360° ENGINE</b> · ARRASTRA PARA ORBITAR EN VIVO</span>
         <span id="angleReadout">α +24° · β -14°</span>
       </div>
       <div class="ch-viewport" id="viewport3d" aria-label="Visor 3D interactivo 360 grados del monograma Zaphyrel">
@@ -662,100 +690,99 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 
 <div class="marquee" aria-hidden="true">
   <div class="mq-track">
-    <span class="mq-pill"><i style="background:#81BDF8"></i>ALTA RELOJERÍA DIGITAL EN 3D / 360°</span>
-    <span class="mq-pill"><i style="background:#A9DCFF"></i>DENSIDAD VECTORIAL 4K HiDPI</span>
-    <span class="mq-pill"><i style="background:#D5BEFF"></i>MONOGRAMA COUTURE Z · CINCELADO FINO</span>
+    <span class="mq-pill"><i style="background:#81BDF8"></i>VISORES 3D &amp; 360° NATIVOS</span>
+    <span class="mq-pill"><i style="background:#A9DCFF"></i>NITIDEZ VECTORIAL 4K HiDPI</span>
+    <span class="mq-pill"><i style="background:#D5BEFF"></i>MONOGRAMA ESTILIZADO &amp; RELIEVE REAL</span>
     <span class="mq-pill"><i style="background:#FFD5FF"></i>CÁMARA ESPACIAL &amp; PROYECCIÓN RV</span>
-    <span class="mq-pill"><i style="background:#FF9AFF"></i>PERCEPCIÓN FENOMENAL · CERO MOLDE GENÉRICO</span>
-    <span class="mq-pill"><i style="background:#81BDF8"></i>OBSIDIANA · GRIS MINERAL · BLANCO PURO</span>
-    <span class="mq-pill"><i style="background:#81BDF8"></i>ALTA RELOJERÍA DIGITAL EN 3D / 360°</span>
-    <span class="mq-pill"><i style="background:#A9DCFF"></i>DENSIDAD VECTORIAL 4K HiDPI</span>
-    <span class="mq-pill"><i style="background:#D5BEFF"></i>MONOGRAMA COUTURE Z · CINCELADO FINO</span>
+    <span class="mq-pill"><i style="background:#FF9AFF"></i>SISTEMAS OPERATIVOS A MEDIDA</span>
+    <span class="mq-pill"><i style="background:#81BDF8"></i>BLANCO PURO · GRIS MINERAL · OBSIDIANA</span>
+    <span class="mq-pill"><i style="background:#81BDF8"></i>VISORES 3D &amp; 360° NATIVOS</span>
+    <span class="mq-pill"><i style="background:#A9DCFF"></i>NITIDEZ VECTORIAL 4K HiDPI</span>
+    <span class="mq-pill"><i style="background:#D5BEFF"></i>MONOGRAMA ESTILIZADO &amp; RELIEVE REAL</span>
     <span class="mq-pill"><i style="background:#FFD5FF"></i>CÁMARA ESPACIAL &amp; PROYECCIÓN RV</span>
-    <span class="mq-pill"><i style="background:#FF9AFF"></i>PERCEPCIÓN FENOMENAL · CERO MOLDE GENÉRICO</span>
+    <span class="mq-pill"><i style="background:#FF9AFF"></i>SISTEMAS OPERATIVOS A MEDIDA</span>
   </div>
 </div>
 
-<!-- II · LA CÁMARA DE LOS CUATRO VELOS -->
+<!-- 02 · ANATOMÍA DIMENSIONAL -->
 <section id="esencia">
   <div class="wrap">
-    <p class="eyebrow rv">II · La Cámara de los Cuatro Velos</p>
-    <h2 class="rv">Nada bidimensional. Cada plano dialoga con la luz <em>y eleva tu dominio.</em></h2>
-    <p class="sub rv">Concepción tridimensional absoluta: corona octogonal abierta a 45°, láminas de refracción Coolors, anillo relojero interior y el monograma <span style="font-family:var(--crest)">Z</span> de alta costura suspendido sobre estelas Zéfiro.</p>
+    <p class="eyebrow rv">02 · Anatomía Dimensional</p>
+    <h2 class="rv">Nada plano. Cada plano responde a la luz <em>y sostiene tu operación.</em></h2>
+    <p class="sub rv">Construimos la identidad visual y la arquitectura técnica bajo la misma disciplina: corona octogonal abierta a 45°, láminas en paleta Coolors, bisel fino y el nuevo monograma <span style="font-family:var(--crest);font-weight:500">Z</span> fluido suspendido sobre estelas de movimiento.</p>
 
     <div class="essence-bento">
       <div class="blueprint tilt-card rv" id="bp" data-focus="">
         <div class="prism-bar" aria-hidden="true"></div>
         <div class="bp-bar">
-          <span>DISECCIÓN DE MAISON · MONOGRAMA Z COUTURE</span>
-          <button class="btn xs pri" id="bpExplode" aria-pressed="false">Separar 4 velos 3D</button>
+          <span>DISECCIÓN AXIAL · MONOGRAMA Z FLUIDO</span>
+          <button class="btn xs pri" id="bpExplode" aria-pressed="false">Separar 4 planos 3D</button>
         </div>
         <div class="bp-3d">
           <div class="bp-stack">
-            <!-- Velo 1: Retícula & Corona Octogonal -->
+            <!-- Plano 1: Retícula y Corona Octogonal -->
             <div class="bp-layer bp-l1 p-esencia">
               <svg viewBox="0 0 120 120">
                 <line x1="60" y1="2" x2="60" y2="118" stroke="var(--line-strong)" stroke-dasharray="2 3" stroke-width=".8"/>
                 <line x1="2" y1="60" x2="118" y2="60" stroke="var(--line-strong)" stroke-dasharray="2 3" stroke-width=".8"/>
                 <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#0B0D14" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z8-crown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z9-crown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <!-- Velo 2: Facetas Pastel Coolors -->
+            <!-- Plano 2: Facetas Pastel Coolors -->
             <div class="bp-layer bp-l2 p-inno">
               <svg viewBox="0 0 120 120">
-                <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="url(#z8-f1)"/>
+                <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="url(#z9-f1)"/>
                 <polygon points="57,13 63,13 62.5,26.5 57.5,26.5" fill="#FFFFFF"/>
-                <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="url(#z8-f2)"/>
+                <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="url(#z9-f2)"/>
                 <polygon points="107,57 107,63 93.5,62.5 93.5,57.5" fill="#FFD5FF"/>
-                <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="url(#z8-f3)"/>
-                <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z8-table)" stroke="url(#z8-crown)" stroke-width="1.3"/>
+                <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="url(#z9-f3)"/>
+                <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z9-table)" stroke="url(#z9-crown)" stroke-width="1.25"/>
               </svg>
             </div>
-            <!-- Velo 3: Anillo Relojero Octogonal -->
+            <!-- Plano 3: Bisel Octogonal Interior -->
             <div class="bp-layer bp-l3 p-inno">
               <svg viewBox="0 0 120 120">
                 <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="1.05"/>
                 <path d="M 57 13 L 57.5 26.5 M 63 13 L 62.5 26.5 M 107 57 L 93.5 57.5 M 107 63 L 93.5 62.5 M 63 107 L 62.5 93.5 M 57 107 L 57.5 93.5 M 19 51 L 26.5 57.5 M 41 91 L 49.5 82.5" fill="none" stroke="var(--ink)" stroke-width="1.15" stroke-opacity=".58" stroke-linecap="round"/>
               </svg>
             </div>
-            <!-- Velo 4: Monograma Couture Z v8 + Estelas Zéfiro -->
+            <!-- Plano 4: Monograma Didot Z + Estelas Zéfiro -->
             <div class="bp-layer bp-l4 p-flujo">
               <svg viewBox="0 0 120 120">
-                <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="url(#z8-wind)"/>
-                <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="url(#z8-obs)" stroke="#FFFFFF" stroke-width="1.25" stroke-linejoin="miter"/>
-                <path d="M 37 39.5 L 41.5 35.5 H 83.5 L 79.8 37.8 H 40.5 L 37 41 Z M 74.5 40.2 L 79.8 37.8 L 40.2 82.2 L 35 82 Z" fill="#FFFFFF" opacity=".30"/>
-                <path d="M 40.5 37.8 H 79.8 L 40.2 82.2 H 79.5" fill="none" stroke="url(#z8-zrim)" stroke-width=".95" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="url(#z9-wind)"/>
+                <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="url(#z9-obs)" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+                <path d="M 48 60 H 72" fill="none" stroke="url(#z9-crown)" stroke-width="1.8" stroke-linecap="round"/>
               </svg>
             </div>
           </div>
         </div>
-        <p class="bp-cap" id="bpCap">Selecciona una coordenada para aislar su plano luminoso o despliega los cuatro velos en 3D</p>
-        <p class="bp-hint">CORONA ABIERTA · FACETAS COOLORS · ANILLO RELOJERO · MONOGRAMA Z</p>
+        <p class="bp-cap" id="bpCap">Selecciona un pilar para aislar su plano o activa el despiece tridimensional</p>
+        <p class="bp-hint">CORONA ABIERTA · FACETAS COOLORS · BISEL INTERIOR · MONOGRAMA Z</p>
       </div>
 
       <div class="pillars">
-        <article class="pillar tilt-card rv active" data-bp="esencia" data-cap="VELO I · La Corona Octogonal abierta protege tu esencia fundacional mientras abre el umbral hacia lo nuevo.">
-          <div class="pillar-h"><span class="n">VELO I · ESENCIA</span><h3>Soberanía de carácter</h3></div>
-          <p>Esculpimos cada plataforma desde el ADN irrepetible de tu marca. Ninguna plantilla estándar, ningún compromiso estético.</p>
+        <article class="pillar tilt-card rv active" data-bp="esencia" data-cap="01 / Corona Octogonal Abierta: tu identidad intacta, con puerta directa para innovar.">
+          <div class="pillar-h"><span class="n">01 / ESENCIA</span><h3>Identidad propia</h3></div>
+          <p>Diseñamos cada sistema desde la personalidad real de tu marca. Sin plantillas repetidas ni moldes genéricos que diluyen tu carácter.</p>
         </article>
-        <article class="pillar tilt-card rv" style="--d:.08s" data-bp="inno" data-cap="VELO II · Refracción cromática #81BDF8 → #FF9AFF y bisel mineral sobre blanco, gris y obsidiana.">
-          <div class="pillar-h"><span class="n">VELO II · PERCEPCIÓN</span><h3>Textura, contraste y aire</h3></div>
-          <p>Superficies con relieve microscópico, cristal translúcido y ritmo editorial donde cada cifra respira como pieza de exhibición.</p>
+        <article class="pillar tilt-card rv" style="--d:.08s" data-bp="inno" data-cap="02 / Facetas #81BDF8 → #FF9AFF y relieves táctiles: profundidad visual y lectura limpia.">
+          <div class="pillar-h"><span class="n">02 / TEXTURA Y LUZ</span><h3>Profundidad física</h3></div>
+          <p>Capas translúcidas, grano mineral, contraste preciso sobre blanco, gris o negro obsidiana y transiciones que responden al tacto.</p>
         </article>
-        <article class="pillar tilt-card rv" style="--d:.16s" data-bp="flujo" data-cap="VELO III · El Monograma Z couture y las estelas Zéfiro sincronizan clientes, sedes y mando en un latido.">
-          <div class="pillar-h"><span class="n">VELO III · COREOGRÁFICA</span><h3>Sincronía sin fricción</h3></div>
-          <p>Cada estación operativa conversa en milisegundos bajo una sola verdad compartida, tanto en escritorio 4K como en mano.</p>
+        <article class="pillar tilt-card rv" style="--d:.16s" data-bp="flujo" data-cap="03 / Monograma Z fluido y estelas dinámicas: un pulso síncrono atraviesa toda tu operación.">
+          <div class="pillar-h"><span class="n">03 / PRECISIÓN</span><h3>Sincronía en tiempo real</h3></div>
+          <p>Dispositivos móviles, recepción, operación y gerencia comparten los mismos datos al instante, sin retrasos ni duplicados.</p>
         </article>
       </div>
 
       <div class="matter-bar tilt-card rv" id="syncBox" style="--d:.2s">
         <div class="sync-nodes">
-          <div class="snode" id="sn1"><small>1 · Emisión</small><b>Estímulo capturado</b><span id="sn1t">Solicitud #842 · Móvil</span></div>
+          <div class="snode" id="sn1"><small>1 · Captura / Cliente</small><b>Evento emitido</b><span id="sn1t">Solicitud #842 · Móvil</span></div>
           <div class="slink"><svg viewBox="0 0 44 10"><line class="pulse-line" x1="0" y1="5" x2="44" y2="5" stroke="#81BDF8" stroke-width="2.5"/></svg></div>
-          <div class="snode" id="sn2"><small>2 · Custodia</small><b>Validación atómica</b><span id="sn2t">Estado: en tránsito</span></div>
+          <div class="snode" id="sn2"><small>2 · Motor &amp; Reglas</small><b>Validación atómica</b><span id="sn2t">Estado: en tránsito</span></div>
           <div class="slink"><svg viewBox="0 0 44 10"><line class="pulse-line" x1="0" y1="5" x2="44" y2="5" stroke="#FF9AFF" stroke-width="2.5"/></svg></div>
-          <div class="snode" id="sn3"><small>3 · Sincronía</small><b>Consistencia absoluta</b><span id="sn3t">Sincronía 0 conflictos</span></div>
+          <div class="snode" id="sn3"><small>3 · Registro &amp; Panel</small><b>Consistencia global</b><span id="sn3t">Sincronía 0 conflictos</span></div>
         </div>
         <button class="btn pri" id="fireSync">⚡ Emitir pulso de sincronía</button>
       </div>
@@ -763,16 +790,16 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
   </div>
 </section>
 
-<!-- III · EL ATRIO DE SISTEMAS VIVOS · STUDIO OS (COCKPIT LATERAL VERTICAL) -->
+<!-- 03 · STUDIO OS · COCKPIT VERTICAL CON 8 SISTEMAS EN VIVO -->
 <section id="lab">
   <div class="wrap">
-    <p class="eyebrow rv">III · El Atrio de Sistemas Vivos</p>
-    <h2 class="rv">Ocho universos operativos. <em>Orquéstralos aquí en vivo.</em></h2>
-    <p class="sub rv">Detrás de la estética habita precisión clínica: comanda de sala, acceso QR, kardex vivo, llaves digitales <span style="font-family:var(--mono);font-size:.92em">ZPH-xxxx</span>, citas médicas, acervo, comercio y libro mayor operando en tiempo real.</p>
+    <p class="eyebrow rv">03 · Zaphyrel Studio OS</p>
+    <h2 class="rv">Ocho plataformas operativas. <em>Pruébalas aquí en tiempo real.</em></h2>
+    <p class="sub rv">Cada módulo refleja flujos reales de negocio —cocina, accesos QR, kardex, llaves digitales <span style="font-family:var(--mono);font-size:.92em">ZPH-xxxx</span>, citas médicas, biblioteca, tienda web y cuentas— adaptados al instante a escritorio o móvil.</p>
 
     <div class="lab rv" id="labBox">
       <div class="lab-os">
-        <div class="os-left"><div class="os-dots"><i></i><i></i><i></i></div><span>ZAPHYREL STUDIO OS v8 · COCKPIT OPERATIVO VIVO</span></div>
+        <div class="os-left"><div class="os-dots"><i></i><i></i><i></i></div><span>ZAPHYREL STUDIO OS · ENTORNO OPERATIVO INTERACTIVO</span></div>
         <span style="font:500 10px var(--mono);color:#A9DCFF">RESPUESTA INMEDIATA · ESCRITORIO &amp; MÓVIL 390PX</span>
       </div>
       <div class="lab-top">
@@ -790,16 +817,16 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 
       <div class="lab-cockpit">
         <aside class="os-rail">
-          <div class="os-rail-hd">INSTRUMENTOS · I–VIII</div>
+          <div class="os-rail-hd">PLATAFORMAS · 01–08</div>
           <div class="tabs" role="tablist">
-            <button class="tab" role="tab" aria-selected="true" data-t="table"><b>Restaurante</b><span>I</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="fit"><b>Gimnasio</b><span>II</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="stock"><b>Inventario</b><span>III</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="stay"><b>Hotel</b><span>IV</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="care"><b>Clínica y citas</b><span>V</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="lib"><b>Instituto / Biblioteca</b><span>VI</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="shop"><b>Catálogo web</b><span>VII</span></button>
-            <button class="tab" role="tab" aria-selected="false" data-t="ledger"><b>Cuentas</b><span>VIII</span></button>
+            <button class="tab" role="tab" aria-selected="true" data-t="table"><b>Restaurante</b><span>01</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="fit"><b>Gimnasio</b><span>02</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="stock"><b>Inventario</b><span>03</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="stay"><b>Hotel</b><span>04</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="care"><b>Clínica y citas</b><span>05</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="lib"><b>Instituto / Biblioteca</b><span>06</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="shop"><b>Catálogo web</b><span>07</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-t="ledger"><b>Cuentas</b><span>08</span></button>
           </div>
         </aside>
 
@@ -1053,21 +1080,21 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
       </div>
       <div class="toast" id="toast" role="status"></div>
     </div>
-    <p class="note rv">Cockpit adaptable: riel lateral en escritorio y formato móvil de 390 px con fidelidad íntegra.</p>
+    <p class="note rv">Cockpit adaptable: riel lateral en escritorio y vista previa móvil de 390 px con fidelidad íntegra.</p>
   </div>
 </section>
 
-<!-- IV · CARTOGRAFÍA ISOMÉTRICA Y GALERÍA DE METAMORFOSIS -->
+<!-- 04 · PROYECTOR ISOMÉTRICO 3D Y EVOLUCIÓN DEL FLUJO -->
 <section id="arquitecto">
   <div class="wrap">
-    <p class="eyebrow rv">IV · Cartografía del Proyecto</p>
-    <h2 class="rv">Esculpe el plano exacto de tu sistema <em>en perspectiva isométrica 3D.</em></h2>
-    <p class="sub rv">Combina tu dominio y tus nervios operativos para trazar al instante la topología de tres estratos interconectados.</p>
+    <p class="eyebrow rv">04 · Proyector de Arquitectura</p>
+    <h2 class="rv">Diseña la topología exacta de tu sistema <em>en plano isométrico 3D.</em></h2>
+    <p class="sub rv">Selecciona tu rubro y prioridades operativas para visualizar el mapa de tres capas conectadas y estimar el tiempo recuperado cada semana.</p>
 
     <div class="arch rv">
       <div class="arch-q tilt-card">
         <div>
-          <h3>1. Naturaleza de tu operación</h3>
+          <h3>1. Sector de tu empresa</h3>
           <div class="chips" id="archInd">
             <button class="chip on" data-ind="Restaurante o cafetería">Restaurante / Café</button>
             <button class="chip" data-ind="Gimnasio o centro deportivo">Gimnasio</button>
@@ -1078,32 +1105,32 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
             <button class="chip" data-ind="Plataforma digital o streaming">Plataforma / Streaming</button>
             <button class="chip" data-ind="Empresa de servicios u obra">Servicios / Ingeniería</button>
           </div>
-          <input class="field-in" id="archCustom" placeholder="O nombra tu oficio (ej. Galería, Veterinaria, Atelier 3D…)" maxlength="45">
+          <input class="field-in" id="archCustom" placeholder="O especifica tu sector (ej. Veterinaria, Estudio 3D, Taller…)" maxlength="45">
         </div>
         <div>
-          <h3>2. Facultades prioritarias</h3>
+          <h3>2. Capacidades prioritarias</h3>
           <div class="chips" id="archPain">
-            <button class="chip on" data-p="cuentas">Cuentas e informes autónomos</button>
-            <button class="chip on" data-p="pedidos">Pedidos o turnos infalibles</button>
-            <button class="chip" data-p="stock">Kardex vivo y reposición</button>
-            <button class="chip" data-p="web">Escaparate 3D / 360° propio</button>
-            <button class="chip" data-p="equipo">Claridad por estación</button>
+            <button class="chip on" data-p="cuentas">Cuentas e informes automáticos</button>
+            <button class="chip on" data-p="pedidos">Pedidos o turnos sin cruces</button>
+            <button class="chip" data-p="stock">Stock vivo y alertas de compra</button>
+            <button class="chip" data-p="web">Web / Visor 3D para clientes</button>
+            <button class="chip" data-p="equipo">Claridad de trabajo por rol</button>
           </div>
         </div>
       </div>
 
       <div class="arch-res tilt-card" id="archOut">
         <div>
-          <p class="eyebrow" style="margin-bottom:8px">Cartografía Proyectada</p>
+          <p class="eyebrow" style="margin-bottom:8px">Arquitectura Sugerida</p>
           <h3 id="archTitle">Sistema a medida para Restaurante o cafetería</h3>
           <div class="arch-map" style="margin-top:12px" id="archMap"></div>
-          <p class="eyebrow" style="margin:14px 0 8px">Órganos del ecosistema</p>
+          <p class="eyebrow" style="margin:14px 0 8px">Módulos integrados</p>
           <div class="mods" id="archMods"></div>
-          <p class="eyebrow" style="margin:14px 0 8px">Flujos inteligentes</p>
+          <p class="eyebrow" style="margin:14px 0 8px">Flujos automáticos</p>
           <ul class="flows" id="archFlows"></ul>
         </div>
         <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
-          <span style="font:600 12px var(--mono);color:var(--ink)" id="archSave">Ganancia operativa: ~8 a 13 h/semana</span>
+          <span style="font:600 12px var(--mono);color:var(--ink)" id="archSave">Ahorro estimado: ~8 a 13 h/semana</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             <button class="btn sm" id="archCopy">Copiar plano</button>
             <a class="btn sm pri" id="archMail" href="#contacto">Cotizar arquitectura</a>
@@ -1112,12 +1139,12 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
       </div>
     </div>
 
-    <!-- Galería Unificada de Metamorfosis + 6 Privilegios (60/40 Mosaico Asimétrico) -->
+    <!-- Comparador Interactivo + 6 Atributos de Ingeniería -->
     <div class="gallery-divider" id="antes">
       <div class="ba-head">
         <div>
-          <p class="eyebrow rv">Cámara de Metamorfosis</p>
-          <h2 class="rv">De la entropía manual <em>a la soberanía en tiempo real.</em></h2>
+          <p class="eyebrow rv">Comparador en Tiempo Real</p>
+          <h2 class="rv">Del trabajo disperso <em>a una plataforma unificada.</em></h2>
         </div>
         <div class="chips rv" id="baTabs" style="margin-bottom:0">
           <button class="chip on" data-sc="caja">Cierre operativo</button>
@@ -1125,7 +1152,7 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
           <button class="chip" data-sc="citas">Agenda sin cruces</button>
         </div>
       </div>
-      <p class="sub rv">Desliza el velo prismático para confrontar la dispersión ordinaria frente a una pieza Zaphyrel en plena ejecución.</p>
+      <p class="sub rv">Desliza el divisor central para comparar el desgaste manual frente a un entorno Zaphyrel funcionando en vivo.</p>
 
       <div class="mosaic-split">
         <div class="ba rv" id="ba" style="--pos:50%">
@@ -1136,41 +1163,41 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
             <div class="kpis" id="neoKpis"><div class="kpi">Operaciones<b>45</b></div><div class="kpi">Consistencia<b>100%</b></div><div class="kpi">Diferencia<b>0</b></div></div>
             <div class="chart" style="height:92px"><i style="height:40%"></i><i style="height:64%"></i><i style="height:50%"></i><i style="height:82%"></i><i style="height:100%"></i><i style="height:72%"></i><i style="height:58%"></i></div>
             <div class="tm" id="neoTm">3 s</div></div>
-          <span class="lbl l1">Dispersión</span><span class="lbl l2">Arquitectura Zaphyrel</span>
+          <span class="lbl l1">Dispersión</span><span class="lbl l2">Plataforma Zaphyrel</span>
           <div class="grip"></div>
           <input type="range" min="6" max="94" value="50" id="baR" aria-label="Comparar dispersión y sistema">
         </div>
 
         <div class="cares">
-          <div class="care tilt-card rv"><div class="ico"><svg viewBox="0 0 40 40"><path d="M20 5l13 5v9c0 8-6 14-13 16C13 33 7 27 7 19v-9z"/><path d="M14 20l4 4 8-9"/></svg></div><h3>Privilegios por rol</h3><p>Cada operador contempla y ejecuta solo aquello que compete a su estación.</p></div>
-          <div class="care tilt-card rv" style="--d:.05s"><div class="ico"><svg viewBox="0 0 40 40"><path d="M8 28a8 8 0 0 1 2-15 10 10 0 0 1 19 2 7 7 0 0 1 1 13z"/><path d="M20 20v9M16 25l4 4 4-4"/></svg></div><h3>Custodia redundante</h3><p>Memoria replicada y auditable sin depender jamás de un único dispositivo.</p></div>
-          <div class="care tilt-card rv" style="--d:.10s"><div class="ico"><svg viewBox="0 0 40 40"><path d="M22 5L9 22h9l-2 13 13-17h-9z"/></svg></div><h3>Latencia imperceptible</h3><p>Render vectorial 4K liviano que fluye intacto incluso en conectividad móvil.</p></div>
-          <div class="care tilt-card rv" style="--d:.15s"><div class="ico"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="20" height="16" rx="2"/><rect x="24" y="16" width="10" height="16" rx="2"/><path d="M12 29h8"/></svg></div><h3>Escala multientorno</h3><p>Proporción milimétrica en pantallas 4K, tablets de mando o teléfono.</p></div>
-          <div class="care tilt-card rv" style="--d:.20s"><div class="ico"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M13 22c2 4 12 4 14 0M15 15h.01M25 15h.01"/></svg></div><h3>Claridad innata</h3><p>Ritmo visual tan evidente que tu equipo domina la obra desde la primera hora.</p></div>
-          <div class="care tilt-card rv" style="--d:.25s"><div class="ico"><svg viewBox="0 0 40 40"><path d="M7 33h26M11 33V17l9-8 9 8v16"/><path d="M17 33v-8h6v8"/></svg></div><h3>Identidad soberana</h3><p>Tu blasón, tu paleta y tu voz. Nuestra ingeniería permanece invisible bajo escena.</p></div>
+          <div class="care tilt-card rv"><div class="ico"><svg viewBox="0 0 40 40"><path d="M20 5l13 5v9c0 8-6 14-13 16C13 33 7 27 7 19v-9z"/><path d="M14 20l4 4 8-9"/></svg></div><h3>Control por roles</h3><p>Cada integrante ve y opera exactamente lo que corresponde a su puesto.</p></div>
+          <div class="care tilt-card rv" style="--d:.05s"><div class="ico"><svg viewBox="0 0 40 40"><path d="M8 28a8 8 0 0 1 2-15 10 10 0 0 1 19 2 7 7 0 0 1 1 13z"/><path d="M20 20v9M16 25l4 4 4-4"/></svg></div><h3>Respaldo continuo</h3><p>Información replicada y verificable sin depender de un único equipo.</p></div>
+          <div class="care tilt-card rv" style="--d:.10s"><div class="ico"><svg viewBox="0 0 40 40"><path d="M22 5L9 22h9l-2 13 13-17h-9z"/></svg></div><h3>Velocidad 60 FPS</h3><p>Gráficos 4K y vistas livianas que fluyen rápido incluso en red móvil.</p></div>
+          <div class="care tilt-card rv" style="--d:.15s"><div class="ico"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="20" height="16" rx="2"/><rect x="24" y="16" width="10" height="16" rx="2"/><path d="M12 29h8"/></svg></div><h3>Escala multientorno</h3><p>Adaptación milimétrica desde monitor 4K y tablet hasta teléfono en campo.</p></div>
+          <div class="care tilt-card rv" style="--d:.20s"><div class="ico"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M13 22c2 4 12 4 14 0M15 15h.01M25 15h.01"/></svg></div><h3>Manejo intuitivo</h3><p>Jerarquía visual tan clara que tu equipo la adopta desde la primera jornada.</p></div>
+          <div class="care tilt-card rv" style="--d:.25s"><div class="ico"><svg viewBox="0 0 40 40"><path d="M7 33h26M11 33V17l9-8 9 8v16"/><path d="M17 33v-8h6v8"/></svg></div><h3>Tu marca al frente</h3><p>Tu logotipo, tu gama cromática y tu dominio; nuestra ingeniería trabaja debajo.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- V · LITURGIA DE CREACIÓN (TERRAZAS ASCENDENTES) + DIALOGO -->
+<!-- 05 · PROCESO DE INGENIERÍA (TERRAZAS ESCALONADAS) + FAQ -->
 <section id="metodo">
   <div class="wrap">
-    <p class="eyebrow rv">V · Liturgia de Creación</p>
-    <h2 class="rv">Precisión serena, <em>de la intuición al monumento vivo.</em></h2>
+    <p class="eyebrow rv">05 · Proceso de Ingeniería</p>
+    <h2 class="rv">Claridad desde el diseño, <em>del concepto al sistema funcionando.</em></h2>
     <div class="terrace-grid">
-      <article class="dep-card tilt-card rv"><span class="k">I · CONTEMPLACIÓN</span><h3>Lectura de esencia</h3><p>Desciframos el pulso íntimo de tu operación, dónde se diluye la energía y qué porte visual merece tu marca.</p></article>
-      <article class="dep-card tilt-card rv" style="--d:.06s"><span class="k">II · ESCULTURA</span><h3>Materia en vivo</h3><p>Desde los primeros días palpas un prototipo tridimensional real con tu emblema y reglas vivas.</p></article>
-      <article class="dep-card tilt-card rv" style="--d:.12s"><span class="k">III · ENTRONIZACIÓN</span><h3>Puesta en órbita</h3><p>Acompañamos la transición de cada colaborador para que la herramienta se sienta natural desde el minuto cero.</p></article>
-      <article class="dep-card tilt-card rv" style="--d:.18s"><span class="k">IV · PERPETUIDAD</span><h3>Expansión sin fractura</h3><p>Añadimos nuevas sedes, escaparates 3D/360° o analítica predictiva sobre la misma piedra angular.</p></article>
+      <article class="dep-card tilt-card rv"><span class="k">FASE 01 · DIAGNÓSTICO</span><h3>Lectura operativa</h3><p>Estudiamos cómo fluye realmente tu empresa, dónde se pierde tiempo y qué estética exige tu marca.</p></article>
+      <article class="dep-card tilt-card rv" style="--d:.06s"><span class="k">FASE 02 · PROTOTIPO</span><h3>Sistema interactivo</h3><p>Desde la primera semana pruebas un entorno vivo con tu identidad visual, vistas 3D y flujos reales.</p></article>
+      <article class="dep-card tilt-card rv" style="--d:.12s"><span class="k">FASE 03 · DESPLIEGUE</span><h3>Puesta en marcha</h3><p>Acompañamos la implementación con tu equipo para que cada estación opere sin tropiezos desde el día uno.</p></article>
+      <article class="dep-card tilt-card rv" style="--d:.18s"><span class="k">FASE 04 · EVOLUCIÓN</span><h3>Crecimiento modular</h3><p>Integramos nuevas sedes, catálogos 3D/360° o reportes avanzados sobre la misma arquitectura.</p></article>
     </div>
 
     <div class="faqs rv" id="faqs">
-      <div class="faq" aria-expanded="false"><button>¿Podemos integrar entornos 3D / 360° reales para exhibir espacios, joyas o piezas?<span>+</span></button><div class="ans">Sí. Esculpimos visores nativos en 4K HiDPI con órbita libre de 360°, despiece axial de materiales y proyección panorámica RV sin depender de extensiones ajenas ni tiempos lentos de carga.</div></div>
-      <div class="faq" aria-expanded="false"><button>¿Es posible iniciar por un solo instrumento e irradiar hacia toda la organización?<span>+</span></button><div class="ans">Exactamente así trabaja nuestra arquitectura: puedes comenzar resolviendo el núcleo más urgente —sala, kardex, citas o vitrina— e ir acoplando nuevos módulos sin desechar jamás lo ya forjado.</div></div>
-      <div class="faq" aria-expanded="false"><button>¿Conserva esta fluidez en teléfonos cotidianos y pantallas 4K por igual?<span>+</span></button><div class="ans">Sí. Calibramos cada escena y cada transición a 60 cuadros por segundo para equipos diarios mientras aprovechamos toda la nitidez Retina y 4K disponible.</div></div>
-      <div class="faq" aria-expanded="false"><button>¿La obra entregada exhibe la firma de Zaphyrel o la nuestra?<span>+</span></button><div class="ans">Siempre viste íntegramente tu nombre, tu monograma, tu espectro y tu dominio. Nosotros custodiamos la ingeniería en silencio.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Podemos incorporar visores 3D / 360° reales para mostrar nuestros productos o espacios?<span>+</span></button><div class="ans">Sí. Desarrollamos visores 3D interactivos con rotación 360°, despiece por capas, materiales adaptables y modo panorámico RV integrados directo en tu plataforma sin depender de plugins lentos.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Se puede comenzar por un módulo específico y sumar áreas después?<span>+</span></button><div class="ans">Totalmente. La arquitectura modular te permite arrancar por lo más urgente —pedidos, almacén, agenda o catálogo— y añadir nuevas funciones o sucursales sin reconstruir lo ya hecho.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿Conserva esta fluidez tanto en teléfonos actuales como en pantallas 4K?<span>+</span></button><div class="ans">Sí. Optimizamos cada canvas y vista HTML para mantener 60 FPS fluidos en equipos cotidianos mientras aprovechamos pantallas Retina y 4K cuando están presentes.</div></div>
+      <div class="faq" aria-expanded="false"><button>¿El sistema final lleva la firma de Zaphyrel o la nuestra?<span>+</span></button><div class="ans">Siempre lleva tu nombre, tu logotipo, tus colores y tu dominio. Zaphyrel permanece como el equipo de arquitectura e ingeniería detrás del proyecto.</div></div>
     </div>
   </div>
 </section>
@@ -1178,15 +1205,16 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
 <section class="close" id="contacto">
   <div class="panel rv" id="panel">
     <div class="crest-mark">
-      <svg viewBox="0 0 120 120" width="38" height="38" aria-hidden="true">
-        <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z8-crown)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="#FFFFFF"/>
+      <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+        <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z9-crown)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="#FFFFFF"/>
+        <path d="M 48 60 H 72" fill="none" stroke="url(#z9-crown)" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
       <span>ZAPHYREL</span>
     </div>
-    <p class="eyebrow">Diálogo de Maison</p>
-    <h2>Comparte la ambición de tu visión. <em>Construyamos una pieza irrepetible.</em></h2>
-    <p class="sub">Conversemos con absoluta reserva sobre tu arquitectura operativa o experiencia 3D y te presentaremos un prototipo vivo concebido solo para tu marca.</p>
+    <p class="eyebrow">Contacto Directo</p>
+    <h2>Hablemos de tu próximo proyecto. <em>Construyamos algo único.</em></h2>
+    <p class="sub">Cuéntanos qué deseas desarrollar —un sistema operativo propio, un visor 3D en 360° o una plataforma web completa— y diseñaremos una propuesta funcional pensada para tu marca.</p>
     <div class="contact-actions">
       <a class="mail" id="mailLink" href="mailto:hola@zaphyrel.com">hola@zaphyrel.com</a>
       <button class="copy-btn" id="copyMail">Copiar dirección</button>
@@ -1194,10 +1222,38 @@ footer{border-top:1px solid var(--line);padding:26px clamp(16px,5vw,68px);displa
   </div>
 </section>
 
-<footer><span>© ZAPHYREL · MAISON DE ARQUITECTURA DIGITAL</span><span>ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</span></footer>
+<!-- Pie de Página Arquitectónico Estructurado -->
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">ZAPHYREL</div>
+      <p class="ft-slogan">Esencia que permanece e innovación que fluye</p>
+      <div class="ft-palette" title="Espectro Coolors + Blanco / Gris / Obsidiana">
+        <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Arquitectura</h4>
+      <a href="#top">Motor 3D / 360° &amp; RV</a>
+      <a href="#esencia">Anatomía Dimensional</a>
+      <a href="#lab">Zaphyrel Studio OS (8 demos)</a>
+      <a href="#arquitecto">Proyector Isométrico 3D</a>
+    </div>
+    <div class="ft-col">
+      <h4>Estudio</h4>
+      <a href="#antes">Comparador en Vivo</a>
+      <a href="#metodo">Proceso de Ingeniería</a>
+      <a href="#contacto">hola@zaphyrel.com</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© ZAPHYREL · ARQUITECTURA DIGITAL</span>
+    <span>ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</span>
+  </div>
+</footer>
 
 <div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
-  <div class="cmd-box"><input id="cmdIn" placeholder="Invocar un núcleo, activar Cámara RV 360° o mutar atmósfera…" autocomplete="off"><ul id="cmdList"></ul></div>
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a un módulo, activar Cámara RV 360° o cambiar tema…" autocomplete="off"><ul id="cmdList"></ul></div>
 </div>
 
 <audio id="sig" src="assets/zaphyrel-signature.wav" preload="auto"></audio>
@@ -1245,7 +1301,7 @@ $$('.sw-sync').forEach(box=>{
 function syncThemeBtn(){
   const n=document.documentElement.dataset.theme==='night';
   const b=$('#night');b.setAttribute('aria-pressed',n);b.textContent=n?'☀ Día':'☾ Noche';
-  $('#metaTheme').content=n?'#05060A':'#F3F4F9';
+  $('#metaTheme').content=n?'#05060A':'#F3F5FA';
   applyPalette(activePal,false);
 }
 $('#night').addEventListener('click',()=>{
@@ -1263,15 +1319,15 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
   ping(.1);
 }));
 
-/* Campo sutil de partículas ópticas circulares & arcos de alta relojería (0 estrellas) */
+/* Campo óptico de fondo (partículas circulares y arcos orbitales suaves — cero estrellas) */
 (function(){
   if(reduce)return;
   const cv=$('#prismField'),ctx=cv.getContext('2d');
-  let W=innerWidth,H=innerHeight;
+  let W=innerWidth,H=innerHeight,t=0;
   const cols=['129,189,248','169,220,255','213,190,255','255,213,255','255,154,255'];
-  const pts=Array.from({length:24},(_,i)=>({
-    x:Math.random()*W,y:Math.random()*H,r:1.5+Math.random()*3.2,
-    vx:(Math.random()-.5)*.22,vy:-.08-Math.random()*.18,c:cols[i%cols.length],ph:Math.random()*6.28
+  const pts=Array.from({length:26},(_,i)=>({
+    x:Math.random()*W,y:Math.random()*H,r:1.6+Math.random()*3.8,
+    vx:(Math.random()-.5)*.24,vy:-.10-Math.random()*.20,c:cols[i%cols.length],ph:Math.random()*6.28
   }));
   function fit(){W=cv.width=innerWidth;H=cv.height=innerHeight}
   fit();addEventListener('resize',fit);
@@ -1279,12 +1335,19 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
     requestAnimationFrame(tick);
     if(document.hidden)return;
     ctx.clearRect(0,0,W,H);
+    t+=0.004;
     const n=document.documentElement.dataset.theme==='night';
+    ctx.save();
+    ctx.strokeStyle=n?'rgba(169,220,255,0.06)':'rgba(10,12,18,0.04)';
+    ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(W*0.74,H*0.42,Math.min(W,H)*0.34,t,t+Math.PI*1.35);ctx.stroke();
+    ctx.beginPath();ctx.arc(W*0.24,H*0.58,Math.min(W,H)*0.24,-t,-t+Math.PI*1.1);ctx.stroke();
+    ctx.restore();
     for(const p of pts){
-      p.x+=p.vx;p.y+=p.vy;p.ph+=0.015;
+      p.x+=p.vx;p.y+=p.vy;p.ph+=0.016;
       if(p.y<-16){p.y=H+16;p.x=Math.random()*W}
       if(p.x<-16)p.x=W+16;if(p.x>W+16)p.x=-16;
-      const a=(n?0.22:0.32)*(0.55+0.45*Math.sin(p.ph));
+      const a=(n?0.24:0.34)*(0.55+0.45*Math.sin(p.ph));
       ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
       ctx.fillStyle=`rgba(${p.c},${a.toFixed(3)})`;ctx.fill();
     }
@@ -1322,7 +1385,7 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
     return faces;
   }
 
-  /* Geometría exacta Zaphyrel v8 (Corona Octogonal + Monograma Couture Z de 16 vértices) */
+  /* Geometría exacta Zaphyrel v9: Corona Octogonal + Z Didot Fluid Curva (40 vértices) + Barra Joya */
   const facet1=[[19,51],[57,13],[57.5,26.5],[26.5,57.5]];
   const facet2=[[57,13],[63,13],[62.5,26.5],[57.5,26.5]];
   const facet3=[[63,13],[107,57],[93.5,57.5],[62.5,26.5]];
@@ -1331,7 +1394,13 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
   const facet6=[[63,107],[57,107],[57.5,93.5],[62.5,93.5]];
   const facet7=[[57,107],[41,91],[49.5,82.5],[57.5,93.5]];
   const tablePoly=[[57.5,26.5],[62.5,26.5],[93.5,57.5],[93.5,62.5],[62.5,93.5],[57.5,93.5],[26.5,62.5],[26.5,57.5]];
-  const zPoly=[[37,46],[37,39.5],[41.5,35.5],[83.5,35.5],[85,38],[45.5,79.8],[79,79.8],[81.5,74],[83,74],[83,80.5],[78.5,84.5],[36.5,84.5],[35,82],[74.5,40.2],[41,40.2],[38.5,46]];
+  const zPoly=[
+    [38,46.5],[39.5,41],[43.5,37.8],[49,36.4],[55.5,36.3],[63.5,37.4],[72,37.8],[79,37.1],[84,35],[85.2,36.4],
+    [78,43.5],[69.5,52.5],[61,62.5],[53.5,72],[48.5,79.5],[55.5,81.2],[63,82.3],[71,82.1],[77.5,80.5],[81,77.5],
+    [82.5,73],[84,73.5],[81.8,79.5],[76.5,83.4],[68,84.8],[58,84.1],[47,83],[39.5,83.5],[35.5,85.4],[34.4,84],
+    [42.5,75.2],[51.5,65.2],[60.5,54.8],[67.5,46.5],[72.5,40.2],[64.5,38.5],[56.5,38.1],[49.5,38.4],[43.5,40.2],[40.8,43.2],[39.6,47]
+  ];
+  const zBar=[[48,59.1],[72,59.1],[72,60.9],[48,60.9]];
   const w1=[[15,54],[28,54],[24.2,57.6],[15,57.6]];
   const w2=[[7,61],[30.2,61],[25.6,65.4],[7,65.4]];
   const w3=[[12.5,69.2],[33.4,69.2],[29,73.2],[12.5,73.2]];
@@ -1340,19 +1409,21 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
     crystal:{
       label:'MATERIA: CRISTAL PRISMA',
       f1:[129,189,248],f2:[255,255,255],f3:[213,190,255],f4:[255,213,255],f5:[255,154,255],
-      tbl:[235,244,255],side:[140,158,205],zTop:[16,20,32],zSide:[46,54,78],w:[169,220,255],stroke:[255,255,255]
+      tbl:[235,244,255],side:[140,158,205],zTop:[16,20,32],zSide:[46,54,78],bar:[169,220,255],w:[169,220,255],stroke:[255,255,255]
     },
     obsidian:{
       label:'MATERIA: OBSIDIANA NOIR',
       f1:[34,40,58],f2:[220,228,245],f3:[48,54,76],f4:[129,189,248],f5:[64,54,88],
-      tbl:[20,24,36],side:[10,12,18],zTop:[245,248,255],zSide:[135,148,175],w:[169,220,255],stroke:[169,220,255]
+      tbl:[20,24,36],side:[10,12,18],zTop:[245,248,255],zSide:[135,148,175],bar:[255,154,255],w:[169,220,255],stroke:[169,220,255]
     },
     titanium:{
       label:'MATERIA: TITANIO SATINADO',
       f1:[176,184,202],f2:[255,255,255],f3:[198,204,220],f4:[213,190,255],f5:[142,150,170],
-      tbl:[228,233,242],side:[98,106,126],zTop:[15,18,28],zSide:[74,82,98],w:[129,189,248],stroke:[255,255,255]
+      tbl:[228,233,242],side:[98,106,126],zTop:[15,18,28],zSide:[74,82,98],bar:[129,189,248],w:[129,189,248],stroke:[255,255,255]
     }
   };
+
+  const mirX=pts=>pts.map(([x,y])=>[120-x,y]);
 
   function getFaces(){
     const m=matThemes[finishMat];
@@ -1368,16 +1439,19 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
       ...polyExtrude(w1,6,11,m.w,m.f1,m.stroke,2),
       ...polyExtrude(w2,6,11,m.f1,m.side,m.stroke,2),
       ...polyExtrude(w3,6,11,m.f3,m.side,m.stroke,2),
-      ...polyExtrude(zPoly,5,13.5,m.zTop,m.zSide,m.stroke,3)
+      ...polyExtrude(zPoly,5,13,m.zTop,m.zSide,m.stroke,3),
+      ...polyExtrude(zBar,12.2,14.2,m.bar,m.f3,m.stroke,3),
+      ...polyExtrude(mirX(w1),-9,-4,m.w,m.f1,m.stroke,4),
+      ...polyExtrude(mirX(w2),-9,-4,m.f1,m.side,m.stroke,4),
+      ...polyExtrude(mirX(w3),-9,-4,m.f3,m.side,m.stroke,4),
+      ...polyExtrude(mirX(zPoly),-11,-3,m.zTop,m.zSide,m.stroke,4),
+      ...polyExtrude(mirX(zBar),-12.2,-10.2,m.bar,m.f3,m.stroke,4)
     ];
   }
 
   function rot(p,cy,sy,cp,sp){
-    const x1=p[0]*cy+p[2]*sy;
-    const z1=-p[0]*sy+p[2]*cy;
-    const y2=p[1]*cp-z1*sp;
-    const z2=p[1]*sp+z1*cp;
-    return [x1,y2,z2];
+    const x1=p[0]*cy+p[2]*sy, z1=-p[0]*sy+p[2]*cy;
+    return [x1, p[1]*cp-z1*sp, p[1]*sp+z1*cp];
   }
 
   function shadeRGB(col,nz,ny,shine){
@@ -1394,8 +1468,7 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
       ctx.beginPath();
       for(let a=0;a<=360;a+=15){
         const th=a*Math.PI/180;
-        const px=R*Math.cos(phi)*Math.cos(th), py=R*Math.sin(phi), pz=R*Math.cos(phi)*Math.sin(th);
-        const [rx,ry,rz]=rot([px,py,pz],cy,sy,cp,sp);
+        const [rx,ry,rz]=rot([R*Math.cos(phi)*Math.cos(th),R*Math.sin(phi),R*Math.cos(phi)*Math.sin(th)],cy,sy,cp,sp);
         if(rz+360<40)continue;
         const s=fov/(rz+360), sx=cx0+rx*s, sy0=cy0+ry*s;
         if(a===0)ctx.moveTo(sx,sy0);else ctx.lineTo(sx,sy0);
@@ -1409,8 +1482,7 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
         ctx.beginPath();
         for(let a=0;a<=360;a+=18){
           const al=a*Math.PI/180;
-          const px=R*Math.cos(al)*Math.cos(th), py=R*Math.sin(al), pz=R*Math.cos(al)*Math.sin(th);
-          const [rx,ry,rz]=rot([px,py,pz],cy,sy,cp,sp);
+          const [rx,ry,rz]=rot([R*Math.cos(al)*Math.cos(th),R*Math.sin(al),R*Math.cos(al)*Math.sin(th)],cy,sy,cp,sp);
           const s=fov/(rz+360), sx=cx0+rx*s, sy0=cy0+ry*s;
           if(a===0)ctx.moveTo(sx,sy0);else ctx.lineTo(sx,sy0);
         }
@@ -1439,7 +1511,7 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
     drawSphericalHorizon(cy,sy,cp,sp,isNight);
 
     const fov=vrMode?360:310, scaleFactor=Math.min(W,H)/136;
-    const zOffsets=[explode*-0.34, explode*0.02, explode*0.26, explode*0.52];
+    const zOffsets=[explode*-0.24, 0, explode*0.26, explode*0.54, explode*-0.58];
     const faces=getFaces(), proj=[];
 
     for(let i=0;i<faces.length;i++){
@@ -1468,27 +1540,9 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
       ctx.closePath();
       ctx.fillStyle=shadeRGB(q.col,Math.abs(q.nz),q.ny,q.shine);
       ctx.fill();
-      ctx.strokeStyle=`rgba(${q.stroke[0]},${q.stroke[1]},${q.stroke[2]},0.30)`;
-      ctx.lineWidth=0.9;
+      ctx.strokeStyle=`rgba(${q.stroke[0]},${q.stroke[1]},${q.stroke[2]},0.26)`;
+      ctx.lineWidth=0.75;
       ctx.stroke();
-    }
-
-    /* Filo interior Coolors sobre la cara frontal del Monograma Z en 3D */
-    const spineZ=13.7+zOffsets[3];
-    const spPts=[[40.5-60,37.8-60,spineZ],[79.8-60,37.8-60,spineZ],[40.2-60,82.2-60,spineZ],[79.5-60,82.2-60,spineZ]].map(p=>rot(p,cy,sy,cp,sp));
-    if(Math.cos(yaw)*Math.cos(pitch)>-0.12){
-      ctx.beginPath();
-      spPts.forEach((q,k)=>{
-        const denom=Math.max(95,fov-q[2]*scaleFactor*0.36);
-        const s=fov/denom;
-        const sx=W/2+q[0]*scaleFactor*s, sy0=H/2+q[1]*scaleFactor*s;
-        if(k===0)ctx.moveTo(sx,sy0);else ctx.lineTo(sx,sy0);
-      });
-      const gr=ctx.createLinearGradient(W*.3,H*.3,W*.7,H*.7);
-      gr.addColorStop(0,'rgba(169,220,255,0.85)');
-      gr.addColorStop(0.5,'rgba(255,255,255,0.95)');
-      gr.addColorStop(1,'rgba(255,154,255,0.85)');
-      ctx.strokeStyle=gr;ctx.lineWidth=1.25;ctx.stroke();
     }
 
     if(vrMode){
@@ -1537,7 +1591,7 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
   });
 })();
 
-/* Disección de Velos + Flujo síncrono */
+/* Anatomía 4 Planos + Flujo síncrono */
 const bp=$('#bp'),bpCap=$('#bpCap');
 $$('.pillar[data-bp]').forEach(p=>{
   const on=()=>{$$('.pillar').forEach(x=>x.classList.toggle('active',x===p));bp.dataset.focus=p.dataset.bp;bpCap.textContent=p.dataset.cap};
@@ -1545,7 +1599,7 @@ $$('.pillar[data-bp]').forEach(p=>{
 });
 $('#bpExplode').addEventListener('click',e=>{
   const ex=!bp.classList.contains('exploded');bp.classList.toggle('exploded',ex);
-  e.currentTarget.setAttribute('aria-pressed',ex);e.currentTarget.textContent=ex?'Unificar velos':'Separar 4 velos 3D';
+  e.currentTarget.setAttribute('aria-pressed',ex);e.currentTarget.textContent=ex?'Unificar planos':'Separar 4 planos 3D';
   if(ex)bp.dataset.focus='';ping(.14);
 });
 let syncOps=842;
@@ -1564,7 +1618,7 @@ $$('.rv').forEach(el=>io.observe(el));
 addEventListener('load',()=>{revealVisible();setTimeout(revealVisible,140)});
 const prog=$('#progress'), dockLinks=$$('#spatialDock a'), railDots=$$('#railDots a'), railLbl=$('#railChapter');
 const secIds=['top','esencia','lab','arquitecto','metodo'];
-const secTitles={top:'I · NÚCLEO',esencia:'II · VELOS',lab:'III · STUDIO OS',arquitecto:'IV · CARTOGRAFÍA',metodo:'V · LITURGIA'};
+const secTitles={top:'01 · NÚCLEO',esencia:'02 · ANATOMÍA',lab:'03 · STUDIO OS',arquitecto:'04 · PROYECTOR',metodo:'05 · PROCESO'};
 function onScroll(){
   const h=document.documentElement;prog.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight||1)})`;
   let active='top';
@@ -1576,19 +1630,27 @@ function onScroll(){
 }
 addEventListener('scroll',onScroll,{passive:true});onScroll();revealVisible();
 
-/* Cursor + Glare & Inclinación 3D táctil */
-const dot=$('#dot'),ring=$('#ring');let mx=0,my=0,rx=0,ry=0;
+/* Cursor + Inclinación 3D Real + Brillo Especular en Tarjetas */
+const dot=$('#dot'),ring=$('#ring');let mx=0,my=0,rx=0,ry=0,lastTc=null;
 addEventListener('pointermove',e=>{
   if(e.pointerType==='touch')return;document.body.classList.add('has-cursor');mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`;
   ring.classList.toggle('big',!!e.target.closest('a,button,input,select,.tab,.care,.pillar,.room'));
   if(!reduce){$$('.mag').forEach(b=>{const r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
     const near=Math.hypot(dx,dy)<95;b.style.transform=near?`translate(${dx*.18}px,${dy*.22}px)`:'';b.style.transition=near?'transform .15s':'transform .5s cubic-bezier(.22,1,.36,1)'})}
   const tc=e.target.closest('.tilt-card');
-  if(tc){const r=tc.getBoundingClientRect();tc.style.setProperty('--mx',(e.clientX-r.left)+'px');tc.style.setProperty('--my',(e.clientY-r.top)+'px')}
+  if(lastTc&&lastTc!==tc){lastTc.style.setProperty('--rx','0deg');lastTc.style.setProperty('--ry','0deg')}
+  lastTc=tc;
+  if(tc&&!reduce){
+    const r=tc.getBoundingClientRect(), px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+    tc.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    tc.style.setProperty('--my',(e.clientY-r.top)+'px');
+    tc.style.setProperty('--rx',(-py*3.2).toFixed(2)+'deg');
+    tc.style.setProperty('--ry',(px*3.2).toFixed(2)+'deg');
+  }
 });
 (function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop)})();
 
-/* ---------- Atrio Studio OS (8 Núcleos Interactivos) ---------- */
+/* ---------- Suite Operativa Studio OS (8 Núcleos Interactivos) ---------- */
 const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.k);toast.k=setTimeout(()=>t.classList.remove('show'),2600);ping(.18)};
 function switchTab(id){$$('.tab').forEach(x=>x.setAttribute('aria-selected',x.dataset.t===id));$$('.panel-demo').forEach(p=>p.classList.toggle('on',p.id==='p-'+id))}
 $$('.tab').forEach(b=>b.addEventListener('click',()=>{switchTab(b.dataset.t);ping(.12)}));
@@ -1782,19 +1844,19 @@ $('#report').addEventListener('click',()=>{
 });
 $('#copyRep').addEventListener('click',()=>{if(!lastBal)return;navigator.clipboard?.writeText(lastBal).catch(()=>{});toast('Balance copiado al portapapeles')});
 
-/* ---------- Cartógrafo Topológico Isométrico 3D ---------- */
+/* ---------- Proyector Topológico Isométrico 3D ---------- */
 let archInd='Restaurante o cafetería';const pains=new Set(['cuentas','pedidos']);
 const painMap={
-  cuentas:{m:'Libro y Cierre Autónomo',f:'Balance instantáneo con utilidades e impuestos calculados sin intervención manual.'},
-  pedidos:{m:'Coreografía de Turnos',f:'Cada orden, reserva o cita viaja al instante entre recepción y ejecución sin cruces.'},
-  stock:{m:'Kardex Predictivo',f:'Descuento atómico por salida y alerta anticipada antes de agotar un insumo.'},
-  web:{m:'Escaparate 3D / 360°',f:'Tus visitantes inspeccionan espacios o piezas en 360° y reservan directo sin intermediarios.'},
-  equipo:{m:'Privilegios de Estación',f:'Cada integrante visualiza exactamente su rol con foco cristalino y cero ruido.'}
+  cuentas:{m:'Caja y Reportes',f:'Cierre diario en segundos con utilidades e impuestos calculados automáticamente.'},
+  pedidos:{m:'Flujo Sin Cruces',f:'Pedidos, turnos o reservas conectadas al instante entre recepción y ejecución.'},
+  stock:{m:'Kardex y Alertas',f:'Descuento inmediato por salida y aviso preventivo antes de agotar un insumo.'},
+  web:{m:'Web / Visor 3D',f:'Tus clientes exploran productos o espacios en 360° y reservan directo sin comisiones.'},
+  equipo:{m:'Roles y Estaciones',f:'Cada integrante accede exactamente a lo que necesita sin ruido ni confusiones.'}
 };
 function updateArch(){
   const custom=$('#archCustom').value.trim(),ind=custom||archInd,ps=pains.size?[...pains]:['cuentas'];
   $('#archTitle').textContent=`Sistema a medida para ${ind}`;
-  const mods=[`Núcleo ${esc(ind)}`,...ps.map(k=>painMap[k].m),'Terminal 4K + Móvil'];
+  const mods=[`Núcleo ${esc(ind)}`,...ps.map(k=>painMap[k].m),'Panel 4K + Móvil'];
   $('#archMods').innerHTML=mods.map(m=>`<span class="mod">${m}</span>`).join('');
   $('#archFlows').innerHTML=ps.map(k=>`<li>${painMap[k].f}</li>`).join('');
   const shortInd=esc(ind.split(' o ')[0].split(' / ')[0].slice(0,18));
@@ -1802,28 +1864,28 @@ function updateArch(){
     <path d="M 96 42 V 176 M 344 42 V 176" fill="none" stroke="var(--line-strong)" stroke-width="1.2" stroke-dasharray="3 4"/>
     <polygon points="84,42 220,70 356,42 356,50 220,78 84,50" fill="var(--line-strong)"/>
     <polygon points="220,14 356,42 220,70 84,42" fill="var(--surface-2)" stroke="var(--line-strong)" stroke-width="1.1"/>
-    <text x="220" y="38" text-anchor="middle" font-size="8.5" font-family="JetBrains Mono" fill="var(--ink-soft)">ESTRATO I · UMBRAL &amp; CANAL</text>
-    <text x="220" y="52" text-anchor="middle" font-size="11" font-family="Bodoni Moda, serif" font-weight="600" fill="var(--ink)">${pains.has('web')?'Visor 3D + Escaparate Propio':'Recepción + Terminal'}</text>
+    <text x="220" y="38" text-anchor="middle" font-size="8.5" font-family="JetBrains Mono" fill="var(--ink-soft)">CAPA 01 · INTERFAZ / CANAL</text>
+    <text x="220" y="52" text-anchor="middle" font-size="11.5" font-family="Cormorant Garamond, serif" font-weight="600" fill="var(--ink)">${pains.has('web')?'Visor 3D + Web Propia':'Recepción + Terminal'}</text>
     <polygon points="72,112 220,142 368,112 368,121 220,151 72,121" fill="#0B0D14" opacity=".45"/>
-    <polygon points="220,82 368,112 220,142 72,112" fill="url(#z8-crown)" stroke="#FFFFFF" stroke-width="1.15"/>
-    <text x="220" y="108" text-anchor="middle" font-size="8.5" font-family="JetBrains Mono" fill="#06070B">ESTRATO II · CORAZÓN ZAPHYREL</text>
-    <text x="220" y="123" text-anchor="middle" font-size="11.5" font-family="Cinzel, serif" font-weight="700" fill="#06070B">${shortInd}</text>
+    <polygon points="220,82 368,112 220,142 72,112" fill="url(#z9-crown)" stroke="#FFFFFF" stroke-width="1.15"/>
+    <text x="220" y="108" text-anchor="middle" font-size="8.5" font-family="JetBrains Mono" fill="#06070B">CAPA 02 · NÚCLEO ZAPHYREL</text>
+    <text x="220" y="123" text-anchor="middle" font-size="12" font-family="Cormorant Garamond, serif" font-weight="600" fill="#06070B">${shortInd}</text>
     <polygon points="88,180 220,208 352,180 352,189 220,217 88,189" fill="#040508"/>
     <polygon points="220,152 352,180 220,208 88,180" fill="var(--obsidian)" stroke="#A9DCFF" stroke-opacity=".55" stroke-width="1.1"/>
-    <text x="220" y="177" text-anchor="middle" font-size="8.5" font-family="JetBrains Mono" fill="#A9DCFF">ESTRATO III · MEMORIA (${ps.length} MÓD.)</text>
-    <text x="220" y="191" text-anchor="middle" font-size="10.5" font-family="Outfit, sans-serif" font-weight="500" fill="#FFFFFF">${pains.has('stock')?'Kardex + Telemetría':'Sincronía y Custodia'}</text>
+    <text x="220" y="177" text-anchor="middle" font-size="8.5" font-family="JetBrains Mono" fill="#A9DCFF">CAPA 03 · DATOS EN VIVO (${ps.length} MÓD.)</text>
+    <text x="220" y="191" text-anchor="middle" font-size="10.5" font-family="Outfit, sans-serif" font-weight="500" fill="#FFFFFF">${pains.has('stock')?'Kardex + Telemetría':'Sincronía y Respaldo'}</text>
   </svg>`;
-  const h1=4+ps.length*2,h2=h1+5;$('#archSave').textContent=`Ganancia operativa: ~${h1} a ${h2} h/semana`;
-  const body=encodeURIComponent(`Hola Zaphyrel, deseo dialogar sobre una arquitectura para: ${ind}.\nPrioridades: ${ps.map(k=>painMap[k].m).join(', ')}.`);
-  $('#archMail').href=`mailto:hola@zaphyrel.com?subject=${encodeURIComponent('Arquitectura Maison: '+ind)}&body=${body}`;
+  const h1=4+ps.length*2,h2=h1+5;$('#archSave').textContent=`Ahorro estimado: ~${h1} a ${h2} h/semana`;
+  const body=encodeURIComponent(`Hola Zaphyrel, quiero cotizar una arquitectura para: ${ind}.\nMódulos: ${ps.map(k=>painMap[k].m).join(', ')}.`);
+  $('#archMail').href=`mailto:hola@zaphyrel.com?subject=${encodeURIComponent('Arquitectura: '+ind)}&body=${body}`;
 }
 $('#archInd').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;archInd=b.dataset.ind;$('#archCustom').value='';$$('#archInd .chip').forEach(c=>c.classList.toggle('on',c===b));updateArch();ping(.1)});
 $('#archCustom').addEventListener('input',updateArch);
 $('#archPain').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=b.dataset.p;if(pains.has(k)&&pains.size>1)pains.delete(k);else pains.add(k);b.classList.toggle('on',pains.has(k));updateArch();ping(.1)});
-$('#archCopy').addEventListener('click',()=>{const txt=`${$('#archTitle').textContent} — Órganos: ${$$('#archMods .mod').map(x=>x.textContent).join(', ')}`;navigator.clipboard?.writeText(txt).catch(()=>{});toast('Plano de Maison copiado')});
+$('#archCopy').addEventListener('click',()=>{const txt=`${$('#archTitle').textContent} — Módulos: ${$$('#archMods .mod').map(x=>x.textContent).join(', ')}`;navigator.clipboard?.writeText(txt).catch(()=>{});toast('Plano copiado')});
 updateArch();
 
-/* Comparador de Metamorfosis + FAQ + Copiar correo */
+/* Comparador + FAQ + Copiar correo */
 const scenarios={
   caja:{oh:'Cierre manual fragmentado',op:'Lunes — 14 mesas, <s>43</s> 45 platos…<br>Sumar boletas, <s>revisar</s> volver a sumar…<br>¿Falta saldo? Buscar en el cuaderno…<br>Pasar totales a otra hoja a medianoche…',ot:'45 min',nh:'Cierre unificado en tiempo real',nt:'3 s',k:[['Operaciones','45'],['Consistencia','100%'],['Diferencia','0']]},
   stock:{oh:'Conteo de almacén a ciegas',op:'Revisar estante por estante cada lunes…<br>Anotar en papel lo que <s>creemos</s> falta…<br>Enterarse tarde cuando ya se agotó…<br>Pedir de urgencia pagando sobrecosto…',ot:'2 horas',nh:'Reposición con Kardex vivo',nt:'al instante',k:[['Estado stock','Verificado'],['Bajo mínimo','2 alertas'],['Merma','0.4%']]},
@@ -1841,18 +1903,18 @@ $('#copyMail').addEventListener('click',()=>{navigator.clipboard?.writeText('hol
 const cmd=$('#cmd'),cin=$('#cmdIn'),cl=$('#cmdList');
 const acts=[
   ['Abrir Cámara RV 360° a pantalla completa',()=>$('#heroRvTrigger').click()],
-  ['Ir a Cámara de los Cuatro Velos','#esencia'],
-  ['Probar I · Restaurante',()=>{switchTab('table');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar II · Gimnasio',()=>{switchTab('fit');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar III · Inventario',()=>{switchTab('stock');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar IV · Hotel',()=>{switchTab('stay');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar V · Clínica y citas',()=>{switchTab('care');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar VI · Instituto / Biblioteca',()=>{switchTab('lib');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar VII · Catálogo web',()=>{switchTab('shop');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar VIII · Cuentas',()=>{switchTab('ledger');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Cartografía Isométrica 3D','#arquitecto'],
-  ['Cámara de Metamorfosis','#antes'],
-  ['Separar 4 velos del emblema',()=>$('#bpExplode').click()],
+  ['Ir a Anatomía Dimensional 3D','#esencia'],
+  ['Probar 01 · Restaurante',()=>{switchTab('table');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 02 · Gimnasio',()=>{switchTab('fit');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 03 · Inventario',()=>{switchTab('stock');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 04 · Hotel',()=>{switchTab('stay');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 05 · Clínica y citas',()=>{switchTab('care');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 06 · Instituto / Biblioteca',()=>{switchTab('lib');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 07 · Catálogo web',()=>{switchTab('shop');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 08 · Cuentas',()=>{switchTab('ledger');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Proyector Isométrico 3D','#arquitecto'],
+  ['Comparador de Estructuras','#antes'],
+  ['Separar 4 planos del emblema',()=>$('#bpExplode').click()],
   ['Alternar vista Móvil / Escritorio',()=>($('#pWrap').classList.contains('mobile')?$('#vpDesk'):$('#vpMob')).click()],
   ['Alternar modo claro / oscuro',()=>$('#night').click()],
   ['Paleta: Prisma Coolors Completo',()=>applyPalette(0,true)],

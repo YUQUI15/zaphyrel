@@ -32,11 +32,11 @@
   --zy-depth-2:      0 32px 76px -24px rgba(9, 11, 16, 0.24), 0 8px 18px rgba(9, 11, 16, 0.08);
   --zy-grain-opacity: 0.042;
 
-  /* Tipografía de Maison (Cinzel + Bodoni Moda + Cormorant Garamond + Outfit + JetBrains Mono) */
-  --zy-font-crest:     "Cinzel", Georgia, serif;
-  --zy-font-display:   "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
+  /* Tipografía Fina & Arquitectónica v9 (Cormorant Garamond 300/400 + Cinzel 400 + Bodoni Moda + Outfit + JetBrains Mono) */
+  --zy-font-crest:     "Cormorant Garamond", "Cinzel", Georgia, serif;
+  --zy-font-display:   "Cormorant Garamond", "Bodoni Moda", Georgia, serif;
   --zy-font-editorial: "Cormorant Garamond", Georgia, serif;
-  --zy-font-ui:        "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+  --zy-font-ui:        "Outfit", "Segoe UI", system-ui, sans-serif;
   --zy-font-mono:      "JetBrains Mono", ui-monospace, monospace;
 
   --zy-radius:       22px;

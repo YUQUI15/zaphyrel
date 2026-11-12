@@ -18,9 +18,9 @@
     <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="#F4F8FF"/>
     <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#11141D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#81BDF8"/>
-    <path d="M 37 46 V 39.5 L 41.5 35.5 H 83.5 L 85 38 L 45.5 79.8 H 79 L 81.5 74 H 83 V 80.5 L 78.5 84.5 H 36.5 L 35 82 L 74.5 40.2 H 41 L 38.5 46 Z" fill="#0B0D12" stroke="#FFFFFF" stroke-width="1.2"/>
+    <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="#0B0D12" stroke="#FFFFFF" stroke-width="1"/>
   </g>
-  <text x="148" y="106" font-family="'Cinzel', Georgia, serif" font-size="23" font-weight="600" letter-spacing="7" fill="#0B0D12">ZAPHYREL</text>
+  <text x="148" y="106" font-family="'Cormorant Garamond', Georgia, serif" font-size="27" font-weight="300" letter-spacing="9" fill="#0B0D12">ZAPHYREL</text>
   <text x="628" y="104" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#5A6171">ARQUITECTURA DIGITAL · 2026</text>
   <line x1="88" y1="142" x2="628" y2="142" stroke="#E4E7EE"/>
   <rect x="88" y="182" width="240" height="16" rx="4" fill="#0B0D12" opacity=".88"/>
