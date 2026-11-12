@@ -1,48 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel Dark Mode">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <title>Zaphyrel — Cresta Sovereign v10 (Sobre Oscuro)</title>
   <defs>
-    <linearGradient id="z9d-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94">
-      <stop offset="0" stop-color="#81BDF8"/>
-      <stop offset="0.28" stop-color="#A9DCFF"/>
-      <stop offset="0.54" stop-color="#D5BEFF"/>
-      <stop offset="0.78" stop-color="#FFD5FF"/>
-      <stop offset="1" stop-color="#FF9AFF"/>
+    <linearGradient id="pAll" x1="12" y1="12" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#81BDF8"/><stop offset="25%" stop-color="#A9DCFF"/><stop offset="50%" stop-color="#D5BEFF"/><stop offset="75%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="z9d-table" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
-      <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.3" stop-color="#DCEEFF"/>
-      <stop offset="0.65" stop-color="#EBE0FF"/>
-      <stop offset="1" stop-color="#FFE6FF"/>
+    <linearGradient id="fBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A9DCFF"/><stop offset="100%" stop-color="#81BDF8"/></linearGradient>
+    <linearGradient id="fLav" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D5BEFF"/><stop offset="100%" stop-color="#A9DCFF"/></linearGradient>
+    <linearGradient id="fPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/></linearGradient>
+    <linearGradient id="zWingA" x1="36" y1="36" x2="84" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="55%" stop-color="#E4EEFF"/><stop offset="100%" stop-color="#A9DCFF"/>
     </linearGradient>
-    <linearGradient id="z9d-obs" x1="0.12" y1="0.04" x2="0.88" y2="0.96">
-      <stop offset="0" stop-color="#252C40"/>
-      <stop offset="0.48" stop-color="#0C0E16"/>
-      <stop offset="1" stop-color="#040508"/>
+    <linearGradient id="zWingB" x1="36" y1="58" x2="84" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#81BDF8"/><stop offset="45%" stop-color="#D5BEFF"/><stop offset="78%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/>
     </linearGradient>
-    <clipPath id="z9d-clip">
-      <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5"/>
-    </clipPath>
+    <linearGradient id="windG" x1="4" y1="56" x2="32" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#81BDF8"/><stop offset="55%" stop-color="#A9DCFF"/><stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
   </defs>
-  <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="#81BDF8"/>
-  <polygon points="57,13 63,13 62.5,26.5 57.5,26.5" fill="#FFFFFF"/>
-  <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="#D5BEFF"/>
-  <polygon points="107,57 107,63 93.5,62.5 93.5,57.5" fill="#FFD5FF"/>
-  <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="#FF9AFF"/>
-  <polygon points="63,107 57,107 57.5,93.5 62.5,93.5" fill="#D5BEFF"/>
-  <polygon points="57,107 41,91 49.5,82.5 57.5,93.5" fill="#81BDF8"/>
-
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#z9d-table)"/>
-  <g clip-path="url(#z9d-clip)">
-    <polygon points="24,56 60,20 82,42 24,84" fill="#FFFFFF" opacity=".6"/>
-    <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.95"/>
-  </g>
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="none" stroke="#FFFFFF" stroke-width="1.3" stroke-linejoin="round"/>
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z9d-crown)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z" fill="#A9DCFF"/>
-  <path d="M 7 61 H 30.2 L 25.6 65.4 H 7 Z" fill="#81BDF8"/>
-  <path d="M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#D5BEFF"/>
-
-  <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="url(#z9d-obs)" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
-  <path d="M 48 60 H 72" fill="none" stroke="url(#z9d-crown)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 28 22 A 49 49 0 0 1 92 22 M 98 86 A 49 49 0 0 1 38 103" stroke="url(#pAll)" stroke-width=".75" stroke-linecap="round" opacity=".55"/>
+  <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#fBlue)" stroke="#06070B" stroke-width="1"/>
+  <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF" stroke="#06070B" stroke-width="1"/>
+  <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#fLav)" stroke="#06070B" stroke-width="1"/>
+  <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF" stroke="#06070B" stroke-width="1"/>
+  <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#fPink)" stroke="#06070B" stroke-width="1"/>
+  <polygon points="63,107 57,107 57.5,94.5 62.5,94.5" fill="#D5BEFF" stroke="#06070B" stroke-width="1"/>
+  <polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#fBlue)" stroke="#06070B" stroke-width="1"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" stroke="#FFFFFF" stroke-width=".9" stroke-opacity=".75" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="#0B0E17" stroke="url(#pAll)" stroke-width="1.35"/>
+  <polygon points="58.4,30.5 61.6,30.5 89.5,58.4 89.5,61.6 61.6,89.5 58.4,89.5 30.5,61.6 30.5,58.4" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".8"/>
+  <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#windG)"/>
+  <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="url(#zWingA)"/>
+  <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#zWingB)"/>
+  <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity=".95" stroke-linecap="round"/>
 </svg>

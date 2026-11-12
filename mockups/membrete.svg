@@ -1,24 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" width="720" height="960" role="img" aria-label="Membrete Zaphyrel v8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" width="720" height="960" role="img" aria-label="Membrete Zaphyrel v10">
   <defs>
-    <linearGradient id="mb8-p" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#81BDF8"/>
-      <stop offset="0.3" stop-color="#A9DCFF"/>
-      <stop offset="0.55" stop-color="#D5BEFF"/>
-      <stop offset="0.8" stop-color="#FFD5FF"/>
-      <stop offset="1" stop-color="#FF9AFF"/>
+    <linearGradient id="mb-p" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#81BDF8"/><stop offset="0.28" stop-color="#A9DCFF"/><stop offset="0.54" stop-color="#D5BEFF"/><stop offset="0.8" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
   </defs>
-  <rect width="720" height="960" fill="#ECEEF3"/>
+  <rect width="720" height="960" fill="#ECEEF4"/>
   <rect x="48" y="36" width="624" height="888" rx="6" fill="#FFFFFF" stroke="#DDE1EA"/>
-  <rect x="48" y="36" width="624" height="5" fill="url(#mb8-p)"/>
+  <rect x="48" y="36" width="624" height="6" fill="url(#mb-p)"/>
   <g transform="translate(88,78) scale(0.42)">
-    <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="#81BDF8"/>
-    <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="#D5BEFF"/>
-    <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="#FF9AFF"/>
-    <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="#F4F8FF"/>
-    <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#11141D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#81BDF8"/>
-    <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="#0B0D12" stroke="#FFFFFF" stroke-width="1"/>
+    <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="#81BDF8"/>
+    <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="#D5BEFF"/>
+    <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="#FF9AFF"/>
+    <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="#FFFFFF" stroke="#0B0D12" stroke-width="2"/>
+    <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="#81BDF8"/>
+    <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="#0B0D12"/>
+    <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#mb-p)"/>
+    <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="#0B0D12" stroke-width="2.2" stroke-linecap="round"/>
   </g>
   <text x="148" y="106" font-family="'Cormorant Garamond', Georgia, serif" font-size="27" font-weight="300" letter-spacing="9" fill="#0B0D12">ZAPHYREL</text>
   <text x="628" y="104" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#5A6171">ARQUITECTURA DIGITAL · 2026</text>
@@ -27,9 +24,9 @@
   <rect x="88" y="216" width="540" height="8" rx="4" fill="#E4E7EE"/>
   <rect x="88" y="236" width="500" height="8" rx="4" fill="#E4E7EE"/>
   <rect x="88" y="256" width="460" height="8" rx="4" fill="#E4E7EE"/>
-  <rect x="88" y="308" width="540" height="140" rx="12" fill="#F6F7FA" stroke="#E4E7EE"/>
-  <rect x="88" y="308" width="4" height="140" rx="2" fill="url(#mb8-p)"/>
+  <rect x="88" y="308" width="540" height="140" rx="12" fill="#F8F9FD" stroke="#E4E7EE"/>
+  <rect x="88" y="308" width="5" height="140" rx="2.5" fill="url(#mb-p)"/>
   <line x1="88" y1="864" x2="628" y2="864" stroke="#E4E7EE"/>
-  <text x="88" y="892" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#5A6171">Zaphyrel · Esencia que permanece e innovación que fluye</text>
+  <text x="88" y="892" font-family="'Outfit', system-ui, sans-serif" font-size="10.5" fill="#5A6171">Zaphyrel · Esencia que permanece e innovación que fluye</text>
   <text x="628" y="892" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#5A6171">hola@zaphyrel.com</text>
 </svg>

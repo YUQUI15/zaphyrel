@@ -1,15 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel Monocromo">
-  <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="#E6E9F0"/>
-  <polygon points="57,13 63,13 62.5,26.5 57.5,26.5" fill="#FFFFFF"/>
-  <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="#C6CCD8"/>
-  <polygon points="107,57 107,63 93.5,62.5 93.5,57.5" fill="#9AA2B2"/>
-  <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="#6F7788"/>
-  <polygon points="63,107 57,107 57.5,93.5 62.5,93.5" fill="#9AA2B2"/>
-  <polygon points="57,107 41,91 49.5,82.5 57.5,93.5" fill="#B6BDCB"/>
-  <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="#F4F5F8" stroke="#181C26" stroke-width="1.2" stroke-linejoin="round"/>
-  <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="0.9"/>
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#0B0D12" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#5A6171"/>
-  <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="#0B0D12" stroke="#FFFFFF" stroke-width="0.9" stroke-linejoin="round"/>
-  <path d="M 48 60 H 72" fill="none" stroke="#9AA2B2" stroke-width="1.6" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <title>Zaphyrel — Cresta Sovereign v10 (Monocromático)</title>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="currentColor"/>
+  <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="currentColor"/>
+  <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="currentColor" fill-opacity=".68"/>
+  <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
 </svg>

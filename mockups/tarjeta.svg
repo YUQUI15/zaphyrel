@@ -1,56 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" width="920" height="520" role="img" aria-label="Mockup tarjeta de presentación Zaphyrel v8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" width="920" height="520" role="img" aria-label="Mockup tarjeta de presentación Zaphyrel v10">
   <defs>
-    <linearGradient id="tc8-p" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#81BDF8"/>
-      <stop offset="0.28" stop-color="#A9DCFF"/>
-      <stop offset="0.54" stop-color="#D5BEFF"/>
-      <stop offset="0.78" stop-color="#FFD5FF"/>
-      <stop offset="1" stop-color="#FF9AFF"/>
+    <linearGradient id="tc-p" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#81BDF8"/><stop offset="0.28" stop-color="#A9DCFF"/><stop offset="0.54" stop-color="#D5BEFF"/><stop offset="0.78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="tc8-tbl" x1="0.06" y1="0.04" x2="0.94" y2="0.96">
-      <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.3" stop-color="#DCEEFF"/>
-      <stop offset="0.65" stop-color="#EBE0FF"/>
-      <stop offset="1" stop-color="#FFE6FF"/>
+    <linearGradient id="tc-zWingB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#81BDF8"/><stop offset="45%" stop-color="#D5BEFF"/><stop offset="80%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="tc8-obs" x1="0.12" y1="0.04" x2="0.88" y2="0.96">
-      <stop offset="0" stop-color="#252C40"/>
-      <stop offset="0.48" stop-color="#0D1018"/>
-      <stop offset="1" stop-color="#040508"/>
-    </linearGradient>
-    <filter id="tc8-sh" x="-10%" y="-10%" width="124%" height="130%">
+    <filter id="tc-sh" x="-10%" y="-10%" width="124%" height="130%">
       <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#07080C" flood-opacity="0.24"/>
     </filter>
   </defs>
-  <rect width="920" height="520" fill="#ECEEF3"/>
-  <g filter="url(#tc8-sh)">
-    <rect x="64" y="64" width="380" height="230" rx="18" fill="#0B0D12"/>
-    <rect x="64" y="64" width="380" height="230" rx="18" fill="none" stroke="url(#tc8-p)" stroke-width="1.6" opacity=".78"/>
+  <rect width="920" height="520" fill="#ECEEF4"/>
+  <g filter="url(#tc-sh)">
+    <rect x="64" y="64" width="380" height="230" rx="18" fill="#080A10"/>
+    <rect x="64" y="64" width="380" height="230" rx="18" fill="none" stroke="url(#tc-p)" stroke-width="1.8"/>
     <g transform="translate(212,96) scale(0.7)">
-      <polygon points="19,51 57,13 57.5,26.5 26.5,57.5" fill="#81BDF8"/>
-      <polygon points="57,13 63,13 62.5,26.5 57.5,26.5" fill="#FFFFFF"/>
-      <polygon points="63,13 107,57 93.5,57.5 62.5,26.5" fill="#D5BEFF"/>
-      <polygon points="107,57 107,63 93.5,62.5 93.5,57.5" fill="#FFD5FF"/>
-      <polygon points="107,63 63,107 62.5,93.5 93.5,62.5" fill="#FF9AFF"/>
-      <polygon points="57.5,26.5 62.5,26.5 93.5,57.5 93.5,62.5 62.5,93.5 57.5,93.5 26.5,62.5 26.5,57.5" fill="url(#tc8-tbl)"/>
-      <polygon points="58,32.5 62,32.5 87.5,58 87.5,62 62,87.5 58,87.5 32.5,62 32.5,58" fill="none" stroke="#FFFFFF" stroke-width="1"/>
-      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/>
-      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#tc8-p)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 15 54 H 28 L 24.2 57.6 H 15 Z M 7 61 H 30.2 L 25.6 65.4 H 7 Z M 12.5 69.2 H 33.4 L 29 73.2 H 12.5 Z" fill="#A9DCFF"/>
-      <path d="M 38 46.5 C 39.5 39.5, 45 36.2, 54 36.2 C 62 36.2, 69 38.2, 76.5 37.6 C 79.5 37.3, 82 36, 84 35 L 85.2 36.4 C 74 47.5, 62 60, 48.5 79.5 C 55.5 81.2, 62.5 82.4, 70 82.2 C 77.5 82, 81 79.2, 82.5 73 L 84 73.5 C 82.5 81.5, 76.5 84.8, 66 84.8 C 57.5 84.8, 50 82.5, 42.5 83.2 C 39.5 83.5, 37.2 84.6, 35.5 85.4 L 34.4 84 C 46.5 71, 59 58.2, 72.5 40.2 C 65 38.6, 58.5 38, 51.5 38.3 C 44.5 38.6, 40.8 41.5, 39.6 47 Z" fill="url(#tc8-obs)" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
-      <path d="M 48 60 H 72" fill="none" stroke="url(#tc8-p)" stroke-width="1.8" stroke-linecap="round"/>
+      <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="#81BDF8" stroke="#06070B" stroke-width="1"/>
+      <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF" stroke="#06070B" stroke-width="1"/>
+      <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="#D5BEFF" stroke="#06070B" stroke-width="1"/>
+      <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF" stroke="#06070B" stroke-width="1"/>
+      <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="#FF9AFF" stroke="#06070B" stroke-width="1"/>
+      <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="#0B0E17" stroke="url(#tc-p)" stroke-width="1.4"/>
+      <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="#A9DCFF"/>
+      <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="#FFFFFF"/>
+      <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#tc-zWingB)"/>
+      <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
     </g>
     <text x="254" y="218" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="27" font-weight="300" letter-spacing="9" fill="#FFFFFF">ZAPHYREL</text>
-    <text x="254" y="242" text-anchor="middle" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" letter-spacing="1.8" fill="#A0A7B8">ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</text>
+    <text x="254" y="242" text-anchor="middle" font-family="'Outfit', system-ui, sans-serif" font-size="9" letter-spacing="1.8" fill="#A9DCFF">ESENCIA QUE PERMANECE E INNOVACIÓN QUE FLUYE</text>
   </g>
-  <g filter="url(#tc8-sh)">
+  <g filter="url(#tc-sh)">
     <rect x="476" y="226" width="380" height="230" rx="18" fill="#FFFFFF" stroke="#DDE1EA" stroke-width="1"/>
-    <rect x="476" y="226" width="6" height="230" rx="3" fill="url(#tc8-p)"/>
+    <rect x="476" y="226" width="8" height="230" rx="4" fill="url(#tc-p)"/>
     <text x="514" y="274" font-family="'Cormorant Garamond', Georgia, serif" font-size="25" font-weight="400" letter-spacing="4" fill="#0B0D12">ZAPHYREL STUDIO</text>
-    <text x="514" y="296" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" letter-spacing="1.8" fill="#5A6171">ARQUITECTURA DIGITAL · 3D / 360°</text>
+    <text x="514" y="296" font-family="'Outfit', system-ui, sans-serif" font-size="11" letter-spacing="1.8" fill="#5A6171">ARQUITECTURA DIGITAL · 3D / 360°</text>
     <line x1="514" y1="322" x2="816" y2="322" stroke="#E4E7EE" stroke-width="1"/>
     <text x="514" y="354" font-family="'JetBrains Mono', monospace" font-size="12" fill="#0B0D12">hola@zaphyrel.com</text>
     <text x="514" y="378" font-family="'JetBrains Mono', monospace" font-size="12" fill="#5A6171">zaphyrel.com · Lima · Latam</text>
-    <text x="514" y="422" font-family="'JetBrains Mono', monospace" font-size="10" fill="#81BDF8">TABLE · FIT · STOCK · STAY · CARE · LIB · SHOP · LEDGER</text>
+    <text x="514" y="422" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#81BDF8">TABLE · FIT · STOCK · STAY · CARE · LIB · SHOP · LEDGER · 3D RV</text>
   </g>
 </svg>
