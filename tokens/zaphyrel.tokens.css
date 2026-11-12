@@ -1,44 +1,52 @@
-/* Zaphyrel Design Tokens v5 — Espectro Pastel Coolors + Arquitectura Negro / Blanco / Gris */
+/* Zaphyrel Design Tokens v6 — Paleta Pastel Coolors + Arquitectura Negro / Blanco / Gris */
 :root {
   /* Arquitectura Estructural: Blanco Puro, Grises Neutros y Negro Obsidiana */
-  --zy-black:        #090B10;
+  --zy-black:        #07080D;
   --zy-obsidian:     #12151E;
   --zy-white:        #FFFFFF;
-  --zy-pearl:        #F4F5F8;
+  --zy-pearl:        #F3F4F9;
   --zy-paper:        #FFFFFF;
+  --zy-surface-2:    #E9ECF4;
   --zy-gray-100:     #EEF0F5;
   --zy-gray-200:     #DDE1EA;
   --zy-gray-400:     #8E95A5;
-  --zy-gray-600:     #585F70;
-  --zy-ink:          #0B0D12;
-  --zy-ink-soft:     #5A6171;
-  --zy-card:         rgba(255, 255, 255, 0.92);
-  --zy-line:         rgba(11, 13, 18, 0.09);
-  --zy-line-strong:  rgba(11, 13, 18, 0.20);
+  --zy-gray-600:     #4B5263;
+  --zy-ink:          #090B10;
+  --zy-ink-soft:     #4B5263;
+  --zy-card:         rgba(255, 255, 255, 0.88);
+  --zy-line:         rgba(9, 11, 16, 0.10);
+  --zy-line-strong:  rgba(9, 11, 16, 0.20);
 
-  /* Paleta Pastel Oficial Coolors */
+  /* Paleta Pastel Oficial Coolors: #FF9AFF · #FFD5FF · #D5BEFF · #A9DCFF · #81BDF8 */
   --zy-pastel-orchid:   #FF9AFF;
   --zy-pastel-rose:     #FFD5FF;
   --zy-pastel-lavender: #D5BEFF;
   --zy-pastel-ice:      #A9DCFF;
   --zy-pastel-sky:      #81BDF8;
-  --zy-prism:           linear-gradient(135deg, #81BDF8 0%, #A9DCFF 28%, #D5BEFF 55%, #FFD5FF 78%, #FF9AFF 100%);
+  --zy-prism:           linear-gradient(135deg, #81BDF8 0%, #A9DCFF 26%, #D5BEFF 52%, #FFD5FF 76%, #FF9AFF 100%);
+  --zy-prism-h:         linear-gradient(90deg, #81BDF8 0%, #A9DCFF 26%, #D5BEFF 52%, #FFD5FF 76%, #FF9AFF 100%);
+
+  /* Superficies Bento Pasteles (contraste alto sobre blanco y gris) */
+  --zy-tile-sky:  linear-gradient(155deg, rgba(129, 189, 248, 0.22), rgba(255, 255, 255, 0.94) 68%);
+  --zy-tile-lav:  linear-gradient(155deg, rgba(213, 190, 255, 0.26), rgba(255, 255, 255, 0.94) 68%);
+  --zy-tile-rose: linear-gradient(155deg, rgba(255, 213, 255, 0.32), rgba(255, 255, 255, 0.94) 68%);
+  --zy-tile-orc:  linear-gradient(155deg, rgba(255, 154, 255, 0.20), rgba(169, 220, 255, 0.16) 55%, rgba(255, 255, 255, 0.94));
 
   /* Acentos activos */
   --zy-accent:       #81BDF8;
   --zy-accent-2:     #D5BEFF;
   --zy-accent-3:     #FF9AFF;
-  --zy-accent-pale:  #E9F3FE;
-  --zy-accent-ink:   #0B0D12;
-  --zy-accent-soft:  rgba(129, 189, 248, 0.16);
+  --zy-accent-pale:  #E4F1FF;
+  --zy-accent-ink:   #090B10;
+  --zy-accent-soft:  rgba(129, 189, 248, 0.18);
 
   /* Tipografía de autor */
-  --zy-font-display: "Instrument Serif", "Newsreader", Georgia, serif;
-  --zy-font-ui:      "Plus Jakarta Sans", "DM Sans", system-ui, sans-serif;
+  --zy-font-display: "Instrument Serif", Georgia, serif;
+  --zy-font-ui:      "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
   --zy-font-mono:    "JetBrains Mono", ui-monospace, monospace;
 
   /* Geometría */
-  --zy-radius:       20px;
+  --zy-radius:       22px;
   --zy-stroke:       1px;
   --zy-space:        8px;
   --zy-ease:         cubic-bezier(0.22, 1, 0.36, 1);
@@ -46,18 +54,24 @@
 
 /* Modo Noche: Obsidiana + Grafito + Prisma Luminoso */
 [data-theme="night"] {
-  --zy-ink:          #F7F8FC;
-  --zy-ink-soft:     #A0A7B8;
-  --zy-pearl:        #07080C;
-  --zy-paper:        #10131B;
-  --zy-card:         rgba(16, 19, 27, 0.92);
-  --zy-line:         rgba(232, 236, 246, 0.10);
-  --zy-line-strong:  rgba(232, 236, 246, 0.22);
+  --zy-ink:          #F8F9FD;
+  --zy-ink-soft:     #A3AAB9;
+  --zy-pearl:        #06070B;
+  --zy-paper:        #0E1119;
+  --zy-surface-2:    #161A26;
+  --zy-card:         rgba(15, 18, 28, 0.88);
+  --zy-line:         rgba(255, 255, 255, 0.10);
+  --zy-line-strong:  rgba(255, 255, 255, 0.22);
+
+  --zy-tile-sky:  linear-gradient(155deg, rgba(129, 189, 248, 0.16), rgba(16, 20, 30, 0.92) 70%);
+  --zy-tile-lav:  linear-gradient(155deg, rgba(213, 190, 255, 0.16), rgba(16, 20, 30, 0.92) 70%);
+  --zy-tile-rose: linear-gradient(155deg, rgba(255, 213, 255, 0.14), rgba(16, 20, 30, 0.92) 70%);
+  --zy-tile-orc:  linear-gradient(155deg, rgba(255, 154, 255, 0.15), rgba(129, 189, 248, 0.12) 55%, rgba(16, 20, 30, 0.92));
 
   --zy-accent:       #A9DCFF;
   --zy-accent-2:     #D5BEFF;
   --zy-accent-3:     #FF9AFF;
   --zy-accent-pale:  rgba(169, 220, 255, 0.22);
-  --zy-accent-ink:   #07080C;
+  --zy-accent-ink:   #07080D;
   --zy-accent-soft:  rgba(169, 220, 255, 0.16);
 }

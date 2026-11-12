@@ -1,73 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel">
   <defs>
-    <!-- Paleta pastel Coolors exacta: #81BDF8 · #A9DCFF · #D5BEFF · #FFD5FF · #FF9AFF -->
-    <linearGradient id="z5-prism" x1="0.08" y1="0.08" x2="0.92" y2="0.92">
+    <!-- Paleta Pastel Coolors oficial: #81BDF8 · #A9DCFF · #D5BEFF · #FFD5FF · #FF9AFF -->
+    <linearGradient id="z6-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94">
       <stop offset="0" stop-color="#81BDF8"/>
       <stop offset="0.28" stop-color="#A9DCFF"/>
       <stop offset="0.54" stop-color="#D5BEFF"/>
       <stop offset="0.78" stop-color="#FFD5FF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="z5-wing-top" x1="0" y1="0" x2="1" y2="0.2">
-      <stop offset="0" stop-color="#81BDF8"/>
-      <stop offset="0.55" stop-color="#A9DCFF"/>
-      <stop offset="1" stop-color="#FFFFFF"/>
+    <linearGradient id="z6-table" x1="0.08" y1="0.05" x2="0.92" y2="0.95">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.32" stop-color="#DCEEFF"/>
+      <stop offset="0.65" stop-color="#EBE0FF"/>
+      <stop offset="1" stop-color="#FFE6FF"/>
     </linearGradient>
-    <linearGradient id="z5-wing-bot" x1="0" y1="0.2" x2="1" y2="0">
-      <stop offset="0" stop-color="#D5BEFF"/>
-      <stop offset="0.5" stop-color="#FFD5FF"/>
+    <linearGradient id="z6-f-sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#81BDF8"/>
+      <stop offset="1" stop-color="#A9DCFF"/>
+    </linearGradient>
+    <linearGradient id="z6-f-lav" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9DCFF"/>
+      <stop offset="1" stop-color="#D5BEFF"/>
+    </linearGradient>
+    <linearGradient id="z6-f-orc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFD5FF"/>
       <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="z5-obs" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
-      <stop offset="0" stop-color="#222736"/>
-      <stop offset="0.45" stop-color="#0D1017"/>
-      <stop offset="1" stop-color="#050609"/>
+    <linearGradient id="z6-obs" x1="0.1" y1="0.1" x2="0.9" y2="0.9">
+      <stop offset="0" stop-color="#202534"/>
+      <stop offset="0.5" stop-color="#0B0D14"/>
+      <stop offset="1" stop-color="#05060A"/>
     </linearGradient>
-    <linearGradient id="z5-silver" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#EEF2F8"/>
-      <stop offset="0.55" stop-color="#B9C2D3"/>
-      <stop offset="1" stop-color="#6F788C"/>
+    <linearGradient id="z6-wind" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#81BDF8"/>
+      <stop offset="0.6" stop-color="#A9DCFF"/>
+      <stop offset="1" stop-color="#D5BEFF"/>
     </linearGradient>
+    <clipPath id="z6-clip-tbl">
+      <polygon points="58,28 62,28 92,58 92,62 62,92 58,92 28,62 28,58"/>
+    </clipPath>
   </defs>
 
-  <!-- Bisel exterior romboidal del Zafiro: Platino, Gris Grafito y Negro Obsidiana -->
-  <polygon points="60,8 12,58 21,60 60,20" fill="url(#z5-silver)"/>
-  <polygon points="60,8 108,58 99,60 60,20" fill="#3B4254"/>
-  <polygon points="12,58 21,60 60,100 60,112" fill="#202532"/>
-  <polygon points="108,58 60,112 60,100 99,60" fill="#090B10"/>
-  <polygon points="60,8 108,58 60,112 12,58" fill="none" stroke="#181C26" stroke-width="2" stroke-linejoin="round"/>
-  <polygon points="60,9.5 106.5,58 60,110.5 13.5,58" fill="none" stroke="url(#z5-prism)" stroke-width="1.35" stroke-linejoin="round"/>
+  <!-- Facetas exactas de corona octogonal alineadas a las aristas a 45° -->
+  <polygon points="19,51 57,13 58,28 28,58" fill="url(#z6-f-sky)" opacity=".92"/>
+  <polygon points="57,13 63,13 62,28 58,28" fill="#FFFFFF"/>
+  <polygon points="63,13 107,57 92,58 62,28" fill="url(#z6-f-lav)" opacity=".92"/>
+  <polygon points="107,57 107,63 92,62 92,58" fill="#FFD5FF"/>
+  <polygon points="107,63 63,107 62,92 92,62" fill="url(#z6-f-orc)" opacity=".95"/>
+  <polygon points="63,107 57,107 58,92 62,92" fill="#D5BEFF"/>
+  <polygon points="57,107 41,91 49,83 58,92" fill="url(#z6-f-sky)" opacity=".88"/>
 
-  <!-- Gema Zafiro facetada en planos de refracción luminosa -->
-  <polygon points="60,20 21,60 60,60" fill="#A9DCFF"/>
-  <polygon points="60,20 99,60 60,60" fill="#D5BEFF"/>
-  <polygon points="21,60 60,100 60,60" fill="#81BDF8"/>
-  <polygon points="99,60 60,100 60,60" fill="#FF9AFF"/>
+  <!-- Tabla interior luminosa de Zafiro -->
+  <polygon points="58,28 62,28 92,58 92,62 62,92 58,92 28,62 28,58" fill="url(#z6-table)"/>
+  <g clip-path="url(#z6-clip-tbl)">
+    <polygon points="24,52 60,18 78,36 24,78" fill="#FFFFFF" opacity=".52"/>
+    <polygon points="62,60 94,58 94,76 60,96" fill="#FF9AFF" opacity=".26"/>
+    <polygon points="26,60 58,26 60,60 28,72" fill="#81BDF8" opacity=".22"/>
+    <path d="M 28 58 L 92 62 M 58 28 L 62 92 M 38 38 L 82 82 M 82 38 L 38 82" stroke="#FFFFFF" stroke-width="0.7" stroke-opacity=".6"/>
+  </g>
 
-  <!-- Tabla de corona y pabellones internos de talla real -->
-  <polygon points="60,20 80,40 60,46.5 40,40" fill="#FFFFFF" opacity=".7"/>
-  <polygon points="40,40 60,46.5 42.5,60 21,60" fill="#81BDF8" opacity=".62"/>
-  <polygon points="80,40 99,60 77.5,60 60,46.5" fill="#D5BEFF" opacity=".82"/>
-  <polygon points="21,60 42.5,60 60,74 40,80.5" fill="#A9DCFF" opacity=".72"/>
-  <polygon points="77.5,60 99,60 80,80.5 60,74" fill="#FF9AFF" opacity=".84"/>
-  <polygon points="40,80.5 60,74 80,80.5 60,100" fill="#FFD5FF" opacity=".92"/>
-  <path d="M 60 20 V 100 M 21 60 H 99 M 40 40 L 80 80.5 M 80 40 L 40 80.5" stroke="#FFFFFF" stroke-width="0.7" stroke-opacity=".62"/>
+  <!-- Aristas de talla de precisión -->
+  <polygon points="58,28 62,28 92,58 92,62 62,92 58,92 28,62 28,58" fill="none" stroke="url(#z6-crown)" stroke-width="1.35" stroke-linejoin="round"/>
+  <path d="M 57 13 L 58 28 M 63 13 L 62 28 M 107 57 L 92 58 M 107 63 L 92 62 M 63 107 L 62 92 M 57 107 L 58 92 M 19 51 L 28 58 M 41 91 L 49 83" fill="none" stroke="#FFFFFF" stroke-width="1.05" stroke-opacity=".8" stroke-linecap="round"/>
 
-  <!-- Sombra proyectada de la escultura Zéfiro -->
-  <path d="M 6 43 C 23 35, 43 33.5, 90 33.5 L 54.5 73 H 84.5 C 97 73, 106 70, 114 65.5 C 103 81.5, 89 86.5, 31 86.5 L 65.5 46 H 37 C 23 46, 14 46.5, 6 43 Z" fill="#05060A" opacity=".24" transform="translate(1.5,2.2)"/>
+  <!-- Corona abierta del Zafiro: marco obsidiana + trazo luminoso Coolors -->
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="#11141D" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#z6-crown)" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Cuerpo monolítico unificado de la Z + Alas Zéfiro -->
-  <path d="M 6 43 C 23 35, 43 33.5, 90 33.5 L 54.5 73 H 84.5 C 97 73, 106 70, 114 65.5 C 103 81.5, 89 86.5, 31 86.5 L 65.5 46 H 37 C 23 46, 14 46.5, 6 43 Z" fill="url(#z5-obs)" stroke="#FFFFFF" stroke-width="1.35" stroke-linejoin="round"/>
+  <!-- Estelas Zéfiro en corte biselado 45° entrando por el umbral abierto -->
+  <path d="M 16 55 H 27.5 L 24 58 H 16 Z" fill="#81BDF8"/>
+  <path d="M 8 61.8 H 28.5 L 24.5 65.8 H 8 Z" fill="url(#z6-wind)"/>
+  <path d="M 14 69.8 H 31.5 L 27.5 73.6 H 14 Z" fill="url(#z6-f-lav)"/>
 
-  <!-- Faceta de arista 3D sobre la diagonal central -->
-  <polygon points="72.5,33.5 90,33.5 48.5,86.5 31,86.5" fill="#293042" opacity=".48"/>
-  <line x1="81" y1="34.5" x2="40" y2="85.5" stroke="#FFFFFF" stroke-width="0.85" stroke-opacity=".4"/>
-
-  <!-- Filos luminosos aerodinámicos de entrada (#81BDF8-#A9DCFF) y salida (#FFD5FF-#FF9AFF) -->
-  <path d="M 8.5 42.2 C 25 36, 44 34.8, 86.5 34.8 L 83 38.8 H 37.5 C 24.5 38.8, 15.5 40.4, 8.5 42.2 Z" fill="url(#z5-wing-top)"/>
-  <path d="M 35 84.8 H 82.5 C 94 84.8, 102.5 81, 111 71 C 102 76.5, 94.5 79, 82 79 H 39.5 Z" fill="url(#z5-wing-bot)"/>
-
-  <!-- Estelas secundarias Zéfiro -->
-  <path d="M 12 52.5 C 21 50.5, 28 50.5, 35 50.5 L 30.5 55 C 23.5 55, 16.5 54.5, 12 52.5 Z" fill="#81BDF8"/>
-  <path d="M 85 65 C 92 65, 99 65, 108 62.5 C 103.5 67, 96 69.5, 81.5 69.5 Z" fill="#FF9AFF"/>
+  <!-- Monograma Z escultórico (silueta fiel con sombra cristalina, cuerpo obsidiana y filo platino) -->
+  <path d="M 41 39.5 H 72.5 L 66.5 45.8 H 35 Z M 53.5 74.2 H 85 L 79 80.5 H 47.5 Z M 76.5 39.5 H 84.5 C 71.5 54, 59.5 66, 45.5 80.5 H 37.5 C 50.5 66, 62.5 54, 76.5 39.5 Z" fill="#06070B" opacity=".24" transform="translate(1.4,2)"/>
+  <path d="M 41 39.5 H 72.5 L 66.5 45.8 H 35 Z M 53.5 74.2 H 85 L 79 80.5 H 47.5 Z M 76.5 39.5 H 84.5 C 71.5 54, 59.5 66, 45.5 80.5 H 37.5 C 50.5 66, 62.5 54, 76.5 39.5 Z" fill="url(#z6-obs)" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M 40.5 40.3 H 71.2 L 69.5 41.8 H 38.8 Z M 77.2 40.3 H 83 C 71 53.5, 59.5 65, 45.8 79.3 H 43.8 C 57.5 65, 69 53.5, 77.2 40.3 Z" fill="#FFFFFF" opacity=".32"/>
 </svg>
