@@ -1,54 +1,63 @@
-/* Zaphyrel Design Tokens v4 — Pasteles arquitectonicos finos (regla 85/12/3) */
+/* Zaphyrel Design Tokens v5 — Espectro Pastel Coolors + Arquitectura Negro / Blanco / Gris */
 :root {
-  /* 85% Base Porcelana & Tinta Zafiro Carbon */
-  --zy-ink:          #1D2230;
-  --zy-ink-soft:     #5F6678;
-  --zy-pearl:        #F4F1EC;
-  --zy-paper:        #FCFBF9;
-  --zy-card:         rgba(252, 251, 249, 0.90);
-  --zy-line:         rgba(29, 34, 48, 0.09);
-  --zy-line-strong:  rgba(29, 34, 48, 0.20);
+  /* Arquitectura Estructural: Blanco Puro, Grises Neutros y Negro Obsidiana */
+  --zy-black:        #090B10;
+  --zy-obsidian:     #12151E;
+  --zy-white:        #FFFFFF;
+  --zy-pearl:        #F4F5F8;
+  --zy-paper:        #FFFFFF;
+  --zy-gray-100:     #EEF0F5;
+  --zy-gray-200:     #DDE1EA;
+  --zy-gray-400:     #8E95A5;
+  --zy-gray-600:     #585F70;
+  --zy-ink:          #0B0D12;
+  --zy-ink-soft:     #5A6171;
+  --zy-card:         rgba(255, 255, 255, 0.92);
+  --zy-line:         rgba(11, 13, 18, 0.09);
+  --zy-line-strong:  rgba(11, 13, 18, 0.20);
 
-  /* 12% Pasteles minerales empolvados (una familia armonica por vista) */
-  --zy-sapphire:     #7A97BC; /* zafiro niebla */
-  --zy-sapphire-soft:#B8CAE0;
-  --zy-sage:         #82A596; /* salvia mineral */
-  --zy-mauve:        #968EB2; /* malva lino */
-  --zy-clay:         #B89489; /* arena rosa */
+  /* Paleta Pastel Oficial Coolors */
+  --zy-pastel-orchid:   #FF9AFF;
+  --zy-pastel-rose:     #FFD5FF;
+  --zy-pastel-lavender: #D5BEFF;
+  --zy-pastel-ice:      #A9DCFF;
+  --zy-pastel-sky:      #81BDF8;
+  --zy-prism:           linear-gradient(135deg, #81BDF8 0%, #A9DCFF 28%, #D5BEFF 55%, #FFD5FF 78%, #FF9AFF 100%);
 
-  --zy-accent:       var(--zy-sapphire);
-  --zy-accent-pale:  #D7E3F1;
-  --zy-accent-ink:   #18202C;
-  --zy-accent-soft:  rgba(122, 151, 188, 0.14);
+  /* Acentos activos */
+  --zy-accent:       #81BDF8;
+  --zy-accent-2:     #D5BEFF;
+  --zy-accent-3:     #FF9AFF;
+  --zy-accent-pale:  #E9F3FE;
+  --zy-accent-ink:   #0B0D12;
+  --zy-accent-soft:  rgba(129, 189, 248, 0.16);
 
-  /* Tipografia editorial suiza */
-  --zy-font-display: "Newsreader", Georgia, serif;
-  --zy-font-ui:      "DM Sans", system-ui, sans-serif;
+  /* Tipografía de autor */
+  --zy-font-display: "Instrument Serif", "Newsreader", Georgia, serif;
+  --zy-font-ui:      "Plus Jakarta Sans", "DM Sans", system-ui, sans-serif;
   --zy-font-mono:    "JetBrains Mono", ui-monospace, monospace;
 
-  /* Forma y ritmo */
+  /* Geometría */
   --zy-radius:       20px;
   --zy-stroke:       1px;
   --zy-space:        8px;
   --zy-ease:         cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Modo noche: Obsidiana Zafiro */
+/* Modo Noche: Obsidiana + Grafito + Prisma Luminoso */
 [data-theme="night"] {
-  --zy-ink:          #EEF1F6;
-  --zy-ink-soft:     #9BA5B8;
-  --zy-pearl:        #0D1017;
-  --zy-paper:        #141923;
-  --zy-card:         rgba(22, 27, 38, 0.90);
-  --zy-line:         rgba(218, 226, 242, 0.10);
-  --zy-line-strong:  rgba(218, 226, 242, 0.22);
+  --zy-ink:          #F7F8FC;
+  --zy-ink-soft:     #A0A7B8;
+  --zy-pearl:        #07080C;
+  --zy-paper:        #10131B;
+  --zy-card:         rgba(16, 19, 27, 0.92);
+  --zy-line:         rgba(232, 236, 246, 0.10);
+  --zy-line-strong:  rgba(232, 236, 246, 0.22);
 
-  --zy-accent:       #9DB6D6;
-  --zy-accent-pale:  rgba(157, 182, 214, 0.20);
-  --zy-accent-ink:   #0D1017;
-  --zy-accent-soft:  rgba(157, 182, 214, 0.15);
-}
-
-[data-zy-theme="client"] {
-  --zy-accent: var(--zy-sapphire);
+  --zy-accent:       #A9DCFF;
+  --zy-accent-2:     #D5BEFF;
+  --zy-accent-3:     #FF9AFF;
+  --zy-accent-pale:  rgba(169, 220, 255, 0.22);
+  --zy-accent-ink:   #07080C;
+  --zy-accent-soft:  rgba(169, 220, 255, 0.16);
 }

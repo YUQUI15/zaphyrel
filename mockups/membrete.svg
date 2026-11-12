@@ -1,23 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794 1123" width="794" height="1123" role="img" aria-label="Hoja membretada Zaphyrel">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" width="720" height="960" role="img" aria-label="Membrete Zaphyrel v5">
   <defs>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=DM+Sans:wght@400;500&amp;display=swap');</style>
-    <linearGradient id="zg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6F8EB5"/><stop offset="1" stop-color="#B9C9DF"/></linearGradient>
+    <linearGradient id="mb-prism" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#81BDF8"/>
+      <stop offset="0.3" stop-color="#A9DCFF"/>
+      <stop offset="0.55" stop-color="#D5BEFF"/>
+      <stop offset="0.8" stop-color="#FFD5FF"/>
+      <stop offset="1" stop-color="#FF9AFF"/>
+    </linearGradient>
   </defs>
-  <rect width="794" height="1123" fill="#FFFFFF"/>
-  <rect width="794" height="5" fill="url(#zg)"/>
-  <g transform="translate(64,54) scale(0.46)">
-    <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#zg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M 10 62.5 H 28 L 24 66 H 10 Z M 16 70.5 H 31 L 27.5 74 H 16 Z" fill="#84A1C6"/>
-    <path d="M 41 40 H 71.5 L 66 45.5 H 35.5 Z M 54 74.5 H 84.5 L 79 80 H 48.5 Z M 76.5 40 H 84 C 71.5 54, 59.5 66, 45.5 80 H 38 C 51 66, 63 54, 76.5 40 Z" fill="#1D2230"/>
+  <rect width="720" height="960" fill="#ECEEF3"/>
+  <rect x="48" y="36" width="624" height="888" rx="6" fill="#FFFFFF" stroke="#DDE1EA"/>
+  <rect x="48" y="36" width="624" height="5" fill="url(#mb-prism)"/>
+  <g transform="translate(88,78) scale(0.42)">
+    <polygon points="60,8 12,58 21,60 60,20" fill="#E8EDF5"/>
+    <polygon points="60,8 108,58 99,60 60,20" fill="#3B4254"/>
+    <polygon points="12,58 21,60 60,100 60,112" fill="#202532"/>
+    <polygon points="108,58 60,112 60,100 99,60" fill="#090B10"/>
+    <polygon points="60,20 21,60 60,60" fill="#A9DCFF"/>
+    <polygon points="60,20 99,60 60,60" fill="#D5BEFF"/>
+    <polygon points="21,60 60,100 60,60" fill="#81BDF8"/>
+    <polygon points="99,60 60,100 60,60" fill="#FF9AFF"/>
+    <path d="M 6 43 C 23 35, 43 33.5, 90 33.5 L 54.5 73 H 84.5 C 97 73, 106 70, 114 65.5 C 103 81.5, 89 86.5, 31 86.5 L 65.5 46 H 37 C 23 46, 14 46.5, 6 43 Z" fill="#0B0D12" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
   </g>
-  <text x="132" y="88" font-family="'Newsreader', Georgia, serif" font-size="22" letter-spacing="7" fill="#1D2230">ZAPHYREL</text>
-  <text x="730" y="88" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="11" letter-spacing="1.5" fill="#5F6678">Propuesta · Fecha</text>
-  <line x1="64" y1="126" x2="730" y2="126" stroke="#1D2230" stroke-opacity=".12"/>
-  <rect x="64" y="180" width="220" height="14" rx="4" fill="#1D2230" fill-opacity=".10"/>
-  <rect x="64" y="216" width="666" height="8" rx="4" fill="#1D2230" fill-opacity=".06"/>
-  <rect x="64" y="236" width="620" height="8" rx="4" fill="#1D2230" fill-opacity=".06"/>
-  <rect x="64" y="256" width="540" height="8" rx="4" fill="#1D2230" fill-opacity=".06"/>
-  <line x1="64" y1="1038" x2="730" y2="1038" stroke="#1D2230" stroke-opacity=".12"/>
-  <text x="64" y="1068" font-family="'Newsreader', Georgia, serif" font-style="italic" font-size="13" fill="#5F6678">Esencia que permanece e innovación que fluye</text>
-  <text x="730" y="1068" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="11" fill="#5F6678">hola@zaphyrel.com · +51 000 000 000</text>
+  <text x="148" y="106" font-family="'Instrument Serif', Georgia, serif" font-size="24" letter-spacing="6" fill="#0B0D12">ZAPHYREL</text>
+  <text x="628" y="104" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#5A6171">PROPUESTA TÉCNICA · 2026</text>
+  <line x1="88" y1="142" x2="628" y2="142" stroke="#E4E7EE"/>
+  <rect x="88" y="182" width="240" height="16" rx="4" fill="#0B0D12" opacity=".88"/>
+  <rect x="88" y="216" width="540" height="8" rx="4" fill="#E4E7EE"/>
+  <rect x="88" y="236" width="500" height="8" rx="4" fill="#E4E7EE"/>
+  <rect x="88" y="256" width="460" height="8" rx="4" fill="#E4E7EE"/>
+  <rect x="88" y="308" width="540" height="140" rx="12" fill="#F6F7FA" stroke="#E4E7EE"/>
+  <rect x="88" y="308" width="4" height="140" rx="2" fill="url(#mb-prism)"/>
+  <line x1="88" y1="864" x2="628" y2="864" stroke="#E4E7EE"/>
+  <text x="88" y="892" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#5A6171">Zaphyrel · Esencia que permanece e innovación que fluye</text>
+  <text x="628" y="892" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#5A6171">hola@zaphyrel.com</text>
 </svg>

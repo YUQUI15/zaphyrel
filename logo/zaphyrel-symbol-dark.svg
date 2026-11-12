@@ -1,28 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel (sobre oscuro)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240" role="img" aria-label="Zaphyrel Dark Mode">
   <defs>
-    <linearGradient id="zg" x1="0.1" y1="0.1" x2="0.9" y2="0.9">
-      <stop offset="0" stop-color="#8FAED4"/>
-      <stop offset="0.55" stop-color="#B5CBE5"/>
-      <stop offset="1" stop-color="#DCE6F4"/>
+    <linearGradient id="z5d-prism" x1="0.08" y1="0.08" x2="0.92" y2="0.92">
+      <stop offset="0" stop-color="#81BDF8"/>
+      <stop offset="0.28" stop-color="#A9DCFF"/>
+      <stop offset="0.54" stop-color="#D5BEFF"/>
+      <stop offset="0.78" stop-color="#FFD5FF"/>
+      <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <linearGradient id="zf-hi" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#C2D5EC" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#8DA8CA" stop-opacity=".08"/>
+    <linearGradient id="z5d-silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#C9D0DF"/>
+      <stop offset="1" stop-color="#768096"/>
     </linearGradient>
-    <linearGradient id="zf-lo" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#7B99BE" stop-opacity=".14"/>
-      <stop offset="1" stop-color="#B5CBE5" stop-opacity=".26"/>
+    <linearGradient id="z5d-obs" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
+      <stop offset="0" stop-color="#1E2331"/>
+      <stop offset="0.5" stop-color="#0B0D14"/>
+      <stop offset="1" stop-color="#050609"/>
+    </linearGradient>
+    <linearGradient id="z5d-top" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0" stop-color="#81BDF8"/>
+      <stop offset="0.55" stop-color="#A9DCFF"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="z5d-bot" x1="0" y1="0.2" x2="1" y2="0">
+      <stop offset="0" stop-color="#D5BEFF"/>
+      <stop offset="0.5" stop-color="#FFD5FF"/>
+      <stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
   </defs>
-  <rect width="120" height="120" rx="26" fill="#0F131C"/>
-  <polygon points="24,46 57,13 58,28 34,50" fill="url(#zf-hi)" opacity=".7"/>
-  <polygon points="57,13 63,13 62,28 58,28" fill="url(#zf-hi)"/>
-  <polygon points="63,13 107,57 92,58 62,28" fill="url(#zf-lo)"/>
-  <polygon points="107,57 107,63 92,62 92,58" fill="url(#zf-hi)"/>
-  <polygon points="107,63 63,107 62,92 92,62" fill="url(#zf-lo)" opacity=".85"/>
-  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 41 91" fill="none" stroke="url(#zg)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="58,28 62,28 92,58 92,62 62,92 58,92 28,62 28,58" fill="none" stroke="#9EB7D9" stroke-width="1.15" stroke-opacity=".46" stroke-linejoin="round"/>
-  <path d="M 57 13 L 58 28 M 63 13 L 62 28 M 107 57 L 92 58 M 107 63 L 92 62 M 63 107 L 62 92 M 57 107 L 58 92" fill="none" stroke="#9EB7D9" stroke-width="1" stroke-opacity=".4" stroke-linecap="round"/>
-  <path d="M 10 62.5 H 28 L 24 66 H 10 Z M 16 70.5 H 31 L 27.5 74 H 16 Z" fill="#9EB7D9" opacity=".82"/>
-  <path d="M 41 40 H 71.5 L 66 45.5 H 35.5 Z M 54 74.5 H 84.5 L 79 80 H 48.5 Z M 76.5 40 H 84 C 71.5 54, 59.5 66, 45.5 80 H 38 C 51 66, 63 54, 76.5 40 Z" fill="#EEF2F8"/>
+  <polygon points="60,8 12,58 21,60 60,20" fill="url(#z5d-silver)"/>
+  <polygon points="60,8 108,58 99,60 60,20" fill="#464E63"/>
+  <polygon points="12,58 21,60 60,100 60,112" fill="#293042"/>
+  <polygon points="108,58 60,112 60,100 99,60" fill="#141824"/>
+  <polygon points="60,8 108,58 60,112 12,58" fill="none" stroke="url(#z5d-prism)" stroke-width="1.8" stroke-linejoin="round"/>
+  <polygon points="60,20 21,60 60,60" fill="#A9DCFF"/>
+  <polygon points="60,20 99,60 60,60" fill="#D5BEFF"/>
+  <polygon points="21,60 60,100 60,60" fill="#81BDF8"/>
+  <polygon points="99,60 60,100 60,60" fill="#FF9AFF"/>
+  <polygon points="60,20 80,40 60,46.5 40,40" fill="#FFFFFF" opacity=".72"/>
+  <polygon points="40,40 60,46.5 42.5,60 21,60" fill="#81BDF8" opacity=".62"/>
+  <polygon points="80,40 99,60 77.5,60 60,46.5" fill="#D5BEFF" opacity=".82"/>
+  <polygon points="21,60 42.5,60 60,74 40,80.5" fill="#A9DCFF" opacity=".72"/>
+  <polygon points="77.5,60 99,60 80,80.5 60,74" fill="#FF9AFF" opacity=".84"/>
+  <polygon points="40,80.5 60,74 80,80.5 60,100" fill="#FFD5FF" opacity=".92"/>
+  <path d="M 60 20 V 100 M 21 60 H 99 M 40 40 L 80 80.5 M 80 40 L 40 80.5" stroke="#FFFFFF" stroke-width="0.7" stroke-opacity=".62"/>
+  <path d="M 6 43 C 23 35, 43 33.5, 90 33.5 L 54.5 73 H 84.5 C 97 73, 106 70, 114 65.5 C 103 81.5, 89 86.5, 31 86.5 L 65.5 46 H 37 C 23 46, 14 46.5, 6 43 Z" fill="url(#z5d-obs)" stroke="#FFFFFF" stroke-width="1.45" stroke-linejoin="round"/>
+  <polygon points="72.5,33.5 90,33.5 48.5,86.5 31,86.5" fill="#31394E" opacity=".5"/>
+  <line x1="81" y1="34.5" x2="40" y2="85.5" stroke="#FFFFFF" stroke-width="0.85" stroke-opacity=".45"/>
+  <path d="M 8.5 42.2 C 25 36, 44 34.8, 86.5 34.8 L 83 38.8 H 37.5 C 24.5 38.8, 15.5 40.4, 8.5 42.2 Z" fill="url(#z5d-top)"/>
+  <path d="M 35 84.8 H 82.5 C 94 84.8, 102.5 81, 111 71 C 102 76.5, 94.5 79, 82 79 H 39.5 Z" fill="url(#z5d-bot)"/>
+  <path d="M 12 52.5 C 21 50.5, 28 50.5, 35 50.5 L 30.5 55 C 23.5 55, 16.5 54.5, 12 52.5 Z" fill="#81BDF8"/>
+  <path d="M 85 65 C 92 65, 99 65, 108 62.5 C 103.5 67, 96 69.5, 81.5 69.5 Z" fill="#FF9AFF"/>
 </svg>
