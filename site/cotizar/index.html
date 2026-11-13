@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day" data-finish="crystal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configurar y Cotizar Proyecto — ZAPHYREL | Diagnóstico por Rubro y Capas</title>
+<meta name="description" content="Diseña tu arquitectura Zaphyrel por rubro y nivel operativo: tiendas retail, discotecas QR, municipalidades, restaurantes, hoteles, clínicas o showrooms 3D.">
+<meta name="theme-color" id="metaTheme" content="#FFFFFF">
+<link rel="canonical" href="https://zaphyrel-site.vercel.app/cotizar/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+(()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;document.documentElement.classList.add('skip-veil');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../assets/zaphyrel-shell.css">
+</head>
+<body data-root="../" data-nav="cotizar">
+<a class="skip-link" href="#contenido">Ir al contenido principal</a>
+<div class="prism-top-strip" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur-dot" id="dot" aria-hidden="true"></div>
+<div class="cur-ring" id="ring" aria-hidden="true"></div>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="horizon-grid" aria-hidden="true"></div>
+<canvas id="prismField" aria-hidden="true"></canvas>
+<div class="tactile-grain" aria-hidden="true"></div>
+
+<nav class="hud-top" aria-label="Navegación principal">
+  <a class="brand" href="../" aria-label="Zaphyrel inicio">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="z10-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".26" stop-color="#A9DCFF"/><stop offset=".52" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-fBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#81BDF8"/></linearGradient>
+        <linearGradient id="z10-fLav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5BEFF"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
+        <linearGradient id="z10-fPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wingB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".48" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
+      </defs>
+      <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#z10-fBlue)"/>
+      <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF"/>
+      <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#z10-fLav)"/>
+      <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF"/>
+      <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#z10-fPink)"/>
+      <polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#z10-fBlue)"/>
+      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" fill="none" stroke="var(--ink)" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="var(--paper)" stroke="url(#z10-crown)" stroke-width="1.45"/>
+      <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#z10-wind)"/>
+      <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="var(--ink)"/>
+      <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#z10-wingB)"/>
+      <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <span>ZAPHYREL</span>
+      <span class="brand-tag">ECOSISTEMAS DIGITALES &amp; 3D</span>
+    </div>
+  </a>
+
+  <div class="nav-links" id="mainNavLinks">
+    <a href="../" data-nav="inicio">Inicio</a>
+    <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
+    <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
+    <a href="../studio/" data-nav="studio">Studio OS</a>
+    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
+  </div>
+
+  <div class="tools">
+    <button class="pill pill-hide" id="cmdBtn" type="button" aria-label="Abrir buscador rápido (Ctrl+K)">Buscar <span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" type="button" aria-pressed="false" aria-label="Cambiar entre modo claro y oscuro">☾ Noche</button>
+    <button class="pill pill-hide" id="sound" type="button" aria-pressed="false" aria-label="Activar o silenciar sonido de interfaz">♪ Audio</button>
+    <button class="pill mob-menu-btn" id="mobMenuBtn" type="button" aria-expanded="false" aria-controls="mobDrawer" aria-label="Abrir menú de navegación">☰</button>
+    <a class="pill cta-nav pill-prism" href="../cotizar/#panel">Enviar diagnóstico</a>
+  </div>
+</nav>
+
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <a href="../"><span>Inicio</span><span>→</span></a>
+  <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
+  <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
+  <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
+  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
+  <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
+</div>
+
+<main id="contenido">
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación">
+      <a href="../">Inicio</a><span>/</span><span>Configurar y Cotizar</span>
+    </nav>
+    <p class="eyebrow">Configurador de Arquitectura a Medida</p>
+    <h1>Arma tu plataforma por <em>rubro, puestos y nivel de integración</em></h1>
+    <p class="lead">Marca qué capas necesitas conectar — desde la web externa o showroom 3D hasta el personal en tienda, puerta, campo, almacén y gerencia — y envía tu brief listo en un clic.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="arch">
+      <!-- PANEL DE SELECCIÓN -->
+      <div class="arch-q">
+        <div>
+          <h3>01 · Rubro o Institución Principal</h3>
+          <div class="chips" id="cfgSector">
+            <button class="chip on" type="button" data-sec="retail">Tienda / Retail</button>
+            <button class="chip" type="button" data-sec="club">Discoteca / Eventos</button>
+            <button class="chip" type="button" data-sec="muni">Municipalidad / Pública</button>
+            <button class="chip" type="button" data-sec="table">Restaurante / Café</button>
+            <button class="chip" type="button" data-sec="stay">Hotel / Resort 360°</button>
+            <button class="chip" type="button" data-sec="care">Clínica / Salud</button>
+            <button class="chip" type="button" data-sec="stock">Almacén / Logística</button>
+            <button class="chip" type="button" data-sec="show3d">Inmobiliaria / Showroom 3D</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>02 · Áreas y Capacidades a Entrelazar</h3>
+          <div class="chips" id="cfgLayers">
+            <button class="chip on" type="button" data-layer="web">Web / Portal Externo</button>
+            <button class="chip on" type="button" data-layer="staff">Apps Empleados (Piso/Campo)</button>
+            <button class="chip on" type="button" data-layer="verify">Verificación QR / SUNAT</button>
+            <button class="chip on" type="button" data-layer="stock">Almacén &amp; Kardex</button>
+            <button class="chip" type="button" data-layer="web3d">Entorno WebGL 3D / 360°</button>
+            <button class="chip" type="button" data-layer="multi">Gerencia Multi-Sede</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>03 · Modalidad de Despliegue</h3>
+          <div class="chips" id="cfgMode">
+            <button class="chip on" type="button" data-mode="acc">Núcleo Acelerado (2–4 sem)</button>
+            <button class="chip" type="button" data-mode="custom">Ingeniería Dedicada + 3D (6–10 sem)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLANO RESULTANTE EN VIVO -->
+      <div class="arch-res">
+        <div>
+          <span class="badge ok" id="cfgEta">Estimación: 2 a 4 semanas</span>
+          <h3 id="cfgTitle" style="margin-top:10px">Ecosistema Tienda / Cadena Retail Conectado</h3>
+          <p id="cfgDesc" style="font-size:13.5px;color:var(--ink-soft);margin-top:6px">Conecta tienda online con caja rápida de piso, lector de código de barras, emisión SUNAT, Kardex multi-sucursal y utilidad neta.</p>
+        </div>
+
+        <div class="arch-map" aria-hidden="true">
+          <svg id="archSvg" viewBox="0 0 420 132">
+            <rect x="10" y="18" width="116" height="96" rx="14" fill="var(--pearl)" stroke="var(--c-sky)" stroke-width="1.6"/>
+            <text x="22" y="40" font-family="JetBrains Mono,monospace" font-size="9" fill="var(--ink-soft)">EXTERIOR</text>
+            <text id="svgExt" x="22" y="64" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Web &amp; Catálogo</text>
+            <text x="22" y="84" font-family="Outfit,sans-serif" font-size="10.5" fill="var(--ink-soft)">Cliente / Ciudadano</text>
+
+            <line x1="128" y1="66" x2="152" y2="66" stroke="var(--c-orc)" stroke-width="2" stroke-dasharray="4 3"/>
+
+            <rect x="154" y="18" width="116" height="96" rx="14" fill="var(--pearl)" stroke="var(--c-orc)" stroke-width="1.6"/>
+            <text x="166" y="40" font-family="JetBrains Mono,monospace" font-size="9" fill="var(--ink-soft)">OPERACIÓN</text>
+            <text id="svgOps" x="166" y="64" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Piso + QR / SUNAT</text>
+            <text x="166" y="84" font-family="Outfit,sans-serif" font-size="10.5" fill="var(--ink-soft)">Equipo &amp; Verificación</text>
+
+            <line x1="272" y1="66" x2="296" y2="66" stroke="var(--c-sky)" stroke-width="2" stroke-dasharray="4 3"/>
+
+            <rect x="298" y="18" width="112" height="96" rx="14" fill="var(--obsidian)" stroke="#81BDF8" stroke-width="1.6"/>
+            <text x="310" y="40" font-family="JetBrains Mono,monospace" font-size="9" fill="#A9DCFF">CONTROL</text>
+            <text id="svgCtrl" x="310" y="64" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Kardex &amp; Gerencia</text>
+            <text x="310" y="84" font-family="Outfit,sans-serif" font-size="10.5" fill="#B8C2D6">Consolidado Vivo</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="mods" id="cfgMods"></div>
+          <ul class="flows" id="cfgFlows" style="margin-top:12px"></ul>
+        </div>
+
+        <button class="cta" id="cfgApplyBtn" type="button" style="width:100%;justify-content:center">Pasar arquitectura al formulario ↓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL FINAL DE PROPUESTA + PREGUNTAS FRECUENTES -->
+<section class="close" id="panel" style="padding-top:16px">
+  <div class="wrap">
+    <div class="panel">
+      <div class="panel-grid">
+        <div>
+          <p class="eyebrow">Cierre Técnico y Comercial</p>
+          <h2>Solicita una reunión o <em>demo privada</em> adaptada a tu empresa</h2>
+          <p class="sub" style="margin-top:10px">Indícanos tus áreas o sedes y te mostramos exactamente cómo operaría tu equipo desde el primer día con tus propias pantallas.</p>
+
+          <div class="faqs" id="faqList">
+            <div class="faq" aria-expanded="true">
+              <button type="button">¿Venden licencias SaaS enlatadas o desarrollo a medida?<span>+</span></button>
+              <div class="ans">Trabajamos en modalidad híbrida: usamos nuestros núcleos probados para acelerar la entrega base en 2–4 semanas, pero personalizamos los roles, flujos entre áreas, formatos 80mm, integraciones SUNAT y diseño visual para que reflejen exactamente tu operación y marca.</div>
+            </div>
+            <div class="faq" aria-expanded="false">
+              <button type="button">¿Funciona si se corta el internet en mi tienda, discoteca o trabajo de campo?<span>+</span></button>
+              <div class="ans">Sí. La arquitectura Offline-First guarda ventas, lecturas QR de puerta, comandas o actas municipales localmente en el equipo del trabajador y sincroniza automáticamente sin duplicados cuando regresa la conexión.</div>
+            </div>
+            <div class="faq" aria-expanded="false">
+              <button type="button">¿Se conecta con SUNAT/OSE, Yape/Plin, ticketeras y lectores reales?<span>+</span></button>
+              <div class="ans">Sí. Contamos con emisión UBL 2.1 vía OSE/SUNAT (boletas, facturas y guías), soporte para comprobación por métodos Yape/Plin/Izipay/Niubiz, impresión térmica 80mm ESC/POS y pistolas o escáneres USB/Bluetooth.</div>
+            </div>
+            <div class="faq" aria-expanded="false">
+              <button type="button">¿Cómo aseguran que los empleados adopten el sistema sin trabas?<span>+</span></button>
+              <div class="ans">Cada cargo ve una interfaz minimalista con únicamente las acciones de su puesto (mozo, cajero, almacenero, portero QR o inspector), reduciendo errores y curva de aprendizaje desde el primer turno.</div>
+            </div>
+          </div>
+        </div>
+
+        <form class="proposal-form" id="proposalForm">
+          <div class="form-row-2">
+            <label>Tu Nombre<input id="fName" type="text" placeholder="Ej. Carlos Mendoza" required></label>
+            <label>Empresa o Institución<input id="fBiz" type="text" placeholder="Ej. Comercial Andina SAC" required></label>
+          </div>
+          <div class="form-row-2">
+            <label>Rubro Principal
+              <select id="fSector">
+                <option value="retail">Tienda / Cadena Retail</option>
+                <option value="club">Discoteca / Bar / Eventos QR</option>
+                <option value="muni">Municipalidad / Entidad Pública</option>
+                <option value="table">Restaurante / Gastronomía</option>
+                <option value="stay">Hotel / Turismo 360°</option>
+                <option value="care">Clínica / Centro de Salud</option>
+                <option value="stock">Almacén / Distribuidora</option>
+                <option value="show3d">Inmobiliaria / Showroom 3D</option>
+              </select>
+            </label>
+            <label>Correo o WhatsApp<input id="fContact" type="text" placeholder="+51 999 000 000 / correo@empresa.com" required></label>
+          </div>
+          <label>Alcance Técnico y Capas Seleccionadas
+            <textarea id="fNotes" rows="4" placeholder="Cuéntanos cuántas sedes, puestos de empleados o procesos internos deseas conectar…"></textarea>
+          </label>
+          <div class="contact-actions">
+            <button class="mail" type="submit">Generar Solicitud &amp; Enviar →</button>
+            <button class="copy-btn" id="copyMailBtn" type="button">Copiar Resumen</button>
+          </div>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">ZAPHYREL</div>
+      <p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p>
+      <div class="ft-palette" aria-hidden="true">
+        <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Arquitectura Web</h4>
+      <a href="../sectores/">Rubros y Cobertura Total</a>
+      <a href="../ecosistema/">Web + Operación Interna</a>
+      <a href="../studio/">Plataforma Studio OS</a>
+      <a href="../casos/">Casos Implementados</a>
+    </div>
+    <div class="ft-col">
+      <h4>Especialidades Verticales</h4>
+      <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
+      <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
+      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contacto &amp; Showrooms</h4>
+      <a href="../soluciones/hoteles/">Hoteles &amp; Turismo 360°</a>
+      <a href="../soluciones/3d-web/">Showrooms WebGL 3D</a>
+      <a href="../cotizar/">Configurar Proyecto</a>
+      <a href="../cotizar/#panel">hola@zaphyrel.com</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 ZAPHYREL · AUTOMATIZACIÓN INTEGRAL &amp; ENTORNOS 3D</span>
+    <span>PERÚ · LATINOAMÉRICA</span>
+  </div>
+</footer>
+
+<div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+</div>
+
+<audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>
+<audio id="chime" src="../assets/zaphyrel-chime.wav" preload="none"></audio>
+
+<script src="../assets/zaphyrel-shell.js"></script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const ping = v => window.__zaphyrelShell?.ping?.(v);
+  const esc = s => window.__zaphyrelShell?.esc?.(s) ?? String(s);
+
+  const sectorConfigs = {
+    retail: {
+      title: 'Ecosistema Tienda / Cadena Retail Conectado',
+      desc: 'Une e-commerce o catálogo público con caja rápida por pistola de barras, SUNAT OSE, inventario multi-local y utilidad neta en gerencia.',
+      ext: 'E-commerce + Stock', ops: 'POS Barras + OSE', ctrl: 'Kardex + Márgenes',
+      flows: ['Cliente ve disponibilidad exacta en cada sucursal.', 'Cajero escanea SKU y cobra con Yape/Plin/Niubiz + boleta 80mm.', 'Bodega recibe reposiciones sugeridas y gerencia ve utilidad viva.']
+    },
+    club: {
+      title: 'Ecosistema Discotecas, Bares & Eventos QR',
+      desc: 'Controla preventa web y boxes VIP desde la puerta con escáner QR offline anti-reventa hasta las comandas de mozos y descuento por botella en barra.',
+      ext: 'Preventa & Box VIP', ops: 'Puerta QR + Mozos', ctrl: 'Barra + Arqueo',
+      flows: ['Entrada nominada QR se valida en 0.4 s sin duplicados ni Wi-Fi.', 'Mozos despachan pedidos de zona VIP directo a pantallas de barra.', 'Cierre nocturno cuadra taquilla, boxes, botellas e ingresos por método.']
+    },
+    muni: {
+      title: 'Ecosistema Municipal & Entidad Pública Digital',
+      desc: 'Digitaliza mesa de partes con constancia QR verificable, deriva expedientes entre áreas con plazos SLA y dota a inspectores en campo de app móvil.',
+      ext: 'Portal Ciudadano', ops: 'Campo QR + SLA', ctrl: 'Archivo & Alcaldía',
+      flows: ['Ciudadano radica expediente 24/7 y recibe cargo con código QR único.', 'Inspectores validan licencias en vía pública aun sin señal móvil.', 'Alcaldía y gerencias auditan cuellos de botella y cumplimiento de plazos.']
+    },
+    table: {
+      title: 'Ecosistema Restaurante, Cocina KDS & Delivery',
+      desc: 'Conecta carta directa web y salón con pantallas de cocina KDS, ticketeras térmicas, comprobantes SUNAT y descarga exacta de recetas.',
+      ext: 'Carta QR & Delivery', ops: 'Salón + KDS + 80mm', ctrl: 'Recetas & Caja',
+      flows: ['Comanda se separa automáticamente entre cocina caliente y barra.', 'Cuenta se divide por persona con Yape/Plin/POS y RUC en 1 clic.', 'Economato descuenta gramaje real de insumos por plato vendido.']
+    },
+    stay: {
+      title: 'Ecosistema Hotel 360°, PMS & Housekeeping',
+      desc: 'Elimina comisiones de portales mostrando suites en 360°, agiliza recepción PMS y coordina limpieza de habitaciones con tus mucamas en tiempo real.',
+      ext: 'Reserva Web 360°', ops: 'PMS + Llave QR', ctrl: 'Housekeeping + RevPAR',
+      flows: ['Huésped explora su habitación en 360° y reserva directo en web.', 'Check-out dispara alerta instantánea al teléfono de housekeeping.', 'Cargos de restaurante o spa van a una sola cuenta verificada SUNAT.']
+    },
+    care: {
+      title: 'Ecosistema Clínica, Citas & Farmacia por Lote',
+      desc: 'Organiza citas online sin cruces, admisión, historia clínica digital, despacho farmacéutico con vencimientos y liquidación por especialista.',
+      ext: 'Citas Web 24/7', ops: 'Admisión + Historia', ctrl: 'Farmacia + Honorarios',
+      flows: ['Paciente agenda por sede y médico sin saturar recepción.', 'Receta firmada viaja directa a farmacia para control de lote.', 'Gerencia médica liquida comisiones e ingresos por consultorio.']
+    },
+    stock: {
+      title: 'Ecosistema Almacén, B2B & Logística de Reparto',
+      desc: 'Centraliza pedidos mayoristas, picking por código de barras en bodega, guías de remisión electrónicas y confirmación de entrega en ruta.',
+      ext: 'Portal Mayorista B2B', ops: 'Picking + Reparto', ctrl: 'Guías + Kardex FIFO',
+      flows: ['Distribuidores ordenan en web según su lista de precios y crédito.', 'Bodega verifica salidas con lector de barras y emite guía SUNAT.', 'Chofer registra entrega con foto y firma desde su app de reparto.']
+    },
+    show3d: {
+      title: 'Ecosistema Showroom WebGL 3D + CRM Inmobiliario',
+      desc: 'Maquetas WebGL 3D reales navegables por pisos, acabados y equipamiento conectadas al catálogo de unidades disponibles y separación comercial.',
+      ext: 'Maqueta WebGL 3D', ops: 'Configurador CRM', ctrl: 'Unidades + Reserva',
+      flows: ['Comprador explora cada nivel en 3D desde celular o PC a 60 FPS.', 'Cotizador bloquea unidad al instante evitando dobles reservas.', 'Dirección comercial monitorea disponibilidad, separaciones y ritmo de venta.']
+    }
+  };
+
+  let selSec = 'retail', selMode = 'acc';
+  const layerNames = { web: 'Web / Portal Externo', staff: 'Apps Personal Piso/Campo', verify: 'Verificación QR / SUNAT', stock: 'Almacén & Kardex', web3d: 'WebGL 3D / 360°', multi: 'Gerencia Multi-Sede' };
+
+  function renderConfigurator() {
+    const cfg = sectorConfigs[selSec];
+    const activeLayers = $$('#cfgLayers button.on').map(b => b.dataset.layer);
+    const has3d = activeLayers.includes('web3d');
+    const custom = selMode === 'custom' || has3d || activeLayers.length >= 5;
+    $('#cfgEta').textContent = custom ? 'Estimación: 6 a 10 semanas · Ingeniería + 3D' : 'Estimación: 2 a 4 semanas · Despliegue Acelerado';
+    $('#cfgTitle').textContent = cfg.title;
+    $('#cfgDesc').textContent = cfg.desc;
+    $('#svgExt').textContent = cfg.ext;
+    $('#svgOps').textContent = cfg.ops;
+    $('#svgCtrl').textContent = cfg.ctrl;
+    $('#cfgMods').innerHTML = activeLayers.map(l => `<span class="mod">✓ ${esc(layerNames[l])}</span>`).join('') || '<span class="mod">Selecciona al menos 1 capa</span>';
+    $('#cfgFlows').innerHTML = cfg.flows.map(f => `<li>${esc(f)}</li>`).join('');
+  }
+
+  $('#cfgSector').addEventListener('click', e => {
+    const b = e.target.closest('button[data-sec]'); if (!b) return;
+    selSec = b.dataset.sec;
+    $$('#cfgSector button').forEach(x => x.classList.toggle('on', x === b));
+    if (selSec === 'show3d' || selSec === 'stay') $$('#cfgLayers button[data-layer="web3d"]').forEach(x => x.classList.add('on'));
+    if ($('#fSector')) $('#fSector').value = selSec;
+    renderConfigurator(); ping(.08);
+  });
+  $('#cfgLayers').addEventListener('click', e => {
+    const b = e.target.closest('button[data-layer]'); if (!b) return;
+    b.classList.toggle('on');
+    renderConfigurator(); ping(.08);
+  });
+  $('#cfgMode').addEventListener('click', e => {
+    const b = e.target.closest('button[data-mode]'); if (!b) return;
+    selMode = b.dataset.mode;
+    $$('#cfgMode button').forEach(x => x.classList.toggle('on', x === b));
+    renderConfigurator(); ping(.08);
+  });
+
+  function syncBriefToForm() {
+    const cfg = sectorConfigs[selSec];
+    const layers = $$('#cfgLayers button.on').map(b => layerNames[b.dataset.layer]).join(', ');
+    if ($('#fSector')) $('#fSector').value = selSec;
+    $('#fNotes').value = `Rubro: ${cfg.title}\nModalidad: ${selMode === 'custom' ? 'Ingeniería Dedicada + 3D' : 'Núcleo Acelerado'}\nCapas a entrelazar: ${layers}`;
+  }
+
+  $('#cfgApplyBtn').addEventListener('click', () => {
+    syncBriefToForm();
+    $('#panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    ping(.1);
+  });
+
+  /* FAQ Accordion manejado por zaphyrel-shell.js */
+
+  /* Deep link ?mod= y ?biz= */
+  try {
+    const qs = new URLSearchParams(location.search);
+    const mod = qs.get('mod'), biz = qs.get('biz');
+    const modMap = { retail: 'retail', club: 'club', muni: 'muni', table: 'table', shop: 'retail', stay: 'stay', care: 'care', fit: 'club', stock: 'stock', ledger: 'retail', lib: 'muni', show3d: 'show3d' };
+    if (mod && modMap[mod]) {
+      selSec = modMap[mod];
+      $$('#cfgSector button').forEach(x => x.classList.toggle('on', x.dataset.sec === selSec));
+      if (mod === 'show3d') $$('#cfgLayers button[data-layer="web3d"]').forEach(x => x.classList.add('on'));
+    }
+    if (biz) $('#fBiz').value = biz;
+  } catch (e) {}
+
+  renderConfigurator();
+  syncBriefToForm();
+
+  function buildSummaryText() {
+    return `Solicitud Zaphyrel\nNombre: ${$('#fName').value.trim() || '—'}\nEmpresa/Entidad: ${$('#fBiz').value.trim() || '—'}\nSector: ${$('#fSector').options[$('#fSector').selectedIndex].text}\nContacto: ${$('#fContact').value.trim() || '—'}\n${$('#fNotes').value.trim()}`;
+  }
+  $('#copyMailBtn').addEventListener('click', () => {
+    navigator.clipboard?.writeText(buildSummaryText()).catch(() => {});
+    const st = $('#formStatus');
+    st.textContent = '✓ Resumen técnico copiado al portapapeles. Puedes pegarlo en WhatsApp o correo.';
+    st.classList.add('on');
+    ping(.1);
+  });
+  $('#proposalForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const txt = buildSummaryText();
+    navigator.clipboard?.writeText(txt).catch(() => {});
+    const st = $('#formStatus');
+    st.innerHTML = `✓ Diagnóstico preparado para <b>${esc($('#fBiz').value.trim())}</b> y copiado. <a href="mailto:hola@zaphyrel.com?subject=${encodeURIComponent('Cotización Zaphyrel - ' + $('#fBiz').value.trim())}&body=${encodeURIComponent(txt)}" style="text-decoration:underline">Abrir en correo (hola@zaphyrel.com) →</a>`;
+    st.classList.add('on');
+    ping(.14);
+  });
+})();
+</script>
+</body>
+</html>

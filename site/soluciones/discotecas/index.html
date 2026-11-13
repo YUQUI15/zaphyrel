@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day" data-finish="crystal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema QR para Discotecas, Bares y Eventos | Anti-Reventa y Barras | Zaphyrel</title>
+<meta name="description" content="Control total para discotecas, pubs y eventos en Perú: preventa web con QR único anti-duplicado, validación offline en puerta, app para mozos en box VIP, barra anti-merma y arqueo por turno.">
+<meta name="theme-color" id="metaTheme" content="#FFFFFF">
+<link rel="canonical" href="https://zaphyrel-site.vercel.app/soluciones/discotecas/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zaphyrel Night & Club QR","applicationCategory":"BusinessApplication","operatingSystem":"Web, Android, iOS","description":"Control de puerta QR offline anti-reventa, comandas de box VIP, barras con descuento por botella/onza y cierre financiero nocturno.","offers":{"@type":"Offer","priceCurrency":"PEN"}}
+</script>
+<script>
+(()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;document.documentElement.classList.add('skip-veil');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../../assets/zaphyrel-shell.css">
+</head>
+<body data-root="../../" data-nav="sectores">
+<a class="skip-link" href="#contenido">Ir al contenido principal</a>
+<div class="prism-top-strip" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur-dot" id="dot" aria-hidden="true"></div>
+<div class="cur-ring" id="ring" aria-hidden="true"></div>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="horizon-grid" aria-hidden="true"></div>
+<canvas id="prismField" aria-hidden="true"></canvas>
+<div class="tactile-grain" aria-hidden="true"></div>
+
+<nav class="hud-top" aria-label="Navegación principal">
+  <a class="brand" href="../../" aria-label="Zaphyrel inicio">
+    <svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="z10-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".26" stop-color="#A9DCFF"/><stop offset=".52" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient><linearGradient id="z10-fBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#81BDF8"/></linearGradient><linearGradient id="z10-fLav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5BEFF"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient><linearGradient id="z10-fPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient><linearGradient id="z10-wingB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".48" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient><linearGradient id="z10-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient></defs><polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#z10-fBlue)"/><polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF"/><polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#z10-fLav)"/><polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF"/><polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#z10-fPink)"/><polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#z10-fBlue)"/><path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" fill="none" stroke="var(--ink)" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/><polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="var(--paper)" stroke="url(#z10-crown)" stroke-width="1.45"/><path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#z10-wind)"/><path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="var(--ink)"/><path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#z10-wingB)"/><line x1="47.5" y1="60" x2="72.5" y2="60" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <div><span>ZAPHYREL</span><span class="brand-tag">ECOSISTEMAS DIGITALES &amp; 3D</span></div>
+  </a>
+  <div class="nav-links" id="mainNavLinks">
+    <a href="../../" data-nav="inicio">Inicio</a>
+    <a href="../../sectores/" data-nav="sectores">Rubros y Cobertura</a>
+    <a href="../../ecosistema/" data-nav="ecosistema">Web + Interna</a>
+    <a href="../../studio/" data-nav="studio">Studio OS</a>
+    <a href="../../casos/" data-nav="casos">Casos</a>
+    <a href="../../cotizar/" data-nav="cotizar">Cotizar</a>
+  </div>
+  <div class="tools">
+    <button class="pill pill-hide" id="cmdBtn" type="button">Buscar <span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" type="button" aria-pressed="false">☾ Noche</button>
+    <button class="pill pill-hide" id="sound" type="button" aria-pressed="false">♪ Audio</button>
+    <button class="pill mob-menu-btn" id="mobMenuBtn" type="button" aria-expanded="false" aria-controls="mobDrawer">☰</button>
+    <a class="pill cta-nav pill-prism" href="../../cotizar/?mod=club&amp;biz=Discoteca%20y%20Eventos">Cotizar Club OS</a>
+  </div>
+</nav>
+
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <a href="../../"><span>Inicio</span><span>→</span></a>
+  <a href="../../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
+  <a href="../../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
+  <a href="../../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
+  <a href="../../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
+  <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
+</div>
+
+<main id="contenido">
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación">
+      <a href="../../">Inicio</a><span>/</span><a href="../../sectores/#discotecas">Rubros</a><span>/</span><span>Discotecas, Bares &amp; Eventos</span>
+    </nav>
+    <p class="eyebrow">Especialidad Vertical · Ocio Nocturno &amp; Aforos</p>
+    <h1>Control total de <em>puerta QR, boxes VIP y barras</em> sin fugas nocturnas</h1>
+    <p class="lead">Desde la preventa online y las listas por promotor hasta la lectura QR anti-reventa sin cobertura en puerta y el descuento por botella u onza en barra.</p>
+    <div class="cta-row">
+      <a class="cta" href="../../studio/?mod=club">Probar Núcleo Discotecas en vivo →</a>
+      <a class="cta ghost" href="../../cotizar/?mod=club&amp;biz=Discoteca%20y%20Eventos">Solicitar configuración</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-layers" style="gap:16px">
+      <div class="sec-layer" style="padding:20px">
+        <small>01 · PREVENTA &amp; BOXES WEB</small>
+        <b>Mapa VIP &amp; Listas de Promotores</b>
+        <span>El cliente reserva su box o entrada online con pago directo; cada QR emitido se vincula al DNI y promotor correspondiente.</span>
+      </div>
+      <div class="sec-layer" style="padding:20px">
+        <small>02 · ANFITRIÓN EN PUERTA</small>
+        <b>Lectura QR Offline Anti-Duplicados</b>
+        <span>Valida cada ingreso en 0.4 s incluso en sótanos sin señal; bloquea en rojo cualquier QR ya usado o clonado y mide el aforo vivo.</span>
+      </div>
+      <div class="sec-layer" style="padding:20px">
+        <small>03 · MOZOS Y BARMAN</small>
+        <b>Comandas VIP &amp; Barra Anti-Merma</b>
+        <span>Pedidos de mesa/box viajan directo a pantallas de barra descontando botella o porción real, con bitácora estricta de cortesías.</span>
+      </div>
+      <div class="sec-layer" style="padding:20px">
+        <small>04 · CIERRE DE MADRUGADA</small>
+        <b>Arqueo Unificado en 5 Minutos</b>
+        <span>Cruce inmediato de entradas en taquilla, consumos de boxes, barras generales, Yape/Plin, POS e inventario de licores al cerrar.</span>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <div style="max-width:620px">
+        <p class="eyebrow" style="margin-bottom:8px">Caso Comprobado · Distrito Club Arena (Lima Sur)</p>
+        <h2 style="font-size:clamp(22px,2.5vw,30px)">0 entradas QR duplicadas y −21% de merma en barras</h2>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="cta" href="../../studio/?mod=club">Probar Escáner QR + Barra →</a>
+        <a class="cta ghost" href="../../casos/">Ver casos</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div><div class="ft-brand">ZAPHYREL</div><p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p><div class="ft-palette" aria-hidden="true"><i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i></div></div>
+    <div class="ft-col"><h4>Arquitectura Web</h4><a href="../../sectores/">Rubros y Cobertura Total</a><a href="../../ecosistema/">Web + Operación Interna</a><a href="../../studio/">Plataforma Studio OS</a><a href="../../casos/">Casos Implementados</a></div>
+    <div class="ft-col"><h4>Especialidades Verticales</h4><a href="../../soluciones/tiendas/">Tiendas &amp; Retail</a><a href="../../soluciones/discotecas/">Discotecas &amp; Eventos QR</a><a href="../../soluciones/municipalidades/">Municipalidades &amp; Gestión</a><a href="../../soluciones/restaurantes/">Restaurantes POS Perú</a></div>
+    <div class="ft-col"><h4>Contacto &amp; Showrooms</h4><a href="../../soluciones/hoteles/">Hoteles &amp; Turismo 360°</a><a href="../../soluciones/3d-web/">Showrooms WebGL 3D</a><a href="../../cotizar/">Configurar Proyecto</a><a href="../../cotizar/#panel">hola@zaphyrel.com</a></div>
+  </div>
+  <div class="ft-bottom"><span>© 2026 ZAPHYREL · DISCOTECAS &amp; EVENTOS</span><span>PERÚ · LATINOAMÉRICA</span></div>
+</footer>
+<div class="cmd" id="cmd" role="dialog" aria-modal="true"><div class="cmd-box"><input id="cmdIn" placeholder="Ir a otra sección o módulo…" autocomplete="off"><ul id="cmdList"></ul></div></div>
+<audio id="sig" src="../../assets/zaphyrel-signature.wav" preload="none"></audio>
+<audio id="chime" src="../../assets/zaphyrel-chime.wav" preload="none"></audio>
+<script src="../../assets/zaphyrel-shell.js"></script>
+</body>
+</html>

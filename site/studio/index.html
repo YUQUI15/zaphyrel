@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day" data-finish="crystal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio OS — ZAPHYREL | 12 Núcleos Operativos Conectados y Showroom 3D en Vivo</title>
+<meta name="description" content="Prueba en vivo los 12 sistemas conectados de Zaphyrel: Tiendas Retail, Discotecas QR y Barra, Municipalidades, Restaurante POS, Showroom WebGL 3D, Hotel PMS, Clínica, Almacén y Cuentas.">
+<meta name="theme-color" id="metaTheme" content="#FFFFFF">
+<link rel="canonical" href="https://zaphyrel-site.vercel.app/studio/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "three": "../vendor/three/three.module.min.js",
+    "three/addons/": "../vendor/three/addons/"
+  }
+}
+</script>
+<script>
+(()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;document.documentElement.classList.add('skip-veil');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../assets/zaphyrel-shell.css">
+</head>
+<body data-root="../" data-nav="studio">
+<a class="skip-link" href="#contenido">Ir al contenido principal</a>
+<div class="prism-top-strip" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur-dot" id="dot" aria-hidden="true"></div>
+<div class="cur-ring" id="ring" aria-hidden="true"></div>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="horizon-grid" aria-hidden="true"></div>
+<canvas id="prismField" aria-hidden="true"></canvas>
+<div class="tactile-grain" aria-hidden="true"></div>
+
+<nav class="hud-top" aria-label="Navegación principal">
+  <a class="brand" href="../" aria-label="Zaphyrel inicio">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="z10-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".26" stop-color="#A9DCFF"/><stop offset=".52" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-fBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#81BDF8"/></linearGradient>
+        <linearGradient id="z10-fLav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5BEFF"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
+        <linearGradient id="z10-fPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wingB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".48" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
+      </defs>
+      <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#z10-fBlue)"/>
+      <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF"/>
+      <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#z10-fLav)"/>
+      <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF"/>
+      <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#z10-fPink)"/>
+      <polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#z10-fBlue)"/>
+      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" fill="none" stroke="var(--ink)" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="var(--paper)" stroke="url(#z10-crown)" stroke-width="1.45"/>
+      <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#z10-wind)"/>
+      <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="var(--ink)"/>
+      <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#z10-wingB)"/>
+      <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <span>ZAPHYREL</span>
+      <span class="brand-tag">ECOSISTEMAS DIGITALES &amp; 3D</span>
+    </div>
+  </a>
+
+  <div class="nav-links" id="mainNavLinks">
+    <a href="../" data-nav="inicio">Inicio</a>
+    <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
+    <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
+    <a href="../studio/" data-nav="studio">Studio OS</a>
+    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
+  </div>
+
+  <div class="tools">
+    <button class="pill pill-hide" id="cmdBtn" type="button" aria-label="Abrir buscador rápido (Ctrl+K)">Buscar <span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" type="button" aria-pressed="false" aria-label="Cambiar entre modo claro y oscuro">☾ Noche</button>
+    <button class="pill pill-hide" id="sound" type="button" aria-pressed="false" aria-label="Activar o silenciar sonido de interfaz">♪ Audio</button>
+    <button class="pill mob-menu-btn" id="mobMenuBtn" type="button" aria-expanded="false" aria-controls="mobDrawer" aria-label="Abrir menú de navegación">☰</button>
+    <a class="pill cta-nav pill-prism" href="../cotizar/">Cotizar sistema</a>
+  </div>
+</nav>
+
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <a href="../"><span>Inicio</span><span>→</span></a>
+  <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
+  <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
+  <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
+  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
+  <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
+</div>
+
+<main id="contenido">
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación">
+      <a href="../">Inicio</a><span>/</span><span>Studio OS (Laboratorio Interactivo)</span>
+    </nav>
+    <p class="eyebrow">12 Núcleos Operativos Conectados + Visor WebGL 3D</p>
+    <h1>Prueba el software funcionando <em>antes</em> de contratarlo</h1>
+    <p class="lead">Cada módulo aquí está conectado al <b>Libro Global en vivo</b> y al simulador <b>Offline-First</b>. Escanea un producto de tienda, detecta un QR duplicado en discoteca, radica un expediente municipal o inspecciona la maqueta 3D.</p>
+  </div>
+</header>
+
+<section id="lab" style="padding-top:26px">
+  <div class="wrap">
+    <div class="lab">
+      <!-- BARRA SUPERIOR DEL OS -->
+      <div class="lab-os">
+        <div class="os-left">
+          <div class="os-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span>ZAPHYREL STUDIO OS · <b id="netStatusDot">🟢 Red Local: Online</b> · <span id="offlineQCount">0 en cola</span></span>
+        </div>
+        <div class="global-cash-wrap">
+          <button class="offline-btn" id="offlineSimBtn" type="button" aria-pressed="false">✈ Simular Corte de Internet</button>
+          <button class="global-cash-pill" id="globalCashPill" type="button" title="Abrir Cuentas Globales">
+            <span>CAJA GLOBAL CONECTADA:</span>
+            <b id="globalCashVal">S/ 1,420.00</b>
+            <span id="globalCashDelta" style="opacity:.85">[SUNAT Sync]</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- CONTROLES WHITE-LABEL Y VIEWPORT -->
+      <div class="lab-top">
+        <div class="brandbox">
+          <div class="brandbox-l">
+            <input id="bizName" type="text" maxlength="26" placeholder="Pon el nombre de tu empresa…" aria-label="Personalizar nombre del negocio en Studio OS">
+            <div class="mood-mini">
+              <span>Espectro:</span>
+              <div class="sw sw-sync" aria-label="Selector de paleta dentro de Studio OS"></div>
+            </div>
+            <div class="chips" style="margin:0">
+              <button class="chip on" type="button" data-fin="crystal">Cristal</button>
+              <button class="chip" type="button" data-fin="satin">Satín</button>
+              <button class="chip" type="button" data-fin="obsidian">Obsidiana</button>
+            </div>
+          </div>
+          <div class="brandbox-r">
+            <div class="vp-toggle" role="group" aria-label="Previsualización escritorio o móvil">
+              <button id="vpDesk" type="button" aria-pressed="true">🖥 Escritorio</button>
+              <button id="vpMob" type="button" aria-pressed="false">📱 Móvil</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COCKPIT: SIDEBAR + PANEL ACTIVO -->
+      <div class="lab-cockpit">
+        <aside class="os-rail" aria-label="Módulos de Studio OS">
+          <div class="os-rail-hd"><span>NÚCLEOS CONECTADOS (12)</span><span class="badge ok" id="cntSyncBadge">5 movs</span></div>
+          <input class="rail-search" id="railFilter" type="search" placeholder="Filtrar sistema (ej. Tienda, Muni, 3D)…" aria-label="Filtrar sistemas">
+          <div class="tabs" role="tablist" aria-orientation="vertical">
+            <span class="rail-cat">Comercio &amp; Ciudad</span>
+            <button class="tab" type="button" role="tab" aria-selected="true" aria-controls="p-table" data-t="table"><span><i class="sync-dot"></i>Restaurante POS</span><span>01</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-retail" data-t="retail"><span><i class="sync-dot"></i>Tiendas &amp; Retail</span><span>02</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-club" data-t="club"><span><i class="sync-dot"></i>Discotecas &amp; QR</span><span>03</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-muni" data-t="muni"><span><i class="sync-dot"></i>Municipalidades</span><span>04</span></button>
+
+            <span class="rail-cat">Entornos 3D &amp; Web</span>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-show3d" data-t="show3d"><span><i class="sync-dot"></i>Showroom 3D / 360°</span><span>05</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-shop" data-t="shop"><span><i class="sync-dot"></i>Catálogo Web</span><span>06</span></button>
+
+            <span class="rail-cat">Hospitalidad &amp; Servicios</span>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-stay" data-t="stay"><span><i class="sync-dot"></i>Hotel PMS &amp; 360°</span><span>07</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-care" data-t="care"><span><i class="sync-dot"></i>Clínica &amp; Citas</span><span>08</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-fit" data-t="fit"><span><i class="sync-dot"></i>Gimnasio QR</span><span>09</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-lib" data-t="lib"><span>Instituto / Libros</span><span>10</span></button>
+
+            <span class="rail-cat">Backoffice Central</span>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-stock" data-t="stock"><span>Almacén Kardex</span><span>11</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-ledger" data-t="ledger"><span><i class="sync-dot"></i>Cuentas Globales</span><span>12</span></button>
+          </div>
+        </aside>
+
+        <div class="panel-wrap" id="pWrap">
+          <div class="device">
+
+            <!-- 01. RESTAURANTE POS -->
+            <div class="panel-demo on" id="p-table" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">SALÓN + KDS + SUNAT</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Carta Salón &amp; Delivery</span><span id="mesaTag">Mesa 2 (Salón 3D)</span></h4>
+                    <div class="chips" id="mesaChips">
+                      <button class="chip" type="button" data-m="Mesa 1">Mesa 1</button>
+                      <button class="chip on" type="button" data-m="Mesa 2">Mesa 2</button>
+                      <button class="chip" type="button" data-m="Terraza 1">Terraza 1</button>
+                      <button class="chip" type="button" data-m="Delivery Web">Delivery Web</button>
+                    </div>
+                    <div class="menu" id="menu"></div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:6px;margin-top:8px">
+                      <input class="field-in" id="dishNote" type="text" placeholder="Nota cocina (ej. sin ají, término medio)">
+                      <select class="field-in" id="payMethod" aria-label="Método de pago"><option>Yape / Plin</option><option>Efectivo</option><option>Tarjeta Izipay</option></select>
+                    </div>
+                    <ul class="list" id="order"></ul>
+                    <div class="split-row">
+                      <span>Propina: <button class="btn xs" id="tipBtn" type="button">0%</button></span>
+                      <span>Dividir entre <span class="qpill"><button id="splitDec" type="button">−</button><span id="splitN" style="padding:0 7px">2</span><button id="splitInc" type="button">+</button></span> = <b id="splitV">S/ 0.00</b></span>
+                    </div>
+                    <div class="total"><span>Total pedido</span><span id="tot">S/ 0.00</span></div>
+                    <div style="display:grid;grid-template-columns:1fr auto auto;gap:6px;margin-top:10px">
+                      <button class="btn pri" id="send" type="button">Enviar a Cocina + Cobrar</button>
+                      <input class="field-in" id="rucIn" type="text" maxlength="11" placeholder="RUC opcional (Factura)" style="width:145px">
+                      <button class="btn sm" id="boletaBtn" type="button">Emitir SUNAT</button>
+                    </div>
+                    <div id="boletaOut"></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Monitor Cocina (KDS)</span><span class="badge" id="tkCount">1 activos</span></h4>
+                    <div id="kitchen"></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 02. TIENDAS & CADENAS RETAIL -->
+            <div class="panel-demo" id="p-retail" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">RETAIL POS + BARRAS + KARDEX</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Catálogo con Lector de Barras</span><button class="btn xs pri" id="rtScanBtn" type="button">🔫 Simular Pistola SKU</button></h4>
+                    <input class="field-in" id="rtSearch" type="search" placeholder="Buscar por nombre o código (ej. 77501202)…" style="margin-bottom:8px">
+                    <div class="menu" id="rtGrid"></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Caja Tienda &amp; Emisión OSE</span><span class="badge ok">Stock Vivo</span></h4>
+                    <ul class="list" id="rtCart"></ul>
+                    <div class="total"><span>Total Venta</span><span id="rtTot">S/ 0.00</span></div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:6px;margin-top:10px">
+                      <select class="field-in" id="rtPayMethod" aria-label="Pago en tienda"><option>Yape / Plin</option><option>Tarjeta Niubiz</option><option>Efectivo</option></select>
+                      <button class="btn pri" id="rtPayBtn" type="button">Cobrar + Emitir Boleta</button>
+                    </div>
+                    <div id="rtOut"></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 03. DISCOTECAS, BARES & EVENTOS -->
+            <div class="panel-demo" id="p-club" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">PUERTA QR + BOX VIP + BARRA</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Validación QR en Puerta (Anti-Reventa)</span><button class="btn xs pri" id="clubScanBtn" type="button">📷 Escanear Siguiente QR</button></h4>
+                    <div class="kpis" style="grid-template-columns:1fr 1fr;margin:0 0 8px">
+                      <div class="kpi">Aforo actual<b id="clubAforo">186 / 260</b></div>
+                      <div class="kpi">Ocupación<b id="clubPct">72%</b></div>
+                    </div>
+                    <div id="clubDoorAlert"></div>
+                    <ul class="list" id="clubDoorList"></ul>
+                  </div>
+                  <div class="col">
+                    <h4><span>Comandas de Box &amp; Barra Anti-Merma</span><span class="badge">Descuento Botella</span></h4>
+                    <div class="menu" id="clubBarBtns"></div>
+                    <div class="boleta" style="margin-top:12px">
+                      <b>CIERRE EN VIVO DEL EVENTO</b><br>
+                      Cada botella o copa tocada descuenta stock de barra y suma directo a la Caja Global de Gerencia.
+                    </div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 04. MUNICIPALIDADES & ENTIDADES -->
+            <div class="panel-demo" id="p-muni" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">MESA DE PARTES + INSPECTOR QR</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Ventanilla Digital / Ciudadano</span><span class="badge ok">Cargo Automático</span></h4>
+                    <form id="muniForm" style="display:grid;gap:8px">
+                      <input class="field-in" id="muniTitle" type="text" placeholder="Ej. Licencia Cafetería Av. Arequipa 410" required>
+                      <select class="field-in" id="muniArea" aria-label="Subgerencia destino">
+                        <option>Fiscalización Campo</option>
+                        <option>Desarrollo Económico</option>
+                        <option>Obras Privadas</option>
+                      </select>
+                      <button class="btn pri" type="submit">Radicar Expediente + Generar QR</button>
+                    </form>
+                    <div id="muniQrOut"></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Trazabilidad Interna &amp; App Inspector</span><span class="badge">Toca para avanzar</span></h4>
+                    <div id="muniList"></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 05. SHOWROOM WEBGL 3D / 360 -->
+            <div class="panel-demo" id="p-show3d" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">WEBGL 3D PBR · HIDPI</span></div>
+                <div class="app-b">
+                  <div class="showroom-wrap" id="srWrap">
+                    <div class="sr-hud-bar">
+                      <div class="hero-models" id="srModelTabs">
+                        <button type="button" aria-selected="true" data-sr-model="villa">Residencia 3D · 2 Niveles</button>
+                        <button type="button" aria-selected="false" data-sr-model="pos">Terminal POS Pro</button>
+                      </div>
+                      <span class="hud-chip dark" id="srMatLbl">Exterior Completo · Nogal &amp; Cristal</span>
+                    </div>
+                    <div class="showroom-box" id="srVp">
+                      <canvas id="srCanvas"></canvas>
+                      <div class="ch-hud">
+                        <div class="ch-hud-top">
+                          <div class="chips" id="srViewTabs" style="margin:0;pointer-events:auto">
+                            <button class="chip on" type="button" data-sr-view="ext">Exterior</button>
+                            <button class="chip" type="button" data-sr-view="p2">Planta 2</button>
+                            <button class="chip" type="button" data-sr-view="p1">Planta 1</button>
+                            <button class="chip" type="button" data-sr-view="roof">Sin Techo</button>
+                          </div>
+                          <div style="display:flex;gap:5px;pointer-events:auto">
+                            <button class="hud-chip" id="srOrbitBtn" type="button" aria-pressed="true">Órbita</button>
+                            <button class="hud-chip" id="srResetBtn" type="button">Reset</button>
+                            <button class="hud-chip" id="srSnapBtn" type="button">📸 PNG</button>
+                            <button class="hud-chip" id="srExpandBtn" type="button">⤢ Ampliar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="app-b" style="background:var(--paper);border-top:1px solid var(--line)">
+                      <div class="room-360-preview" style="margin-top:0">
+                        <div>
+                          <b id="srInfoTitle">Residencia 3D Interactiva · Nivel 01 y 02</b>
+                          <div class="sr-spec-pills" id="srSpecPills"><span>Corte real por piso</span><span>Mobiliario 3D completo</span><span>PBR WebGL</span></div>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                          <div class="chips" id="srFinish" style="margin:0">
+                            <button class="chip on" type="button" data-m="walnut">Nogal</button>
+                            <button class="chip" type="button" data-m="obsidian">Obsidiana</button>
+                            <button class="chip" type="button" data-m="sand">Arena</button>
+                          </div>
+                          <b id="srPrice" style="font-family:var(--mono);font-size:15px">S/ 1,250 reserva</b>
+                          <button class="btn sm pri" id="srBookBtn" type="button">Separar unidad en vivo</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 06. CATÁLOGO WEB -->
+            <div class="panel-demo" id="p-shop" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">E-COMMERCE + WHATSAPP</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Catálogo &amp; Envío</span><span id="promoTag" class="badge"></span></h4>
+                    <div class="menu" id="shopGrid"></div>
+                    <div class="chips" id="shipChips" style="margin-top:10px">
+                      <button class="chip on" type="button" data-s="0">Recojo tienda S/ 0</button>
+                      <button class="chip" type="button" data-s="15">Delivery Lima S/ 15</button>
+                      <button class="chip" type="button" data-s="28">Provincia S/ 28</button>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:6px">
+                      <input class="field-in" id="shopPromo" type="text" placeholder="Cupón de prueba: ZAPHY10">
+                      <button class="btn sm" id="applyPromo" type="button">Aplicar</button>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Carrito Sincronizado</span><span>Web → Almacén</span></h4>
+                    <ul class="list" id="shopCart"></ul>
+                    <div class="total"><span>Total Pedido</span><span id="shopTot">S/ 0.00</span></div>
+                    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+                      <button class="btn pri" id="shopSend" type="button" style="flex:1">Confirmar Pedido Web</button>
+                      <button class="btn sm" id="shopWa" type="button">Copiar WhatsApp</button>
+                    </div>
+                    <p id="shopMsg" style="font-size:12px;color:var(--ink-soft);margin-top:8px"></p>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 07. HOTEL PMS & HOUSEKEEPING -->
+            <div class="panel-demo" id="p-stay" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">HOTEL PMS + HOUSEKEEPING + QR</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Rack de Habitaciones</span><span>Toca para cambiar estado</span></h4>
+                    <div class="rooms" id="rooms"></div>
+                    <div class="kpis"><div class="kpi">Ocupación<b id="occ">63%</b></div><div class="kpi">Libres<b id="avl">3</b></div><div class="kpi">Ingreso noche<b id="stayRev">S/ 0</b></div></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Check-In Directo &amp; Llave QR</span></h4>
+                    <div style="display:grid;grid-template-columns:1fr 90px;gap:6px">
+                      <input class="field-in" id="stayGuest" type="text" placeholder="Nombre huésped (ej. Andrés Silva)">
+                      <select class="field-in" id="stayNights" aria-label="Noches"><option value="1">1 nch</option><option value="2" selected>2 nch</option><option value="3">3 nch</option></select>
+                    </div>
+                    <button class="btn pri" id="checkin" type="button" style="width:100%;margin-top:8px">Ejecutar Check-In + Emitir Llave</button>
+                    <ul class="steps-live" id="stayS">
+                      <li>Validación de reserva directa y documento</li>
+                      <li>Asignación de suite limpia por housekeeping</li>
+                      <li>Registro SUNAT y cargo automático</li>
+                      <li>Llave digital QR enviada al huésped</li>
+                    </ul>
+                    <div id="keyOut"></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 08. CLÍNICA Y CITAS -->
+            <div class="panel-demo" id="p-care" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">ADMISIÓN + HISTORIA + RECETA</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Reserva Web / Admisión</span></h4>
+                    <input class="field-in" id="carePat" type="text" placeholder="Nombre del paciente…" style="margin-bottom:8px">
+                    <div class="chips" id="specChips">
+                      <button class="chip on" type="button" data-s="Medicina · Dra. Paredes">Medicina</button>
+                      <button class="chip" type="button" data-s="Odontología · Dr. Salas">Odontología</button>
+                      <button class="chip" type="button" data-s="Laboratorio · Toma 1">Laboratorio</button>
+                    </div>
+                    <div class="chips" id="slotChips">
+                      <button class="chip" type="button" data-h="09:30">09:30</button>
+                      <button class="chip" type="button" data-h="09:45">09:45</button>
+                      <button class="chip on" type="button" data-h="10:00">10:00</button>
+                      <button class="chip" type="button" data-h="10:30">10:30</button>
+                    </div>
+                    <button class="btn pri" id="bookBtn" type="button" style="width:100%">Confirmar Cita + Cobrar S/ 90</button>
+                    <div id="rxOut"></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Cola de Consultorio</span><span class="badge">Toca para atender</span></h4>
+                    <div id="careList"></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 09. GIMNASIO QR -->
+            <div class="panel-demo" id="p-fit" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">CONTROL QR + MEMBRESÍAS</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Torniquete QR &amp; Socios</span><button class="btn xs" id="fitAddToggle" type="button">+ Nuevo</button></h4>
+                    <form id="fitForm" style="display:none;grid-template-columns:1fr auto auto;gap:6px;margin-bottom:8px">
+                      <input class="field-in" id="fitNew" type="text" placeholder="Nombre socio" required>
+                      <select class="field-in" id="fitPlan"><option>Mensual</option><option>Anual</option></select>
+                      <button class="btn xs pri" type="submit">Alta</button>
+                    </form>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:6px;margin-bottom:8px">
+                      <input class="field-in" id="fitQ" type="search" placeholder="Buscar socio…">
+                      <select class="field-in" id="fitFilt"><option value="all">Todos</option><option value="ok">Vigentes</option><option value="exp">Vencidos</option></select>
+                    </div>
+                    <div id="member"></div>
+                    <div id="renewBox" style="display:none;margin-top:8px">
+                      <div style="display:grid;grid-template-columns:1fr auto;gap:6px">
+                        <select class="field-in" id="renewTerm"><option>30 días</option><option>90 días</option><option>1 año</option></select>
+                        <button class="btn sm pri" id="renewBtn" type="button">Renovar (+S/ 120)</button>
+                      </div>
+                    </div>
+                    <button class="btn pri" id="scan" type="button" style="width:100%;margin-top:8px">📷 Simular Lectura QR Puerta</button>
+                  </div>
+                  <div class="col">
+                    <h4><span>Aforo Vivo</span><span class="badge ok" id="aforoTag">Óptimo</span></h4>
+                    <div style="display:flex;align-items:baseline;gap:10px"><span class="big-n" id="aforo">21</span><span style="font-size:13px;color:var(--ink-soft)">/ 60 personas (<b id="aforoPct">35%</b>)</span></div>
+                    <div class="meter"><i id="aforoBar"></i></div>
+                    <ul class="list" id="log"></ul>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 10. INSTITUTO / BIBLIOTECA -->
+            <div class="panel-demo" id="p-lib" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">PRÉSTAMOS + CONTROL ESTUDIANTIL</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Catálogo Académico</span></h4>
+                    <div style="display:grid;grid-template-columns:1fr 124px;gap:6px;margin-bottom:8px">
+                      <input class="field-in" id="libQ" type="search" placeholder="Buscar título, código o autor…">
+                      <input class="field-in" id="libStu" type="text" placeholder="Alumno #2108">
+                    </div>
+                    <div id="libRes"></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Préstamos &amp; Moras</span><span class="badge warn" id="libLateBadge">1 vencido</span></h4>
+                    <ul class="list" id="libLoans"></ul>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 11. ALMACÉN KARDEX -->
+            <div class="panel-demo" id="p-stock" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">ALMACÉN + KARDEX + ÓRDENES</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span id="stockVal">Valor: S/ 0</span><span class="chips" style="margin:0"><button class="chip on" id="stAll" type="button">Todos</button><button class="chip" id="stLow" type="button">Críticos</button></span></h4>
+                    <div id="stockRows"></div>
+                    <form class="mini-form" id="stockForm">
+                      <input class="field-in" id="stName" type="text" placeholder="Nuevo insumo o SKU…" required>
+                      <input class="field-in" id="stQty" type="number" min="1" value="25" style="width:68px" aria-label="Cantidad">
+                      <input class="field-in" id="stCost" type="number" min="1" value="40" style="width:68px" aria-label="Costo">
+                      <button class="btn sm pri" type="submit" style="grid-column:1/-1">+ Ingresar al Kardex</button>
+                    </form>
+                    <div class="kardex-box" id="kardexLog"></div>
+                  </div>
+                  <div class="col">
+                    <h4><span>Reposición Sugerida</span></h4>
+                    <ul class="list" id="po"></ul>
+                    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+                      <button class="btn pri" id="recv" type="button" style="flex:1">Recibir Mercadería</button>
+                      <button class="btn sm" id="copyPo" type="button">Copiar Orden</button>
+                    </div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+            <!-- 12. CUENTAS GLOBALES / LEDGER -->
+            <div class="panel-demo" id="p-ledger" role="tabpanel">
+              <div class="app">
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">GERENCIA &amp; CUADRE SUNAT</span></div>
+                <div class="app-b"><div class="cols">
+                  <div class="col">
+                    <h4><span>Consolidado Diario</span><span class="badge ok" id="marginBadge">Margen: 80%</span></h4>
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+                      <div class="big-n" id="sales">S/ 1,420</div>
+                      <div style="display:flex;gap:6px"><button class="btn xs pri" id="addSale" type="button">+ Venta S/ 120</button><button class="btn xs" id="addExp" type="button">− Gasto S/ 45</button></div>
+                    </div>
+                    <div class="chart" id="chart"></div>
+                    <form class="mini-form" id="ledForm" style="margin-top:10px">
+                      <input class="field-in" id="ledConcept" type="text" placeholder="Concepto movimiento…">
+                      <select class="field-in" id="ledType" style="width:94px"><option value="in">Ingreso</option><option value="out">Gasto</option></select>
+                      <input class="field-in" id="ledAmt" type="number" min="1" value="85" style="width:74px" aria-label="Monto">
+                      <button class="btn sm pri" type="submit" style="grid-column:1/-1">Registrar en Ledger</button>
+                    </form>
+                  </div>
+                  <div class="col">
+                    <h4><span>Últimos Movimientos Entre Áreas</span></h4>
+                    <ul class="list" id="ledMoves"></ul>
+                    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+                      <button class="btn pri" id="report" type="button" style="flex:1">Calcular Cierre IGV / Mes</button>
+                      <button class="btn sm" id="copyRep" type="button" disabled>Copiar</button>
+                    </div>
+                    <div id="rep"></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PIE DEL STUDIO OS -->
+      <div class="os-footer-bar">
+        <span>Núcleo activo: <b id="osCurrentModName">Restaurante POS</b> · Cada cobro impacta la Caja Global arriba y al Libro Diario.</span>
+        <button class="btn sm pri" id="osToContactBtn" type="button">Cotizar este módulo para mi negocio →</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">ZAPHYREL</div>
+      <p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p>
+      <div class="ft-palette" aria-hidden="true">
+        <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Arquitectura Web</h4>
+      <a href="../sectores/">Rubros y Cobertura Total</a>
+      <a href="../ecosistema/">Web + Operación Interna</a>
+      <a href="../studio/">Plataforma Studio OS</a>
+      <a href="../casos/">Casos Implementados</a>
+    </div>
+    <div class="ft-col">
+      <h4>Especialidades Verticales</h4>
+      <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
+      <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
+      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contacto &amp; Showrooms</h4>
+      <a href="../soluciones/hoteles/">Hoteles &amp; Turismo 360°</a>
+      <a href="../soluciones/3d-web/">Showrooms WebGL 3D</a>
+      <a href="../cotizar/">Configurar Proyecto</a>
+      <a href="../cotizar/#panel">hola@zaphyrel.com</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 ZAPHYREL · AUTOMATIZACIÓN INTEGRAL &amp; ENTORNOS 3D</span>
+    <span>PERÚ · LATINOAMÉRICA</span>
+  </div>
+</footer>
+
+<div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+</div>
+
+<audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>
+<audio id="chime" src="../assets/zaphyrel-chime.wav" preload="none"></audio>
+
+<script src="../assets/zaphyrel-shell.js"></script>
+<script src="../assets/zaphyrel-studio.js"></script>
+<script type="module">
+import { initShowroom3D } from '../assets/zaphyrel-3d.js';
+
+const $ = (s, ctx = document) => ctx.querySelector(s);
+const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+
+const srCanvas = $('#srCanvas'), srVp = $('#srVp');
+const viewNames = {
+  ext: 'Exterior Completo',
+  p2: 'Planta Alta (Dormitorios)',
+  p1: 'Planta Baja (Sala · Cocina · Cochera)',
+  roof: 'Vista Arquitectónica Sin Techo'
+};
+const finishNames = {
+  walnut: 'Nogal & Cristal',
+  obsidian: 'Obsidiana & Grafito',
+  sand: 'Arena & Mármol'
+};
+let curModel = 'villa', curView = 'ext', curFinish = 'walnut', orbitOn = true;
+
+const sr3d = initShowroom3D(srCanvas, srVp);
+window.__wakeShowroom = () => sr3d?.wake?.();
+
+function syncMatBadge() {
+  const lbl = $('#srMatLbl');
+  if (!lbl) return;
+  lbl.textContent = curModel === 'pos'
+    ? `Hardware Retail & Gastronomía · ${finishNames[curFinish]}`
+    : `${viewNames[curView]} · ${finishNames[curFinish]}`;
+}
+
+if (sr3d) {
+  $('#srModelTabs')?.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    curModel = b.dataset.srModel;
+    $$('#srModelTabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+    sr3d.setModel?.(curModel);
+    $('#srViewTabs').style.display = curModel === 'pos' ? 'none' : 'flex';
+    $('#srInfoTitle').textContent = curModel === 'pos' ? 'Estación Terminal Zaphyrel POS + Escáner' : 'Residencia 3D Interactiva · Nivel 01 y 02';
+    $('#srSpecPills').innerHTML = curModel === 'pos'
+      ? '<span>Ticketera 80mm integrada</span><span>Lector barras &amp; QR</span><span>PBR 360°</span>'
+      : '<span>Corte real por piso</span><span>Mobiliario 3D completo</span><span>PBR WebGL</span>';
+    $('#srPrice').textContent = curModel === 'pos' ? 'S/ 2,490 kit completo' : 'S/ 1,250 reserva';
+    syncMatBadge();
+    window.__zaphyrelBridge?.ping?.(0.08);
+  });
+
+  $('#srViewTabs')?.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    curView = b.dataset.srView;
+    $$('#srViewTabs button').forEach(x => x.classList.toggle('on', x === b));
+    sr3d.setView?.(curView);
+    syncMatBadge();
+    window.__zaphyrelBridge?.ping?.(0.08);
+  });
+
+  $('#srFinish')?.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    curFinish = b.dataset.m;
+    $$('#srFinish button').forEach(x => x.classList.toggle('on', x === b));
+    sr3d.setFinish?.(curFinish);
+    syncMatBadge();
+    window.__zaphyrelBridge?.ping?.(0.08);
+  });
+
+  $('#srOrbitBtn')?.addEventListener('click', e => {
+    orbitOn = !orbitOn;
+    e.currentTarget.setAttribute('aria-pressed', orbitOn);
+    sr3d.setOrbit?.(orbitOn);
+  });
+
+  $('#srResetBtn')?.addEventListener('click', () => sr3d.resetView?.());
+  $('#srSnapBtn')?.addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.download = `zaphyrel-showroom-${curModel}.png`;
+    a.href = sr3d.capturePng?.() || '';
+    if (a.href) a.click();
+  });
+  $('#srExpandBtn')?.addEventListener('click', () => {
+    const full = $('#srWrap').classList.toggle('sr-full');
+    $('#srExpandBtn').textContent = full ? '✕ Cerrar' : '⤢ Ampliar';
+    sr3d.resize?.();
+  });
+  $('#srBookBtn')?.addEventListener('click', () => {
+    const val = curModel === 'pos' ? 2490 : 1250;
+    const label = curModel === 'pos' ? 'Showroom 3D · Kit POS Pro' : 'Showroom 3D · Reserva Unidad';
+    window.__zaphyrelBridge?.pushCrossLedger?.(label, val);
+    window.__zaphyrelBridge?.toast?.(`${label} registrado (+S/ ${val.toLocaleString('es-PE')})`);
+  });
+
+  window.addEventListener('zaphyrel:theme', e => sr3d.setTheme?.(Boolean(e.detail?.night)));
+}
+</script>
+</body>
+</html>

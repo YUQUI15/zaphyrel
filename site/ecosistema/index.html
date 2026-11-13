@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day" data-finish="crystal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Externa + Operación Interna — ZAPHYREL | Entrelazamiento Digital</title>
+<meta name="description" content="Descubre cómo Zaphyrel conecta la cara web de tu negocio con empleados en piso o campo, verificación QR/SUNAT, almacén y gerencia en Perú y Latinoamérica.">
+<meta name="theme-color" id="metaTheme" content="#FFFFFF">
+<link rel="canonical" href="https://zaphyrel-site.vercel.app/ecosistema/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+(()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;document.documentElement.classList.add('skip-veil');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../assets/zaphyrel-shell.css">
+</head>
+<body data-root="../" data-nav="ecosistema">
+<a class="skip-link" href="#contenido">Ir al contenido principal</a>
+<div class="prism-top-strip" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur-dot" id="dot" aria-hidden="true"></div>
+<div class="cur-ring" id="ring" aria-hidden="true"></div>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="horizon-grid" aria-hidden="true"></div>
+<canvas id="prismField" aria-hidden="true"></canvas>
+<div class="tactile-grain" aria-hidden="true"></div>
+
+<nav class="hud-top" aria-label="Navegación principal">
+  <a class="brand" href="../" aria-label="Zaphyrel inicio">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="z10-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".26" stop-color="#A9DCFF"/><stop offset=".52" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-fBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#81BDF8"/></linearGradient>
+        <linearGradient id="z10-fLav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5BEFF"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
+        <linearGradient id="z10-fPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wingB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".48" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
+      </defs>
+      <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#z10-fBlue)"/>
+      <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF"/>
+      <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#z10-fLav)"/>
+      <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF"/>
+      <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#z10-fPink)"/>
+      <polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#z10-fBlue)"/>
+      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" fill="none" stroke="var(--ink)" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="var(--paper)" stroke="url(#z10-crown)" stroke-width="1.45"/>
+      <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#z10-wind)"/>
+      <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="var(--ink)"/>
+      <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#z10-wingB)"/>
+      <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <span>ZAPHYREL</span>
+      <span class="brand-tag">ECOSISTEMAS DIGITALES &amp; 3D</span>
+    </div>
+  </a>
+
+  <div class="nav-links" id="mainNavLinks">
+    <a href="../" data-nav="inicio">Inicio</a>
+    <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
+    <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
+    <a href="../studio/" data-nav="studio">Studio OS</a>
+    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
+  </div>
+
+  <div class="tools">
+    <button class="pill pill-hide" id="cmdBtn" type="button" aria-label="Abrir buscador rápido (Ctrl+K)">Buscar <span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" type="button" aria-pressed="false" aria-label="Cambiar entre modo claro y oscuro">☾ Noche</button>
+    <button class="pill pill-hide" id="sound" type="button" aria-pressed="false" aria-label="Activar o silenciar sonido de interfaz">♪ Audio</button>
+    <button class="pill mob-menu-btn" id="mobMenuBtn" type="button" aria-expanded="false" aria-controls="mobDrawer" aria-label="Abrir menú de navegación">☰</button>
+    <a class="pill cta-nav pill-prism" href="../cotizar/">Cotizar sistema</a>
+  </div>
+</nav>
+
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <a href="../"><span>Inicio</span><span>→</span></a>
+  <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
+  <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
+  <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
+  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
+  <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
+</div>
+
+<main id="contenido">
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación">
+      <a href="../">Inicio</a><span>/</span><span>Web Externa + Operación Interna</span>
+    </nav>
+    <p class="eyebrow">Arquitectura Entrelazada sin Fricción</p>
+    <h1>Una misma plataforma para <em>atender afuera</em> y ordenar <em>por dentro</em></h1>
+    <p class="lead">Cuando una web vende por su cuenta y tu personal usa otro programa (o cuadernos y WhatsApp), aparecen cruces de stock, demoras y fugas de caja. Aquí ves exactamente cómo se conectan las 5 etapas en vivo.</p>
+  </div>
+</header>
+
+<!-- SIMULADOR DE ENTRELAZAMIENTO DE 5 NODOS -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Simulador Vivo de Flujo entre Áreas</p>
+    <h2>Prueba cómo viaja una operación <em>de área en área</em></h2>
+    <p class="sub">Elige un rubro y presiona <b>Simular Flujo Completo</b>. También puedes activar el corte de internet para comprobar cómo el sistema guarda cola offline en el local y sincroniza después.</p>
+
+    <div class="flow-sim">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+        <div class="chips" id="flowTabs" style="margin:0">
+          <button class="chip on" type="button" data-flow="retail">Tienda Retail (Web + Caja + Kardex)</button>
+          <button class="chip" type="button" data-flow="club">Discoteca / Eventos (QR Puerta + Box + Barra)</button>
+          <button class="chip" type="button" data-flow="muni">Municipalidad (Portal + Inspector + Gerencia)</button>
+          <button class="chip" type="button" data-flow="rest">Restaurante (Carta + Salón + Cocina + Insumos)</button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn sm" id="flowOfflineBtn" type="button" aria-pressed="false">📶 Modo Online · Simular corte</button>
+          <button class="btn sm pri" id="flowRunBtn" type="button">⚡ Simular Flujo Completo →</button>
+        </div>
+      </div>
+
+      <div class="flow-nodes" id="flowNodes" aria-live="polite">
+        <div class="fnode" id="fn1"><small>01 · CARA EXTERNA</small><b>E-commerce &amp; Stock</b><span>Cliente compra online con recojo en tienda.</span></div>
+        <div class="fnode" id="fn2"><small>02 · VERIFICACIÓN</small><b>Pago Yape / SUNAT</b><span>Validación instantánea y reserva de código SKU.</span></div>
+        <div class="fnode" id="fn3"><small>03 · PERSONAL / PISO</small><b>Alerta a Vendedor</b><span>Módulo de tienda separa el paquete para entrega.</span></div>
+        <div class="fnode" id="fn4"><small>04 · ALMACÉN</small><b>Descuento Kardex</b><span>Ajuste automático de inventario multi-sucursal.</span></div>
+        <div class="fnode" id="fn5"><small>05 · DIRECCIÓN</small><b>Utilidad Neta</b><span>Gerencia ve el ingreso y costo en tiempo real.</span></div>
+      </div>
+
+      <div class="boleta" id="flowLog" style="margin:0;border-style:solid">
+        ESTADO DEL BUS INTERNO · Listo. Presiona <b>Simular Flujo Completo</b> para trazar los 5 saltos del evento.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARQUITECTURA DE 4 CAPAS (EXPLODE INTERACTIVO) -->
+<section style="padding-top:14px">
+  <div class="wrap">
+    <p class="eyebrow">Anatomía de la Plataforma</p>
+    <h2>Cuatro capas <em>sincronizadas</em> en un solo núcleo</h2>
+    <p class="sub">Haz clic en cualquier capa de la derecha o despieza el bloque técnico para entender cómo conviven el visor 3D, las aplicaciones de empleados, la verificación y las finanzas.</p>
+
+    <div class="essence-bento">
+      <div class="blueprint prism-frame" id="blueprint" data-focus="all">
+        <div class="prism-bar" aria-hidden="true"></div>
+        <div class="bp-bar">
+          <span>ARQUITECTURA INTERNA ZAPHYREL</span>
+          <div style="display:flex;gap:6px">
+            <button class="hud-chip" id="bpExplode" type="button">Despiezar capas</button>
+            <button class="hud-chip" id="bpFocusReset" type="button">Ver todo</button>
+          </div>
+        </div>
+        <div class="bp-3d" aria-hidden="true">
+          <div class="bp-stack">
+            <div class="bp-layer bp-l1"><small>CAPA 01 · FINANZAS &amp; DIRECCIÓN</small><b>Libro Diario, SUNAT OSE &amp; Gerencia</b><span>Arqueos por turno, márgenes y tableros ejecutivos</span></div>
+            <div class="bp-layer bp-l2"><small>CAPA 02 · INVENTARIO &amp; CAMPO</small><b>Almacén, Recetas, Reparto &amp; QR</b><span>Kardex FIFO, botellas/insumos e inspectores móviles</span></div>
+            <div class="bp-layer bp-l3"><small>CAPA 03 · PISO, CAJA &amp; PUERTA</small><b>Apps para Empleados &amp; Verificación</b><span>POS táctil, puerta anti-reventa, cocina KDS y ventanilla</span></div>
+            <div class="bp-layer bp-l4"><small>CAPA 04 · CARA EXTERNA &amp; 3D</small><b>Web Comercial &amp; Entorno WebGL 3D/360°</b><span>Tienda, portal ciudadano, carta directa o maqueta 3D</span></div>
+          </div>
+        </div>
+        <div class="bp-cap" id="bpCap">Todas las capas trabajan sobre una sola base de datos con cola Offline-First.</div>
+      </div>
+
+      <div class="pillars" id="pillarList">
+        <button class="pillar active" type="button" data-layer="l4" data-cap="Capa 04: Web comercial, portal ciudadano y showrooms WebGL 3D conectados al stock y agenda real.">
+          <div class="pillar-h"><span class="n">04 · CARA EXTERNA &amp; 3D</span><h3>Web de Marca &amp; Showrooms WebGL</h3></div>
+          <p>Tu primera impresión frente al cliente o ciudadano no es una vitrina muerta: consulta horarios, stock, mesas o inmuebles reales al segundo.</p>
+        </button>
+        <button class="pillar" type="button" data-layer="l3" data-cap="Capa 03: Pantallas táctiles simples para cajeros, mozos, puerta VIP, enfermería e inspectores en campo.">
+          <div class="pillar-h"><span class="n">03 · PISO, CAJA &amp; VERIFICACIÓN</span><h3>Apps de Empleados sin Curva de Error</h3></div>
+          <p>Cada puesto opera solo los botones que necesita en su día a día: escáner QR en puerta, comanda en cocina o mesa de partes digital.</p>
+        </button>
+        <button class="pillar" type="button" data-layer="l2" data-cap="Capa 02: Control automático de existencias, lotes farmacéuticos, botellas de bar, guías y bienes municipales.">
+          <div class="pillar-h"><span class="n">02 · ALMACÉN &amp; TRAZABILIDAD</span><h3>Kardex Real, Recetas y Movimientos</h3></div>
+          <p>Cada venta, entrega o expediente descontado actualiza existencias al momento, avisa mínimos críticos y elimina el conteo ciego.</p>
+        </button>
+        <button class="pillar" type="button" data-layer="l1" data-cap="Capa 01: Emisión electrónica SUNAT/OSE, conciliación Yape/Plin/Izipay y tableros multi-sede en vivo.">
+          <div class="pillar-h"><span class="n">01 · GERENCIA &amp; CUMPLIMIENTO</span><h3>Consolidado Ejecutivo &amp; SUNAT</h3></div>
+          <p>Desde gerencia o alcaldía se auditan márgenes, mermas, SLA de áreas y recaudación consolidada sin pedir informes manuales en Excel.</p>
+        </button>
+      </div>
+
+      <div class="matter-bar" id="syncBar">
+        <div style="min-width:190px">
+          <div class="eyebrow" style="margin-bottom:2px">Propagación en 1 Evento</div>
+          <b style="font-size:14.5px">Vender, escanear o derivar sincroniza 3 departamentos a la vez</b>
+        </div>
+        <div class="sync-nodes">
+          <div class="snode" id="sn1"><small>VENTA / ACCESO</small><b>Web o Caja Táctil</b><span>Dispara comprobante o QR</span></div>
+          <div class="slink" aria-hidden="true"><svg viewBox="0 0 34 10"><line class="pulse-line" x1="0" y1="5" x2="34" y2="5" stroke="var(--c-sky)" stroke-width="2"/></svg></div>
+          <div class="snode" id="sn2"><small>ALMACÉN / ÁREA</small><b>Kardex o Derivación</b><span>Descuenta stock / asigna SLA</span></div>
+          <div class="slink" aria-hidden="true"><svg viewBox="0 0 34 10"><line class="pulse-line" x1="0" y1="5" x2="34" y2="5" stroke="var(--c-orc)" stroke-width="2"/></svg></div>
+          <div class="snode" id="sn3"><small>FINANZAS / GERENCIA</small><b>Arqueo &amp; Margen Vivo</b><span>Actualizado sin digitación</span></div>
+        </div>
+        <button class="btn sm pri" id="syncFireBtn" type="button">Probar Pulso →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELO DE ENTREGA + REALIDAD PERÚ / LATAM -->
+<section style="padding-top:14px">
+  <div class="wrap">
+    <p class="eyebrow">Modelo de Implementación &amp; Estándar Local</p>
+    <h2>Cómo construimos y aterrizamos tu proyecto <em>sin bloqueos</em></h2>
+
+    <div class="tracks-grid">
+      <div class="track-card">
+        <span class="tk-tag">MODALIDAD A · ACELERACIÓN BASE (2 A 4 SEMANAS)</span>
+        <h3>Núcleos Verticales Personalizados</h3>
+        <p>Partimos de nuestros núcleos ya probados (Retail, Discotecas, Municipalidades, Restaurantes, Hoteles, Salud o Almacén) adaptados a tus reglas, marca, formatos térmicos y sedes.</p>
+        <ul class="track-list">
+          <li>Branding y paleta propia aplicada en web y apps de empleados</li>
+          <li>Carga inicial de catálogo, usuarios, roles jerárquicos y tarifas</li>
+          <li>Integración directa a SUNAT/OSE, pasarelas e impresoras 80mm/QR</li>
+        </ul>
+      </div>
+      <div class="track-card">
+        <span class="tk-tag">MODALIDAD B · INGENIERÍA A MEDIDA + WEBGL 3D (6 A 10 SEMANAS)</span>
+        <h3>Ecosistemas Dedicados &amp; Entornos 3D/360°</h3>
+        <p>Para empresas, cadenas o instituciones con lógicas complejas entre múltiples departamentos, modelado 3D interactivo de productos o proyectos inmobiliarios y flujos propios.</p>
+        <ul class="track-list">
+          <li>Arquitectura a medida multi-local, multi-almacén y API externa</li>
+          <li>Showrooms WebGL 3D reales con despiece por niveles y acabados</li>
+          <li>Acompañamiento en campo y transferencia total de documentación</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="latam-grid">
+      <article class="latam-card">
+        <span class="l-tag">TRIBUTARIO PERÚ / OSE</span>
+        <h3>Facturación SUNAT</h3>
+        <p>Emisión XML/UBL 2.1 con boletas, facturas RUC, notas de crédito y guías electrónicas desde el mismo movimiento interno.</p>
+      </article>
+      <article class="latam-card">
+        <span class="l-tag">PAGOS EN TIENDA Y WEB</span>
+        <h3>Yape · Plin · Izipay</h3>
+        <p>Registro discriminado por medio de pago, QR de cobro en caja, enlaces online y validación rápida sin que el cajero sume a mano.</p>
+      </article>
+      <article class="latam-card">
+        <span class="l-tag">HARDWARE REAL DE PISO</span>
+        <h3>Tickets 80mm &amp; Barras</h3>
+        <p>Compatible con impresoras térmicas ESC/POS de cocina/barra/caja, pistolas de código de barras USB/Bluetooth y escáner QR en puerta.</p>
+      </article>
+      <article class="latam-card">
+        <span class="l-tag">RESILIENCIA EN CAMPO</span>
+        <h3>Modo Offline-First</h3>
+        <p>Si cae el internet en tienda, discoteca o fiscalización en calle, la operación sigue guardando localmente y sincroniza apenas regresa la red.</p>
+      </article>
+    </div>
+
+    <div class="cta-banner">
+      <div style="max-width:620px">
+        <p class="eyebrow" style="margin-bottom:8px">Pruébalo en Vivo Ahora</p>
+        <h2 style="font-size:clamp(24px,2.8vw,34px)">Manipula los 12 sistemas y el Showroom 3D en Studio OS</h2>
+        <p class="sub" style="margin-top:6px">Escanea un código de barras, detecta un QR duplicado de discoteca, registra un expediente municipal o explora la maqueta 3D por pisos.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="cta" href="../studio/">Abrir Studio OS →</a>
+        <a class="cta ghost" href="../cotizar/">Configurar mi alcance</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">ZAPHYREL</div>
+      <p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p>
+      <div class="ft-palette" aria-hidden="true">
+        <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Arquitectura Web</h4>
+      <a href="../sectores/">Rubros y Cobertura Total</a>
+      <a href="../ecosistema/">Web + Operación Interna</a>
+      <a href="../studio/">Plataforma Studio OS</a>
+      <a href="../casos/">Casos Implementados</a>
+    </div>
+    <div class="ft-col">
+      <h4>Especialidades Verticales</h4>
+      <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
+      <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
+      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contacto &amp; Showrooms</h4>
+      <a href="../soluciones/hoteles/">Hoteles &amp; Turismo 360°</a>
+      <a href="../soluciones/3d-web/">Showrooms WebGL 3D</a>
+      <a href="../cotizar/">Configurar Proyecto</a>
+      <a href="../cotizar/#panel">hola@zaphyrel.com</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 ZAPHYREL · AUTOMATIZACIÓN INTEGRAL &amp; ENTORNOS 3D</span>
+    <span>PERÚ · LATINOAMÉRICA</span>
+  </div>
+</footer>
+
+<div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+</div>
+
+<audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>
+<audio id="chime" src="../assets/zaphyrel-chime.wav" preload="none"></audio>
+
+<script src="../assets/zaphyrel-shell.js"></script>
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const ping = v => window.__zaphyrelShell?.ping?.(v);
+  const esc = s => window.__zaphyrelShell?.esc?.(s) ?? String(s);
+
+  const flowScenarios = {
+    retail: {
+      nodes: [
+        ['01 · CARA EXTERNA', 'E-commerce & Stock', 'Cliente compra online para recojo o despacho.'],
+        ['02 · VERIFICACIÓN', 'Pago Yape / SUNAT', 'Comprobante OSE emitido + SKU reservado.'],
+        ['03 · PERSONAL / PISO', 'Alerta a Vendedor', 'Cajero o picker en piso arma el paquete.'],
+        ['04 · ALMACÉN', 'Descuento Kardex', 'Salida valorizada en bodega central/tienda.'],
+        ['05 · DIRECCIÓN', 'Utilidad Neta', 'Gerencia ve ingreso, costo y rotación viva.']
+      ],
+      onlineLog: 'VENTA WEB #RT-402: Pago validado → Boleta B001 emitida → Alerta a Caja Miraflores → Kardex -1 SKU → Margen actualizado en Gerencia.',
+      offlineLog: 'MODO OFFLINE EN TIENDA: Venta guardada en cola segura IndexedDB (Ticket #TMP-09) · Boleta OSE lista para envío automático al volver la red.'
+    },
+    club: {
+      nodes: [
+        ['01 · CARA EXTERNA', 'Preventa & Box Web', 'Reserva con QR único enviado al teléfono.'],
+        ['02 · VERIFICACIÓN', 'Escáner en Puerta', 'Valida unicidad en 0.4 s y frena reventa.'],
+        ['03 · PERSONAL / PISO', 'Mozos & Barra VIP', 'Mozo envía orden de box directo a barman.'],
+        ['04 · ALMACÉN', 'Consumo Botellas', 'Descuento de licor por botella o por onza.'],
+        ['05 · DIRECCIÓN', 'Arqueo Nocturno', 'Cierre automático por puerta, boxes y barras.']
+      ],
+      onlineLog: 'CHECK-IN QR #VIP-18: Entrada única aprobada en puerta → Aforo 241/400 → Consumo Box 04 enviado a Barra Sur → Stock botellas descontado.',
+      offlineLog: 'MODO OFFLINE PUERTA/BARRA: Escáner QR valida contra lista cacheada local del evento sin latencia de señal · Sincronización diferida activa.'
+    },
+    muni: {
+      nodes: [
+        ['01 · CARA CIUDADANA', 'Mesa de Partes Web', 'Ciudadano ingresa expediente 24/7 con requisitos.'],
+        ['02 · VERIFICACIÓN', 'Cargo & Código QR', 'Constancia oficial con código único de rastreo.'],
+        ['03 · CAMPO / ÁREA', 'Inspector & Gerencia', 'Inspector valida QR en vía pública; área evalúa SLA.'],
+        ['04 · ARCHIVO / BIENES', 'Derivación & Stock', 'Pase a Logística/Almacén si requiere insumos.'],
+        ['05 · ALCALDÍA', 'Tablero de Plazos', 'Cumplimiento de SLA, cuellos y ejecución visible.']
+      ],
+      onlineLog: 'EXPEDIENTE #EXP-2026-884: Cargo QR emitido → Derivado a Subgerencia de Licencias (SLA 48h) → Verificado por inspector en campo → Listo para firma.',
+      offlineLog: 'MODO OFFLINE INSPECCIÓN EN CAMPO: Acta georreferenciada con fotos y lectura QR guardada en dispositivo municipal · Se sube al sistema al reconectar.'
+    },
+    rest: {
+      nodes: [
+        ['01 · CARA EXTERNA', 'Carta QR & Web', 'Pedido directo en salón o delivery sin comisión OTA.'],
+        ['02 · VERIFICACIÓN', 'Comanda & Boleta', 'Desglose a pagar (Yape/Plin/POS) y RUC SUNAT.'],
+        ['03 · PERSONAL / PISO', 'Mozos & Cocina KDS', 'Platos ruteados por estación con cronómetro.'],
+        ['04 · ALMACÉN', 'Recetas e Insumos', 'Descuento automático de gramaje en economato.'],
+        ['05 · DIRECCIÓN', 'Costo Real por Plato', 'Rotación de mesas, propinas y utilidad diaria.']
+      ],
+      onlineLog: 'MESA 07 · COMANDA #114: Enviada a Cocina Caliente + Barra → Boleta B001 emitida (Plin) → Receta Lomo Saltado descontada en economato.',
+      offlineLog: 'MODO OFFLINE SALÓN: Comanda impresa directo en red LAN local a impresora térmica 80mm de cocina · Comprobante en cola SUNAT.'
+    }
+  };
+
+  let curFlow = 'retail', flowOffline = false, flowTimer = null;
+  function renderFlowNodes() {
+    const s = flowScenarios[curFlow];
+    s.nodes.forEach((n, i) => {
+      const el = $('#fn' + (i + 1));
+      if (!el) return;
+      el.classList.remove('lit');
+      el.innerHTML = `<small>${esc(n[0])}</small><b>${esc(n[1])}</b><span>${esc(n[2])}</span>`;
+    });
+  }
+  $('#flowTabs').addEventListener('click', e => {
+    const b = e.target.closest('button[data-flow]'); if (!b) return;
+    $$('#flowTabs button').forEach(x => x.classList.toggle('on', x === b));
+    curFlow = b.dataset.flow;
+    renderFlowNodes();
+    $('#flowLog').textContent = 'ESTADO DEL BUS INTERNO · Escenario seleccionado. Presiona Simular Flujo Completo.';
+    ping(.08);
+  });
+  $('#flowOfflineBtn').addEventListener('click', () => {
+    flowOffline = !flowOffline;
+    $('#flowOfflineBtn').setAttribute('aria-pressed', flowOffline);
+    $('#flowOfflineBtn').textContent = flowOffline ? '✈ Corte simulado · Cola local activa' : '📶 Modo Online · Simular corte';
+    ping(.1);
+  });
+  $('#flowRunBtn').addEventListener('click', () => {
+    clearInterval(flowTimer);
+    renderFlowNodes();
+    let step = 0;
+    const s = flowScenarios[curFlow];
+    const tick = () => {
+      const el = $('#fn' + (step + 1));
+      if (el) el.classList.add('lit');
+      step++;
+      if (step >= 5) {
+        clearInterval(flowTimer);
+        $('#flowLog').textContent = flowOffline ? s.offlineLog : s.onlineLog;
+      }
+    };
+    tick();
+    flowTimer = setInterval(tick, 210);
+    ping(.12);
+  });
+
+  /* Blueprint 4 capas */
+  const bp = $('#blueprint'), bpCap = $('#bpCap');
+  $('#bpExplode').addEventListener('click', () => {
+    const e = bp.classList.toggle('exploded');
+    $('#bpExplode').textContent = e ? 'Compactar capas' : 'Despiezar capas';
+    ping(.1);
+  });
+  $('#bpFocusReset').addEventListener('click', () => {
+    bp.dataset.focus = 'all';
+    $$('#pillarList .pillar').forEach(p => p.classList.remove('active'));
+    bpCap.textContent = 'Todas las capas trabajan sobre una sola base de datos con cola Offline-First.';
+    ping(.08);
+  });
+  $('#pillarList').addEventListener('click', e => {
+    const p = e.target.closest('.pillar'); if (!p) return;
+    $$('#pillarList .pillar').forEach(x => x.classList.toggle('active', x === p));
+    bp.dataset.focus = p.dataset.layer;
+    bp.classList.add('exploded');
+    $('#bpExplode').textContent = 'Compactar capas';
+    bpCap.textContent = p.dataset.cap;
+    ping(.1);
+  });
+
+  $('#syncFireBtn').addEventListener('click', () => {
+    const bar = $('#syncBar'), nodes = [$('#sn1'), $('#sn2'), $('#sn3')];
+    nodes.forEach(n => n.classList.remove('lit'));
+    bar.classList.add('firing');
+    nodes.forEach((n, i) => setTimeout(() => n.classList.add('lit'), i * 230));
+    setTimeout(() => { bar.classList.remove('firing'); nodes.forEach(n => n.classList.remove('lit')); }, 2300);
+    ping(.12);
+  });
+})();
+</script>
+</body>
+</html>

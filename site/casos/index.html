@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day" data-finish="crystal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casos Implementados &amp; Comparativa — ZAPHYREL | Resultados por Sector</title>
+<meta name="description" content="Casos reales e implementaciones tipo de Zaphyrel en restaurantes, hoteles 360°, tiendas retail, discotecas QR, municipalidades e inmobiliaria 3D en Perú y Latinoamérica.">
+<meta name="theme-color" id="metaTheme" content="#FFFFFF">
+<link rel="canonical" href="https://zaphyrel-site.vercel.app/casos/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+(()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;document.documentElement.classList.add('skip-veil');}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../assets/zaphyrel-shell.css">
+</head>
+<body data-root="../" data-nav="casos">
+<a class="skip-link" href="#contenido">Ir al contenido principal</a>
+<div class="prism-top-strip" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur-dot" id="dot" aria-hidden="true"></div>
+<div class="cur-ring" id="ring" aria-hidden="true"></div>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="horizon-grid" aria-hidden="true"></div>
+<canvas id="prismField" aria-hidden="true"></canvas>
+<div class="tactile-grain" aria-hidden="true"></div>
+
+<nav class="hud-top" aria-label="Navegación principal">
+  <a class="brand" href="../" aria-label="Zaphyrel inicio">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="z10-crown" x1="0.06" y1="0.06" x2="0.94" y2="0.94"><stop offset="0" stop-color="#81BDF8"/><stop offset=".26" stop-color="#A9DCFF"/><stop offset=".52" stop-color="#D5BEFF"/><stop offset=".78" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-fBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9DCFF"/><stop offset="1" stop-color="#81BDF8"/></linearGradient>
+        <linearGradient id="z10-fLav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5BEFF"/><stop offset="1" stop-color="#A9DCFF"/></linearGradient>
+        <linearGradient id="z10-fPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD5FF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wingB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#81BDF8"/><stop offset=".48" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/></linearGradient>
+        <linearGradient id="z10-wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#81BDF8"/><stop offset=".6" stop-color="#A9DCFF"/><stop offset="1" stop-color="#D5BEFF"/></linearGradient>
+      </defs>
+      <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#z10-fBlue)"/>
+      <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF"/>
+      <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#z10-fLav)"/>
+      <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF"/>
+      <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#z10-fPink)"/>
+      <polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#z10-fBlue)"/>
+      <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" fill="none" stroke="var(--ink)" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="var(--paper)" stroke="url(#z10-crown)" stroke-width="1.45"/>
+      <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#z10-wind)"/>
+      <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="var(--ink)"/>
+      <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#z10-wingB)"/>
+      <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <span>ZAPHYREL</span>
+      <span class="brand-tag">ECOSISTEMAS DIGITALES &amp; 3D</span>
+    </div>
+  </a>
+
+  <div class="nav-links" id="mainNavLinks">
+    <a href="../" data-nav="inicio">Inicio</a>
+    <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
+    <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
+    <a href="../studio/" data-nav="studio">Studio OS</a>
+    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
+  </div>
+
+  <div class="tools">
+    <button class="pill pill-hide" id="cmdBtn" type="button" aria-label="Abrir buscador rápido (Ctrl+K)">Buscar <span class="kbd">Ctrl K</span></button>
+    <button class="pill" id="night" type="button" aria-pressed="false" aria-label="Cambiar entre modo claro y oscuro">☾ Noche</button>
+    <button class="pill pill-hide" id="sound" type="button" aria-pressed="false" aria-label="Activar o silenciar sonido de interfaz">♪ Audio</button>
+    <button class="pill mob-menu-btn" id="mobMenuBtn" type="button" aria-expanded="false" aria-controls="mobDrawer" aria-label="Abrir menú de navegación">☰</button>
+    <a class="pill cta-nav pill-prism" href="../cotizar/">Cotizar sistema</a>
+  </div>
+</nav>
+
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <a href="../"><span>Inicio</span><span>→</span></a>
+  <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
+  <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
+  <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
+  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
+  <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
+</div>
+
+<main id="contenido">
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación">
+      <a href="../">Inicio</a><span>/</span><span>Casos Implementados</span>
+    </nav>
+    <p class="eyebrow">Evidencia Operativa &amp; Métricas Reales</p>
+    <h1>Antes y después de conectar <em>la cara web con el interior</em></h1>
+    <p class="lead">Cada proyecto en Zaphyrel combina diseño web comercial o institucional con herramientas que tu equipo realmente usa en piso, bodega, puerta, cocina o campo.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="cases-grid">
+      <article class="case-card tilt-card">
+        <div>
+          <div class="case-head">
+            <div><div class="case-brand">Cadena Urbana Market</div><div class="case-loc">Lima · 6 Tiendas Retail</div></div>
+            <span class="badge ok">Retail + Kardex</span>
+          </div>
+          <p class="sec-sub" style="margin-top:10px">E-commerce conectado al inventario de 6 locales, lectura de barras en caja, transferencia entre tiendas y boleta SUNAT instantánea.</p>
+          <div class="case-metrics" style="margin-top:12px">
+            <div class="case-stat"><b>−68%</b><span>diferencias de inventario mensual</span></div>
+            <div class="case-stat"><b>1.6 s</b><span>emisión completa con pistola + Yape</span></div>
+          </div>
+        </div>
+        <div class="case-links">
+          <a class="btn sm pri" href="../studio/?mod=retail">Probar Núcleo</a>
+          <a class="btn sm" href="../soluciones/tiendas/">Ficha Retail</a>
+        </div>
+      </article>
+
+      <article class="case-card tilt-card">
+        <div>
+          <div class="case-head">
+            <div><div class="case-brand">Distrito Club Arena</div><div class="case-loc">Lima Sur · Discoteca &amp; Eventos</div></div>
+            <span class="badge">Puerta QR + Barra</span>
+          </div>
+          <p class="sec-sub" style="margin-top:10px">Preventa con QR único anti-duplicado validado incluso sin Wi-Fi en puerta, comandas VIP desde mozos hacia 4 barras y arqueo por turno.</p>
+          <div class="case-metrics" style="margin-top:12px">
+            <div class="case-stat"><b>0 QR</b><span>entradas clonadas o reusadas en puerta</span></div>
+            <div class="case-stat"><b>−21%</b><span>merma no declarada en botellas VIP</span></div>
+          </div>
+        </div>
+        <div class="case-links">
+          <a class="btn sm pri" href="../studio/?mod=club">Probar Núcleo</a>
+          <a class="btn sm" href="../soluciones/discotecas/">Ficha Eventos</a>
+        </div>
+      </article>
+
+      <article class="case-card tilt-card">
+        <div>
+          <div class="case-head">
+            <div><div class="case-brand">Gestión Distrital Conectada</div><div class="case-loc">Municipalidad Distrital · Perú</div></div>
+            <span class="badge ok">Público + Campo</span>
+          </div>
+          <p class="sec-sub" style="margin-top:10px">Mesa de partes digital 24/7 con cargo QR, derivación controlada entre gerencias con alertas SLA y app móvil de inspectores municipales.</p>
+          <div class="case-metrics" style="margin-top:12px">
+            <div class="case-stat"><b>−54%</b><span>tiempo promedio por licencia comercial</span></div>
+            <div class="case-stat"><b>100%</b><span>trazabilidad de expedientes por QR</span></div>
+          </div>
+        </div>
+        <div class="case-links">
+          <a class="btn sm pri" href="../studio/?mod=muni">Probar Núcleo</a>
+          <a class="btn sm" href="../soluciones/municipalidades/">Ficha Municipal</a>
+        </div>
+      </article>
+
+      <article class="case-card tilt-card">
+        <div>
+          <div class="case-head">
+            <div><div class="case-brand">Brasa &amp; Costa</div><div class="case-loc">Miraflores · Gastronomía</div></div>
+            <span class="badge">KDS + Recetas</span>
+          </div>
+          <p class="sec-sub" style="margin-top:10px">Carta QR directa sin intermediarios, ruteo simultáneo de comandas a cocina y bar, división rápida de cuentas y descarga automática de insumos.</p>
+          <div class="case-metrics" style="margin-top:12px">
+            <div class="case-stat"><b>+29%</b><span>rotación de mesas en hora punta</span></div>
+            <div class="case-stat"><b>−35%</b><span>errores de comanda entre salón y cocina</span></div>
+          </div>
+        </div>
+        <div class="case-links">
+          <a class="btn sm pri" href="../studio/?mod=table">Probar Núcleo</a>
+          <a class="btn sm" href="../soluciones/restaurantes/">Ficha Gastronomía</a>
+        </div>
+      </article>
+
+      <article class="case-card tilt-card">
+        <div>
+          <div class="case-head">
+            <div><div class="case-brand">Andes Boutique Hotel</div><div class="case-loc">Cusco · Hospitalidad 360°</div></div>
+            <span class="badge ok">PMS + 360°</span>
+          </div>
+          <p class="sec-sub" style="margin-top:10px">Reservas directas con recorrido 360° por habitación, asignación automática a mucamas al hacer check-out y llave digital enviada al huésped.</p>
+          <div class="case-metrics" style="margin-top:12px">
+            <div class="case-stat"><b>+36%</b><span>reservas directas sin comisión OTA</span></div>
+            <div class="case-stat"><b>0 cruces</b><span>sincronización habitación-limpieza</span></div>
+          </div>
+        </div>
+        <div class="case-links">
+          <a class="btn sm pri" href="../studio/?mod=stay">Probar Núcleo</a>
+          <a class="btn sm" href="../soluciones/hoteles/">Ficha Hoteles</a>
+        </div>
+      </article>
+
+      <article class="case-card tilt-card">
+        <div>
+          <div class="case-head">
+            <div><div class="case-brand">Vértice Sur 3D</div><div class="case-loc">Arequipa / Lima · Inmobiliaria WebGL</div></div>
+            <span class="badge">Showroom 3D</span>
+          </div>
+          <p class="sec-sub" style="margin-top:10px">Maqueta WebGL 3D arquitectónica navegable por niveles y acabados conectada en vivo al inventario de unidades disponibles y cotizador CRM.</p>
+          <div class="case-metrics" style="margin-top:12px">
+            <div class="case-stat"><b>3.2×</b><span>retención por visita vs PDF estático</span></div>
+            <div class="case-stat"><b>48 h</b><span>tiempo de separación en sala o web</span></div>
+          </div>
+        </div>
+        <div class="case-links">
+          <a class="btn sm pri" href="../studio/?mod=show3d">Probar 3D</a>
+          <a class="btn sm" href="../soluciones/3d-web/">Ficha WebGL 3D</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- TABLA ANTES VS DESPUÉS -->
+    <div style="margin-top:44px">
+      <p class="eyebrow">Comparativa de Impacto</p>
+      <h2>Operación aislada vs <em>ecosistema entrelazado</em></h2>
+      <div class="ba-table">
+        <div class="ba-row hd"><span>Proceso Crítico</span><span>Modelo Tradicional Aislado</span><span>Ecosistema Zaphyrel Entrelazado</span></div>
+        <div class="ba-row"><b>Venta / Atención Externa vs Stock</b><span>La web ofrece productos o habitaciones que ya se vendieron en físico.</span><span>Bloqueo instantáneo entre tienda online, puerta, recepción y almacén.</span></div>
+        <div class="ba-row"><b>Personal en Piso, Cocina o Campo</b><span>Mensajes por WhatsApp, libretas perdidas y errores de transcripción.</span><span>App por puesto: lector barras, QR en puerta, KDS cocina o inspector en calle.</span></div>
+        <div class="ba-row"><b>Verificación &amp; Comprobantes</b><span>Digitación doble para boletas SUNAT o validación manual de transferencias.</span><span>Emisión OSE en 1 clic, QR único anti-reventa y conciliación Yape/Plin/POS.</span></div>
+        <div class="ba-row"><b>Cortes de Internet en Local</b><span>La cola de clientes se detiene por completo esperando conexión.</span><span>Arquitectura Offline-First: opera local sin red y sincroniza al reconectar.</span></div>
+        <div class="ba-row"><b>Visibilidad de Gerencia / Dirección</b><span>Esperar a fin de semana o fin de mes a que consoliden excels.</span><span>Margen neto, cierre de turnos, SLA y alertas críticas en tiempo real.</span></div>
+      </div>
+    </div>
+
+    <!-- FICHAS VERTICALES ESPECIALIZADAS -->
+    <div style="margin-top:42px">
+      <p class="eyebrow">Fichas Especializadas por Sector</p>
+      <div class="seo-routes">
+        <a class="seo-route" href="../soluciones/tiendas/"><div><b>Tiendas &amp; Cadenas Retail</b><span>POS, barras, Kardex multi-sede y e-commerce</span></div><span>→</span></a>
+        <a class="seo-route" href="../soluciones/discotecas/"><div><b>Discotecas, Bares &amp; Eventos</b><span>Puerta QR offline, boxes VIP y barra anti-merma</span></div><span>→</span></a>
+        <a class="seo-route" href="../soluciones/municipalidades/"><div><b>Municipalidades &amp; Entidades</b><span>Mesa de partes digital, SLA e inspectores QR</span></div><span>→</span></a>
+        <a class="seo-route" href="../soluciones/restaurantes/"><div><b>Restaurantes &amp; Franquicias</b><span>Salón tablet, KDS cocina, 80mm y SUNAT</span></div><span>→</span></a>
+        <a class="seo-route" href="../soluciones/hoteles/"><div><b>Hoteles &amp; Resorts 360°</b><span>Motor directo 360°, PMS y app housekeeping</span></div><span>→</span></a>
+        <a class="seo-route" href="../soluciones/3d-web/"><div><b>Showrooms WebGL 3D &amp; Inmobiliaria</b><span>Maquetas interactivas PBR 60 FPS en navegador</span></div><span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">ZAPHYREL</div>
+      <p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p>
+      <div class="ft-palette" aria-hidden="true">
+        <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Arquitectura Web</h4>
+      <a href="../sectores/">Rubros y Cobertura Total</a>
+      <a href="../ecosistema/">Web + Operación Interna</a>
+      <a href="../studio/">Plataforma Studio OS</a>
+      <a href="../casos/">Casos Implementados</a>
+    </div>
+    <div class="ft-col">
+      <h4>Especialidades Verticales</h4>
+      <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
+      <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
+      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contacto &amp; Showrooms</h4>
+      <a href="../soluciones/hoteles/">Hoteles &amp; Turismo 360°</a>
+      <a href="../soluciones/3d-web/">Showrooms WebGL 3D</a>
+      <a href="../cotizar/">Configurar Proyecto</a>
+      <a href="../cotizar/#panel">hola@zaphyrel.com</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 ZAPHYREL · AUTOMATIZACIÓN INTEGRAL &amp; ENTORNOS 3D</span>
+    <span>PERÚ · LATINOAMÉRICA</span>
+  </div>
+</footer>
+
+<div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+</div>
+
+<audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>
+<audio id="chime" src="../assets/zaphyrel-chime.wav" preload="none"></audio>
+
+<script src="../assets/zaphyrel-shell.js"></script>
+</body>
+</html>
