@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAPHYREL · Catálogo Maestro de Marca, Medidas, Registro INDECOPI y Redes Sociales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #06070B;
+      --surface: #0C0F18;
+      --surface-2: #121725;
+      --ink: #F8FAFF;
+      --muted: #8890A2;
+      --line: rgba(255,255,255,0.11);
+      --zafiro: #81BDF8;
+      --hielo: #A9DCFF;
+      --lavanda: #D5BEFF;
+      --rosa: #FFD5FF;
+      --orquidea: #FF9AFF;
+      --prism: linear-gradient(135deg, #81BDF8 0%, #A9DCFF 24%, #D5BEFF 50%, #FFD5FF 76%, #FF9AFF 100%);
+      --rim-top: inset 0 1px 0 rgba(255,255,255,0.14);
+      --recess: inset 0 2px 8px rgba(0,0,0,0.65);
+      --depth-1: 0 12px 32px -12px rgba(0,0,0,0.65);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 500px at 12% 0%, rgba(129,189,248,0.11), transparent 65%),
+        radial-gradient(900px 500px at 88% 8%, rgba(255,154,255,0.09), transparent 65%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Outfit", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(6,7,11,0.84);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .brand-mini img { width: 34px; height: 34px; }
+    .brand-mini strong {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      font-size: 1.18rem;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .nav-links a {
+      color: #C7D0E4;
+      text-decoration: none;
+      font-size: 0.80rem;
+      font-family: "JetBrains Mono", monospace;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.09);
+      transition: .18s ease;
+    }
+    .nav-links a:hover {
+      border-color: var(--hielo);
+      color: #fff;
+      background: rgba(169,220,255,0.08);
+    }
+    .wrap { max-width: 1360px; margin: 0 auto; padding: 36px 24px 80px; }
+    .hero {
+      padding: 40px 36px;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(16,20,34,0.94), rgba(8,10,16,0.96));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--rim-top), var(--depth-1);
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 920px) { .hero { grid-template-columns: 1fr; } }
+    .eyebrow {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      color: var(--hielo);
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 300;
+      font-size: clamp(2.1rem, 4vw, 3.3rem);
+      letter-spacing: 0.06em;
+      margin: 8px 0 12px;
+      line-height: 1.08;
+    }
+    .prism-line {
+      height: 3px;
+      width: 180px;
+      background: var(--prism);
+      border-radius: 99px;
+      margin: 14px 0 18px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .stat {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat b { display: block; font-size: 1.25rem; color: #fff; font-weight: 600; }
+    .stat span { font-size: 0.78rem; color: var(--muted); }
+    .hero-card {
+      padding: 22px;
+      border-radius: 18px;
+      background: #06070B;
+      border: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+    }
+    .hero-card img { width: 100%; max-width: 260px; border-radius: 14px; }
+    section { margin-top: 54px; }
+    .sec-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .sec-head h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+      margin: 4px 0 0;
+    }
+    .bg-switcher {
+      display: inline-flex;
+      gap: 6px;
+      padding: 5px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .bg-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .bg-btn.active { background: #fff; color: #06070B; font-weight: 600; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 18px;
+    }
+    .grid-2 { grid-template-columns: repeat(auto-fill, minmax(430px, 1fr)); }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card {
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--rim-top), var(--depth-1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .stage {
+      min-height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      background-image:
+        linear-gradient(45deg, #1b2030 25%, transparent 25%),
+        linear-gradient(-45deg, #1b2030 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1b2030 75%),
+        linear-gradient(-45deg, transparent 75%, #1b2030 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+      background-color: #131723;
+      transition: background-color .2s ease;
+    }
+    body.stage-day .stage { background: #FFFFFF; background-image: none; }
+    body.stage-night .stage { background: #06070B; background-image: none; }
+    .stage img {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      display: block;
+    }
+    .stage.avatar-stage img { border-radius: 14px; transition: border-radius .2s ease; }
+    body.circle-crop .stage.avatar-stage img {
+      border-radius: 50%;
+      outline: 2px dashed rgba(169,220,255,0.65);
+      outline-offset: 2px;
+    }
+    .body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .body h3 { margin: 0; font-size: 1.02rem; font-weight: 600; color: #fff; }
+    .body p { margin: 0; font-size: 0.85rem; color: var(--muted); flex: 1; }
+    .files {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .pill {
+      text-decoration: none;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      padding: 5px 9px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #E7EEFF;
+      transition: .16s ease;
+    }
+    .pill:hover { background: var(--hielo); color: #06070B; border-color: var(--hielo); font-weight: 600; }
+    .pill.svg { border-color: rgba(129,189,248,0.45); color: var(--hielo); }
+    .pill.pngt { border-color: rgba(213,190,255,0.45); color: var(--lavanda); }
+    .pill.jpg { border-color: rgba(255,154,255,0.45); color: var(--rosa); }
+
+    /* Interactive Typo + Slogan Sandbox */
+    .sandbox {
+      padding: 26px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--rim-top), var(--depth-1);
+    }
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .chip-btn {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: #DCE5F8;
+      padding: 8px 13px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .chip-btn.active {
+      background: var(--prism);
+      color: #06070B;
+      border-color: transparent;
+      font-weight: 600;
+    }
+    .live-stage {
+      margin-top: 16px;
+      padding: 36px 28px;
+      border-radius: 16px;
+      background: #06070B;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+    .live-stage.day { background: #FFFFFF; color: #090B10; }
+    .live-stage img { width: 112px; height: 112px; }
+    .live-word {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      letter-spacing: 0.24em;
+      line-height: 1.05;
+      color: #FFFFFF;
+    }
+    .live-stage.day .live-word { color: #090B10; }
+    .live-sub {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 3px solid transparent;
+      border-image: var(--prism) 1;
+      font-size: 0.86rem;
+      letter-spacing: 0.28em;
+      color: #B8C2D6;
+    }
+    .live-stage.day .live-sub { color: #434B5E; }
+
+    /* Swatches & Textures */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 14px;
+    }
+    .swatch {
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 12px;
+      cursor: pointer;
+      transition: transform .16s ease, border-color .16s ease;
+    }
+    .swatch:hover { transform: translateY(-2px); border-color: var(--hielo); }
+    .swatch-color { height: 84px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); margin-bottom: 10px; }
+    .swatch code { font-family: "JetBrains Mono", monospace; font-size: 0.88rem; color: #fff; font-weight: 600; }
+    .swatch small { display: block; font-size: 0.74rem; color: var(--muted); font-family: "JetBrains Mono", monospace; margin-top: 3px; }
+
+    .texture-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .tex-card {
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.16);
+      position: relative;
+      overflow: hidden;
+    }
+    .tex-cristal {
+      background: linear-gradient(155deg, rgba(255,255,255,0.11), rgba(169,220,255,0.06));
+      backdrop-filter: blur(24px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 18px 36px -14px rgba(0,0,0,0.65);
+    }
+    .tex-satin {
+      background: linear-gradient(155deg, #F8FAFF, #EAEEF8);
+      color: #090B10;
+      box-shadow: inset 0 1px 0 #FFFFFF, 0 12px 28px -10px rgba(0,0,0,0.35);
+    }
+    .tex-obsidiana {
+      background: linear-gradient(155deg, #0E121D, #06070B);
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .doc-box {
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    th { font-family: "JetBrains Mono", monospace; font-size: 0.76rem; color: var(--hielo); text-transform: uppercase; }
+    .copy-pre {
+      background: #06070B;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      color: #DCE5F8;
+      white-space: pre-wrap;
+      margin: 8px 0 0;
+    }
+    .toast {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: #fff;
+      color: #06070B;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.80rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .18s ease;
+      z-index: 90;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-mini" href="#top">
+        <img src="./01-isotipos-y-estilos/02-prisma-noche.svg" alt="Zaphyrel" />
+        <strong>ZAPHYREL · BRAND VAULT</strong>
+      </a>
+      <nav class="nav-links">
+        <a href="#isotipos">01 · Isotipo (6 Estilos)</a>
+        <a href="#lockups">02 · Lockups</a>
+        <a href="#opciones">03 · Fuentes &amp; Eslóganes</a>
+        <a href="#color">04 · Colores &amp; Relieve</a>
+        <a href="#medidas">05 · Grilla &amp; Medidas</a>
+        <a href="#indecopi">06 · Legal INDECOPI</a>
+        <a href="#redes">07 · Redes Sociales</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+    <section class="hero" style="margin-top:0">
+      <div>
+        <div class="eyebrow">KIT INTEGRAL DE IDENTIDAD · ECOSISTEMAS DIGITALES</div>
+        <h1>ZAPHYREL — Manual, Archivos Vectoriales, Registro Legal y Kit Social</h1>
+        <div class="prism-line"></div>
+        <p style="color:#C9D3EA; max-width:66ch;">
+          Entrega completa y separada por formato (<strong>SVG vectorial</strong>, <strong>PNG transparente</strong>, <strong>PNG con fondo sólido</strong> y <strong>JPG alta resolución</strong>), con múltiples acabados, opciones tipográficas, variaciones de eslogan, ficha técnica exacta, expediente blanco/negro para <strong>INDECOPI</strong> y tamaños exactos para redes sociales.
+        </p>
+        <div class="stats">
+          <div class="stat"><b>6 Estilos</b><span>Prisma, Cristal, Titanio y Sellos B/N</span></div>
+          <div class="stat"><b>4 Formatos</b><span>SVG · PNG Alpha · PNG · JPG 96%</span></div>
+          <div class="stat"><b>3 × 5 Opciones</b><span>3 Tipografías × 5 Eslóganes</span></div>
+          <div class="stat"><b>1500 × 1500 px</b><span>Expediente Mixto INDECOPI listo</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="./02-lockups-completos/lockup-vertical-prisma-full.png" alt="Zaphyrel Vertical Lockup" />
+        <div class="files" style="justify-content:center; margin-top:14px;">
+          <a class="pill" href="../docs/BRAND_BOOK.md" target="_blank">Abrir BRAND_BOOK.md</a>
+          <a class="pill svg" href="./04-registro-legal-indecopi/GUIA_REGISTRO_INDECOPI_CLASES_NIZA.md" target="_blank">Guía INDECOPI</a>
+          <a class="pill jpg" href="./05-redes-sociales/KIT_REDES_BIOS_HANDLES.md" target="_blank">Guía Redes &amp; Bios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 ISOTIPOS -->
+    <section id="isotipos">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 01-isotipos-y-estilos/</div>
+          <h2>Isotipo Oficial en 6 Acabados y Relieves</h2>
+        </div>
+        <div class="bg-switcher" title="Cambiar fondo de previsualización de los archivos transparentes">
+          <button class="bg-btn active" onclick="setStage('check', this)">Damero Alpha</button>
+          <button class="bg-btn" onclick="setStage('day', this)">Fondo Día (#FFFFFF)</button>
+          <button class="bg-btn" onclick="setStage('night', this)">Fondo Noche (#06070B)</button>
+        </div>
+      </div>
+      <div class="grid" id="grid-iso"></div>
+    </section>
+
+    <!-- 02 LOCKUPS -->
+    <section id="lockups">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 02-lockups-completos/</div>
+          <h2>Lockups Completos (Horizontal, Vertical, Compacto y Solo Texto)</h2>
+        </div>
+      </div>
+      <div class="grid grid-2" id="grid-lockups"></div>
+    </section>
+
+    <!-- 03 OPCIONES TIPOGRAFÍA Y ESLOGAN -->
+    <section id="opciones">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 03-opciones-tipografia-y-eslogan/</div>
+          <h2>Probador Interactivo: Escoge Tipografía, Eslogan y Fondo</h2>
+        </div>
+      </div>
+      <div class="sandbox">
+        <div class="eyebrow" style="margin-bottom:8px;">1. ELIGE TIPOGRAFÍA PARA "ZAPHYREL"</div>
+        <div class="controls-row" id="font-btns">
+          <button class="chip-btn active" onclick="setFont(0, this)">Opción 1 · Cormorant Garamond (Oficial Lujo)</button>
+          <button class="chip-btn" onclick="setFont(1, this)">Opción 2 · Space Grotesk (Tech / SaaS Moderno)</button>
+          <button class="chip-btn" onclick="setFont(2, this)">Opción 3 · Cinzel (Monumental Corporativo)</button>
+        </div>
+        <div class="eyebrow" style="margin:12px 0 8px;">2. ELIGE ESLOGAN / BAJADA COMERCIAL</div>
+        <div class="controls-row" id="slogan-btns">
+          <button class="chip-btn active" onclick="setSlogan(0, this)">ECOSISTEMAS DIGITALES (Oficial)</button>
+          <button class="chip-btn" onclick="setSlogan(1, this)">INGENIERÍA &amp; ECOSISTEMAS DIGITALES</button>
+          <button class="chip-btn" onclick="setSlogan(2, this)">AUTOMATIZACIÓN &amp; ECOSISTEMAS DIGITALES</button>
+          <button class="chip-btn" onclick="setSlogan(3, this)">SOFTWARE · AUTOMATIZACIÓN · CONTROL</button>
+          <button class="chip-btn" onclick="setSlogan(4, this)">SOLUCIONES INTEGRALES PARA NEGOCIOS</button>
+        </div>
+        <div class="controls-row">
+          <button class="chip-btn" onclick="document.getElementById('live-stage').classList.toggle('day')">Alternar Día / Noche</button>
+        </div>
+        <div class="live-stage" id="live-stage">
+          <img id="live-sym" src="./01-isotipos-y-estilos/02-prisma-noche.svg" alt="Zaphyrel" />
+          <div>
+            <div class="live-word" id="live-word" style="font-family:'Cormorant Garamond',serif;font-weight:300;">ZAPHYREL</div>
+            <div class="live-sub" id="live-sub">ECOSISTEMAS DIGITALES</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top:20px;" id="grid-typo-files"></div>
+    </section>
+
+    <!-- 04 COLORES, RELIEVES Y TEXTURAS -->
+    <section id="color">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">ESPECTRO PRISMÁTICO &amp; SUPERFICIES · Clic en cualquier muestra para copiar HEX</div>
+          <h2>Colores Oficiales (HEX · RGB · HSL · CMYK), Relieves y Texturas</h2>
+        </div>
+      </div>
+      <div class="swatch-grid" id="swatch-grid"></div>
+      <div class="texture-grid">
+        <div class="tex-card tex-cristal">
+          <div class="eyebrow">TEXTURA 01 · CRISTAL</div>
+          <h3 style="margin:6px 0 8px;">Vidrio Prismático (`--grain-op: 0.012`)</h3>
+          <p style="margin:0; font-size:0.86rem; color:#D5DFF5;">Borde especular superior <code>--rim-top</code> + desenfoque de fondo <code>24px</code>. Ideal para modales, cabeceras flotantes y tarjetas hero.</p>
+        </div>
+        <div class="tex-card tex-satin">
+          <div class="eyebrow" style="color:#434B5E;">TEXTURA 02 · SATÍN MINERAL</div>
+          <h3 style="margin:6px 0 8px;">Papel Algodón &amp; Aluminio (`--grain-op: 0.028`)</h3>
+          <p style="margin:0; font-size:0.86rem; color:#434B5E;">Micro-textura táctil sobre fondos claros <code>#F8FAFF / #EAEEF8</code> con doble capa de elevación <code>Z1 / Z2</code> para legibilidad ejecutiva.</p>
+        </div>
+        <div class="tex-card tex-obsidiana">
+          <div class="eyebrow">TEXTURA 03 · OBSIDIANA</div>
+          <h3 style="margin:6px 0 8px;">Bajorelieve Carbono (`--grain-op: 0.042`)</h3>
+          <p style="margin:0; font-size:0.86rem; color:#B8C2D6;">Canal interior hundido <code>--recess</code> (<code>inset 0 2px 8px rgba(0,0,0,0.65)</code>) para módulos técnicos y empaques de lujo.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px;">
+        <div class="stage" style="background:#F8FAFF;"><img src="./06-planos-constructivos-y-medidas/ficha-paleta-cmyk-rgb-hex.png" alt="Ficha Paleta CMYK RGB HEX" style="max-height:360px;" /></div>
+        <div class="body">
+          <h3>Lámina Oficial de Color &amp; Acabados (Lista para Imprenta y Proveedores)</h3>
+          <div class="files">
+            <a class="pill pngt" href="./06-planos-constructivos-y-medidas/ficha-paleta-cmyk-rgb-hex.png" download>Descargar PNG</a>
+            <a class="pill jpg" href="./06-planos-constructivos-y-medidas/ficha-paleta-cmyk-rgb-hex.jpg" download>Descargar JPG</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 MEDIDAS Y GRILLA CONSTRUCTIVA -->
+    <section id="medidas">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 06-planos-constructivos-y-medidas/</div>
+          <h2>Planos Constructivos, Medidas Exactas y Zona Segura</h2>
+        </div>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="stage" style="background:#F8FAFF;"><img src="./06-planos-constructivos-y-medidas/grilla-constructiva-120x120.png" alt="Grilla constructiva 120x120" style="max-height:320px;" /></div>
+          <div class="body">
+            <h3>Plano Técnico Vectorial `120 × 120 u` y Reglas de Respeto</h3>
+            <p>Área de respeto obligatoria <code>0.25X</code>, corona octogonal abierta a <code>45°</code>, canal central <code>y = 60</code> y tamaños mínimos digitales e impresos.</p>
+            <div class="files">
+              <a class="pill svg" href="./06-planos-constructivos-y-medidas/grilla-constructiva-120x120.svg" download>SVG Plano</a>
+              <a class="pill pngt" href="./06-planos-constructivos-y-medidas/grilla-constructiva-120x120.png" download>PNG</a>
+              <a class="pill jpg" href="./06-planos-constructivos-y-medidas/grilla-constructiva-120x120.jpg" download>JPG</a>
+            </div>
+          </div>
+        </div>
+        <div class="doc-box">
+          <h3 style="margin-top:0;">Especificaciones Técnicas Exactas</h3>
+          <table>
+            <thead><tr><th>Parámetro</th><th>Medida / Valor Oficial</th></tr></thead>
+            <tbody>
+              <tr><td>Matriz base SVG</td><td><code>120 × 120 u</code> (relación <code>1:1</code>)</td></tr>
+              <tr><td>Inclinación de corona y alas Z</td><td><code>45°</code> exactos en 7 facetas octogonales</td></tr>
+              <tr><td>Canal ecuatorial Split-Blade</td><td>Centro <code>y = 60 u</code> · apertura luminosa</td></tr>
+              <tr><td>Área de respeto (Clear Space)</td><td><code>0.25X</code> (<code>30 u</code> en matriz <code>120 u</code>)</td></tr>
+              <tr><td>Mínimo digital isotipo</td><td><code>24 × 24 px</code> (<code>16 px</code> versión favicon)</td></tr>
+              <tr><td>Mínimo digital lockup horizontal</td><td><code>160 px</code> de ancho con eslogan visible</td></tr>
+              <tr><td>Mínimo impreso (isotipo / lockup)</td><td><code>12 mm</code> alto (isotipo) · <code>38 mm</code> ancho (lockup)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 INDECOPI -->
+    <section id="indecopi">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 04-registro-legal-indecopi/</div>
+          <h2>Paquete Legal para Registro de Marca en INDECOPI (Perú)</h2>
+        </div>
+      </div>
+      <div class="grid" id="grid-indecopi"></div>
+      <div class="doc-box" style="margin-top:18px;">
+        <h3 style="margin-top:0;">Resumen Ejecutivo de Clases de Niza y Descripción Recomendada</h3>
+        <p style="color:#C9D3EA; font-size:0.9rem;">
+          Presentar como <strong>Marca Mixta en Blanco y Negro</strong> (<code>indecopi-marca-mixta-byn-1500x1500.png</code>) en <strong>Clase 42</strong> (software a medida, SaaS, web, automatización e integración operativa), indicando que el subtítulo descriptivo <em>"ECOSISTEMAS DIGITALES"</em> se incluye en conjunto sin reivindicación aislada sobre palabras genéricas. Opcionalmente añadir <strong>Clase 9</strong> (apps/POS descargable) y <strong>Clase 35</strong> (gestión comercial digital).
+        </p>
+        <a class="pill svg" href="./04-registro-legal-indecopi/GUIA_REGISTRO_INDECOPI_CLASES_NIZA.md" target="_blank">Leer Guía Legal Completa (Memoria Descriptiva + Clases Niza)</a>
+      </div>
+    </section>
+
+    <!-- 07 REDES SOCIALES -->
+    <section id="redes">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 05-redes-sociales/</div>
+          <h2>Kit Completo de Redes Sociales y Simulador Circular</h2>
+        </div>
+        <div class="bg-switcher">
+          <button class="bg-btn" onclick="document.body.classList.toggle('circle-crop'); this.classList.toggle('active');">Simular Recorte Circular en Avatares</button>
+        </div>
+      </div>
+      <div class="grid" id="grid-redes"></div>
+      <div class="doc-box" style="margin-top:20px;">
+        <h3 style="margin-top:0;">Biografías y Handles Listos para Copiar</h3>
+        <div class="grid grid-2">
+          <div>
+            <strong style="color:var(--hielo); font-size:0.86rem;">Instagram &amp; TikTok Bio (clic para copiar)</strong>
+            <pre class="copy-pre" onclick="copyText(this.textContent)">ZAPHYREL · Ecosistemas Digitales
+Automatización de negocios: web, sistemas internos, stock, caja y control real.
+📲 Cotiza tu sistema 👇
+zaphyrel-site.vercel.app</pre>
+          </div>
+          <div>
+            <strong style="color:var(--hielo); font-size:0.86rem;">WhatsApp Business Descripción (clic para copiar)</strong>
+            <pre class="copy-pre" onclick="copyText(this.textContent)">Zaphyrel — Ecosistemas Digitales.
+Diseñamos webs corporativas, plataformas internas para empleados, control de inventarios, facturación electrónica, verificación operativa y flujos automatizados adaptados a tu rubro.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Copiado al portapapeles</div>
+
+  <script>
+    const ISO_ITEMS = [
+      ['01 · Prisma Día', 'Degradado oficial sobre marfil/transparente para propuestas, cotizaciones y web clara.', '01-isotipos-y-estilos/01-prisma-dia', true],
+      ['02 · Prisma Noche', 'Brillo calibrado sobre obsidiana para UI dark, encabezados y presentaciones ejecutivas.', '01-isotipos-y-estilos/02-prisma-noche', true],
+      ['03 · Relieve Cristal 2.5D', 'Efecto volumen vidriado con luz cenital, biseles profundos y sombra proyectada.', '01-isotipos-y-estilos/03-relieve-cristal-glass', true],
+      ['04 · Metálico Titanio Satinado', 'Acabado acero cepillado neutro con reflejos metálicos de relojería fina.', '01-isotipos-y-estilos/04-metalico-titanio-relieve', true],
+      ['05 · Monocromo Negro Sello', 'Negro puro #000000 sin degradados: obligado para sellos, grabado láser e INDECOPI.', '01-isotipos-y-estilos/05-monocromo-negro-sello', true],
+      ['06 · Monocromo Blanco Negativo', 'Blanco puro #FFFFFF para aplicar sobre fotografía, video, uniformes o fondos oscuros.', '01-isotipos-y-estilos/06-monocromo-blanco-negativo', true],
+    ];
+
+    const LOCKUPS = [
+      ['Horizontal Oficial · Día', 'Isotipo + ZAPHYREL + ECOSISTEMAS DIGITALES sobre claro/transparente.', '02-lockups-completos/lockup-horizontal-oficial-dia', true],
+      ['Horizontal Oficial · Noche', 'Isotipo + ZAPHYREL + ECOSISTEMAS DIGITALES sobre obsidiana/transparente.', '02-lockups-completos/lockup-horizontal-oficial-noche', true],
+      ['Horizontal Compacto (Sin Eslogan) · Día', 'Para espacios menores a 180px, navbars angostas o encabezados de facturas.', '02-lockups-completos/lockup-horizontal-compacto-sin-eslogan-dia', true],
+      ['Horizontal Compacto (Sin Eslogan) · Noche', 'Versión reducida de alto contraste para interfaces oscuras o pies de pantalla.', '02-lockups-completos/lockup-horizontal-compacto-sin-eslogan-noche', true],
+      ['Vertical Apilado · Día', 'Composición vertical centrada para carátulas, certificados y membretes.', '02-lockups-completos/lockup-vertical-apilado-dia', true],
+      ['Vertical Apilado · Noche', 'Composición vertical centrada sobre fondo oscuro para pantallas de bienvenida.', '02-lockups-completos/lockup-vertical-apilado-noche', true],
+      ['Vertical Prisma Full Studio', 'Versión enmarcada con aura luminosa y relieve cristal listo para póster o portada.', '02-lockups-completos/lockup-vertical-prisma-full', false],
+      ['Wordmark Solo Texto · Día', 'Logotipo tipográfico puro sobre claro/transparente para firmas o papelería.', '02-lockups-completos/wordmark-solo-texto-dia', true],
+      ['Wordmark Solo Texto · Noche', 'Logotipo tipográfico puro blanco luminoso sobre fondo oscuro o transparente.', '02-lockups-completos/wordmark-solo-texto-noche', true],
+    ];
+
+    const TYPO_FILES = [
+      ['Opción 1 · Cormorant Garamond (Oficial)', 'Estilo editorial arquitectónico, sofisticado y distinguido.', '03-opciones-tipografia-y-eslogan/opcion-tipo-1-cormorant-garamond-lujo', true],
+      ['Opción 2 · Space Grotesk (Tech / SaaS)', 'Geométrica contemporánea enfocada en apps POS, dashboards y hardware.', '03-opciones-tipografia-y-eslogan/opcion-tipo-2-space-grotesk-tech', true],
+      ['Opción 3 · Cinzel Monumental (Institucional)', 'Trazo romano clásico orientado a corporaciones, alcaldías y contratos grandes.', '03-opciones-tipografia-y-eslogan/opcion-tipo-3-cinzel-monumental', true],
+      ['Lámina Comparativa (3 Fuentes × 5 Eslóganes)', 'Resumen visual imprimible para revisar y decidir con socios o clientes.', '03-opciones-tipografia-y-eslogan/comparativa-3-tipografias-5-esloganes', false],
+    ];
+
+    const INDECOPI = [
+      ['Marca Mixta B/N (Prioritaria)', '1500×1500 px blanco y negro puro sin degradados para expediente general.', '04-registro-legal-indecopi/indecopi-marca-mixta-byn-1500x1500'],
+      ['Marca Mixta Color', '1500×1500 px a color oficial por si deseas reivindicar la paleta cromática.', '04-registro-legal-indecopi/indecopi-marca-mixta-color-1500x1500'],
+      ['Isotipo Solo B/N', '1500×1500 px figurative mark para proteger el símbolo sin denominación.', '04-registro-legal-indecopi/indecopi-isotipo-solo-byn-1500x1500'],
+      ['Isotipo Solo Color', '1500×1500 px isotipo prismático oficial en alta densidad.', '04-registro-legal-indecopi/indecopi-isotipo-solo-color-1500x1500'],
+    ];
+
+    const REDES = [
+      ['Instagram · Avatar Oscuro', '1080×1080 px (con zona segura circular)', '05-redes-sociales/instagram-avatar-oscuro-1080x1080', true],
+      ['Instagram · Avatar Claro', '1080×1080 px limpio fondo blanco', '05-redes-sociales/instagram-avatar-claro-1080x1080', true],
+      ['TikTok · Avatar Cristal 2.5D', '1080×1080 px alto relieve luminoso', '05-redes-sociales/tiktok-avatar-1080x1080', true],
+      ['Facebook · Avatar Perfil', '1080×1080 px para Fanpage', '05-redes-sociales/facebook-perfil-1080x1080', true],
+      ['Facebook · Portada Cover', '1640×924 px (16:9 HD centrado)', '05-redes-sociales/facebook-portada-1640x924', false],
+      ['LinkedIn · Logo Empresa', '800×800 px Company Page', '05-redes-sociales/linkedin-logo-empresa-800x800', true],
+      ['LinkedIn · Portada Empresa', '1128×191 px exacto sin recortes', '05-redes-sociales/linkedin-portada-empresa-1128x191', false],
+      ['LinkedIn · Portada Personal', '1584×396 px perfil fundador', '05-redes-sociales/linkedin-portada-personal-1584x396', false],
+      ['X (Twitter) · Banner Header', '1500×500 px optimizado', '05-redes-sociales/x-twitter-banner-1500x500', false],
+      ['YouTube · Banner de Canal', '2560×1440 px en zona segura TV/móvil 1546×423', '05-redes-sociales/youtube-banner-2560x1440', false],
+      ['WhatsApp Business · Avatar', '800×800 px nítido en miniatura móvil', '05-redes-sociales/whatsapp-business-avatar-800x800', true],
+      ['Web · Miniatura OpenGraph (Link Preview)', '1200×630 px para enlaces en WhatsApp/FB/LinkedIn', '05-redes-sociales/web-og-compartir-link-1200x630', false],
+      ['Plantilla Post Cuadrado Claro', '1080×1080 px marco prismático + zona de titular', '05-redes-sociales/plantilla-post-1080x1080-claro', false],
+      ['Plantilla Post Cuadrado Oscuro', '1080×1080 px marco prismático + zona de titular', '05-redes-sociales/plantilla-post-1080x1080-oscuro', false],
+      ['Plantilla Historia / Reel / TikTok', '1080×1920 px (9:16) con márgenes de UI seguros', '05-redes-sociales/plantilla-historia-reel-1080x1920', false],
+    ];
+
+    const SWATCHES = [
+      ['#81BDF8', 'Zafiro Cielo', 'RGB(129, 189, 248) · CMYK 48/24/0/3'],
+      ['#A9DCFF', 'Hielo Etéreo', 'RGB(169, 220, 255) · CMYK 34/14/0/0'],
+      ['#D5BEFF', 'Lavanda Prisma', 'RGB(213, 190, 255) · CMYK 16/25/0/0'],
+      ['#FFD5FF', 'Rosa Seda', 'RGB(255, 213, 255) · CMYK 0/16/0/0'],
+      ['#FF9AFF', 'Orquídea Seda', 'RGB(255, 154, 255) · CMYK 0/40/0/0'],
+      ['#FFFFFF', 'Blanco Puro', 'RGB(255, 255, 255) · Base Día / Impresión'],
+      ['#F8FAFF', 'Blanco Perla', 'RGB(248, 250, 255) · Papel / Fondo Web Claro'],
+      ['#EAEEF8', 'Gris Niebla', 'RGB(234, 238, 248) · Superficies Día'],
+      ['#8890A2', 'Gris Acero', 'RGB(136, 144, 162) · Metadatos / Subtítulos'],
+      ['#434B5E', 'Gris Mineral', 'RGB(67, 75, 94) · Trazos & Contraste Medio'],
+      ['#090B10', 'Obsidiana', 'RGB(9, 11, 16) · Superficie Secundaria'],
+      ['#06070B', 'Negro Abisal', 'RGB(6, 7, 11) · Fondo Primario Noche'],
+    ];
+
+    function renderDualCards(containerId, items, hasSvgAndTransp = true) {
+      const root = document.getElementById(containerId);
+      root.innerHTML = items.map(([title, desc, base, supportsSvgAndTransp]) => {
+        const preview = (supportsSvgAndTransp === false) ? `./${base}.png` : `./${base}-transparente.png`;
+        const links = (supportsSvgAndTransp === false)
+          ? `<a class="pill pngt" href="./${base}.png" download>PNG HD</a>
+             <a class="pill jpg" href="./${base}.jpg" download>JPG 96%</a>`
+          : `<a class="pill svg" href="./${base}.svg" download>SVG Vector</a>
+             <a class="pill pngt" href="./${base}-transparente.png" download>PNG Transparente</a>
+             <a class="pill" href="./${base}-fondo.png" download>PNG Sólido</a>
+             <a class="pill jpg" href="./${base}.jpg" download>JPG Alta Res</a>`;
+        return `
+          <article class="card">
+            <div class="stage"><img src="${preview}" alt="${title}" loading="lazy" /></div>
+            <div class="body">
+              <h3>${title}</h3>
+              <p>${desc}</p>
+              <div class="files">${links}</div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    renderDualCards('grid-iso', ISO_ITEMS);
+    renderDualCards('grid-lockups', LOCKUPS);
+    renderDualCards('grid-typo-files', TYPO_FILES);
+
+    document.getElementById('grid-indecopi').innerHTML = INDECOPI.map(([t, d, base]) => `
+      <article class="card">
+        <div class="stage" style="background:#FFFFFF;"><img src="./${base}.png" alt="${t}" /></div>
+        <div class="body">
+          <h3>${t}</h3>
+          <p>${d}</p>
+          <div class="files">
+            <a class="pill pngt" href="./${base}.png" download>PNG 1500×1500</a>
+            <a class="pill jpg" href="./${base}.jpg" download>JPG 1500×1500</a>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    document.getElementById('grid-redes').innerHTML = REDES.map(([t, d, base, isAv]) => `
+      <article class="card">
+        <div class="stage ${isAv ? 'avatar-stage' : ''}" style="background:#06070B;"><img src="./${base}.png" alt="${t}" loading="lazy" /></div>
+        <div class="body">
+          <h3>${t}</h3>
+          <p>${d}</p>
+          <div class="files">
+            <a class="pill pngt" href="./${base}.png" download>PNG Nítido</a>
+            <a class="pill jpg" href="./${base}.jpg" download>JPG Ligero</a>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    document.getElementById('swatch-grid').innerHTML = SWATCHES.map(([hex, name, specs]) => `
+      <div class="swatch" onclick="copyText('${hex}')">
+        <div class="swatch-color" style="background:${hex};"></div>
+        <code>${hex}</code> · <strong style="font-size:0.9rem;">${name}</strong>
+        <small>${specs}</small>
+      </div>
+    `).join('');
+
+    function setStage(mode, btn) {
+      document.body.classList.remove('stage-day', 'stage-night');
+      if (mode === 'day') document.body.classList.add('stage-day');
+      if (mode === 'night') document.body.classList.add('stage-night');
+      btn.parentElement.querySelectorAll('.bg-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    const FONTS = [
+      { family: "'Cormorant Garamond', serif", weight: '300', track: '0.24em' },
+      { family: "'Space Grotesk', sans-serif", weight: '500', track: '0.20em' },
+      { family: "'Cinzel', serif", weight: '500', track: '0.26em' },
+    ];
+    const SLOGANS = [
+      'ECOSISTEMAS DIGITALES',
+      'INGENIERÍA & ECOSISTEMAS DIGITALES',
+      'AUTOMATIZACIÓN & ECOSISTEMAS DIGITALES',
+      'SOFTWARE · AUTOMATIZACIÓN · CONTROL',
+      'SOLUCIONES INTEGRALES PARA NEGOCIOS',
+    ];
+    function setFont(i, btn) {
+      const w = document.getElementById('live-word');
+      w.style.fontFamily = FONTS[i].family;
+      w.style.fontWeight = FONTS[i].weight;
+      w.style.letterSpacing = FONTS[i].track;
+      document.querySelectorAll('#font-btns .chip-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    function setSlogan(i, btn) {
+      document.getElementById('live-sub').textContent = SLOGANS[i];
+      document.querySelectorAll('#slogan-btns .chip-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function copyText(txt) {
+      navigator.clipboard?.writeText(txt.trim());
+      const t = document.getElementById('toast');
+      t.textContent = 'Copiado: ' + txt.trim().slice(0, 38) + (txt.trim().length > 38 ? '…' : '');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2100);
+    }
+  </script>
+</body>
+</html>

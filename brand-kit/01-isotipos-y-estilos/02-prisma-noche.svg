@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="512" height="512" fill="none">
+  <title>Zaphyrel — Isotipo Oficial Prisma Noche</title>
+  <defs>
+    <linearGradient id="pAllN" x1="12" y1="12" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#81BDF8"/><stop offset="25%" stop-color="#A9DCFF"/><stop offset="50%" stop-color="#D5BEFF"/><stop offset="75%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/>
+    </linearGradient>
+    <linearGradient id="fBlueN" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A9DCFF"/><stop offset="100%" stop-color="#81BDF8"/></linearGradient>
+    <linearGradient id="fLavN" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D5BEFF"/><stop offset="100%" stop-color="#A9DCFF"/></linearGradient>
+    <linearGradient id="fPinkN" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/></linearGradient>
+    <linearGradient id="zWingAN" x1="36" y1="36" x2="84" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="55%" stop-color="#E4EEFF"/><stop offset="100%" stop-color="#A9DCFF"/>
+    </linearGradient>
+    <linearGradient id="zWingBN" x1="36" y1="58" x2="84" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#81BDF8"/><stop offset="45%" stop-color="#D5BEFF"/><stop offset="78%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/>
+    </linearGradient>
+    <linearGradient id="windGN" x1="4" y1="56" x2="32" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#81BDF8"/><stop offset="55%" stop-color="#A9DCFF"/><stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <path d="M 28 22 A 49 49 0 0 1 92 22 M 98 86 A 49 49 0 0 1 38 103" stroke="url(#pAllN)" stroke-width="0.85" stroke-linecap="round" opacity="0.65"/>
+  <polygon points="19,51 57,13 57.5,25.5 25.5,57.5" fill="url(#fBlueN)" stroke="#06070B" stroke-width="1"/>
+  <polygon points="57,13 63,13 62.5,25.5 57.5,25.5" fill="#FFFFFF" stroke="#06070B" stroke-width="1"/>
+  <polygon points="63,13 107,57 94.5,57.5 62.5,25.5" fill="url(#fLavN)" stroke="#06070B" stroke-width="1"/>
+  <polygon points="107,57 107,63 94.5,62.5 94.5,57.5" fill="#FFD5FF" stroke="#06070B" stroke-width="1"/>
+  <polygon points="107,63 63,107 62.5,94.5 94.5,62.5" fill="url(#fPinkN)" stroke="#06070B" stroke-width="1"/>
+  <polygon points="63,107 57,107 57.5,94.5 62.5,94.5" fill="#D5BEFF" stroke="#06070B" stroke-width="1"/>
+  <polygon points="57,107 40.5,90.5 49,82 57.5,94.5" fill="url(#fBlueN)" stroke="#06070B" stroke-width="1"/>
+  <path d="M 19 51 L 57 13 L 63 13 L 107 57 L 107 63 L 63 107 L 57 107 L 40.5 90.5" stroke="#FFFFFF" stroke-width="0.9" stroke-opacity="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="57.5,25.5 62.5,25.5 94.5,57.5 94.5,62.5 62.5,94.5 57.5,94.5 25.5,62.5 25.5,57.5" fill="#0B0E17" stroke="url(#pAllN)" stroke-width="1.35"/>
+  <polygon points="58.4,30.5 61.6,30.5 89.5,58.4 89.5,61.6 61.6,89.5 58.4,89.5 30.5,61.6 30.5,58.4" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="0.8"/>
+  <path d="M 10 52.5 H 25.5 L 22.4 55.6 H 10 Z M 4.5 59.4 H 28 L 24.2 63.2 H 4.5 Z M 11.5 66.8 H 30.5 L 27.1 70.1 H 11.5 Z" fill="url(#windGN)"/>
+  <path d="M 41 37.5 H 82.8 L 61.7 58.6 H 51.9 L 67.5 43 H 36.2 Z" fill="url(#zWingAN)"/>
+  <path d="M 79 82.5 H 37.2 L 58.3 61.4 H 68.1 L 52.5 77 H 83.8 Z" fill="url(#zWingBN)"/>
+  <line x1="47.5" y1="60" x2="72.5" y2="60" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.95" stroke-linecap="round"/>
+</svg>
