@@ -2,65 +2,63 @@
 
 > **Carpeta de archivos adjuntos:** `brand-kit/04-registro-legal-indecopi/`  
 > **Archivos incluidos (`1500 × 1500 px`, `< 5 MB`, sin compresión destructiva):**
-> - **Marca Mixta (Isotipo + Denominación + Subtítulo) en Blanco y Negro:** `indecopi-marca-mixta-byn-1500x1500.png` / `.jpg` *(sin degradados, negro `#000000` pleno sobre blanco `#FFFFFF`)*
-> - **Marca Mixta a Color (con reivindicación cromática):** `indecopi-marca-mixta-color-1500x1500.png` / `.jpg`
-> - **Marca Figurativa (Isotipo Solo) en Blanco y Negro:** `indecopi-isotipo-solo-byn-1500x1500.png` / `.jpg`
+> - **Marca Mixta (Isotipo + `ZAPHYREL` + `ARQUITECTURA QUE ENLAZA`) B/N:** `indecopi-marca-mixta-byn-1500x1500.png` / `.jpg` *(negro `#000000` pleno sobre blanco `#FFFFFF`)*
+> - **Marca Mixta a Color:** `indecopi-marca-mixta-color-1500x1500.png` / `.jpg`
+> - **Marca Figurativa (Isotipo Solo) B/N:** `indecopi-isotipo-solo-byn-1500x1500.png` / `.jpg`
 > - **Marca Figurativa (Isotipo Solo) a Color:** `indecopi-isotipo-solo-color-1500x1500.png` / `.jpg`
 
 ---
 
-## 1. Tipo de Registro Recomendado
+## 1. Verificación Previa del Eslogan (Por Qué Se Cambió)
 
-- **Modalidad:** **Marca Mixta** (recomendada como registro principal: protege simultáneamente el nombre denominativo `ZAPHYREL` y el diseño gráfico del isotipo + disposición visual).
-- **Registro Complementario Sugerido:** Registrar también el **Isotipo Figurativo Solo** (`indecopi-isotipo-solo-byn-1500x1500.png`) si planeas usar únicamente el símbolo en íconos de apps, sellos de dispositivos o merchandising sin texto.
-- **Uso con y sin color:** Al presentar la versión en **Blanco y Negro (`#000000` sobre `#FFFFFF`)** sin reivindicar colores específicos, la protección abarca cualquier variación de color que utilices en el futuro (Modo Día, Modo Noche, Titanio, Cristal). Si deseas proteger específicamente la paleta oficial, adjunta además la versión a color e indica los códigos cromáticos de la sección 4.
-
----
-
-## 2. Clasificación Internacional de Niza Recomendada
-
-Presentar en **Clase 42** como clase prioritaria de tu modelo de negocio, y evaluar **Clase 9** (software descargable/apps) y **Clase 35** (servicios comerciales/administrativos) según presupuesto de tasas:
-
-### A. CLASE 42 *(Prioritaria — Tecnología, Software y SaaS)*
-> **Texto sugerido para el formulario:**  
-> *Diseño, desarrollo, programación, implementación, actualización y mantenimiento de software y plataformas digitales a medida; software como servicio (SaaS) y plataforma como servicio (PaaS); automatización de procesos operativos, administrativos, comerciales e institucionales mediante software; integración de sistemas informáticos, APIs, bases de datos y pasarelas de pago; diseño y desarrollo de páginas web empresariales, portales institucionales, paneles de control en tiempo real y sistemas de gestión interna para comercios, restaurantes, hoteles, clínicas, municipalidades, discotecas y almacenes; consultoría tecnológica y soporte técnico informático.*
-
-### B. CLASE 9 *(Opcional / Complementaria — Aplicaciones y Software Descargable)*
-> **Texto sugerido para el formulario:**  
-> *Programas informáticos descargables y aplicaciones móviles (apps) para gestión empresarial, punto de venta (POS), control de inventarios, control de acceso y verificación operativa, gestión de personal y reservas; interfaces gráficas de usuario descargables.*
-
-### C. CLASE 35 *(Opcional — Gestión Comercial y Publicidad Digital)*
-> **Texto sugerido para el formulario:**  
-> *Servicios de asesoramiento en organización y dirección de negocios; sistematización y recopilación de datos administrativos y de inventario en bases de datos informáticas; gestión digital de procesos comerciales y presentación de productos en medios de comunicación para ventas.*
+Se verificaron las expresiones previas mediante búsqueda de mercado y análisis de signos distintivos en Perú/LatAm:
+- **`"ECOSISTEMAS DIGITALES"` (DESCARTADA como eslogan principal):** está saturada comercialmente (utilizada de forma directa por firmas como *Ecosistemas Global*, agencias digitales LatAm y operadoras TIC) y ante **INDECOPI** se clasifica como **término genérico descriptivo** sin derecho de exclusividad.
+- **`"DEL MOSTRADOR A LA GERENCIA"` (DESCARTADA):** ya es utilizada activamente por sistemas ERP/POS locales en Perú (por ejemplo *Fox System* / *ASG*).
+- **Eslogan Seleccionado (`ARQUITECTURA QUE ENLAZA`) + Alternativas Verificadas:**
+  - `ARQUITECTURA QUE ENLAZA` *(Recomendado: fino, distintivo, conceptual, evocador de software sin caer en términos descriptivos rígidos)*.
+  - Alternativas igualmente verificadas sin uso masivo competidor: `EL PULSO EXACTO DE TU EMPRESA` · `ESTRUCTURA VIVA · CONTROL REAL` · `DONDE CADA ÁREA ENCAJA` · `INGENIERÍA DE ORDEN VIVO`.
+  - Adicionalmente, puede solicitarse su protección separada bajo la figura de **Lema Comercial** vinculado a la marca principal **`ZAPHYREL`**.
 
 ---
 
-## 3. Nota Legal Sobre el Subtítulo `"ECOSISTEMAS DIGITALES"`
+## 2. Modalidad de Registro Recomendada
 
-- En la **Marca Mixta**, la palabra distintiva principal es **`ZAPHYREL`** (término de fantasía / distintivo, con altísima registrabilidad).
-- Las palabras **`ECOSISTEMAS DIGITALES`** tienen carácter descriptivo/informativo de los servicios. Al momento de llenar la solicitud en línea de INDECOPI, se debe indicar que el término **`ECOSISTEMAS DIGITALES`** se incluye dentro de la etiqueta **sin reivindicación de exclusividad sobre términos genéricos aislados** (uso en conjunto), evitando así observaciones por falta de distintividad de las palabras genéricas.
+- **Solicitud Principal:** **Marca Mixta** (`indecopi-marca-mixta-byn-1500x1500.png`) — protege el nombre denominativo `ZAPHYREL`, la disposición visual completa y el isotipo geométrico en cualquier aplicación de color (Modo Día, Noche, Prisma Cristal, Obsidiana Titanio o Porcelana Studio).
+- **Si deseas proteger la paleta cromática específica:** adjunta `indecopi-marca-mixta-color-1500x1500.png` reivindicando los colores de la sección 4.
+- **Protección de Ícono / App Icon independiente:** opcionalmente registrar el figurativo (`indecopi-isotipo-solo-byn-1500x1500.png`).
 
 ---
 
-## 4. Memoria Descriptiva del Signo (Para Adjuntar o Pegar en Solicitud)
+## 3. Clasificación Internacional de Niza Recomendada
 
-- **Denominación:** `ZAPHYREL`
+### A. CLASE 42 *(Prioritaria — Software, Plataformas y Automatización)*
+> **Texto sugerido para el formulario:**  
+> *Diseño, desarrollo, programación, implementación, actualización y mantenimiento de software y plataformas digitales a medida; software como servicio (SaaS) y plataforma como servicio (PaaS); automatización de procesos operativos, administrativos, comerciales e institucionales; integración de sistemas informáticos, APIs, bases de datos y pasarelas de pago; diseño y desarrollo de páginas web empresariales, portales institucionales, paneles de control y sistemas de gestión interna para comercios, restaurantes, hoteles, clínicas, municipalidades, discotecas y almacenes; visualización interactiva en línea y consultoría tecnológica.*
+
+### B. CLASE 9 *(Opcional — Software Descargable y Aplicaciones)*
+> **Texto sugerido para el formulario:**  
+> *Programas informáticos descargables y aplicaciones móviles (apps) para punto de venta (POS), gestión empresarial, control de inventarios, verificación operativa, control de acceso y gestión de personal.*
+
+### C. CLASE 35 *(Opcional — Organización y Sistematización Comercial)*
+> **Texto sugerido para el formulario:**  
+> *Servicios de asesoramiento en organización empresarial y sistematización de datos operativos, inventarios y flujo comercial en bases de datos informáticas.*
+
+---
+
+## 4. Memoria Descriptiva del Signo (Para Solicitud INDECOPI)
+
+- **Denominación:** `ZAPHYREL` *(opcionalmente en conjunto con el subtítulo `ARQUITECTURA QUE ENLAZA`)*
 - **Descripción gráfica (versión Mixta B&N):**  
-  *Signo mixto conformado por un elemento figurativo y un elemento denominativo dispuestos en eje vertical centrado. En la parte superior se ubica un isotipo geométrico compuesto por una corona octogonal abierta angulada a 45 grados con doble bisel interior y tres trazos horizontales paralelos de extensión escalonada que emergen por el flanco izquierdo; en su núcleo central contiene la letra estilizada `"Z"` dividida ecuatorialmente por una línea horizontal recta en dos alas simétricas inclinadas. Debajo del isotipo, separado por un espacio armónico, figura la palabra `"ZAPHYREL"` escrita en letras mayúsculas de tipografía serif estilizada de trazo fino y alto espaciado, subrayada por una barra horizontal recta; inmediatamente debajo aparece la leyenda `"ECOSISTEMAS DIGITALES"` en caracteres sans-serif mayúsculos espaciados de menor escala.*
-- **Reivindicación de colores *(solo si eliges registro a color)*:**  
-  *Azul Zafiro Cielo (`#81BDF8`), Celeste Hielo (`#A9DCFF`), Lavanda (`#D5BEFF`), Rosa Claro (`#FFD5FF`), Magenta (`#FF9AFF`), Negro (`#06070B`), Gris Grafito (`#434B5E`) y Blanco (`#FFFFFF`).*
+  *Signo mixto conformado por un elemento figurativo y un elemento denominativo dispuestos en eje vertical centrado. En la parte superior figura un isotipo geométrico compuesto por una corona octogonal abierta angulada a 45 grados con doble bisel interior y tres trazos horizontales paralelos de longitud escalonada que emergen por el flanco izquierdo; en el núcleo central contiene la letra estilizada `"Z"` seccionada ecuatorialmente por una barra horizontal recta en dos alas simétricas inclinadas. Debajo del isotipo, separado por un espacio armónico, aparece el vocablo `"ZAPHYREL"` en letras mayúsculas de tipografía serif estilizada de trazo fino y alto espaciado, subrayado por una línea horizontal continua; debajo figura la leyenda `"ARQUITECTURA QUE ENLAZA"` en caracteres sans-serif mayúsculos espaciados de menor escala.*
+- **Colores a reivindicar *(solo en versión color)*:**  
+  *Zafiro Cielo (`#81BDF8`), Hielo Etéreo (`#A9DCFF`), Lavanda Prisma (`#D5BEFF`), Rosa Seda (`#FFD5FF`), Orquídea Seda (`#FF9AFF`), Negro Abisal (`#06070B`), Gris Mineral (`#434B5E`) y Blanco (`#FFFFFF`).*
 
 ---
 
-## 5. Checklist de Pasos Prácticos ante INDECOPI (Perú)
+## 5. Checklist de Trámite
 
-1. **Búsqueda de Antecedentes Fonéticos y Figurativos (Recomendado previo al pago de tasa):**  
-   Verificar en la plataforma oficial *Busca Tu Marca* de INDECOPI que no existan marcas idénticas o fonéticamente confundibles registradas en **Clase 42** ni **Clase 9**.
-2. **Registro de Titular:** Definir si se registra a nombre de **Persona Natural con Negocio** o **Persona Jurídica (S.A.C. / E.I.R.L. con RUC activo)**.
-3. **Subida de Imagen:** Usar **`indecopi-marca-mixta-byn-1500x1500.png`** (si quieres protección amplia multimarca sin restricción de color) o **`indecopi-marca-mixta-color-1500x1500.png`** (para fijar colores oficiales). Dimensiones exactas `1500 × 1500 px`, resolución nítida, peso menor a `5 MB`.
-4. **Reserva Simultánea de Nombre Comercial / Dominios / Redes:**  
-   - Verificar disponibilidad del dominio `.pe` / `.com.pe` en Punto.pe (`nic.pe`) y `.com`.  
-   - Registrar los usuarios exactos en redes antes o el mismo día del ingreso de solicitud (ver `KIT_REDES_BIOS_HANDLES.md`).
-5. **Seguimiento:** Vigilar gaceta electrónica de propiedad industrial y notificaciones en casilla electrónica de INDECOPI tras el examen de forma y publicación.
-
-> *Aviso informativo: Este documento es una guía técnica y de preparación de archivos gráficos/descriptivos para trámite de marca; ante observaciones específicas o conflictos con signos previos en la búsqueda, validar redacción final de clases con un especialista en Propiedad Intelectual.*
+1. Ingresar a *Busca Tu Marca* de **INDECOPI** y verificar antecedentes fonéticos/figurativos de **`ZAPHYREL`** en Clase 42 (y Clase 9 si aplica).
+2. Definir titularidad (**Persona Natural con Negocio** o **Persona Jurídica con RUC**).
+3. Adjuntar **`indecopi-marca-mixta-byn-1500x1500.png`** (cobertura flexible multicolor) o su par a color (`< 5 MB`).
+4. Reservar dominios `.pe` / `.com.pe` (`nic.pe`) y `.com`, y asegurar los usuarios en redes el mismo día.
+5. Para proteger adicionalmente el algoritmo o plataforma compilada, tramitar el **Registro Virtual de Software** en la Dirección de Derecho de Autor del INDECOPI (otorga fecha cierta).

@@ -591,6 +591,16 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
       controls.update();
       return 100;
     },
+    setPose(px, py, pz, explPct) {
+      camera.position.set(px, py, pz);
+      targetDist = camera.position.distanceTo(controls.target);
+      if (explPct !== undefined) {
+        explodeTarget = Math.max(0, Math.min(1, explPct / 100));
+        explodeCur = explodeTarget;
+      }
+      controls.update();
+      renderFrame(0.016);
+    },
     capturePng() {
       renderFrame(0.001);
       return canvas.toDataURL('image/png');

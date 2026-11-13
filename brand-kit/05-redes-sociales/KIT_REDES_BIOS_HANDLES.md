@@ -1,84 +1,72 @@
 # Kit de Redes Sociales, Medidas Exactas, Handles y Biografías — ZAPHYREL
 
-> **Carpeta de archivos:** `brand-kit/05-redes-sociales/`  
-> Todas las piezas incluyen versiones en **`.png` (máxima nitidez sin pérdida)** y **`.jpg` (peso ligero listo para subir)** y han sido dimensionadas respetando márgenes seguros anti-recorte.
+> **Carpeta local de archivos:** `brand-kit/05-redes-sociales/`  
+> **Visor web directo + descargas:** `https://zaphyrel-site.vercel.app/marca/`  
+> Incluye archivos `.png` (sin pérdida) y `.jpg` (ligeros) en dimensiones exactas anti-recorte, más renders 3D PBR (`07-emblema-3d-sovereign-pbr/`) listos para usar como avatar o portada.
 
 ---
 
-## 1. Inventario de Archivos y Medidas Exactas
+## 1. Handles (Nombres de Usuario) Recomendados
 
-| Plataforma | Pieza | Archivo (`.png` y `.jpg`) | Dimensiones | Zona Segura / Nota Técnica |
-| :--- | :--- | :--- | :--- | :--- |
-| **Instagram** | Foto de perfil oscura | `instagram-avatar-oscuro-1080x1080` | `1080 × 1080 px` | Isotipo escalado al `60%` para evitar recorte circular |
-| **Instagram** | Foto de perfil clara | `instagram-avatar-claro-1080x1080` | `1080 × 1080 px` | Fondo blanco limpio con margen seguro circular |
-| **TikTok** | Foto de perfil | `tiktok-avatar-1080x1080` | `1080 × 1080 px` | Acabado `Relieve Cristal 2.5D` para destacar en dark mode |
-| **Facebook** | Foto de perfil | `facebook-perfil-1080x1080` | `1080 × 1080 px` | Centrado perfecto en avatar circular de página |
-| **Facebook** | Portada / Banner | `facebook-portada-1640x924` | `1640 × 924 px` | Ratio `16:9` HD sin pérdida en desktop/móvil |
-| **LinkedIn** | Logo de Empresa | `linkedin-logo-empresa-800x800` | `800 × 800 px` | Cuadrado oficial para Company Page |
-| **LinkedIn** | Portada de Empresa | `linkedin-portada-empresa-1128x191` | `1128 × 191 px` | Lockup centrado con margen lateral seguro |
-| **LinkedIn** | Portada Personal | `linkedin-portada-personal-1584x396` | `1584 × 396 px` | Para perfil del fundador / director |
-| **X (Twitter)** | Encabezado / Banner | `x-twitter-banner-1500x500` | `1500 × 500 px` | Margen seguro contra foto de perfil inferior izquierda |
-| **YouTube** | Banner de Canal | `youtube-banner-2560x1440` | `2560 × 1440 px` | Lockup estrictamente dentro de zona segura central `1546 × 423` |
-| **WhatsApp Business** | Foto de perfil | `whatsapp-business-avatar-800x800` | `800 × 800 px` | Recorte circular exacto, legible en pantallas pequeñas |
-| **Web / Links** | OpenGraph (`og:image`) | `web-og-compartir-link-1200x630` | `1200 × 630 px` | Vista previa automática al compartir links en WhatsApp/LinkedIn/FB |
-| **Posts Cuadrados** | Plantilla Claro / Oscuro | `plantilla-post-1080x1080-{claro,oscuro}` | `1080 × 1080 px` | Listas para superponer titulares o capturas de sistema |
-| **Historias / Reels** | Plantilla Vertical | `plantilla-historia-reel-1080x1920` | `1080 × 1920 px` | Respeta márgenes superior/inferior de UI de Stories/Reels |
+1. `@zaphyrel` *(prioritario)*
+2. `@zaphyrel.tech` *(tecnología / software)*
+3. `@zaphyrel.pe` *(mercado Perú)*
+4. `@zaphyrelstudio` *(respaldo consistente)*
 
 ---
 
-## 2. Handles (Nombres de Usuario) Recomendados
+## 2. Biografías Listas para Copiar y Pegar
 
-1. `@zaphyrel` *(prioritario si está disponible)*
-2. `@zaphyrel.tech` *(segunda opción ideal para Instagram/TikTok)*
-3. `@zaphyrel.pe` *(anclado a mercado Perú)*
-4. `@zaphyreldigital` *(respaldo consistente multi-red)*
-
----
-
-## 3. Textos y Biografías Listos para Copiar y Pegar
-
-### Instagram & TikTok *(máximo 150 caracteres / conciso)*
+### Instagram & TikTok
 ```text
-ZAPHYREL · Ecosistemas Digitales
-Automatización de negocios: web, sistemas internos, stock, caja y control real.
+ZAPHYREL · Arquitectura que Enlaza
+Web pública + automatización interna: empleados, caja, stock, verificación y gerencia en un solo eje.
 📲 Cotiza tu sistema 👇
 zaphyrel-site.vercel.app
 ```
 
-### WhatsApp Business *(Descripción de empresa + Saludo)*
+### WhatsApp Business *(Descripción + Saludo)*
 - **Categoría:** `Software / Tecnología de la información`
 - **Descripción:**
 ```text
-Zaphyrel — Ecosistemas Digitales.
-Diseñamos webs corporativas, plataformas internas para empleados, control de inventarios, facturación electrónica, verificación operativa y flujos automatizados adaptados a tu rubro.
+Zaphyrel — Arquitectura que Enlaza.
+Diseñamos webs corporativas, plataformas internas para empleados, control de inventarios, facturación SUNAT, verificación operativa y flujos automatizados adaptados de la base operativa hasta la gerencia.
 ```
 - **Mensaje de bienvenida:**
 ```text
-Hola, bienvenido a Zaphyrel. Cuéntanos qué rubro tiene tu negocio y qué proceso quieres ordenar o automatizar (atención, personal, inventario, caja o web) para recomendarte la arquitectura ideal.
+Hola, bienvenido a Zaphyrel. Cuéntanos tu rubro y qué parte de tu operación deseas ordenar o enlazar (web externa, empleados, inventario, caja o verificación) para orientarte de inmediato.
 ```
 
-### LinkedIn *(Página de Empresa — Acerca de)*
+### LinkedIn *(Página de Empresa)*
 ```text
-Zaphyrel desarrolla ecosistemas digitales a medida para empresas, comercios e instituciones que buscan unir su imagen pública con el control real de su operación interna.
+Zaphyrel — Arquitectura que Enlaza.
 
-Construimos desde cero o sobre arquitecturas modulares aceleradoras:
-• Webs corporativas y plataformas de atención digital
-• Sistemas internos para personal, turnos, verificación y auditoría
-• Inventarios sincronizados, punto de venta e integraciones administrativas
-• Conexión entre mostrador, almacén y gerencia en tiempo real
+Diseñamos e implementamos plataformas tecnológicas a medida para empresas, comercios e instituciones que necesitan unir su cara pública digital con el control real de su operación interna:
+• Webs corporativas y portales de atención al cliente/ciudadano
+• Sistemas internos por área: personal, turnos, verificación QR y auditoría
+• Inventarios sincronizados, facturación electrónica SUNAT y flujos offline/online
+• Visualización 3D/360° bajo demanda para catálogos, espacios y capacitación
 
-Web oficial: https://zaphyrel-site.vercel.app
+Explora nuestro sistema y catálogo de marca en: https://zaphyrel-site.vercel.app
 ```
 
-### Facebook & YouTube *(Descripción corta)*
+### Facebook & YouTube
 ```text
-ZAPHYREL · Ecosistemas Digitales — Ingeniería de software, plataformas operativas y automatización integral de extremo a extremo para negocios, comercios e instituciones. Conecta todas las áreas de tu empresa en un solo entorno ordenado y medible.
+ZAPHYREL · Arquitectura que Enlaza — Software a medida, plataformas de automatización interna y control operativo de extremo a extremo para negocios, cadenas e instituciones.
 ```
 
 ---
 
-## 4. Set de Hashtags Recomendados
+## 3. Medidas Oficiales Incluidas (`05-redes-sociales/`)
 
-- **Principales de marca:** `#Zaphyrel` `#EcosistemasDigitales`
-- **Negocio & Soluciones:** `#AutomatizacionEmpresarial` `#SoftwareAMedida` `#ControlOperativo` `#SistemasInternos` `#TransformacionDigital`
-- **Mercado Perú / LatAm:** `#EmpresasPeru` `#NegociosDigitalesPeru` `#InnovacionEmpresarial` `#GestionDeNegocios`
+| Red Social | Pieza | Archivo Base | Medidas |
+| :--- | :--- | :--- | :--- |
+| Instagram | Avatar Oscuro / Claro | `instagram-avatar-{oscuro,claro}-1080x1080` | `1080 × 1080 px` |
+| TikTok | Avatar Relieve Cristal | `tiktok-avatar-1080x1080` | `1080 × 1080 px` |
+| Facebook | Perfil / Portada | `facebook-perfil-1080x1080` · `facebook-portada-1640x924` | `1080×1080` / `1640×924` |
+| LinkedIn | Logo / Portadas | `linkedin-logo-empresa-800x800` · `...-1128x191` · `...-1584x396` | Exactas LinkedIn |
+| X (Twitter) | Encabezado | `x-twitter-banner-1500x500` | `1500 × 500 px` |
+| YouTube | Banner de Canal | `youtube-banner-2560x1440` *(zona segura central `1546×423`)* | `2560 × 1440 px` |
+| WhatsApp Business | Avatar | `whatsapp-business-avatar-800x800` | `800 × 800 px` |
+| OpenGraph (Links) | Previsualización Web | `web-og-compartir-link-1200x630` | `1200 × 630 px` |
+| Plantillas Editables | Post Claro/Oscuro & Reel | `plantilla-post-1080x1080-*` · `plantilla-historia-reel-1080x1920` | `1:1` y `9:16` |

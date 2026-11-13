@@ -416,6 +416,7 @@
         <strong>ZAPHYREL · BRAND VAULT</strong>
       </a>
       <nav class="nav-links">
+        <a href="#pbr3d">00 · Emblema 3D PBR</a>
         <a href="#isotipos">01 · Isotipo (6 Estilos)</a>
         <a href="#lockups">02 · Lockups</a>
         <a href="#opciones">03 · Fuentes &amp; Eslóganes</a>
@@ -430,27 +431,60 @@
   <main class="wrap" id="top">
     <section class="hero" style="margin-top:0">
       <div>
-        <div class="eyebrow">KIT INTEGRAL DE IDENTIDAD · ECOSISTEMAS DIGITALES</div>
-        <h1>ZAPHYREL — Manual, Archivos Vectoriales, Registro Legal y Kit Social</h1>
+        <div class="eyebrow">KIT INTEGRAL DE IDENTIDAD · ARQUITECTURA QUE ENLAZA</div>
+        <h1>ZAPHYREL — Emblema 3D PBR, Manual, Vectoriales, INDECOPI y Redes</h1>
         <div class="prism-line"></div>
         <p style="color:#C9D3EA; max-width:66ch;">
-          Entrega completa y separada por formato (<strong>SVG vectorial</strong>, <strong>PNG transparente</strong>, <strong>PNG con fondo sólido</strong> y <strong>JPG alta resolución</strong>), con múltiples acabados, opciones tipográficas, variaciones de eslogan, ficha técnica exacta, expediente blanco/negro para <strong>INDECOPI</strong> y tamaños exactos para redes sociales.
+          Entrega completa y separada por formato (<strong>WebGL 3D PBR</strong>, <strong>SVG vectorial</strong>, <strong>PNG transparente</strong>, <strong>PNG con fondo Día/Noche</strong> y <strong>JPG alta resolución</strong>), con los 3 acabados Sovereign en Órbita 360° (<strong>Prisma Cristal PBR</strong>, <strong>Obsidiana Titanio PBR</strong> y <strong>Porcelana Studio PBR</strong>), 6 estilos 2D, eslóganes verificados sin clichés genéricos, ficha técnica, expediente <strong>INDECOPI</strong> y tamaños exactos para redes sociales.
+        </p>
+        <p style="font-size:0.82rem; color:#9FB2D8; margin:10px 0 0; font-family:'JetBrains Mono', monospace;">
+          Carpeta local: <strong>C:\Users\cf039\.gemini\antigravity\scratch\zaphyrel-brand\brand-kit\</strong> · Visor web interactivo: <a href="../site/marca/" style="color:#A9DCFF;">zaphyrel-site.vercel.app/marca/</a>
         </p>
         <div class="stats">
-          <div class="stat"><b>6 Estilos</b><span>Prisma, Cristal, Titanio y Sellos B/N</span></div>
-          <div class="stat"><b>4 Formatos</b><span>SVG · PNG Alpha · PNG · JPG 96%</span></div>
-          <div class="stat"><b>3 × 5 Opciones</b><span>3 Tipografías × 5 Eslóganes</span></div>
-          <div class="stat"><b>1500 × 1500 px</b><span>Expediente Mixto INDECOPI listo</span></div>
+          <div class="stat"><b>3 Acabados PBR 3D</b><span>Prisma Cristal · Obsidiana Titanio · Porcelana Studio</span></div>
+          <div class="stat"><b>6 Estilos 2D</b><span>Prisma, Cristal 2.5D, Titanio y Sellos B/N</span></div>
+          <div class="stat"><b>3 × 5 Verificados</b><span>3 Tipografías × 5 Eslóganes Propios Sin Clichés</span></div>
+          <div class="stat"><b>1500 × 1500 px</b><span>Expediente Mixto INDECOPI + Kit Redes Sociales</span></div>
         </div>
       </div>
       <div class="hero-card">
-        <img src="./02-lockups-completos/lockup-vertical-prisma-full.png" alt="Zaphyrel Vertical Lockup" />
+        <img src="./07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-fondo-noche.png" alt="Zaphyrel Sovereign 3D Prisma Cristal PBR" />
         <div class="files" style="justify-content:center; margin-top:14px;">
+          <a class="pill" href="../site/marca/">Abrir Visor 3D Vivo (/marca/)</a>
           <a class="pill" href="../docs/BRAND_BOOK.md" target="_blank">Abrir BRAND_BOOK.md</a>
           <a class="pill svg" href="./04-registro-legal-indecopi/GUIA_REGISTRO_INDECOPI_CLASES_NIZA.md" target="_blank">Guía INDECOPI</a>
           <a class="pill jpg" href="./05-redes-sociales/KIT_REDES_BIOS_HANDLES.md" target="_blank">Guía Redes &amp; Bios</a>
         </div>
       </div>
+    </section>
+
+    <!-- 00 EMBLEMA SOVEREIGN 3D PBR -->
+    <section id="pbr3d">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">CARPETA · 07-emblema-3d-sovereign-pbr/</div>
+          <h2>Emblema Sovereign 3D PBR en Órbita 360° (Los 3 Acabados del Visor WebGL)</h2>
+        </div>
+        <div class="bg-switcher" title="Cambiar fondo de previsualización de los archivos transparentes">
+          <button class="bg-btn active" onclick="setStage('check', this)">Damero Alpha</button>
+          <button class="bg-btn" onclick="setStage('day', this)">Fondo Día (#FFFFFF)</button>
+          <button class="bg-btn" onclick="setStage('night', this)">Fondo Noche (#06070B)</button>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div class="stage" style="background:#06070B; padding:12px;">
+          <img src="./07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.png" alt="Comparativa 3 Acabados PBR Sovereign" style="max-height:420px; width:100%; object-fit:contain;" />
+        </div>
+        <div class="body">
+          <h3>Lámina Comparativa Oficial — Prisma Cristal PBR · Obsidiana Titanio PBR · Porcelana Studio PBR</h3>
+          <p>Renderizados directamente desde el motor Three.js ACESFilmic PBR con anillos giroscópicos orbitales a ±22° y 16 nodos octaédricos ópticos. Incluye archivos individuales 1200×1200 px en PNG Transparente, PNG Fondo Noche, PNG Fondo Día y JPG HD.</p>
+          <div class="files">
+            <a class="pill pngt" href="./07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.png" download>Descargar Comparativa PNG</a>
+            <a class="pill jpg" href="./07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.jpg" download>Descargar Comparativa JPG</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid" id="grid-pbr3d"></div>
     </section>
 
     <!-- 01 ISOTIPOS -->
@@ -495,13 +529,13 @@
           <button class="chip-btn" onclick="setFont(1, this)">Opción 2 · Space Grotesk (Tech / SaaS Moderno)</button>
           <button class="chip-btn" onclick="setFont(2, this)">Opción 3 · Cinzel (Monumental Corporativo)</button>
         </div>
-        <div class="eyebrow" style="margin:12px 0 8px;">2. ELIGE ESLOGAN / BAJADA COMERCIAL</div>
+        <div class="eyebrow" style="margin:12px 0 8px;">2. ELIGE ESLOGAN / BAJADA COMERCIAL (5 OPCIONES VERIFICADAS SIN CLICHÉS GENÉRICOS)</div>
         <div class="controls-row" id="slogan-btns">
-          <button class="chip-btn active" onclick="setSlogan(0, this)">ECOSISTEMAS DIGITALES (Oficial)</button>
-          <button class="chip-btn" onclick="setSlogan(1, this)">INGENIERÍA &amp; ECOSISTEMAS DIGITALES</button>
-          <button class="chip-btn" onclick="setSlogan(2, this)">AUTOMATIZACIÓN &amp; ECOSISTEMAS DIGITALES</button>
-          <button class="chip-btn" onclick="setSlogan(3, this)">SOFTWARE · AUTOMATIZACIÓN · CONTROL</button>
-          <button class="chip-btn" onclick="setSlogan(4, this)">SOLUCIONES INTEGRALES PARA NEGOCIOS</button>
+          <button class="chip-btn active" onclick="setSlogan(0, this)">ARQUITECTURA QUE ENLAZA (Oficial · Único)</button>
+          <button class="chip-btn" onclick="setSlogan(1, this)">EL PULSO EXACTO DE TU EMPRESA</button>
+          <button class="chip-btn" onclick="setSlogan(2, this)">ESTRUCTURA VIVA · CONTROL REAL</button>
+          <button class="chip-btn" onclick="setSlogan(3, this)">DONDE CADA ÁREA ENCAJA</button>
+          <button class="chip-btn" onclick="setSlogan(4, this)">INGENIERÍA DE ORDEN VIVO</button>
         </div>
         <div class="controls-row">
           <button class="chip-btn" onclick="document.getElementById('live-stage').classList.toggle('day')">Alternar Día / Noche</button>
@@ -510,8 +544,14 @@
           <img id="live-sym" src="./01-isotipos-y-estilos/02-prisma-noche.svg" alt="Zaphyrel" />
           <div>
             <div class="live-word" id="live-word" style="font-family:'Cormorant Garamond',serif;font-weight:300;">ZAPHYREL</div>
-            <div class="live-sub" id="live-sub">ECOSISTEMAS DIGITALES</div>
+            <div class="live-sub" id="live-sub">ARQUITECTURA QUE ENLAZA</div>
           </div>
+        </div>
+        <div class="doc-box" style="margin-top:16px; border-color:rgba(255,154,255,0.28);">
+          <strong style="color:#FFD5FF;">Verificación de Unicidad y Auditoría Comercial (Por qué retiramos “Ecosistemas Digitales”):</strong>
+          <p style="margin:6px 0 0; font-size:0.86rem; color:#C9D3EA;">
+            Tras auditar buscadores y mercado en Perú y LatAm, frases como <em>“Ecosistemas Digitales”</em> (usada masivamente por TIVIT, Asesoftware, Ecosistemas Global, etc.) y <em>“Del mostrador a la gerencia”</em> (usada por FoxSystem / IF Development en Perú) resultaron saturadas y genéricas para proteger ante INDECOPI. Se reemplazaron por <strong>“ARQUITECTURA QUE ENLAZA”</strong> y las otras 4 fórmulas propias verificadas con alta fuerza distintiva.
+          </p>
         </div>
       </div>
       <div class="grid grid-2" style="margin-top:20px;" id="grid-typo-files"></div>
@@ -606,7 +646,7 @@
       <div class="doc-box" style="margin-top:18px;">
         <h3 style="margin-top:0;">Resumen Ejecutivo de Clases de Niza y Descripción Recomendada</h3>
         <p style="color:#C9D3EA; font-size:0.9rem;">
-          Presentar como <strong>Marca Mixta en Blanco y Negro</strong> (<code>indecopi-marca-mixta-byn-1500x1500.png</code>) en <strong>Clase 42</strong> (software a medida, SaaS, web, automatización e integración operativa), indicando que el subtítulo descriptivo <em>"ECOSISTEMAS DIGITALES"</em> se incluye en conjunto sin reivindicación aislada sobre palabras genéricas. Opcionalmente añadir <strong>Clase 9</strong> (apps/POS descargable) y <strong>Clase 35</strong> (gestión comercial digital).
+          Presentar como <strong>Marca Mixta en Blanco y Negro</strong> (<code>indecopi-marca-mixta-byn-1500x1500.png</code>) en <strong>Clase 42</strong> (software a medida, SaaS, web, automatización e integración operativa), indicando el lema distintivo <em>"ARQUITECTURA QUE ENLAZA"</em> para máxima recordación sin palabras saturadas genéricas. Opcionalmente añadir <strong>Clase 9</strong> (apps/POS descargable) y <strong>Clase 35</strong> (gestión comercial digital).
         </p>
         <a class="pill svg" href="./04-registro-legal-indecopi/GUIA_REGISTRO_INDECOPI_CLASES_NIZA.md" target="_blank">Leer Guía Legal Completa (Memoria Descriptiva + Clases Niza)</a>
       </div>
@@ -629,15 +669,15 @@
         <div class="grid grid-2">
           <div>
             <strong style="color:var(--hielo); font-size:0.86rem;">Instagram &amp; TikTok Bio (clic para copiar)</strong>
-            <pre class="copy-pre" onclick="copyText(this.textContent)">ZAPHYREL · Ecosistemas Digitales
+            <pre class="copy-pre" onclick="copyText(this.textContent)">ZAPHYREL · Arquitectura que Enlaza
 Automatización de negocios: web, sistemas internos, stock, caja y control real.
 📲 Cotiza tu sistema 👇
 zaphyrel-site.vercel.app</pre>
           </div>
           <div>
             <strong style="color:var(--hielo); font-size:0.86rem;">WhatsApp Business Descripción (clic para copiar)</strong>
-            <pre class="copy-pre" onclick="copyText(this.textContent)">Zaphyrel — Ecosistemas Digitales.
-Diseñamos webs corporativas, plataformas internas para empleados, control de inventarios, facturación electrónica, verificación operativa y flujos automatizados adaptados a tu rubro.</pre>
+            <pre class="copy-pre" onclick="copyText(this.textContent)">Zaphyrel — Arquitectura que Enlaza.
+Diseñamos webs corporativas, plataformas internas para empleados, control de inventarios, facturación electrónica, verificación operativa y flujos automatizados adaptados a cada área de tu negocio.</pre>
           </div>
         </div>
       </div>
@@ -647,6 +687,18 @@ Diseñamos webs corporativas, plataformas internas para empleados, control de in
   <div class="toast" id="toast">Copiado al portapapeles</div>
 
   <script>
+    const PBR_3D = [
+      ['01 · Prisma Cristal PBR · Órbita 360°', 'Cristal físico traslúcido IOR 1.54, espesor prismático e iluminación cenital.', '07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360'],
+      ['01 · Prisma Cristal PBR · Frontal 0°', 'Vista frontal equilibrada con anillos giroscópicos y nodos octaédricos.', '07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal'],
+      ['01 · Prisma Cristal PBR · Despiece Axial', 'Vista anatómica expandida revelando la corona, cromo y lámina Split-Blade.', '07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-despiece-axial'],
+      ['02 · Obsidiana Titanio PBR · Órbita 360°', 'Titanio satinado oscuro metalness 0.85 con Z Split-Blade blanco polar y cromo.', '07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360'],
+      ['02 · Obsidiana Titanio PBR · Frontal 0°', 'Proyección frontal de alto impacto para cabeceras dark y hardware.', '07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal'],
+      ['02 · Obsidiana Titanio PBR · Despiece Axial', 'Separación axial de precisión mostrando capas estructurales internas.', '07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-despiece-axial'],
+      ['03 · Porcelana Studio PBR · Órbita 360°', 'Porcelana mate arquitectónica clara con Z obsidiana + espectro Zafiro/Lavanda.', '07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360'],
+      ['03 · Porcelana Studio PBR · Frontal 0°', 'Acabado claro ceremonial ideal para propuestas ejecutivas y papel fino.', '07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal'],
+      ['03 · Porcelana Studio PBR · Despiece Axial', 'Despiece 3D claro sobre marfil para catálogos técnicos e impresos.', '07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-despiece-axial'],
+    ];
+
     const ISO_ITEMS = [
       ['01 · Prisma Día', 'Degradado oficial sobre marfil/transparente para propuestas, cotizaciones y web clara.', '01-isotipos-y-estilos/01-prisma-dia', true],
       ['02 · Prisma Noche', 'Brillo calibrado sobre obsidiana para UI dark, encabezados y presentaciones ejecutivas.', '01-isotipos-y-estilos/02-prisma-noche', true],
@@ -657,8 +709,8 @@ Diseñamos webs corporativas, plataformas internas para empleados, control de in
     ];
 
     const LOCKUPS = [
-      ['Horizontal Oficial · Día', 'Isotipo + ZAPHYREL + ECOSISTEMAS DIGITALES sobre claro/transparente.', '02-lockups-completos/lockup-horizontal-oficial-dia', true],
-      ['Horizontal Oficial · Noche', 'Isotipo + ZAPHYREL + ECOSISTEMAS DIGITALES sobre obsidiana/transparente.', '02-lockups-completos/lockup-horizontal-oficial-noche', true],
+      ['Horizontal Oficial · Día', 'Isotipo + ZAPHYREL + ARQUITECTURA QUE ENLAZA sobre claro/transparente.', '02-lockups-completos/lockup-horizontal-oficial-dia', true],
+      ['Horizontal Oficial · Noche', 'Isotipo + ZAPHYREL + ARQUITECTURA QUE ENLAZA sobre obsidiana/transparente.', '02-lockups-completos/lockup-horizontal-oficial-noche', true],
       ['Horizontal Compacto (Sin Eslogan) · Día', 'Para espacios menores a 180px, navbars angostas o encabezados de facturas.', '02-lockups-completos/lockup-horizontal-compacto-sin-eslogan-dia', true],
       ['Horizontal Compacto (Sin Eslogan) · Noche', 'Versión reducida de alto contraste para interfaces oscuras o pies de pantalla.', '02-lockups-completos/lockup-horizontal-compacto-sin-eslogan-noche', true],
       ['Vertical Apilado · Día', 'Composición vertical centrada para carátulas, certificados y membretes.', '02-lockups-completos/lockup-vertical-apilado-dia', true],
@@ -739,6 +791,22 @@ Diseñamos webs corporativas, plataformas internas para empleados, control de in
       }).join('');
     }
 
+    document.getElementById('grid-pbr3d').innerHTML = PBR_3D.map(([title, desc, base]) => `
+      <article class="card">
+        <div class="stage"><img src="./${base}-transparente.png" alt="${title}" loading="lazy" /></div>
+        <div class="body">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          <div class="files">
+            <a class="pill pngt" href="./${base}-transparente.png" download>PNG Transparente</a>
+            <a class="pill" href="./${base}-fondo-noche.png" download>PNG Noche</a>
+            <a class="pill" href="./${base}-fondo-dia.png" download>PNG Día</a>
+            <a class="pill jpg" href="./${base}.jpg" download>JPG HD</a>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
     renderDualCards('grid-iso', ISO_ITEMS);
     renderDualCards('grid-lockups', LOCKUPS);
     renderDualCards('grid-typo-files', TYPO_FILES);
@@ -793,11 +861,11 @@ Diseñamos webs corporativas, plataformas internas para empleados, control de in
       { family: "'Cinzel', serif", weight: '500', track: '0.26em' },
     ];
     const SLOGANS = [
-      'ECOSISTEMAS DIGITALES',
-      'INGENIERÍA & ECOSISTEMAS DIGITALES',
-      'AUTOMATIZACIÓN & ECOSISTEMAS DIGITALES',
-      'SOFTWARE · AUTOMATIZACIÓN · CONTROL',
-      'SOLUCIONES INTEGRALES PARA NEGOCIOS',
+      'ARQUITECTURA QUE ENLAZA',
+      'EL PULSO EXACTO DE TU EMPRESA',
+      'ESTRUCTURA VIVA · CONTROL REAL',
+      'DONDE CADA ÁREA ENCAJA',
+      'INGENIERÍA DE ORDEN VIVO',
     ];
     function setFont(i, btn) {
       const w = document.getElementById('live-word');

@@ -233,6 +233,7 @@
       ['Studio OS · Inventario Kardex & Cuentas Globales', () => navGo('studio/?mod=stock')],
       ['Casos Implementados (Antes vs. Después)', () => navGo('casos/')],
       ['Cotizar Proyecto y Configurar Alcance por Áreas', () => navGo('cotizar/')],
+      ['Marca · Emblema 3D PBR, Catálogo, Kit Social e INDECOPI', () => navGo('marca/')],
       ['Alternar modo Claro / Oscuro', () => $('#night')?.click()]
     ];
     let sel = 0, shown = acts;
