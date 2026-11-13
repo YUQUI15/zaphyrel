@@ -1,4 +1,4 @@
-/* Zaphyrel Design Tokens v8 — Haute Horlogerie Digital + Coolors Pastel + Negro / Blanco / Gris */
+/* Zaphyrel Design Tokens v11 — Espectro Prisma Lumínico + Negro Obsidiana / Blanco / Gris Mineral */
 :root {
   /* Arquitectura Estructural: Blanco Puro, Grises Neutros y Negro Obsidiana */
   --zy-black:        #06070B;
@@ -17,7 +17,7 @@
   --zy-line:         rgba(9, 11, 16, 0.11);
   --zy-line-strong:  rgba(9, 11, 16, 0.22);
 
-  /* Paleta Pastel Oficial Coolors: #FF9AFF · #FFD5FF · #D5BEFF · #A9DCFF · #81BDF8 */
+  /* Espectro Zaphyrel Prisma Lumínico: #FF9AFF · #FFD5FF · #D5BEFF · #A9DCFF · #81BDF8 */
   --zy-pastel-orchid:   #FF9AFF;
   --zy-pastel-rose:     #FFD5FF;
   --zy-pastel-lavender: #D5BEFF;

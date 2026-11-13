@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zaphyrel-site.vercel.app/sitemap.xml

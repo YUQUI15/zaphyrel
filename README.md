@@ -1,27 +1,28 @@
 # Zaphyrel
 
-> **Esencia que permanece e innovación que fluye**
+Estudio de ingeniería de software operativo (**POS, ERP, CRM & PMS a medida**) y visualización interactiva **3D / 360°** para empresas en Perú y Latinoamérica.
 
-Estudio de ingeniería de software, visualización interactiva 3D / 360° y sistemas operativos conectados a medida.
+## Modelo Híbrido Acelerado (v11)
 
-## Identidad y Arquitectura v10
+- **Aceleradores Verticales + Personalización 100%**: Partimos de **9 núcleos operativos probados** (*Table POS, Stay PMS 360°, Showroom 3D, Care Clínica, Stock Kardex, Fit QR, Shop Web, Cuentas Globales y Lib*) adaptados bajo tu marca, reglas y dominio propio en **3 a 6 semanas**.
+- **Operación Real Perú & LatAm**: Facturación electrónica **SUNAT / OSE** (Boletas B001, Facturas F001, IGV 18%), conciliación **Yape / Plin / Izipay / Niubiz**, impresoras térmicas `80mm` (ESC/POS), lectores de barras y arquitectura **Offline-First**.
 
-- **Base Arquitectónica**: Negro Obsidiana (`#06070B`), Blanco Puro (`#FFFFFF`), Perla (`#F8FAFF`) y Grises Minerales (`#EAEEF8`, `#434B5E`) con iluminación visible en modo Día y Noche.
-- **Espectro Pastel Luminoso Coolors**: `#81BDF8` · `#A9DCFF` · `#D5BEFF` · `#FFD5FF` · `#FF9AFF`, con marcos giratorios prismáticos, facetas cristalinas y relieves especulares.
-- **Monograma `Z` Sovereign Split-Blade (`v10`)**: corona octogonal abierta a 45° y una **`Z` escultórica de doble ala biselada** en simetría rotacional exacta con canal luminoso ecuatorial y relieve doble cara en 3D (cero estrellas de 4 puntas).
-- **Tipografía Fina**: `Cormorant Garamond` (`Light 300 / Regular 400`) + `Outfit` + `JetBrains Mono`.
+## Arquitectura del Sitio (`site/`)
 
-## Estructura del Proyecto
-
-- **`site/index.html`** — Experiencia interactiva v10 lista para Vercel:
-  - **Cámara Espacial `Z-360°` / 4K HiDPI / RV**: motor 3D doble cara de la `Z` Sovereign Split-Blade, zoom en vivo (` rueda / + / − / 100%`), enfoque de capas (*Todo / Corona / Núcleo Z*), captura 4K PNG y *Horizonte Esférico RV*.
-  - **Anatomía Dimensional (`#esencia`)**: disección en 4 planos 3D y simulador de sincronía en tiempo real.
-  - **Zaphyrel Studio OS (`#lab`) — 9 Módulos Conectados**: *Restaurante, Gimnasio, Inventario, Hotel, Clínica, Instituto/Biblioteca, Catálogo web, Cuentas (conectado en vivo)* y el nuevo **`09 · Showroom 3D / 360°`**, con buscador en riel y vista móvil `390px`.
-  - **Proyector de Arquitectura & Comparador (`#arquitecto` + `#antes`)**: topología isométrica conectada al **Brief Integrado en Contacto (`#contacto`)**.
-- **`logo/`** & **`mockups/`** — Emblemas vectoriales y papelería actualizados a v10.
+- **`site/index.html`**:
+  - **Visor 3D Hero con 3 modelos de negocio**: conmutador en vivo entre *Producto 3D Comercial*, *Planta Hotel 3D* y *Núcleo Zaphyrel*, con rotación 360°, despiece por capas y captura PNG.
+  - **Arquitectura de Producto en 4 Capas (`#esencia`)**: disección interactiva desde la capa visual 3D hasta el núcleo financiero SUNAT y Offline.
+  - **Zaphyrel Studio OS (`#lab`)**: 9 sistemas con datos pre-cargados en vivo, widget permanente de **Caja Global en Vivo**, simulador **Offline-First (corte Wi-Fi)** y personalización *White-Label* (*Espectro Prisma Lumínico / Acabados*).
+  - **Casos Reales, Configurador & Formulario Pre-llenado (`#casos`, `#arquitecto`, `#contacto`)**.
+  - **Rendimiento GPU & Accesibilidad**: pausa automática de animaciones `requestAnimationFrame` vía `IntersectionObserver` y etiquetas WAI-ARIA completas.
+- **Rutas SEO Dedicadas**:
+  - `site/soluciones/restaurantes/` — POS Restaurantes + SUNAT + Cocina KDS
+  - `site/soluciones/hoteles/` — PMS Hoteles + Llave QR + Tour 360°
+  - `site/soluciones/3d-web/` — Showrooms WebGL 3D & Configuradores E-Commerce
+  - `site/sitemap.xml` & `site/robots.txt`
 
 ## Vista local
 
 ```bash
-python -m http.server 8768 --directory site
+python -m http.server 8769 --directory site
 ```
