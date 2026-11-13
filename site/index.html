@@ -37,6 +37,14 @@
   ]
 }
 </script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/three.module.min.js",
+    "three/addons/": "./vendor/three/addons/"
+  }
+}
+</script>
 <script>
 (()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;if(location.hash)document.documentElement.classList.add('skip-veil');}catch(e){}})();
 </script>
@@ -436,8 +444,16 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
 .chart{display:flex;gap:5px;align-items:flex-end;height:84px;padding:10px 0 0}
 .chart i{flex:1;border-radius:4px 4px 1px 1px;background:var(--prism);min-height:10px;transition:height .5s var(--ease)}
 .chart i.exp{background:linear-gradient(180deg,#FFD5FF,#FF9AFF)}
-.showroom-box{position:relative;height:242px;border-radius:16px;border:1px solid var(--line-strong);background:radial-gradient(circle at 30% 25%,rgba(129,189,248,.24),transparent 52%),radial-gradient(circle at 75% 80%,rgba(255,154,255,.22),transparent 52%),#080A12;overflow:hidden;cursor:grab;touch-action:none}
+.showroom-wrap{position:relative;border-radius:18px;border:1px solid var(--line-strong);background:radial-gradient(circle at 24% 20%,rgba(129,189,248,.22),transparent 52%),radial-gradient(circle at 80% 80%,rgba(255,154,255,.18),transparent 55%),#0A0D16;overflow:hidden;box-shadow:var(--depth-1)}
+[data-theme=day] .showroom-wrap{background:radial-gradient(circle at 22% 18%,rgba(169,220,255,.42),transparent 55%),radial-gradient(circle at 82% 82%,rgba(255,213,255,.35),transparent 55%),linear-gradient(155deg,#F6FAFF 0%,#E8EFFC 100%)}
+.showroom-wrap.sr-full{position:fixed;inset:14px;z-index:82;border-radius:24px;display:flex;flex-direction:column;background:var(--pearl);box-shadow:0 40px 120px rgba(0,0,0,.72)}
+.showroom-box{position:relative;height:clamp(290px,31vw,400px);width:100%;overflow:hidden;cursor:grab;touch-action:none}
+.showroom-wrap.sr-full .showroom-box{flex:1;height:auto;min-height:420px}
+.showroom-box:active{cursor:grabbing}
 .showroom-box canvas{width:100%;height:100%;display:block}
+.sr-hud-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px)}
+.sr-spec-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sr-spec-pills span{font:500 10.5px var(--mono);padding:4px 9px;border-radius:8px;border:1px solid var(--line);background:var(--pearl);color:var(--ink-soft)}
 .room-360-preview{margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface-2);font-size:12px;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .os-footer-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px;border-top:1px solid var(--line);background:var(--paper)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);background:var(--obsidian);color:#FFFFFF;border:1px solid rgba(169,220,255,.35);padding:10px 18px;border-radius:99px;font-size:12.5px;font-weight:500;box-shadow:0 20px 44px var(--shadow);opacity:0;pointer-events:none;transition:all .35s var(--ease);z-index:60}
@@ -463,27 +479,8 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
 .seo-route b{display:block;font-size:13.5px;font-weight:600}
 .seo-route span{font-size:12px;color:var(--ink-soft)}
 
-.gallery-divider{margin:54px 0 32px;border-top:1px solid var(--line);padding-top:44px}
-.mosaic-split{display:grid;grid-template-columns:1fr;gap:24px;margin-top:24px}
-.ba-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
-.ba{position:relative;border:1px solid var(--line-strong);border-radius:var(--radius);overflow:hidden;min-height:264px;background:var(--paper);box-shadow:var(--depth-2),var(--rim-top);display:flex;user-select:none}
-.ba .old,.ba .neo{padding:clamp(24px,3.6vw,42px);min-height:264px;width:100%;display:flex;flex-direction:column;justify-content:center}
-.ba .old{background:var(--surface-2);color:var(--ink-soft)}
-.ba .old h3{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:clamp(22px,2.4vw,30px);margin-bottom:10px;color:var(--ink)}
-.ba .old p{font:400 12.8px var(--mono);line-height:1.85;max-width:440px}
-.ba .old s{opacity:.5}
-.ba .neo{position:absolute;inset:0;background:var(--tile-sky);clip-path:inset(0 0 0 var(--pos,50%))}
-.ba .neo h3{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.4vw,29px);margin-bottom:6px}
-.ba .tm{position:absolute;top:18px;right:22px;font:600 11.5px var(--mono);color:var(--ink-soft)}
-.ba .neo .tm{color:var(--ok-ink)}
-.ba .grip{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:var(--ink);z-index:2;pointer-events:none}
-.ba .grip::after{content:"⇄";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--prism-h);border:2px solid var(--white);color:#06070B;display:grid;place-items:center;font-size:15px;font-weight:700;box-shadow:0 8px 22px var(--shadow)}
-.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:3}
-.ba .lbl{position:absolute;bottom:12px;font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);pointer-events:none}
-.ba .l1{left:22px}.ba .l2{right:22px}
-
-/* 05 · CONFIGURADOR DE ALCANCE + PROCESO + FAQ */
-.arch{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;margin-top:34px;align-items:stretch}
+/* 05 · CONFIGURADOR DE ALCANCE + FORMULARIO UNIFICADO */
+.arch{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;margin-top:30px;align-items:stretch}
 .arch-q{border:1px solid var(--line-strong);border-radius:var(--radius);padding:24px;background:var(--paper);box-shadow:var(--depth-1),var(--rim-top);display:flex;flex-direction:column;gap:20px}
 .arch-q h3{font:600 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
 .arch-res{border:1px solid var(--line-strong);border-radius:var(--radius);padding:24px;background:var(--tile-lav);box-shadow:var(--depth-2),var(--rim-top);display:flex;flex-direction:column;justify-content:space-between;gap:14px;position:relative;overflow:hidden}
@@ -496,25 +493,17 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
 .flows{list-style:none;display:grid;gap:7px;font-size:13.5px;color:var(--ink-soft);font-weight:400}
 .flows li{display:flex;gap:9px;align-items:baseline}.flows li::before{content:"→";color:var(--c-sky);font-family:var(--mono);font-weight:600}
 
-.terrace-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px;align-items:stretch}
-.dep-card{border:1px solid var(--line-strong);border-radius:18px;padding:22px 20px;background:var(--paper);box-shadow:var(--depth-1),var(--rim-top);display:grid;gap:8px;position:relative;overflow:hidden}
-.dep-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--prism-h)}
-.dep-card:nth-child(2){background:var(--tile-sky)}.dep-card:nth-child(3){background:var(--tile-lav)}.dep-card:nth-child(4){background:var(--tile-rose)}
-.dep-card .k{font:600 10px var(--mono);letter-spacing:.16em;color:var(--ink-soft)}
-.dep-card h3{font-family:var(--display);font-weight:500;font-size:22px}
-.dep-card p{color:var(--ink-soft);font-size:13.5px;font-weight:400}
+.faqs{margin-top:30px;border-top:1px solid rgba(255,255,255,.14)}
+.faq{border-bottom:1px solid rgba(255,255,255,.12)}
+.faq button{width:100%;background:none;border:none;padding:15px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-size:14.5px;font-weight:500;color:#F8FAFF}
+.faq button span{font:400 18px var(--mono);color:#A9DCFF;transition:transform .3s var(--ease)}
+.faq[aria-expanded=true] button span{transform:rotate(45deg)}
+.faq .ans{max-height:0;overflow:hidden;color:#C4CCE0;font-size:13.5px;font-weight:400;transition:max-height .45s var(--ease),padding .45s var(--ease)}
+.faq[aria-expanded=true] .ans{max-height:220px;padding-bottom:15px}
 
-.faqs{margin-top:42px;border-top:1px solid var(--line)}
-.faq{border-bottom:1px solid var(--line)}
-.faq button{width:100%;background:none;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-size:15.5px;font-weight:500}
-.faq button span{font:400 18px var(--mono);color:var(--ink-soft);transition:transform .3s var(--ease)}
-.faq[aria-expanded=true] button span{transform:rotate(45deg);color:var(--ink)}
-.faq .ans{max-height:0;overflow:hidden;color:var(--ink-soft);font-size:14.2px;font-weight:400;transition:max-height .45s var(--ease),padding .45s var(--ease)}
-.faq[aria-expanded=true] .ans{max-height:240px;padding-bottom:18px}
-
-/* 06 · FORMULARIO DE PROPUESTA PRE-LLENADO + FOOTER */
-.close{padding-top:24px;padding-bottom:clamp(54px,7vw,84px)}
-.panel{border:1px solid var(--line-strong);border-radius:28px;padding:clamp(32px,5vw,58px) clamp(20px,4.5vw,56px);background:#07090F;color:#F8F9FD;box-shadow:0 40px 96px -28px rgba(7,8,13,.65),var(--rim-top);position:relative;overflow:hidden}
+/* PANEL DE PROPUESTA PRE-LLENADO + FOOTER */
+.close{padding-top:clamp(54px,7vw,92px);padding-bottom:clamp(54px,7vw,84px)}
+.panel{margin-top:28px;border:1px solid var(--line-strong);border-radius:28px;padding:clamp(28px,4.5vw,52px) clamp(20px,4vw,48px);background:#07090F;color:#F8F9FD;box-shadow:0 40px 96px -28px rgba(7,8,13,.65),var(--rim-top);position:relative;overflow:hidden}
 .panel::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 15% 15%,rgba(129,189,248,.24),transparent 65%),radial-gradient(55% 65% at 88% 82%,rgba(255,154,255,.22),transparent 65%);pointer-events:none}
 .panel-grid{position:relative;z-index:1;display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(24px,4vw,48px);align-items:start}
 .panel .eyebrow{color:#A9DCFF;margin-bottom:12px}
@@ -595,6 +584,8 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
   #p-table #rucIn{width:100%!important;grid-column:1 / -1}
   .menu,.rooms{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .kpis,.case-metrics{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .app-h{flex-wrap:wrap;gap:6px;padding:10px 14px}
+  .app-h .pw{font-size:8.5px;letter-spacing:.08em}
   .bp-stack{width:205px;height:175px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -661,7 +652,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
     <a href="#esencia" data-sec="esencia">Arquitectura</a>
     <a href="#lab" data-sec="lab">Studio OS</a>
     <a href="#casos" data-sec="casos">Casos reales</a>
-    <a href="#arquitecto" data-sec="arquitecto">Configurador</a>
+    <a href="#contacto" data-sec="contacto">Cotizar</a>
   </div>
 
   <div class="tools">
@@ -674,21 +665,20 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
 </nav>
 
 <div class="mob-drawer" id="mobDrawer" aria-hidden="true">
-  <a href="#soluciones"><span>Soluciones Perú &amp; LatAm</span><span>↗</span></a>
-  <a href="#esencia"><span>Arquitectura de 4 Capas</span><span>↗</span></a>
-  <a href="#lab"><span>Studio OS (9 Módulos en Vivo)</span><span>↗</span></a>
+  <a href="#soluciones"><span>Modelo &amp; Operación Perú</span><span>↗</span></a>
+  <a href="#esencia"><span>Arquitectura 4 Capas</span><span>↗</span></a>
+  <a href="#lab"><span>Studio OS + Showroom 3D</span><span>↗</span></a>
   <a href="#casos"><span>Casos Implementados</span><span>↗</span></a>
-  <a href="#arquitecto"><span>Configurador de Alcance</span><span>↗</span></a>
-  <a href="#contacto"><span>Solicitar Propuesta</span><span>↗</span></a>
+  <a href="#contacto"><span>Configurar y Cotizar</span><span>↗</span></a>
   <button id="mobSoundBtn" type="button" aria-label="Alternar audio de interfaz"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
 </div>
 
 <main id="contenido">
-<!-- 01 · HERO COMERCIAL + MOTOR 3D CONMUTABLE PARA NEGOCIOS -->
+<!-- 00 · HERO 100% MARCA ZAPHYREL + EMBLEMA SOVEREIGN WEBGL 3D -->
 <header class="hero" id="top">
   <div class="hero-grid">
     <div>
-      <div class="hero-badge"><i aria-hidden="true"></i>SISTEMAS POS, ERP &amp; CRM A MEDIDA + 3D / 360° · PERÚ &amp; LATAM</div>
+      <div class="hero-badge"><i aria-hidden="true"></i>INGENIERÍA DE SOFTWARE &amp; ENTORNOS WEBGL 3D · PERÚ &amp; LATAM</div>
 
       <div class="hero-wordmark-wrap">
         <div class="hero-wordmark">ZAPHYREL</div>
@@ -701,29 +691,22 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
         </div>
       </div>
 
-      <h1 id="heroTitle">Diseño que impresiona. <span class="word-prism">Ingeniería en dimensión</span> real.</h1>
-      <p class="lead">Implementamos tu plataforma comercial en <b>3 a 6 semanas</b> partiendo de <b>9 núcleos operativos probados</b> — adaptados 100% a tu marca con facturación <b>SUNAT / OSE</b>, cobros <b>Yape / Plin</b>, trabajo offline y visores <b>WebGL 3D / 360°</b> que venden más.</p>
+      <h1 id="heroTitle">Software que escala. <span class="word-prism">Ingeniería en dimensión</span> real.</h1>
+      <p class="lead">Construimos plataformas operativas a medida —<b>POS, ERP, CRM y visores WebGL 3D / 360°</b>— adaptadas al flujo exacto de tu empresa e implementadas en <b>3 a 6 semanas</b> sobre 9 núcleos probados.</p>
 
       <div class="cta-row">
-        <a class="cta" href="#lab">Explorar los 9 sistemas en vivo ↓</a>
-        <a class="cta ghost" href="#contacto">Solicitar diagnóstico gratis →</a>
-      </div>
-
-      <div class="proof-strip" aria-label="Capacidades listas para producción">
-        <span class="proof-pill">SUNAT / OSE directo</span>
-        <span class="proof-pill">Yape · Plin · Izipay</span>
-        <span class="proof-pill">Modo Offline-First</span>
-        <span class="proof-pill">Impresoras 80mm &amp; Escáner</span>
+        <a class="cta" href="#lab">Explorar Studio OS en vivo ↓</a>
+        <a class="cta ghost" href="#contacto">Configurar mi proyecto →</a>
       </div>
     </div>
 
-    <!-- VISOR 3D COMERCIAL DE 3 ESCENARIOS REALES -->
+    <!-- VISOR 3D WEBGL PURO DE LA MARCA ZAPHYREL (EMBLEMA SOVEREIGN) -->
     <div class="chamber prism-frame" id="chamberBox">
       <div class="ch-bar">
-        <div class="hero-models" id="heroModelTabs" role="tablist" aria-label="Seleccionar modelo 3D de negocio">
-          <button type="button" role="tab" aria-selected="true" data-model="product">Producto 3D</button>
-          <button type="button" role="tab" aria-selected="false" data-model="floor">Planta Hotel 3D</button>
-          <button type="button" role="tab" aria-selected="false" data-model="core">Núcleo Zaphyrel</button>
+        <div class="hero-models" id="heroFinishTabs" role="tablist" aria-label="Seleccionar acabado 3D del emblema Zaphyrel">
+          <button type="button" role="tab" aria-selected="true" data-finish3d="prisma">Prisma Cristal</button>
+          <button type="button" role="tab" aria-selected="false" data-finish3d="obsidian">Obsidiana Titanio</button>
+          <button type="button" role="tab" aria-selected="false" data-finish3d="pearl">Porcelana Studio</button>
         </div>
         <div class="ch-zoom" aria-label="Controles de cámara 3D">
           <button class="hud-chip" id="zoomOutBtn" type="button" aria-label="Alejar vista 3D">−</button>
@@ -733,16 +716,16 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
         </div>
       </div>
 
-      <div class="ch-viewport" id="viewport3d" role="region" aria-label="Visor espacial 3D interactivo de 360 grados">
+      <div class="ch-viewport" id="viewport3d" role="region" aria-label="Escultura 3D interactiva del emblema Zaphyrel">
         <canvas id="hero3d" aria-hidden="true"></canvas>
         <div class="ch-hud">
           <div class="ch-hud-top">
-            <span class="hud-chip dark" id="heroSceneBadge"><i aria-hidden="true"></i>SHOWROOM WEB · LUMINARIA ÁUREA · S/ 1,490</span>
-            <button class="hud-chip" id="snapBtn" type="button" aria-label="Descargar imagen PNG del modelo 3D">📸 <span class="rv-lbl-long">Capturar </span>PNG</button>
+            <span class="hud-chip dark" id="heroSceneBadge"><i aria-hidden="true"></i>EMBLEMA SOVEREIGN · PRISMA CRISTAL PBR</span>
+            <button class="hud-chip" id="snapBtn" type="button" aria-label="Descargar imagen PNG del emblema 3D">📸 <span class="rv-lbl-long">Capturar </span>PNG</button>
           </div>
           <div class="ch-hud-bot">
             <span class="hud-chip" id="heroDragHint">Arrastra 360° o usa rueda</span>
-            <a class="ch-model-link" id="heroActionLink" href="#lab" data-jump="show3d">Configurar en Showroom 09 →</a>
+            <a class="ch-model-link" href="#esencia">Arquitectura 4 Capas ↓</a>
           </div>
         </div>
       </div>
@@ -750,8 +733,8 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
       <div class="ch-controls">
         <div class="ch-row">
           <label class="ch-range" for="explodeRange">
-            <span>DESPIECE POR CAPAS</span>
-            <input id="explodeRange" type="range" min="0" max="100" value="0" aria-label="Despiece tridimensional por capas">
+            <span>DESPIECE AXIAL</span>
+            <input id="explodeRange" type="range" min="0" max="100" value="0" aria-label="Despiece tridimensional del emblema por capas">
             <b id="explodeVal">0%</b>
           </label>
           <button class="btn xs pri" id="orbitBtn" type="button" aria-pressed="true" aria-label="Alternar rotación automática 360 grados">Órbita 360°: Activa</button>
@@ -1023,33 +1006,59 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
                 </div></div></div>
             </div>
 
-            <!-- 9. Showroom 3D / 360° -->
+            <!-- 9. Showroom 3D / 360° Pro (WebGL Three.js Real) -->
             <div class="panel-demo" id="p-show3d" role="tabpanel" aria-labelledby="tab-show3d">
-              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot" aria-hidden="true"></i><b class="biz">Tu negocio</b></div><span class="pw">SHOWROOM 3D / 360° WEBGL</span></div>
-                <div class="app-b"><div class="cols">
-                  <div class="col">
-                    <h4><span>Configurador Comercial 360°</span><span class="badge" id="srMatLbl">Prisma Lumínico</span></h4>
-                    <div class="showroom-box" id="srVp" role="region" aria-label="Visor 3D interactivo de producto comercial"><canvas id="srCanvas" aria-hidden="true"></canvas></div>
-                    <div class="chips" id="srFinish" style="margin-top:10px" role="group" aria-label="Acabado del producto 3D">
-                      <button class="chip on" type="button" data-m="prism">Prisma Lumínico</button>
-                      <button class="chip" type="button" data-m="obsidian">Obsidiana Mate</button>
-                      <button class="chip" type="button" data-m="pearl">Blanco Estudio</button>
+              <div class="app"><div class="app-h"><div class="biz-wrap"><i class="dot" aria-hidden="true"></i><b class="biz">Tu negocio</b></div><span class="pw">WEBGL 3D / 360°</span></div>
+                <div class="app-b">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+                    <div class="chips" id="srModelTabs" style="margin:0" role="tablist" aria-label="Escena 3D de demostración">
+                      <button class="chip on" type="button" role="tab" aria-selected="true" data-sr-model="villa">Inmobiliaria 360° (Casa 2 Pisos)</button>
+                      <button class="chip" type="button" role="tab" aria-selected="false" data-sr-model="pos">Estación POS &amp; Hardware 3D</button>
+                    </div>
+                    <span class="badge" id="srMatLbl">Concreto &amp; Nogal</span>
+                  </div>
+
+                  <div class="showroom-wrap" id="srWrap">
+                    <div class="sr-hud-bar">
+                      <div class="chips" id="srViewTabs" style="margin:0" role="group" aria-label="Vistas y corte arquitectónico del inmueble">
+                        <button class="chip on" type="button" data-sr-view="ext">Exterior 360°</button>
+                        <button class="chip" type="button" data-sr-view="p2">Abrir Techo (Piso 2)</button>
+                        <button class="chip" type="button" data-sr-view="p1">Corte Piso 1</button>
+                        <button class="chip" type="button" data-sr-view="roof">Azotea &amp; Equipos</button>
+                      </div>
+                      <div style="display:flex;gap:6px;align-items:center">
+                        <button class="btn xs" id="srOrbitBtn" type="button" aria-pressed="true">Órbita: On</button>
+                        <button class="btn xs" id="srExpandBtn" type="button" aria-label="Ampliar maqueta 3D a pantalla completa">⤢ Ampliar 360°</button>
+                      </div>
+                    </div>
+                    <div class="showroom-box" id="srVp" role="region" aria-label="Maqueta interactiva WebGL 3D de 360 grados">
+                      <canvas id="srCanvas" aria-hidden="true"></canvas>
                     </div>
                   </div>
-                  <div class="col">
-                    <h4>Valor comercial del motor 3D</h4>
-                    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px">Tu cliente inspecciona productos, acabados o proyectos inmobiliarios en 360° desde su celular sin instalar apps y separa su pedido directo en caja.</p>
-                    <div class="kpis">
-                      <div class="kpi">Impacto ventas<b>+27% conv.</b></div>
-                      <div class="kpi">Órbita interactiva<b>360°</b></div>
-                      <div class="kpi">Precio modelo<b id="srPrice">S/ 320</b></div>
+
+                  <div class="cols" style="margin-top:12px">
+                    <div class="col">
+                      <h4 id="srInfoTitle">Detalle arquitectónico modelado en 3D real</h4>
+                      <div class="sr-spec-pills" id="srSpecPills">
+                        <span>Puertas y mamparas</span><span>Ventanas cristal</span><span>Escaleras 10 peldaños</span><span>Balcón c/ baranda</span><span>Cochera + Auto 3D</span><span>Sala · Comedor · Cocina</span><span>2 Habitaciones Piso 2</span><span>Paneles Solares + HVAC</span>
+                      </div>
                     </div>
-                    <div style="display:grid;gap:8px;margin-top:14px">
-                      <button class="btn pri" id="srBookBtn" type="button">Separar modelo → Abonar en Cuentas (08)</button>
-                      <button class="btn" id="srResetBtn" type="button">Centrar ángulo de cámara</button>
+                    <div class="col">
+                      <h4>Acabado y acciones</h4>
+                      <div class="chips" id="srFinish" role="group" aria-label="Acabado arquitectónico 3D">
+                        <button class="chip on" type="button" data-m="walnut">Concreto &amp; Nogal</button>
+                        <button class="chip" type="button" data-m="obsidian">Obsidiana Moderna</button>
+                        <button class="chip" type="button" data-m="sand">Arena &amp; Caliza</button>
+                      </div>
+                      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+                        <button class="btn sm pri" id="srBookBtn" type="button">Separar unidad / paquete (<span id="srPrice">S/ 1,450</span>) →</button>
+                        <button class="btn sm" id="srResetBtn" type="button">Centrar cámara</button>
+                        <button class="btn sm" id="srSnapBtn" type="button">📸 PNG</button>
+                      </div>
                     </div>
                   </div>
-                </div></div></div>
+                </div>
+              </div>
             </div>
 
             <!-- 2. Gimnasio -->
@@ -1341,122 +1350,77 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
     <div class="seo-routes" aria-label="Páginas especializadas por industria">
       <a class="seo-route" href="soluciones/restaurantes/"><div><b>Software para Restaurantes Perú</b><span>POS + Cocina KDS + SUNAT + Offline</span></div><span>→</span></a>
       <a class="seo-route" href="soluciones/hoteles/"><div><b>Sistema PMS para Hoteles 360°</b><span>Reservas directas + Llave QR + Caja</span></div><span>→</span></a>
-      <a class="seo-route" href="soluciones/3d-web/"><div><b>Desarrollo Web 3D &amp; Showrooms</b><span>WebGL 360° + Configurador e-commerce</span></div><span>→</span></a>
-    </div>
-
-    <div class="gallery-divider" id="antes">
-      <div class="ba-head">
-        <div>
-          <p class="eyebrow">Comparador Antes vs. Después</p>
-          <h2>Mismo equipo en piso, <em>sin el desgaste de siempre.</em></h2>
-        </div>
-        <div class="chips" id="baTabs" style="margin-bottom:0" role="group" aria-label="Elegir proceso a comparar">
-          <button class="chip on" type="button" data-sc="caja">Cierre SUNAT + Yape</button>
-          <button class="chip" type="button" data-sc="stock">Almacén y Kardex</button>
-          <button class="chip" type="button" data-sc="citas">Agenda clínica</button>
-        </div>
-      </div>
-
-      <div class="mosaic-split">
-        <div class="ba" id="ba" style="--pos:50%">
-          <div class="old"><h3 id="oldH">Cuadre manual nocturno</h3>
-            <p id="oldP">Lunes — revisar 14 mesas y capturas de Yape en WhatsApp…<br>Sumar boletas impresas a mano a la 1:00 a.m.…<br>¿Falta S/ 84? Buscar quién cobró en efectivo…<br>Pasar montos a Excel para el contador…</p>
-            <div class="tm" id="oldTm">48 min / noche</div></div>
-          <div class="neo"><h3 id="neoH">Cierre automático en 1 clic</h3>
-            <div class="kpis" id="neoKpis"><div class="kpi">Operaciones<b>45</b></div><div class="kpi">Conciliación Yape/POS<b>100%</b></div><div class="kpi">Descuadre<b>S/ 0</b></div></div>
-            <div class="chart" style="height:84px" aria-hidden="true"><i style="height:40%"></i><i style="height:64%"></i><i style="height:50%"></i><i style="height:82%"></i><i style="height:100%"></i><i style="height:72%"></i><i style="height:58%"></i></div>
-            <div class="tm" id="neoTm">3 seg</div></div>
-          <span class="lbl l1">Operación manual</span><span class="lbl l2">Plataforma Zaphyrel</span>
-          <div class="grip" aria-hidden="true"></div>
-          <input type="range" min="6" max="94" value="50" id="baR" aria-label="Deslizar para comparar operación manual versus Zaphyrel">
-        </div>
-      </div>
+      <a class="seo-route" href="soluciones/3d-web/"><div><b>Desarrollo Web 3D &amp; Showrooms</b><span>WebGL 360° + Configurador Inmobiliario &amp; Retail</span></div><span>→</span></a>
     </div>
   </div>
 </section>
 
-<!-- 05 · CONFIGURADOR DE ALCANCE + PROCESO + PREGUNTAS FRECUENTES -->
-<section id="arquitecto">
-  <div class="wrap">
-    <p class="eyebrow">05 · Configurador de Alcance</p>
-    <h2>Arma el plano técnico de tu sistema <em>y llévalo directo a propuesta.</em></h2>
-
-    <div class="arch">
-      <div class="arch-q tilt-card">
-        <div>
-          <h3>1. Sector de tu negocio</h3>
-          <div class="chips" id="archInd" role="group" aria-label="Sector empresarial">
-            <button class="chip on" type="button" data-ind="Restaurante o cafetería">Restaurante / Café</button>
-            <button class="chip" type="button" data-ind="Hotel o alojamiento">Hotel / Hospedaje</button>
-            <button class="chip" type="button" data-ind="Clínica o consultorio">Clínica / Consultorio</button>
-            <button class="chip" type="button" data-ind="Tienda, distribuidora o almacén">Tienda / Almacén</button>
-            <button class="chip" type="button" data-ind="Gimnasio o centro deportivo">Gimnasio</button>
-            <button class="chip" type="button" data-ind="Showroom 3D o inmobiliaria">Showroom 3D / Inmobiliaria</button>
-          </div>
-          <input class="field-in" id="archCustom" placeholder="O escribe otro rubro (ej. Veterinaria, Ferretería, Taller…)" maxlength="45" aria-label="Especificar rubro personalizado">
-        </div>
-        <div>
-          <h3>2. Requerimientos prioritarios</h3>
-          <div class="chips" id="archPain" role="group" aria-label="Requerimientos del sistema">
-            <button class="chip on" type="button" data-p="cuentas">SUNAT + Cuentas Yape/POS</button>
-            <button class="chip on" type="button" data-p="pedidos">Pedidos o agenda sin cruces</button>
-            <button class="chip" type="button" data-p="stock">Kardex, código barras y offline</button>
-            <button class="chip" type="button" data-p="web">Visor 3D / 360° + Catálogo Web</button>
-            <button class="chip" type="button" data-p="equipo">Control por roles y sucursales</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="arch-res tilt-card" id="archOut">
-        <div>
-          <p class="eyebrow" style="margin-bottom:8px">Arquitectura Recomendada</p>
-          <h3 id="archTitle">Sistema a medida para Restaurante o cafetería</h3>
-          <div class="arch-map" style="margin-top:12px" id="archMap"></div>
-          <p class="eyebrow" style="margin:14px 0 8px">Módulos que integramos</p>
-          <div class="mods" id="archMods"></div>
-          <p class="eyebrow" style="margin:14px 0 8px">Beneficio operativo</p>
-          <ul class="flows" id="archFlows"></ul>
-        </div>
-        <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
-          <span style="font:600 12px var(--mono);color:var(--ink)" id="archSave">Ahorro operativo: ~8 a 13 h/semana</span>
-          <button class="btn sm pri" id="archToContact" type="button">Solicitar propuesta para este escenario ↓</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="metodo" style="margin-top:64px">
-      <p class="eyebrow">Proceso de Implementación</p>
-      <h2>De tus requerimientos actuales <em>a tu sistema operando sin frenos.</em></h2>
-      <div class="terrace-grid">
-        <article class="dep-card tilt-card"><span class="k">SEMANA 1 · DIAGNÓSTICO</span><h3>Levantamiento operativo</h3><p>Mapeamos caja, impresoras, comprobantes SUNAT y cuello de botella de tu local.</p></article>
-        <article class="dep-card tilt-card"><span class="k">SEMANA 2–3 · PROTOTIPO VIVO</span><h3>Núcleo con tu marca</h3><p>Pruebas tu plataforma real con tus cartas, habitaciones o catálogo 3D antes de salir a producción.</p></article>
-        <article class="dep-card tilt-card"><span class="k">SEMANA 4 · DESPLIEGUE</span><h3>Migración y piso</h3><p>Capacitamos a tu equipo por turno, conectamos hardware 80mm / lectores y validamos offline.</p></article>
-        <article class="dep-card tilt-card"><span class="k">CONTINUO · ESCALA</span><h3>Nuevos locales y módulos</h3><p>Agrega sucursales, almacenes o escenas WebGL 3D sobre la misma base sin reescribir nada.</p></article>
-      </div>
-
-      <div class="faqs" id="faqs">
-        <div class="faq" aria-expanded="false"><button type="button">¿Es un SaaS por suscripción o desarrollo a medida?<span>+</span></button><div class="ans">Trabajamos bajo un modelo híbrido acelerado: partimos de nuestros 9 núcleos operativos ya probados (en lugar de programar desde cero por meses) y los personalizamos a medida bajo tu marca, dominio y reglas de negocio. Tú eliges entre plan mensual administrado o entrega con instancia/licencia dedicada para tu empresa.</div></div>
-        <div class="faq" aria-expanded="false"><button type="button">¿Se conecta con facturación electrónica SUNAT / OSE, Yape/Plin e impresoras térmicas?<span>+</span></button><div class="ans">Sí. Emitimos Boletas B001 y Facturas F001 validadas vía OSE/SUNAT con IGV 18% automático y consulta RUC/DNI. Además, conciliamos cobros separados en Efectivo, Yape, Plin, Izipay o Niubiz e imprimimos directo en tiqueteras térmicas de 58mm/80mm.</div></div>
-        <div class="faq" aria-expanded="false"><button type="button">¿Qué pasa si se va el internet en el local durante hora punta?<span>+</span></button><div class="ans">Todos los módulos de piso operan con arquitectura Offline-First: los pedidos, boletas locales y consumos se registran en memoria segura del navegador/dispositivo y se sincronizan automáticamente con Cuentas y la nube en cuanto vuelve la conexión, sin duplicados.</div></div>
-        <div class="faq" aria-expanded="false"><button type="button">¿Por qué integrar visores 3D / 360° dentro de un sistema POS o ERP?<span>+</span></button><div class="ans">Para aumentar conversión y evitar errores: un huésped elige su habitación exacta en 360° aumentando reservas directas (+31% sin comisión OTA), un comprador configura tu producto en 3D conectado directo al stock real, o tu equipo ubica estantes y mesas visualmente al instante.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 06 · FORMULARIO DE PROPUESTA PRE-LLENADO -->
+<!-- 05 · CONFIGURADOR DE ALCANCE + PROPUESTA DIRECTA UNIFICADA -->
 <section class="close" id="contacto">
   <div class="wrap">
+    <div id="arquitecto">
+      <p class="eyebrow">05 · Configurador de Alcance &amp; Propuesta</p>
+      <h2>Define tu escenario <em>y llévalo directo a propuesta.</em></h2>
+
+      <div class="arch">
+        <div class="arch-q tilt-card">
+          <div>
+            <h3>1. Sector de tu negocio</h3>
+            <div class="chips" id="archInd" role="group" aria-label="Sector empresarial">
+              <button class="chip on" type="button" data-ind="Restaurante o cafetería">Restaurante / Café</button>
+              <button class="chip" type="button" data-ind="Hotel o alojamiento">Hotel / Hospedaje</button>
+              <button class="chip" type="button" data-ind="Clínica o consultorio">Clínica / Consultorio</button>
+              <button class="chip" type="button" data-ind="Tienda, distribuidora o almacén">Tienda / Almacén</button>
+              <button class="chip" type="button" data-ind="Gimnasio o centro deportivo">Gimnasio</button>
+              <button class="chip" type="button" data-ind="Showroom 3D o inmobiliaria">Showroom 3D / Inmobiliaria</button>
+            </div>
+            <input class="field-in" id="archCustom" placeholder="O escribe otro rubro (ej. Veterinaria, Ferretería, Constructora…)" maxlength="45" aria-label="Especificar rubro personalizado">
+          </div>
+          <div>
+            <h3>2. Requerimientos prioritarios</h3>
+            <div class="chips" id="archPain" role="group" aria-label="Requerimientos del sistema">
+              <button class="chip on" type="button" data-p="cuentas">SUNAT + Cuentas Yape/POS</button>
+              <button class="chip on" type="button" data-p="pedidos">Pedidos o agenda sin cruces</button>
+              <button class="chip" type="button" data-p="stock">Kardex, código barras y offline</button>
+              <button class="chip" type="button" data-p="web">Visor 3D / 360° + Catálogo Web</button>
+              <button class="chip" type="button" data-p="equipo">Control por roles y sucursales</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-res tilt-card" id="archOut">
+          <div>
+            <p class="eyebrow" style="margin-bottom:8px">Arquitectura Recomendada</p>
+            <h3 id="archTitle">Sistema a medida para Restaurante o cafetería</h3>
+            <div class="arch-map" style="margin-top:12px" id="archMap"></div>
+            <p class="eyebrow" style="margin:14px 0 8px">Módulos que integramos</p>
+            <div class="mods" id="archMods"></div>
+            <p class="eyebrow" style="margin:14px 0 8px">Beneficio operativo</p>
+            <ul class="flows" id="archFlows"></ul>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center">
+            <span style="font:600 12px var(--mono);color:var(--ink)" id="archSave">Ahorro operativo: ~8 a 13 h/semana</span>
+            <button class="btn sm pri" id="archToContact" type="button">Bajar al formulario ↓</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="panel prism-frame" id="panel">
       <div class="panel-grid">
         <div>
-          <p class="eyebrow">06 · Diagnóstico y Propuesta</p>
-          <h2>Lleva tu operación a otro nivel. <em>Empecemos esta semana.</em></h2>
-          <p class="sub">El módulo o escenario que estuviste probando ya viene pre-cargado en el formulario para preparar una demo enfocada exactamente en tu negocio.</p>
-          <div style="margin-top:22px;display:grid;gap:8px;font-size:13.5px;color:#E2E8F8">
-            <span>✓ Respuesta técnica directa en menos de 24 h</span>
-            <span>✓ Incluye evaluación de hardware POS e integración SUNAT</span>
+          <p class="eyebrow">Envío de Diagnóstico Técnico</p>
+          <h2>Empecemos tu plataforma <em>esta semana.</em></h2>
+          <p class="sub">Tu selección del configurador y de Studio OS ya viene pre-cargada para cotizar plazos e integraciones exactas en menos de 24 horas.</p>
+          <div style="margin-top:18px;display:grid;gap:6px;font-size:13.5px;color:#E2E8F8">
+            <span>✓ Evaluación gratuita de hardware POS e integración SUNAT / OSE</span>
             <span>✓ Correo directo: <b style="color:#A9DCFF">hola@zaphyrel.com</b></span>
+          </div>
+
+          <div class="faqs" id="faqs">
+            <div class="faq" aria-expanded="false"><button type="button">¿Es suscripción SaaS o desarrollo propio?<span>+</span></button><div class="ans">Modelo híbrido acelerado: partimos de 9 núcleos probados y los adaptamos a medida bajo tu marca y dominio, disponible en plan administrado o licencia dedicada.</div></div>
+            <div class="faq" aria-expanded="false"><button type="button">¿Funciona con impresoras térmicas y corte de internet?<span>+</span></button><div class="ans">Sí. Impresión directa ESC/POS de 58mm/80mm, lectura de códigos USB/Bluetooth y operación Offline-First con sincronización automática al reconectar.</div></div>
+            <div class="faq" aria-expanded="false"><button type="button">¿Qué incluye un proyecto con Showroom 3D / 360°?<span>+</span></button><div class="ans">Escenas WebGL PBR optimizadas para navegador (inmuebles con planos e interiores, o equipamiento comercial interactivo) conectadas al stock y cotizador real.</div></div>
           </div>
         </div>
 
@@ -1481,7 +1445,7 @@ h2 em{font-family:var(--editorial);font-style:italic;font-weight:500;font-size:1
             <textarea id="fNotes" rows="3" placeholder="Cuéntanos cantidad de locales, impresoras o visor 3D deseado…"></textarea>
           </label>
           <div class="contact-actions">
-            <button class="mail" type="submit" id="submitPropBtn">Solicitar propuesta para este escenario →</button>
+            <button class="mail" type="submit" id="submitPropBtn">Solicitar propuesta →</button>
             <button class="copy-btn" type="button" id="copyBriefBtn">Copiar brief completo</button>
             <a class="copy-btn" id="mailLink" href="mailto:hola@zaphyrel.com">Abrir en correo</a>
           </div>
@@ -1593,6 +1557,7 @@ function syncThemeBtn(){
   const b=$('#night');b.setAttribute('aria-pressed',n);b.textContent=n?'☀ Día':'☾ Noche';
   $('#metaTheme').content=n?'#05060A':'#FFFFFF';
   applyPalette(activePal,false);
+  window.dispatchEvent(new CustomEvent('zaphyrel:theme',{detail:{night:n}}));
 }
 $('#night').addEventListener('click',()=>{
   const n=document.documentElement.dataset.theme!=='night';
@@ -1650,230 +1615,7 @@ $$('[data-fin]').forEach(btn=>btn.addEventListener('click',()=>{
   wake();
 })();
 
-/* ---------- MOTOR 3D HERO COMERCIAL (3 MODELOS: PRODUCTO · PLANTA HOTEL · NÚCLEO) ---------- */
-(function(){
-  const cv=$('#hero3d'), vp=$('#viewport3d'), ctx=cv.getContext('2d');
-  let W=500, H=360, dpr=Math.min(devicePixelRatio||1,2);
-  let yaw=0.45, pitch=-0.28, vx=0, vy=0, dragging=false, lx=0, ly=0;
-  let autoOrbit=!reduce, explode=0, zoom=1, targetZoom=1, heroModel='product';
-  let vis=true, raf=null;
-
-  function resize(){
-    const r=vp.getBoundingClientRect();
-    dpr=Math.min(devicePixelRatio||1,2);
-    W=Math.max(260,r.width); H=Math.max(240,r.height);
-    cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  resize(); addEventListener('resize',resize,{passive:true});
-
-  function polyExtrude(pts2d,zMin,zMax,topRgb,sideRgb,strokeRgb,layerOff){
-    const faces=[], cx=60, cy=60;
-    const fPts=pts2d.map(([x,y])=>[x-cx,y-cy,zMax]);
-    const bPts=pts2d.map(([x,y])=>[x-cx,y-cy,zMin]);
-    faces.push({pts:fPts,col:topRgb,stroke:strokeRgb,layerOff,shine:0.95});
-    faces.push({pts:[...bPts].reverse(),col:sideRgb,stroke:strokeRgb,layerOff,shine:0.5});
-    for(let i=0;i<pts2d.length;i++){
-      const n=(i+1)%pts2d.length;
-      faces.push({pts:[fPts[i],fPts[n],bPts[n],bPts[i]],col:sideRgb,stroke:strokeRgb,layerOff,shine:0.65});
-    }
-    return faces;
-  }
-
-  function boxFaces(cx,cy,cz,w,h,d,topC,sideC,frontC,strokeC,layerOff=0){
-    const hw=w/2, hh=h/2, hd=d/2;
-    const v=[
-      [cx-hw,cy-hh,cz-hd],[cx+hw,cy-hh,cz-hd],[cx+hw,cy+hh,cz-hd],[cx-hw,cy+hh,cz-hd],
-      [cx-hw,cy-hh,cz+hd],[cx+hw,cy-hh,cz+hd],[cx+hw,cy+hh,cz+hd],[cx-hw,cy+hh,cz+hd]
-    ];
-    return [
-      {pts:[v[0],v[1],v[5],v[4]],col:topC,stroke:strokeC,layerOff,shine:0.95},
-      {pts:[v[3],v[2],v[6],v[7]],col:sideC,stroke:strokeC,layerOff,shine:0.4},
-      {pts:[v[4],v[5],v[6],v[7]],col:frontC,stroke:strokeC,layerOff,shine:0.78},
-      {pts:[v[0],v[1],v[2],v[3]],col:frontC,stroke:strokeC,layerOff,shine:0.55},
-      {pts:[v[0],v[4],v[7],v[3]],col:sideC,stroke:strokeC,layerOff,shine:0.66},
-      {pts:[v[1],v[5],v[6],v[2]],col:sideC,stroke:strokeC,layerOff,shine:0.8}
-    ];
-  }
-
-  /* Geometría Núcleo Zaphyrel */
-  const f1=[[19,51],[57,13],[57.5,25.5],[25.5,57.5]],f2=[[57,13],[63,13],[62.5,25.5],[57.5,25.5]],
-        f3=[[63,13],[107,57],[94.5,57.5],[62.5,25.5]],f4=[[107,57],[107,63],[94.5,62.5],[94.5,57.5]],
-        f5=[[107,63],[63,107],[62.5,94.5],[94.5,62.5]],f6=[[63,107],[57,107],[57.5,94.5],[62.5,94.5]],
-        f7=[[57,107],[40.5,90.5],[49,82],[57.5,94.5]],
-        tbl=[[57.5,25.5],[62.5,25.5],[94.5,57.5],[94.5,62.5],[62.5,94.5],[57.5,94.5],[25.5,62.5],[25.5,57.5]],
-        zA=[[41,37.5],[82.8,37.5],[61.7,58.6],[51.9,58.6],[67.5,43],[36.2,43]],
-        zB=[[79,82.5],[37.2,82.5],[58.3,61.4],[68.1,61.4],[52.5,77],[83.8,77]],
-        zBar=[[47.5,59.2],[72.5,59.2],[72.5,60.8],[47.5,60.8]],
-        w1=[[10,52.5],[25.5,52.5],[22.4,55.6],[10,55.6]],w2=[[4.5,59.4],[28,59.4],[24.2,63.2],[4.5,63.2]],w3=[[11.5,66.8],[30.5,66.8],[27.1,70.1],[11.5,70.1]];
-  const mirX=pts=>pts.map(([x,y])=>[120-x,y]);
-
-  function getSceneFaces(){
-    const st=[255,255,255];
-    if(heroModel==='product'){
-      // Luminaria / Kiosco Comercial Escultórico en 3D (Base Pedestal + Núcleo Óptico + Difusor Prismático + Corona)
-      return [
-        ...boxFaces(0,26,0,58,7,58,[232,238,248],[125,136,162],[185,194,216],st,-0.32),
-        ...boxFaces(0,17,0,40,9,40,[129,189,248],[84,122,190],[105,158,232],st,-0.16),
-        ...boxFaces(-14,0,-14,8,24,8,[44,50,68],[16,20,30],[28,32,46],st,0.12),
-        ...boxFaces(14,0,-14,8,24,8,[44,50,68],[16,20,30],[28,32,46],st,0.12),
-        ...boxFaces(-14,0,14,8,24,8,[44,50,68],[16,20,30],[28,32,46],st,0.12),
-        ...boxFaces(14,0,14,8,24,8,[44,50,68],[16,20,30],[28,32,46],st,0.12),
-        ...boxFaces(0,-2,0,26,22,26,[255,213,255],[213,190,255],[255,154,255],st,0.28),
-        ...boxFaces(0,-19,0,46,6,46,[248,250,255],[169,220,255],[213,190,255],st,0.48),
-        ...boxFaces(0,-26,0,22,6,22,[129,189,248],[95,148,215],[169,220,255],st,0.64)
-      ];
-    }
-    if(heroModel==='floor'){
-      // Planta 3D Hotel / Salón Operativo (Losa + 4 Zonas Volumétricas con estado Libre/Ocupada + Pérgola Superior)
-      return [
-        ...boxFaces(0,18,0,82,5,68,[238,242,250],[120,130,152],[180,188,208],st,-0.34),
-        // Hab 201 Ocupada (Lavanda)
-        ...boxFaces(-20,4,-14,32,20,26,[213,190,255],[152,126,210],[186,162,240],st,0.14),
-        // Hab 202 Libre (Celeste Zafiro)
-        ...boxFaces(20,4,-14,32,20,26,[169,220,255],[98,158,225],[129,189,248],st,0.22),
-        // Suite 301 Tour 360 (Blanco Perla + Rosa)
-        ...boxFaces(-18,0,15,36,28,24,[255,213,255],[215,126,215],[255,154,255],st,0.34),
-        // Mesa 4 Activa / Cocina KDS
-        ...boxFaces(21,7,15,28,14,24,[26,32,48],[10,12,18],[129,189,248],st,0.10),
-        // Estructura techo panorámico superior
-        ...boxFaces(0,-22,0,76,4,62,[255,255,255],[169,220,255],[213,190,255],st,0.62)
-      ];
-    }
-    // Modelo 3: Núcleo Zaphyrel Split-Blade doble cara
-    const s=[145,172,225], fTop=[129,189,248], fPink=[255,154,255], fLav=[213,190,255];
-    return [
-      ...polyExtrude(f1,-4,4,fTop,s,st,-0.25),...polyExtrude(f2,-4,4,[255,255,255],s,st,-0.25),
-      ...polyExtrude(f3,-4,4,fLav,s,st,-0.25),...polyExtrude(f4,-4,4,[255,213,255],s,st,-0.25),
-      ...polyExtrude(f5,-4,4,fPink,s,st,-0.25),...polyExtrude(f6,-4,4,fLav,s,st,-0.25),
-      ...polyExtrude(f7,-4,4,fTop,s,st,-0.25),...polyExtrude(tbl,-3,5,[240,247,255],s,st,0),
-      ...polyExtrude(w1,-3.5,3.5,[169,220,255],fTop,st,0.2),...polyExtrude(w2,-3.5,3.5,fTop,s,st,0.2),...polyExtrude(w3,-3.5,3.5,fLav,s,st,0.2),
-      ...polyExtrude(zA,5,12,[18,22,34],fTop,st,0.52),...polyExtrude(zB,6,13.5,fPink,fLav,st,0.52),...polyExtrude(zBar,12.5,14.5,[169,220,255],fTop,st,0.52),
-      ...polyExtrude(mirX(zA),-10,-3,[18,22,34],fTop,st,-0.55),...polyExtrude(mirX(zB),-11.5,-4,fPink,fLav,st,-0.55),...polyExtrude(mirX(zBar),-12.5,-10.5,[169,220,255],fTop,st,-0.55)
-    ];
-  }
-
-  function rot(p,cy,sy,cp,sp){
-    const x1=p[0]*cy+p[2]*sy, z1=-p[0]*sy+p[2]*cy;
-    return [x1, p[1]*cp-z1*sp, p[1]*sp+z1*cp];
-  }
-  function shadeRGB(col,nz,ny,shine){
-    const l=Math.max(0.42,Math.min(1.22,0.66+nz*0.38-ny*0.20));
-    const sp=Math.pow(Math.max(0,nz),4)*shine*36;
-    return `rgb(${Math.min(255,Math.round(col[0]*l+sp))},${Math.min(255,Math.round(col[1]*l+sp))},${Math.min(255,Math.round(col[2]*l+sp))})`;
-  }
-
-  const sceneMeta={
-    product:{badge:'SHOWROOM WEB · LUMINARIA ÁUREA · S/ 1,490',cta:'Configurar en Showroom 09 →',tab:'show3d'},
-    floor:{badge:'PLANTA OPERATIVA 3D · HAB. 202 LIBRE · S/ 190',cta:'Abrir en Hotel Stay 04 →',tab:'stay'},
-    core:{badge:'MOTOR ESPACIAL ZAPHYREL · DESPIECE 4 CAPAS',cta:'Ver Arquitectura de 4 Capas ↓',tab:'_arch'}
-  };
-
-  function drawOne(){
-    zoom+=(targetZoom-zoom)*0.14;
-    if(!dragging){
-      if(autoOrbit)yaw+=0.0052;
-      yaw+=vx; pitch=Math.max(-1.05,Math.min(1.05,pitch+vy));
-      vx*=0.92; vy*=0.92;
-    }
-    ctx.clearRect(0,0,W,H);
-    const isNight=document.documentElement.dataset.theme==='night';
-    const cy=Math.cos(yaw), sy=Math.sin(yaw), cp=Math.cos(pitch), sp=Math.sin(pitch);
-
-    // Anillo orbital de piso discreto
-    ctx.save();
-    ctx.strokeStyle=isNight?'rgba(169,220,255,.20)':'rgba(129,189,248,.28)';
-    ctx.lineWidth=1.1;
-    ctx.beginPath();
-    for(let a=0;a<=360;a+=12){
-      const th=a*Math.PI/180, R=135*zoom;
-      const [rx,ry,rz]=rot([R*Math.cos(th),36,R*Math.sin(th)],cy,sy,cp,sp);
-      const s=300/(340-rz), sx=W/2+rx*s, sy0=H/2+ry*s;
-      a===0?ctx.moveTo(sx,sy0):ctx.lineTo(sx,sy0);
-    }
-    ctx.stroke();ctx.restore();
-
-    const fov=320, scaleFactor=(Math.min(W,H)/128)*zoom;
-    const faces=getSceneFaces(), proj=[];
-    const axisZ=(heroModel==='core');
-    for(let i=0;i<faces.length;i++){
-      const f=faces[i], d=explode*0.42*f.layerOff;
-      const rPts=f.pts.map(p=>rot([p[0],p[1]-(axisZ?0:d),p[2]+(axisZ?d:0)],cy,sy,cp,sp));
-      const p0=rPts[0], p1=rPts[1], p2=rPts[2];
-      const ux=p1[0]-p0[0], uy=p1[1]-p0[1], uz=p1[2]-p0[2];
-      const vx0=p2[0]-p0[0], vy0=p2[1]-p0[1], vz0=p2[2]-p0[2];
-      const nx=uy*vz0-uz*vy0, ny=uz*vx0-ux*vz0, nz=ux*vy0-uy*vx0;
-      const len=Math.hypot(nx,ny,nz)||1;
-      const zAvg=rPts.reduce((a,q)=>a+q[2],0)/rPts.length;
-      const screen=rPts.map(q=>{
-        const s=fov/Math.max(100,fov-q[2]*scaleFactor*0.35);
-        return [W/2+q[0]*scaleFactor*s, H/2+q[1]*scaleFactor*s];
-      });
-      proj.push({screen,zAvg,ny:ny/len,nz:nz/len,col:f.col,stroke:f.stroke,shine:f.shine});
-    }
-    proj.sort((a,b)=>a.zAvg-b.zAvg);
-    for(let i=0;i<proj.length;i++){
-      const q=proj[i];
-      ctx.beginPath();
-      q.screen.forEach((pt,k)=>k===0?ctx.moveTo(pt[0],pt[1]):ctx.lineTo(pt[0],pt[1]));
-      ctx.closePath();
-      ctx.fillStyle=shadeRGB(q.col,Math.abs(q.nz),q.ny,q.shine);
-      ctx.fill();
-      ctx.strokeStyle=`rgba(${q.stroke[0]},${q.stroke[1]},${q.stroke[2]},0.36)`;
-      ctx.lineWidth=0.8;
-      ctx.stroke();
-    }
-  }
-
-  function loop(){
-    raf=null;
-    if(!vis||document.hidden)return;
-    drawOne();
-    if(autoOrbit||dragging||Math.abs(vx)>0.0005||Math.abs(targetZoom-zoom)>0.002){
-      raf=requestAnimationFrame(loop);
-    }
-  }
-  function wake(){if(!raf&&vis&&!document.hidden)raf=requestAnimationFrame(loop)}
-
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis)wake()},{threshold:0.05}).observe(vp);
-  document.addEventListener('visibilitychange',wake);
-  wake();
-
-  vp.addEventListener('pointerdown',e=>{if(e.target.closest('button,a'))return;dragging=true;lx=e.clientX;ly=e.clientY;vp.setPointerCapture(e.pointerId);wake()});
-  vp.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;yaw+=dx*0.012;pitch=Math.max(-1.05,Math.min(1.05,pitch+dy*0.01));vx=dx*0.004;vy=dy*0.003;wake()});
-  const endDrag=()=>{dragging=false};
-  vp.addEventListener('pointerup',endDrag); vp.addEventListener('pointercancel',endDrag);
-  vp.addEventListener('wheel',e=>{e.preventDefault();targetZoom=Math.max(0.72,Math.min(1.45,targetZoom+(e.deltaY<0?0.08:-0.08)));$('#zoomResetBtn').textContent=Math.round(targetZoom*100)+'%';wake()},{passive:false});
-
-  $('#zoomInBtn').onclick=()=>{targetZoom=Math.min(1.45,targetZoom+0.12);$('#zoomResetBtn').textContent=Math.round(targetZoom*100)+'%';wake();ping(.08)};
-  $('#zoomOutBtn').onclick=()=>{targetZoom=Math.max(0.72,targetZoom-0.12);$('#zoomResetBtn').textContent=Math.round(targetZoom*100)+'%';wake();ping(.08)};
-  $('#zoomResetBtn').onclick=()=>{targetZoom=1;yaw=0.45;pitch=-0.28;$('#zoomResetBtn').textContent='100%';wake();ping(.1)};
-  $('#snapBtn').onclick=()=>{drawOne();const a=document.createElement('a');a.download=`zaphyrel-${heroModel}-3d.png`;a.href=cv.toDataURL('image/png');a.click();toast('Captura PNG del visor 3D descargada')};
-  $('#explodeRange').addEventListener('input',e=>{explode=+e.target.value;$('#explodeVal').textContent=explode+'%';drawOne();wake()});
-  $('#orbitBtn').addEventListener('click',e=>{autoOrbit=!autoOrbit;e.currentTarget.setAttribute('aria-pressed',autoOrbit);e.currentTarget.textContent=autoOrbit?'Órbita 360°: Activa':'Órbita 360°: Pausa';wake();ping(.08)});
-  $('#rvExpandBtn').addEventListener('click',()=>{
-    const full=$('#chamberBox').classList.toggle('rv-full');
-    $('#rvExpandBtn').textContent=full?'✕ Cerrar':'⤢ Ampliar';
-    resize();drawOne();wake();ping(.1);
-  });
-
-  $('#heroModelTabs').addEventListener('click',e=>{
-    const b=e.target.closest('button');if(!b)return;
-    heroModel=b.dataset.model;
-    $$('#heroModelTabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
-    const m=sceneMeta[heroModel];
-    $('#heroSceneBadge').innerHTML=`<i aria-hidden="true"></i>${m.badge}`;
-    $('#heroActionLink').textContent=m.cta;
-    $('#heroActionLink').dataset.jump=m.tab;
-    drawOne();wake();ping(.1);
-  });
-  $('#heroActionLink').addEventListener('click',e=>{
-    e.preventDefault();
-    const t=e.currentTarget.dataset.jump;
-    if(t==='_arch'){$('#esencia').scrollIntoView({behavior:'smooth'});return}
-    switchTab(t);$('#lab').scrollIntoView({behavior:'smooth'});
-  });
-})();
+/* Motor 3D Hero Sovereign (Three.js PBR se inicializa en <script type="module">) */
 
 /* Arquitectura 4 Capas + Simulador de Flujo */
 const bp=$('#bp'),bpCap=$('#bpCap');
@@ -1900,7 +1642,7 @@ function revealVisible(){$$('.rv').forEach(el=>{if(el.getBoundingClientRect().to
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
 $$('.rv').forEach(el=>io.observe(el));
 const prog=$('#progress'), navLinks=$$('#mainNavLinks a');
-const secIds=['soluciones','esencia','lab','casos','arquitecto'];
+const secIds=['soluciones','esencia','lab','casos','contacto'];
 function onScroll(){
   const h=document.documentElement;prog.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight||1)})`;
   let active='';
@@ -2219,69 +1961,7 @@ $('#report').addEventListener('click',()=>{
 });
 $('#copyRep').addEventListener('click',()=>{if(!lastBal)return;navigator.clipboard?.writeText(lastBal).catch(()=>{});toast('Reporte copiado')});
 
-/* 9. Showroom 3D / 360° (Con pausa estricta IntersectionObserver + pestaña activa) */
-(function(){
-  const sc=$('#srCanvas'), srVp=$('#srVp'), ctx=sc.getContext('2d');
-  let yaw=0.55, pitch=-0.30, drag=false, lx=0, ly=0, srMat='prism', srAmt=320, srVis=false, srRaf=null;
-  const srPal={
-    prism:{lbl:'Prisma Lumínico',price:320,top:'#A9DCFF',left:'#81BDF8',right:'#D5BEFF',edge:'#FF9AFF'},
-    obsidian:{lbl:'Obsidiana Mate',price:390,top:'#2A3042',left:'#11141F',right:'#1A1E2D',edge:'#81BDF8'},
-    pearl:{lbl:'Blanco Estudio',price:290,top:'#FFFFFF',left:'#DDE3F0',right:'#EFE9FF',edge:'#090B10'}
-  };
-  function fit(){const r=srVp.getBoundingClientRect();if(r.width<40)return;const d=Math.min(devicePixelRatio||1,2);sc.width=Math.round(r.width*d);sc.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0)}
-  new ResizeObserver(()=>{fit();if($('#p-show3d').classList.contains('on'))drawFrame()}).observe(srVp);
-
-  function mkBox(cx,cy,cz,w,h,d,c){
-    const hw=w/2,hh=h/2,hd=d/2;
-    const v=[[cx-hw,cy-hh,cz-hd],[cx+hw,cy-hh,cz-hd],[cx+hw,cy+hh,cz-hd],[cx-hw,cy+hh,cz-hd],[cx-hw,cy-hh,cz+hd],[cx+hw,cy-hh,cz+hd],[cx+hw,cy+hh,cz+hd],[cx-hw,cy+hh,cz+hd]];
-    return [{i:[0,1,5,4],c:c.top},{i:[3,2,6,7],c:c.left},{i:[4,5,6,7],c:c.right},{i:[0,1,2,3],c:c.left},{i:[0,4,7,3],c:c.left},{i:[1,5,6,2],c:c.right}].map(q=>({pts:q.i.map(k=>v[k]),col:q.c}));
-  }
-
-  function drawFrame(){
-    if(!drag&&!reduce)yaw+=0.008;
-    const W=srVp.clientWidth||320,H=srVp.clientHeight||242,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
-    ctx.clearRect(0,0,W,H);
-    const th=srPal[srMat];
-    const shapes=[
-      ...mkBox(0,38,0,86,10,86,{top:th.left,left:th.left,right:th.right}),
-      ...mkBox(0,22,0,34,20,34,{top:th.top,left:th.left,right:th.right}),
-      ...mkBox(0,-10,0,54,32,54,{top:th.top,left:th.left,right:th.right}),
-      ...mkBox(0,-34,0,32,12,32,{top:th.edge,left:th.top,right:th.right})
-    ];
-    const proj=shapes.map(s=>{
-      const r=s.pts.map(([x,y,z])=>{
-        const x1=x*cy+z*sy, z1=-x*sy+z*cy, y2=y*cp-z1*sp, z2=y*sp+z1*cp;
-        const sc0=240/(260-z2);return [W/2+x1*sc0,H/2+y2*sc0,z2];
-      });
-      return {pts:r,col:s.col,z:r.reduce((a,q)=>a+q[2],0)/4};
-    }).sort((a,b)=>a.z-b.z);
-    proj.forEach(f=>{
-      ctx.beginPath();f.pts.forEach((p,k)=>k?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();
-      ctx.fillStyle=f.col;ctx.globalAlpha=0.90;ctx.fill();ctx.strokeStyle=th.edge;ctx.lineWidth=1.2;ctx.stroke();ctx.globalAlpha=1;
-    });
-  }
-  function tickSr(){
-    srRaf=null;
-    if(!srVis||document.hidden||!$('#p-show3d').classList.contains('on'))return;
-    drawFrame();
-    srRaf=requestAnimationFrame(tickSr);
-  }
-  function wakeSr(){if(!srRaf&&srVis&&!document.hidden&&$('#p-show3d').classList.contains('on'))srRaf=requestAnimationFrame(tickSr)}
-  window.__wakeShowroom=()=>{fit();wakeSr()};
-  new IntersectionObserver(es=>{srVis=es[0].isIntersecting;if(srVis)wakeSr()},{threshold:0.05}).observe(srVp);
-  document.addEventListener('visibilitychange',wakeSr);
-
-  srVp.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;ly=e.clientY;srVp.setPointerCapture(e.pointerId);wakeSr()});
-  srVp.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-lx)*0.015;pitch=Math.max(-1,Math.min(1,pitch+(e.clientY-ly)*0.012));lx=e.clientX;ly=e.clientY;drawFrame()});
-  addEventListener('pointerup',()=>{drag=false});
-  $('#srFinish').addEventListener('click',e=>{
-    const b=e.target.closest('button');if(!b)return;srMat=b.dataset.m;srAmt=srPal[srMat].price;
-    $$('#srFinish .chip').forEach(c=>c.classList.toggle('on',c===b));
-    $('#srMatLbl').textContent=srPal[srMat].lbl;$('#srPrice').textContent='S/ '+srAmt;drawFrame();ping(.1);
-  });
-  $('#srResetBtn').onclick=()=>{yaw=0.55;pitch=-0.30;drawFrame();ping(.08)};
-  $('#srBookBtn').onclick=()=>{pushCrossLedger(`Showroom 3D (${srPal[srMat].lbl})`,srAmt);toast(`Reserva Showroom 3D (+S/ ${srAmt}) abonada`)};
-})();
+/* 9. Showroom 3D / 360° Pro (WebGL Three.js se enlaza en <script type="module">) */
 
 /* Saltos rápidos desde Casos Implementados */
 $$('[data-launch]').forEach(btn=>btn.addEventListener('click',()=>{
@@ -2343,10 +2023,10 @@ $('#bizName').addEventListener('input',e=>{const v=e.target.value.trim()||'Tu ne
 $('#archInd').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;archInd=b.dataset.ind;$('#archCustom').value='';$$('#archInd .chip').forEach(c=>c.classList.toggle('on',c===b));updateArch();ping(.08)});
 $('#archCustom').addEventListener('input',updateArch);
 $('#archPain').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=b.dataset.p;if(pains.has(k)&&pains.size>1)pains.delete(k);else pains.add(k);b.classList.toggle('on',pains.has(k));updateArch();ping(.08)});
-$('#archToContact').addEventListener('click',()=>{updateArch();$('#contacto').scrollIntoView({behavior:'smooth'});toast('Configuración cargada en el formulario')});
+$('#archToContact').addEventListener('click',()=>{updateArch();$('#panel').scrollIntoView({behavior:'smooth'});toast('Configuración cargada en el formulario')});
 updateArch();
 
-/* Formulario de contacto interactivo */
+/* Formulario de contacto interactivo + Preguntas Clave */
 ['#fName','#fBiz','#fContact','#fNotes'].forEach(sel=>$(sel).addEventListener('input',updateProposalMailto));
 $('#copyBriefBtn').addEventListener('click',()=>{
   const txt=`SOLICITUD ZAPHYREL\nNombre: ${$('#fName').value.trim()||'Pendiente'}\nEmpresa: ${$('#fBiz').value.trim()||'Sin especificar'}\nContacto: ${$('#fContact').value.trim()||'Pendiente'}\nEscenario: ${$('#fScenario').value}\nAlcance: ${$('#fNotes').value}`;
@@ -2365,24 +2045,13 @@ $('#proposalForm').addEventListener('submit',e=>{
   toast(`Solicitud ${folio} preparada`);
 });
 
-/* Comparador + FAQ */
-const scenarios={
-  caja:{oh:'Cuadre manual nocturno',op:'Lunes — revisar 14 mesas y capturas de Yape en WhatsApp…<br>Sumar boletas impresas a mano a la 1:00 a.m.…<br>¿Falta S/ 84? Buscar quién cobró en efectivo…<br>Pasar montos a Excel para el contador…',ot:'48 min / noche',nh:'Cierre automático en 1 clic',nt:'3 seg',k:[['Operaciones','45'],['Conciliación Yape/POS','100%'],['Descuadre','S/ 0']]},
-  stock:{oh:'Conteo de almacén a ciegas',op:'Revisar estantes a fin de mes…<br>Anotar en papel lo que <s>creemos</s> falta…<br>Enterarse tarde cuando el plato o SKU ya se agotó…<br>Comprar de urgencia pagando sobrecosto…',ot:'2 h / semana',nh:'Kardex vivo + alerta mínima',nt:'al instante',k:[['Exactitud stock','99.4%'],['Alertas activas','Automáticas'],['Merma','< 0.5%']]},
-  citas:{oh:'Agenda en cuaderno y chats',op:'¿A qué hora venía Lucía Vega? <s>10:00</s> 10:30…<br>Dos pacientes citados con el mismo doctor…<br>Ausencias por falta de confirmación…<br>Buscar fichas físicas en el archivador…',ot:'40 min / día',nh:'Turnos sin cruces + Receta QR',nt:'0 cruces',k:[['Asistencia','96%'],['Espera piso','2 min'],['Cruces','0']]}
-};
-$('#baTabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const sc=scenarios[b.dataset.sc];$$('#baTabs .chip').forEach(c=>c.classList.toggle('on',c===b));
-  $('#oldH').textContent=sc.oh;$('#oldP').innerHTML=sc.op;$('#oldTm').textContent=sc.ot;$('#neoH').textContent=sc.nh;$('#neoTm').textContent=sc.nt;
-  $('#neoKpis').innerHTML=sc.k.map(x=>`<div class="kpi">${x[0]}<b>${x[1]}</b></div>`).join('');ping(.08);
-});
-$('#baR').addEventListener('input',e=>$('#ba').style.setProperty('--pos',e.target.value+'%'));
 $$('#faqs .faq button').forEach(b=>b.addEventListener('click',()=>{const f=b.parentElement,open=f.getAttribute('aria-expanded')==='true';f.setAttribute('aria-expanded',!open);ping(.08)}));
 
 /* Paleta de comandos Ctrl+K */
 const cmd=$('#cmd'),cin=$('#cmdIn'),cl=$('#cmdList');
 const acts=[
   ['Probar 01 · Restaurante POS + SUNAT',()=>{switchTab('table');$('#lab').scrollIntoView({behavior:'smooth'})}],
-  ['Probar 09 · Showroom 3D / 360°',()=>{switchTab('show3d');$('#lab').scrollIntoView({behavior:'smooth'})}],
+  ['Probar 09 · Showroom 3D / 360° (Inmobiliaria & POS)',()=>{switchTab('show3d');$('#lab').scrollIntoView({behavior:'smooth'})}],
   ['Probar 04 · Hotel PMS & Tour 360°',()=>{switchTab('stay');$('#lab').scrollIntoView({behavior:'smooth'})}],
   ['Probar 03 · Inventario Kardex',()=>{switchTab('stock');$('#lab').scrollIntoView({behavior:'smooth'})}],
   ['Probar 05 · Clínica y Citas',()=>{switchTab('care');$('#lab').scrollIntoView({behavior:'smooth'})}],
@@ -2390,8 +2059,7 @@ const acts=[
   ['Simular corte Wi-Fi (Offline-First)',()=>$('#offlineSimBtn').click()],
   ['Ir a Arquitectura de 4 Capas','#esencia'],
   ['Ir a Casos Implementados','#casos'],
-  ['Ir al Configurador de Alcance','#arquitecto'],
-  ['Solicitar Propuesta / Diagnóstico','#contacto'],
+  ['Solicitar Propuesta / Configurador','#contacto'],
   ['Alternar vista Móvil / Escritorio',()=>($('#pWrap').classList.contains('mobile')?$('#vpDesk'):$('#vpMob')).click()],
   ['Alternar modo claro / oscuro',()=>$('#night').click()]
 ];
@@ -2408,6 +2076,7 @@ cmd.addEventListener('click',e=>{if(e.target===cmd)closeCmd()});
 addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();cmd.classList.contains('on')?closeCmd():openCmd();return}
   if(e.key==='Escape'&&$('#chamberBox').classList.contains('rv-full')){$('#rvExpandBtn').click();return}
+  if(e.key==='Escape'&&$('#srWrap').classList.contains('sr-full')){$('#srExpandBtn').click();return}
   if(!cmd.classList.contains('on'))return;
   if(e.key==='Escape')closeCmd();
   if(e.key==='ArrowDown'){sel=Math.min(shown.length-1,sel+1);drawCmd();e.preventDefault()}
@@ -2415,8 +2084,153 @@ addEventListener('keydown',e=>{
   if(e.key==='Enter'&&shown[sel])run(shown[sel]);
 });
 
+/* Exponer puente seguro hacia ES Module WebGL 3D */
+window.__zaphyrelBridge = {
+  pushCrossLedger,
+  toast,
+  ping
+};
+
 /* Deep-link desde rutas SEO (/soluciones/restaurantes/?mod=table -> #lab?mod=table) */
 (()=>{try{const mod=new URLSearchParams(location.search).get('mod');if(mod&&$('#p-'+mod)){switchTab(mod);setTimeout(()=>$('#lab').scrollIntoView({behavior:'smooth'}),180)}}catch(e){}})();
+</script>
+<script type="module">
+import { initHeroEmblem3D, initShowroom3D } from './assets/zaphyrel-3d.js';
+
+const $ = (s, ctx = document) => ctx.querySelector(s);
+const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+const bridge = window.__zaphyrelBridge || { pushCrossLedger: () => {}, toast: () => {}, ping: () => {} };
+
+/* 1. Hero Pure Brand Sovereign 3D Emblem */
+const heroVp = $('#viewport3d'), heroCanvas = $('#hero3d');
+const heroFinishNames = {
+  prisma: 'EMBLEMA SOVEREIGN · PRISMA CRISTAL PBR',
+  obsidian: 'EMBLEMA SOVEREIGN · OBSIDIANA TITANIO PBR',
+  pearl: 'EMBLEMA SOVEREIGN · PORCELANA STUDIO PBR'
+};
+const hero3d = initHeroEmblem3D(heroCanvas, heroVp, {
+  onZoom(pct) {
+    $('#zoomResetBtn').textContent = pct + '%';
+  }
+});
+if (hero3d) {
+  let heroOrbitOn = true;
+  $('#heroFinishTabs').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const mode = b.dataset.finish3d;
+    $$('#heroFinishTabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+    $('#heroSceneBadge').innerHTML = `<i aria-hidden="true"></i>${heroFinishNames[mode]}`;
+    hero3d.setFinish(mode);
+    bridge.ping(.09);
+  });
+  $('#zoomInBtn').addEventListener('click', () => { $('#zoomResetBtn').textContent = hero3d.zoomBy(0.84) + '%'; bridge.ping(.08); });
+  $('#zoomOutBtn').addEventListener('click', () => { $('#zoomResetBtn').textContent = hero3d.zoomBy(1.18) + '%'; bridge.ping(.08); });
+  $('#zoomResetBtn').addEventListener('click', () => { $('#zoomResetBtn').textContent = hero3d.resetView() + '%'; bridge.ping(.1); });
+  $('#explodeRange').addEventListener('input', e => {
+    const v = +e.target.value;
+    $('#explodeVal').textContent = v + '%';
+    hero3d.setExplode(v);
+  });
+  $('#orbitBtn').addEventListener('click', e => {
+    heroOrbitOn = !heroOrbitOn;
+    e.currentTarget.setAttribute('aria-pressed', heroOrbitOn);
+    e.currentTarget.textContent = heroOrbitOn ? 'Órbita 360°: Activa' : 'Órbita 360°: Pausa';
+    hero3d.setOrbit(heroOrbitOn);
+    bridge.ping(.08);
+  });
+  $('#snapBtn').addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.download = 'zaphyrel-emblema-3d.png';
+    a.href = hero3d.capturePng();
+    a.click();
+    bridge.toast('Captura PNG del Emblema Zaphyrel 3D descargada');
+  });
+  $('#rvExpandBtn').addEventListener('click', () => {
+    const full = $('#chamberBox').classList.toggle('rv-full');
+    $('#rvExpandBtn').textContent = full ? '✕ Cerrar' : '⤢ Ampliar';
+    hero3d.resize();
+    bridge.ping(.1);
+  });
+  window.addEventListener('zaphyrel:theme', e => hero3d.setTheme(Boolean(e.detail?.night)));
+}
+
+/* 2. Studio OS Showroom 3D / 360° Pro (Casa 2 Pisos Inmobiliaria + Estación POS Hardware) */
+const srVp = $('#srVp'), srCanvas = $('#srCanvas');
+const sr3d = initShowroom3D(srCanvas, srVp);
+if (sr3d) {
+  let srModel = 'villa', srMat = 'walnut', srOrbitOn = true;
+  const finishMeta = {
+    walnut: { lbl: 'Concreto & Nogal', priceVilla: 1450, pricePos: 2890 },
+    obsidian: { lbl: 'Obsidiana Moderna', priceVilla: 1620, pricePos: 3150 },
+    sand: { lbl: 'Arena & Caliza', priceVilla: 1390, pricePos: 2790 }
+  };
+  const specPills = {
+    villa: '<span>Puertas y mamparas</span><span>Ventanas cristal</span><span>Escaleras 10 peldaños</span><span>Balcón c/ baranda</span><span>Cochera + Auto 3D</span><span>Sala · Comedor · Cocina</span><span>2 Habitaciones Piso 2</span><span>Paneles Solares + HVAC</span>',
+    pos: '<span>Monitor Dual-Screen POS</span><span>Pantalla QR Yape/Plin</span><span>Impresora Térmica 80mm</span><span>Ticket SUNAT saliente</span><span>Gaveta portamonedas</span><span>Escáner Láser USB</span><span>Terminal Izipay / Niubiz</span><span>Mostrador retroiluminado</span>'
+  };
+  function refreshSrInfo() {
+    const m = finishMeta[srMat];
+    const pr = srModel === 'villa' ? m.priceVilla : m.pricePos;
+    $('#srMatLbl').textContent = srModel === 'villa' ? m.lbl : 'Hardware · ' + m.lbl;
+    $('#srPrice').textContent = 'S/ ' + pr.toLocaleString('es-PE');
+    $('#srInfoTitle').textContent = srModel === 'villa' ? 'Detalle arquitectónico modelado en 3D real' : 'Estación POS comercial modelada pieza por pieza';
+    $('#srSpecPills').innerHTML = specPills[srModel];
+    $('#srViewTabs').style.display = srModel === 'villa' ? 'flex' : 'none';
+  }
+  window.__wakeShowroom = () => sr3d.wake();
+  $('#srModelTabs').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    srModel = b.dataset.srModel;
+    $$('#srModelTabs button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    sr3d.setModel(srModel);
+    refreshSrInfo();
+    bridge.ping(.1);
+  });
+  $('#srViewTabs').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $$('#srViewTabs button').forEach(x => x.classList.toggle('on', x === b));
+    sr3d.setView(b.dataset.srView);
+    bridge.ping(.08);
+  });
+  $('#srFinish').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    srMat = b.dataset.m;
+    $$('#srFinish button').forEach(x => x.classList.toggle('on', x === b));
+    sr3d.setFinish(srMat);
+    refreshSrInfo();
+    bridge.ping(.08);
+  });
+  $('#srOrbitBtn').addEventListener('click', e => {
+    srOrbitOn = !srOrbitOn;
+    e.currentTarget.setAttribute('aria-pressed', srOrbitOn);
+    e.currentTarget.textContent = srOrbitOn ? 'Órbita: On' : 'Órbita: Pausa';
+    sr3d.setOrbit(srOrbitOn);
+    bridge.ping(.07);
+  });
+  $('#srResetBtn').addEventListener('click', () => { sr3d.reset(); bridge.ping(.08); });
+  $('#srSnapBtn').addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.download = `zaphyrel-showroom-${srModel}.png`;
+    a.href = sr3d.capturePng();
+    a.click();
+    bridge.toast('Captura PNG del Showroom 3D descargada');
+  });
+  $('#srExpandBtn').addEventListener('click', () => {
+    const full = $('#srWrap').classList.toggle('sr-full');
+    $('#srExpandBtn').textContent = full ? '✕ Cerrar' : '⤢ Ampliar 360°';
+    sr3d.resize();
+    bridge.ping(.1);
+  });
+  $('#srBookBtn').addEventListener('click', () => {
+    const m = finishMeta[srMat];
+    const pr = srModel === 'villa' ? m.priceVilla : m.pricePos;
+    const label = srModel === 'villa' ? `Reserva Inmueble 360° (${m.lbl})` : `Kit POS Hardware (${m.lbl})`;
+    bridge.pushCrossLedger(label, pr);
+    bridge.toast(`${label} (+S/ ${pr.toLocaleString('es-PE')}) registrada en Cuentas`);
+  });
+  refreshSrInfo();
+  if ($('#p-show3d').classList.contains('on')) sr3d.wake();
+}
 </script>
 </body>
 </html>
