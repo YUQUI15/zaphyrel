@@ -201,7 +201,7 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   scene.environmentIntensity = 0.92;
 
   const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 60);
-  camera.position.set(0.85, 0.45, 8.9);
+  camera.position.set(0, 0.08, 7.6);
 
   const controls = new OrbitControls(camera, canvas);
   controls.enableDamping = true;
@@ -209,7 +209,7 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   controls.enablePan = false;
   controls.minDistance = 5.2;
   controls.maxDistance = 13.8;
-  controls.autoRotate = true;
+  controls.autoRotate = Boolean(opts.autoRotate);
   controls.autoRotateSpeed = 1.45;
 
   // Studio Three-Point + Pastel Rim Lights
@@ -298,53 +298,54 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   });
 
   const waferMat = new THREE.MeshPhysicalMaterial({
-    map: prismTex,
-    emissive: 0xB88CFF,
-    emissiveMap: prismTex,
-    emissiveIntensity: 0.52,
-    transmission: 0.42,
-    transparent: true,
-    opacity: 0.88,
-    roughness: 0.06,
-    ior: 1.52,
+    color: 0x070e20,
+    emissive: 0x162a58,
+    emissiveIntensity: 0.24,
+    transmission: 0,
+    transparent: false,
+    opacity: 1.0,
+    metalness: 0.45,
+    roughness: 0.18,
     clearcoat: 1.0
   });
 
   const windMat = new THREE.MeshPhysicalMaterial({
     color: 0x389BFF,
     emissive: 0x2563EB,
-    emissiveIntensity: 0.32,
+    emissiveIntensity: 0.36,
     metalness: 0.65,
     roughness: 0.14,
     clearcoat: 0.95
   });
 
   const zTopMat = new THREE.MeshPhysicalMaterial({
-    color: 0x0b0e18,
-    metalness: 0.82,
-    roughness: 0.14,
+    color: 0xF0F7FF,
+    emissive: 0x5EB8FF,
+    emissiveIntensity: 0.38,
+    metalness: 0.48,
+    roughness: 0.10,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.05
+    clearcoatRoughness: 0.04
   });
 
   const zBotMat = new THREE.MeshPhysicalMaterial({
-    color: 0x82BCFF,
+    color: 0x90C8FF,
     map: prismTex,
     emissiveMap: prismTex,
-    emissive: 0x9B6DFF,
-    emissiveIntensity: 0.46,
-    metalness: 0.58,
-    roughness: 0.14,
+    emissive: 0xB37CFF,
+    emissiveIntensity: 0.56,
+    metalness: 0.46,
+    roughness: 0.12,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.05
+    clearcoatRoughness: 0.04
   });
 
   const zBarMat = new THREE.MeshPhysicalMaterial({
-    color: 0x78C6FF,
-    emissive: 0x389BFF,
-    emissiveIntensity: 0.28,
-    metalness: 0.88,
-    roughness: 0.10,
+    color: 0xFFFFFF,
+    emissive: 0x5EB8FF,
+    emissiveIntensity: 0.45,
+    metalness: 0.72,
+    roughness: 0.08,
     clearcoat: 1.0
   });
 
@@ -414,24 +415,24 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   ];
   windPts.forEach((pts, idx) => addBevelPart(layers.winds, pts, 0.24, windMat, (idx - 1) * 0.06, 0.022, true));
 
-  // Front Split-Blade Z Monogram + Tension Bar
-  const zA = [[41,37.5],[82.8,37.5],[61.7,58.6],[51.9,58.6],[67.5,43],[36.2,43]];
-  const zB = [[79,82.5],[37.2,82.5],[58.3,61.4],[68.1,61.4],[52.5,77],[83.8,77]];
-  const zBar = [[47.5,59.1],[72.5,59.1],[72.5,60.9],[47.5,60.9]];
+  // True Continuous Architectural "Z" Monogram (Zero Hourglass, Zero Rear Reversed Z)
+  const zFull = [
+    [35.0, 34.5], [85.0, 34.5], [85.0, 43.2], [51.8, 76.4],
+    [85.0, 76.4], [81.2, 85.5], [35.0, 85.5], [35.0, 76.8],
+    [68.2, 43.6], [38.8, 43.6]
+  ];
+  const zTopFacet = [
+    [35.0, 34.5], [85.0, 34.5], [85.0, 39.8], [44.2, 80.6],
+    [35.0, 80.6], [35.0, 76.8], [68.2, 43.6], [38.8, 43.6]
+  ];
 
-  addBevelPart(layers.zFront, zA, 0.26, zTopMat, 0.34, 0.03, true);
-  addBevelPart(layers.zFront, zB, 0.26, zBotMat, 0.37, 0.03, true);
-  addBevelPart(layers.zBridge, zBar, 0.14, zBarMat, 0.56, 0.015, false);
+  addBevelPart(layers.zFront, zFull, 0.28, zBotMat, 0.34, 0.032, true);
+  addBevelPart(layers.zFront, zTopFacet, 0.28, zTopMat, 0.39, 0.024, true);
 
-  // Rear Mirrored Double-Sided Sovereign Z (rotated PI so readable cleanly from back)
-  const backWrap = new THREE.Group();
-  backWrap.rotation.y = Math.PI;
-  addBevelPart(backWrap, zA, 0.26, zTopMat, 0.34, 0.03, true);
-  addBevelPart(backWrap, zB, 0.26, zBotMat, 0.37, 0.03, true);
-  addBevelPart(backWrap, zBar, 0.14, zBarMat, 0.56, 0.015, false);
-  layers.zBack.add(backWrap);
+  // Rear zBack intentionally empty so static & angled renders NEVER show a reversed Z (hourglass) from behind
 
-  // Gyroscopic Calibration Rings + Floating Optical Shards (richer chromatic visibility)
+  // Gyroscopic Calibration Rings + Floating Optical Shards (hidden by default for clean front/profile logos)
+  layers.rings.visible = false;
   const ringMat1 = new THREE.MeshStandardMaterial({ color: 0x4DA8FF, emissive: 0x2E90FA, emissiveIntensity: 0.45, metalness: 0.88, roughness: 0.16, transparent: true, opacity: 0.82 });
   const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xFF5CE8, emissive: 0xE040FB, emissiveIntensity: 0.42, metalness: 0.88, roughness: 0.16, transparent: true, opacity: 0.76 });
   const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.65, 0.018, 16, 128), ringMat1);
@@ -507,9 +508,13 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
       chassisMat.emissive.copy(fCols[0]);
       chassisMat.emissiveIntensity = 0.09 * colorBoost;
       chassisMat.roughness = 0.16;
-      zTopMat.color.setHex(0x0b0e18);
-      zBotMat.emissiveIntensity = 0.46 * colorBoost;
-      waferMat.emissiveIntensity = 0.52 * colorBoost;
+      waferMat.color.setHex(0x070e20);
+      waferMat.emissive.setHex(0x162a58);
+      waferMat.emissiveIntensity = 0.24 * colorBoost;
+      zTopMat.color.setHex(0xf4f9ff);
+      zTopMat.emissive.copy(fCols[1]);
+      zTopMat.emissiveIntensity = 0.38 * colorBoost;
+      zBotMat.emissiveIntensity = 0.56 * colorBoost;
     } else if (mode === 'obsidian') {
       facetMats.forEach((m, i) => {
         const baseDark = new THREE.Color(i % 2 === 0 ? 0x121829 : 0x1e2742);
@@ -525,9 +530,13 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
       chassisMat.emissive.copy(fCols[2]);
       chassisMat.emissiveIntensity = 0.14 * colorBoost;
       chassisMat.roughness = 0.12;
-      zTopMat.color.setHex(0xf4f8ff);
-      zBotMat.emissiveIntensity = 0.54 * colorBoost;
-      waferMat.emissiveIntensity = 0.58 * colorBoost;
+      waferMat.color.setHex(0x050914);
+      waferMat.emissive.setHex(0x111f42);
+      waferMat.emissiveIntensity = 0.20 * colorBoost;
+      zTopMat.color.setHex(0xffffff);
+      zTopMat.emissive.copy(fCols[1]);
+      zTopMat.emissiveIntensity = 0.42 * colorBoost;
+      zBotMat.emissiveIntensity = 0.60 * colorBoost;
     } else {
       facetMats.forEach((m, i) => {
         const porcelainTint = new THREE.Color(0xffffff).lerp(fCols[i], 0.58);
@@ -543,9 +552,13 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
       chassisMat.emissive.copy(fCols[1]);
       chassisMat.emissiveIntensity = 0.06 * colorBoost;
       chassisMat.roughness = 0.22;
-      zTopMat.color.setHex(0x0d111c);
-      zBotMat.emissiveIntensity = 0.38 * colorBoost;
-      waferMat.emissiveIntensity = 0.44 * colorBoost;
+      waferMat.color.setHex(0x0a142b);
+      waferMat.emissive.setHex(0x1e3a8a);
+      waferMat.emissiveIntensity = 0.22 * colorBoost;
+      zTopMat.color.setHex(0xf8fbff);
+      zTopMat.emissive.copy(fCols[0]);
+      zTopMat.emissiveIntensity = 0.34 * colorBoost;
+      zBotMat.emissiveIntensity = 0.52 * colorBoost;
     }
     renderFrame(0.001);
   }
@@ -554,9 +567,6 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
     if (Array.isArray(hexArr) && hexArr.length >= 5) {
       currentPaletteHex = hexArr.slice(0, 5);
       prismTex = buildPrismTexture(currentPaletteHex);
-      waferMat.map = prismTex;
-      waferMat.emissiveMap = prismTex;
-      waferMat.needsUpdate = true;
       zBotMat.map = prismTex;
       zBotMat.emissiveMap = prismTex;
       zBotMat.needsUpdate = true;
@@ -680,14 +690,33 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
     setExplode,
     setTheme,
     setOrbit(enabled) { controls.autoRotate = enabled; wake(); },
+    toggleSpin() { controls.autoRotate = !controls.autoRotate; wake(); return controls.autoRotate; },
+    setRings(visible) { layers.rings.visible = Boolean(visible); renderFrame(0.016); wake(); },
+    setSideBlades(visible) { layers.winds.visible = Boolean(visible); renderFrame(0.016); wake(); },
+    setAngle(rotYDeg = 0, rotXDeg = 0) {
+      controls.autoRotate = false;
+      const radY = (rotYDeg * Math.PI) / 180;
+      const radX = (rotXDeg * Math.PI) / 180;
+      const dist = 7.4;
+      const px = Math.sin(radY) * Math.cos(radX) * dist;
+      const py = Math.sin(radX) * dist + 0.08;
+      const pz = Math.cos(radY) * Math.cos(radX) * dist;
+      camera.position.set(px, py, pz);
+      targetDist = dist;
+      explodeTarget = Math.abs(rotYDeg) >= 40 && rotXDeg > 0 ? 0.55 : 0;
+      controls.target.set(0, 0, 0);
+      controls.update();
+      renderFrame(0.016);
+      wake();
+    },
     zoomBy(factor) {
       targetDist = Math.max(5.2, Math.min(13.8, targetDist * factor));
       wake();
-      return Math.round((8.9 / targetDist) * 100);
+      return Math.round((7.4 / targetDist) * 100);
     },
     resetView() {
-      targetDist = 8.9;
-      camera.position.set(0.85, 0.45, 8.9);
+      targetDist = 7.4;
+      camera.position.set(0, 0.08, 7.4);
       controls.target.set(0, 0, 0);
       controls.update();
       return 100;
