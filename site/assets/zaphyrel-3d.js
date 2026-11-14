@@ -310,12 +310,12 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   });
 
   const windMat = new THREE.MeshPhysicalMaterial({
-    color: 0x389BFF,
-    emissive: 0x2563EB,
-    emissiveIntensity: 0.36,
-    metalness: 0.65,
-    roughness: 0.14,
-    clearcoat: 0.95
+    color: 0x38BDF8,
+    emissive: 0x2E90FA,
+    emissiveIntensity: 0.55,
+    metalness: 0.72,
+    roughness: 0.12,
+    clearcoat: 0.98
   });
 
   const zTopMat = new THREE.MeshPhysicalMaterial({
@@ -444,23 +444,17 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
 
   // Atomic / Gyroscopic Orbital Calibration Rings + Floating Optical Shards (visible by default, toggleable via setRings)
   layers.rings.visible = true;
-  const ringMat1 = new THREE.MeshStandardMaterial({ color: 0x4DA8FF, emissive: 0x2E90FA, emissiveIntensity: 0.48, metalness: 0.88, roughness: 0.15, transparent: true, opacity: 0.86 });
-  const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xFF5CE8, emissive: 0xE040FB, emissiveIntensity: 0.44, metalness: 0.88, roughness: 0.15, transparent: true, opacity: 0.82 });
-  const ringMat3 = new THREE.MeshStandardMaterial({ color: 0xA87FFB, emissive: 0x8B5CF6, emissiveIntensity: 0.40, metalness: 0.88, roughness: 0.15, transparent: true, opacity: 0.72 });
-  const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.58, 0.019, 16, 128), ringMat1);
-  gyro1.rotation.x = Math.PI * 0.42;
-  gyro1.rotation.y = 0.28;
+  const ringMat1 = new THREE.MeshStandardMaterial({ color: 0x4DA8FF, emissive: 0x2E90FA, emissiveIntensity: 0.52, metalness: 0.88, roughness: 0.14, transparent: true, opacity: 0.90 });
+  const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xFF5CE8, emissive: 0xE040FB, emissiveIntensity: 0.48, metalness: 0.88, roughness: 0.14, transparent: true, opacity: 0.86 });
+  const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.58, 0.023, 18, 128), ringMat1);
+  gyro1.rotation.x = Math.PI * 0.41;
+  gyro1.rotation.y = 0.54;
   layers.rings.add(gyro1);
 
-  const gyro2 = new THREE.Mesh(new THREE.TorusGeometry(2.78, 0.016, 16, 128), ringMat2);
-  gyro2.rotation.x = Math.PI * 0.58;
-  gyro2.rotation.y = -0.34;
+  const gyro2 = new THREE.Mesh(new THREE.TorusGeometry(2.74, 0.020, 18, 128), ringMat2);
+  gyro2.rotation.x = Math.PI * 0.59;
+  gyro2.rotation.y = -0.54;
   layers.rings.add(gyro2);
-
-  const gyro3 = new THREE.Mesh(new THREE.TorusGeometry(2.88, 0.014, 16, 128), ringMat3);
-  gyro3.rotation.x = 0.55;
-  gyro3.rotation.y = Math.PI * 0.34;
-  layers.rings.add(gyro3);
 
   // Floor ring removed so there is zero donut base below the crest
   const floorRing = new THREE.Mesh(
@@ -598,8 +592,6 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
       ringMat1.emissive.copy(c0);
       ringMat2.color.copy(c4);
       ringMat2.emissive.copy(c4);
-      ringMat3.color.copy(c2);
-      ringMat3.emissive.copy(c2);
       zBarMat.emissive.copy(c0);
       floorRing.material.color.copy(c0);
       shards.forEach((s, idx) => {
@@ -651,7 +643,6 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
     crestGroup.position.y = Math.sin(t * 1.15) * 0.08;
     gyro1.rotation.z = t * 0.18;
     gyro2.rotation.z = -t * 0.14;
-    gyro3.rotation.z = t * 0.11;
     shards.forEach(s => {
       const a = s.userData.angle + t * s.userData.speed;
       s.position.set(Math.cos(a) * s.userData.rad, s.userData.yOff + Math.sin(a * 2) * 0.14, Math.sin(a) * s.userData.rad);
