@@ -240,7 +240,14 @@
       overflow: hidden;
     }
     .asset-stage.dark { background: radial-gradient(circle at 50% 40%, #111C38 0%, #050811 78%); }
-    .asset-stage.light { background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #EBF2FA 85%); color: #0B1220; }
+    .asset-stage.light {
+      background: radial-gradient(circle at 50% 40%, #F1F6FD 0%, #DCE7F5 88%);
+      color: #0B1220;
+    }
+    .asset-stage.light svg, .asset-stage.light img {
+      filter: drop-shadow(0 8px 20px rgba(11, 19, 36, 0.14));
+      border-radius: 8px;
+    }
     .asset-stage.checker {
       background-color: #0B1120;
       background-image:
@@ -682,7 +689,7 @@
       <div class="pbr-viewport" id="pbrViewport">
         <span class="stage-badge" id="pbrBadge">01 · PRISMA CRISTAL PBR · FRONTAL 0°</span>
         <span class="stage-dim">2400 × 2400 PX · 3D PBR</span>
-        <img id="pbrFallbackImg" src="../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-transparente.png" alt="Emblema 3D PBR Zaphyrel" />
+        <img id="pbrFallbackImg" src="../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-transparente.png" alt="Emblema 3D PBR Zaphyrel" />
         <canvas id="brand3dCanvas" aria-label="Visor 3D PBR Interactivo"></canvas>
       </div>
       <div class="pbr-controls">
@@ -734,14 +741,14 @@
         <div class="asset-stage dark" style="min-height: 290px;">
           <span class="stage-badge">LÁMINA MAESTRA · COMPARATIVA OFICIAL DE LOS 3 ACABADOS 3D PBR</span>
           <span class="stage-dim">3600 × 1500 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.png" alt="Comparativa 3 Acabados 3D PBR Sovereign" style="max-height: 265px;" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.png" alt="Comparativa 3 Acabados 3D PBR Sovereign" style="max-height: 265px;" />
         </div>
         <div class="asset-body">
           <h4>Comparativa Oficial: 01 Prisma Cristal PBR · 02 Obsidiana Titanio PBR · 03 Porcelana Studio PBR</h4>
           <p>Lámina comparativa de alta resolución con los tres acabados físicos del Emblema Sovereign 3D lado a lado con pigmentación cristalina intensa.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.png','comparativa-3-acabados-pbr-sovereign.png')">⬇ Descargar Comparativa PNG (3600×1500)</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.jpg','comparativa-3-acabados-pbr-sovereign.jpg')">⬇ Descargar Comparativa JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.png','comparativa-3-acabados-pbr-sovereign.png')">⬇ Descargar Comparativa PNG (3600×1500)</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/comparativa-3-acabados-pbr-sovereign.jpg','comparativa-3-acabados-pbr-sovereign.jpg')">⬇ Descargar Comparativa JPG</button>
           </div>
         </div>
       </article>
@@ -751,16 +758,16 @@
         <div class="asset-stage checker">
           <span class="stage-badge">01 · PRISMA CRISTAL PBR · FRONTAL</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-transparente.png" alt="01 Prisma Cristal PBR Frontal" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-transparente.png" alt="01 Prisma Cristal PBR Frontal" />
         </div>
         <div class="asset-body">
           <h4>01 · Prisma Cristal PBR — Vista Frontal</h4>
           <p>Cristal dicroico con facetas Zafiro Vivo (#2E90FA), Hielo (#5EB8FF), Lavanda (#A87FFB) y Orquídea (#FF38DC).</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-transparente.png','01-prisma-cristal-pbr-frontal-transparente.png')">⬇ PNG Alpha</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-noche.png','01-prisma-cristal-pbr-frontal-fondo-noche.png')">⬇ PNG Noche</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-dia.png','01-prisma-cristal-pbr-frontal-fondo-dia.png')">⬇ PNG Día</button>
-            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal.jpg','01-prisma-cristal-pbr-frontal.jpg')">⬇ JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-transparente.png','01-prisma-cristal-pbr-frontal-transparente.png')">⬇ PNG Alpha</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-noche.png','01-prisma-cristal-pbr-frontal-fondo-noche.png')">⬇ PNG Noche</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-dia.png','01-prisma-cristal-pbr-frontal-fondo-dia.png')">⬇ PNG Día</button>
+            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal.jpg','01-prisma-cristal-pbr-frontal.jpg')">⬇ JPG</button>
           </div>
         </div>
       </article>
@@ -770,16 +777,16 @@
         <div class="asset-stage checker">
           <span class="stage-badge">02 · OBSIDIANA TITANIO PBR · FRONTAL</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-transparente.png" alt="02 Obsidiana Titanio PBR Frontal" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-transparente.png" alt="02 Obsidiana Titanio PBR Frontal" />
         </div>
         <div class="asset-body">
           <h4>02 · Obsidiana Titanio PBR — Vista Frontal</h4>
           <p>Aleación metálica oscura cepillada con reflejos de cobalto imperial, bordes especulares y núcleo profundo.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-transparente.png','02-obsidiana-titanio-pbr-frontal-transparente.png')">⬇ PNG Alpha</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-noche.png','02-obsidiana-titanio-pbr-frontal-fondo-noche.png')">⬇ PNG Noche</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-dia.png','02-obsidiana-titanio-pbr-frontal-fondo-dia.png')">⬇ PNG Día</button>
-            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal.jpg','02-obsidiana-titanio-pbr-frontal.jpg')">⬇ JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-transparente.png','02-obsidiana-titanio-pbr-frontal-transparente.png')">⬇ PNG Alpha</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-noche.png','02-obsidiana-titanio-pbr-frontal-fondo-noche.png')">⬇ PNG Noche</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-dia.png','02-obsidiana-titanio-pbr-frontal-fondo-dia.png')">⬇ PNG Día</button>
+            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal.jpg','02-obsidiana-titanio-pbr-frontal.jpg')">⬇ JPG</button>
           </div>
         </div>
       </article>
@@ -789,16 +796,16 @@
         <div class="asset-stage checker">
           <span class="stage-badge">03 · PORCELANA STUDIO PBR · FRONTAL</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-transparente.png" alt="03 Porcelana Studio PBR Frontal" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-transparente.png" alt="03 Porcelana Studio PBR Frontal" />
         </div>
         <div class="asset-body">
           <h4>03 · Porcelana Studio PBR — Vista Frontal</h4>
           <p>Cerámica arquitectónica nacarada con iridiscencia hielo/lavanda/rosa y cuchillas de alto contraste.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-transparente.png','03-porcelana-studio-pbr-frontal-transparente.png')">⬇ PNG Alpha</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-noche.png','03-porcelana-studio-pbr-frontal-fondo-noche.png')">⬇ PNG Noche</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-dia.png','03-porcelana-studio-pbr-frontal-fondo-dia.png')">⬇ PNG Día</button>
-            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal.jpg','03-porcelana-studio-pbr-frontal.jpg')">⬇ JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-transparente.png','03-porcelana-studio-pbr-frontal-transparente.png')">⬇ PNG Alpha</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-noche.png','03-porcelana-studio-pbr-frontal-fondo-noche.png')">⬇ PNG Noche</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-dia.png','03-porcelana-studio-pbr-frontal-fondo-dia.png')">⬇ PNG Día</button>
+            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal.jpg','03-porcelana-studio-pbr-frontal.jpg')">⬇ JPG</button>
           </div>
         </div>
       </article>
@@ -808,16 +815,16 @@
         <div class="asset-stage dark">
           <span class="stage-badge">01B · PRISMA CRISTAL PBR · ÓRBITA 360° &amp; DESPIECE AXIAL</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-transparente.png" alt="Prisma Cristal PBR Órbita 360" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-transparente.png" alt="Prisma Cristal PBR Órbita 360" />
         </div>
         <div class="asset-body">
           <h4>01B · Prisma Cristal PBR — Órbita 360° y Despiece Axial</h4>
           <p>Vistas con relieve volumétrico profundo de la doble cara, biseles a 45° y anillos orbitales en 360°.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-transparente.png','01-prisma-cristal-pbr-orbita-360-transparente.png')">⬇ Órbita 360 Alpha</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-fondo-noche.png','01-prisma-cristal-pbr-orbita-360-fondo-noche.png')">⬇ Órbita 360 Noche</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-despiece-axial-transparente.png','01-prisma-cristal-pbr-despiece-axial-transparente.png')">⬇ Despiece Axial Alpha</button>
-            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360.jpg','01-prisma-cristal-pbr-orbita-360.jpg')">⬇ Órbita 360 JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-transparente.png','01-prisma-cristal-pbr-orbita-360-transparente.png')">⬇ Órbita 360 Alpha</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-fondo-noche.png','01-prisma-cristal-pbr-orbita-360-fondo-noche.png')">⬇ Órbita 360 Noche</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-despiece-axial-transparente.png','01-prisma-cristal-pbr-despiece-axial-transparente.png')">⬇ Despiece Axial Alpha</button>
+            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360.jpg','01-prisma-cristal-pbr-orbita-360.jpg')">⬇ Órbita 360 JPG</button>
           </div>
         </div>
       </article>
@@ -827,16 +834,16 @@
         <div class="asset-stage dark">
           <span class="stage-badge">02B · OBSIDIANA TITANIO PBR · ÓRBITA 360° &amp; DESPIECE AXIAL</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-transparente.png" alt="Obsidiana Titanio PBR Órbita 360" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-transparente.png" alt="Obsidiana Titanio PBR Órbita 360" />
         </div>
         <div class="asset-body">
           <h4>02B · Obsidiana Titanio PBR — Órbita 360° y Despiece Axial</h4>
           <p>Ángulos en perspectiva mostrando el chasis de titanio oscuro y las láminas prismáticas suspendidas.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-transparente.png','02-obsidiana-titanio-pbr-orbita-360-transparente.png')">⬇ Órbita 360 Alpha</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-fondo-noche.png','02-obsidiana-titanio-pbr-orbita-360-fondo-noche.png')">⬇ Órbita 360 Noche</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-despiece-axial-transparente.png','02-obsidiana-titanio-pbr-despiece-axial-transparente.png')">⬇ Despiece Axial Alpha</button>
-            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360.jpg','02-obsidiana-titanio-pbr-orbita-360.jpg')">⬇ Órbita 360 JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-transparente.png','02-obsidiana-titanio-pbr-orbita-360-transparente.png')">⬇ Órbita 360 Alpha</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-fondo-noche.png','02-obsidiana-titanio-pbr-orbita-360-fondo-noche.png')">⬇ Órbita 360 Noche</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-despiece-axial-transparente.png','02-obsidiana-titanio-pbr-despiece-axial-transparente.png')">⬇ Despiece Axial Alpha</button>
+            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360.jpg','02-obsidiana-titanio-pbr-orbita-360.jpg')">⬇ Órbita 360 JPG</button>
           </div>
         </div>
       </article>
@@ -846,16 +853,16 @@
         <div class="asset-stage dark">
           <span class="stage-badge">03B · PORCELANA STUDIO PBR · ÓRBITA 360° &amp; DESPIECE AXIAL</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-transparente.png" alt="Porcelana Studio PBR Órbita 360" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-transparente.png" alt="Porcelana Studio PBR Órbita 360" />
         </div>
         <div class="asset-body">
           <h4>03B · Porcelana Studio PBR — Órbita 360° y Despiece Axial</h4>
           <p>Ángulos tridimensionales del acabado Porcelana Studio con reflejos nacarados y bordes de precisión.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-transparente.png','03-porcelana-studio-pbr-orbita-360-transparente.png')">⬇ Órbita 360 Alpha</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-fondo-noche.png','03-porcelana-studio-pbr-orbita-360-fondo-noche.png')">⬇ Órbita 360 Noche</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-despiece-axial-transparente.png','03-porcelana-studio-pbr-despiece-axial-transparente.png')">⬇ Despiece Axial Alpha</button>
-            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360.jpg','03-porcelana-studio-pbr-orbita-360.jpg')">⬇ Órbita 360 JPG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-transparente.png','03-porcelana-studio-pbr-orbita-360-transparente.png')">⬇ Órbita 360 Alpha</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-fondo-noche.png','03-porcelana-studio-pbr-orbita-360-fondo-noche.png')">⬇ Órbita 360 Noche</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-despiece-axial-transparente.png','03-porcelana-studio-pbr-despiece-axial-transparente.png')">⬇ Despiece Axial Alpha</button>
+            <button type="button" class="dl-btn alpha" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360.jpg','03-porcelana-studio-pbr-orbita-360.jpg')">⬇ Órbita 360 JPG</button>
           </div>
         </div>
       </article>
@@ -865,15 +872,15 @@
         <div class="asset-stage light">
           <span class="stage-badge">01C · PRISMA CRISTAL PBR · MODO DÍA</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-dia.png" alt="Prisma Cristal PBR Día" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-dia.png" alt="Prisma Cristal PBR Día" />
         </div>
         <div class="asset-body">
           <h4>01C · Prisma Cristal PBR — Sobre Fondo Día Editorial</h4>
           <p>Versión calibrada para papelería blanca, propuestas PDF y cabeceras luminosas.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-dia.png','01-prisma-cristal-pbr-frontal-fondo-dia.png')">⬇ Frontal Día PNG</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-fondo-dia.png','01-prisma-cristal-pbr-orbita-360-fondo-dia.png')">⬇ Órbita 360 Día PNG</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-despiece-axial-fondo-dia.png','01-prisma-cristal-pbr-despiece-axial-fondo-dia.png')">⬇ Despiece Día PNG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-frontal-fondo-dia.png','01-prisma-cristal-pbr-frontal-fondo-dia.png')">⬇ Frontal Día PNG</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-orbita-360-fondo-dia.png','01-prisma-cristal-pbr-orbita-360-fondo-dia.png')">⬇ Órbita 360 Día PNG</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/01-prisma-cristal-pbr-despiece-axial-fondo-dia.png','01-prisma-cristal-pbr-despiece-axial-fondo-dia.png')">⬇ Despiece Día PNG</button>
           </div>
         </div>
       </article>
@@ -883,15 +890,15 @@
         <div class="asset-stage light">
           <span class="stage-badge">02C · OBSIDIANA TITANIO PBR · MODO DÍA</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-dia.png" alt="Obsidiana Titanio PBR Día" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-dia.png" alt="Obsidiana Titanio PBR Día" />
         </div>
         <div class="asset-body">
           <h4>02C · Obsidiana Titanio PBR — Sobre Fondo Día Editorial</h4>
           <p>Máximo contraste ejecutivo sobre superficies claras y documentos corporativos.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-dia.png','02-obsidiana-titanio-pbr-frontal-fondo-dia.png')">⬇ Frontal Día PNG</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-fondo-dia.png','02-obsidiana-titanio-pbr-orbita-360-fondo-dia.png')">⬇ Órbita 360 Día PNG</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-despiece-axial-fondo-dia.png','02-obsidiana-titanio-pbr-despiece-axial-fondo-dia.png')">⬇ Despiece Día PNG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-frontal-fondo-dia.png','02-obsidiana-titanio-pbr-frontal-fondo-dia.png')">⬇ Frontal Día PNG</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-orbita-360-fondo-dia.png','02-obsidiana-titanio-pbr-orbita-360-fondo-dia.png')">⬇ Órbita 360 Día PNG</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/02-obsidiana-titanio-pbr-despiece-axial-fondo-dia.png','02-obsidiana-titanio-pbr-despiece-axial-fondo-dia.png')">⬇ Despiece Día PNG</button>
           </div>
         </div>
       </article>
@@ -901,15 +908,15 @@
         <div class="asset-stage light">
           <span class="stage-badge">03C · PORCELANA STUDIO PBR · MODO DÍA</span>
           <span class="stage-dim">2400 × 2400 PX</span>
-          <img src="../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-dia.png" alt="Porcelana Studio PBR Día" />
+          <img src="../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-dia.png" alt="Porcelana Studio PBR Día" />
         </div>
         <div class="asset-body">
           <h4>03C · Porcelana Studio PBR — Sobre Fondo Día Editorial</h4>
           <p>Estética minimalista de galería sobre fondo claro con destellos nacarados.</p>
           <div class="dl-group">
-            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-dia.png','03-porcelana-studio-pbr-frontal-fondo-dia.png')">⬇ Frontal Día PNG</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-fondo-dia.png','03-porcelana-studio-pbr-orbita-360-fondo-dia.png')">⬇ Órbita 360 Día PNG</button>
-            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-despiece-axial-fondo-dia.png','03-porcelana-studio-pbr-despiece-axial-fondo-dia.png')">⬇ Despiece Día PNG</button>
+            <button type="button" class="dl-btn primary" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-frontal-fondo-dia.png','03-porcelana-studio-pbr-frontal-fondo-dia.png')">⬇ Frontal Día PNG</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-orbita-360-fondo-dia.png','03-porcelana-studio-pbr-orbita-360-fondo-dia.png')">⬇ Órbita 360 Día PNG</button>
+            <button type="button" class="dl-btn" onclick="downloadLocalAsset('../brand-kit/07-emblema-3d-sovereign-pbr/03-porcelana-studio-pbr-despiece-axial-fondo-dia.png','03-porcelana-studio-pbr-despiece-axial-fondo-dia.png')">⬇ Despiece Día PNG</button>
           </div>
         </div>
       </article>
@@ -1200,13 +1207,13 @@
         <div class="sec-num">11 · ÍNDICE DE ARCHIVOS EN DISCO (156 ACTIVOS + MANUAL DE MARCA)</div>
         <h2 class="sec-title">Acceso Directo a Carpetas <em>01 a 07 y BRAND_BOOK.md</em></h2>
       </div>
-      <p class="sec-desc">Acceso directo a los archivos estáticos en disco y al <a href="../../docs/BRAND_BOOK.md" style="color:#5EB8FF;text-decoration:underline;">Manual Técnico de Marca (BRAND_BOOK.md)</a>.</p>
+      <p class="sec-desc">Acceso directo a los archivos estáticos en disco y al <a href="../docs/BRAND_BOOK.md" style="color:#5EB8FF;text-decoration:underline;">Manual Técnico de Marca (BRAND_BOOK.md)</a>.</p>
     </div>
     <div class="grid-4">
-      <div class="asset-card"><div class="asset-body"><h4>Carpeta 01 · Isotipos 2D</h4><p>6 estilos × SVG, PNG Alpha, PNG y JPG (24 archivos)</p><div class="dl-group"><a class="dl-btn primary" href="../../brand-kit/01-isotipos-y-estilos/01-prisma-dia.svg" download>01 Prisma Día SVG</a><a class="dl-btn" href="../../brand-kit/01-isotipos-y-estilos/01-prisma-dia-transparente.png" download>PNG Alpha</a><a class="dl-btn" href="../../brand-kit/01-isotipos-y-estilos/02-prisma-noche.svg" download>02 Noche SVG</a><a class="dl-btn" href="../../brand-kit/01-isotipos-y-estilos/05-monocromo-negro-sello.svg" download>05 Negro Sello SVG</a></div></div></div>
-      <div class="asset-card"><div class="asset-body"><h4>Carpeta 02 · Lockups Oficiales</h4><p>6 lockups horizontales y verticales (26 archivos)</p><div class="dl-group"><a class="dl-btn primary" href="../../brand-kit/02-lockups-completos/lockup-horizontal-oficial-dia.svg" download>Horizontal Día SVG</a><a class="dl-btn" href="../../brand-kit/02-lockups-completos/lockup-horizontal-oficial-noche.svg" download>Horizontal Noche SVG</a><a class="dl-btn" href="../../brand-kit/02-lockups-completos/lockup-vertical-apilado-noche.svg" download>Vertical Noche SVG</a></div></div></div>
-      <div class="asset-card"><div class="asset-body"><h4>Carpetas 03 y 04 · Tipografía e INDECOPI</h4><p>3 propuestas tipográficas y 4 láminas 1500×1500 px</p><div class="dl-group"><a class="dl-btn primary" href="../../brand-kit/04-registro-legal-indecopi/indecopi-marca-mixta-color-1500x1500.png" download>INDECOPI Mixta Color</a><a class="dl-btn" href="../../brand-kit/04-registro-legal-indecopi/indecopi-marca-mixta-byn-1500x1500.png" download>INDECOPI Mixta B/N</a><a class="dl-btn" href="../../brand-kit/03-opciones-tipografia-y-eslogan/opcion-tipo-1-cormorant-garamond-lujo.svg" download>Tipografía 1 SVG</a></div></div></div>
-      <div class="asset-card"><div class="asset-body"><h4>Carpetas 05, 06 y 07 · Redes, Planos y 3D</h4><p>Kit de redes, grilla 120×120 y 38 renders 3D PBR</p><div class="dl-group"><a class="dl-btn primary" href="../../brand-kit/05-redes-sociales/instagram-avatar-oscuro-1080x1080.png" download>Avatar 1080 PNG</a><a class="dl-btn" href="../../brand-kit/05-redes-sociales/web-og-compartir-link-1200x630.png" download>OpenGraph PNG</a><a class="dl-btn" href="../../brand-kit/06-planos-constructivos-y-medidas/grilla-constructiva-120x120.svg" download>Grilla 120×120 SVG</a><a class="dl-btn" href="../../docs/BRAND_BOOK.md">BRAND_BOOK.md</a></div></div></div>
+      <div class="asset-card"><div class="asset-body"><h4>Carpeta 01 · Isotipos 2D</h4><p>6 estilos × SVG, PNG Alpha, PNG y JPG (24 archivos)</p><div class="dl-group"><a class="dl-btn primary" href="../brand-kit/01-isotipos-y-estilos/01-prisma-dia.svg" download>01 Prisma Día SVG</a><a class="dl-btn" href="../brand-kit/01-isotipos-y-estilos/01-prisma-dia-transparente.png" download>PNG Alpha</a><a class="dl-btn" href="../brand-kit/01-isotipos-y-estilos/02-prisma-noche.svg" download>02 Noche SVG</a><a class="dl-btn" href="../brand-kit/01-isotipos-y-estilos/05-monocromo-negro-sello.svg" download>05 Negro Sello SVG</a></div></div></div>
+      <div class="asset-card"><div class="asset-body"><h4>Carpeta 02 · Lockups Oficiales</h4><p>6 lockups horizontales y verticales (26 archivos)</p><div class="dl-group"><a class="dl-btn primary" href="../brand-kit/02-lockups-completos/lockup-horizontal-oficial-dia.svg" download>Horizontal Día SVG</a><a class="dl-btn" href="../brand-kit/02-lockups-completos/lockup-horizontal-oficial-noche.svg" download>Horizontal Noche SVG</a><a class="dl-btn" href="../brand-kit/02-lockups-completos/lockup-vertical-apilado-noche.svg" download>Vertical Noche SVG</a></div></div></div>
+      <div class="asset-card"><div class="asset-body"><h4>Carpetas 03 y 04 · Tipografía e INDECOPI</h4><p>3 propuestas tipográficas y 4 láminas 1500×1500 px</p><div class="dl-group"><a class="dl-btn primary" href="../brand-kit/04-registro-legal-indecopi/indecopi-marca-mixta-color-1500x1500.png" download>INDECOPI Mixta Color</a><a class="dl-btn" href="../brand-kit/04-registro-legal-indecopi/indecopi-marca-mixta-byn-1500x1500.png" download>INDECOPI Mixta B/N</a><a class="dl-btn" href="../brand-kit/03-opciones-tipografia-y-eslogan/opcion-tipo-1-cormorant-garamond-lujo.svg" download>Tipografía 1 SVG</a></div></div></div>
+      <div class="asset-card"><div class="asset-body"><h4>Carpetas 05, 06 y 07 · Redes, Planos y 3D</h4><p>Kit de redes, grilla 120×120 y 38 renders 3D PBR</p><div class="dl-group"><a class="dl-btn primary" href="../brand-kit/05-redes-sociales/instagram-avatar-oscuro-1080x1080.png" download>Avatar 1080 PNG</a><a class="dl-btn" href="../brand-kit/05-redes-sociales/web-og-compartir-link-1200x630.png" download>OpenGraph PNG</a><a class="dl-btn" href="../brand-kit/06-planos-constructivos-y-medidas/grilla-constructiva-120x120.svg" download>Grilla 120×120 SVG</a><a class="dl-btn" href="../docs/BRAND_BOOK.md">BRAND_BOOK.md</a></div></div></div>
     </div>
   </section>
 
@@ -1219,7 +1226,7 @@
 <div class="vault-toast" id="vaultToast" role="status" aria-live="polite">Archivo generado y descargado</div>
 
 <script>
-const KIT_BASE = "../../brand-kit";
+const KIT_BASE = "../brand-kit";
 
 // ============================================================================
 // ESTADO GLOBAL DEL ESTUDIO MAESTRO
@@ -1695,15 +1702,40 @@ function buildSocialSvg(item, withBg, uid) {
   // D. HISTORIAS / STORIES (1080x1920 Vertical 9:16)
   if (item.cat === "historia") {
     if (item.layout === "showcase") {
-      const symSm = buildPrismSymbolGroup(uid, symMode, 0.28, 110, 110);
+      const symSm = buildPrismSymbolGroup(uid, symMode, 0.26, 90, 95);
+      const cardBg = isDay ? "#0F172A" : "#091226";
       return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
         <defs>${symSm.defs}${bgDef}</defs>${bgRect}
         ${symSm.g}
-        <text x="390" y="245" font-family="${fontFam}" font-size="56" font-weight="600" letter-spacing="0.22em" fill="${txtCol}">${brand}</text>
-        <text x="390" y="292" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600" letter-spacing="0.32em" fill="${c2}">${slogan}</text>
-        <rect x="86" y="390" width="908" height="1180" rx="34" fill="${isDay ? '#FFFFFF' : '#091226'}" fill-opacity="0.75" stroke="url(#prism_${uid})" stroke-width="4" stroke-dasharray="16 10"/>
-        <text x="540" y="960" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="600" letter-spacing="0.2em" fill="${subCol}">ESPACIO PARA CAPTURA / VIDEO DE TU PROYECTO</text>
-        <text x="540" y="1720" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" letter-spacing="0.3em" fill="${c2}">DESARROLLADO POR ${brand}</text>
+        <text x="365" y="228" font-family="${fontFam}" font-size="54" font-weight="700" letter-spacing="0.2em" fill="${txtCol}">${brand}</text>
+        <text x="365" y="274" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="600" letter-spacing="0.3em" fill="${isDay ? c1 : c2}">${slogan}</text>
+        <!-- Ventana de Sistema / Proyecto con UI Demo integrada -->
+        <rect x="76" y="360" width="928" height="1220" rx="34" fill="${cardBg}" stroke="url(#prism_${uid})" stroke-width="5"/>
+        <circle cx="130" cy="412" r="10" fill="#EF4444"/><circle cx="164" cy="412" r="10" fill="#F59E0B"/><circle cx="198" cy="412" r="10" fill="#10B981"/>
+        <text x="540" y="418" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#94A3B8">${brand} STUDIO OS · LIVE TELEMETRY</text>
+        <line x1="76" y1="446" x2="1004" y2="446" stroke="url(#prism_${uid})" stroke-width="2" opacity="0.5"/>
+        <!-- Tarjetas KPI y Gráfico dentro de la ventana -->
+        <rect x="120" y="490" width="260" height="160" rx="18" fill="#111C38" stroke="${c1}" stroke-width="2"/>
+        <text x="150" y="545" font-family="'Space Grotesk', sans-serif" font-size="20" fill="#94A3B8">OPERACIÓN</text>
+        <text x="150" y="610" font-family="'Space Grotesk', sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">99.9%</text>
+        <rect x="410" y="490" width="260" height="160" rx="18" fill="#111C38" stroke="${c3}" stroke-width="2"/>
+        <text x="440" y="545" font-family="'Space Grotesk', sans-serif" font-size="20" fill="#94A3B8">FLUJO EN RED</text>
+        <text x="440" y="610" font-family="'Space Grotesk', sans-serif" font-size="46" font-weight="700" fill="${c2}">+48.4%</text>
+        <rect x="700" y="490" width="260" height="160" rx="18" fill="#111C38" stroke="${c5}" stroke-width="2"/>
+        <text x="730" y="545" font-family="'Space Grotesk', sans-serif" font-size="20" fill="#94A3B8">SINCRONÍA</text>
+        <text x="730" y="610" font-family="'Space Grotesk', sans-serif" font-size="42" font-weight="700" fill="#10B981">ONLINE</text>
+        <!-- Barras de rendimiento -->
+        <rect x="120" y="690" width="840" height="460" rx="22" fill="#060B18" stroke="rgba(129,189,248,0.25)" stroke-width="2"/>
+        <rect x="180" y="960" width="70" height="140" rx="10" fill="${c1}"/>
+        <rect x="290" y="900" width="70" height="200" rx="10" fill="${c2}"/>
+        <rect x="400" y="840" width="70" height="260" rx="10" fill="${c3}"/>
+        <rect x="510" y="790" width="70" height="310" rx="10" fill="${c4}"/>
+        <rect x="620" y="740" width="70" height="360" rx="10" fill="url(#prism_${uid})"/>
+        <rect x="730" y="710" width="160" height="390" rx="14" fill="url(#prism_${uid})" fill-opacity="0.28" stroke="${c2}" stroke-width="3"/>
+        <text x="540" y="1245" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700" letter-spacing="0.18em" fill="#FFFFFF"> AUTOMATIZACIÓN INTEGRAL DE PROCESOS</text>
+        <rect x="210" y="1320" width="660" height="74" rx="37" fill="url(#prism_${uid})"/>
+        <text x="540" y="1367" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" letter-spacing="0.2em" fill="#050811">SISTEMA IMPLEMENTADO EN VIVO</text>
+        <text x="540" y="1725" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" letter-spacing="0.28em" fill="${isDay ? '#0B1324' : c2}">DESARROLLADO POR ${brand}</text>
       </svg>`;
     }
     const sym = buildPrismSymbolGroup(uid, symMode, 0.68, 192, 410);
@@ -1851,19 +1883,137 @@ function buildHardwareSvg(item, uid) {
     </svg>`;
   }
 
-  // Default para el resto de equipos/objetos (Workstation, Sello, Acrílico LED, Bordado, Packaging, Placa QR Mostrador)
-  const sym = buildPrismSymbolGroup(uid, item.tone === "day" ? "day" : "night", 0.54, 120, 120);
-  const isDay = item.tone === "day";
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" width="1600" height="840">
+  // 7. Workstation / Laptop de Ingeniería & Tablet de Campo
+  if (item.id === "hw-laptop") {
+    const symL = buildPrismSymbolGroup(uid, "night", 0.34, 415, 195);
+    const symT = buildPrismSymbolGroup(uid + "t", "night", 0.22, 1115, 395);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 960" width="1600" height="960">
+      <defs>${symL.defs}${symT.defs}</defs>
+      <rect width="1600" height="960" fill="#050811"/>
+      <!-- Pantalla Laptop -->
+      <rect x="180" y="110" width="820" height="520" rx="26" fill="#0F172A" stroke="url(#prism_${uid})" stroke-width="6"/>
+      <rect x="208" y="138" width="764" height="464" rx="14" fill="#060A16"/>
+      ${symL.g}
+      <text x="590" y="538" text-anchor="middle" font-family="${fontFam}" font-size="48" font-weight="600" letter-spacing="0.24em" fill="#FFFFFF">${brand}</text>
+      <text x="590" y="576" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="600" letter-spacing="0.32em" fill="${c2}">${slogan}</text>
+      <!-- Base Teclado Laptop -->
+      <polygon points="110,630 1070,630 1130,685 50,685" fill="#1E293B" stroke="url(#prism_${uid})" stroke-width="4"/>
+      <rect x="490" y="636" width="200" height="12" rx="6" fill="${c2}"/>
+      <!-- Tablet Operativa a la derecha -->
+      <rect x="1040" y="260" width="380" height="520" rx="30" fill="#0F172A" stroke="url(#prism_${uid})" stroke-width="6"/>
+      <rect x="1064" y="290" width="332" height="460" rx="16" fill="#060A16"/>
+      ${symT.g}
+      <text x="1230" y="665" text-anchor="middle" font-family="${fontFam}" font-size="32" font-weight="600" letter-spacing="0.2em" fill="#FFFFFF">${brand}</text>
+      <text x="1230" y="700" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" fill="${c2}">FIELD TABLET OS</text>
+      <text x="800" y="845" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" letter-spacing="0.26em" fill="#CBD5E1">WORKSTATION EJECUTIVA &amp; TABLET DE CAMPO SINCRONIZADAS</text>
+    </svg>`;
+  }
+
+  // 8. Sello de Caucho Corporativo y Sello Seco en Relieve
+  if (item.id === "hw-stamp") {
+    const sym = buildPrismSymbolGroup(uid, "mono-day", 0.44, 215, 195);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+      <defs>${sym.defs}</defs>
+      <rect width="1600" height="900" fill="#0B1324"/>
+      <rect x="60" y="60" width="1480" height="780" rx="32" fill="#F8FAFC" stroke="url(#prism_${uid})" stroke-width="8"/>
+      <!-- Sello Circular Izquierdo -->
+      <circle cx="440" cy="450" r="310" fill="none" stroke="#0F172A" stroke-width="14"/>
+      <circle cx="440" cy="450" r="284" fill="none" stroke="#0F172A" stroke-width="4" stroke-dasharray="14 10"/>
+      <text x="440" y="218" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700" letter-spacing="0.24em" fill="#0F172A">★ SELLO OFICIAL CERTIFICADO ★</text>
+      ${sym.g}
+      <text x="440" y="675" text-anchor="middle" font-family="${fontFam}" font-size="46" font-weight="700" letter-spacing="0.2em" fill="#0F172A">${brand}</text>
+      <!-- Sello Rectangular Derecho de Recepción / Contratos -->
+      <rect x="830" y="210" width="620" height="480" rx="22" fill="none" stroke="#1D4ED8" stroke-width="10"/>
+      <rect x="850" y="230" width="580" height="440" rx="14" fill="none" stroke="#1D4ED8" stroke-width="3"/>
+      <text x="1140" y="330" text-anchor="middle" font-family="${fontFam}" font-size="64" font-weight="700" letter-spacing="0.2em" fill="#0F172A">${brand}</text>
+      <line x1="900" y1="365" x2="1380" y2="365" stroke="#1D4ED8" stroke-width="5"/>
+      <text x="1140" y="418" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" letter-spacing="0.3em" fill="#1D4ED8">${slogan}</text>
+      <text x="1140" y="510" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700" fill="#0F172A">DOCUMENTO VERIFICADO</text>
+      <text x="1140" y="565" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="18" fill="#334155">FECHA / FIRMA / REGISTRO LEGAL</text>
+    </svg>`;
+  }
+
+  // 9. Letrero Acrílico Retroiluminado LED para Recepción y Locales
+  if (item.id === "hw-led") {
+    const sym = buildPrismSymbolGroup(uid, "night", 0.56, 150, 125);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+      <defs>
+        ${sym.defs}
+        <filter id="ledGlow_${uid}" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="${c1}" flood-opacity="0.75"/>
+          <feDropShadow dx="0" dy="0" stdDeviation="32" flood-color="${c5}" flood-opacity="0.55"/>
+        </filter>
+      </defs>
+      <rect width="1600" height="900" fill="#040710"/>
+      <!-- Halo LED trasero y placa de cristal acrílico -->
+      <rect x="95" y="95" width="1410" height="710" rx="42" fill="#081126" stroke="url(#prism_${uid})" stroke-width="10" filter="url(#ledGlow_${uid})"/>
+      <rect x="115" y="115" width="1370" height="670" rx="32" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.35"/>
+      <!-- 4 Pernos Embellecedores de Acero Cromado (Standoffs) -->
+      <circle cx="165" cy="165" r="22" fill="#E2E8F0" stroke="#475569" stroke-width="5"/>
+      <circle cx="1435" cy="165" r="22" fill="#E2E8F0" stroke="#475569" stroke-width="5"/>
+      <circle cx="165" cy="735" r="22" fill="#E2E8F0" stroke="#475569" stroke-width="5"/>
+      <circle cx="1435" cy="735" r="22" fill="#E2E8F0" stroke="#475569" stroke-width="5"/>
+      ${sym.g}
+      <text x="720" y="420" font-family="${fontFam}" font-size="94" font-weight="700" letter-spacing="0.22em" fill="#FFFFFF">${brand}</text>
+      <rect x="720" y="462" width="710" height="6" rx="3" fill="url(#prism_${uid})"/>
+      <text x="720" y="525" font-family="'Space Grotesk', sans-serif" font-size="25" font-weight="700" letter-spacing="0.34em" fill="${c2}">${slogan}</text>
+      <text x="720" y="610" font-family="'JetBrains Mono', monospace" font-size="18" fill="#94A8C6">LETRERO ACRÍLICO CRISTAL 10MM · RETROILUMINACIÓN LED PERIMETRAL</text>
+    </svg>`;
+  }
+
+  // 10. Bordado Textil para Indumentaria y Equipos de Campo
+  if (item.id === "hw-textil") {
+    const sym = buildPrismSymbolGroup(uid, "night", 0.48, 175, 170);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+      <defs>${sym.defs}</defs>
+      <rect width="1600" height="900" fill="#060A15"/>
+      <!-- Parche Bordado Pecho Izquierdo con costura perimetral -->
+      <rect x="90" y="100" width="1420" height="700" rx="40" fill="#0B1328" stroke="url(#prism_${uid})" stroke-width="8" stroke-dasharray="18 8"/>
+      <rect x="114" y="124" width="1372" height="652" rx="28" fill="none" stroke="#334155" stroke-width="3" stroke-dasharray="8 6"/>
+      ${sym.g}
+      <text x="685" y="385" font-family="${fontFam}" font-size="86" font-weight="700" letter-spacing="0.22em" fill="#FFFFFF">${brand}</text>
+      <rect x="685" y="425" width="730" height="6" rx="3" fill="url(#prism_${uid})"/>
+      <text x="685" y="485" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" letter-spacing="0.34em" fill="${c2}">${slogan}</text>
+      <rect x="685" y="545" width="640" height="74" rx="16" fill="#050811" stroke="${c1}" stroke-width="2"/>
+      <text x="1005" y="590" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#E2E8F0">INGENIERÍA &amp; SOPORTE OFICIAL · BORDADO HD</text>
+    </svg>`;
+  }
+
+  // 11. Packaging / Caja Rígida de Entrega de Equipos
+  if (item.id === "hw-box") {
+    const sym = buildPrismSymbolGroup(uid, "night", 0.52, 220, 155);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+      <defs>${sym.defs}</defs>
+      <rect width="1600" height="900" fill="#050811"/>
+      <!-- Tapa de Caja Rígida Magnética de Lujo -->
+      <rect x="130" y="80" width="1340" height="740" rx="32" fill="#091022" stroke="url(#prism_${uid})" stroke-width="6"/>
+      <rect x="130" y="640" width="1340" height="18" fill="url(#prism_${uid})"/>
+      ${sym.g}
+      <text x="770" y="395" font-family="${fontFam}" font-size="88" font-weight="700" letter-spacing="0.22em" fill="#FFFFFF">${brand}</text>
+      <text x="770" y="452" font-family="'Space Grotesk', sans-serif" font-size="23" font-weight="600" letter-spacing="0.36em" fill="${c2}">${slogan}</text>
+      <text x="770" y="545" font-family="'JetBrains Mono', monospace" font-size="18" fill="#94A8C6">HARDWARE &amp; AUTOMATION KIT · EMPAQUE CORPORATIVO SELLADO</text>
+      <text x="800" y="745" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" letter-spacing="0.34em" fill="#FFFFFF">EDICIÓN EJECUTIVA PARA CLIENTES</text>
+    </svg>`;
+  }
+
+  // 12. Placa QR / NFC de Mostrador o Mesa (Totem Acrílico / Metal)
+  const sym = buildPrismSymbolGroup(uid, "night", 0.46, 175, 165);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
     <defs>${sym.defs}</defs>
-    <rect width="1600" height="840" fill="${isDay ? '#F4F8FD' : '#050811'}"/>
-    <rect x="64" y="64" width="1472" height="712" rx="34" fill="${isDay ? '#FFFFFF' : '#0B1326'}" stroke="url(#prism_${uid})" stroke-width="5"/>
+    <rect width="1600" height="900" fill="#050811"/>
+    <rect x="110" y="85" width="1380" height="680" rx="36" fill="#0A1328" stroke="url(#prism_${uid})" stroke-width="6"/>
+    <!-- Base pedestal del Tótem de Mostrador -->
+    <polygon points="320,765 1280,765 1340,835 260,835" fill="url(#prism_${uid})"/>
     ${sym.g}
-    <text x="690" y="340" font-family="'JetBrains Mono', monospace" font-size="19" font-weight="600" letter-spacing="0.28em" fill="${c2}">${xmlEsc(item.badge)}</text>
-    <text x="690" y="438" font-family="${fontFam}" font-size="82" font-weight="600" letter-spacing="0.22em" fill="${isDay ? '#0B1324' : '#FFFFFF'}">${brand}</text>
-    <rect x="690" y="476" width="760" height="4" rx="2" fill="url(#prism_${uid})"/>
-    <text x="690" y="532" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="600" letter-spacing="0.36em" fill="${isDay ? '#334155' : '#94A8C6'}">${slogan}</text>
-    <text x="690" y="615" font-family="'JetBrains Mono', monospace" font-size="17" fill="${isDay ? '#475569' : '#64748B'}">${xmlEsc(item.spec)}</text>
+    <text x="670" y="315" font-family="${fontFam}" font-size="78" font-weight="700" letter-spacing="0.22em" fill="#FFFFFF">${brand}</text>
+    <text x="670" y="368" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="600" letter-spacing="0.34em" fill="${c2}">${slogan}</text>
+    <rect x="670" y="415" width="460" height="220" rx="20" fill="#050811" stroke="${c2}" stroke-width="3"/>
+    <text x="900" y="485" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">ESCANEA O ACERCA TU CELULAR</text>
+    <text x="900" y="535" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="19" fill="${c2}">))) NFC + QR INTERACTIVO ACTIVO (((</text>
+    <text x="900" y="585" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#94A8C6">CARTA 3D · RESERVAS · PEDIDOS · CHECK-IN</text>
+    <!-- Bloque QR Blanco de Alto Contraste -->
+    <rect x="1180" y="395" width="240" height="240" rx="20" fill="#FFFFFF" stroke="url(#prism_${uid})" stroke-width="5"/>
+    <rect x="1210" y="425" width="60" height="60" fill="#050811"/><rect x="1330" y="425" width="60" height="60" fill="#050811"/><rect x="1210" y="545" width="60" height="60" fill="#050811"/><rect x="1280" y="495" width="50" height="50" fill="${c1}"/>
   </svg>`;
 }
 
@@ -1972,11 +2122,11 @@ function buildProjectStampSvg(item, uid) {
   const sym = buildPrismSymbolGroup(uid, isDay ? "day" : "night", 0.24, 38, 26);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 300" width="1100" height="300">
     <defs>${sym.defs}</defs>
-    <rect x="16" y="16" width="1068" height="268" rx="134" fill="${isDay ? '#FFFFFF' : '#070D1D'}" stroke="url(#prism_${uid})" stroke-width="5"/>
+    <rect x="16" y="16" width="1068" height="268" rx="134" fill="${isDay ? '#FFFFFF' : '#070D1D'}" stroke="url(#prism_${uid})" stroke-width="7"/>
     ${sym.g}
-    <text x="305" y="112" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="600" letter-spacing="0.28em" fill="${c2}">${xmlEsc(item.kicker || 'DESARROLLADO E INTEGRADO POR')}</text>
+    <text x="305" y="112" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="0.28em" fill="${isDay ? c1 : c2}">${xmlEsc(item.kicker || 'DESARROLLADO E INTEGRADO POR')}</text>
     <text x="305" y="182" font-family="${fontFam}" font-size="64" font-weight="700" letter-spacing="0.2em" fill="${isDay ? '#0B1324' : '#FFFFFF'}">${brand}</text>
-    <text x="305" y="226" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="600" letter-spacing="0.34em" fill="${isDay ? '#475569' : '#94A8C6'}">${slogan}</text>
+    <text x="305" y="226" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700" letter-spacing="0.34em" fill="${isDay ? '#334155' : '#94A8C6'}">${slogan}</text>
   </svg>`;
 }
 
@@ -3686,11 +3836,16 @@ function initHeroEmblem3D(canvas, viewport, opts = {}) {
   wake();
 
   return {
+    renderer,
+    scene,
+    camera,
+    controls,
+    renderFrame,
     setFinish,
     setCustomPalette,
     setExplode,
     setTheme,
-    setOrbit(enabled) { controls.autoRotate = enabled; },
+    setOrbit(enabled) { controls.autoRotate = enabled; wake(); },
     zoomBy(factor) {
       targetDist = Math.max(5.2, Math.min(13.8, targetDist * factor));
       wake();
@@ -4350,10 +4505,13 @@ function initShowroom3D(canvas, viewport, callbacks = {}) {
 
 try {
   const canvas = document.getElementById("brand3dCanvas");
-  if (canvas) {
-    const ctrl = initHeroEmblem3D(canvas, null);
+  const vp = document.getElementById("pbrViewport");
+  if (canvas && vp) {
+    const ctrl = initHeroEmblem3D(canvas, vp);
     if (ctrl) {
-      let autoSpin = false;
+      let autoSpin = true;
+      const btnSpin = document.getElementById("btnAutoSpin");
+      if (btnSpin) btnSpin.classList.add("on");
       const fb = document.getElementById("pbrFallbackImg");
       if (fb) fb.style.opacity = "0";
       window.__hero3d = {
@@ -4362,12 +4520,22 @@ try {
           autoSpin = false;
           const b = document.getElementById("btnAutoSpin");
           if (b) b.classList.remove("on");
-          if (ctrl.setAutoSpin) ctrl.setAutoSpin(false);
-          if (ctrl.setTargetRotation) ctrl.setTargetRotation(ry, rx);
+          if (ctrl.setOrbit) ctrl.setOrbit(false);
+          if (ctrl.setPose) {
+            if (Math.abs(ry) < 0.05 && Math.abs(rx) < 0.05) {
+              ctrl.setPose(0, 0.1, 8.9, 0);
+            } else if (ry > 0.4) {
+              ctrl.setPose(4.2, 1.8, 7.6, 0);
+            } else if (rx > 0.25) {
+              ctrl.setPose(-3.4, 2.4, 8.2, 82);
+            } else {
+              ctrl.setPose(-5.8, 0.8, 6.4, 0);
+            }
+          }
         },
         toggleSpin: () => {
           autoSpin = !autoSpin;
-          if (ctrl.setAutoSpin) ctrl.setAutoSpin(autoSpin);
+          if (ctrl.setOrbit) ctrl.setOrbit(autoSpin);
           return autoSpin;
         },
         setCustomPalette: (cols, sat, core) => {
@@ -4381,7 +4549,7 @@ try {
           ctrl.renderer.setSize(w, h, false);
           ctrl.camera.aspect = 1;
           ctrl.camera.updateProjectionMatrix();
-          ctrl.renderer.render(ctrl.scene, ctrl.camera);
+          ctrl.renderFrame(0.001);
 
           const out = document.createElement("canvas");
           out.width = w;
@@ -4400,7 +4568,7 @@ try {
           ctrl.renderer.setSize(prevW, prevH, false);
           ctrl.camera.aspect = prevW / prevH;
           ctrl.camera.updateProjectionMatrix();
-          ctrl.renderer.render(ctrl.scene, ctrl.camera);
+          ctrl.renderFrame(0.001);
 
           const mime = mode === "jpg" ? "image/jpeg" : "image/png";
           out.toBlob(blob => {

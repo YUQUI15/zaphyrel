@@ -672,11 +672,16 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   wake();
 
   return {
+    renderer,
+    scene,
+    camera,
+    controls,
+    renderFrame,
     setFinish,
     setCustomPalette,
     setExplode,
     setTheme,
-    setOrbit(enabled) { controls.autoRotate = enabled; },
+    setOrbit(enabled) { controls.autoRotate = enabled; wake(); },
     zoomBy(factor) {
       targetDist = Math.max(5.2, Math.min(13.8, targetDist * factor));
       wake();
