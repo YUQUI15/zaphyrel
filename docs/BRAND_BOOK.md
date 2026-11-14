@@ -1,6 +1,6 @@
 # Manual Maestro de Identidad de Marca — ZAPHYREL
 
-> **Eslogan Oficial Principal (Verificado Sin Saturación):** `ARQUITECTURA QUE ENLAZA`  
+> **Eslogan Oficial Principal (Verificado Sin Saturación):** `TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA`  
 > **Dónde Explorar y Elegir Todo Visualmente:**  
 > - **En tu web online:** `https://zaphyrel-site.vercel.app/marca/` *(con visor 3D WebGL 360° interactivo en vivo + descargas)*  
 > - **En tu PC (local):** `brand-kit/CATALOGO_MARCA.html` *(doble clic para abrir en Chrome o Edge)*
@@ -11,7 +11,7 @@
 
 Tras realizar una auditoría real de mercado y registrabilidad ante **INDECOPI (Perú)**:
 - Frases comunes como **`"ECOSISTEMAS DIGITALES"`** o **`"DEL MOSTRADOR A LA GERENCIA"`** resultaron **saturadas** por múltiples agencias y software existentes (`ecosistemasglobal.com`, `foxsystem.pe`, entre otros) y además son consideradas términos técnicos genéricos sin exclusividad legal.
-- **`ARQUITECTURA QUE ENLAZA`** proyecta elegancia, ingeniería propia, diferencia inmediata frente al mercado común y **registrabilidad sólida** tanto como parte de la **Marca Mixta** como en figura de **Lema Comercial** ante INDECOPI.
+- **`TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA`** proyecta elegancia, ingeniería propia, diferencia inmediata frente al mercado común y **registrabilidad sólida** tanto como parte de la **Marca Mixta** como en figura de **Lema Comercial** ante INDECOPI.
 
 ---
 
@@ -67,7 +67,7 @@ Entregados en **SVG**, **PNG transparente**, **PNG con fondo sólido** y **JPG a
 - **Soporte:** `Outfit` (títulos/UI) + `JetBrains Mono` (códigos, precios y especificaciones).
 
 ### 5 Eslóganes Propios Verificados (Cero Clichés Comunes)
-1. **`ARQUITECTURA QUE ENLAZA`** *(Oficial principal — elegancia y diferencia clara frente a agencias genéricas).*
+1. **`TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA`** *(Oficial principal — elegancia y diferencia clara frente a agencias genéricas).*
 2. `EL PULSO EXACTO DE TU EMPRESA` *(Alta gama para portadas y videos de marca).*
 3. `ESTRUCTURA VIVA · CONTROL REAL` *(Dualidad entre orden estructural interno y flujo operativo en tiempo real).*
 4. `DONDE CADA ÁREA ENCAJA` *(Comunica directamente el enlace de empleados, almacén, caja y dirección).*

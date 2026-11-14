@@ -19,7 +19,7 @@
 
 ### Instagram & TikTok
 ```text
-ZAPHYREL · Arquitectura que Enlaza
+ZAPHYREL · Tu Empresa, en su Versión Más Lúcida
 Web pública + automatización interna: empleados, caja, stock, verificación y gerencia en un solo eje.
 📲 Cotiza tu sistema 👇
 zaphyrel-site.vercel.app
@@ -29,7 +29,7 @@ zaphyrel-site.vercel.app
 - **Categoría:** `Software / Tecnología de la información`
 - **Descripción:**
 ```text
-Zaphyrel — Arquitectura que Enlaza.
+Zaphyrel — Tu Empresa, en su Versión Más Lúcida.
 Diseñamos webs corporativas, plataformas internas para empleados, control de inventarios, facturación SUNAT, verificación operativa y flujos automatizados adaptados de la base operativa hasta la gerencia.
 ```
 - **Mensaje de bienvenida:**
@@ -39,7 +39,7 @@ Hola, bienvenido a Zaphyrel. Cuéntanos tu rubro y qué parte de tu operación d
 
 ### LinkedIn *(Página de Empresa)*
 ```text
-Zaphyrel — Arquitectura que Enlaza.
+Zaphyrel — Tu Empresa, en su Versión Más Lúcida.
 
 Diseñamos e implementamos plataformas tecnológicas a medida para empresas, comercios e instituciones que necesitan unir su cara pública digital con el control real de su operación interna:
 • Webs corporativas y portales de atención al cliente/ciudadano
@@ -52,7 +52,7 @@ Explora nuestro sistema y catálogo de marca en: https://zaphyrel-site.vercel.ap
 
 ### Facebook & YouTube
 ```text
-ZAPHYREL · Arquitectura que Enlaza — Software a medida, plataformas de automatización interna y control operativo de extremo a extremo para negocios, cadenas e instituciones.
+ZAPHYREL · Tu Empresa, en su Versión Más Lúcida — Software a medida, plataformas de automatización interna y control operativo de extremo a extremo para negocios, cadenas e instituciones.
 ```
 
 ---

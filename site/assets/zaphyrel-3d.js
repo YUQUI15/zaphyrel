@@ -415,7 +415,17 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   ];
   windPts.forEach((pts, idx) => addBevelPart(layers.winds, pts, 0.24, windMat, (idx - 1) * 0.06, 0.022, true));
 
-  // True Continuous Architectural "Z" Monogram (Zero Hourglass, Zero Rear Reversed Z)
+  // 1) Original Sovereign Split-Blade "Z" + Tension Bar (default) AND 2) Continuous Architectural "Z" (selectable via setZStyle)
+  const zClassicGroup = new THREE.Group();
+  const zA = [[41,37.5],[82.8,37.5],[61.7,58.6],[51.9,58.6],[67.5,43],[36.2,43]];
+  const zB = [[79,82.5],[37.2,82.5],[58.3,61.4],[68.1,61.4],[52.5,77],[83.8,77]];
+  const zBar = [[47.5,59.1],[72.5,59.1],[72.5,60.9],[47.5,60.9]];
+  addBevelPart(zClassicGroup, zA, 0.28, zTopMat, 0.36, 0.032, true);
+  addBevelPart(zClassicGroup, zB, 0.28, zBotMat, 0.38, 0.032, true);
+  addBevelPart(zClassicGroup, zBar, 0.16, zBarMat, 0.56, 0.016, false);
+  layers.zFront.add(zClassicGroup);
+
+  const zContinuoGroup = new THREE.Group();
   const zFull = [
     [35.0, 34.5], [85.0, 34.5], [85.0, 43.2], [51.8, 76.4],
     [85.0, 76.4], [81.2, 85.5], [35.0, 85.5], [35.0, 76.8],
@@ -425,25 +435,32 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
     [35.0, 34.5], [85.0, 34.5], [85.0, 39.8], [44.2, 80.6],
     [35.0, 80.6], [35.0, 76.8], [68.2, 43.6], [38.8, 43.6]
   ];
+  addBevelPart(zContinuoGroup, zFull, 0.28, zBotMat, 0.34, 0.032, true);
+  addBevelPart(zContinuoGroup, zTopFacet, 0.28, zTopMat, 0.39, 0.024, true);
+  zContinuoGroup.visible = false;
+  layers.zFront.add(zContinuoGroup);
 
-  addBevelPart(layers.zFront, zFull, 0.28, zBotMat, 0.34, 0.032, true);
-  addBevelPart(layers.zFront, zTopFacet, 0.28, zTopMat, 0.39, 0.024, true);
+  // Rear zBack stays clean (opaque obsidian shield prevents any rear Z bleed-through)
 
-  // Rear zBack intentionally empty so static & angled renders NEVER show a reversed Z (hourglass) from behind
-
-  // Gyroscopic Calibration Rings + Floating Optical Shards (hidden by default for clean front/profile logos)
-  layers.rings.visible = false;
-  const ringMat1 = new THREE.MeshStandardMaterial({ color: 0x4DA8FF, emissive: 0x2E90FA, emissiveIntensity: 0.45, metalness: 0.88, roughness: 0.16, transparent: true, opacity: 0.82 });
-  const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xFF5CE8, emissive: 0xE040FB, emissiveIntensity: 0.42, metalness: 0.88, roughness: 0.16, transparent: true, opacity: 0.76 });
-  const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.65, 0.018, 16, 128), ringMat1);
+  // Atomic / Gyroscopic Orbital Calibration Rings + Floating Optical Shards (visible by default, toggleable via setRings)
+  layers.rings.visible = true;
+  const ringMat1 = new THREE.MeshStandardMaterial({ color: 0x4DA8FF, emissive: 0x2E90FA, emissiveIntensity: 0.48, metalness: 0.88, roughness: 0.15, transparent: true, opacity: 0.86 });
+  const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xFF5CE8, emissive: 0xE040FB, emissiveIntensity: 0.44, metalness: 0.88, roughness: 0.15, transparent: true, opacity: 0.82 });
+  const ringMat3 = new THREE.MeshStandardMaterial({ color: 0xA87FFB, emissive: 0x8B5CF6, emissiveIntensity: 0.40, metalness: 0.88, roughness: 0.15, transparent: true, opacity: 0.72 });
+  const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.58, 0.019, 16, 128), ringMat1);
   gyro1.rotation.x = Math.PI * 0.42;
-  gyro1.rotation.y = 0.25;
+  gyro1.rotation.y = 0.28;
   layers.rings.add(gyro1);
 
-  const gyro2 = new THREE.Mesh(new THREE.TorusGeometry(2.92, 0.015, 16, 128), ringMat2);
+  const gyro2 = new THREE.Mesh(new THREE.TorusGeometry(2.78, 0.016, 16, 128), ringMat2);
   gyro2.rotation.x = Math.PI * 0.58;
-  gyro2.rotation.y = -0.32;
+  gyro2.rotation.y = -0.34;
   layers.rings.add(gyro2);
+
+  const gyro3 = new THREE.Mesh(new THREE.TorusGeometry(2.88, 0.014, 16, 128), ringMat3);
+  gyro3.rotation.x = 0.55;
+  gyro3.rotation.y = Math.PI * 0.34;
+  layers.rings.add(gyro3);
 
   // Floor ring removed so there is zero donut base below the crest
   const floorRing = new THREE.Mesh(
@@ -581,6 +598,9 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
       ringMat1.emissive.copy(c0);
       ringMat2.color.copy(c4);
       ringMat2.emissive.copy(c4);
+      ringMat3.color.copy(c2);
+      ringMat3.emissive.copy(c2);
+      zBarMat.emissive.copy(c0);
       floorRing.material.color.copy(c0);
       shards.forEach((s, idx) => {
         const sc = new THREE.Color(currentPaletteHex[idx % 5]);
@@ -631,6 +651,7 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
     crestGroup.position.y = Math.sin(t * 1.15) * 0.08;
     gyro1.rotation.z = t * 0.18;
     gyro2.rotation.z = -t * 0.14;
+    gyro3.rotation.z = t * 0.11;
     shards.forEach(s => {
       const a = s.userData.angle + t * s.userData.speed;
       s.position.set(Math.cos(a) * s.userData.rad, s.userData.yOff + Math.sin(a * 2) * 0.14, Math.sin(a) * s.userData.rad);
@@ -693,6 +714,13 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
     toggleSpin() { controls.autoRotate = !controls.autoRotate; wake(); return controls.autoRotate; },
     setRings(visible) { layers.rings.visible = Boolean(visible); renderFrame(0.016); wake(); },
     setSideBlades(visible) { layers.winds.visible = Boolean(visible); renderFrame(0.016); wake(); },
+    setZStyle(styleKey) {
+      const useCont = styleKey === 'continua';
+      zClassicGroup.visible = !useCont;
+      zContinuoGroup.visible = useCont;
+      renderFrame(0.016);
+      wake();
+    },
     setAngle(rotYDeg = 0, rotXDeg = 0) {
       controls.autoRotate = false;
       const radY = (rotYDeg * Math.PI) / 180;

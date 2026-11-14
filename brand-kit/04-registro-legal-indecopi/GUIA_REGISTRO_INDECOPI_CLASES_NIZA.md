@@ -2,7 +2,7 @@
 
 > **Carpeta de archivos adjuntos:** `brand-kit/04-registro-legal-indecopi/`  
 > **Archivos incluidos (`1500 × 1500 px`, `< 5 MB`, sin compresión destructiva):**
-> - **Marca Mixta (Isotipo + `ZAPHYREL` + `ARQUITECTURA QUE ENLAZA`) B/N:** `indecopi-marca-mixta-byn-1500x1500.png` / `.jpg` *(negro `#000000` pleno sobre blanco `#FFFFFF`)*
+> - **Marca Mixta (Isotipo + `ZAPHYREL` + `TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA`) B/N:** `indecopi-marca-mixta-byn-1500x1500.png` / `.jpg` *(negro `#000000` pleno sobre blanco `#FFFFFF`)*
 > - **Marca Mixta a Color:** `indecopi-marca-mixta-color-1500x1500.png` / `.jpg`
 > - **Marca Figurativa (Isotipo Solo) B/N:** `indecopi-isotipo-solo-byn-1500x1500.png` / `.jpg`
 > - **Marca Figurativa (Isotipo Solo) a Color:** `indecopi-isotipo-solo-color-1500x1500.png` / `.jpg`
@@ -14,8 +14,8 @@
 Se verificaron las expresiones previas mediante búsqueda de mercado y análisis de signos distintivos en Perú/LatAm:
 - **`"ECOSISTEMAS DIGITALES"` (DESCARTADA como eslogan principal):** está saturada comercialmente (utilizada de forma directa por firmas como *Ecosistemas Global*, agencias digitales LatAm y operadoras TIC) y ante **INDECOPI** se clasifica como **término genérico descriptivo** sin derecho de exclusividad.
 - **`"DEL MOSTRADOR A LA GERENCIA"` (DESCARTADA):** ya es utilizada activamente por sistemas ERP/POS locales en Perú (por ejemplo *Fox System* / *ASG*).
-- **Eslogan Seleccionado (`ARQUITECTURA QUE ENLAZA`) + Alternativas Verificadas:**
-  - `ARQUITECTURA QUE ENLAZA` *(Recomendado: fino, distintivo, conceptual, evocador de software sin caer en términos descriptivos rígidos)*.
+- **Eslogan Seleccionado (`TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA`) + Alternativas Verificadas:**
+  - `TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA` *(Recomendado: fino, distintivo, conceptual, evocador de software sin caer en términos descriptivos rígidos)*.
   - Alternativas igualmente verificadas sin uso masivo competidor: `EL PULSO EXACTO DE TU EMPRESA` · `ESTRUCTURA VIVA · CONTROL REAL` · `DONDE CADA ÁREA ENCAJA` · `INGENIERÍA DE ORDEN VIVO`.
   - Adicionalmente, puede solicitarse su protección separada bajo la figura de **Lema Comercial** vinculado a la marca principal **`ZAPHYREL`**.
 
@@ -47,9 +47,9 @@ Se verificaron las expresiones previas mediante búsqueda de mercado y análisis
 
 ## 4. Memoria Descriptiva del Signo (Para Solicitud INDECOPI)
 
-- **Denominación:** `ZAPHYREL` *(opcionalmente en conjunto con el subtítulo `ARQUITECTURA QUE ENLAZA`)*
+- **Denominación:** `ZAPHYREL` *(opcionalmente en conjunto con el subtítulo `TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA`)*
 - **Descripción gráfica (versión Mixta B&N):**  
-  *Signo mixto conformado por un elemento figurativo y un elemento denominativo dispuestos en eje vertical centrado. En la parte superior figura un isotipo geométrico compuesto por una corona octogonal abierta angulada a 45 grados con doble bisel interior y tres trazos horizontales paralelos de longitud escalonada que emergen por el flanco izquierdo; en el núcleo central contiene la letra estilizada `"Z"` seccionada ecuatorialmente por una barra horizontal recta en dos alas simétricas inclinadas. Debajo del isotipo, separado por un espacio armónico, aparece el vocablo `"ZAPHYREL"` en letras mayúsculas de tipografía serif estilizada de trazo fino y alto espaciado, subrayado por una línea horizontal continua; debajo figura la leyenda `"ARQUITECTURA QUE ENLAZA"` en caracteres sans-serif mayúsculos espaciados de menor escala.*
+  *Signo mixto conformado por un elemento figurativo y un elemento denominativo dispuestos en eje vertical centrado. En la parte superior figura un isotipo geométrico compuesto por una corona octogonal abierta angulada a 45 grados con doble bisel interior y tres trazos horizontales paralelos de longitud escalonada que emergen por el flanco izquierdo; en el núcleo central contiene la letra estilizada `"Z"` seccionada ecuatorialmente por una barra horizontal recta en dos alas simétricas inclinadas. Debajo del isotipo, separado por un espacio armónico, aparece el vocablo `"ZAPHYREL"` en letras mayúsculas de tipografía serif estilizada de trazo fino y alto espaciado, subrayado por una línea horizontal continua; debajo figura la leyenda `"TU EMPRESA, EN SU VERSIÓN MÁS LÚCIDA"` en caracteres sans-serif mayúsculos espaciados de menor escala.*
 - **Colores a reivindicar *(solo en versión color)*:**  
   *Zafiro Cielo (`#81BDF8`), Hielo Etéreo (`#A9DCFF`), Lavanda Prisma (`#D5BEFF`), Rosa Seda (`#FFD5FF`), Orquídea Seda (`#FF9AFF`), Negro Abisal (`#06070B`), Gris Mineral (`#434B5E`) y Blanco (`#FFFFFF`).*
 
