@@ -3,10 +3,10 @@
   <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Outfit:wght@500&amp;display=swap');</style>
   <defs>
     <linearGradient id="pBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#81BDF8"/><stop offset="25%" stop-color="#A9DCFF"/><stop offset="50%" stop-color="#D5BEFF"/><stop offset="75%" stop-color="#FFD5FF"/><stop offset="100%" stop-color="#FF9AFF"/>
+      <stop offset="0%" stop-color="#2E90FA"/><stop offset="25%" stop-color="#5EB8FF"/><stop offset="50%" stop-color="#A87FFB"/><stop offset="75%" stop-color="#FF7AF0"/><stop offset="100%" stop-color="#FF38DC"/>
     </linearGradient>
     <linearGradient id="pDiag" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#81BDF8"/><stop offset="50%" stop-color="#D5BEFF"/><stop offset="100%" stop-color="#FF9AFF"/>
+      <stop offset="0%" stop-color="#2E90FA"/><stop offset="50%" stop-color="#A87FFB"/><stop offset="100%" stop-color="#FF38DC"/>
     </linearGradient>
   </defs>
   <text x="275" y="76" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="400" font-size="54" letter-spacing="14" fill="#F8FAFF">ZAPHYREL</text>

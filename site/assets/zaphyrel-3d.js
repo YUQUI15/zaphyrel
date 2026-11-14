@@ -251,53 +251,72 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   };
   Object.values(layers).forEach(g => crestGroup.add(g));
 
-  // Shared Materials (dynamically updated across 3 brand finishes)
-  const prismTex = createGradientTexture([
-    [0, '#81BDF8'], [0.28, '#A9DCFF'], [0.55, '#D5BEFF'], [0.80, '#FFD5FF'], [1, '#FF9AFF']
-  ]);
+  // Shared Materials (dynamically updated across 3 brand finishes + custom palette)
+  let currentPaletteHex = ['#2E90FA', '#5EB8FF', '#A87FFB', '#FF7AF0', '#FF38DC'];
+  let colorBoost = 1.25;
 
-  const facetPalette = [0x81BDF8, 0xFFFFFF, 0xD5BEFF, 0xFFD5FF, 0xFF9AFF, 0xD5BEFF, 0xA9DCFF];
+  function buildPrismTexture(hexArr) {
+    const c0 = hexArr[0] || '#2E90FA';
+    const c1 = hexArr[1] || '#5EB8FF';
+    const c2 = hexArr[2] || '#A87FFB';
+    const c3 = hexArr[3] || '#FF7AF0';
+    const c4 = hexArr[4] || '#FF38DC';
+    return createGradientTexture([
+      [0, c0], [0.26, c1], [0.52, c2], [0.78, c3], [1, c4]
+    ]);
+  }
+
+  let prismTex = buildPrismTexture(currentPaletteHex);
+
+  // 7 facets with rich chromatic presence + crystal translucency (not washed-out white)
+  const facetPalette = [0x2E90FA, 0x68C2FF, 0xA87FFB, 0xFF7AF0, 0xFF38DC, 0x9B6DFF, 0x46A6FF];
   const facetMats = facetPalette.map(col => new THREE.MeshPhysicalMaterial({
     color: col,
-    transmission: 0.48,
+    attenuationColor: new THREE.Color(col),
+    attenuationDistance: 0.42,
+    emissive: new THREE.Color(col),
+    emissiveIntensity: 0.28,
+    transmission: 0.34,
     transparent: true,
-    opacity: 0.94,
-    roughness: 0.08,
-    metalness: 0.08,
-    ior: 1.54,
-    thickness: 0.65,
+    opacity: 0.96,
+    roughness: 0.09,
+    metalness: 0.12,
+    ior: 1.56,
+    thickness: 0.85,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.06
+    clearcoatRoughness: 0.05
   }));
 
   const chassisMat = new THREE.MeshPhysicalMaterial({
-    color: 0xf7f9ff,
-    metalness: 0.25,
-    roughness: 0.18,
+    color: 0xe8f1ff,
+    emissive: 0x2E90FA,
+    emissiveIntensity: 0.08,
+    metalness: 0.32,
+    roughness: 0.16,
     clearcoat: 0.95,
     clearcoatRoughness: 0.08
   });
 
   const waferMat = new THREE.MeshPhysicalMaterial({
     map: prismTex,
-    emissive: 0xD5BEFF,
+    emissive: 0xB88CFF,
     emissiveMap: prismTex,
-    emissiveIntensity: 0.22,
-    transmission: 0.62,
+    emissiveIntensity: 0.52,
+    transmission: 0.42,
     transparent: true,
-    opacity: 0.72,
+    opacity: 0.88,
     roughness: 0.06,
-    ior: 1.48,
+    ior: 1.52,
     clearcoat: 1.0
   });
 
   const windMat = new THREE.MeshPhysicalMaterial({
-    color: 0x81BDF8,
-    emissive: 0x3b82f6,
-    emissiveIntensity: 0.12,
-    metalness: 0.72,
-    roughness: 0.16,
-    clearcoat: 0.9
+    color: 0x389BFF,
+    emissive: 0x2563EB,
+    emissiveIntensity: 0.32,
+    metalness: 0.65,
+    roughness: 0.14,
+    clearcoat: 0.95
   });
 
   const zTopMat = new THREE.MeshPhysicalMaterial({
@@ -309,25 +328,27 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   });
 
   const zBotMat = new THREE.MeshPhysicalMaterial({
-    color: 0xb7cffc,
+    color: 0x82BCFF,
     map: prismTex,
     emissiveMap: prismTex,
-    emissive: 0x6ea8ff,
-    emissiveIntensity: 0.24,
-    metalness: 0.74,
-    roughness: 0.16,
+    emissive: 0x9B6DFF,
+    emissiveIntensity: 0.46,
+    metalness: 0.58,
+    roughness: 0.14,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.06
+    clearcoatRoughness: 0.05
   });
 
   const zBarMat = new THREE.MeshPhysicalMaterial({
-    color: 0xeaf4ff,
-    metalness: 0.92,
+    color: 0x78C6FF,
+    emissive: 0x389BFF,
+    emissiveIntensity: 0.28,
+    metalness: 0.88,
     roughness: 0.10,
     clearcoat: 1.0
   });
 
-  const edgeLineMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.55 });
+  const edgeLineMat = new THREE.LineBasicMaterial({ color: 0xA9DCFF, transparent: true, opacity: 0.68 });
 
   function addBevelPart(parent, pts, depth, mat, zCenter = 0, bevel = 0.032, addEdges = true) {
     const shape = makeShapeFromSvg(pts);
@@ -410,36 +431,45 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   addBevelPart(backWrap, zBar, 0.14, zBarMat, 0.56, 0.015, false);
   layers.zBack.add(backWrap);
 
-  // Gyroscopic Calibration Rings + Floating Optical Shards
-  const ringMat1 = new THREE.MeshStandardMaterial({ color: 0xa9dcff, metalness: 0.88, roughness: 0.18, transparent: true, opacity: 0.52 });
-  const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xff9aff, metalness: 0.88, roughness: 0.18, transparent: true, opacity: 0.42 });
-  const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.65, 0.014, 16, 128), ringMat1);
+  // Gyroscopic Calibration Rings + Floating Optical Shards (richer chromatic visibility)
+  const ringMat1 = new THREE.MeshStandardMaterial({ color: 0x4DA8FF, emissive: 0x2E90FA, emissiveIntensity: 0.45, metalness: 0.88, roughness: 0.16, transparent: true, opacity: 0.82 });
+  const ringMat2 = new THREE.MeshStandardMaterial({ color: 0xFF5CE8, emissive: 0xE040FB, emissiveIntensity: 0.42, metalness: 0.88, roughness: 0.16, transparent: true, opacity: 0.76 });
+  const gyro1 = new THREE.Mesh(new THREE.TorusGeometry(2.65, 0.018, 16, 128), ringMat1);
   gyro1.rotation.x = Math.PI * 0.42;
   gyro1.rotation.y = 0.25;
   layers.rings.add(gyro1);
 
-  const gyro2 = new THREE.Mesh(new THREE.TorusGeometry(2.92, 0.011, 16, 128), ringMat2);
+  const gyro2 = new THREE.Mesh(new THREE.TorusGeometry(2.92, 0.015, 16, 128), ringMat2);
   gyro2.rotation.x = Math.PI * 0.58;
   gyro2.rotation.y = -0.32;
   layers.rings.add(gyro2);
 
-  // Subtle plinth halo ring below crest
+  // Plinth halo ring below crest
   const floorRing = new THREE.Mesh(
     new THREE.RingGeometry(1.1, 2.35, 64),
-    new THREE.MeshBasicMaterial({ color: 0x81BDF8, side: THREE.DoubleSide, transparent: true, opacity: 0.16 })
+    new THREE.MeshBasicMaterial({ color: 0x5EB8FF, side: THREE.DoubleSide, transparent: true, opacity: 0.26 })
   );
   floorRing.rotation.x = -Math.PI / 2;
   floorRing.position.y = -2.42;
   layers.rings.add(floorRing);
 
   // Orbiting micro optical octahedrons
-  const shardGeo = new THREE.OctahedronGeometry(0.055, 0);
-  const shardCols = [0x81BDF8, 0xD5BEFF, 0xFF9AFF, 0xA9DCFF];
+  const shardGeo = new THREE.OctahedronGeometry(0.068, 0);
+  const shardCols = [0x2E90FA, 0xA87FFB, 0xFF38DC, 0x5EB8FF];
   const shards = [];
   for (let i = 0; i < 16; i++) {
+    const sc = shardCols[i % 4];
     const m = new THREE.Mesh(
       shardGeo,
-      new THREE.MeshPhysicalMaterial({ color: shardCols[i % 4], roughness: 0.1, metalness: 0.2, transmission: 0.4, clearcoat: 1 })
+      new THREE.MeshPhysicalMaterial({
+        color: sc,
+        emissive: sc,
+        emissiveIntensity: 0.48,
+        roughness: 0.08,
+        metalness: 0.25,
+        transmission: 0.25,
+        clearcoat: 1
+      })
     );
     const a = (i / 16) * Math.PI * 2;
     const rad = 2.55 + (i % 3) * 0.22;
@@ -450,42 +480,109 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
 
   // Interactive State
   let finishMode = 'prisma';
+  let glassTrans = 0.34;
   let explodeTarget = 0, explodeCur = 0;
   let targetDist = 8.9;
   let vis = true;
   let raf = null;
   const clock = new THREE.Clock();
 
+  function getActiveFacetColors() {
+    const [c0, c1, c2, c3, c4] = currentPaletteHex.map(h => new THREE.Color(h));
+    return [c0, c1, c2, c3, c4, c2.clone().lerp(c0, 0.35), c1.clone().lerp(c0, 0.5)];
+  }
+
   function setFinish(mode) {
     finishMode = mode;
+    const fCols = getActiveFacetColors();
     if (mode === 'prisma') {
       facetMats.forEach((m, i) => {
-        m.color.setHex(facetPalette[i]);
-        m.transmission = 0.48; m.metalness = 0.08; m.roughness = 0.08;
+        m.color.copy(fCols[i]);
+        m.attenuationColor.copy(fCols[i]);
+        m.emissive.copy(fCols[i]);
+        m.emissiveIntensity = 0.28 * colorBoost;
+        m.transmission = glassTrans;
+        m.metalness = 0.12;
+        m.roughness = 0.09;
       });
-      chassisMat.color.setHex(0xf7f9ff);
-      chassisMat.roughness = 0.18;
+      chassisMat.color.setHex(0xeaf2ff);
+      chassisMat.emissive.copy(fCols[0]);
+      chassisMat.emissiveIntensity = 0.09 * colorBoost;
+      chassisMat.roughness = 0.16;
       zTopMat.color.setHex(0x0b0e18);
-      zBotMat.emissiveIntensity = 0.18;
+      zBotMat.emissiveIntensity = 0.46 * colorBoost;
+      waferMat.emissiveIntensity = 0.52 * colorBoost;
     } else if (mode === 'obsidian') {
       facetMats.forEach((m, i) => {
-        m.color.setHex(i % 2 === 0 ? 0x161b2a : 0x262f48);
-        m.transmission = 0.12; m.metalness = 0.85; m.roughness = 0.15;
+        const baseDark = new THREE.Color(i % 2 === 0 ? 0x121829 : 0x1e2742);
+        m.color.copy(baseDark.lerp(fCols[i], 0.38));
+        m.attenuationColor.copy(fCols[i]);
+        m.emissive.copy(fCols[i]);
+        m.emissiveIntensity = 0.24 * colorBoost;
+        m.transmission = Math.min(0.22, glassTrans * 0.65);
+        m.metalness = 0.82;
+        m.roughness = 0.14;
       });
-      chassisMat.color.setHex(0x111524);
+      chassisMat.color.setHex(0x111628);
+      chassisMat.emissive.copy(fCols[2]);
+      chassisMat.emissiveIntensity = 0.14 * colorBoost;
       chassisMat.roughness = 0.12;
-      zTopMat.color.setHex(0xf4f7ff);
-      zBotMat.emissiveIntensity = 0.34;
+      zTopMat.color.setHex(0xf4f8ff);
+      zBotMat.emissiveIntensity = 0.54 * colorBoost;
+      waferMat.emissiveIntensity = 0.58 * colorBoost;
     } else {
       facetMats.forEach((m, i) => {
-        m.color.setHex(i === 1 ? 0xffffff : 0xeef4ff);
-        m.transmission = 0.22; m.metalness = 0.12; m.roughness = 0.26;
+        const porcelainTint = new THREE.Color(0xffffff).lerp(fCols[i], 0.58);
+        m.color.copy(porcelainTint);
+        m.attenuationColor.copy(fCols[i]);
+        m.emissive.copy(fCols[i]);
+        m.emissiveIntensity = 0.22 * colorBoost;
+        m.transmission = Math.min(0.30, glassTrans * 0.85);
+        m.metalness = 0.10;
+        m.roughness = 0.20;
       });
       chassisMat.color.setHex(0xffffff);
-      chassisMat.roughness = 0.24;
-      zTopMat.color.setHex(0x121622);
-      zBotMat.emissiveIntensity = 0.14;
+      chassisMat.emissive.copy(fCols[1]);
+      chassisMat.emissiveIntensity = 0.06 * colorBoost;
+      chassisMat.roughness = 0.22;
+      zTopMat.color.setHex(0x0d111c);
+      zBotMat.emissiveIntensity = 0.38 * colorBoost;
+      waferMat.emissiveIntensity = 0.44 * colorBoost;
     }
+    renderFrame(0.001);
+  }
+
+  function setCustomPalette(hexArr, boostPct = 125, glassPct = 34) {
+    if (Array.isArray(hexArr) && hexArr.length >= 5) {
+      currentPaletteHex = hexArr.slice(0, 5);
+      prismTex = buildPrismTexture(currentPaletteHex);
+      waferMat.map = prismTex;
+      waferMat.emissiveMap = prismTex;
+      waferMat.needsUpdate = true;
+      zBotMat.map = prismTex;
+      zBotMat.emissiveMap = prismTex;
+      zBotMat.needsUpdate = true;
+      const c0 = new THREE.Color(currentPaletteHex[0]);
+      const c2 = new THREE.Color(currentPaletteHex[2]);
+      const c4 = new THREE.Color(currentPaletteHex[4]);
+      windMat.color.copy(c0);
+      windMat.emissive.copy(c0);
+      zBotMat.color.copy(c2);
+      zBotMat.emissive.copy(c4);
+      ringMat1.color.copy(c0);
+      ringMat1.emissive.copy(c0);
+      ringMat2.color.copy(c4);
+      ringMat2.emissive.copy(c4);
+      floorRing.material.color.copy(c0);
+      shards.forEach((s, idx) => {
+        const sc = new THREE.Color(currentPaletteHex[idx % 5]);
+        s.material.color.copy(sc);
+        s.material.emissive.copy(sc);
+      });
+    }
+    colorBoost = Math.max(0.5, Math.min(2.2, boostPct / 100));
+    glassTrans = Math.max(0.05, Math.min(0.75, glassPct / 100));
+    setFinish(finishMode);
   }
 
   function setExplode(pct) {
@@ -576,6 +673,7 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
 
   return {
     setFinish,
+    setCustomPalette,
     setExplode,
     setTheme,
     setOrbit(enabled) { controls.autoRotate = enabled; },
