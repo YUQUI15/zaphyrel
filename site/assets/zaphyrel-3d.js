@@ -444,14 +444,12 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   gyro2.rotation.y = -0.32;
   layers.rings.add(gyro2);
 
-  // Plinth halo ring below crest
+  // Floor ring removed so there is zero donut base below the crest
   const floorRing = new THREE.Mesh(
-    new THREE.RingGeometry(1.1, 2.35, 64),
-    new THREE.MeshBasicMaterial({ color: 0x5EB8FF, side: THREE.DoubleSide, transparent: true, opacity: 0.26 })
+    new THREE.RingGeometry(0.01, 0.02, 8),
+    new THREE.MeshBasicMaterial({ color: 0x5EB8FF, transparent: true, opacity: 0 })
   );
-  floorRing.rotation.x = -Math.PI / 2;
-  floorRing.position.y = -2.42;
-  layers.rings.add(floorRing);
+  floorRing.visible = false;
 
   // Orbiting micro optical octahedrons
   const shardGeo = new THREE.OctahedronGeometry(0.068, 0);
@@ -482,7 +480,7 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   let finishMode = 'prisma';
   let glassTrans = 0.34;
   let explodeTarget = 0, explodeCur = 0;
-  let targetDist = 8.9;
+  let targetDist = 7.4;
   let vis = true;
   let raf = null;
   const clock = new THREE.Clock();
@@ -592,7 +590,7 @@ export function initHeroEmblem3D(canvas, viewport, opts = {}) {
   function setTheme(isNight) {
     hemiLight.intensity = isNight ? 0.55 : 0.85;
     scene.environmentIntensity = isNight ? 1.05 : 0.92;
-    floorRing.material.opacity = isNight ? 0.22 : 0.14;
+    floorRing.material.opacity = 0;
     edgeLineMat.opacity = isNight ? 0.42 : 0.65;
   }
 
