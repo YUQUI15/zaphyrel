@@ -1,16 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="320" height="72" role="img" aria-label="by ZAPHYREL">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 72" width="330" height="72" role="img" aria-label="by ZAPHYREL">
   <defs>
     <linearGradient id="zyPrism_light" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#5EB8FF"/><stop offset="0.5" stop-color="#D5BEFF"/><stop offset="1" stop-color="#FF9AFF"/>
     </linearGradient>
-    <radialGradient id="zySock_light" cx="35%" cy="30%" r="70%">
-      <stop offset="0" stop-color="#162344"/><stop offset="1" stop-color="#060A16"/>
-    </radialGradient>
+    <linearGradient id="zyTextGrad_light" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#090E1C"/>
+      <stop offset="0.34" stop-color="#2563EB"/>
+      <stop offset="0.52" stop-color="#7C3AED"/>
+      <stop offset="0.68" stop-color="#C026D3"/>
+      <stop offset="1" stop-color="#090E1C"/>
+    </linearGradient>
   </defs>
-  <rect x="2" y="2" width="316" height="68" rx="34" fill="rgba(255,255,255,0.92)" stroke="#CBD5E1" stroke-width="2"/>
-  <circle cx="36" cy="36" r="24" fill="url(#zySock_light)" stroke="#5EB8FF" stroke-opacity="0.45" stroke-width="1.5"/>
-  <g transform="translate(15,15) scale(0.35)">
-    <g fill="none" stroke="url(#zyPrism_light)" stroke-width="3.2" opacity="0.82">
+  <rect x="2" y="2" width="326" height="68" rx="34" fill="rgba(255,255,255,0.92)" stroke="#CBD5E1" stroke-width="2"/>
+  <g transform="translate(14,12) scale(0.40)">
+    <g fill="none" stroke="url(#zyPrism_light)" stroke-width="3.2" opacity="0.86">
       <ellipse cx="60" cy="60" rx="52" ry="20" transform="rotate(-32 60 60)"/>
       <ellipse cx="60" cy="60" rx="52" ry="20" transform="rotate(32 60 60)"/>
     </g>
@@ -19,7 +22,7 @@
     <path d="M40 39H82L61 60H51L67 44H36Z" fill="#FFFFFF"/>
     <path d="M80 81H38L59 60H69L53 76H84Z" fill="url(#zyPrism_light)"/>
   </g>
-  <text x="74" y="42" font-family="Outfit, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="2.2" fill="#475569">BY</text>
-  <text x="108" y="42" font-family="Outfit, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="4" fill="#090E1C">ZAPHYREL</text>
-  <circle cx="294" cy="36" r="5" fill="url(#zyPrism_light)"/>
+  <text x="72" y="42" font-family="Outfit, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="2.2" fill="#475569">BY</text>
+  <text x="108" y="44" font-family="'Cormorant Garamond', Georgia, serif" font-size="25" font-weight="600" letter-spacing="4.6" fill="url(#zyTextGrad_light)">ZAPHYREL</text>
+  <circle cx="304" cy="36" r="5" fill="url(#zyPrism_light)"/>
 </svg>
