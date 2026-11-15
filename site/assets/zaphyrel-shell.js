@@ -288,6 +288,14 @@
     });
   }
 
+  /* Insignia Universal de Autoría Inferior Izquierda ("by ZAPHYREL") */
+  if (!window.__zaphyrelBadgeLoaded && !document.querySelector('script[src*="zaphyrel-badge.js"]')) {
+    const bs = document.createElement('script');
+    bs.src = root + 'assets/zaphyrel-badge.js';
+    bs.defer = true;
+    document.head.appendChild(bs);
+  }
+
   window.__zaphyrelShell = {
     ping,
     esc,
