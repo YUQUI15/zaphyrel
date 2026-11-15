@@ -109,52 +109,122 @@
   });
   syncThemeBtn();
 
-  /* Partículas atmosféricas suaves solo arriba */
+  /* Campo atmosférico prismático interactivo (facetas + constelación + arcos orbitales) */
   (function () {
     const cv = $('#prismField');
     if (!cv || reduce) return;
     const ctx = cv.getContext('2d');
     let W = innerWidth, H = innerHeight, t = 0, raf = null, lastMs = 0;
+    let mx = -9999, my = -9999;
     const cols = ['129,189,248', '169,220,255', '213,190,255', '255,213,255', '255,154,255'];
-    const pts = Array.from({ length: 20 }, (_, i) => ({
-      x: Math.random() * W, y: Math.random() * H, r: 2 + Math.random() * 3.4,
-      vx: (Math.random() - 0.5) * 0.22, vy: -0.10 - Math.random() * 0.16,
-      c: cols[i % cols.length], ph: Math.random() * 6.28
+    const dayCols = ['37,99,235', '79,70,229', '147,51,234', '219,39,119', '14,165,233'];
+    const pts = Array.from({ length: 32 }, (_, i) => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: (i % 4 === 0 ? 3.2 : 1.6) + Math.random() * 2.4,
+      vx: (Math.random() - 0.5) * 0.34,
+      vy: -0.14 - Math.random() * 0.24,
+      idx: i,
+      shard: i % 5 === 0,
+      rot: Math.random() * Math.PI,
+      vr: (Math.random() - 0.5) * 0.018,
+      ph: Math.random() * 6.28
     }));
     function fit() { W = cv.width = innerWidth; H = cv.height = innerHeight; }
     fit();
     addEventListener('resize', fit, { passive: true });
-    function shouldRun() { return !document.hidden && scrollY < H * 1.3; }
+    if (matchMedia('(pointer:fine)').matches) {
+      addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+    }
+    function shouldRun() { return !document.hidden && innerWidth >= 680; }
     function tick(ms) {
       raf = null;
       if (!shouldRun()) return;
       raf = requestAnimationFrame(tick);
-      if (ms - lastMs < 32) return;
+      if (ms - lastMs < 33) return;
       lastMs = ms;
       ctx.clearRect(0, 0, W, H);
-      t += 0.005;
+      t += 0.0045;
       const n = document.documentElement.dataset.theme === 'night';
+      const pal = n ? cols : dayCols;
+      const parallaxY = (scrollY * 0.08) % Math.max(H, 600);
+
+      // Dual orbital telemetry rings
       ctx.save();
-      ctx.strokeStyle = n ? 'rgba(169,220,255,0.08)' : 'rgba(129,189,248,0.14)';
       ctx.lineWidth = 1;
+      ctx.strokeStyle = n ? 'rgba(169,220,255,0.11)' : 'rgba(59,130,246,0.14)';
       ctx.beginPath();
-      ctx.arc(W * 0.74, H * 0.42, Math.min(W, H) * 0.32, t, t + Math.PI * 1.3);
+      ctx.arc(W * 0.78, H * 0.36 - parallaxY * 0.15, Math.min(W, H) * 0.30, t, t + Math.PI * 1.15);
+      ctx.stroke();
+      ctx.strokeStyle = n ? 'rgba(255,154,255,0.09)' : 'rgba(147,51,234,0.11)';
+      ctx.beginPath();
+      ctx.arc(W * 0.22, H * 0.68 + parallaxY * 0.1, Math.min(W, H) * 0.24, -t * 1.25, -t * 1.25 + Math.PI * 0.95);
       ctx.stroke();
       ctx.restore();
-      for (const p of pts) {
-        p.x += p.vx; p.y += p.vy; p.ph += 0.02;
-        if (p.y < -16) { p.y = H + 16; p.x = Math.random() * W; }
-        if (p.x < -16) p.x = W + 16;
-        if (p.x > W + 16) p.x = -16;
-        const a = (n ? 0.32 : 0.42) * (0.55 + 0.45 * Math.sin(p.ph));
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.c},${a.toFixed(3)})`;
-        ctx.fill();
+
+      // Update particles & draw faceted nodes
+      for (let i = 0; i < pts.length; i++) {
+        const p = pts[i];
+        p.x += p.vx; p.y += p.vy; p.ph += 0.022; p.rot += p.vr;
+        if (p.y < -20) { p.y = H + 20; p.x = Math.random() * W; }
+        if (p.x < -20) p.x = W + 20;
+        if (p.x > W + 20) p.x = -20;
+
+        const cStr = pal[p.idx % pal.length];
+        const a = (n ? 0.36 : 0.30) * (0.55 + 0.45 * Math.sin(p.ph));
+
+        // Subtle constellation links to nearby nodes
+        for (let j = i + 1; j < pts.length; j++) {
+          const q = pts[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < 17500) {
+            const la = (1 - d2 / 17500) * (n ? 0.14 : 0.09);
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = `rgba(${cStr},${la.toFixed(3)})`;
+            ctx.lineWidth = 0.75;
+            ctx.stroke();
+          }
+        }
+
+        // Cursor magnetic optical thread
+        if (mx > -100) {
+          const cdx = p.x - mx, cdy = p.y - my;
+          const cd2 = cdx * cdx + cdy * cdy;
+          if (cd2 < 32000) {
+            const ca = (1 - cd2 / 32000) * (n ? 0.28 : 0.18);
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mx, my);
+            ctx.strokeStyle = `rgba(${cStr},${ca.toFixed(3)})`;
+            ctx.lineWidth = 0.9;
+            ctx.stroke();
+          }
+        }
+
+        if (p.shard) {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.beginPath();
+          const s = p.r * 1.45;
+          ctx.moveTo(0, -s); ctx.lineTo(s * 0.72, 0); ctx.lineTo(0, s); ctx.lineTo(-s * 0.72, 0);
+          ctx.closePath();
+          ctx.fillStyle = `rgba(${cStr},${(a * 0.9).toFixed(3)})`;
+          ctx.fill();
+          ctx.restore();
+        } else {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${cStr},${a.toFixed(3)})`;
+          ctx.fill();
+        }
       }
     }
     function wake() { if (!raf && shouldRun()) raf = requestAnimationFrame(tick); }
-    addEventListener('scroll', wake, { passive: true });
+    addEventListener('resize', wake, { passive: true });
     document.addEventListener('visibilitychange', wake);
     wake();
   })();

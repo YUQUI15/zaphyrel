@@ -1,0 +1,990 @@
+/* ============================================================================
+   ZAPHYREL SECTORES PRO — Flagship Vertical Atlas, Comparative Matrix & Hier
+   Native Day & Night Contrast + Hardware-Accelerated Interactions
+   ============================================================================ */
+
+@keyframes secPanelIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes secTierSlide {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes secBeamFlow {
+  to { stroke-dashoffset: -36; }
+}
+
+body.page-sectores {
+  --sec-glow: rgba(129, 189, 248, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero & Portfolio Telemetry Strip
+   -------------------------------------------------------------------------- */
+body.page-sectores .page-hero {
+  padding-top: 108px;
+  padding-bottom: 34px;
+}
+
+body.page-sectores .page-hero h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.07;
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+  margin-top: 10px;
+}
+
+body.page-sectores .page-hero .lead {
+  max-width: 68ch;
+  margin-top: 12px;
+  font-size: clamp(14.5px, 1.18vw, 16px);
+  color: var(--ink-soft);
+}
+
+.sec-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.sec-stat {
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 13px 15px;
+  background: color-mix(in srgb, var(--paper) 84%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--rim-top), var(--depth-1);
+  display: grid;
+  gap: 3px;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.sec-stat:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-sky);
+}
+
+.sec-stat small {
+  font: 600 9.5px/1.1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.sec-stat b {
+  font: 600 15px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.sec-stat span {
+  font: 400 11.5px/1.35 var(--ui);
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   2. Command Dock (Live Search, Category Chips, View Switcher)
+   -------------------------------------------------------------------------- */
+.sec-command-dock {
+  margin-top: 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: grid;
+  gap: 12px;
+}
+
+.sec-dock-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-search-wrap {
+  position: relative;
+  flex: 1 1 280px;
+  min-width: 220px;
+}
+
+.sec-search-wrap svg {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.sec-search-in {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--surface-2) 60%, var(--paper));
+  color: var(--ink);
+  font: 400 13px/1.2 var(--ui);
+  padding: 9px 36px 9px 38px;
+  box-shadow: var(--recess);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sec-search-in::placeholder {
+  color: var(--ink-soft);
+}
+
+.sec-search-in:focus {
+  outline: none;
+  border-color: var(--c-sky);
+  box-shadow: var(--recess), 0 0 0 3px rgba(129, 189, 248, 0.2);
+}
+
+.sec-search-clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, var(--line-strong) 45%, transparent);
+  color: var(--ink);
+  font: 600 12px/1 var(--ui);
+  display: none;
+  place-items: center;
+}
+
+.sec-search-clear.show {
+  display: grid;
+}
+
+.sec-view-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sec-count-badge {
+  font: 600 10.5px/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  padding: 7px 11px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.sec-mode-switch {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+  gap: 3px;
+}
+
+.sec-mode-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 500 12px/1 var(--ui);
+  padding: 7px 13px;
+  border-radius: 99px;
+  transition: transform 0.2s var(--ease), background-color 0.2s var(--ease);
+}
+
+.sec-mode-btn:hover {
+  color: var(--ink);
+}
+
+.sec-mode-btn[aria-pressed="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  font-weight: 600;
+}
+
+.sec-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+}
+
+.sec-filter-row .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip-ct {
+  font: 600 10px/1 var(--mono);
+  padding: 2px 6px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--line-strong) 40%, transparent);
+  opacity: 0.85;
+}
+
+.chip.on .chip-ct {
+  background: rgba(6, 7, 11, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   3. Flagship Interactive Atlas (#verticalAtlas)
+   -------------------------------------------------------------------------- */
+.atlas-section {
+  padding-top: 12px;
+  padding-bottom: 34px;
+}
+
+.atlas-shell {
+  display: grid;
+  grid-template-columns: 286px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.atlas-rail {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.atlas-rail-hd {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 4px 8px 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.atlas-nav-btn {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 13px;
+  padding: 9px 11px;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  color: var(--ink-soft);
+  transition: transform 0.22s var(--ease), border-color 0.22s var(--ease), background-color 0.22s var(--ease);
+}
+
+.atlas-nav-btn:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--surface-2) 65%, transparent);
+  border-color: var(--line);
+  transform: translateX(2px);
+}
+
+.atlas-nav-btn[aria-selected="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+  box-shadow: 0 12px 24px -12px var(--accent-ring);
+}
+
+.atlas-nav-ico {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+}
+
+.atlas-nav-btn[aria-selected="true"] .atlas-nav-ico {
+  background: rgba(6, 7, 11, 0.12);
+  border-color: rgba(6, 7, 11, 0.24);
+  color: #06070B;
+}
+
+.atlas-nav-meta strong {
+  display: block;
+  font: 600 13px/1.2 var(--ui);
+}
+
+.atlas-nav-meta small {
+  display: block;
+  font: 500 10px/1.25 var(--mono);
+  opacity: 0.78;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atlas-nav-num {
+  font: 600 10px/1 var(--mono);
+  opacity: 0.65;
+}
+
+/* Atlas Main Stage */
+.atlas-stage {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: clamp(20px, 2.5vw, 28px);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--depth-2), var(--rim-top);
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.atlas-stage.anim {
+  animation: secPanelIn 0.32s var(--ease);
+}
+
+.atlas-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.atlas-title-wrap small {
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 6px;
+}
+
+.atlas-title-wrap h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(26px, 2.5vw, 36px);
+  line-height: 1.08;
+  margin: 0;
+  color: var(--ink);
+}
+
+.atlas-title-wrap p {
+  margin-top: 7px;
+  font-size: 14.2px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 64ch;
+}
+
+.atlas-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atlas-kpi {
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--surface-2) 60%, var(--paper));
+  box-shadow: var(--rim-top);
+  display: grid;
+  gap: 2px;
+  min-width: 118px;
+}
+
+.atlas-kpi span {
+  font: 600 9px/1 var(--mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.atlas-kpi b {
+  font: 600 13.5px/1.2 var(--ui);
+  color: var(--ink);
+}
+
+/* 4-Stage Pipeline Bar inside Atlas */
+.atlas-pipe-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.atlas-pipe-lbl {
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.atlas-play-btn {
+  border: 1px solid var(--line-strong);
+  border-radius: 99px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 11.5px/1 var(--mono);
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.atlas-play-btn:hover {
+  border-color: var(--c-sky);
+  transform: translateY(-1px);
+}
+
+.atlas-play-btn[aria-pressed="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.atlas-pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.atlas-step {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 12px 13px;
+  background: color-mix(in srgb, var(--surface-2) 55%, var(--paper));
+  text-align: left;
+  display: grid;
+  gap: 4px;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.atlas-step:hover {
+  border-color: var(--c-sky);
+  transform: translateY(-2px);
+}
+
+.atlas-step[aria-selected="true"] {
+  border-color: var(--c-sky);
+  background: linear-gradient(145deg, rgba(129, 189, 248, 0.20), rgba(213, 190, 255, 0.18));
+  box-shadow: 0 12px 24px -14px var(--accent-ring);
+}
+
+.atlas-step small {
+  font: 600 9.5px/1.1 var(--mono);
+  letter-spacing: 0.11em;
+  color: var(--ink-soft);
+}
+
+.atlas-step b {
+  font: 600 13px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+/* Deep Layer Technical Spec Box */
+.atlas-detail-card {
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 16px 18px;
+  background: color-mix(in srgb, var(--surface-2) 44%, var(--pearl));
+  box-shadow: var(--recess);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 16px 22px;
+  align-items: start;
+}
+
+.atlas-detail-copy small {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.atlas-detail-copy h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 4px 0 7px;
+  color: var(--ink);
+}
+
+.atlas-detail-copy p {
+  font-size: 13.8px;
+  line-height: 1.56;
+  color: var(--ink-soft);
+}
+
+.atlas-specs-list {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.atlas-specs-list li {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 11px;
+  background: var(--paper);
+  font-size: 12.2px;
+  line-height: 1.38;
+  color: var(--ink);
+}
+
+.atlas-specs-list li span {
+  display: block;
+  font: 600 9px/1 var(--mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 3px;
+}
+
+.atlas-footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 16px;
+  padding-top: 6px;
+}
+
+.atlas-hw-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.hw-pill {
+  font: 500 10.5px/1 var(--mono);
+  padding: 5px 9px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+}
+
+.atlas-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Compact Interactive Bento Cards Grid & Comparative Matrix
+   -------------------------------------------------------------------------- */
+.sec-catalog-sec {
+  padding-top: 16px;
+  padding-bottom: 42px;
+}
+
+.sec-catalog-hd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sec-catalog-hd h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(25px, 2.8vw, 36px);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.sec-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.page-sectores .sector-card {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+body.page-sectores .sector-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--prism-h);
+  opacity: 0.72;
+  transition: opacity 0.25s;
+}
+
+body.page-sectores .sector-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-sky);
+  box-shadow: var(--depth-2), 0 18px 36px -22px var(--accent-ring);
+}
+
+body.page-sectores .sector-card:hover::before {
+  opacity: 1;
+}
+
+body.page-sectores .sector-card.is-hidden {
+  display: none;
+}
+
+.sc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sc-id-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sc-ico {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--surface-2) 65%, var(--paper));
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  flex: none;
+}
+
+.sc-code {
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+body.page-sectores .sector-card h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.12;
+  margin-top: 2px;
+}
+
+.sc-thesis {
+  font-size: 13.6px;
+  line-height: 1.52;
+  color: var(--ink-soft);
+}
+
+/* Inline Micro-Layer Switcher inside each Card */
+.sc-mini-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-2) 65%, var(--pearl));
+}
+
+.sc-mtab {
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  padding: 6px 5px;
+  font: 600 10.5px/1.15 var(--mono);
+  color: var(--ink-soft);
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sc-mtab:hover {
+  color: var(--ink);
+}
+
+.sc-mtab[aria-selected="true"] {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(6, 7, 11, 0.08), inset 0 0 0 1px var(--line-strong);
+}
+
+.sc-mini-panel {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 12px 14px;
+  background: color-mix(in srgb, var(--surface-2) 45%, var(--paper));
+  min-height: 82px;
+  display: grid;
+  gap: 4px;
+}
+
+.sc-mini-panel b {
+  font: 600 13.5px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.sc-mini-panel p {
+  font-size: 12.8px;
+  line-height: 1.48;
+  color: var(--ink-soft);
+}
+
+.sc-metrics-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sc-metric-pill {
+  font: 500 10.5px/1 var(--mono);
+  padding: 5px 9px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-2) 55%, transparent);
+  color: var(--ink-soft);
+}
+
+.sc-actions {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.sc-act-l,
+.sc-act-r {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Empty State */
+.sec-empty {
+  display: none;
+  border: 1px dashed var(--line-strong);
+  border-radius: 18px;
+  padding: 34px 20px;
+  text-align: center;
+  background: var(--paper);
+  gap: 10px;
+  justify-items: center;
+}
+
+.sec-empty.show {
+  display: grid;
+}
+
+/* Comparative Matrix Mode */
+.sec-matrix-wrap {
+  display: none;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--depth-2), var(--rim-top);
+  overflow-x: auto;
+}
+
+.sec-matrix-wrap.show {
+  display: block;
+  animation: secPanelIn 0.28s var(--ease);
+}
+
+.sec-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 880px;
+  text-align: left;
+  font-size: 12.8px;
+}
+
+.sec-matrix-table th {
+  font: 600 10px/1.2 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 14px 14px;
+  border-bottom: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--surface-2) 70%, var(--paper));
+}
+
+.sec-matrix-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 500;
+  vertical-align: top;
+}
+
+.sec-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sec-matrix-table tr:hover td {
+  background: color-mix(in srgb, var(--c-sky) 8%, transparent);
+}
+
+.sec-matrix-table td strong {
+  color: var(--ink);
+  display: block;
+  font: 600 13.5px/1.25 var(--ui);
+}
+
+.sec-matrix-table td small {
+  display: block;
+  margin-top: 4px;
+  font: 400 10.5px/1.4 var(--mono);
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   5. Organizational Hierarchy Upgrade (All 8 Industries + Signal Spine)
+   -------------------------------------------------------------------------- */
+.hier-sec {
+  padding-top: 28px;
+  padding-bottom: 56px;
+}
+
+.hier-card-left {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.hier-tier.anim {
+  animation: secTierSlide 0.28s var(--ease) both;
+}
+
+.hier-stack {
+  position: relative;
+  display: grid;
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive Rules (Tablet & Mobile 390px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .atlas-shell {
+    grid-template-columns: 1fr;
+  }
+  .atlas-rail {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 8px;
+    scrollbar-width: thin;
+  }
+  .atlas-rail-hd {
+    display: none;
+  }
+  .atlas-nav-btn {
+    flex: 0 0 210px;
+    width: auto;
+  }
+  .sec-hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atlas-detail-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .sec-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .atlas-pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  body.page-sectores .page-hero {
+    padding-top: 86px;
+  }
+  .sec-hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .sec-stat {
+    padding: 10px 11px;
+  }
+  .atlas-pipeline {
+    grid-template-columns: 1fr;
+  }
+  .sc-mini-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sec-mode-switch {
+    width: 100%;
+  }
+  .sec-mode-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-stage.anim,
+  .hier-tier.anim {
+    animation: none !important;
+  }
+}

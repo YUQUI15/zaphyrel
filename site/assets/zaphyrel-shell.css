@@ -85,15 +85,21 @@ button{font:inherit;color:inherit;cursor:pointer;user-select:none}
 @keyframes draw{to{stroke-dashoffset:0}}
 
 .tactile-grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--grain-op);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");mix-blend-mode:overlay}
-#prismField{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%;opacity:.82}
-.aura{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none}
-.aura i{position:absolute;border-radius:50%;filter:blur(92px);opacity:.72;animation:drift 24s var(--ease) infinite alternate;transition:background .8s var(--ease),opacity .6s}
-.aura i:nth-child(1){width:52vmax;height:52vmax;background:radial-gradient(circle,#81BDF8 0%,#A9DCFF 48%,transparent 76%);top:-16vmax;left:-12vmax}
-.aura i:nth-child(2){width:50vmax;height:50vmax;background:radial-gradient(circle,#FF9AFF 0%,#FFD5FF 48%,transparent 76%);top:8vmax;right:-14vmax;animation-delay:-7s}
-.aura i:nth-child(3){width:48vmax;height:48vmax;background:radial-gradient(circle,#D5BEFF 0%,#A9DCFF 50%,transparent 76%);bottom:-18vmax;left:18%;animation-delay:-14s}
-[data-theme=night] .aura i{opacity:.35;filter:blur(115px)}
-@keyframes drift{to{transform:translate(4vmax,2.5vmax) scale(1.06)}}
-.horizon-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:74px 74px;opacity:.28;mask-image:radial-gradient(ellipse 92% 76% at 50% 24%,#000 22%,transparent 92%)}
+#prismField{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%;opacity:.92}
+.aura{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse 85% 60% at 50% -8%,rgba(129,189,248,.18),transparent 70%),radial-gradient(ellipse 75% 55% at 88% 92%,rgba(255,154,255,.14),transparent 72%)}
+[data-theme=night] .aura{background:radial-gradient(ellipse 90% 65% at 15% 12%,rgba(56,189,248,.16),transparent 65%),radial-gradient(ellipse 80% 65% at 85% 18%,rgba(167,139,250,.18),transparent 68%),radial-gradient(ellipse 85% 60% at 50% 95%,rgba(244,114,182,.14),transparent 70%),#05060C}
+.aura::before{content:"";position:absolute;inset:-25%;background:conic-gradient(from var(--prism-rot) at 62% 38%,rgba(129,189,248,.12),rgba(213,190,255,.04),rgba(255,154,255,.12),rgba(169,220,255,.04),rgba(129,189,248,.12));filter:blur(64px);animation:prismSpin 28s linear infinite;opacity:.85}
+[data-theme=night] .aura::before{opacity:.72}
+.aura i{position:absolute;border-radius:50%;filter:blur(86px);opacity:.78;animation:drift 19s var(--ease) infinite alternate;transition:background .8s var(--ease),opacity .6s}
+.aura i:nth-child(1){width:54vmax;height:54vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-sky) 88%,#fff) 0%,var(--c-ice) 44%,transparent 74%);top:-18vmax;left:-12vmax}
+.aura i:nth-child(2){width:50vmax;height:50vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-orc) 86%,#fff) 0%,var(--c-rose) 44%,transparent 74%);top:4vmax;right:-15vmax;animation-delay:-6s}
+.aura i:nth-child(3){width:48vmax;height:48vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-lav) 88%,#fff) 0%,var(--c-ice) 48%,transparent 74%);bottom:-18vmax;left:16%;animation-delay:-12s}
+[data-theme=night] .aura i{opacity:.44;filter:blur(104px)}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(5vmax,3vmax) scale(1.08)}100%{transform:translate(-2vmax,4.5vmax) scale(.96)}}
+@keyframes horizonSweep{0%,100%{transform:translateY(-18%) skewY(-6deg);opacity:.26}50%{transform:translateY(24%) skewY(-4deg);opacity:.52}}
+.horizon-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,var(--line-strong) 1.15px,transparent 0),linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:68px 68px,68px 68px,68px 68px;opacity:.42;mask-image:radial-gradient(ellipse 96% 86% at 50% 35%,#000 32%,transparent 96%)}
+.horizon-grid::after{content:"";position:absolute;inset:-20% -10%;background:linear-gradient(108deg,transparent 32%,rgba(129,189,248,.11) 46%,rgba(255,154,255,.10) 54%,transparent 68%);animation:horizonSweep 16s var(--ease) infinite;pointer-events:none}
+[data-theme=night] .horizon-grid{opacity:.38}
 
 /* Marco Prismático */
 .prism-frame{position:relative}

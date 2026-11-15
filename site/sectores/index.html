@@ -15,8 +15,9 @@
 (()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;document.documentElement.classList.add('skip-veil');}catch(e){}})();
 </script>
 <link rel="stylesheet" href="../assets/zaphyrel-shell.css">
+<link rel="stylesheet" href="../assets/sectores-pro.css">
 </head>
-<body data-root="../" data-nav="sectores">
+<body class="page-sectores" data-root="../" data-nav="sectores">
 <a class="skip-link" href="#contenido">Ir al contenido principal</a>
 <div class="prism-top-strip" aria-hidden="true"></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -92,395 +93,143 @@
     <nav class="crumbs" aria-label="Ruta de navegación">
       <a href="../">Inicio</a><span>/</span><span>Rubros y Cobertura Total</span>
     </nav>
-    <p class="eyebrow">Cobertura Operativa por Sector</p>
-    <h1>Automatizamos <em>toda la cadena</em> de cada rubro, de la puerta a la gerencia</h1>
-    <p class="lead">Cada negocio e institución trabaja distinto por dentro. Diseñamos la cara pública que vende o atiende y la entrelazamos en tiempo real con el trabajo diario de empleados en piso o campo, verificación, almacén y alta dirección.</p>
-    <div class="chips" id="sectorFilter" style="margin-top:20px" role="group" aria-label="Filtrar rubros por categoría">
-      <button class="chip on" type="button" data-cat="all">Todos (8 Sectores)</button>
-      <button class="chip" type="button" data-cat="comercio">Comercio &amp; Consumo</button>
-      <button class="chip" type="button" data-cat="ocio">Ocio &amp; Eventos</button>
-      <button class="chip" type="button" data-cat="publico">Sector Público</button>
-      <button class="chip" type="button" data-cat="hospitalidad">Hospitalidad &amp; Salud</button>
-      <button class="chip" type="button" data-cat="logistica">Logística, Educación &amp; 3D</button>
+    <p class="eyebrow">Ingeniería Vertical · 8 Industrias</p>
+    <h1>Arquitectura operativa diseñada <em>para la anatomía</em> de cada sector</h1>
+    <p class="lead">Cada organización gobierna flujos, normativa fiscal, hardware en piso y roles propios. Construimos un continuo único donde la vitrina o ventanilla pública sincroniza en tiempo real con cajas, operaciones en campo, almacenes y dirección ejecutiva.</p>
+
+    <div class="sec-hero-stats" aria-label="Telemetría de cobertura arquitectónica">
+      <article class="sec-stat">
+        <small>COBERTURA VERTICAL</small>
+        <b>8 Sectores Core</b>
+        <span>Retail, Ocio QR, Público, Salud, Horeca, Logística y 3D</span>
+      </article>
+      <article class="sec-stat">
+        <small>INTEGRACIÓN MULTI-ROL</small>
+        <b>4 Planos Activos</b>
+        <span>Superficie Pública, Operación Piso, Control Fiscal y Dirección</span>
+      </article>
+      <article class="sec-stat">
+        <small>NORMATIVA SUNAT</small>
+        <b>UBL 2.1 + Offline</b>
+        <span>Colas locales IndexedDB y facturación electrónica inmediata</span>
+      </article>
+      <article class="sec-stat">
+        <small>HARDWARE EN PISO</small>
+        <b>POS · QR · Torniquetes</b>
+        <span>Lectores EAN-13, comanderas KDS, RFID y visores WebGL</span>
+      </article>
+    </div>
+
+    <div class="sec-command-dock" aria-label="Controles de exploración de sectores">
+      <div class="sec-dock-top">
+        <div class="sec-search-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="sectorSearchIn" class="sec-search-in" type="search" placeholder="Buscar por sector, protocolo o hardware (ej. SUNAT, KDS, torniquete, WebGL…)" autocomplete="off" aria-label="Buscar sector por palabra clave">
+          <button type="button" id="sectorSearchClear" class="sec-search-clear" aria-label="Limpiar búsqueda">×</button>
+        </div>
+        <div class="sec-view-controls">
+          <span class="sec-count-badge" id="secMatchBadge">8 de 8 rubros</span>
+          <div class="sec-mode-switch" id="secModeSwitch" role="group" aria-label="Modo de visualización">
+            <button type="button" class="sec-mode-btn" data-mode="bento" aria-pressed="true">Atlas + Tarjetas</button>
+            <button type="button" class="sec-mode-btn" data-mode="matrix" aria-pressed="false">Matriz Comparativa</button>
+          </div>
+        </div>
+      </div>
+      <div class="chips sec-filter-row" id="sectorFilter" role="group" aria-label="Filtrar rubros por categoría">
+        <button class="chip on" type="button" data-cat="all">Todos <span class="chip-ct">8</span></button>
+        <button class="chip" type="button" data-cat="comercio">Comercio &amp; Consumo <span class="chip-ct">2</span></button>
+        <button class="chip" type="button" data-cat="ocio">Ocio &amp; Eventos <span class="chip-ct">1</span></button>
+        <button class="chip" type="button" data-cat="publico">Sector Público <span class="chip-ct">1</span></button>
+        <button class="chip" type="button" data-cat="hospitalidad">Hospitalidad &amp; Salud <span class="chip-ct">2</span></button>
+        <button class="chip" type="button" data-cat="logistica">Logística, Edu &amp; 3D <span class="chip-ct">2</span></button>
+      </div>
     </div>
   </div>
 </header>
 
-<section>
+<section class="atlas-section" id="verticalAtlas" aria-label="Explorador interactivo de arquitectura por rubro">
   <div class="wrap">
-    <div class="sector-grid" id="sectorGrid">
-      <!-- 01 · TIENDAS Y CADENAS RETAIL -->
-      <article class="sector-card" id="tiendas" data-cat="comercio">
-        <div class="sec-hd">
-          <div>
-            <h3>Tiendas &amp; Cadenas Retail</h3>
-            <p class="sec-sub">E-commerce, punto de venta con pistola de barras, almacén por tallas/lotes y consolidado multi-sede.</p>
-          </div>
-          <span class="badge ok">Retail · Multi-Caja</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Externa (Web)</small>
-            <b>Catálogo Web + Stock Vivo</b>
-            <span>Stock real por tienda, recojo en local el mismo día y seguimiento de envío para el cliente final.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Empleados en Piso / Caja</small>
-            <b>POS Rápido &amp; Turnos</b>
-            <span>Venta con pistola de código de barras, reposición de góndola desde móvil y arqueo ciego de cajero.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Verificación &amp; Almacén</small>
-            <b>SUNAT, Guías y Kardex</b>
-            <span>Boleta/factura OSE, transferencia entre sucursales con acta digital y alertas de quiebre o merma.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Dirección &amp; Gerencia</small>
-            <b>Margen por SKU y Sucursal</b>
-            <span>Utilidad neta descontando costo real, comisiones por vendedor y rotación por tienda en vivo.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=retail">Probar Núcleo Retail →</a>
-          <a class="btn sm" href="../soluciones/tiendas/">Ver ficha vertical</a>
-          <a class="btn sm" href="../cotizar/?mod=retail&amp;biz=Tienda%20Retail">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 02 · DISCOTECAS, BARES Y EVENTOS -->
-      <article class="sector-card" id="discotecas" data-cat="ocio">
-        <div class="sec-hd">
-          <div>
-            <h3>Discotecas, Bares &amp; Eventos</h3>
-            <p class="sec-sub">Preventa y listas VIP en web, control QR en puerta anti-reventa, app para mozos/box y barras anti-merma.</p>
-          </div>
-          <span class="badge">Puerta + Box + Barra</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Externa (Web)</small>
-            <b>Preventa, Box 3D y QR Único</b>
-            <span>Reserva de mesas/boxes con consumo mínimo y envío automático de entradas nominadas con QR único.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Puerta, Mozos y Barras</small>
-            <b>Validación Offline &amp; Comandas</b>
-            <span>Anfitriones validan QR en 0.4 s sin señal; mozos toman pedidos de box directo a pantalla de barman.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Verificación Anti-Merma</small>
-            <b>Aforo Vivo &amp; Descuento de Botellas</b>
-            <span>Cero duplicados en puerta; descuento por onza o botella servida y bitácora auditada de cortesías VIP.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Cierre &amp; Gerencia</small>
-            <b>Arqueo Nocturno por Zona</b>
-            <span>Cruce automático entre boletaje, recargas de pulsera/QR, barras e ingresos por método de pago.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=club">Probar Núcleo Discotecas →</a>
-          <a class="btn sm" href="../soluciones/discotecas/">Ver ficha vertical</a>
-          <a class="btn sm" href="../cotizar/?mod=club&amp;biz=Discoteca%20y%20Eventos">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 03 · MUNICIPALIDADES Y SECTOR PÚBLICO -->
-      <article class="sector-card" id="municipalidades" data-cat="publico">
-        <div class="sec-hd">
-          <div>
-            <h3>Municipalidades &amp; Entidades Públicas</h3>
-            <p class="sec-sub">Portal ciudadano, mesa de partes digital, derivación entre gerencias, apps de inspectores en campo y almacén.</p>
-          </div>
-          <span class="badge ok">Trazabilidad + QR</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Ciudadana (Web)</small>
-            <b>Mesa de Partes &amp; Tributos</b>
-            <span>Ingreso de expedientes 24/7, emisión de constancia con código de seguimiento y consultas de arbitrios/licencias.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Campo &amp; Ventanilla</small>
-            <b>App Fiscalización &amp; Atención</b>
-            <span>Inspectores verifican licencias con QR desde celular, capturan evidencia georreferenciada y emiten actas.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Flujo Interno entre Áreas</small>
-            <b>Derivación con SLA &amp; Archivo</b>
-            <span>Pase trazable entre Subgerencias (Obras, Rentas, Logística, Almacén de bienes) con sello de tiempo inalterable.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Alcaldía &amp; Transparencia</small>
-            <b>Tablero de Gestión Pública</b>
-            <span>Cuellos de botella por gerencia, presupuesto ejecutado en logística, recaudación diaria y cumplimiento de plazos.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=muni">Probar Núcleo Municipal →</a>
-          <a class="btn sm" href="../soluciones/municipalidades/">Ver ficha vertical</a>
-          <a class="btn sm" href="../cotizar/?mod=muni&amp;biz=Municipalidad%20Distrital">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 04 · RESTAURANTES Y FRANQUICIAS -->
-      <article class="sector-card" id="restaurantes" data-cat="comercio">
-        <div class="sec-hd">
-          <div>
-            <h3>Restaurantes, Cafés &amp; Franquicias</h3>
-            <p class="sec-sub">Carta web y delivery propio sin comisiones, salón tablet, pantallas KDS en cocina, SUNAT e insumos.</p>
-          </div>
-          <span class="badge">KDS + Recetas</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Externa (Web)</small>
-            <b>Carta QR &amp; Pedidos Directos</b>
-            <span>Sin perder 28% en apps intermediarias: cliente elige mesa, modificadores o delivery con Yape/Izipay.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Mozos &amp; Cocina KDS</small>
-            <b>Ruteo a Cocina y Bar</b>
-            <span>Comanda enviada desde mesa divide platos a cocina caliente y tragos a barra con cronómetro de salida.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Verificación &amp; Recetas</small>
-            <b>80mm, SUNAT e Insumos</b>
-            <span>Comanda térmica instantánea, boleta/factura con RUC, división de cuenta y descuento por receta/gramaje.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Gerencia Multi-Local</small>
-            <b>Rotación de Mesas y Merma</b>
-            <span>Costo de plato vivo vs precio de venta, propinas por mozo y auditoría de anulaciones por turno.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=table">Probar Studio Table →</a>
-          <a class="btn sm" href="../soluciones/restaurantes/">Ver ficha vertical</a>
-          <a class="btn sm" href="../cotizar/?mod=table&amp;biz=Restaurante">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 05 · HOTELES Y RESORTS 360 -->
-      <article class="sector-card" id="hoteles" data-cat="hospitalidad">
-        <div class="sec-hd">
-          <div>
-            <h3>Hoteles, Lodges &amp; Resorts 360°</h3>
-            <p class="sec-sub">Motor de reservas directo con vista 360° por habitación, PMS en recepción y app de housekeeping.</p>
-          </div>
-          <span class="badge">PMS + 360° + Limpieza</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Externa (Web)</small>
-            <b>Reserva Directa &amp; Vista 360°</b>
-            <span>El huésped recorre su suite antes de reservar sin intermediarios, con upselling de traslados o spa.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Recepción &amp; Mucamas</small>
-            <b>Check-In PMS &amp; App Limpieza</b>
-            <span>Al hacer check-out, mucamas reciben alerta en su app de habitación por preparar con checklist de minibar.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Verificación &amp; Accesos</small>
-            <b>Registro Huésped &amp; Llave QR</b>
-            <span>Validación de DNI/pasaporte, cargos a habitación integrados con restaurante y llave digital con expiración.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Dirección Hotelera</small>
-            <b>RevPAR, Ocupación &amp; Canales</b>
-            <span>Tarifa promedio diaria, bloqueo automático de inventario ante mantenimiento y reporte tributario mensual.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=stay">Probar Studio Stay →</a>
-          <a class="btn sm" href="../soluciones/hoteles/">Ver ficha vertical</a>
-          <a class="btn sm" href="../cotizar/?mod=stay&amp;biz=Hotel%20y%20Turismo">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 06 · CLÍNICAS Y CONSULTORIOS -->
-      <article class="sector-card" id="clinicas" data-cat="hospitalidad">
-        <div class="sec-hd">
-          <div>
-            <h3>Clínicas, Centros Médicos &amp; Laboratorios</h3>
-            <p class="sec-sub">Portal de citas online sin cruces, admisión rápida, historia clínica, farmacia con vencimientos y caja médica.</p>
-          </div>
-          <span class="badge ok">Agenda + HCE + Farmacia</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Externa (Web)</small>
-            <b>Reserva por Especialidad</b>
-            <span>Paciente elige médico, sede y horario disponible sin colas ni llamadas, con recordatorio automático.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Admisión, Triaje &amp; Médicos</small>
-            <b>Cola Activa &amp; Historia Digital</b>
-            <span>Enfermería registra signos vitales y el médico recibe la ficha lista para emitir receta digital y órdenes.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Farmacia &amp; Laboratorio</small>
-            <b>Lotes, Vencimientos &amp; Factura</b>
-            <span>Despacho validado con lote y fecha de caducidad, resultados PDF con verificación QR y facturación electrónica.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Gerencia Médica</small>
-            <b>Producción y Liquidación</b>
-            <span>Cálculo exacto de honorarios por especialista, ocupación de consultorios y rentabilidad por servicio.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=care">Probar Studio Care →</a>
-          <a class="btn sm" href="../cotizar/?mod=care&amp;biz=Cl%C3%ADnica%20M%C3%A9dica">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 07 · ALMACENES, LOGÍSTICA Y FLOTA -->
-      <article class="sector-card" id="almacenes" data-cat="logistica">
-        <div class="sec-hd">
-          <div>
-            <h3>Almacenes, Distribuidoras &amp; Logística</h3>
-            <p class="sec-sub">Portal B2B mayorista, picking por código de barras en bodega, guías de remisión y entregas en ruta.</p>
-          </div>
-          <span class="badge">Kardex + Reparto</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara B2B / Clientes</small>
-            <b>Portal Mayorista &amp; Rastreo</b>
-            <span>Distribuidores realizan pedidos según su lista de precios y verifican estado de despacho en tiempo real.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Almaceneros &amp; Choferes</small>
-            <b>Picking Móvil &amp; Ruta</b>
-            <span>Bodega arma paquetes escaneando series/lotes y el chofer registra entrega con foto y firma digital en ruta.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Verificación Tributaria</small>
-            <b>Guía Electrónica &amp; Kardex</b>
-            <span>Emisión de Guía de Remisión Remitente/Transportista y valoración de inventario FIFO o promedio ponderado.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Jefatura Logística</small>
-            <b>Alertas de Stock &amp; Orden de Compra</b>
-            <span>Generación automática de órdenes a proveedor cuando el stock cae bajo el mínimo de seguridad.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=stock">Probar Stock &amp; Kardex →</a>
-          <a class="btn sm" href="../cotizar/?mod=stock&amp;biz=Almac%C3%A9n%20y%20Log%C3%ADstica">Cotizar</a>
-        </div>
-      </article>
-
-      <!-- 08 · INMOBILIARIA 3D, GIMNASIOS Y CENTROS -->
-      <article class="sector-card" id="inmobiliaria3d" data-cat="logistica">
-        <div class="sec-hd">
-          <div>
-            <h3>Inmobiliaria 3D, Gimnasios &amp; Centros Educativos</h3>
-            <p class="sec-sub">Showrooms WebGL 3D arquitectónicos, torniquetes QR, préstamos de catálogo, matrículas y cobranza automatizada.</p>
-          </div>
-          <span class="badge ok">WebGL 3D + QR + Campus</span>
-        </div>
-        <div class="sec-layers">
-          <div class="sec-layer">
-            <small>01 · Cara Externa / Showroom</small>
-            <b>Maqueta 3D Interactiva &amp; Web</b>
-            <span>Proyectos inmobiliarios con corte por pisos y acabados configurables, o matrícula online para academias y clubes.</span>
-          </div>
-          <div class="sec-layer">
-            <small>02 · Fuerza Comercial &amp; Recepción</small>
-            <b>CRM Cotizador &amp; Check-In QR</b>
-            <span>Asesores bloquean departamentos desde el visor 3D; recepción controla ingreso a gimnasio o préstamo de equipos.</span>
-          </div>
-          <div class="sec-layer">
-            <small>03 · Verificación &amp; Cobranza</small>
-            <b>Membresías, Cuotas y Mora</b>
-            <span>Bloqueo automático en puerta ante cuotas vencidas, cronogramas de separación y constancias instantáneas.</span>
-          </div>
-          <div class="sec-layer">
-            <small>04 · Dirección &amp; Directorio</small>
-            <b>Disponibilidad y Recaudación</b>
-            <span>Unidades vendidas/reservadas en vivo, tasas de deserción, aforo por hora y flujo de caja proyectado.</span>
-          </div>
-        </div>
-        <div class="sec-actions">
-          <a class="btn sm pri" href="../studio/?mod=show3d">Probar Showroom 3D →</a>
-          <a class="btn sm" href="../soluciones/3d-web/">Ver WebGL 3D</a>
-          <a class="btn sm" href="../cotizar/?mod=show3d&amp;biz=Inmobiliaria%20y%20Showroom%203D">Cotizar</a>
-        </div>
-      </article>
+    <div class="atlas-shell">
+      <aside class="atlas-rail" id="atlasRail" role="tablist" aria-label="Selector vertical de sectores"></aside>
+      <div class="atlas-stage" id="atlasStage" role="tabpanel" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN DE JERARQUÍA ORGANIZACIONAL -->
-<section style="padding-top:16px">
+<section class="sec-catalog-sec" id="sectorCatalogWrap" aria-label="Catálogo y matriz comparativa">
   <div class="wrap">
-    <p class="eyebrow">De la Base Operativa a la Alta Dirección</p>
-    <h2>Cómo trabaja <em>cada nivel</em> de tu organización conectado</h2>
-    <p class="sub">El error clásico es comprar un software solo para gerencia que los empleados no usan en piso. Selecciona un rubro para ver qué pantalla usa exactamente cada cargo:</p>
-
-    <div class="chips" id="hierTabs" style="margin-top:20px" role="tablist" aria-label="Seleccionar organigrama por rubro">
-      <button class="chip on" type="button" data-hier="tienda">Tienda / Cadena Retail</button>
-      <button class="chip" type="button" data-hier="discoteca">Discoteca / Eventos</button>
-      <button class="chip" type="button" data-hier="muni">Municipalidad / Entidad</button>
-      <button class="chip" type="button" data-hier="rest">Restaurante / Cocina</button>
-      <button class="chip" type="button" data-hier="hotel">Hotel 360° / Resort</button>
-      <button class="chip" type="button" data-hier="clinica">Clínica Médica</button>
+    <div class="sec-catalog-hd">
+      <div>
+        <p class="eyebrow">Despliegue Modular Detallado</p>
+        <h2>Explora los 8 ecosistemas o compáralos en matriz técnica</h2>
+      </div>
     </div>
 
+    <div class="sec-bento-grid" id="sectorGrid"></div>
+
+    <div class="sec-empty" id="secEmptyState">
+      <p>Ningún rubro coincide con tu criterio de búsqueda actual.</p>
+      <button type="button" class="btn sm pri" id="secEmptyReset">Restablecer filtros y búsqueda</button>
+    </div>
+
+    <div class="sec-matrix-wrap" id="sectorMatrixWrap" role="region" aria-label="Matriz comparativa técnica por sector">
+      <table class="sec-matrix-table">
+        <thead>
+          <tr>
+            <th>Sector / Alcance</th>
+            <th>Superficie Cliente</th>
+            <th>Operación Piso / Campo</th>
+            <th>Control Fiscal &amp; Seguridad</th>
+            <th>SLAs &amp; Estándar</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="sectorMatrixBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="hier-sec" id="organigrama" aria-label="Cadena organizacional conectada">
+  <div class="wrap">
+    <div style="max-width:70ch;margin-bottom:18px">
+      <p class="eyebrow">Organigrama Operativo Vivo</p>
+      <h2 style="font-family:var(--display);font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.1;margin-top:6px">Cada nivel jerárquico opera su vista exacta, <em>sin duplicar registros</em></h2>
+      <p class="sub" style="margin-top:8px">Selecciona cualquiera de las 8 verticales para inspeccionar cómo viaja la operación desde bodega o puerta hasta la alta dirección.</p>
+    </div>
+
+    <div class="chips" id="hierTabs" role="tablist" aria-label="Seleccionar organigrama por rubro" style="margin-bottom:20px"></div>
+
     <div class="hier-layout">
-      <div class="dual-card" style="justify-content:space-between">
+      <div class="hier-card-left">
         <div>
-          <div class="dual-tag"><span id="hierBadge">ARQUITECTURA JERÁRQUICA ENLAZADA</span><span class="badge ok">Tiempo Real</span></div>
-          <h3 id="hierTitle" style="margin-top:8px">Tienda &amp; Cadena Retail</h3>
-          <p id="hierLead" style="margin-top:8px">Desde el bodeguero que recibe mercadería con lector hasta el gerente que revisa utilidad neta multi-tienda, nadie re-digita hojas de Excel.</p>
+          <div class="dual-tag"><span>ARQUITECTURA JERÁRQUICA ENLAZADA</span><span class="badge ok">Tiempo Real</span></div>
+          <h3 id="hierTitle" style="margin-top:10px;font-family:var(--display);font-size:26px;line-height:1.15">Tiendas &amp; Cadenas Retail</h3>
+          <p id="hierLead" style="margin-top:8px;font-size:14px;line-height:1.55;color:var(--ink-soft)"></p>
         </div>
-        <div class="sec-layer" style="margin-top:8px">
+        <div class="sec-layer">
           <small>RESULTADO DEL ENTRELAZAMIENTO</small>
-          <b id="hierOutcome">Cero quiebres ficticios entre web y caja física</b>
-          <span id="hierOutcomeDesc">Si se vende la última unidad en tienda o en web, el inventario se bloquea al instante en ambos canales.</span>
+          <b id="hierOutcome"></b>
+          <span id="hierOutcomeDesc"></span>
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:6px">
-          <a class="btn sm pri" id="hierStudioLink" href="../studio/?mod=retail">Probar módulo en Studio OS →</a>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:4px">
+          <a class="btn sm pri" id="hierStudioLink" href="../studio/?mod=retail">Probar en Studio OS →</a>
           <a class="btn sm" id="hierQuoteLink" href="../cotizar/?mod=retail">Cotizar este modelo</a>
         </div>
       </div>
 
-      <div class="hier-stack" id="hierStack" aria-live="polite">
-        <div class="hier-tier">
-          <span class="h-lvl">NIVEL 01 · BASE / CAMPO</span>
-          <div><div class="h-role">Almacenero y Reposición Móvil</div><div class="h-desc">Escaneo de ingreso por caja/código de barras, transferencia entre tiendas y conteo cíclico sin papel.</div></div>
-          <span class="badge">App Inventario</span>
-        </div>
-        <div class="hier-tier">
-          <span class="h-lvl">NIVEL 02 · ATENCIÓN / PISO</span>
-          <div><div class="h-role">Vendedores, Cajeros y Web</div><div class="h-desc">Caja veloz con Yape/Plin/tarjeta, emisión SUNAT en 1 clic y pedidos de tienda online listos para despacho.</div></div>
-          <span class="badge ok">POS + E-commerce</span>
-        </div>
-        <div class="hier-tier">
-          <span class="h-lvl">NIVEL 03 · SUPERVISIÓN</span>
-          <div><div class="h-role">Jefe de Tienda / Auditoría</div><div class="h-desc">Aprobación de notas de crédito, arqueo ciego de caja, metas de vendedores y reposición sugerida.</div></div>
-          <span class="badge">Control Diario</span>
-        </div>
-        <div class="hier-tier lvl-top">
-          <span class="h-lvl">NIVEL 04 · ALTA DIRECCIÓN</span>
-          <div><div class="h-role">Gerencia Multi-Sucursal</div><div class="h-desc">Consolidado vivo de márgenes, flujo de caja, valorización Kardex y ranking de rotación en todas las sedes.</div></div>
-          <span class="badge ok">Tablero Ejecutivo</span>
-        </div>
-      </div>
+      <div class="hier-stack" id="hierStack" aria-live="polite"></div>
     </div>
 
-    <div class="cta-banner">
-      <div style="max-width:620px">
-        <p class="eyebrow" style="margin-bottom:8px">Siguiente Paso Recomendado</p>
-        <h2 style="font-size:clamp(24px,2.8vw,34px)">¿Cómo se conecta todo esto por debajo?</h2>
-        <p class="sub" style="margin-top:6px">Revisa el simulador vivo de entrelazamiento entre web pública, verificación, personal, almacén y gerencia en nuestra arquitectura operativa.</p>
+    <div class="cta-banner prism-frame" style="margin-top:40px">
+      <div style="max-width:640px">
+        <p class="eyebrow" style="margin-bottom:8px">Siguiente Plano Técnico</p>
+        <h2 style="font-size:clamp(24px,2.8vw,36px);font-family:var(--display);font-weight:500;line-height:1.1">Visualiza cómo se sincronizan la web pública y tu operación interna</h2>
+        <p class="sub" style="margin-top:8px">Explora el diagrama interactivo de eventos en tiempo real o prueba directamente los 12 módulos operativos en Studio OS.</p>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="cta" href="../ecosistema/">Ver Web + Operación Interna →</a>
-        <a class="cta ghost" href="../studio/">Ir a Studio OS</a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <a class="cta" href="../ecosistema/"><span>Ver Web + Operación Interna</span><span class="cta-arr" aria-hidden="true">→</span></a>
+        <a class="cta ghost" href="../studio/">Abrir Studio OS</a>
       </div>
     </div>
   </div>
@@ -491,7 +240,7 @@
   <div class="ft-grid">
     <div>
       <div class="ft-brand">ZAPHYREL</div>
-      <p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p>
+      <p class="ft-slogan">Ingeniería web, gemelos espaciales WebGL 3D/360° y sistemas operativos integrales para organizaciones en Perú y Latinoamérica.</p>
       <div class="ft-palette" aria-hidden="true">
         <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
       </div>
@@ -533,124 +282,6 @@
 <audio id="chime" src="../assets/zaphyrel-chime.wav" preload="none"></audio>
 
 <script src="../assets/zaphyrel-shell.js"></script>
-<script>
-(() => {
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const ping = v => window.__zaphyrelShell?.ping?.(v);
-  const esc = s => window.__zaphyrelShell?.esc?.(s) ?? String(s);
-
-  $('#sectorFilter').addEventListener('click', e => {
-    const b = e.target.closest('button[data-cat]'); if (!b) return;
-    $$('#sectorFilter button').forEach(x => x.classList.toggle('on', x === b));
-    const cat = b.dataset.cat;
-    $$('#sectorGrid .sector-card').forEach(c => {
-      c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'grid' : 'none';
-    });
-    ping(.08);
-  });
-
-  const hierData = {
-    tienda: {
-      title: 'Tienda & Cadena Retail',
-      lead: 'Desde el bodeguero que recibe mercadería con lector hasta el gerente que revisa utilidad neta multi-tienda, nadie re-digita hojas de Excel.',
-      out: 'Cero quiebres ficticios entre web y caja física',
-      outDesc: 'Si se vende la última unidad en tienda o en web, el inventario se bloquea al instante en ambos canales.',
-      mod: 'retail',
-      tiers: [
-        ['NIVEL 01 · BASE / BODEGA', 'Almacenero y Reposición Móvil', 'Escaneo de ingreso por código de barras, transferencias entre locales y conteo cíclico sin papel.', 'App Inventario', ''],
-        ['NIVEL 02 · ATENCIÓN / PISO', 'Vendedores, Cajeros y Web', 'Caja veloz con Yape/Plin/tarjeta, emisión SUNAT en 1 clic y pedidos de tienda online listos para entrega.', 'POS + E-commerce', 'ok'],
-        ['NIVEL 03 · SUPERVISIÓN', 'Jefe de Tienda / Auditoría', 'Aprobación de notas de crédito, arqueo ciego de caja, metas por vendedor y reposición sugerida.', 'Control Diario', ''],
-        ['NIVEL 04 · ALTA DIRECCIÓN', 'Gerencia Multi-Sucursal', 'Consolidado vivo de márgenes, flujo de caja, valorización Kardex y ranking de rotación por sede.', 'Tablero Ejecutivo', 'ok']
-      ]
-    },
-    discoteca: {
-      title: 'Discotecas, Bares & Eventos Nocturnos',
-      lead: 'Eliminamos los QR duplicados en puerta, comandas perdidas de box y descuadres nocturnos de botellas en cada barra.',
-      out: 'Cada entrada escaneada y cada trago trazado sin fuga de caja',
-      outDesc: 'El anfitrión en puerta, el mozo de box, el barman y gerencia comparten una sola verdad operativa en tiempo real.',
-      mod: 'club',
-      tiers: [
-        ['NIVEL 01 · PUERTA / ANFITRIÓN', 'Control QR de Acceso & Aforo', 'Validación QR único en 0.4 s con alerta instantánea si alguien intenta reusar o clonar entrada, incluso offline.', 'Escáner Puerta', ''],
-        ['NIVEL 02 · SALÓN / BOXES Y BARRA', 'App de Mozos & Pantalla Barman', 'Pedidos desde zona VIP llegan con número de mesa/box; barra descuenta botella o onzas al confirmar servicio.', 'Mozos + Barra', 'ok'],
-        ['NIVEL 03 · ADMINISTRACIÓN NOCHE', 'Jefe de Barras y Boletería', 'Control de cortesías autorizadas, auditoría de botellas abiertas vs vendidas y reposición de hieleras/licor.', 'Anti-Merma', ''],
-        ['NIVEL 04 · DUEÑO / PROMOTORA', 'Cierre Financiero Automatizado', 'Desglose inmediato al cierre: ingresos por taquilla, boxes, barra general, Yape/Plin, POS y promotores.', 'Cierre Ejecutivo', 'ok']
-      ]
-    },
-    muni: {
-      title: 'Municipalidades & Entidades Públicas',
-      lead: 'Desde el ciudadano o inspector en campo hasta las gerencias municipales y alcaldía con trazabilidad y cumplimiento de plazos.',
-      out: 'Fin de expedientes perdidos entre escritorios o papel suelto',
-      outDesc: 'Cada solicitud recibe un código único, se deriva con tiempo límite SLA entre áreas y genera constancia verificable.',
-      mod: 'muni',
-      tiers: [
-        ['NIVEL 01 · CAMPO / VÍA PÚBLICA', 'Inspectores, Fiscalización y Limpieza', 'App móvil con lectura QR de licencias en locales, captura de actas con geolocalización y reportes en campo.', 'App Campo QR', ''],
-        ['NIVEL 02 · ATENCIÓN CIUDADANA', 'Mesa de Partes Web & Ventanilla', 'Ingreso de trámites 24/7 con requisitos validados, emisión de cargo automático y verificación digital.', 'Ventanilla Web', 'ok'],
-        ['NIVEL 03 · GERENCIAS / LOGÍSTICA', 'Derivación, Archivo y Almacén Municipal', 'Trazabilidad de pase entre Rentas, Obras, Logística y almacén de bienes patrimoniales con alertas de SLA.', 'Trazabilidad Interna', ''],
-        ['NIVEL 04 · ALCALDÍA / TRANSPARENCIA', 'Tablero de Control Institucional', 'Cuellos de botella por área, tiempos promedio de atención, ejecución logística y recaudación transparente.', 'Tablero Gerencial', 'ok']
-      ]
-    },
-    rest: {
-      title: 'Restaurantes, Cafés & Franquicias',
-      lead: 'Conecta carta online directa con mozos en salón, pantallas de cocina y descarga exacta de recetas en almacén.',
-      out: 'Atención más veloz y margen protegido por receta',
-      outDesc: 'Cada plato vendido en salón o web ordena la cocina al instante y descuenta gramaje real del almacén.',
-      mod: 'table',
-      tiers: [
-        ['NIVEL 01 · PRODUCCIÓN / COCINA', 'Cocineros y Barman en KDS', 'Pantallas por estación separan entradas, fondos y bebidas con cronómetro de prioridad y aviso a mozos.', 'Cocina KDS', ''],
-        ['NIVEL 02 · SALÓN / CAJA Y WEB', 'Mozos, Cajeros y Carta Directa', 'División de cuenta, propinas, pago con Yape/Plin/Izipay y emisión de boleta o factura electrónica SUNAT.', 'Salón + Carta QR', 'ok'],
-        ['NIVEL 03 · ECONOMATO', 'Recetario, Compras e Insumos', 'Alerta automática cuando cae la existencia de carnes, envases o bebidas; genera orden de compra al instante.', 'Almacén / Costos', ''],
-        ['NIVEL 04 · GERENCIA GASTRONÓMICA', 'Dashboard Multi-Local', 'Ticket promedio por mozo, platos más rentables, mermas declaradas y arqueo unificado por sede.', 'Control Gerencial', 'ok']
-      ]
-    },
-    hotel: {
-      title: 'Hoteles, Lodges & Resorts 360°',
-      lead: 'Une el motor de reservas web con recorridos 360° de tus habitaciones y la operación diaria de recepción y limpieza.',
-      out: 'Más reservas directas y habitaciones listas a tiempo',
-      outDesc: 'Cuando recepción marca check-out, housekeeping recibe al instante la tarea en su celular antes del siguiente huésped.',
-      mod: 'stay',
-      tiers: [
-        ['NIVEL 01 · PISOS / HOUSEKEEPING', 'Mucamas y Mantenimiento', 'Lista móvil en tiempo real de cuartos por limpiar, reposición de minibar e incidencias con foto.', 'App Limpieza', ''],
-        ['NIVEL 02 · FRONT DESK / WEB', 'Recepción PMS & Motor Directo 360°', 'Reservas sin comisión OTA, asignación de habitaciones, check-in rápido y llaves digitales/físicas.', 'PMS + Web 360°', 'ok'],
-        ['NIVEL 03 · CONSUMOS INTERNOS', 'Room Service, Restaurante y Spa', 'Cargos directos a cuenta de habitación sin papeles perdidos hasta la salida del huésped.', 'Cuenta Única', ''],
-        ['NIVEL 04 · GERENCIA HOTELERA', 'Control Ocupacional & RevPAR', 'Ocupación futura, canales más rentables, mantenimiento preventivo y facturación consolidada.', 'Tablero PMS', 'ok']
-      ]
-    },
-    clinica: {
-      title: 'Clínicas, Policlínicos & Consultorios',
-      lead: 'Elimina cruces en agenda y colas de espera coordinando admisión, triaje, historia clínica, farmacia y gerencia.',
-      out: 'Paciente atendido a su hora y medicamentos controlados por lote',
-      outDesc: 'Cada receta firmada llega al módulo de farmacia para despacho seguro y facturación en un solo flujo.',
-      mod: 'care',
-      tiers: [
-        ['NIVEL 01 · ADMISIÓN & TRIAJE', 'Enfermería y Recepción', 'Confirmación de llegada, signos vitales registrados en pantalla y paso ordenado al consultorio.', 'Cola Activa', ''],
-        ['NIVEL 02 · CONSULTA / PACIENTE', 'Portal Web de Citas & Historia Digital', 'Agenda online 24/7 por especialidad y sede más historia clínica completa con receta y órdenes.', 'HCE + Citas Web', 'ok'],
-        ['NIVEL 03 · FARMACIA & LAB', 'Dispensación por Lote y Resultados QR', 'Control de vencimientos farmacéuticos, resultados PDF firmados y boleta/factura integrada.', 'Farmacia + OSE', ''],
-        ['NIVEL 04 · DIRECCIÓN MÉDICA', 'Liquidación de Honorarios', 'Cálculo automático de comisiones por médico, convenios, seguros y ocupación por especialidad.', 'Gerencia Salud', 'ok']
-      ]
-    }
-  };
-
-  $('#hierTabs').addEventListener('click', e => {
-    const b = e.target.closest('button[data-hier]'); if (!b) return;
-    $$('#hierTabs button').forEach(x => x.classList.toggle('on', x === b));
-    const d = hierData[b.dataset.hier]; if (!d) return;
-    $('#hierTitle').textContent = d.title;
-    $('#hierLead').textContent = d.lead;
-    $('#hierOutcome').textContent = d.out;
-    $('#hierOutcomeDesc').textContent = d.outDesc;
-    $('#hierStudioLink').href = `../studio/?mod=${encodeURIComponent(d.mod)}`;
-    $('#hierQuoteLink').href = `../cotizar/?mod=${encodeURIComponent(d.mod)}&biz=${encodeURIComponent(d.title)}`;
-    $('#hierStack').innerHTML = d.tiers.map(([lvl, role, desc, badge, ok], idx) => `
-      <div class="hier-tier ${idx === 3 ? 'lvl-top' : ''}">
-        <span class="h-lvl">${esc(lvl)}</span>
-        <div><div class="h-role">${esc(role)}</div><div class="h-desc">${esc(desc)}</div></div>
-        <span class="badge ${ok}">${esc(badge)}</span>
-      </div>
-    `).join('');
-    ping(.09);
-  });
-})();
-</script>
+<script src="../assets/sectores-pro.js" defer></script>
 </body>
 </html>
