@@ -1,0 +1,1042 @@
+/* ============================================================================
+   ZAPHYREL HOME — Architectural Flagship Stylesheet (Day + Night Native)
+   Scoped cleanly to body.page-home so subpages keep 100% structural stability.
+   ============================================================================ */
+
+@keyframes zyBeamSweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes zyFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zySheen {
+  0% { transform: translateX(-140%) skewX(-18deg); }
+  100% { transform: translateX(240%) skewX(-18deg); }
+}
+
+@keyframes zyPulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(129, 189, 248, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(129, 189, 248, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(129, 189, 248, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   0. Interactive Spotlight & Architectural Crosshairs
+   -------------------------------------------------------------------------- */
+body.page-home {
+  --hx: 50%;
+  --hy: 22%;
+  transition: background-color 0.32s var(--ease), color 0.25s var(--ease);
+}
+
+body.page-home .hero {
+  position: relative;
+  min-height: calc(100vh - 10px);
+  padding: 84px clamp(18px, 5vw, 68px) 38px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.page-home .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(640px circle at var(--hx) var(--hy), rgba(129, 189, 248, 0.14), rgba(213, 190, 255, 0.08) 42%, transparent 72%);
+  transition: opacity 0.4s var(--ease);
+  z-index: 0;
+}
+
+[data-theme=night] body.page-home .hero::before,
+html[data-theme=night] body.page-home .hero::before {
+  background:
+    radial-gradient(720px circle at var(--hx) var(--hy), rgba(129, 189, 248, 0.18), rgba(255, 154, 255, 0.10) 44%, transparent 74%);
+}
+
+body.page-home .hero-grid {
+  position: relative;
+  z-index: 2;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: clamp(24px, 3.4vw, 48px);
+}
+
+/* Architectural drafting corner hairlines */
+.home-hero-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.home-stagger-1 { animation: zyFadeUp 0.55s var(--ease) both; }
+.home-stagger-2 { animation: zyFadeUp 0.65s var(--ease) 0.07s both; }
+.home-stagger-3 { animation: zyFadeUp 0.72s var(--ease) 0.14s both; }
+.home-stagger-4 { animation: zyFadeUp 0.78s var(--ease) 0.21s both; }
+.home-stagger-5 { animation: zyFadeUp 0.85s var(--ease) 0.28s both; }
+
+/* --------------------------------------------------------------------------
+   1. Hero Header, Wordmark Dock, Headline & Lead Refinements
+   -------------------------------------------------------------------------- */
+body.page-home .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font: 600 10.5px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  box-shadow: var(--rim-top), 0 8px 20px -12px var(--accent-ring);
+  margin-bottom: 12px;
+}
+
+body.page-home .hero-badge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--prism);
+  animation: zyPulseRing 2.6s infinite;
+  flex: none;
+}
+
+body.page-home .hero-wordmark-wrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 2px;
+  margin-bottom: 11px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+body.page-home .hero-wordmark {
+  font-family: var(--crest);
+  font-weight: 600;
+  font-size: clamp(20px, 2.3vw, 27px);
+  letter-spacing: 0.28em;
+  line-height: 1;
+  background: linear-gradient(120deg, var(--c-sky), var(--c-lav), var(--c-rose), var(--c-orc), var(--c-sky));
+  background-size: 220% 220%;
+  animation: zyBeamSweep 9s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme=day] body.page-home .hero-wordmark {
+  background: linear-gradient(120deg, #1E3A8A, #4338CA, #7E22CE, #BE185D, #1E3A8A);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: none;
+}
+
+body.page-home .prism-ribbon {
+  display: flex;
+  width: 66px;
+  height: 5px;
+  border-radius: 99px;
+  overflow: hidden;
+  gap: 2px;
+  opacity: 0.92;
+}
+
+body.page-home .prism-ribbon span {
+  flex: 1;
+  border-radius: 99px;
+  transition: transform 0.3s var(--ease);
+}
+
+.hero-wordmark-wrap:hover .prism-ribbon span:nth-child(odd) {
+  transform: scaleY(1.35);
+}
+
+.hero-spectrum-dock {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  box-shadow: var(--rim-top);
+}
+
+.hero-spectrum-dock .dock-lbl {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero-sw-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hero-sw-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--line-strong);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+
+.hero-sw-btn:hover {
+  transform: scale(1.22);
+}
+
+.hero-sw-btn[aria-pressed="true"] {
+  transform: scale(1.18);
+  box-shadow: 0 0 0 2px var(--ink);
+}
+
+[data-theme=night] .hero-sw-btn[aria-pressed="true"] {
+  box-shadow: 0 0 0 2px #FFFFFF;
+}
+
+body.page-home #heroTitle {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(31px, 3.25vw, 44px);
+  line-height: 1.07;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 12px;
+  max-width: 22ch;
+}
+
+body.page-home #heroTitle .word-prism {
+  background: linear-gradient(125deg, var(--c-sky) 0%, var(--c-lav) 48%, var(--c-orc) 100%);
+  background-size: 200% auto;
+  animation: zyBeamSweep 8s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: italic;
+  font-weight: 600;
+  padding-right: 0.06em;
+}
+
+[data-theme=day] body.page-home #heroTitle .word-prism {
+  background: linear-gradient(125deg, #2563EB 0%, #6D28D9 50%, #C026D3 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body.page-home .hero .lead {
+  font-size: clamp(14.5px, 1.18vw, 15.8px);
+  line-height: 1.56;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin-bottom: 14px;
+}
+
+body.page-home .hero .lead b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero Architectural Switchboard (Interactive Layer Focus)
+   -------------------------------------------------------------------------- */
+.hero-switchboard {
+  width: 100%;
+  max-width: 590px;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  padding: 10px;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  margin-bottom: 15px;
+  display: grid;
+  gap: 8px;
+}
+
+.hs-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.hs-tab {
+  border: 1px solid transparent;
+  background: color-mix(in srgb, var(--surface-2) 65%, transparent);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: 500 12px/1.2 var(--ui);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.hs-tab .hs-num {
+  font: 600 9.5px/1 var(--mono);
+  opacity: 0.72;
+}
+
+.hs-tab:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.hs-tab[aria-selected="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  font-weight: 600;
+  box-shadow: 0 10px 20px -10px var(--accent-ring);
+}
+
+.hs-tab[aria-selected="true"] .hs-num {
+  opacity: 0.85;
+}
+
+.hs-readout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-2) 55%, var(--pearl));
+  border: 1px solid var(--line);
+  min-height: 44px;
+}
+
+.hs-readout-main {
+  font: 500 12.8px/1.4 var(--ui);
+  color: var(--ink);
+}
+
+.hs-readout-tag {
+  flex: none;
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   3. Magnetic Prismatic CTAs & Hero KPI Telemetry Strip
+   -------------------------------------------------------------------------- */
+body.page-home .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+body.page-home .cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 99px;
+  padding: 12px 22px;
+  font: 600 13.5px/1 var(--ui);
+  letter-spacing: -0.005em;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+
+body.page-home .cta:not(.ghost):not(.subtle) {
+  background: var(--prism-h);
+  color: #06070B;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 14px 30px -10px var(--accent-ring), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+body.page-home .cta:not(.ghost):not(.subtle)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 44%;
+  left: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.58), transparent);
+  transform: translateX(-140%) skewX(-18deg);
+  pointer-events: none;
+}
+
+body.page-home .cta:not(.ghost):not(.subtle):hover::after {
+  animation: zySheen 0.85s var(--ease);
+}
+
+body.page-home .cta:hover {
+  transform: translateY(-2px);
+}
+
+body.page-home .cta .cta-arr {
+  transition: transform 0.25s var(--ease);
+}
+
+body.page-home .cta:hover .cta-arr {
+  transform: translateX(3px);
+}
+
+body.page-home .cta.ghost {
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  color: var(--ink);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--rim-top);
+}
+
+body.page-home .cta.ghost:hover {
+  border-color: var(--c-sky);
+  box-shadow: 0 12px 24px -12px var(--accent-ring);
+}
+
+.cta-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.cta-link-quiet {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  font: 500 13px/1 var(--ui);
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: 99px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.cta-link-quiet:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+}
+
+.hero-kpis {
+  width: 100%;
+  max-width: 590px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hero-kpi {
+  border: 1px solid var(--line-strong);
+  border-radius: 15px;
+  padding: 11px 13px;
+  background: color-mix(in srgb, var(--paper) 84%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--rim-top);
+  display: grid;
+  gap: 3px;
+  transition: border-color 0.28s var(--ease), transform 0.28s var(--ease);
+}
+
+.hero-kpi:hover {
+  border-color: var(--c-sky);
+  transform: translateY(-2px);
+}
+
+.hero-kpi small {
+  font: 600 9px/1.2 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero-kpi b {
+  font: 600 14px/1.2 var(--ui);
+  color: var(--ink);
+}
+
+.hero-kpi span {
+  font: 400 11.2px/1.35 var(--ui);
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   4. Chamber 3D Sovereign Stage Refinements
+   -------------------------------------------------------------------------- */
+body.page-home .chamber {
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.ch-pose-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 14px;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-2) 55%, var(--paper));
+}
+
+.ch-pose-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ch-pose-btn {
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-radius: 99px;
+  padding: 4px 10px;
+  font: 500 10.5px/1.2 var(--mono);
+  cursor: pointer;
+  transition: transform 0.22s var(--ease), border-color 0.22s var(--ease);
+}
+
+.ch-pose-btn:hover {
+  color: var(--ink);
+  border-color: var(--c-sky);
+}
+
+.ch-pose-btn[aria-pressed="true"] {
+  background: #0B0D14;
+  color: #F8FAFF;
+  border-color: #0B0D14;
+  font-weight: 600;
+}
+
+[data-theme=night] .ch-pose-btn[aria-pressed="true"],
+html[data-theme=night] .ch-pose-btn[aria-pressed="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+}
+
+[data-theme=day] body.page-home .hero-models button[aria-selected="true"] {
+  background: #0B0D14;
+  color: #F8FAFF;
+}
+
+.ch-hint-txt {
+  font: 500 10px/1.2 var(--mono);
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   5. Dual-Track Architectural Marquee
+   -------------------------------------------------------------------------- */
+body.page-home .marquee {
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 72%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* --------------------------------------------------------------------------
+   6. Section Headers & Progressive Scroll Reveal
+   -------------------------------------------------------------------------- */
+body.page-home section {
+  padding-top: clamp(46px, 4.8vw, 66px);
+  padding-bottom: clamp(46px, 4.8vw, 66px);
+}
+
+.home-sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px 28px;
+  margin-bottom: 8px;
+}
+
+.home-sec-copy {
+  max-width: 720px;
+}
+
+.home-sec-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.home-sec-tag::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--prism-h);
+}
+
+.home-sec-copy h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.home-sec-copy .sub {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+
+.zy-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+
+.zy-reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   7. Bloque 01 — Dual Dimension Cards + Interactive Flow Simulator
+   -------------------------------------------------------------------------- */
+body.page-home .dual-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+body.page-home .dual-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--prism-h);
+  opacity: 0.72;
+  transition: opacity 0.3s;
+}
+
+body.page-home .dual-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--depth-2), 0 18px 40px -22px var(--accent-ring);
+}
+
+body.page-home .dual-card:hover::after {
+  opacity: 1;
+}
+
+.dual-card-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.dual-card-ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  box-shadow: var(--rim-top);
+  flex: none;
+}
+
+body.page-home .dual-pill {
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+body.page-home .dual-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-sky);
+}
+
+/* Live Interactive Signal Flow Bar inside Bloque 01 */
+.home-flow-panel {
+  margin-top: 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  background: color-mix(in srgb, var(--paper) 88%, var(--surface-2));
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: grid;
+  gap: 16px;
+}
+
+.hf-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.hf-title-group small {
+  display: block;
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.hf-title-group b {
+  font: 600 15.5px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.hf-triggers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.hf-trig {
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-radius: 99px;
+  padding: 7px 13px;
+  font: 500 12px/1 var(--ui);
+  cursor: pointer;
+  transition: all 0.24s var(--ease);
+}
+
+.hf-trig:hover {
+  color: var(--ink);
+  border-color: var(--c-sky);
+}
+
+.hf-trig[aria-pressed="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 8px 18px -8px var(--accent-ring);
+}
+
+.hf-pipeline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hf-pipeline .snode {
+  min-width: 190px;
+}
+
+.hf-pipeline .snode.lit {
+  border-color: var(--c-sky);
+  background: linear-gradient(145deg, rgba(129, 189, 248, 0.20), rgba(213, 190, 255, 0.18));
+  transform: translateY(-2px);
+}
+
+.hf-pipeline.firing .pulse-line {
+  animation-play-state: running;
+}
+
+/* --------------------------------------------------------------------------
+   8. Bloque 02 — Filterable 8-Sector Showcase Grid
+   -------------------------------------------------------------------------- */
+.sector-filter-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  box-shadow: var(--rim-top);
+}
+
+.sf-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  border-radius: 99px;
+  padding: 7px 13px;
+  font: 500 12px/1 var(--ui);
+  cursor: pointer;
+  transition: all 0.24s var(--ease);
+}
+
+.sf-btn:hover {
+  color: var(--ink);
+}
+
+.sf-btn[aria-pressed="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  font-weight: 600;
+}
+
+body.page-home .qnav-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 18px;
+  gap: 9px;
+  transition: transform 0.32s var(--ease), box-shadow 0.32s var(--ease), border-color 0.32s var(--ease), opacity 0.28s var(--ease);
+}
+
+body.page-home .qnav-card.is-dimmed {
+  display: none;
+}
+
+body.page-home .qnav-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(129, 189, 248, 0.65), rgba(213, 190, 255, 0.45), rgba(255, 154, 255, 0.6));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s var(--ease);
+}
+
+body.page-home .qnav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--depth-2), 0 18px 34px -20px var(--accent-ring);
+}
+
+body.page-home .qnav-card:hover::before {
+  opacity: 1;
+}
+
+.qnav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.qnav-ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--surface-2) 65%, var(--paper));
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: transform 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+
+body.page-home .qnav-card:hover .qnav-ico {
+  transform: scale(1.06);
+  border-color: var(--c-sky);
+}
+
+.qnav-stack {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: color-mix(in srgb, var(--surface-2) 55%, transparent);
+}
+
+.qnav-foot {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 600 11px/1 var(--mono);
+  color: var(--ink-soft);
+}
+
+.qnav-arr {
+  transition: transform 0.25s var(--ease), color 0.25s;
+}
+
+body.page-home .qnav-card:hover .qnav-arr {
+  transform: translateX(4px);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   9. Bloque 03 — Elevated Deployment Banner
+   -------------------------------------------------------------------------- */
+body.page-home .cta-banner {
+  padding: clamp(28px, 4vw, 44px);
+  background:
+    radial-gradient(640px 260px at 90% 15%, rgba(129, 189, 248, 0.14), transparent 70%),
+    radial-gradient(520px 260px at 10% 85%, rgba(255, 154, 255, 0.11), transparent 70%),
+    var(--card);
+}
+
+.cta-assurances {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.cta-assurance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 80%, transparent);
+  font: 500 11px/1 var(--mono);
+  color: var(--ink-soft);
+}
+
+.cta-assurance-pill i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--prism);
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive Tuning (Tablet & Mobile 390px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  body.page-home .hero {
+    min-height: auto;
+    padding: 88px 18px 40px;
+  }
+  body.page-home .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-kpis {
+    max-width: none;
+  }
+  .hero-switchboard {
+    max-width: none;
+  }
+}
+
+@media (max-width: 680px) {
+  body.page-home .hero {
+    padding: 80px 14px 36px;
+  }
+  body.page-home .hero-wordmark-wrap {
+    gap: 8px;
+  }
+  .hero-spectrum-dock {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hs-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .hs-tab {
+    padding: 7px 4px;
+    font-size: 10.8px;
+    gap: 4px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hs-readout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .hero-kpis {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .hf-pipeline .slink {
+    display: none;
+  }
+  .hf-pipeline .snode {
+    min-width: 100%;
+  }
+  .sector-filter-bar {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sf-btn {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 7px 9px;
+    font-size: 11.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zy-reveal,
+  .home-stagger-1,
+  .home-stagger-2,
+  .home-stagger-3,
+  .home-stagger-4,
+  .home-stagger-5 {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  body.page-home .hero-wordmark,
+  body.page-home #heroTitle .word-prism {
+    animation: none !important;
+  }
+}

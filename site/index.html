@@ -34,8 +34,9 @@
 (()=>{try{const p=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('zy-theme');const t=(p==='day'||p==='night')?p:(s||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'));document.documentElement.dataset.theme=t;if(location.hash)document.documentElement.classList.add('skip-veil');}catch(e){}})();
 </script>
 <link rel="stylesheet" href="assets/zaphyrel-shell.css">
+<link rel="stylesheet" href="assets/zaphyrel-home.css">
 </head>
-<body data-root="./" data-nav="inicio">
+<body data-root="./" data-nav="inicio" class="page-home">
 <a class="skip-link" href="#contenido">Ir al contenido principal</a>
 <div class="prism-top-strip" aria-hidden="true"></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -118,26 +119,63 @@
 <!-- PORTADA: HERO MARCA ZAPHYREL + EMBLEMA SOVEREIGN WEBGL 3D -->
 <header class="hero" id="top">
   <div class="hero-grid">
-    <div>
-      <div class="hero-badge"><i aria-hidden="true"></i>AUTOMATIZACIÓN INTEGRAL · EXTERIOR E INTERIOR DE CADA NEGOCIO</div>
+    <div class="home-hero-copy">
+      <div class="hero-badge home-stagger-1"><i aria-hidden="true"></i>ARQUITECTURA EMPRESARIAL INTEGRAL · EXTERIOR + OPERACIÓN INTERNA</div>
 
-      <div class="hero-wordmark-wrap">
-        <div class="hero-wordmark">ZAPHYREL</div>
-        <div class="prism-ribbon" aria-hidden="true">
-          <span style="background:#81BDF8"></span>
-          <span style="background:#A9DCFF"></span>
-          <span style="background:#D5BEFF"></span>
-          <span style="background:#FFD5FF"></span>
-          <span style="background:#FF9AFF"></span>
+      <div class="hero-wordmark-wrap home-stagger-1">
+        <div class="hero-brand-cluster">
+          <div class="hero-wordmark">ZAPHYREL</div>
+          <div class="prism-ribbon" aria-hidden="true">
+            <span style="background:#81BDF8"></span>
+            <span style="background:#A9DCFF"></span>
+            <span style="background:#D5BEFF"></span>
+            <span style="background:#FFD5FF"></span>
+            <span style="background:#FF9AFF"></span>
+          </div>
+        </div>
+        <div class="hero-spectrum-dock" aria-label="Paleta de espectro en vivo">
+          <span class="dock-lbl">Espectro</span>
+          <div class="hero-sw-row" id="heroSwRow"></div>
         </div>
       </div>
 
-      <h1 id="heroTitle">No solo la cara web de tu empresa. <span class="word-prism">Toda su operación</span> entrelazada.</h1>
-      <p class="lead">Diseñamos <b>plataformas web, sistemas internos por área y entornos WebGL 3D/360°</b> que conectan al cliente o ciudadano desde afuera con tus empleados, verificación QR/SUNAT, almacén y gerencia desde adentro — adaptados de la base operativa hasta la dirección.</p>
+      <h1 id="heroTitle" class="home-stagger-2">Ingeniería que integra <span class="word-prism">experiencia externa</span> y control operativo.</h1>
+      <p class="lead home-stagger-3">Diseñamos <b>plataformas comerciales, gemelos espaciales WebGL 3D/360° y sistemas internos por rol</b> — integrando captación, validación <b>QR / SUNAT</b>, almacén e inteligencia gerencial en una sola arquitectura.</p>
 
-      <div class="cta-row">
-        <a class="cta" href="sectores/">Explorar Rubros y Cobertura →</a>
-        <a class="cta ghost" href="studio/">Probar Studio OS en vivo</a>
+      <div class="hero-switchboard home-stagger-3" aria-label="Enfoque arquitectónico Zaphyrel">
+        <div class="hs-tabs" role="tablist" aria-label="Capas de solución">
+          <button type="button" class="hs-tab" role="tab" aria-selected="true" data-mode="front"><span class="hs-num">01</span>Canal &amp; 3D</button>
+          <button type="button" class="hs-tab" role="tab" aria-selected="false" data-mode="ops"><span class="hs-num">02</span>Operación Base</button>
+          <button type="button" class="hs-tab" role="tab" aria-selected="false" data-mode="gov"><span class="hs-num">03</span>Dirección &amp; SUNAT</button>
+        </div>
+        <div class="hs-readout" aria-live="polite">
+          <span class="hs-readout-main" id="hsMain">Vitrinas WebGL 3D/360°, catálogos dinámicos y reservas con validación QR instantánea.</span>
+          <span class="hs-readout-tag" id="hsTag">CAPA COMERCIAL · &lt; 40MS</span>
+        </div>
+      </div>
+
+      <div class="cta-row home-stagger-4">
+        <a class="cta" href="sectores/"><span>Explorar Cobertura Sectorial</span><span class="cta-arr" aria-hidden="true">→</span></a>
+        <a class="cta ghost" href="studio/"><i class="cta-live-dot" aria-hidden="true"></i><span>Probar Studio OS</span></a>
+        <a class="cta-link-quiet" href="cotizar/">Cotizar alcance ↗</a>
+      </div>
+
+      <div class="hero-kpis home-stagger-5" aria-label="Capacidades de arquitectura">
+        <div class="hero-kpi">
+          <small>MOTOR ESPACIAL</small>
+          <b>WebGL 3D / 360°</b>
+          <span>Inspección nativa sin plugins</span>
+        </div>
+        <div class="hero-kpi">
+          <small>RESILIENCIA</small>
+          <b>Offline-First</b>
+          <span>Sincronización diferida segura</span>
+        </div>
+        <div class="hero-kpi">
+          <small>NORMATIVA FISCAL</small>
+          <b>QR + SUNAT OSE</b>
+          <span>Validación criptográfica activa</span>
+        </div>
       </div>
     </div>
 
@@ -181,160 +219,257 @@
           <button class="btn xs pri" id="orbitBtn" type="button" aria-pressed="true">Órbita 360°: Activa</button>
         </div>
       </div>
+
+      <div class="ch-pose-bar" aria-label="Vistas rápidas del emblema">
+        <div class="ch-pose-group">
+          <button type="button" class="ch-pose-btn" data-pose="front" aria-pressed="true">Frontal</button>
+          <button type="button" class="ch-pose-btn" data-pose="iso" aria-pressed="false">Iso 35°</button>
+          <button type="button" class="ch-pose-btn" data-pose="explode" aria-pressed="false">Despiece</button>
+          <button type="button" class="ch-pose-btn" data-pose="zstyle" aria-pressed="false">Z Split</button>
+        </div>
+        <span class="ch-hint-txt">ARRASTRA · RUEDA · DOBLE CLICK</span>
+      </div>
     </div>
   </div>
 </header>
 
 <div class="marquee" aria-hidden="true">
   <div class="mq-track">
-    <span class="mq-pill"><i style="background:#81BDF8"></i>TIENDAS &amp; CADENAS RETAIL</span>
-    <span class="mq-pill"><i style="background:#A9DCFF"></i>DISCOTECAS, PUERTA QR &amp; BARRA</span>
-    <span class="mq-pill"><i style="background:#D5BEFF"></i>MUNICIPALIDADES &amp; PORTAL CIUDADANO</span>
-    <span class="mq-pill"><i style="background:#FFD5FF"></i>APPS PARA EMPLEADOS POR ÁREA</span>
-    <span class="mq-pill"><i style="background:#FF9AFF"></i>ALMACENES, KARDEX &amp; VERIFICACIÓN</span>
-    <span class="mq-pill"><i style="background:#0B0D14"></i>RESTAURANTES POS, HOTELES &amp; CLÍNICAS</span>
+    <span class="mq-pill"><i style="background:#81BDF8"></i>RETAIL &amp; CADENAS MULTI-SEDE</span>
+    <span class="mq-pill"><i style="background:#A9DCFF"></i>ACCESO QR ANTIFRAUDE &amp; AFORO</span>
+    <span class="mq-pill"><i style="background:#D5BEFF"></i>VENTANILLA MUNICIPAL &amp; EXPEDIENTES</span>
+    <span class="mq-pill"><i style="background:#FFD5FF"></i>CONSOLAS TÁCTILES POR ROL</span>
+    <span class="mq-pill"><i style="background:#FF9AFF"></i>KARDEX ATÓMICO &amp; LOGÍSTICA</span>
+    <span class="mq-pill"><i style="background:#0B0D14"></i>GASTRONOMÍA KDS, HOTELES &amp; CLÍNICAS</span>
     <span class="mq-pill"><i style="background:#81BDF8"></i>SHOWROOMS WEBGL 3D / 360°</span>
-    <span class="mq-pill"><i style="background:#D5BEFF"></i>SUNAT OSE, YAPE, PLIN &amp; MODO OFFLINE</span>
-    <span class="mq-pill"><i style="background:#81BDF8"></i>TIENDAS &amp; CADENAS RETAIL</span>
-    <span class="mq-pill"><i style="background:#A9DCFF"></i>DISCOTECAS, PUERTA QR &amp; BARRA</span>
+    <span class="mq-pill"><i style="background:#D5BEFF"></i>SUNAT OSE, YAPE/PLIN &amp; OFFLINE-FIRST</span>
+    <span class="mq-pill"><i style="background:#81BDF8"></i>RETAIL &amp; CADENAS MULTI-SEDE</span>
+    <span class="mq-pill"><i style="background:#A9DCFF"></i>ACCESO QR ANTIFRAUDE &amp; AFORO</span>
+    <span class="mq-pill"><i style="background:#D5BEFF"></i>VENTANILLA MUNICIPAL &amp; EXPEDIENTES</span>
+    <span class="mq-pill"><i style="background:#FFD5FF"></i>CONSOLAS TÁCTILES POR ROL</span>
   </div>
 </div>
 
-<!-- BLOQUE 01 · POR FUERA Y POR DENTRO (CLARO Y SEPARADO) -->
-<section>
+<!-- BLOQUE 01 · ARQUITECTURA SINCRONIZADA -->
+<section class="zy-reveal" id="arquitectura">
   <div class="wrap">
-    <p class="eyebrow">01 · Doble Dimensión Zaphyrel</p>
-    <h2>Una empresa funciona fluido cuando <em>su cara externa y su operación interna hablan el mismo idioma.</em></h2>
-    <p class="sub">Muchos negocios tienen una web decorativa por un lado y cuadernos o Excel sueltos por dentro. Nosotros construimos el puente completo.</p>
+    <div class="home-sec-head">
+      <div class="home-sec-copy">
+        <p class="home-sec-tag">01 · ARQUITECTURA SINCRONIZADA</p>
+        <h2>Dos planos acoplados bajo un mismo <em>estado en tiempo real.</em></h2>
+        <p class="sub">Supera la brecha entre una vitrina aislada y planillas manuales: cada evento público actualiza disponibilidad, despacho y contabilidad al instante.</p>
+      </div>
+    </div>
 
     <div class="dual-matrix">
       <article class="dual-card tilt-card">
-        <div class="dual-tag"><span>CARA EXTERNA · HASTA TU CLIENTE O CIUDADANO</span><span class="badge">Presencia &amp; Conversión</span></div>
-        <h3>Webs, Portales, Reservas y 3D</h3>
-        <p>Todo lo que ve y usa quien compra, reserva o tramita contigo, conectado en vivo con tu disponibilidad real.</p>
+        <div class="dual-card-hd">
+          <div class="dual-tag"><span>PLANO 01 · SUPERFICIE EXTERNA</span><span class="badge">Captación &amp; 3D</span></div>
+          <span class="dual-card-ico" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </span>
+        </div>
+        <h3>Canales Web, Reservas y Entornos 3D</h3>
+        <p>Interfaces comerciales o ciudadanas diseñadas para convertir, consultar y validar con disponibilidad real sin intermediarios.</p>
         <div class="dual-pills">
-          <div class="dual-pill"><b>Webs &amp; Catálogos</b><span>Venta directa, pedidos WhatsApp y stock en tiempo real.</span></div>
-          <div class="dual-pill"><b>Ventanillas &amp; Reservas</b><span>Mesa de partes digital, citas médicas, mesas y tickets VIP QR.</span></div>
-          <div class="dual-pill"><b>Showrooms WebGL 3D / 360°</b><span>Inmuebles, habitaciones de hotel y configuradores interactivos.</span></div>
-          <div class="dual-pill"><b>Verificación Pública</b><span>Estado de expediente, validez de pase QR y comprobantes XML.</span></div>
+          <div class="dual-pill"><b>Comercio &amp; Catálogo Vivo</b><span>Stock por sede sincronizado, checkout directo y seguimiento.</span></div>
+          <div class="dual-pill"><b>Citas, Mesas &amp; Mesa de Partes</b><span>Agenda inteligente sin cruces y emisión inmediata de pases QR.</span></div>
+          <div class="dual-pill"><b>Showrooms WebGL 3D / 360°</b><span>Recorridos arquitectónicos, suites y configuradores interactivos.</span></div>
+          <div class="dual-pill"><b>Validación Pública Instantánea</b><span>Consulta de expedientes, comprobantes XML y boletos auténticos.</span></div>
         </div>
       </article>
 
       <article class="dual-card inside tilt-card">
-        <div class="dual-tag"><span>NÚCLEO INTERNO · PERSONAL, ÁREAS Y GERENCIA</span><span class="badge ok">Fluidez &amp; Control</span></div>
-        <h3>Sistemas Internos de Base a Dirección</h3>
-        <p>Desde el personal operativo en piso o calle hasta gerencia general, cada rol trabaja sin fricción y sin duplicar tareas.</p>
+        <div class="dual-card-hd">
+          <div class="dual-tag"><span>PLANO 02 · NÚCLEO OPERATIVO</span><span class="badge ok">Control &amp; Auditoría</span></div>
+          <span class="dual-card-ico" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><path d="M17 13v8M13 17h8"/></svg>
+          </span>
+        </div>
+        <h3>Consolas por Puesto y Gobierno Central</h3>
+        <p>Herramientas táctiles de baja fricción para piso, caja y campo acopladas a motores tributarios, logística y dirección.</p>
         <div class="dual-pills">
-          <div class="dual-pill"><b>Apps para Empleados</b><span>Mozos, barra, puerta, housekeeping, almaceneros e inspectores.</span></div>
-          <div class="dual-pill"><b>Verificación sin Errores</b><span>Escáner barras, QR anti-duplicado, RUC/DNI SUNAT y Yape/Plin.</span></div>
-          <div class="dual-pill"><b>Almacén &amp; Kardex Vivo</b><span>Descuento automático por venta/receta/traspaso y alertas mínimas.</span></div>
-          <div class="dual-pill"><b>Tablero Directivo &amp; Offline</b><span>Cierres multi-sucursal en tiempo real incluso ante cortes de Wi-Fi.</span></div>
+          <div class="dual-pill"><b>Terminales Especializadas</b><span>Flujos dedicados para salón, barra, puerta, almacén e inspectores.</span></div>
+          <div class="dual-pill"><b>Trazabilidad &amp; Antifraude</b><span>Código de barras, QR irrepetible, padrón RUC/DNI y Yape/Plin.</span></div>
+          <div class="dual-pill"><b>Kardex &amp; Producción Atómica</b><span>Descuento automático por venta o receta y alertas de reposición.</span></div>
+          <div class="dual-pill"><b>Tablero Multi-Sede Offline-First</b><span>Continuidad sin internet y consolidado financiero en tiempo real.</span></div>
         </div>
       </article>
     </div>
 
+    <!-- Simulador interactivo de propagación entre ambos planos -->
+    <div class="home-flow-panel" id="homeFlowPanel">
+      <div class="hf-top">
+        <div class="hf-title-group">
+          <small>SIMULACIÓN EN VIVO · PROPAGACIÓN DE EVENTOS</small>
+          <b>Observa cómo un clic externo impacta el núcleo interno sin digitación manual</b>
+        </div>
+        <div class="hf-triggers" role="group" aria-label="Escenarios de flujo operativo">
+          <button type="button" class="hf-trig" data-flow="venta" aria-pressed="true">Compra &amp; Kardex</button>
+          <button type="button" class="hf-trig" data-flow="qr" aria-pressed="false">Validación QR</button>
+          <button type="button" class="hf-trig" data-flow="sunat" aria-pressed="false">Despacho SUNAT</button>
+          <button type="button" class="hf-trig" data-flow="offline" aria-pressed="false">Contingencia Offline</button>
+        </div>
+      </div>
+
+      <div class="hf-pipeline" id="hfPipeline">
+        <div class="snode" id="hfN1">
+          <small>01 · SUPERFICIE EXTERNA</small>
+          <b>Pedido confirmado online</b>
+          <span>Pago validado · carrito cerrado</span>
+        </div>
+        <div class="slink" aria-hidden="true">
+          <svg viewBox="0 0 34 10"><path class="pulse-line" d="M1 5H33" stroke="var(--c-sky)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <div class="snode" id="hfN2">
+          <small>02 · NÚCLEO TRANSACCIONAL</small>
+          <b>Descuento atómico de kardex</b>
+          <span>Stock multi-almacén + orden pickup</span>
+        </div>
+        <div class="slink" aria-hidden="true">
+          <svg viewBox="0 0 34 10"><path class="pulse-line" d="M1 5H33" stroke="var(--c-orc)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <div class="snode" id="hfN3">
+          <small>03 · DIRECCIÓN &amp; AUDITORÍA</small>
+          <b>Margen e ingreso consolidados</b>
+          <span>Asiento automático en tablero ejecutivo</span>
+        </div>
+      </div>
+    </div>
+
     <div class="cta-row" style="margin-top:24px">
-      <a class="cta" href="ecosistema/">Simular entrelazamiento entre áreas →</a>
-      <a class="cta ghost" href="cotizar/">Configurar niveles para mi empresa</a>
+      <a class="cta" href="ecosistema/"><span>Simular entrelazamiento completo</span><span class="cta-arr" aria-hidden="true">→</span></a>
+      <a class="cta ghost" href="cotizar/">Configurar módulos para mi operación</a>
     </div>
   </div>
 </section>
 
-<!-- BLOQUE 02 · MAPA DE RUBROS Y COBERTURA REAL -->
-<section style="border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 38%,var(--pearl))">
+<!-- BLOQUE 02 · VERTICALES DE IMPLEMENTACIÓN -->
+<section class="zy-reveal" id="cobertura" style="border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 38%,var(--pearl))">
   <div class="wrap">
-    <p class="eyebrow">02 · Cobertura Multi-Rubro</p>
-    <h2>Adaptabilidad total para cada sector, <em>desde operación en piso hasta alta gerencia.</em></h2>
-    <p class="sub">Explora cada vertical en detalle o abre directamente su núcleo interactivo dentro de Studio OS.</p>
+    <div class="home-sec-head">
+      <div class="home-sec-copy">
+        <p class="home-sec-tag">02 · VERTICALES DE IMPLEMENTACIÓN</p>
+        <h2>Arquitectura especializada por industria, <em>lista para escalar.</em></h2>
+        <p class="sub">Filtra según tu modelo operativo para inspeccionar roles cubiertos, flujos clave e integraciones activas.</p>
+      </div>
+      <div class="sector-filter-bar" id="sectorFilterBar" role="group" aria-label="Filtrar sectores por categoría">
+        <button type="button" class="sf-btn" data-filter="all" aria-pressed="true">Todos (8)</button>
+        <button type="button" class="sf-btn" data-filter="comercio" aria-pressed="false">Comercio &amp; Logística</button>
+        <button type="button" class="sf-btn" data-filter="hospitalidad" aria-pressed="false">Hospitalidad &amp; Salud</button>
+        <button type="button" class="sf-btn" data-filter="institucional" aria-pressed="false">Institucional &amp; 3D</button>
+      </div>
+    </div>
 
     <div class="quick-nav-grid">
-      <a class="qnav-card tilt-card" href="sectores/#tiendas">
-        <div>
-          <span class="q-tag">COMERCIO &amp; RETAIL</span>
-          <h3>Tiendas &amp; Cadenas</h3>
-          <p>E-commerce conectado a tienda física, caja rápida con pistola de barras, SUNAT, Kardex y consolidado por sucursal.</p>
+      <a class="qnav-card tilt-card" href="sectores/#tiendas" data-group="comercio">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+          <span class="qnav-stack">POS · KARDEX · OSE</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">01 · COMERCIO &amp; RETAIL</span>
+        <h3>Tiendas &amp; Cadenas</h3>
+        <p>E-commerce acoplado a caja física, lectura de barras de alta velocidad, emisión OSE y consolidación multi-sede.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#discotecas">
-        <div>
-          <span class="q-tag">OCIO &amp; EVENTOS</span>
-          <h3>Discotecas &amp; Bares</h3>
-          <p>Preventa y listas VIP web, validación QR en puerta anti-reventa, app para mozos, barras anti-merma y cierre por turno.</p>
+      <a class="qnav-card tilt-card" href="sectores/#discotecas" data-group="hospitalidad">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="qnav-stack">QR · AFORO · BARRA</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">02 · OCIO &amp; EVENTOS</span>
+        <h3>Discotecas &amp; Bares</h3>
+        <p>Preventa VIP web, control de acceso QR irrepetible en puerta, pedidos de salón e inventario blindado por turno.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#municipalidades">
-        <div>
-          <span class="q-tag">SECTOR PÚBLICO</span>
-          <h3>Municipalidades &amp; Entidades</h3>
-          <p>Portal ciudadano y mesa de partes digital, derivación entre gerencias, apps de inspectores en campo con QR y almacén municipal.</p>
+      <a class="qnav-card tilt-card" href="sectores/#municipalidades" data-group="institucional">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 18h16M6 18V9M10 18V9M14 18V9M18 18V9M2 9l10-6 10 6z"/></svg></span>
+          <span class="qnav-stack">STD · INSPECTOR · SIAF</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">03 · SECTOR PÚBLICO</span>
+        <h3>Municipalidades &amp; Entidades</h3>
+        <p>Mesa de partes digital, trazabilidad entre gerencias, fiscalización en campo con QR y control patrimonial.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#restaurantes">
-        <div>
-          <span class="q-tag">GASTRONOMÍA</span>
-          <h3>Restaurantes &amp; Franquicias</h3>
-          <p>Carta digital, comandas en salón, pantallas de cocina KDS, ticketeras 80mm, conciliación Yape/Plin y recetas/insumos.</p>
+      <a class="qnav-card tilt-card" href="sectores/#restaurantes" data-group="comercio hospitalidad">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+          <span class="qnav-stack">KDS · RECETA · 80MM</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">04 · GASTRONOMÍA</span>
+        <h3>Restaurantes &amp; Franquicias</h3>
+        <p>Carta dinámica, comandas hacia pantallas KDS, impresión térmica 80mm, abono Yape/Plin y escandallo de insumos.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#hoteles">
-        <div>
-          <span class="q-tag">HOSPITALIDAD</span>
-          <h3>Hoteles &amp; Resorts 360°</h3>
-          <p>Motor de reservas sin comisiones OTA, tour 360° por suite, PMS recepción, app de limpieza housekeeping y llaves QR.</p>
+      <a class="qnav-card tilt-card" href="sectores/#hoteles" data-group="hospitalidad institucional">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14"/><path d="M2 14h20"/><path d="M7 10h.01M12 10h.01M17 10h.01"/></svg></span>
+          <span class="qnav-stack">PMS · 360° · LLAVE QR</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">05 · HOSPITALIDAD</span>
+        <h3>Hoteles &amp; Resorts 360°</h3>
+        <p>Reservas directas sin comisiones OTA, recorrido inmersivo por suite, PMS de recepción y coordinación housekeeping.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#clinicas">
-        <div>
-          <span class="q-tag">SALUD &amp; CITAS</span>
-          <h3>Clínicas &amp; Consultorios</h3>
-          <p>Portal de citas sin cruces, admisión, historia clínica, receta digital, farmacia con vencimientos y liquidación médica.</p>
+      <a class="qnav-card tilt-card" href="sectores/#clinicas" data-group="hospitalidad">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <span class="qnav-stack">HCE · FARMA · CITAS</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">06 · SALUD &amp; CITAS</span>
+        <h3>Clínicas &amp; Consultorios</h3>
+        <p>Agendamiento automatizado, historia clínica electrónica, receta verificable, lotes de farmacia y honorarios médicos.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#almacenes">
-        <div>
-          <span class="q-tag">OPERACIÓN &amp; LOGÍSTICA</span>
-          <h3>Almacenes &amp; Logística</h3>
-          <p>Picking por código de barras, guías de remisión, entregas firmadas por repartidor, control de mermas y stock multi-bodega.</p>
+      <a class="qnav-card tilt-card" href="sectores/#almacenes" data-group="comercio">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
+          <span class="qnav-stack">GRE · PICKING · RUTA</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">07 · OPERACIÓN &amp; LOGÍSTICA</span>
+        <h3>Almacenes &amp; Logística</h3>
+        <p>Picking guiado, guías de remisión electrónicas, conformidad de entrega firmada en ruta y balance entre bodegas.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
 
-      <a class="qnav-card tilt-card" href="sectores/#inmobiliaria3d">
-        <div>
-          <span class="q-tag">WEBGL 3D &amp; EDUCACIÓN</span>
-          <h3>Inmobiliaria 3D &amp; Centros</h3>
-          <p>Maquetas WebGL 3D con corte por pisos y muebles, configuradores comerciales, control QR de gimnasios e institutos.</p>
+      <a class="qnav-card tilt-card" href="sectores/#inmobiliaria3d" data-group="institucional">
+        <div class="qnav-top">
+          <span class="qnav-ico" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg></span>
+          <span class="qnav-stack">WEBGL · BIM · QR PASS</span>
         </div>
-        <div class="q-foot"><span>Ver modelo completo</span><span>→</span></div>
+        <span class="q-tag">08 · WEBGL 3D &amp; EDUCACIÓN</span>
+        <h3>Inmobiliaria 3D &amp; Centros</h3>
+        <p>Maquetas WebGL seccionables por nivel, configuradores interactivos de producto y membresías QR para clubes e institutos.</p>
+        <div class="qnav-foot"><span>Ver arquitectura</span><span class="qnav-arr">→</span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- BLOQUE 03 · PUENTE A STUDIO OS & COTIZADOR -->
-<section>
+<!-- BLOQUE 03 · EVALUACIÓN Y DESPLIEGUE -->
+<section class="zy-reveal" id="despliegue">
   <div class="wrap">
-    <div class="cta-banner">
-      <div style="max-width:640px">
-        <p class="eyebrow" style="margin-bottom:8px">Exploración Guiada Sin Enredos</p>
-        <h2 style="font-size:clamp(26px,3vw,38px)">¿Quieres probar los sistemas funcionando antes de cotizar?</h2>
-        <p class="sub" style="margin-top:8px">Separamos cada área en su propia sección para que evalúes con claridad: prueba los <b>12 núcleos conectados</b> en Studio OS o revisa cómo automatizamos cada puesto en tu rubro.</p>
+    <div class="cta-banner prism-frame">
+      <div style="max-width:650px">
+        <p class="home-sec-tag" style="margin-bottom:10px">03 · EVALUACIÓN Y DESPLIEGUE</p>
+        <h2 style="font-family:var(--display);font-weight:500;font-size:clamp(28px,3.2vw,40px);line-height:1.1">Valida los 12 módulos en acción antes de comprometer tu inversión.</h2>
+        <p class="sub" style="margin-top:10px">Interactúa directamente con nuestra suite en <b>Studio OS</b> desde tu navegador o dimensiona una arquitectura modular por sedes, roles y volumen documental.</p>
+        <div class="cta-assurances" aria-label="Garantías de arquitectura">
+          <span class="cta-assurance-pill"><i aria-hidden="true"></i>Implementación por fases</span>
+          <span class="cta-assurance-pill"><i aria-hidden="true"></i>Cero dependencia técnica oculta</span>
+          <span class="cta-assurance-pill"><i aria-hidden="true"></i>Soporte &amp; SLA empresarial</span>
+        </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px">
-        <a class="cta" href="studio/">Abrir Studio OS (12 Sistemas) →</a>
-        <a class="cta ghost" href="cotizar/">Diagnosticar mi empresa</a>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <a class="cta" href="studio/"><span>Abrir Studio OS (12 Núcleos)</span><span class="cta-arr" aria-hidden="true">→</span></a>
+        <a class="cta ghost" href="cotizar/">Solicitar diagnóstico modular</a>
       </div>
     </div>
   </div>
@@ -345,7 +480,7 @@
   <div class="ft-grid">
     <div>
       <div class="ft-brand">ZAPHYREL</div>
-      <p class="ft-slogan">Web externa, automatización interna por áreas y entornos WebGL 3D/360° para empresas e instituciones en Perú y Latinoamérica.</p>
+      <p class="ft-slogan">Ingeniería web, gemelos espaciales WebGL 3D/360° y sistemas operativos integrales para organizaciones en Perú y Latinoamérica.</p>
       <div class="ft-palette" aria-hidden="true">
         <i style="background:#81BDF8"></i><i style="background:#A9DCFF"></i><i style="background:#D5BEFF"></i><i style="background:#FFD5FF"></i><i style="background:#FF9AFF"></i><i style="background:#0B0D14;border:1px solid var(--line-strong)"></i>
       </div>
@@ -387,6 +522,7 @@
 <audio id="chime" src="assets/zaphyrel-chime.wav" preload="none"></audio>
 
 <script src="assets/zaphyrel-shell.js"></script>
+<script src="assets/zaphyrel-home.js" defer></script>
 <script type="module">
 import { initHeroEmblem3D } from './assets/zaphyrel-3d.js';
 
@@ -404,6 +540,7 @@ const hero3d = initHeroEmblem3D(heroCanvas, heroVp, {
   onZoom(pct) { $('#zoomResetBtn').textContent = pct + '%'; }
 });
 if (hero3d) {
+  window.__zaphyrelHero3D = hero3d;
   let heroOrbitOn = true;
   $('#heroFinishTabs').addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
