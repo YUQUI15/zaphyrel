@@ -40,7 +40,7 @@ export function ZaphyrelBadge({
   prefix = "by",
   brand = "ZAPHYREL",
   href = "https://zaphyrel-site.vercel.app",
-  subtitle = "Ecosistemas Digitales · Arequipa",
+  subtitle = "Ecosistemas Digitales · Software a Medida",
   theme = "auto",
   variant = "glass",
 }: ZaphyrelBadgeProps) {
