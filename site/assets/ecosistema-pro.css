@@ -1,0 +1,959 @@
+/* ============================================================================
+   ZAPHYREL ECOSISTEMA PRO — Live Event Bus, RBAC Guard, 3D Stack & Deploy
+   Full Day & Night Contrast + GPU-Accelerated Animations
+   ============================================================================ */
+
+@keyframes ecoPulseDot {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.38); opacity: 1; }
+}
+
+@keyframes ecoPacketTravel {
+  0% { offset-distance: 0%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes ecoConduitFlow {
+  to { stroke-dashoffset: -28; }
+}
+
+@keyframes ecoFadeSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ecoSpinePulse {
+  0%, 100% { opacity: 0.45; height: 220px; }
+  50% { opacity: 0.95; height: 260px; }
+}
+
+body.page-ecosistema .page-hero {
+  padding-top: 106px;
+  padding-bottom: 34px;
+}
+
+body.page-ecosistema .page-hero h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.07;
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+  margin-top: 10px;
+}
+
+body.page-ecosistema .page-hero .lead {
+  max-width: 68ch;
+  margin-top: 12px;
+  font-size: clamp(14.5px, 1.18vw, 16px);
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Telemetry Cards & Quick Anchor Bar
+   -------------------------------------------------------------------------- */
+.eco-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.eco-stat {
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 13px 15px;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--rim-top), var(--depth-1);
+  display: grid;
+  gap: 3px;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.eco-stat:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-sky);
+}
+
+.eco-stat small {
+  font: 600 9.5px/1.1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.eco-stat b {
+  font: 600 15px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.eco-stat span {
+  font: 400 11.5px/1.35 var(--ui);
+  color: var(--ink-soft);
+}
+
+.eco-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.eco-qlink {
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 99px;
+  padding: 7px 14px;
+  font: 500 11.5px/1 var(--mono);
+  color: var(--ink-soft);
+  transition: transform 0.22s var(--ease), border-color 0.22s, color 0.22s, background-color 0.22s;
+}
+
+.eco-qlink:hover {
+  color: var(--ink);
+  border-color: var(--c-sky);
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--surface-2) 65%, var(--paper));
+}
+
+/* --------------------------------------------------------------------------
+   2. Shared Section Typography
+   -------------------------------------------------------------------------- */
+.eco-sec {
+  padding-top: 26px;
+  padding-bottom: 34px;
+}
+
+.eco-sec-hd {
+  max-width: 72ch;
+  margin-bottom: 18px;
+}
+
+.eco-sec-hd h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.08;
+  margin-top: 6px;
+}
+
+.eco-sec-hd .sub {
+  margin-top: 8px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.56;
+}
+
+/* --------------------------------------------------------------------------
+   3. Section 01 · Live Event Bus Simulator
+   -------------------------------------------------------------------------- */
+.eco-bus-shell {
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  padding: clamp(18px, 2.4vw, 26px);
+  background: color-mix(in srgb, var(--paper) 84%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--depth-2), var(--rim-top);
+  display: grid;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.eco-bus-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eco-net-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.eco-net-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+}
+
+.eco-net-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 500 11.5px/1 var(--mono);
+  padding: 7px 11px;
+  border-radius: 99px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.eco-net-btn:hover {
+  color: var(--ink);
+}
+
+.eco-net-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--pearl);
+}
+
+[data-theme="night"] .eco-net-btn[aria-pressed="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  font-weight: 600;
+}
+
+.eco-net-btn[data-net="offline"][aria-pressed="true"] {
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+  font-weight: 600;
+}
+
+.eco-net-btn[data-net="sync"][aria-pressed="true"] {
+  background: var(--ok-bg);
+  color: var(--ok-ink);
+  font-weight: 600;
+}
+
+.eco-queue-pill {
+  font: 600 10.5px/1 var(--mono);
+  padding: 7px 11px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.eco-queue-pill.has-q {
+  border-color: var(--c-orc);
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+}
+
+/* 5-Node Conduit Pipeline */
+.eco-pipeline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 4px;
+}
+
+.eco-fnode {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 13px 13px 12px;
+  background: color-mix(in srgb, var(--surface-2) 55%, var(--paper));
+  box-shadow: var(--rim-top);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  transition: transform 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease), background 0.28s var(--ease);
+}
+
+.eco-fnode:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-sky);
+}
+
+.eco-fnode.selected {
+  border-color: var(--ink);
+}
+
+[data-theme="night"] .eco-fnode.selected {
+  border-color: var(--c-sky);
+}
+
+.eco-fnode.lit {
+  border-color: var(--c-sky);
+  background: linear-gradient(148deg, rgba(129, 189, 248, 0.24), rgba(213, 190, 255, 0.20), rgba(255, 154, 255, 0.14));
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -12px var(--accent-ring), var(--rim-top);
+}
+
+.eco-fnode.offline-queued {
+  border-color: var(--c-orc);
+  background: linear-gradient(148deg, color-mix(in srgb, var(--warn-bg) 55%, transparent), color-mix(in srgb, var(--paper) 88%, transparent));
+}
+
+.eco-fn-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.eco-fn-top small {
+  font: 600 8.8px/1.25 var(--mono);
+  letter-spacing: 0.09em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.eco-fn-lat {
+  font: 600 9px/1 var(--mono);
+  padding: 3px 7px;
+  border-radius: 99px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  white-space: nowrap;
+  flex: none;
+}
+
+.eco-fnode.lit .eco-fn-lat {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+}
+
+.eco-fnode b {
+  font-size: 13.8px;
+  font-weight: 600;
+  line-height: 1.24;
+  color: var(--ink);
+}
+
+.eco-fnode span {
+  font-size: 11.8px;
+  line-height: 1.38;
+  color: var(--ink-soft);
+}
+
+.eco-fn-state {
+  margin-top: auto;
+  padding-top: 6px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 9.5px/1 var(--mono);
+  color: var(--ink-soft);
+}
+
+.eco-fn-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  flex: none;
+}
+
+.eco-fnode.lit .eco-fn-dot {
+  background: var(--ok-dot);
+  box-shadow: 0 0 8px var(--ok-dot);
+  animation: ecoPulseDot 1.2s ease infinite;
+}
+
+.eco-fnode.offline-queued .eco-fn-dot {
+  background: var(--warn-dot);
+  box-shadow: 0 0 8px var(--warn-dot);
+}
+
+.eco-conduit {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.eco-conduit svg {
+  width: 28px;
+  height: 18px;
+  overflow: visible;
+}
+
+.eco-conduit-base {
+  stroke: var(--line-strong);
+  stroke-width: 1.6;
+  stroke-dasharray: 4 3;
+}
+
+.eco-conduit-flow {
+  opacity: 0;
+  stroke-width: 2.6;
+  stroke-dasharray: 9 5;
+  transition: opacity 0.25s;
+}
+
+.eco-conduit.active .eco-conduit-flow {
+  opacity: 1;
+  animation: ecoConduitFlow 0.75s linear infinite;
+}
+
+/* Split Console Inspector below Pipeline */
+.eco-console {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 14px;
+}
+
+.eco-trace-pane,
+.eco-inspector-pane {
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--surface-2) 48%, var(--pearl));
+  box-shadow: var(--recess);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eco-pane-hd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eco-pane-hd span {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.eco-lat-badge {
+  font: 600 10px/1 var(--mono);
+  padding: 4px 9px;
+  border-radius: 99px;
+  background: var(--ok-bg);
+  color: var(--ok-ink);
+}
+
+.eco-trace-list {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+  max-height: 310px;
+  overflow-y: auto;
+}
+
+.eco-trace-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  font-size: 12.2px;
+  line-height: 1.4;
+  animation: ecoFadeSlide 0.25s var(--ease);
+}
+
+.eco-trace-item time {
+  font: 600 10.5px/1.3 var(--mono);
+  color: var(--c-sky);
+}
+
+[data-theme="day"] .eco-trace-item time {
+  color: #2563EB;
+}
+
+.eco-trace-item b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.eco-trace-item span {
+  color: var(--ink-soft);
+  display: block;
+  margin-top: 2px;
+}
+
+.eco-insp-tabs {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.eco-insp-tab {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-radius: 99px;
+  padding: 4px 10px;
+  font: 500 10.5px/1 var(--mono);
+}
+
+.eco-insp-tab[aria-selected="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.eco-inspector-body {
+  font-size: 12.6px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.eco-insp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.eco-insp-box {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 11px;
+  background: var(--paper);
+}
+
+.eco-insp-box small {
+  display: block;
+  font: 600 9px/1 var(--mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.eco-insp-box b,
+.eco-insp-box span {
+  font-size: 12.2px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.eco-json {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 11px 13px;
+  background: #080B13;
+  color: #D5E8FF;
+  font: 400 11.3px/1.55 var(--mono);
+  overflow-x: auto;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* --------------------------------------------------------------------------
+   4. Section 02 · Interactive RBAC Security & Role Views Matrix
+   -------------------------------------------------------------------------- */
+.eco-rbac-shell {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.eco-rbac-rail {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eco-rbac-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 13px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  color: var(--ink-soft);
+  transition: transform 0.22s var(--ease), background-color 0.22s, border-color 0.22s;
+}
+
+.eco-rbac-btn:hover {
+  background: color-mix(in srgb, var(--surface-2) 65%, transparent);
+  color: var(--ink);
+}
+
+.eco-rbac-btn[aria-selected="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  box-shadow: 0 10px 22px -12px var(--accent-ring);
+}
+
+.eco-rbac-btn strong {
+  display: block;
+  font: 600 13.2px/1.2 var(--ui);
+}
+
+.eco-rbac-btn small {
+  display: block;
+  font: 500 10px/1.2 var(--mono);
+  opacity: 0.78;
+  margin-top: 2px;
+}
+
+.eco-rbac-stage {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: clamp(18px, 2.4vw, 26px);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--depth-2), var(--rim-top);
+  display: grid;
+  gap: 16px;
+}
+
+.eco-rbac-stage.anim {
+  animation: ecoFadeSlide 0.28s var(--ease);
+}
+
+.rbac-stage-hd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rbac-stage-hd h3 {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.rbac-stage-hd p {
+  margin-top: 5px;
+  font-size: 13.6px;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+.rbac-cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rbac-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 13px 14px;
+  background: color-mix(in srgb, var(--surface-2) 48%, var(--paper));
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.rbac-card h4 {
+  font: 600 9.5px/1.1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.rbac-list {
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  font-size: 12.6px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.rbac-list li {
+  display: flex;
+  gap: 7px;
+  align-items: baseline;
+}
+
+.rbac-list.ok li::before { content: "✓"; color: var(--ok-dot); font-weight: 700; }
+.rbac-list.deny li::before { content: "✕"; color: var(--warn-dot); font-weight: 700; }
+
+.rbac-test-box {
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 13px 15px;
+  background: color-mix(in srgb, var(--surface-2) 55%, var(--pearl));
+  display: grid;
+  gap: 10px;
+}
+
+.rbac-test-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rbac-test-result {
+  border-radius: 10px;
+  padding: 9px 12px;
+  font: 500 12px/1.45 var(--mono);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.rbac-test-result.pass {
+  background: var(--ok-bg);
+  color: var(--ok-ink);
+  border-color: var(--ok-dot);
+}
+
+.rbac-test-result.block {
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+  border-color: var(--warn-dot);
+}
+
+/* --------------------------------------------------------------------------
+   5. Section 03 · 3D Blueprint Upgrades + Multi-Dept Pulse Counters
+   -------------------------------------------------------------------------- */
+body.page-ecosistema .pillar-h {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.bp-spine {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 240px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, #81BDF8, #D5BEFF, #FF9AFF);
+  box-shadow: 0 0 18px rgba(129, 189, 248, 0.75);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease);
+}
+
+.blueprint.exploded .bp-spine {
+  opacity: 0.9;
+  animation: ecoSpinePulse 2.4s ease-in-out infinite;
+}
+
+.bp-protocols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.bp-proto-pill {
+  font: 500 10px/1 var(--mono);
+  padding: 4px 8px;
+  border-radius: 7px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink-soft);
+}
+
+.eco-sync-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.eco-sync-stat {
+  font: 600 10.5px/1 var(--mono);
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   6. Section 04 · Interactive Before/After Contrast + Timeline
+   -------------------------------------------------------------------------- */
+.ba-interactive-wrap {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: clamp(18px, 2.4vw, 26px);
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.ba-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ba-panel {
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.ba-panel.legacy {
+  background: color-mix(in srgb, var(--warn-bg) 34%, var(--paper));
+  border-color: color-mix(in srgb, var(--warn-dot) 45%, var(--line-strong));
+}
+
+.ba-panel.zaphyrel {
+  background: color-mix(in srgb, var(--ok-bg) 38%, var(--paper));
+  border-color: color-mix(in srgb, var(--c-sky) 65%, var(--line-strong));
+}
+
+.ba-panel small {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.ba-panel h3 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.14;
+}
+
+.ba-panel p {
+  font-size: 13.4px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.ba-metric-bar {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line-strong);
+  font: 600 11.5px/1.3 var(--mono);
+  color: var(--ink);
+}
+
+.eco-phase-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.eco-phase {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 7px 8px;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+}
+
+.eco-phase small {
+  display: block;
+  font: 600 8.5px/1 var(--mono);
+  color: var(--ink-soft);
+}
+
+.eco-phase b {
+  display: block;
+  font: 500 11px/1.25 var(--ui);
+  margin-top: 2px;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Rules (Tablet & Mobile 390px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .eco-hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .eco-pipeline {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .eco-conduit {
+    height: 18px;
+    transform: rotate(90deg);
+  }
+  .eco-console {
+    grid-template-columns: 1fr;
+  }
+  .eco-rbac-shell {
+    grid-template-columns: 1fr;
+  }
+  .eco-rbac-rail {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  .eco-rbac-btn {
+    flex: 0 0 215px;
+  }
+  .rbac-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .ba-compare-grid {
+    grid-template-columns: 1fr;
+  }
+  .eco-phase-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .eco-insp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  body.page-ecosistema .page-hero {
+    padding-top: 86px;
+  }
+  .eco-hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .eco-stat {
+    padding: 10px 11px;
+  }
+  .eco-net-switch {
+    width: 100%;
+  }
+  .eco-net-btn {
+    flex: 1;
+    text-align: center;
+    padding: 7px 6px;
+    font-size: 10.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eco-fnode.lit .eco-fn-dot,
+  .eco-conduit.active .eco-conduit-flow,
+  .blueprint.exploded .bp-spine {
+    animation: none !important;
+  }
+}

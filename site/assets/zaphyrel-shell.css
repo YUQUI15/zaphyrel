@@ -85,21 +85,41 @@ button{font:inherit;color:inherit;cursor:pointer;user-select:none}
 @keyframes draw{to{stroke-dashoffset:0}}
 
 .tactile-grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--grain-op);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");mix-blend-mode:overlay}
-#prismField{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%;opacity:.92}
-.aura{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse 85% 60% at 50% -8%,rgba(129,189,248,.18),transparent 70%),radial-gradient(ellipse 75% 55% at 88% 92%,rgba(255,154,255,.14),transparent 72%)}
-[data-theme=night] .aura{background:radial-gradient(ellipse 90% 65% at 15% 12%,rgba(56,189,248,.16),transparent 65%),radial-gradient(ellipse 80% 65% at 85% 18%,rgba(167,139,250,.18),transparent 68%),radial-gradient(ellipse 85% 60% at 50% 95%,rgba(244,114,182,.14),transparent 70%),#05060C}
-.aura::before{content:"";position:absolute;inset:-25%;background:conic-gradient(from var(--prism-rot) at 62% 38%,rgba(129,189,248,.12),rgba(213,190,255,.04),rgba(255,154,255,.12),rgba(169,220,255,.04),rgba(129,189,248,.12));filter:blur(64px);animation:prismSpin 28s linear infinite;opacity:.85}
-[data-theme=night] .aura::before{opacity:.72}
-.aura i{position:absolute;border-radius:50%;filter:blur(86px);opacity:.78;animation:drift 19s var(--ease) infinite alternate;transition:background .8s var(--ease),opacity .6s}
-.aura i:nth-child(1){width:54vmax;height:54vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-sky) 88%,#fff) 0%,var(--c-ice) 44%,transparent 74%);top:-18vmax;left:-12vmax}
-.aura i:nth-child(2){width:50vmax;height:50vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-orc) 86%,#fff) 0%,var(--c-rose) 44%,transparent 74%);top:4vmax;right:-15vmax;animation-delay:-6s}
-.aura i:nth-child(3){width:48vmax;height:48vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-lav) 88%,#fff) 0%,var(--c-ice) 48%,transparent 74%);bottom:-18vmax;left:16%;animation-delay:-12s}
-[data-theme=night] .aura i{opacity:.44;filter:blur(104px)}
-@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(5vmax,3vmax) scale(1.08)}100%{transform:translate(-2vmax,4.5vmax) scale(.96)}}
-@keyframes horizonSweep{0%,100%{transform:translateY(-18%) skewY(-6deg);opacity:.26}50%{transform:translateY(24%) skewY(-4deg);opacity:.52}}
-.horizon-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,var(--line-strong) 1.15px,transparent 0),linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:68px 68px,68px 68px,68px 68px;opacity:.42;mask-image:radial-gradient(ellipse 96% 86% at 50% 35%,#000 32%,transparent 96%)}
-.horizon-grid::after{content:"";position:absolute;inset:-20% -10%;background:linear-gradient(108deg,transparent 32%,rgba(129,189,248,.11) 46%,rgba(255,154,255,.10) 54%,transparent 68%);animation:horizonSweep 16s var(--ease) infinite;pointer-events:none}
-[data-theme=night] .horizon-grid{opacity:.38}
+#prismField{position:fixed;inset:0;z-index:-2;pointer-events:none;width:100%;height:100%;opacity:1}
+.aura{position:fixed;inset:0;z-index:-4;overflow:hidden;pointer-events:none;background:
+  radial-gradient(ellipse 92% 62% at 14% 8%,rgba(129,189,248,.34),transparent 62%),
+  radial-gradient(ellipse 84% 58% at 86% 14%,rgba(213,190,255,.32),transparent 64%),
+  radial-gradient(ellipse 90% 62% at 64% 92%,rgba(255,154,255,.26),transparent 66%),
+  linear-gradient(160deg,#F7FAFF 0%,#F2F6FF 48%,#FAF5FF 100%)}
+[data-theme=night] .aura{background:
+  radial-gradient(ellipse 92% 64% at 14% 12%,rgba(56,189,248,.24),transparent 62%),
+  radial-gradient(ellipse 86% 62% at 86% 18%,rgba(167,139,250,.26),transparent 64%),
+  radial-gradient(ellipse 88% 60% at 48% 94%,rgba(244,114,182,.20),transparent 68%),
+  radial-gradient(circle at 50% 45%,rgba(14,22,42,.92) 0%,#05070E 75%),
+  #04060C}
+.aura::before{content:"";position:absolute;inset:-22%;background:conic-gradient(from var(--prism-rot) at 58% 36%,rgba(56,189,248,.20),rgba(213,190,255,.06),rgba(244,114,182,.20),rgba(129,189,248,.16),rgba(213,190,255,.06),rgba(56,189,248,.20));filter:blur(58px);animation:prismSpin 24s linear infinite;opacity:.92}
+.aura::after{content:"";position:absolute;inset:-15%;background:linear-gradient(118deg,transparent 26%,rgba(129,189,248,.18) 42%,rgba(213,190,255,.20) 50%,rgba(255,154,255,.16) 58%,transparent 74%);filter:blur(36px);animation:auroraBeam 17s var(--ease) infinite alternate;pointer-events:none;opacity:.78}
+[data-theme=night] .aura::before{opacity:.86}
+[data-theme=night] .aura::after{background:linear-gradient(118deg,transparent 24%,rgba(56,189,248,.22) 41%,rgba(168,85,247,.22) 51%,rgba(236,72,153,.18) 60%,transparent 76%);opacity:.74}
+.aura i{position:absolute;border-radius:50%;filter:blur(76px);opacity:.82;animation:drift 16s var(--ease) infinite alternate;transition:background .8s var(--ease),opacity .6s}
+.aura i:nth-child(1){width:52vmax;height:52vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-sky) 92%,#fff) 0%,rgba(129,189,248,.42) 42%,transparent 72%);top:-16vmax;left:-10vmax}
+.aura i:nth-child(2){width:48vmax;height:48vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-orc) 90%,#fff) 0%,rgba(255,154,255,.38) 42%,transparent 72%);top:2vmax;right:-14vmax;animation-delay:-5s}
+.aura i:nth-child(3){width:50vmax;height:50vmax;background:radial-gradient(circle,color-mix(in srgb,var(--c-lav) 92%,#fff) 0%,rgba(169,220,255,.38) 46%,transparent 72%);bottom:-16vmax;left:18%;animation-delay:-10s}
+[data-theme=night] .aura i{opacity:.58;filter:blur(92px)}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(6vmax,3.5vmax) scale(1.10)}100%{transform:translate(-3vmax,5vmax) scale(.94)}}
+@keyframes auroraBeam{0%{transform:translate(-6%, -4%) rotate(-2deg) scale(1)}100%{transform:translate(6%, 5%) rotate(3deg) scale(1.06)}}
+@keyframes horizonSweep{0%,100%{transform:translateY(-22%) skewY(-6deg);opacity:.32}50%{transform:translateY(26%) skewY(-4deg);opacity:.68}}
+.horizon-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:
+  radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--c-sky) 55%,var(--line-strong)) 1.5px,transparent 0),
+  linear-gradient(to right,color-mix(in srgb,var(--line) 82%,transparent) 1px,transparent 1px),
+  linear-gradient(to bottom,color-mix(in srgb,var(--line) 82%,transparent) 1px,transparent 1px),
+  linear-gradient(to right,color-mix(in srgb,var(--c-lav) 16%,transparent) 1px,transparent 1px),
+  linear-gradient(to bottom,color-mix(in srgb,var(--c-sky) 16%,transparent) 1px,transparent 1px);
+  background-size:72px 72px,36px 36px,36px 36px,144px 144px,144px 144px;
+  opacity:.58;
+  mask-image:radial-gradient(ellipse 98% 90% at 50% 38%,#000 36%,transparent 98%)}
+.horizon-grid::after{content:"";position:absolute;inset:-24% -12%;background:linear-gradient(108deg,transparent 28%,rgba(129,189,248,.16) 44%,rgba(213,190,255,.18) 50%,rgba(255,154,255,.15) 56%,transparent 72%);animation:horizonSweep 14s var(--ease) infinite;pointer-events:none}
+[data-theme=night] .horizon-grid{opacity:.52}
 
 /* Marco Prismático */
 .prism-frame{position:relative}
@@ -132,7 +152,7 @@ nav.hud-top{position:fixed;top:3px;left:0;right:0;z-index:45;display:flex;justif
 
 /* CABECERA DE PÁGINAS INTERNAS & MIGAS */
 section,header.hero,header.page-hero{scroll-margin-top:78px;max-width:100%}
-.page-hero{padding:102px clamp(16px,5vw,68px) 42px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 48%,var(--pearl)),transparent)}
+.page-hero{padding:102px clamp(16px,5vw,68px) 42px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--surface-2) 24%,transparent),transparent)}
 .page-hero .wrap{max-width:1220px;margin:0 auto}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:500 11px var(--mono);letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:16px}
 .crumbs a:hover{color:var(--ink);text-decoration:underline}
