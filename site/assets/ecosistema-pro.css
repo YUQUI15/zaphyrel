@@ -882,6 +882,29 @@ body.page-ecosistema .pillar-h {
   color: var(--ink);
 }
 
+/* Smoked Obsidian & Champagne Platinum Night Polish */
+[data-theme="night"] body.page-ecosistema .eco-stat,
+[data-theme="night"] body.page-ecosistema .eco-bus-shell,
+[data-theme="night"] body.page-ecosistema .eco-rbac-shell,
+[data-theme="night"] body.page-ecosistema .blueprint,
+[data-theme="night"] body.page-ecosistema .ba-panel,
+[data-theme="night"] body.page-ecosistema .track-card,
+[data-theme="night"] body.page-ecosistema .latam-card {
+  background: linear-gradient(155deg, rgba(22, 25, 34, 0.90) 0%, rgba(12, 14, 19, 0.96) 100%);
+  border-color: rgba(236, 207, 166, 0.22);
+}
+
+[data-theme="night"] body.page-ecosistema .eco-trace-pane,
+[data-theme="night"] body.page-ecosistema .eco-inspector-pane {
+  background: rgba(11, 13, 18, 0.86);
+  border-color: rgba(236, 207, 166, 0.18);
+}
+
+[data-theme="night"] body.page-ecosistema .eco-fnode.lit {
+  border-color: rgba(236, 207, 166, 0.45);
+  box-shadow: 0 12px 26px -14px rgba(236, 207, 166, 0.24), inset 0 1px 0 rgba(236, 207, 166, 0.20);
+}
+
 /* --------------------------------------------------------------------------
    7. Responsive Rules (Tablet & Mobile 390px)
    -------------------------------------------------------------------------- */

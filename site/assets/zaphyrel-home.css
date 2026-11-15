@@ -63,7 +63,7 @@ body.page-home .hero::before {
 [data-theme=night] body.page-home .hero::before,
 html[data-theme=night] body.page-home .hero::before {
   background:
-    radial-gradient(720px circle at var(--hx) var(--hy), rgba(129, 189, 248, 0.18), rgba(255, 154, 255, 0.10) 44%, transparent 74%);
+    radial-gradient(720px circle at var(--hx) var(--hy), rgba(236, 207, 166, 0.14), rgba(129, 189, 248, 0.11) 42%, rgba(213, 190, 255, 0.05) 62%, transparent 76%);
 }
 
 body.page-home .hero-grid {

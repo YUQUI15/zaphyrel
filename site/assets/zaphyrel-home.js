@@ -111,7 +111,7 @@
     },
     gov: {
       text: 'Comprobantes electrónicos SUNAT OSE, auditoría jerárquica y márgenes consolidados por sede.',
-      tag: 'GOBIERNO · SUNAT + QR',
+      tag: 'DIRECCIÓN · SUNAT + QR',
       explode: 24
     }
   };

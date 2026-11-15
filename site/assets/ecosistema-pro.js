@@ -11,16 +11,16 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
   /* --------------------------------------------------------------------------
-     1. Live Event Bus Scenarios (6 Core Verticals)
+     1. Live Event Bus Scenarios (8 Core Verticals + Automation)
      -------------------------------------------------------------------------- */
   const FLOW_SCENARIOS = {
     retail: {
       label: 'Retail Multi-Sede',
       txId: 'EVT-RT-8402',
       nodes: [
-        { k: '01 · SUPERFICIE WEB', t: 'E-commerce & Stock', s: 'Cliente paga recojo express', lat: '+00 ms', screen: 'Web Checkout + Stock Sede Miraflores', lock: 'Bloqueo atómico de SKU por 15 min', db: 'UPDATE stock_sedes SET reservado = reservado + 1 WHERE sku="ZPH-901"' },
+        { k: '01 · SUPERFICIE WEB', t: 'E-commerce & Stock', s: 'Cliente paga recojo express', lat: '+00 ms', screen: 'Web Checkout + Stock Sede Central', lock: 'Bloqueo atómico de SKU por 15 min', db: 'UPDATE stock_sedes SET reservado = reservado + 1 WHERE sku="ZPH-901"' },
         { k: '02 · FISCAL & PAGOS', t: 'Yape / OSE SUNAT', s: 'Validación + Boleta XML', lat: '+42 ms', screen: 'Webhook Pasarela + Motor OSE Background', lock: 'Firma digital X.509 & correlativo B001-04819', db: 'INSERT INTO comprobantes (serie, ubl, estado) VALUES ("B001", "UBL2.1", "ACEPTADO")' },
-        { k: '03 · PISO Y CAJA', t: 'Alerta a Vendedor', s: 'Alistamiento para entrega', lat: '+88 ms', screen: 'Terminal POS Caja #02 & Tablet Tienda', lock: 'Asignación PIN vendedor turno tarde', db: 'INSERT INTO despacho_picking (estado, sede) VALUES ("ARMADO", "MIRAFLORES")' },
+        { k: '03 · PISO Y CAJA', t: 'Alerta a Vendedor', s: 'Alistamiento para entrega', lat: '+88 ms', screen: 'Terminal POS Caja #02 & Tablet Tienda', lock: 'Asignación PIN vendedor turno tarde', db: 'INSERT INTO despacho_picking (estado, sede) VALUES ("ARMADO", "SEDE_CENTRAL")' },
         { k: '04 · ALMACÉN', t: 'Descuento Kardex', s: 'Salida valorizada FIFO', lat: '+132 ms', screen: 'Kardex Central Multi-Sucursal', lock: 'Costo promedio ponderado recalculado', db: 'INSERT INTO kardex_movs (tipo, cant, saldo) VALUES ("SALIDA_VTA", -1, 14)' },
         { k: '05 · DIRECCIÓN', t: 'Utilidad Neta', s: 'Margen consolidado vivo', lat: '+174 ms', screen: 'Tablero Ejecutivo Gerencia General', lock: 'Agregación read-only multi-tienda', db: 'REFRESH VIEW v_margen_sku_diario -- Δ +S/ 84.50 neto' }
       ],
@@ -52,24 +52,24 @@
       },
       offlineMsg: 'Modo Evento Sin Señal: PDA Puerta valida QR contra caché criptográfico local y comandas VIP salen directo vía router LAN interno.'
     },
-    muni: {
-      label: 'Municipalidades',
-      txId: 'EVT-MUN-2088',
+    taller: {
+      label: 'Talleres & Servicio 360°',
+      txId: 'EVT-TAL-2088',
       nodes: [
-        { k: '01 · MESA PARTES 24/7', t: 'Expediente Digital', s: 'Requisitos validados web', lat: '+00 ms', screen: 'Portal Ciudadano Web + TUPA Digital', lock: 'Validación automática de adjuntos y DNI/RUC', db: 'INSERT INTO expedientes (codigo, tupa_id, sla_h) VALUES ("EXP-2026-884", "LIC-04", 48)' },
-        { k: '02 · CARGO QR', t: 'Constancia Pública', s: 'Sello temporal verificable', lat: '+46 ms', screen: 'Visor QR Verificador & Impresora Ventanilla', lock: 'Hash oficial visible para fiscalización externa', db: 'INSERT INTO cargos_qr (exp_id, folio) VALUES ("EXP-2026-884", "QR-99182")' },
-        { k: '03 · CAMPO GPS', t: 'Inspector Móvil', s: 'Acta + foto georreferenciada', lat: '+102 ms', screen: 'App Campo Inspector Municipal', lock: 'Coordenadas GPS bloqueadas + firma táctil', db: 'INSERT INTO actas_inspeccion (exp_id, lat, lng) VALUES ("EXP-2026-884", -12.09, -77.03)' },
-        { k: '04 · SUBGERENCIA', t: 'Derivación SLA', s: 'Pase entre oficinas trazado', lat: '+148 ms', screen: 'Bandeja Operativa Subgerencia Obras/Licencias', lock: 'Contador SLA de 48h con alertas preventivas', db: 'UPDATE flujos_tupa SET area="SUBG_LICENCIAS", vto=NOW()+INTERVAL "48h"' },
-        { k: '05 · ALCALDÍA', t: 'Control Plazos', s: 'Cuellos de botella visibles', lat: '+186 ms', screen: 'Tablero Gerencia Municipal & Transparencia', lock: 'Indicador auditable de atención sin silencio admin.', db: 'REFRESH VIEW v_sla_gerencias -- Cumplimiento: 98.4%' }
+        { k: '01 · RECEPCIÓN MÓVIL', t: 'Checklist + Fotos 360°', s: 'Ingreso con evidencia inviolable', lat: '+00 ms', screen: 'Tablet Recepción Patio + Firma Cliente', lock: 'Fotos obligatorias pre-taller selladas con hora', db: 'INSERT INTO ordenes_taller (ot, placa, estado) VALUES ("OT-884", "V9X-412", "DIAGNOSTICO")' },
+        { k: '02 · PORTAL QR CLIENTE', t: 'Tracking Vivo Web', s: 'Aprobación 1-clic WhatsApp', lat: '+46 ms', screen: 'Link QR Público del Propietario + Bot WA', lock: 'Presupuesto de adicionales firmado con marca temporal', db: 'UPDATE presupuestos_ot SET aprobado_cliente=true WHERE ot="OT-884"' },
+        { k: '03 · BAHÍAS / MECÁNICOS', t: 'Tablero Monitor Taller', s: 'Timer real y solicitud piezas', lat: '+98 ms', screen: 'Monitor TV Bahías + App Técnico', lock: 'Cálculo exacto horas hombre cobrables por técnico', db: 'UPDATE bahias_estado SET tecnico_id=12, fase="REPARACION" WHERE ot="OT-884"' },
+        { k: '04 · ALMACÉN REPUESTOS', t: 'Imputación Kardex OT', s: 'Filtros y repuestos a la orden', lat: '+144 ms', screen: 'Bodega Repuestos Códigos OEM', lock: 'Descuento exacto vinculado a placa sin fugas', db: 'INSERT INTO salidas_ot (ot, sku_oem, cant) VALUES ("OT-884", "FIL-902", 1)' },
+        { k: '05 · CAJA & POSTVENTA', t: 'Factura + Retorno Km', s: 'Aviso futuro cada 5,000 km', lat: '+186 ms', screen: 'POS OSE SUNAT + Motor Retorno n8n', lock: 'Programa recordatorio automático futuro por placa', db: 'INSERT INTO postventa_jobs (placa, prox_aviso) VALUES ("V9X-412", "150_DIAS")' }
       ],
       json: {
-        event_id: 'EVT-MUN-2088',
-        expediente: 'EXP-2026-884',
-        tramite: 'LICENCIA_FUNCIONAMIENTO_IND',
-        inspeccion_gps: { validada: true, radio_m: 14 },
-        sla_restante_h: 46.2
+        event_id: 'EVT-TAL-2088',
+        orden_trabajo: 'OT-884',
+        aprobacion_whatsapp: { validada: true, canal: 'LINK_QR' },
+        repuestos_imputados: ['FIL-902', 'ACE-5W30'],
+        recordatorio_auto: '5000km_o_150dias'
       },
-      offlineMsg: 'Inspector en zona sin cobertura 4G guarda acta con fotos y GPS encriptado en dispositivo; sube automáticamente al retomar señal.'
+      offlineMsg: 'Zona de elevadores sin Wi-Fi: Técnico toma fotos de falla y solicita repuesto localmente; sincroniza apenas cruza recepción.'
     },
     rest: {
       label: 'Restaurantes KDS',
@@ -109,6 +109,43 @@
       },
       offlineMsg: 'Contingencia en sede: Enfermería y Farmacia continúan registrando atenciones y lotes localmente sin interrumpir consulta médica.'
     },
+    edu: {
+      label: 'Educación & Bib QR',
+      txId: 'EVT-EDU-3310',
+      nodes: [
+        { k: '01 · PORTAL FAMILIA', t: 'Matrícula & Pensión', s: 'Pago web + aviso WhatsApp', lat: '+00 ms', screen: 'Portal Alumno / Apoderado + Checkout', lock: 'Conciliación instantánea sin enviar captura manual', db: 'INSERT INTO pensiones_pagadas (alumno_id, cuota) VALUES (408, "MAY-2026")' },
+        { k: '02 · CARNÉ QR PUERTA', t: 'Check-In + Aviso Padre', s: 'Torno libera y notifica WA', lat: '+40 ms', screen: 'Molinete Campus QR + Webhook WhatsApp', lock: 'Anti-passback y alerta instantánea de asistencia', db: 'INSERT INTO asistencias_qr (alumno_id, hora) VALUES (408, NOW())' },
+        { k: '03 · BIBLIOTECA HÍBRIDA', t: 'Préstamo + OpenAlex', s: 'Físico QR + Repo Digital', lat: '+89 ms', screen: 'Módulo Biblioteca Excel/QR + Metadatos OpenAlex', lock: 'Separación de estante físico y fuentes abiertas seguras', db: 'UPDATE libros SET prestados = prestados + 1 WHERE qr_lomo="LIB-042"' },
+        { k: '04 · CERTIFICACIÓN', t: 'Diploma QR Verificable', s: 'Anti-adulteración en portal', lat: '+135 ms', screen: 'Generador Constancias Hash Público', lock: 'Verificación pública para empleadores en 1 segundo', db: 'INSERT INTO certificados_hash (alumno_id, folio) VALUES (408, "CERT-ZPH-26")' },
+        { k: '05 · PROMOTORÍA', t: 'Deserción & Caja', s: 'Radar mora y egresados', lat: '+175 ms', screen: 'Consola Dirección Académica', lock: 'Alertas tempranas por ausentismo consecutivo', db: 'REFRESH VIEW v_morosidad_ciclo -- Regularidad al día' }
+      ],
+      json: {
+        event_id: 'EVT-EDU-3310',
+        estudiante: 'ALUM-408',
+        puerta_qr: { autorizado: true, aviso_apoderado_wa: 'ENVIADO' },
+        biblioteca: { tipo: 'HIBRIDA_QR_OPENALEX' }
+      },
+      offlineMsg: 'Campus sin fibra: Lector de puerta y módulo de préstamo bibliotecario validan carné QR desde caché local y envían alertas WhatsApp al reconectar.'
+    },
+    logistica: {
+      label: 'Logística & Ruta POD',
+      txId: 'EVT-LOG-6405',
+      nodes: [
+        { k: '01 · WMS RACK QR', t: 'Picking Guiado', s: 'Armado bultos por pasillo', lat: '+00 ms', screen: 'App Handheld Bodega + Etiquetadora 4×6', lock: 'Verificación física SKU + rack cero cruces', db: 'UPDATE pallets_wms SET estado="CARGADO", ruta="SUR-04"' },
+        { k: '02 · SUNAT GRE', t: 'Guía Electrónica', s: 'Remitente & Transportista', lat: '+48 ms', screen: 'Motor Tráfico + SUNAT OSE', lock: 'Validación placa, brevete, SOAT y peso bruto total', db: 'INSERT INTO gre_electronicas (serie, placa) VALUES ("EG01-942", "F4M-819")' },
+        { k: '03 · APP CHOFER POD', t: 'Entrega Offline GPS', s: 'Firma + foto guía sellada', lat: '+96 ms', screen: 'App Ruta Conductor Offline', lock: 'Cierre bloqueado si falta GPS en punto o fotografía', db: 'INSERT INTO entregas_pod (gre, lat, lng, foto_ok) VALUES ("EG01-942", -17.19, -70.93, true)' },
+        { k: '04 · COMBUSTIBLE OCR', t: 'Audita Odómetro', s: 'Cruce km vs galones grifo', lat: '+140 ms', screen: 'Módulo Control Flota & Peajes', lock: 'Alerta automática ante caída anómala de rendimiento', db: 'INSERT INTO cargas_comb (placa, km, gal) VALUES ("F4M-819", 142800, 38.4)' },
+        { k: '05 · PORTAL CLIENTE B2B', t: 'Cargo Vivo & Margen', s: 'Utilidad neta por viaje', lat: '+180 ms', screen: 'Portal Descarga Cargos + BI Flotas', lock: 'Cliente descarga su guía firmada en tiempo real', db: 'REFRESH VIEW v_margen_viajes -- Rentabilidad ruta OK' }
+      ],
+      json: {
+        event_id: 'EVT-LOG-6405',
+        guia: 'EG01-942',
+        pod_gps_foto: true,
+        flota_valida_soat_citv: true,
+        km_por_galon: 'EN_RANGO'
+      },
+      offlineMsg: 'Tramo de sierra o campamento sin cobertura celular: App de ruta sella entrega con coordenadas GPS + foto en caché local y sincroniza en base.'
+    },
     inmo3d: {
       label: 'Inmobiliaria 3D & QR',
       txId: 'EVT-3D-7720',
@@ -136,19 +173,19 @@
   const RBAC_ROLES = [
     {
       id: 'cliente',
-      name: 'Cliente Web / Ciudadano',
+      name: 'Cliente Web / Apoderado / B2B',
       tag: 'Superficie Pública · Lectura Acotada',
-      token: 'Sesión JWT Anónima / Verificador QR Público',
-      desc: 'Interactúa con disponibilidad real, cartas, maquetas WebGL 3D, pagos y seguimiento de pedidos o expedientes sin acceder jamás a lógica o costos internos.',
+      token: 'Sesión JWT / Verificador QR Público',
+      desc: 'Interactúa con disponibilidad real, cartas, maquetas WebGL 3D, tracker de taller, reservas y seguimiento QR sin acceder jamás a costos o márgenes internos.',
       allowed: [
-        'Consultar stock, mesas, habitaciones o unidades 3D reales en vivo',
-        'Pagar checkout con Yape / Plin / Tarjeta o ingresar expediente TUPA',
-        'Descargar comprobante XML/PDF y rastrear cargo con código QR'
+        'Consultar stock, mesas, habitaciones, turnos o unidades 3D reales en vivo',
+        'Pagar checkout con Yape / Plin / Tarjeta o aprobar presupuestos de taller',
+        'Descargar comprobante XML/PDF, certificado o tracking con código QR'
       ],
       blocked: [
         'Costos de compra, márgenes por producto o utilidades del negocio',
         'Datos de otros clientes, planilla interna o movimientos de almacén',
-        'Edición directa de precios, inventarios o estados de expediente'
+        'Edición directa de precios, inventarios o registros de auditoría'
       ],
       rule: 'Aislamiento estricto por API Gateway público con rate-limiting, firma HMAC en enlaces QR y consultas parametrizadas de solo lectura sobre vistas públicas.',
       tests: [
@@ -180,14 +217,14 @@
     },
     {
       id: 'operador',
-      name: 'Cocina KDS / Bodega / Inspector',
+      name: 'Cocina KDS / Bodega / Técnico / Ruta',
       tag: 'Nivel 02 · Ejecución Interna y Campo',
       token: 'Dispositivo Vinculado + Bitácora por Puesto',
-      desc: 'Pantallas táctiles dedicadas a preparación, conteos de almacén, dispensación FEFO o actas georreferenciadas en campo sin distracciones de caja.',
+      desc: 'Pantallas dedicadas y apps móviles offline para cocina, bodega WMS, mecánicos de bahía, médicos o choferes en reparto sin distracciones contables.',
       allowed: [
-        'Marcar estados de comandas KDS por estación o preparar picking de tienda',
-        'Registrar ingresos de mercadería, transferencias entre locales y lotes FEFO',
-        'Levantar actas GPS en calle con firma y evidencia fotográfica offline'
+        'Marcar estados de comandas KDS por estación o preparar picking WMS',
+        'Registrar ingresos de mercadería (o foto OCR), transferencias y lotes FEFO',
+        'Capturar fotos de ingreso de taller o firma POD GPS de reparto en ruta sin señal'
       ],
       blocked: [
         'Acceso a flujos de caja, montos recaudados del día o emisión fiscal',
@@ -224,8 +261,8 @@
     },
     {
       id: 'gerencia',
-      name: 'Gerencia General / Alcaldía',
-      tag: 'Nivel 04 · Gobierno Total Multi-Sede',
+      name: 'Gerencia General / Directorio',
+      tag: 'Nivel 04 · Dirección Total Multi-Sede',
       token: 'MFA + Llave Maestra de Consolidado Ejecutivo',
       desc: 'Visión panorámica en tiempo real de todas las sedes, utilidad neta descontando costos reales, flujo de caja consolidado y alertas antifraude sin esperar reportes manuales.',
       allowed: [
@@ -281,13 +318,33 @@
     },
     {
       id: 'auditoria',
-      tab: 'Fiscalización & Trazabilidad',
-      legacyTitle: 'Expedientes perdidos, QR clonados o SUNAT fuera de línea',
-      legacyDesc: 'Boletas emitidas manualmente en portal externo al final del día y ciudadanos o inspectores llamando para saber en qué área está su trámite.',
-      legacyStat: '⚠ Demora administrativa y doble digitación fiscal',
-      zaphyTitle: 'SUNAT UBL 2.1 nativo + Inspector QR + Cola Offline',
-      zaphyDesc: 'Comprobantes XML firmados en el acto de venta, inspectores con actas GPS en campo y cola local encriptada IndexedDB si se corta la red.',
-      zaphyStat: '✓ Continuidad 100% ante cortes de red · TUPA en vivo'
+      tab: 'Fiscal, Ruta & Offline',
+      legacyTitle: 'Digitación doble SUNAT, entregas sin prueba y caídas de red',
+      legacyDesc: 'Boletas pasadas a mano al portal al cierre del día, choferes enviando fotos sueltas al WhatsApp personal y ventas detenidas si cae la fibra.',
+      legacyStat: '⚠ Demora tributaria, reclamos sin sustento y colas congeladas',
+      zaphyTitle: 'SUNAT UBL 2.1 nativo + POD GPS + Cola Offline IndexedDB',
+      zaphyDesc: 'Comprobantes XML y Guías Electrónicas firmadas al instante, app de reparto con foto/firma geolocalizada y operación local ininterrumpida ante cortes.',
+      zaphyStat: '✓ Continuidad 100% ante cortes · Evidencia GPS & XML'
+    },
+    {
+      id: 'bots',
+      tab: 'Bots WhatsApp, n8n & OCR',
+      legacyTitle: 'Horas digitando facturas en Excel y cobros olvidados a mano',
+      legacyDesc: 'Asistentes tipeando factura por factura del mayorista, pacientes plantando citas médicas y renovaciones vencidas porque nadie escribió a tiempo.',
+      legacyStat: '⚠ Horas operativas perdidas y fuga silenciosa de clientes',
+      zaphyTitle: 'Lectura OCR de Facturas + Flujos n8n & WhatsApp 24/7',
+      zaphyDesc: 'Foto de factura convierte ítems directo a borrador de Kardex; bots recuerdan citas, vacunas, mantenimientos o cuotas y rellenan huecos vacíos.',
+      zaphyStat: '✓ Sistema autónomo trabajando 24/7 con alertas al dueño'
+    },
+    {
+      id: 'acceso',
+      tab: 'Torniquetes, Taller & Clientes 24/7',
+      legacyTitle: 'Socios debiendo en molinete o clientes llamando por estado',
+      legacyDesc: 'Recepción frenando manualmente socios en mora, clientes llamando cada 2 horas al taller o estudio contable pidiendo estados de cuenta por chat.',
+      legacyStat: '⚠ Fricción en recepción y saturación de llamadas urgentes',
+      zaphyTitle: 'Validación QR Instantánea + Portal Auto-Servicio en Vivo',
+      zaphyDesc: 'El torniquete valida vigencia en 120 ms, y clientes ven su vehículo en taller, sus PDT/boletas o su entrega en ruta por un enlace QR seguro.',
+      zaphyStat: '✓ Cero colas repetitivas · Confianza en tiempo real'
     }
   ];
 
@@ -530,7 +587,7 @@
      -------------------------------------------------------------------------- */
   const BP_PROTOS = {
     all: ['PostgreSQL ACID', 'WebSocket Pub/Sub', 'SUNAT UBL 2.1', 'IndexedDB Cola Local'],
-    l4: ['WebGL 3D Browser', 'E-commerce Checkout', 'Portal TUPA 24/7', 'QR Wallet Pass'],
+    l4: ['WebGL 3D Browser', 'E-commerce Checkout', 'Portal Cliente & QR 24/7', 'QR Wallet Pass'],
     l3: ['ESC/POS 80mm LAN', 'Lector USB / PDA 2D', 'Cocina KDS WebSocket', 'Arqueo Ciego PIN'],
     l2: ['Kardex FIFO / FEFO', 'Escandallo Recetas', 'Actas Campo GPS', 'Inventarios Tragos'],
     l1: ['OSE Certificado X.509', 'Conciliación Yape/POS', 'P&L Multi-Sede', 'Bitácora Append-Only']

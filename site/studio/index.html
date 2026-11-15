@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Studio OS — ZAPHYREL | 12 Núcleos Operativos Conectados y Showroom 3D en Vivo</title>
-<meta name="description" content="Prueba en vivo los 12 sistemas conectados de Zaphyrel: Tiendas Retail, Discotecas QR y Barra, Municipalidades, Restaurante POS, Showroom WebGL 3D, Hotel PMS, Clínica, Almacén y Cuentas.">
+<meta name="description" content="Prueba en vivo los 12 sistemas conectados de Zaphyrel: Tiendas Retail, Discotecas QR y Barra, Talleres y Flotas 360°, Restaurante POS, Showroom WebGL 3D, Hotel PMS, Clínica, Almacén y Cuentas.">
 <meta name="theme-color" id="metaTheme" content="#FFFFFF">
 <link rel="canonical" href="https://zaphyrel-site.vercel.app/studio/">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -71,7 +71,7 @@
     <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
     <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
     <a href="../studio/" data-nav="studio">Studio OS</a>
-    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../casos/" data-nav="casos">Proyectos</a>
     <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
   </div>
 
@@ -89,7 +89,7 @@
   <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
   <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
   <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
-  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../casos/"><span>Proyectos &amp; Demos</span><span>→</span></a>
   <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
   <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
 </div>
@@ -102,7 +102,7 @@
     </nav>
     <p class="eyebrow">12 Núcleos Operativos Conectados + Visor WebGL 3D</p>
     <h1>Prueba el software funcionando <em>antes</em> de contratarlo</h1>
-    <p class="lead">Cada módulo aquí está conectado al <b>Libro Global en vivo</b> y al simulador <b>Offline-First</b>. Escanea un producto de tienda, detecta un QR duplicado en discoteca, radica un expediente municipal o inspecciona la maqueta 3D.</p>
+    <p class="lead">Cada módulo aquí está conectado al <b>Libro Global en vivo</b> y al simulador <b>Offline-First</b>. Escanea un producto de tienda, detecta un QR duplicado en discoteca, abre una orden de taller con trazabilidad o inspecciona la maqueta 3D.</p>
   </div>
 </header>
 
@@ -153,13 +153,13 @@
       <div class="lab-cockpit">
         <aside class="os-rail" aria-label="Módulos de Studio OS">
           <div class="os-rail-hd"><span>NÚCLEOS CONECTADOS (12)</span><span class="badge ok" id="cntSyncBadge">5 movs</span></div>
-          <input class="rail-search" id="railFilter" type="search" placeholder="Filtrar sistema (ej. Tienda, Muni, 3D)…" aria-label="Filtrar sistemas">
+          <input class="rail-search" id="railFilter" type="search" placeholder="Filtrar sistema (ej. Tienda, Taller, 3D)…" aria-label="Filtrar sistemas">
           <div class="tabs" role="tablist" aria-orientation="vertical">
-            <span class="rail-cat">Comercio &amp; Ciudad</span>
+            <span class="rail-cat">Comercio &amp; Operaciones</span>
             <button class="tab" type="button" role="tab" aria-selected="true" aria-controls="p-table" data-t="table"><span><i class="sync-dot"></i>Restaurante POS</span><span>01</span></button>
             <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-retail" data-t="retail"><span><i class="sync-dot"></i>Tiendas &amp; Retail</span><span>02</span></button>
             <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-club" data-t="club"><span><i class="sync-dot"></i>Discotecas &amp; QR</span><span>03</span></button>
-            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-muni" data-t="muni"><span><i class="sync-dot"></i>Municipalidades</span><span>04</span></button>
+            <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-taller" data-t="taller"><span><i class="sync-dot"></i>Talleres &amp; Servicio</span><span>04</span></button>
 
             <span class="rail-cat">Entornos 3D &amp; Web</span>
             <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="p-show3d" data-t="show3d"><span><i class="sync-dot"></i>Showroom 3D / 360°</span><span>05</span></button>
@@ -269,27 +269,27 @@
               </div>
             </div>
 
-            <!-- 04. MUNICIPALIDADES & ENTIDADES -->
-            <div class="panel-demo" id="p-muni" role="tabpanel">
+            <!-- 04. TALLERES, SERVICIO TÉCNICO & FLOTAS -->
+            <div class="panel-demo" id="p-taller" role="tabpanel">
               <div class="app">
-                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">MESA DE PARTES + INSPECTOR QR</span></div>
+                <div class="app-h"><div class="biz-wrap"><span class="dot"></span><span class="biz">Tu negocio</span></div><span class="pw">ÓRDENES DE TRABAJO + CHECKLIST QR</span></div>
                 <div class="app-b"><div class="cols">
                   <div class="col">
-                    <h4><span>Ventanilla Digital / Ciudadano</span><span class="badge ok">Cargo Automático</span></h4>
-                    <form id="muniForm" style="display:grid;gap:8px">
-                      <input class="field-in" id="muniTitle" type="text" placeholder="Ej. Licencia Cafetería Av. Arequipa 410" required>
-                      <select class="field-in" id="muniArea" aria-label="Subgerencia destino">
-                        <option>Fiscalización Campo</option>
-                        <option>Desarrollo Económico</option>
-                        <option>Obras Privadas</option>
+                    <h4><span>Recepción &amp; Diagnóstico</span><span class="badge ok">Ticket QR Automático</span></h4>
+                    <form id="tallerForm" style="display:grid;gap:8px">
+                      <input class="field-in" id="tallerTitle" type="text" placeholder="Ej. Placa ABC-410 · Mantenimiento 40K km" required>
+                      <select class="field-in" id="tallerArea" aria-label="Bahía de trabajo asignada">
+                        <option>Mecánica &amp; Diagnóstico</option>
+                        <option>Laboratorio Electrónico</option>
+                        <option>Repuestos &amp; Control Calidad</option>
                       </select>
-                      <button class="btn pri" type="submit">Radicar Expediente + Generar QR</button>
+                      <button class="btn pri" type="submit">Abrir Orden + Generar QR Cliente</button>
                     </form>
-                    <div id="muniQrOut"></div>
+                    <div id="tallerQrOut"></div>
                   </div>
                   <div class="col">
-                    <h4><span>Trazabilidad Interna &amp; App Inspector</span><span class="badge">Toca para avanzar</span></h4>
-                    <div id="muniList"></div>
+                    <h4><span>Bahía Activa &amp; Seguimiento Vivo</span><span class="badge">Toca para avanzar</span></h4>
+                    <div id="tallerList"></div>
                   </div>
                 </div></div>
               </div>
@@ -359,7 +359,7 @@
                     <div class="menu" id="shopGrid"></div>
                     <div class="chips" id="shipChips" style="margin-top:10px">
                       <button class="chip on" type="button" data-s="0">Recojo tienda S/ 0</button>
-                      <button class="chip" type="button" data-s="15">Delivery Arequipa S/ 15</button>
+                      <button class="chip" type="button" data-s="15">Delivery Local S/ 15</button>
                       <button class="chip" type="button" data-s="28">Provincia S/ 28</button>
                     </div>
                     <div style="display:grid;grid-template-columns:1fr auto;gap:6px">
@@ -586,14 +586,14 @@
       <a href="../sectores/">Rubros y Cobertura Total</a>
       <a href="../ecosistema/">Web + Operación Interna</a>
       <a href="../studio/">Plataforma Studio OS</a>
-      <a href="../casos/">Casos Implementados</a>
+      <a href="../casos/">Proyectos &amp; Demos</a>
       <a href="../marca/">Identidad de Marca (Kit &amp; 3D)</a>
     </div>
     <div class="ft-col">
       <h4>Especialidades Verticales</h4>
       <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
       <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
-      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../studio/?mod=taller">Talleres, Flotas &amp; Órdenes</a>
       <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
     </div>
     <div class="ft-col">
@@ -611,7 +611,7 @@
 </footer>
 
 <div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
-  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a 16+ Rubros, Talleres, Discotecas, Studio OS, Proyectos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
 </div>
 
 <audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>

@@ -19,7 +19,7 @@
     table: 'Restaurante POS',
     retail: 'Tiendas & Cadenas Retail',
     club: 'Discotecas, Puerta QR & Barra',
-    muni: 'Municipalidades & Ventanilla QR',
+    taller: 'Talleres, Servicio Técnico & Flotas QR',
     show3d: 'Showroom 3D / 360°',
     shop: 'Catálogo Web & WhatsApp',
     stay: 'Hotel PMS & 360°',
@@ -107,7 +107,7 @@
     { t: 'in', c: 'Discoteca · Box VIP + Botella', a: 340 },
     { t: 'in', c: 'Gimnasio · Renovación trimestral', a: 240 },
     { t: 'in', c: 'Restaurante · Mesa 4 (Yape)', a: 100 },
-    { t: 'in', c: 'Muni · Derecho Licencia QR', a: 75 },
+    { t: 'in', c: 'Taller · Orden Diagnóstico QR', a: 75 },
     { t: 'out', c: 'Compra insumos (Kardex)', a: 285 }
   ];
 
@@ -340,39 +340,39 @@
     toast(`Barra: ${d.n} (+S/ ${d.p}) · Kardex barra actualizado`);
   });
 
-  /* ---------- 12. NUEVO: MUNICIPALIDADES & GESTIÓN PÚBLICA ---------- */
-  const muniDocs = [
-    { exp: 'EXP-2026-0418', title: 'Licencia Funcionamiento Comercial', area: 'Desarrollo Económico', st: 'En revisión técnica', fee: 145 },
-    { exp: 'EXP-2026-0419', title: 'Inspección ITSE Defensa Civil', area: 'Fiscalización Campo', st: 'Inspector en ruta QR', fee: 190 },
-    { exp: 'EXP-2026-0415', title: 'Conformidad Obra Menor', area: 'Obras Privadas', st: 'Aprobado · QR emitido', fee: 220 }
+  /* ---------- 12. TALLERES, SERVICIO TÉCNICO & FLOTAS ---------- */
+  const tallerOrders = [
+    { ot: 'OT-2026-0418', title: 'Toyota Hilux · Frenos & Escáner ECU', area: 'Mecánica & Diagnóstico', st: 'En diagnóstico bahía', fee: 145 },
+    { ot: 'OT-2026-0419', title: 'MacBook Pro M3 · Reballing Placa', area: 'Laboratorio Electrónico', st: 'Repuesto asignado QR', fee: 190 },
+    { ot: 'OT-2026-0415', title: 'Camión NQR · Calibración Inyectores', area: 'Repuestos & Control Calidad', st: 'Listo · QR entrega', fee: 220 }
   ];
-  const muniFlowSteps = ['Mesa de Partes', 'En revisión técnica', 'Inspector en ruta QR', 'Aprobado · QR emitido'];
-  function drawMuni() {
-    if (!$('#muniList')) return;
-    $('#muniList').innerHTML = muniDocs.map((d, i) => `<div class="ticket" style="cursor:pointer" data-i="${i}" role="button" tabindex="0"><div class="th"><span>${d.exp} · ${esc(d.area.toUpperCase())}</span><span class="st ${d.st.startsWith('Aprobado') ? 'done' : 'cook'}">${esc(d.st)}</span></div><div class="it"><span>${esc(d.title)}</span><span style="font-size:11px">Avanzar etapa →</span></div></div>`).join('');
+  const tallerFlowSteps = ['Recepción & Fotos', 'En diagnóstico bahía', 'Repuesto asignado QR', 'Listo · QR entrega'];
+  function drawTaller() {
+    if (!$('#tallerList')) return;
+    $('#tallerList').innerHTML = tallerOrders.map((d, i) => `<div class="ticket" style="cursor:pointer" data-i="${i}" role="button" tabindex="0"><div class="th"><span>${d.ot} · ${esc(d.area.toUpperCase())}</span><span class="st ${d.st.startsWith('Listo') ? 'done' : 'cook'}">${esc(d.st)}</span></div><div class="it"><span>${esc(d.title)}</span><span style="font-size:11px">Avanzar etapa →</span></div></div>`).join('');
   }
-  drawMuni();
-  $('#muniForm')?.addEventListener('submit', e => {
+  drawTaller();
+  $('#tallerForm')?.addEventListener('submit', e => {
     e.preventDefault();
-    const title = $('#muniTitle')?.value.trim() || 'Licencia Comercial / TUPA';
-    const area = $('#muniArea')?.value || 'Fiscalización Campo';
-    const fee = area === 'Obras Privadas' ? 220 : area === 'Fiscalización Campo' ? 190 : 120;
-    const exp = 'EXP-2026-' + String(Math.floor(420 + Math.random() * 500)).padStart(4, '0');
-    muniDocs.unshift({ exp, title, area, st: 'Mesa de Partes', fee });
-    if ($('#muniTitle')) $('#muniTitle').value = '';
-    drawMuni();
-    pushCrossLedger(`Muni · ${exp} (${area})`, fee);
-    $('#muniQrOut').innerHTML = `<div class="boleta"><b>CARGO ELECTRÓNICO ${exp}</b><br>Trámite: ${esc(title)} · Derivado a: <b>${esc(area)}</b> · QR verificable activo para ciudadano e inspector.</div>`;
-    toast(`Expediente ${exp} radicado y derivado`);
+    const title = $('#tallerTitle')?.value.trim() || 'Orden Servicio / Diagnóstico';
+    const area = $('#tallerArea')?.value || 'Mecánica & Diagnóstico';
+    const fee = area.includes('Calidad') ? 220 : area.includes('Laboratorio') ? 190 : 120;
+    const ot = 'OT-2026-' + String(Math.floor(420 + Math.random() * 500)).padStart(4, '0');
+    tallerOrders.unshift({ ot, title, area, st: 'Recepción & Fotos', fee });
+    if ($('#tallerTitle')) $('#tallerTitle').value = '';
+    drawTaller();
+    pushCrossLedger(`Taller · ${ot} (${area})`, fee);
+    $('#tallerQrOut').innerHTML = `<div class="boleta"><b>ORDEN DIGITAL ${ot}</b><br>Trabajo: ${esc(title)} · Bahía: <b>${esc(area)}</b> · QR activo para seguimiento vivo por WhatsApp.</div>`;
+    toast(`Orden ${ot} abierta y enviada a bahía`);
   });
-  $('#muniList')?.addEventListener('click', e => {
+  $('#tallerList')?.addEventListener('click', e => {
     const t = e.target.closest('[data-i]'); if (!t) return;
-    const d = muniDocs[+t.dataset.i];
-    const nxt = (muniFlowSteps.indexOf(d.st) + 1) % muniFlowSteps.length;
-    d.st = muniFlowSteps[nxt];
-    drawMuni();
-    $('#muniQrOut').innerHTML = `<div class="boleta"><b>VERIFICACIÓN QR · ${d.exp}</b><br>Área: ${esc(d.area)} · Estado actual: <b>${esc(d.st)}</b></div>`;
-    toast(`${d.exp} → ${d.st}`);
+    const d = tallerOrders[+t.dataset.i];
+    const nxt = (tallerFlowSteps.indexOf(d.st) + 1) % tallerFlowSteps.length;
+    d.st = tallerFlowSteps[nxt];
+    drawTaller();
+    $('#tallerQrOut').innerHTML = `<div class="boleta"><b>SEGUIMIENTO QR · ${d.ot}</b><br>Bahía: ${esc(d.area)} · Estado actual: <b>${esc(d.st)}</b></div>`;
+    toast(`${d.ot} → ${d.st}`);
   });
 
   /* ---------- 2. GIMNASIO QR ---------- */

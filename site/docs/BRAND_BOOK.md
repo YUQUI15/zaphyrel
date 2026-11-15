@@ -71,7 +71,7 @@ Entregados en **SVG**, **PNG transparente**, **PNG con fondo sólido** y **JPG a
 2. `EL PULSO EXACTO DE TU EMPRESA` *(Alta gama para portadas y videos de marca).*
 3. `ESTRUCTURA VIVA · CONTROL REAL` *(Dualidad entre orden estructural interno y flujo operativo en tiempo real).*
 4. `DONDE CADA ÁREA ENCAJA` *(Comunica directamente el enlace de empleados, almacén, caja y dirección).*
-5. `INGENIERÍA DE ORDEN VIVO` *(Sobria y diferenciada para municipalidades, clínicas y corporativos).*
+5. `INGENIERÍA DE ORDEN VIVO` *(Sobria y diferenciada para clínicas, retail, logística y corporativos).*
 
 ---
 

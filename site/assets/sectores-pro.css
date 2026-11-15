@@ -265,7 +265,16 @@ body.page-sectores .page-hero .lead {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  max-height: 780px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(129, 189, 248, 0.28) transparent;
 }
+.atlas-rail::-webkit-scrollbar { width: 6px; }
+.atlas-rail::-webkit-scrollbar-track { background: transparent; }
+.atlas-rail::-webkit-scrollbar-thumb { background: rgba(129, 189, 248, 0.28); border-radius: 99px; }
+[data-theme="night"] body.page-sectores .atlas-rail { scrollbar-color: rgba(236, 207, 166, 0.28) rgba(8, 9, 12, 0.4); }
+[data-theme="night"] body.page-sectores .atlas-rail::-webkit-scrollbar-thumb { background: rgba(236, 207, 166, 0.28); }
 
 .atlas-rail-hd {
   font: 600 9.5px/1 var(--mono);
@@ -919,15 +928,313 @@ body.page-sectores .sector-card h3 {
 }
 
 /* --------------------------------------------------------------------------
+   5B. Multi-Surface Platform Switcher & Non-Obvious Innovations Grid
+   -------------------------------------------------------------------------- */
+.plat-engine-sec {
+  padding-top: 22px;
+  padding-bottom: 14px;
+}
+
+.plat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.plat-tab-btn {
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  color: var(--ink-soft);
+  border-radius: 13px;
+  padding: 9px 14px;
+  font: 500 12.5px/1.2 var(--ui);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--rim-top);
+  transition: transform 0.22s var(--ease), border-color 0.22s var(--ease), background-color 0.22s;
+}
+
+.plat-tab-btn small {
+  font: 600 9.5px/1 var(--mono);
+  opacity: 0.72;
+  letter-spacing: 0.08em;
+}
+
+.plat-tab-btn:hover {
+  color: var(--ink);
+  border-color: var(--c-sky);
+  transform: translateY(-1px);
+}
+
+.plat-tab-btn[aria-selected="true"] {
+  background: var(--prism-h);
+  color: #06070B;
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 12px 26px -12px var(--accent-ring);
+}
+
+.plat-stage {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: clamp(18px, 2.2vw, 24px);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--depth-1), var(--rim-top);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px 24px;
+  align-items: start;
+}
+
+.plat-stage.anim {
+  animation: secPanelIn 0.28s var(--ease);
+}
+
+.plat-copy small {
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.plat-copy h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(23px, 2.2vw, 30px);
+  line-height: 1.12;
+  margin: 6px 0 8px;
+  color: var(--ink);
+}
+
+.plat-copy p {
+  font-size: 13.8px;
+  line-height: 1.56;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.plat-stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.plat-stack-pills span {
+  font: 500 10.5px/1 var(--mono);
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--surface-2) 60%, var(--paper));
+  color: var(--ink);
+}
+
+.plat-bullets {
+  display: grid;
+  gap: 8px;
+}
+
+.plat-bullet-item {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 11px 13px;
+  background: color-mix(in srgb, var(--surface-2) 48%, var(--pearl));
+  display: grid;
+  gap: 3px;
+}
+
+.plat-bullet-item b {
+  font: 600 12.8px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.plat-bullet-item span {
+  font-size: 12.4px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* Atlas Non-Obvious Innovations Showcase */
+.atlas-inno-block {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.atlas-inno-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.atlas-inno-head small {
+  font: 600 10px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.atlas-plat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.plat-badge {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  border-radius: 99px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--c-sky) 14%, var(--paper));
+  color: var(--ink);
+}
+
+.atlas-inno-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.atlas-inno-card {
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: color-mix(in srgb, var(--surface-2) 52%, var(--paper));
+  box-shadow: var(--rim-top);
+  display: grid;
+  gap: 5px;
+  transition: transform 0.22s var(--ease), border-color 0.22s;
+}
+
+.atlas-inno-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-orc);
+}
+
+.atlas-inno-card small {
+  font: 600 9px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-sky);
+}
+
+[data-theme="day"] .atlas-inno-card small {
+  color: #374151;
+}
+
+[data-theme="night"] .atlas-inno-card small {
+  color: var(--gold, #ECCFA6);
+}
+
+.atlas-inno-card b {
+  font: 600 13px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.atlas-inno-card span {
+  font-size: 12.2px;
+  line-height: 1.46;
+  color: var(--ink-soft);
+}
+
+/* Bento Card Platform Row & Wow Action Strip */
+.sc-plat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.sc-inno-strip {
+  border: 1px dashed var(--line-strong);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--accent-soft) 50%, var(--paper));
+  display: grid;
+  gap: 5px;
+}
+
+.sc-inno-strip-hd {
+  font: 600 9.5px/1 var(--mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.sc-inno-next {
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 99px;
+  padding: 2px 8px;
+  font: 600 9.5px/1.2 var(--mono);
+}
+
+.sc-inno-next:hover {
+  border-color: var(--c-orc);
+}
+
+.sc-inno-strip b {
+  font: 600 12.6px/1.25 var(--ui);
+  color: var(--ink);
+}
+
+.sc-inno-strip span {
+  font-size: 12px;
+  line-height: 1.44;
+  color: var(--ink-soft);
+}
+
+/* Smoked Obsidian & Champagne Platinum Night Polish */
+[data-theme="night"] body.page-sectores .sec-stat,
+[data-theme="night"] body.page-sectores .sec-command-dock,
+[data-theme="night"] body.page-sectores .plat-stage,
+[data-theme="night"] body.page-sectores .atlas-rail,
+[data-theme="night"] body.page-sectores .atlas-stage,
+[data-theme="night"] body.page-sectores .sector-card,
+[data-theme="night"] body.page-sectores .hier-card-left {
+  background: linear-gradient(155deg, rgba(22, 25, 34, 0.90) 0%, rgba(12, 14, 19, 0.96) 100%);
+  border-color: rgba(236, 207, 166, 0.22);
+}
+
+[data-theme="night"] body.page-sectores .plat-badge {
+  background: rgba(236, 207, 166, 0.12);
+  border-color: rgba(236, 207, 166, 0.28);
+  color: #F6ECE0;
+}
+
+[data-theme="night"] body.page-sectores .sc-inno-strip {
+  background: rgba(236, 207, 166, 0.06);
+  border-color: rgba(236, 207, 166, 0.26);
+}
+
+/* --------------------------------------------------------------------------
    6. Responsive Rules (Tablet & Mobile 390px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
+  .plat-stage {
+    grid-template-columns: 1fr;
+  }
+  .atlas-inno-grid {
+    grid-template-columns: 1fr;
+  }
   .atlas-shell {
     grid-template-columns: 1fr;
   }
   .atlas-rail {
     flex-direction: row;
     overflow-x: auto;
+    max-height: none;
     padding: 10px;
     gap: 8px;
     scrollbar-width: thin;

@@ -96,7 +96,7 @@
       b.textContent = n ? '☀ Día' : '☾ Noche';
     }
     const meta = $('#metaTheme');
-    if (meta) meta.content = n ? '#05060A' : '#FFFFFF';
+    if (meta) meta.content = n ? '#08090C' : '#FFFFFF';
     applyPalette(activePal, false);
     window.dispatchEvent(new CustomEvent('zaphyrel:theme', { detail: { night: n } }));
   }
@@ -116,7 +116,7 @@
     const ctx = cv.getContext('2d');
     let W = innerWidth, H = innerHeight, t = 0, raf = null, lastMs = 0;
     let mx = -9999, my = -9999, smoothScroll = scrollY;
-    const cols = ['129,189,248', '169,220,255', '213,190,255', '255,213,255', '255,154,255'];
+    const cols = ['236,207,166', '129,189,248', '169,220,255', '213,190,255', '255,154,255'];
     const dayCols = ['37,99,235', '79,70,229', '147,51,234', '219,39,119', '14,165,233'];
 
     const isMob = () => W < 680;
@@ -154,9 +154,9 @@
 
     function drawAuroraWaves(n, sy) {
       const waves = [
-        { yBase: H * 0.28, amp: 44, freq: 0.0022, speed: 1.0, c1: n ? 'rgba(56,189,248,0.13)' : 'rgba(59,130,246,0.12)', c2: n ? 'rgba(167,139,250,0.08)' : 'rgba(147,51,234,0.08)' },
-        { yBase: H * 0.56, amp: 56, freq: 0.0018, speed: -0.78, c1: n ? 'rgba(213,190,255,0.12)' : 'rgba(124,58,237,0.10)', c2: n ? 'rgba(244,114,182,0.09)' : 'rgba(219,39,119,0.09)' },
-        { yBase: H * 0.80, amp: 38, freq: 0.0025, speed: 0.62, c1: n ? 'rgba(129,189,248,0.10)' : 'rgba(14,165,233,0.10)', c2: n ? 'rgba(255,154,255,0.11)' : 'rgba(236,72,153,0.08)' }
+        { yBase: H * 0.28, amp: 44, freq: 0.0022, speed: 1.0, c1: n ? 'rgba(236,207,166,0.14)' : 'rgba(59,130,246,0.12)', c2: n ? 'rgba(129,189,248,0.10)' : 'rgba(147,51,234,0.08)' },
+        { yBase: H * 0.56, amp: 56, freq: 0.0018, speed: -0.78, c1: n ? 'rgba(169,220,255,0.12)' : 'rgba(124,58,237,0.10)', c2: n ? 'rgba(213,190,255,0.10)' : 'rgba(219,39,119,0.09)' },
+        { yBase: H * 0.80, amp: 38, freq: 0.0025, speed: 0.62, c1: n ? 'rgba(236,207,166,0.11)' : 'rgba(14,165,233,0.10)', c2: n ? 'rgba(255,154,255,0.10)' : 'rgba(236,72,153,0.08)' }
       ];
       const step = Math.max(48, Math.floor(W / 18));
       waves.forEach((w, wi) => {
@@ -256,11 +256,11 @@
       // 2) Dual orbital telemetry rings with luminous arcs
       ctx.save();
       ctx.lineWidth = 1.15;
-      ctx.strokeStyle = n ? 'rgba(169,220,255,0.16)' : 'rgba(59,130,246,0.18)';
+      ctx.strokeStyle = n ? 'rgba(236,207,166,0.18)' : 'rgba(59,130,246,0.18)';
       ctx.beginPath();
       ctx.arc(W * 0.78, H * 0.34 - parallaxY * 0.16, Math.min(W, H) * 0.32, t, t + Math.PI * 1.25);
       ctx.stroke();
-      ctx.strokeStyle = n ? 'rgba(255,154,255,0.14)' : 'rgba(147,51,234,0.15)';
+      ctx.strokeStyle = n ? 'rgba(169,220,255,0.15)' : 'rgba(147,51,234,0.15)';
       ctx.beginPath();
       ctx.arc(W * 0.20, H * 0.68 + parallaxY * 0.11, Math.min(W, H) * 0.25, -t * 1.2, -t * 1.2 + Math.PI * 1.05);
       ctx.stroke();
@@ -272,13 +272,13 @@
 
       // 4) Pointer radial magnetic lens halo
       if (!isMob() && mx > -100) {
-        const rg = ctx.createRadialGradient(mx, my, 4, mx, my, 170);
-        rg.addColorStop(0, n ? 'rgba(169,220,255,0.12)' : 'rgba(59,130,246,0.08)');
-        rg.addColorStop(0.55, n ? 'rgba(213,190,255,0.05)' : 'rgba(147,51,234,0.04)');
+        const rg = ctx.createRadialGradient(mx, my, 4, mx, my, 175);
+        rg.addColorStop(0, n ? 'rgba(236,207,166,0.13)' : 'rgba(59,130,246,0.08)');
+        rg.addColorStop(0.55, n ? 'rgba(169,220,255,0.06)' : 'rgba(147,51,234,0.04)');
         rg.addColorStop(1, 'transparent');
         ctx.fillStyle = rg;
         ctx.beginPath();
-        ctx.arc(mx, my, 170, 0, Math.PI * 2);
+        ctx.arc(mx, my, 175, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -420,19 +420,19 @@
     const navGo = rel => { location.href = root + rel; };
     const acts = [
       ['Inicio · Portada Zaphyrel & Emblema 3D', () => navGo('')],
-      ['Rubros y Cobertura Total (Tiendas, Discotecas, Municipalidades…)', () => navGo('sectores/')],
-      ['Web + Operación Interna (Entrelazamiento entre áreas)', () => navGo('ecosistema/')],
-      ['Studio OS · Probar Tienda & Retail + Códigos de Barra', () => navGo('studio/?mod=retail')],
+      ['Rubros y Cobertura Total (16+ Industrias, Apps, Web & Escritorio)', () => navGo('sectores/')],
+      ['Web + Operación Interna (Entrelazamiento entre áreas & Bots)', () => navGo('ecosistema/')],
+      ['Studio OS · Probar Tienda, POS & Códigos de Barra', () => navGo('studio/?mod=retail')],
       ['Studio OS · Probar Discoteca, Puerta QR & Barra', () => navGo('studio/?mod=club')],
-      ['Studio OS · Probar Municipalidad & Expedientes QR', () => navGo('studio/?mod=muni')],
-      ['Studio OS · Probar Restaurante POS + SUNAT + Cocina', () => navGo('studio/?mod=table')],
+      ['Studio OS · Probar Talleres, Órdenes QR & Flotas', () => navGo('studio/?mod=taller')],
+      ['Studio OS · Probar Restaurante POS + SUNAT + Cocina KDS', () => navGo('studio/?mod=table')],
       ['Studio OS · Probar Showroom WebGL 3D / 360° (Inmueble & POS)', () => navGo('studio/?mod=show3d')],
       ['Studio OS · Probar Hotel PMS & Tour 360°', () => navGo('studio/?mod=stay')],
       ['Studio OS · Inventario Kardex & Cuentas Globales', () => navGo('studio/?mod=stock')],
-      ['Casos Implementados (Antes vs. Después)', () => navGo('casos/')],
+      ['Proyectos & Demos Reales (Código + Blueprints)', () => navGo('casos/')],
       ['Cotizar Proyecto y Configurar Alcance por Áreas', () => navGo('cotizar/')],
       ['Marca · Emblema 3D PBR, Catálogo, Kit Social e INDECOPI', () => navGo('marca/')],
-      ['Alternar modo Claro / Oscuro', () => $('#night')?.click()]
+      ['Alternar modo Claro / Oscuro Obsidian', () => $('#night')?.click()]
     ];
     let sel = 0, shown = acts;
     function drawCmd() {

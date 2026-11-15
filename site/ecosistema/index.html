@@ -64,7 +64,7 @@
     <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
     <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
     <a href="../studio/" data-nav="studio">Studio OS</a>
-    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../casos/" data-nav="casos">Proyectos</a>
     <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
   </div>
 
@@ -82,7 +82,7 @@
   <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
   <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
   <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
-  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../casos/"><span>Proyectos &amp; Demos</span><span>→</span></a>
   <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
   <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
 </div>
@@ -105,8 +105,8 @@
       </article>
       <article class="eco-stat">
         <small>COBERTURA EN VIVO</small>
-        <b>6 Escenarios Activos</b>
-        <span>Retail, Ocio QR, Público, KDS Gastronomía, Salud e Inmo 3D</span>
+        <b>8 Escenarios + Bots IA</b>
+        <span>Retail, Ocio, Talleres 360°, KDS, Clínicas, Edu QR, Logística y 3D</span>
       </article>
       <article class="eco-stat">
         <small>TOLERANCIA A CAÍDAS</small>
@@ -142,11 +142,13 @@
       <div class="eco-bus-toolbar">
         <div class="chips" id="flowTabs" style="margin:0" role="tablist" aria-label="Escenarios del bus de eventos">
           <button class="chip on" type="button" data-flow="retail">Retail Multi-Sede</button>
-          <button class="chip" type="button" data-flow="club">Discotecas &amp; Boxes</button>
-          <button class="chip" type="button" data-flow="muni">Municipalidades</button>
+          <button class="chip" type="button" data-flow="club">Discotecas QR</button>
+          <button class="chip" type="button" data-flow="taller">Talleres 360°</button>
           <button class="chip" type="button" data-flow="rest">Restaurantes KDS</button>
           <button class="chip" type="button" data-flow="clinica">Clínicas &amp; Farma</button>
-          <button class="chip" type="button" data-flow="inmo3d">Inmobiliaria 3D &amp; QR</button>
+          <button class="chip" type="button" data-flow="edu">Educación &amp; Bib</button>
+          <button class="chip" type="button" data-flow="logistica">Logística POD</button>
+          <button class="chip" type="button" data-flow="inmo3d">Inmobiliaria 3D</button>
         </div>
 
         <div class="eco-net-controls">
@@ -192,7 +194,7 @@
 <section class="eco-sec" id="rbacSection" aria-label="Matriz interactiva de roles y controles antifraude">
   <div class="wrap">
     <div class="eco-sec-hd">
-      <p class="eyebrow">02 · Gobierno de Accesos &amp; Control Interno</p>
+      <p class="eyebrow">02 · Control de Accesos &amp; Dirección Interna</p>
       <h2>Una sola plataforma, con vistas <em>estrictas por cargo</em></h2>
       <p class="sub">Unificar áreas no significa exponer información sensible. Selecciona cualquier perfil para inspeccionar permisos exactos, candados operativos y probar nuestras políticas antifraude en vivo.</p>
     </div>
@@ -229,8 +231,8 @@
           <div class="bp-stack">
             <div class="bp-layer bp-l1"><small>CAPA 01 · FINANZAS &amp; DIRECCIÓN</small><b>Libro Diario, SUNAT OSE &amp; Gerencia</b><span>Arqueos por turno, márgenes netos y tableros</span></div>
             <div class="bp-layer bp-l2"><small>CAPA 02 · INVENTARIO &amp; CAMPO</small><b>Almacén, Recetas, Reparto &amp; QR</b><span>Kardex FIFO/FEFO, botellas/insumos e inspectores</span></div>
-            <div class="bp-layer bp-l3"><small>CAPA 03 · PISO, CAJA &amp; PUERTA</small><b>Apps Táctiles &amp; Verificación</b><span>POS táctil, puerta anti-reventa, cocina KDS y TUPA</span></div>
-            <div class="bp-layer bp-l4"><small>CAPA 04 · CARA EXTERNA &amp; 3D</small><b>Web Comercial &amp; Entorno WebGL 3D/360°</b><span>Tienda, portal ciudadano, carta o maqueta 3D</span></div>
+            <div class="bp-layer bp-l3"><small>CAPA 03 · PISO, CAJA &amp; PUERTA</small><b>Apps Táctiles &amp; Verificación</b><span>POS táctil, puerta anti-reventa, cocina KDS y órdenes QR</span></div>
+            <div class="bp-layer bp-l4"><small>CAPA 04 · CARA EXTERNA &amp; 3D</small><b>Web Comercial &amp; Entorno WebGL 3D/360°</b><span>Tienda, portal cliente QR, carta o maqueta 3D</span></div>
           </div>
         </div>
         <div class="bp-cap" id="bpCap">Todas las capas trabajan sobre una sola base de datos con cola Offline-First.</div>
@@ -238,17 +240,17 @@
       </div>
 
       <div class="pillars" id="pillarList">
-        <button class="pillar active" type="button" data-layer="l4" data-cap="Capa 04: Web comercial, portal ciudadano y showrooms WebGL 3D conectados al stock y agenda real.">
+        <button class="pillar active" type="button" data-layer="l4" data-cap="Capa 04: Web comercial, portal de clientes QR y showrooms WebGL 3D conectados al stock y agenda real.">
           <div class="pillar-h"><span class="n">04 · CARA EXTERNA &amp; 3D</span><h3>Web de Marca &amp; Showrooms WebGL</h3></div>
-          <p>Tu primera impresión frente al cliente o ciudadano consulta stock, mesas, habitaciones o departamentos disponibles al segundo.</p>
+          <p>Tu primera impresión frente al cliente consulta stock, mesas, habitaciones, citas o departamentos disponibles al segundo.</p>
         </button>
-        <button class="pillar" type="button" data-layer="l3" data-cap="Capa 03: Pantallas táctiles simples para cajeros, mozos, puerta VIP, enfermería e inspectores en campo.">
+        <button class="pillar" type="button" data-layer="l3" data-cap="Capa 03: Pantallas táctiles simples para cajeros, mozos, puerta VIP, enfermería y técnicos en taller o ruta.">
           <div class="pillar-h"><span class="n">03 · PISO, CAJA &amp; VERIFICACIÓN</span><h3>Apps de Empleados de Fricción Cero</h3></div>
-          <p>Cada puesto opera únicamente los controles de su turno: lectura QR antifraude en puerta, monitor KDS en cocina o mesa de partes digital.</p>
+          <p>Cada puesto opera únicamente los controles de su turno: lectura QR antifraude en puerta, monitor KDS en cocina o recepción de órdenes QR.</p>
         </button>
-        <button class="pillar" type="button" data-layer="l2" data-cap="Capa 02: Control automático de existencias, lotes farmacéuticos, botellas de bar, guías y bienes municipales.">
+        <button class="pillar" type="button" data-layer="l2" data-cap="Capa 02: Control automático de existencias, lotes farmacéuticos, botellas de bar, guías y repuestos de taller.">
           <div class="pillar-h"><span class="n">02 · ALMACÉN &amp; TRAZABILIDAD</span><h3>Kardex Real, Recetas y Lotes FEFO</h3></div>
-          <p>Cada cobro, atención clínica o expediente descontado actualiza existencias al momento, emite alertas de reposición y audita mermas.</p>
+          <p>Cada cobro, atención clínica u orden técnica descontada actualiza existencias al momento, emite alertas de reposición y audita mermas.</p>
         </button>
         <button class="pillar" type="button" data-layer="l1" data-cap="Capa 01: Emisión electrónica SUNAT/OSE, conciliación Yape/Plin/Izipay y tableros multi-sede en vivo.">
           <div class="pillar-h"><span class="n">01 · GERENCIA &amp; CUMPLIMIENTO</span><h3>Consolidado Ejecutivo &amp; SUNAT OSE</h3></div>
@@ -297,7 +299,7 @@
       <div class="track-card">
         <span class="tk-tag">MODALIDAD A · ACELERACIÓN CORE (2 A 4 SEMANAS)</span>
         <h3>Núcleos Verticales Personalizados</h3>
-        <p>Desplegamos sobre arquitecturas ya validadas (Retail, Ocio QR, Municipalidades, KDS, Hoteles, Clínicas o Logística) adaptadas a tus reglas, marca y formatos térmicos.</p>
+        <p>Desplegamos sobre arquitecturas ya validadas (Retail, Ocio QR, Talleres 360°, KDS, Hoteles, Clínicas, Educación o Logística) adaptadas a tus reglas, bots WhatsApp y formatos térmicos.</p>
         <div class="eco-phase-bar" aria-label="Fases Modalidad A">
           <div class="eco-phase"><small>SEM 01</small><b>Arquitectura &amp; Roles</b></div>
           <div class="eco-phase"><small>SEM 02</small><b>Web + POS / QR</b></div>
@@ -355,7 +357,7 @@
       <div style="max-width:640px">
         <p class="eyebrow" style="margin-bottom:8px">Validación Interactiva Completa</p>
         <h2 style="font-size:clamp(24px,2.8vw,36px);font-family:var(--display);font-weight:500;line-height:1.1">Manipula los 12 núcleos operativos y el Showroom 3D en Studio OS</h2>
-        <p class="sub" style="margin-top:8px">Pon a prueba las pantallas de caja, control de accesos QR, despacho municipal y visor 3D arquitectónico directamente desde el navegador.</p>
+        <p class="sub" style="margin-top:8px">Pon a prueba las pantallas de caja, control de accesos QR, talleres con seguimiento, clínica y visor 3D arquitectónico directamente desde el navegador.</p>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
         <a class="cta" href="../studio/"><span>Abrir Studio OS</span><span class="cta-arr" aria-hidden="true">→</span></a>
@@ -380,14 +382,14 @@
       <a href="../sectores/">Rubros y Cobertura Total</a>
       <a href="../ecosistema/">Web + Operación Interna</a>
       <a href="../studio/">Plataforma Studio OS</a>
-      <a href="../casos/">Casos Implementados</a>
+      <a href="../casos/">Proyectos &amp; Demos</a>
       <a href="../marca/">Identidad de Marca (Kit &amp; 3D)</a>
     </div>
     <div class="ft-col">
       <h4>Especialidades Verticales</h4>
       <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
       <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
-      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../studio/?mod=taller">Talleres, Flotas &amp; Órdenes</a>
       <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
     </div>
     <div class="ft-col">
@@ -405,7 +407,7 @@
 </footer>
 
 <div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
-  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Farmacias, Talleres, Discotecas, Studio OS o Proyectos…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
 </div>
 
 <audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>

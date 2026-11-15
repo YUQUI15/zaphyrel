@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Configurar y Cotizar Proyecto — ZAPHYREL | Diagnóstico por Rubro y Capas</title>
-<meta name="description" content="Diseña tu arquitectura Zaphyrel por rubro y nivel operativo: tiendas retail, discotecas QR, municipalidades, restaurantes, hoteles, clínicas o showrooms 3D.">
+<meta name="description" content="Diseña tu arquitectura Zaphyrel por rubro, plataforma y capas: Web 3D, Escritorio Local-First, Apps Móviles Offline, Bots WhatsApp + OCR, Hardware QR y Núcleo SUNAT para 16+ industrias.">
 <meta name="theme-color" id="metaTheme" content="#FFFFFF">
 <link rel="canonical" href="https://zaphyrel-site.vercel.app/cotizar/">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -63,7 +63,7 @@
     <a href="../sectores/" data-nav="sectores">Rubros y Cobertura</a>
     <a href="../ecosistema/" data-nav="ecosistema">Web + Interna</a>
     <a href="../studio/" data-nav="studio">Studio OS</a>
-    <a href="../casos/" data-nav="casos">Casos</a>
+    <a href="../casos/" data-nav="casos">Proyectos</a>
     <a href="../cotizar/" data-nav="cotizar">Cotizar</a>
   </div>
 
@@ -81,7 +81,7 @@
   <a href="../sectores/"><span>Rubros y Cobertura Total</span><span>→</span></a>
   <a href="../ecosistema/"><span>Web + Operación Interna</span><span>→</span></a>
   <a href="../studio/"><span>Studio OS (12 Núcleos + 3D)</span><span>→</span></a>
-  <a href="../casos/"><span>Casos Implementados</span><span>→</span></a>
+  <a href="../casos/"><span>Proyectos &amp; Demos</span><span>→</span></a>
   <a href="../cotizar/"><span>Configurar y Cotizar Proyecto</span><span>→</span></a>
   <button id="mobSoundBtn" type="button"><span>♪ Activar / Silenciar Audio</span><span>Audio</span></button>
 </div>
@@ -104,28 +104,32 @@
       <!-- PANEL DE SELECCIÓN -->
       <div class="arch-q">
         <div>
-          <h3>01 · Rubro o Institución Principal</h3>
+          <h3>01 · Rubro u Industria Principal (16+ Verticales)</h3>
           <div class="chips" id="cfgSector">
             <button class="chip on" type="button" data-sec="retail">Tienda / Retail</button>
+            <button class="chip" type="button" data-sec="farmacia">Farmacia / Botica</button>
             <button class="chip" type="button" data-sec="club">Discoteca / Eventos</button>
-            <button class="chip" type="button" data-sec="muni">Municipalidad / Pública</button>
+            <button class="chip" type="button" data-sec="taller">Taller / Flotas 360°</button>
             <button class="chip" type="button" data-sec="table">Restaurante / Café</button>
             <button class="chip" type="button" data-sec="stay">Hotel / Resort 360°</button>
             <button class="chip" type="button" data-sec="care">Clínica / Salud</button>
-            <button class="chip" type="button" data-sec="stock">Almacén / Logística</button>
-            <button class="chip" type="button" data-sec="show3d">Inmobiliaria / Showroom 3D</button>
+            <button class="chip" type="button" data-sec="edu">Academia / Instituto</button>
+            <button class="chip" type="button" data-sec="stock">Almacén / Manufactura</button>
+            <button class="chip" type="button" data-sec="show3d">Inmobiliaria / WebGL 3D</button>
           </div>
         </div>
 
         <div>
-          <h3>02 · Áreas y Capacidades a Entrelazar</h3>
+          <h3>02 · Plataformas y Capacidades a Entrelazar</h3>
           <div class="chips" id="cfgLayers">
             <button class="chip on" type="button" data-layer="web">Web / Portal Externo</button>
-            <button class="chip on" type="button" data-layer="staff">Apps Empleados (Piso/Campo)</button>
-            <button class="chip on" type="button" data-layer="verify">Verificación QR / SUNAT</button>
-            <button class="chip on" type="button" data-layer="stock">Almacén &amp; Kardex</button>
+            <button class="chip on" type="button" data-layer="desktop">Escritorio Local-First</button>
+            <button class="chip on" type="button" data-layer="mobile">Apps Móviles Offline</button>
+            <button class="chip on" type="button" data-layer="bots">Bots WhatsApp + n8n + OCR</button>
+            <button class="chip on" type="button" data-layer="verify">Hardware QR / Balanza / SUNAT</button>
+            <button class="chip on" type="button" data-layer="stock">Almacén, Lotes &amp; Costeo</button>
             <button class="chip" type="button" data-layer="web3d">Entorno WebGL 3D / 360°</button>
-            <button class="chip" type="button" data-layer="multi">Gerencia Multi-Sede</button>
+            <button class="chip" type="button" data-layer="multi">Gerencia Multi-Sede &amp; BI</button>
           </div>
         </div>
 
@@ -150,21 +154,21 @@
           <svg id="archSvg" viewBox="0 0 420 132">
             <rect x="10" y="18" width="116" height="96" rx="14" fill="var(--pearl)" stroke="var(--c-sky)" stroke-width="1.6"/>
             <text x="22" y="40" font-family="JetBrains Mono,monospace" font-size="9" fill="var(--ink-soft)">EXTERIOR</text>
-            <text id="svgExt" x="22" y="64" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Web &amp; Catálogo</text>
-            <text x="22" y="84" font-family="Outfit,sans-serif" font-size="10.5" fill="var(--ink-soft)">Cliente / Ciudadano</text>
+            <text id="svgExt" x="22" y="64" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="var(--ink)">Web &amp; Stock</text>
+            <text x="22" y="84" font-family="Outfit,sans-serif" font-size="10" fill="var(--ink-soft)">Cliente / Usuario</text>
 
             <line x1="128" y1="66" x2="152" y2="66" stroke="var(--c-orc)" stroke-width="2" stroke-dasharray="4 3"/>
 
             <rect x="154" y="18" width="116" height="96" rx="14" fill="var(--pearl)" stroke="var(--c-orc)" stroke-width="1.6"/>
             <text x="166" y="40" font-family="JetBrains Mono,monospace" font-size="9" fill="var(--ink-soft)">OPERACIÓN</text>
-            <text id="svgOps" x="166" y="64" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="var(--ink)">Piso + QR / SUNAT</text>
-            <text x="166" y="84" font-family="Outfit,sans-serif" font-size="10.5" fill="var(--ink-soft)">Equipo &amp; Verificación</text>
+            <text id="svgOps" x="166" y="64" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="var(--ink)">POS + QR / OSE</text>
+            <text x="166" y="84" font-family="Outfit,sans-serif" font-size="10" fill="var(--ink-soft)">Equipo &amp; Verificación</text>
 
             <line x1="272" y1="66" x2="296" y2="66" stroke="var(--c-sky)" stroke-width="2" stroke-dasharray="4 3"/>
 
             <rect x="298" y="18" width="112" height="96" rx="14" fill="var(--obsidian)" stroke="#81BDF8" stroke-width="1.6"/>
             <text x="310" y="40" font-family="JetBrains Mono,monospace" font-size="9" fill="#A9DCFF">CONTROL</text>
-            <text id="svgCtrl" x="310" y="64" font-family="Outfit,sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Kardex &amp; Gerencia</text>
+            <text id="svgCtrl" x="310" y="64" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Kardex &amp; BI</text>
             <text x="310" y="84" font-family="Outfit,sans-serif" font-size="10.5" fill="#B8C2D6">Consolidado Vivo</text>
           </svg>
         </div>
@@ -197,7 +201,7 @@
             </div>
             <div class="faq" aria-expanded="false">
               <button type="button">¿Funciona si se corta el internet en mi tienda, discoteca o trabajo de campo?<span>+</span></button>
-              <div class="ans">Sí. La arquitectura Offline-First guarda ventas, lecturas QR de puerta, comandas o actas municipales localmente en el equipo del trabajador y sincroniza automáticamente sin duplicados cuando regresa la conexión.</div>
+              <div class="ans">Sí. La arquitectura Offline-First guarda ventas, lecturas QR de puerta, comandas, notas de despacho u órdenes de taller localmente en el equipo o celular del operador y sincroniza automáticamente sin duplicados cuando regresa la conexión.</div>
             </div>
             <div class="faq" aria-expanded="false">
               <button type="button">¿Se conecta con SUNAT/OSE, Yape/Plin, ticketeras y lectores reales?<span>+</span></button>
@@ -218,14 +222,16 @@
           <div class="form-row-2">
             <label>Rubro Principal
               <select id="fSector">
-                <option value="retail">Tienda / Cadena Retail</option>
+                <option value="retail">Tienda / Cadena Retail / Ferretería</option>
+                <option value="farmacia">Farmacia / Botica FEFO</option>
                 <option value="club">Discoteca / Bar / Eventos QR</option>
-                <option value="muni">Municipalidad / Entidad Pública</option>
+                <option value="taller">Taller / Servicio Técnico / Flotas</option>
                 <option value="table">Restaurante / Gastronomía</option>
                 <option value="stay">Hotel / Turismo 360°</option>
-                <option value="care">Clínica / Centro de Salud</option>
-                <option value="stock">Almacén / Distribuidora</option>
-                <option value="show3d">Inmobiliaria / Showroom 3D</option>
+                <option value="care">Clínica / Centro de Salud / Vet</option>
+                <option value="edu">Instituto / Academia / Gimnasio</option>
+                <option value="stock">Almacén / Distribuidora / Manufactura</option>
+                <option value="show3d">Inmobiliaria / Estudio / Showroom 3D</option>
               </select>
             </label>
             <label>Correo o WhatsApp<input id="fContact" type="text" placeholder="+51 999 000 000 / correo@empresa.com" required></label>
@@ -259,14 +265,14 @@
       <a href="../sectores/">Rubros y Cobertura Total</a>
       <a href="../ecosistema/">Web + Operación Interna</a>
       <a href="../studio/">Plataforma Studio OS</a>
-      <a href="../casos/">Casos Implementados</a>
+      <a href="../casos/">Proyectos &amp; Demos</a>
       <a href="../marca/">Identidad de Marca (Kit &amp; 3D)</a>
     </div>
     <div class="ft-col">
       <h4>Especialidades Verticales</h4>
       <a href="../soluciones/tiendas/">Tiendas &amp; Retail</a>
       <a href="../soluciones/discotecas/">Discotecas &amp; Eventos QR</a>
-      <a href="../soluciones/municipalidades/">Municipalidades &amp; Gestión</a>
+      <a href="../studio/?mod=taller">Talleres, Flotas &amp; Órdenes</a>
       <a href="../soluciones/restaurantes/">Restaurantes POS Perú</a>
     </div>
     <div class="ft-col">
@@ -284,7 +290,7 @@
 </footer>
 
 <div class="cmd" id="cmd" role="dialog" aria-modal="true" aria-label="Buscador global de páginas y módulos">
-  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a Tiendas, Discotecas, Municipalidades, Studio OS, Casos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
+  <div class="cmd-box"><input id="cmdIn" placeholder="Ir a 16+ Rubros, Talleres, Discotecas, Studio OS, Proyectos o Cotizar…" autocomplete="off" aria-label="Buscar página o módulo"><ul id="cmdList"></ul></div>
 </div>
 
 <audio id="sig" src="../assets/zaphyrel-signature.wav" preload="none"></audio>
@@ -302,68 +308,89 @@
     retail: {
       title: 'Ecosistema Tienda / Cadena Retail Conectado',
       desc: 'Une e-commerce o catálogo público con caja rápida por pistola de barras, SUNAT OSE, inventario multi-local y utilidad neta en gerencia.',
-      ext: 'E-commerce + Stock', ops: 'POS Barras + OSE', ctrl: 'Kardex + Márgenes',
+      ext: 'Web + Stock', ops: 'POS + OSE', ctrl: 'Kardex + BI',
       flows: ['Cliente ve disponibilidad exacta en cada sucursal.', 'Cajero escanea SKU y cobra con Yape/Plin/Niubiz + boleta 80mm.', 'Bodega recibe reposiciones sugeridas y gerencia ve utilidad viva.']
+    },
+    farmacia: {
+      title: 'Ecosistema Farmacia & Botica FEFO + OCR',
+      desc: 'Control automático de lotes y vencimientos FEFO, fraccionamiento por blíster/unidad, lectura OCR de facturas de droguería y alerta WhatsApp de recambio al cliente.',
+      ext: 'Bot Receta QR', ops: 'POS FEFO + OCR', ctrl: 'Lotes + Alerta',
+      flows: ['Escaneo de guía/factura OCR registra lotes y vencimientos en 6 segundos.', 'POS vende caja o pastilla suelta impidiendo despachar lotes por caducar.', 'Bot notifica al cliente crónico días antes de agotar su tratamiento.']
     },
     club: {
       title: 'Ecosistema Discotecas, Bares & Eventos QR',
-      desc: 'Controla preventa web y boxes VIP desde la puerta con escáner QR offline anti-reventa hasta las comandas de mozos y descuento por botella en barra.',
-      ext: 'Preventa & Box VIP', ops: 'Puerta QR + Mozos', ctrl: 'Barra + Arqueo',
-      flows: ['Entrada nominada QR se valida en 0.4 s sin duplicados ni Wi-Fi.', 'Mozos despachan pedidos de zona VIP directo a pantallas de barra.', 'Cierre nocturno cuadra taquilla, boxes, botellas e ingresos por método.']
+      desc: 'Controla preventa web y boxes VIP desde la puerta con escáner QR offline anti-reventa hasta las comandas de mozos, pulseras cashless y descuento por ml/botella en barra.',
+      ext: 'Box VIP Web', ops: 'Puerta QR + Bar', ctrl: 'Mls + Arqueo',
+      flows: ['Entrada nominada QR dinámica se valida en 0.4 s sin duplicados ni Wi-Fi.', 'Mozos despachan pedidos de zona VIP directo a pantallas de barra y cocina.', 'Botella abierta descuenta onzas y cierra arqueo ciego al amanecer sin descuadres.']
     },
-    muni: {
-      title: 'Ecosistema Municipal & Entidad Pública Digital',
-      desc: 'Digitaliza mesa de partes con constancia QR verificable, deriva expedientes entre áreas con plazos SLA y dota a inspectores en campo de app móvil.',
-      ext: 'Portal Ciudadano', ops: 'Campo QR + SLA', ctrl: 'Archivo & Alcaldía',
-      flows: ['Ciudadano radica expediente 24/7 y recibe cargo con código QR único.', 'Inspectores validan licencias en vía pública aun sin señal móvil.', 'Alcaldía y gerencias auditan cuellos de botella y cumplimiento de plazos.']
+    taller: {
+      title: 'Ecosistema Talleres, Servicio Técnico & Flotas 360°',
+      desc: 'Orden de trabajo digital con recepción fotográfica antireclamos, tablero de bahías, seguimiento QR en vivo vía WhatsApp, aprobación de repuestos y garantía por serie.',
+      ext: 'Tracking QR', ops: 'Fotos + Bahía', ctrl: 'Garantía + BI',
+      flows: ['Recepción toma evidencia 360° del equipo/vehículo y dispara QR por WhatsApp.', 'Cliente aprueba presupuesto adicional en 1 tap antes de instalar repuestos.', 'Sistema recuerda próximo mantenimiento por kilometraje, horas o serie.']
     },
     table: {
       title: 'Ecosistema Restaurante, Cocina KDS & Delivery',
-      desc: 'Conecta carta directa web y salón con pantallas de cocina KDS, ticketeras térmicas, comprobantes SUNAT y descarga exacta de recetas.',
-      ext: 'Carta QR & Delivery', ops: 'Salón + KDS + 80mm', ctrl: 'Recetas & Caja',
-      flows: ['Comanda se separa automáticamente entre cocina caliente y barra.', 'Cuenta se divide por persona con Yape/Plin/POS y RUC en 1 clic.', 'Economato descuenta gramaje real de insumos por plato vendido.']
+      desc: 'Conecta carta directa web y salón con pantallas de cocina KDS, ticketeras térmicas, comprobantes SUNAT y descarga exacta de recetas con alertas de merma.',
+      ext: 'Carta + Pedido', ops: 'Salón + KDS', ctrl: 'Receta + OSE',
+      flows: ['Comanda se separa automáticamente entre cocina caliente, sushi y barra.', 'Cuenta se divide por persona con Yape/Plin/POS y RUC en 1 clic.', 'Economato descuenta gramaje real de insumos por plato y vigila rendimiento de chef.']
     },
     stay: {
       title: 'Ecosistema Hotel 360°, PMS & Housekeeping',
-      desc: 'Elimina comisiones de portales mostrando suites en 360°, agiliza recepción PMS y coordina limpieza de habitaciones con tus mucamas en tiempo real.',
-      ext: 'Reserva Web 360°', ops: 'PMS + Llave QR', ctrl: 'Housekeeping + RevPAR',
-      flows: ['Huésped explora su habitación en 360° y reserva directo en web.', 'Check-out dispara alerta instantánea al teléfono de housekeeping.', 'Cargos de restaurante o spa van a una sola cuenta verificada SUNAT.']
+      desc: 'Elimina comisiones de portales mostrando suites en 360°, agiliza recepción PMS, check-in biométrico anticipado y coordina limpieza de habitaciones en tiempo real.',
+      ext: 'Reserva 360°', ops: 'PMS + Check QR', ctrl: 'Limpieza + BI',
+      flows: ['Huésped explora su habitación en 360°, sube documento y reserva sin OTAs.', 'Check-out dispara alerta instantánea al teléfono de housekeeping con checklist.', 'Consumos de restaurante, minibar o spa se consolidan en folio único SUNAT.']
     },
     care: {
       title: 'Ecosistema Clínica, Citas & Farmacia por Lote',
-      desc: 'Organiza citas online sin cruces, admisión, historia clínica digital, despacho farmacéutico con vencimientos y liquidación por especialista.',
-      ext: 'Citas Web 24/7', ops: 'Admisión + Historia', ctrl: 'Farmacia + Honorarios',
-      flows: ['Paciente agenda por sede y médico sin saturar recepción.', 'Receta firmada viaja directa a farmacia para control de lote.', 'Gerencia médica liquida comisiones e ingresos por consultorio.']
+      desc: 'Organiza citas online con bot de confirmación anti-ausentismo, admisión, historia clínica electrónica, laboratorio, despacho por lote y liquidación por especialista.',
+      ext: 'Citas + Bot', ops: 'Admisión + HCE', ctrl: 'Lotes + Pago',
+      flows: ['Bot confirma o reprograma cita por WhatsApp reduciendo huecos en agenda.', 'Receta y orden de laboratorio viajan al instante a farmacia y toma de muestras.', 'Gerencia médica liquida comisiones exactas e ingresos por especialidad y sede.']
+    },
+    edu: {
+      title: 'Ecosistema Institutos, Academias & Gimnasios QR',
+      desc: 'Controla matrículas o membresías desde web, carnés/pases QR antifraude en torniquete o aula, repositorios híbridos (biblioteca), cobranzas y alerta temprana de deserción.',
+      ext: 'Portal QR', ops: 'Torniquete QR', ctrl: 'Mora + Alerta',
+      flows: ['Carné o pase QR valida acceso en puerta en <0.4 s y detecta moras o topes.', 'Biblioteca y préstamos híbridos registran devoluciones, multas y stock real.', 'Detector analiza asistencias caídas y lanza seguimiento preventivo automático.']
     },
     stock: {
-      title: 'Ecosistema Almacén, B2B & Logística de Reparto',
-      desc: 'Centraliza pedidos mayoristas, picking por código de barras en bodega, guías de remisión electrónicas y confirmación de entrega en ruta.',
-      ext: 'Portal Mayorista B2B', ops: 'Picking + Reparto', ctrl: 'Guías + Kardex FIFO',
-      flows: ['Distribuidores ordenan en web según su lista de precios y crédito.', 'Bodega verifica salidas con lector de barras y emite guía SUNAT.', 'Chofer registra entrega con foto y firma desde su app de reparto.']
+      title: 'Ecosistema Almacén, B2B, Reparto & Manufactura',
+      desc: 'Centraliza pedidos mayoristas, BOM/producción por lotes, picking con pistolas/celulares offline, guías de remisión SUNAT GRE y trazabilidad de entregas con foto.',
+      ext: 'Portal B2B', ops: 'Picking + Ruta', ctrl: 'GRE + FIFO',
+      flows: ['Distribuidores ordenan en web según lista de precios, crédito y stock real.', 'Bodega escanea bultos por códigos de barra y emite guía de remisión SUNAT.', 'Chofer registra entrega con foto, firma y cobro aun sin cobertura celular.']
     },
     show3d: {
       title: 'Ecosistema Showroom WebGL 3D + CRM Inmobiliario',
-      desc: 'Maquetas WebGL 3D reales navegables por pisos, acabados y equipamiento conectadas al catálogo de unidades disponibles y separación comercial.',
-      ext: 'Maqueta WebGL 3D', ops: 'Configurador CRM', ctrl: 'Unidades + Reserva',
-      flows: ['Comprador explora cada nivel en 3D desde celular o PC a 60 FPS.', 'Cotizador bloquea unidad al instante evitando dobles reservas.', 'Dirección comercial monitorea disponibilidad, separaciones y ritmo de venta.']
+      desc: 'Maquetas WebGL 3D navegables por pisos, acabados, iluminación y recorridos vinculados al inventario vivo, simulador de cuotas y separación comercial anti-doble-venta.',
+      ext: 'Maqueta 3D', ops: 'Cotizador CRM', ctrl: 'Unidades + BI',
+      flows: ['Comprador explora cada nivel y vista solar en 3D desde celular o PC a 60 FPS.', 'Cotizador bloquea unidad con voucher Yape/transferencia evitando dobles ventas.', 'Estudios y promotoras ven embudo vivo, reservas por vencer y ritmo de absorción.']
     }
   };
 
   let selSec = 'retail', selMode = 'acc';
-  const layerNames = { web: 'Web / Portal Externo', staff: 'Apps Personal Piso/Campo', verify: 'Verificación QR / SUNAT', stock: 'Almacén & Kardex', web3d: 'WebGL 3D / 360°', multi: 'Gerencia Multi-Sede' };
+  const layerNames = {
+    web: 'Web / Portal Externo',
+    desktop: 'Escritorio Local-First',
+    mobile: 'Apps Móviles Offline',
+    bots: 'Bots WhatsApp + n8n + OCR',
+    verify: 'Hardware QR / Balanza / SUNAT',
+    stock: 'Almacén, Lotes & Costeo',
+    web3d: 'WebGL 3D / 360°',
+    multi: 'Gerencia Multi-Sede & BI'
+  };
 
   function renderConfigurator() {
-    const cfg = sectorConfigs[selSec];
+    const cfg = sectorConfigs[selSec] || sectorConfigs.retail;
     const activeLayers = $$('#cfgLayers button.on').map(b => b.dataset.layer);
     const has3d = activeLayers.includes('web3d');
-    const custom = selMode === 'custom' || has3d || activeLayers.length >= 5;
-    $('#cfgEta').textContent = custom ? 'Estimación: 6 a 10 semanas · Ingeniería + 3D' : 'Estimación: 2 a 4 semanas · Despliegue Acelerado';
+    const custom = selMode === 'custom' || has3d || activeLayers.length >= 6;
+    $('#cfgEta').textContent = custom ? 'Estimación: 6 a 10 semanas · Ingeniería Multi-Superficie' : 'Estimación: 2 a 4 semanas · Despliegue Acelerado';
     $('#cfgTitle').textContent = cfg.title;
     $('#cfgDesc').textContent = cfg.desc;
     $('#svgExt').textContent = cfg.ext;
     $('#svgOps').textContent = cfg.ops;
     $('#svgCtrl').textContent = cfg.ctrl;
-    $('#cfgMods').innerHTML = activeLayers.map(l => `<span class="mod">✓ ${esc(layerNames[l])}</span>`).join('') || '<span class="mod">Selecciona al menos 1 capa</span>';
+    $('#cfgMods').innerHTML = activeLayers.map(l => `<span class="mod">✓ ${esc(layerNames[l] || l)}</span>`).join('') || '<span class="mod">Selecciona al menos 1 capacidad</span>';
     $('#cfgFlows').innerHTML = cfg.flows.map(f => `<li>${esc(f)}</li>`).join('');
   }
 
@@ -388,10 +415,10 @@
   });
 
   function syncBriefToForm() {
-    const cfg = sectorConfigs[selSec];
-    const layers = $$('#cfgLayers button.on').map(b => layerNames[b.dataset.layer]).join(', ');
+    const cfg = sectorConfigs[selSec] || sectorConfigs.retail;
+    const layers = $$('#cfgLayers button.on').map(b => layerNames[b.dataset.layer] || b.dataset.layer).join(', ');
     if ($('#fSector')) $('#fSector').value = selSec;
-    $('#fNotes').value = `Rubro: ${cfg.title}\nModalidad: ${selMode === 'custom' ? 'Ingeniería Dedicada + 3D' : 'Núcleo Acelerado'}\nCapas a entrelazar: ${layers}`;
+    $('#fNotes').value = `Rubro: ${cfg.title}\nModalidad: ${selMode === 'custom' ? 'Ingeniería Dedicada Multi-Superficie + 3D' : 'Núcleo Acelerado'}\nPlataformas y capas: ${layers}`;
   }
 
   $('#cfgApplyBtn').addEventListener('click', () => {
@@ -406,11 +433,11 @@
   try {
     const qs = new URLSearchParams(location.search);
     const mod = qs.get('mod'), biz = qs.get('biz');
-    const modMap = { retail: 'retail', club: 'club', muni: 'muni', table: 'table', shop: 'retail', stay: 'stay', care: 'care', fit: 'club', stock: 'stock', ledger: 'retail', lib: 'muni', show3d: 'show3d' };
+    const modMap = { retail: 'retail', farmacia: 'farmacia', club: 'club', taller: 'taller', table: 'table', shop: 'retail', stay: 'stay', care: 'care', fit: 'edu', edu: 'edu', stock: 'stock', ledger: 'retail', lib: 'edu', show3d: 'show3d' };
     if (mod && modMap[mod]) {
       selSec = modMap[mod];
       $$('#cfgSector button').forEach(x => x.classList.toggle('on', x.dataset.sec === selSec));
-      if (mod === 'show3d') $$('#cfgLayers button[data-layer="web3d"]').forEach(x => x.classList.add('on'));
+      if (mod === 'show3d' || mod === 'stay') $$('#cfgLayers button[data-layer="web3d"]').forEach(x => x.classList.add('on'));
     }
     if (biz) $('#fBiz').value = biz;
   } catch (e) {}
